@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>four-dimensional tic-tac-toe</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>four-dimensional tic-tac-toe</td></tr><tr><td><b>From: </b>woods@colossal.Eng.Sun.COM (Don Woods)</td></tr><tr><td><b>Date: </b>21/09/1993, 07:14</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Christopher Phillips writes:
+| Does anyone know if a draw is possible in 4^4 noughts and crosses?
+| I have not managed to fill the board in such a way as to have no 4-in-a-rows
+| for either player.
+
+I assume you really do mean 4-dimensional, i.e. 4x4x4x4.  I spent a bit
+of time and found a draw, as follows:
+
+Let L (left) and R (right) represent the following 4x4 planes:
+
+	    X O X O			    O X O X
+	L:  X O X O			R:  O X O X
+	    O X O X			    X O X O
+	    O X O X			    X O X O
+
+Obviously there are no 4-in-a-rows on either L or R alone.  Now consider
+a cube constructed from 3 Ls and 1 R (or 3 Rs and 1 L, by symmetry).
+There are two distinct cases: LLLR and LLRL.
+
+		X O X O     X O X O     X O X O     O X O X
+	LLLR:	X O X O     X O X O     X O X O     O X O X
+		O X O X     O X O X     O X O X     X O X O
+		O X O X     O X O X     O X O X     X O X O
+
+
+		X O X O     X O X O     O X O X     X O X O
+	LLRL:	X O X O     X O X O     O X O X     X O X O
+		O X O X     O X O X     X O X O     O X O X
+		O X O X     O X O X     X O X O     O X O X
+
+A bit of examination shows that neither of these cubes has a 4-in-a-row.
+So now, construct a 4x4x4x4 hypercube as follows:
+
+	L L L R
+	L L L R
+	L R L L
+	R L R R
+
+QED.
+
+I'm curious as to whether there's a technique that generalises to finding
+draws in any number of dimensions, or inversely, whether there's a way to
+prove that some suitably high dimension 4^n board cannot draw.
+
+Anybody have any insights on these higher-dimensional questions?
+<div class="moz-txt-sig">-- 
+--	-- Don Woods.				[*** Generic Disclaimer ***]
+--				    ...!sun!woods.eng -or- <a class="moz-txt-link-abbreviated" href="mailto:Woods@Eng.Sun.com">Woods@Eng.Sun.com</a>
+
+</div></pre></div></body>
+</html>
+</table></div>

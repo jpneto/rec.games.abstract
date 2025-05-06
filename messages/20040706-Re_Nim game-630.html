@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Nim game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Nim game</td></tr><tr><td><b>From: </b>jferro@fuchsia.ece.cmu.edu (Jonathan R. Ferro)</td></tr><tr><td><b>Date: </b>06/07/2004, 22:01</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:joc_kay@hotmail.com">joc_kay@hotmail.com</a> (Joe) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+A) A number of pieces (all of the same color) are placed on a NxM
+board. No field contains more than one piece (one might relax this
+condition, but I don't believe it adds more 'depth' to the game). Two
+players in turn make a move which consists of taking one or more
+pieces from the board. Pieces taken in each move should come from the
+same horizontal or vertical row. The player who made the last move
+wins.
+
+B) The same game as A), but now one player is restricted to moves
+removing pieces from a horizontal row, and the other player is
+restricted to removing pieces from a vertical row.
+
+My questions:
+1) do such games already exist?
+2) can one define a general strategy for these games? I.e. using
+concepts like Nim-sums, can one determine whether or not an arbitrary
+position on a large board is a P-position?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+A fundamental theorem of combinatorial game theory states that all
+impartial or non-partisan games (i.e., games where there are no moves
+which are reserved to a particular player) are equivalent to nim.  So,
+for game A it certainly is the case that a general strategy exists.
+Finding the strategy (i.e., computing the nim-values of each of the
+states) might be a chore, since there are so many legal moves from each
+position and there's no simple chart-like way to tabulate all of the
+positions, but it certainly exists.
+
+See <a class="moz-txt-link-freetext" href="http://encyclopedia.thefreedictionary.com/Sprague-Grundy%20theorem">http://encyclopedia.thefreedictionary.com/Sprague-Grundy%20theorem</a>
+
+Game B is a partisan game, because only certain players are allowed to
+make certain moves.  The theory for partisan games is much more
+complicated, but this game should be interesting to analyze because it
+contains "hot" positions where both players would like to be the next
+one to move instead of allowing the other player to go first.
+
+-- Jon
+
+
+</pre></div></body>
+</html>
+</table></div>

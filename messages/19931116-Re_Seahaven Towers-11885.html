@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Seahaven Towers</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Seahaven Towers</td></tr><tr><td><b>From: </b>woods@colossal.Eng.Sun.COM (Don Woods)</td></tr><tr><td><b>Date: </b>16/11/1993, 04:39</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Gregory Rhodes writes:
+| I've been playing a solitare game called "Seahaven Towers" on my Mac.
+    [rules omitted]
+| ANYWAY, my question is this: from a theoretical point of view, should
+| this game be always win-able? How can I find out? Is there any good
+| books on this subject?
+
+There's a version of this game under the name "solitaire" in the Modula-3
+distribution.  I have it running on my Sun.  There are definitely unwinnable
+positions.  The Modula-3 implementation includes a feature where you can ask
+it if a position is winnable.  (You can also ask it to show you the first
+move of a winning sequence, but I don't do that.)  This feature does have the
+unfortunate property that, if over-used, it makes the game go too quickly.
+I.e., you can ask and find that you've reached an unwinnable position, then
+back up a few moves and ask again, etc.
+
+Incidentally, the Modula-3 version enforces one rule that Gregory didn't
+mention, so I don't know if it's in the Mac version or not.  To wit: If you
+get an empty space in the tableau (i.e., one of the 10 columns goes empty),
+then ONLY a King can be moved into that space.
+
+I've also seen a PC-clone version, with somewhat different rules.  I forget
+all the details, but I think it used alternating colors for building in the
+tableau (but still in suit for building up on the Aces).  In the version where
+both places build strictly in suit, there's never any reason not to move cards
+onto the Aces piles whenever possible.  In the PC version that's not the case.
+
+
+
+<div class="moz-txt-sig">-- 
+--	-- Don Woods.				[*** Generic Disclaimer ***]
+--				    ...!sun!woods.eng -or- <a class="moz-txt-link-abbreviated" href="mailto:Woods@Eng.Sun.com">Woods@Eng.Sun.com</a>
+
+</div></pre></div></body>
+</html>
+</table></div>

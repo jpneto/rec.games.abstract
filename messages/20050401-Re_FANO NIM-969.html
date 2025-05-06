@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: FANO NIM</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: FANO NIM</td></tr><tr><td><b>From: </b>&quot;gcrhoads@yahoo.com&quot; &lt;gcrhoads@yahoo.com&gt;</td></tr><tr><td><b>Date: </b>01/04/2005, 08:55</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,sci.math</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Bill Taylor wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Here's a cute little mathematical game.  I'm surprised it hasn't been
+</pre></blockquote><pre wrap class="moz-quote-pre">
+around
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+the abstract game world before.   It's only the second game I know of
+</pre></blockquote><pre wrap class="moz-quote-pre">
+that's
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+based on the Fano plane - the smallest possible 2D Projective
+</pre></blockquote><pre wrap class="moz-quote-pre">
+Geometry.
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+Here it is - it has vertices THEY WAR, and lines YEA WHY TRY HER RAW
+</pre></blockquote><pre wrap class="moz-quote-pre">
+WET HAT,
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+neatly compiled into a triangle with three altitudes, and an incircle
+</pre></blockquote><pre wrap class="moz-quote-pre">
+which
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+is also a "line"...
+
+                            Y
+                           /|\
+                          / | \
+                         /  |  \
+                        /   |   \
+                       /    |    \
+                      / _.-"|"-._ \
+                     /.'    |    `.\
+                    H.      |      .E
+                   /: "-.   |   .-' :\
+                  / |    ";-T-:"    | \
+                 /  :  _-'  |  `-_  :  \
+                /    \'     |     `/    \
+               /  ,-' `.    |    .' `-.  \
+              /_-'      `-..|..-'      `-_\
+             W--------------R--------------A
+
+
+Note there are no interior intersections between the altitudes and
+the circle, only at the tangent points where they triply intersect
+with the sides as well.
+
+_________________________________
+Anyway, the game is a form of Nim.
+
+The diagram starts with a small integer at each of the seven
+</pre></blockquote><pre wrap class="moz-quote-pre">
+vertices,
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+the number of "seeds" at that vertex, preferably a different one for
+</pre></blockquote><pre wrap class="moz-quote-pre">
+each.
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+(These can be decided on in one of several standard ways.)
+
+On each turn, the player to move must remove THE SAME number of seeds
+</pre></blockquote><pre wrap class="moz-quote-pre">
+from
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+any three vertices in a line, (remembering that the circle is also a
+</pre></blockquote><pre wrap class="moz-quote-pre">
+line).
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+Last person to make a legal move wins.            (This is the
+</pre></blockquote><pre wrap class="moz-quote-pre">
+standard
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+winning condition for CGT games.  There is also the "misere" version
+</pre></blockquote><pre wrap class="moz-quote-pre">
+OC.)
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+"""""""""""""""""""""""""""""""""
+
+
+I will leave it as a fun exercise for fans to compile a list,
+hopefully exhaustive, of all the "N positions" (Next player wins),
+and all the "P positions" (Previous player wins).
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I generated the P positions (and by consequence the N positions)
+using a computer program and there are too many to list even for
+small numbers of seeds.  First, any position in which the number
+of vertices with some seeds is &lt;= 2 is a P position since no
+move is possible.  Filtering out these, there are still 35
+P positions where no vertex has more than one seed (if you
+consider the symmetries, then there are really only 6 distinct
+ones but the positions become harder to describe).  Now if you
+filter out all positions where there is no move, we are left
+with the following (by "restricted" P positions, I mean those
+P positions from which there is at least one legal move, the
+number of seeds at any vertex is &lt;= N, and at least one vertex
+has N seeds).
+
+    # restricted
+N   P positions
+=   ============
+1            0
+2          315
+3         2500
+4         9430
+5        27616
+
+Obviously, memorizing a list of positions is not the way to go.
+The highly regular structure of the fano plane gives one reason
+to hope for a nice elegant way to compute the nimber of an
+arbitrary position.
+
+
+
+</pre></div></body>
+</html>
+</table></div>

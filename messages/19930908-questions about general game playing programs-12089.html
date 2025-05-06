@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>questions about general game playing programs</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>questions about general game playing programs</td></tr><tr><td><b>From: </b>dboll@vcd.hp.com (david boll)</td></tr><tr><td><b>Date: </b>08/09/1993, 21:42</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+  Hey:
+
+  About a year ago (and a couple computer accounts ago) I posted an
+  article in which I asked if people had written their own general game 
+  playing programs, and if so, did they want to share. The only response I
+  got was from (if memory serves) Barney Pell, who had put together
+  <b class="moz-txt-star"><span class="moz-txt-tag">*</span>exactly<span class="moz-txt-tag">*</span></b> the thing I wanted, except... it wouldn't run on my
+  machine (I think it was some version of Prolog that I don't have access
+  to).
+
+  I have a c program that does this, 'cept it's so poorly written I wouldn't
+  show it to my mom, much less anyone else. But I'm currently in the process
+  of re-writing it. My goal is to make it general enough that anyone wanting
+  to write a program to check out a new game would only have to write the
+  following routines:
+    
+     - a move generator; given a board position, generate a legal move list.
+     - a move processor; given a board position and a move, perform the move
+	 on the board
+     - a scoring function
+     - a 'did I win' (or 'did I lose') function that tells you if the current
+	 position is a win/loss (i.e. is the game over yet)
+     - a board initializer
+
+  Given these 5 routines, my code will do the 'ol alpha-beta thing, handle
+  the user interface, handle play in several different modes (computer vs
+  human, computer vs computer using different scoring functions, etc), and
+  be fairly flexible in terms of search depth, move sorting, etc.
+
+  Basically, almost any game that involved 2 players using discrete pieces 
+  on a rectangular lattice could be played with this code. The goal is to 
+  allow you to spend more time playing with the scoring function (the
+  interesting part of all this) and less time with the mechanics of writing
+  a game player. Using my current (poorly written) one, I've been able to
+  make a decent program for a new game in under 2 hours - pretty cool.
+
+  So, a couple questions:
+
+    1) Has this been done already (my guess: certainly) - should I stop
+       working on mine and FTP from somewhere?
+    2) If there is no easily available code for general game playing, would
+       people be interested in mine, once I'm finished rewriting it?
+
+  Thanks.
+<div class="moz-txt-sig">-- 
+---------------
+  Dave Boll    <a class="moz-txt-link-abbreviated" href="mailto:dboll@hp-vcd.vcd.hp.com">dboll@hp-vcd.vcd.hp.com</a>
+  "The speed of time is 1 second per second"
+
+</div></pre></div></body>
+</html>
+</table></div>

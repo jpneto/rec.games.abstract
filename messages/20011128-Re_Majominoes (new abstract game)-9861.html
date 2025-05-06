@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Majominoes (new abstract game)</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Majominoes (new abstract game)</td></tr><tr><td><b>From: </b>torbenm@gna.diku.dk (Torben �gidius Mogensen)</td></tr><tr><td><b>Date: </b>28/11/2001, 15:49</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,rec.puzzles</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Bob Harris <a class="moz-txt-link-rfc2396E" href="mailto:nitlion@mindspring.com">&lt;nitlion@mindspring.com&gt;</a> writes:
+
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+1) Without O's double move, under perfect play the game would be a win for X
+(regardless of the regions used).  Can you prove this?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Since draw is impossible and the game is deterministic, either X or O
+can force a win. Note also that the order that the X's and O's are
+placed make no difference for the final score. Assume O can force a
+win. This means that any move X makes is followed by a move by O such
+that the final result gives a higher score to O. Furthermore, the
+placement of O's pieces is determined only by the position of the
+already placed pieces (by X and O). X can now do the following: Place
+the first piece anywhere on the board, then wait for O to make her
+move. Now, X ignores his first piece and plays as if O started. He
+will always respond to O's move by pretending O started and the first
+X piece isn't there, unless this is the place that perfect play
+suggests. In this case, he just places randomly and ignores this new
+piece in the same way he previously ignored the first. Since the
+assumption was that the second player can win regardless of what the
+first player does, it doesn't matter that O has fewer choices than if
+she played first, X can always find a perfect response. In the end,
+X can make the board look like O started except that O can't place her
+final stone since it is occupied by X on his last move. Hence, the
+board will be the reverse of the board where O started except for one
+piece being swapped in X's favour. Since that can't possibly hurt X's
+score, he wins. Since we concluded that X wins from the assumption
+that O wins, the assumption was incorrect and, hence, X is guaranteed
+to win.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+2) Does allowing O a double move allow O to force a win on some boards?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Yes. Assume a 3x3 board where the regions coincide with the rows. No
+matter where X places, O can place in the same column in the two other
+rows. If X later places in one of the two rows that already has an O,
+O does the same, winning this. Hence, O will definitely win two rows
+and one column (taken in her first move). Since rows are also regions,
+that gives her 5 regions. The total number of regions is 9, so she has
+more than half.
+
+I suspect the double move will actually allow O to win on all boards
+for N&gt;=3, essentially by using it in her first move and hence turning
+it into a game similar to the one in question 1 with her as first
+player (and, hence, a winner in a perfect game). I can't quite factor
+the two initial plays out of the proof, though, so I may be wrong.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+3) Is there any advantage to O delaying the use of her double move?  In
+other words, shouldn't she just always use it on her first turn?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+If my assumption above is correct, she can always win by using it in
+her first move, so there would be no advantage in waiting (if all we
+care about is win/lose and not maximizing scores).
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+4) It is X's turn to move.  O has already used her double move.  Who wins?
+
++--+--+--+--+--+
+|  | o  o  o  x|
++  +--+--+  +--+
+|  | o  o| x|  |
++  +--+  +--+  +
+| o   | x  x|  |
++--+  +--+  +  +
+| o|  |  | o| x|
++  +--+  +--+  +
+| x      | x   |
++--+--+--+--+--+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Offhand, I'd say X, but I haven't done an exhaustive search.
+
+	Torben Mogensen (<a class="moz-txt-link-abbreviated" href="mailto:torbenm@diku.dk">torbenm@diku.dk</a>)
+
+
+</pre></div></body>
+</html>
+</table></div>

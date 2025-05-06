@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Why chess is easy to program, Go hard (long)</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Why chess is easy to program, Go hard (long)</td></tr><tr><td><b>From: </b>torbenm@diku.dk (Torben AEgidius Mogensen)</td></tr><tr><td><b>Date: </b>26/09/1994, 11:55</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.chess,rec.games.go,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:shrier@protocol.zycad.com">shrier@protocol.zycad.com</a> (George Shrier) writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	The game of Othello is particularly illuminating. The object of the
+game is to end up with the most disks of your color. However, an evaluation
+function that simply counts disks performs poorly. The problem is that when
+a disk flips to your color, that is no achievement, since it can easily flip
+again.  However, a corner square once gained can never be lost. When that
+happens, the squares two away begin to loom as permanent prizes also. The
+invariants in Othello sometimes really are invariant in an absolute sense.
+The evaluations are hence less subject to error, and the programs are very
+strong indeed.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+There are other factors that make Othello suitable for computers:
+
+	1) The endgame will often decide games, and is very difficult
+           to track for humans, because of the large changes each move
+	   can cause in the position. However, a computer can easily
+	   evaluate the last N (typically 8-12) ply <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>perfectly<span class="moz-txt-tag">_</span></span>, due
+	   to the guaranteed decreasement of the branching factor.
+
+	2) The branching factor (number of possible moves) is
+	   typically less than in e.g. chess.
+
+	3) The positions on the edges are important to the game, but
+           the number of possible configurations is small enough to
+           tabulate, which makes it possible to make a reasonable
+           board evaluation very quickly. (Obviously, edge positions
+	   aren't everything, but they are important).
+
+    Torben Mogensen (<a class="moz-txt-link-abbreviated" href="mailto:torbenm@diku.dk">torbenm@diku.dk</a>)
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Cluedo</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Cluedo</td></tr><tr><td><b>From: </b>bit@ten.ch (Thomas Bischoff)</td></tr><tr><td><b>Date: </b>17/03/1994, 18:57</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+[ Article crossposted from rec.puzzles ]
+[ Author was Andreas Greulich ]
+[ Posted on Thu, 17 Mar 1994 14:45:23 GMT ]
+
+Hi all,
+
+Does anybody know if a strategy for the game Cluedo was ever implemented for
+computers, or if (and where) the game was discussed as far as an optimal
+strategy is concerned?
+
+As I don't know if the game is called the same everywhere, I give a (simplified)
+explanation of the rules. Object of the game is to find out three pieces
+of information (it can be generalized of course), each of which can be one
+of a limited setof possibility - in the original game it is the murderer (6
+possible people), the object with which the victim was killed (6 possible
+objects), and the room in which it happened (9 possible rooms). For each of
+those 21 possibilities there exists one card. At the start, one card of each
+kind is taken out of the game and hidden from all players. The remaining 18
+cards are given to the players (secretly of course). So each player knows
+some negative information, namely cards that are not in the envelope. In turn,
+each player must 'ask' a person, an object and a room (he's free in the
+selection - here I simplify the rules a bit). After having made such a
+question, the player after him eitehr has one of the three cards or not. If
+he has one, he has to show it to the asking player (covered) - if he has several,
+he's free in which card to show. The asking player of course then knows that
+the otehr player has this card. The remaining players only know that he has
+one of the three asked cards, but not which one. If the player has none of
+the cards, he states so (and everybody knows it then), and the next player in
+turn has to show to the asker a card or state he has none - this goes on, until
+either one player did show a card to the asker, or all players (except the asker)
+stated they had none of the three cards. Then, the next player in turns becomes
+the asker. If a player knows the solution (and it's his turn to ask), he solves
+the question and wins.
+
+Object of all your questions of course is to maximize the information you get,
+and to minimize the question the others get. And if you have to show a card and have
+several possibilities, you try to show the one that gives the least information.
+One task is bookkeeping - for example if player A asked 1-7-20 and player B shows
+him a card, you know B has 1, 7 or 20. If later on you get to know that player
+C has card 1, you can now constrain the possibilities for B to 7-20. If, later on,
+player B says to a question of 2-8-20 that he has none, then you know he hasn't
+20 and deduce that he must have 7 (by negative information). Also, you know how many
+cards each player has and can so also constrain some possibilities. But with
+all your questions you must be careful that others don't gain too much information
+(which is difficult to do as you don't know how much they have).
+
+I wonder if something like an "optimal strategy" was ever developped for this game.
+Of coursde heuristice are a possibility.. any ideas?
+
+					Andy
+ 
+
+--
+Thomas K. Bischoff, TEN AG, <a class="moz-txt-link-abbreviated" href="mailto:bit@ten.ch">bit@ten.ch</a>
+
+</pre></div></body>
+</html>
+</table></div>

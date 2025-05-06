@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: New game: Flicker</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: New game: Flicker</td></tr><tr><td><b>From: </b>Luis Bolaños Mures &lt;luis.9.8.87@gmail.com&gt;</td></tr><tr><td><b>Date: </b>28/09/2016, 19:53</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Alas, the following extra rule is needed to make the game truly drawless:
+
+---
+
+A black (x) stone can't be removed if it's one of the two center stones in this pattern, its rotations or mirror images:
+
+.. x x
+x x .
+
+("." points are irrelevant and can be empty or occupied by either player.)
+
+Likewise, with colors reversed, for white stones.
+
+---
+
+However, without this rule, draws can only happen if the board fills up completely and there are at least three instances of the following 7-stone pattern (or its rotations, mirror images or negative images):
+
+o x .
+x x o
+.. o x
+
+Even then, I suspect that this only suffices to enable cooperative cycles. Some crosscuts in other parts of the board are probably needed to create a forced cycle. And that might not be enough yet. It seems logical to think that removing (effectively, flipping) stones in those other crosscuts will have a higher priority than removing (effectively, flipping) the central stone in any instances of the above 7-stone pattern, since the latter can be later undone by the opponent. If that is so, it would mean forced cycles are impossible, which would make the extra rule unnecessary.
+
+This is of course no rigorous proof; if anyone out there has some insights on this, I'd love to hear them.
+
+
+</pre></div></body>
+</html>
+</table></div>

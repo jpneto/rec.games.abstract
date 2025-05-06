@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: tesseracts</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: tesseracts</td></tr><tr><td><b>From: </b>dbd@martha.utcc.utk.edu (David DeLaney)</td></tr><tr><td><b>Date: </b>06/12/1993, 23:28</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:Dec.6.01.33.00.1993.12557@remus.rutgers.edu">&lt;Dec.6.01.33.00.1993.12557@remus.rutgers.edu&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:ejg@remus.rutgers.edu">ejg@remus.rutgers.edu</a>
+(the Count) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:ejg@remus.rutgers.edu">ejg@remus.rutgers.edu</a> (the Count) writes:
+ok, i talked with one of my more mathematically inclined friends tonight and
+we decided it was easier to consider each node of the hypercube as a room, 
+as opposed to my original idea of each edge of the hypercube being one wall
+of a given room.
+we came up with the following arrangement, presuming you number the nodes
+arbitrarily from 1 to 16 and conside the edges between the nodes as the 
+passages between the nodes.  
+ 1 maps to 2,3,4,9
+ 2 maps to 1,6,7,10
+ 3 maps to 1,5,7,11
+ 4 maps to 1,5,6,12
+ 5 maps to 4,3,8,13
+ 6 maps to 4,2,8,14
+ 7 maps to 3,2,8,15
+ 8 maps to 5,6,7,16
+and 9-16 are symmetric to 1-8
+can anyone verify if this is correct?  
+thanks,
+-the count
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+The standard hypercube w/cubes as rooms gives the following arrangement:
+           ___
+          |   |
+          | 6 |
+          |___|
+          |   |
+          | 5 |
+ ___   ___|___|___   ___
+|   | |   |   |   | |   |
+| 7 | | 2 | 3 | 4 | | 8 |
+|___| |___|___|___| |___|
+ in       |   |      in
+front     | 1 |     back
+          |___|
+
+connections - (cube) to (t,l,r,f,back,bot), as they're facing now (t for one
+may be l for another, though):
+             1 to 3,2,4,7,8,6
+             2 to 5,6,3,7,8,1
+             3 to 5,2,4,7,8,1
+             4 to 5,3,6,7,8,1
+             5 to 6,2,4,7,8,3
+             6 to 1,2,4,7,8,5
+             7 to 5,2,4,6,3,1
+             8 to 5,2,4,3,6,1
+
+You "fold" the cubes around 3 so their tops all connect to 5, and their
+bottoms all connect to 1, and their sides connect to each other (2-&gt;7-&gt;4-&gt;8);
+this leaves one face on each cube but 3, each of which connects to 6, which
+is forced to turn "inside-out" around them... Notice that orientation may suffer
+if you make trips between two rooms on different paths - you may end up walking
+on the "wall" or "ceiling". You may want to slide cutouts around a cube for a
+bit to see this.
+
+See Heinlein's "And He Built A Crooked House..." for more details (except
+that his central room's windows should have looked into other rooms...)
+
+Your idea of using the nodes as rooms gives you the "dual" of the hypercube;
+the analogue in three dimensions is a cube &lt;-&gt; an octohedron. I don't think
+much has been written in non-puzzle literature about this (you might try
+parallel computing books), and I'm not gonna try verifying your notation :-).
+
+Dave "only slightly confused" DeLaney
+<div class="moz-txt-sig">-- 
+David DeLaney: dbd@(utkux.utcc | panacea.phys | enigma.phys).utk.edu - collect
+them all! Disclaimers: AFAIK, <b class="moz-txt-star"><span class="moz-txt-tag">*</span>nobody<span class="moz-txt-tag">*</span></b> speaks for U.T.Knoxville (consistently);
+Thinking about this disclaimer (or about high energy theoretical particle  __
+physics) may cause headaches.  .sig virus: Vicki Robinson v2.24; Kibo #: 0 \/
+
+</div></pre></div></body>
+</html>
+</table></div>

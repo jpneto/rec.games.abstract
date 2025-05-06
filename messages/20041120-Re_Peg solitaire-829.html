@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Peg solitaire</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Peg solitaire</td></tr><tr><td><b>From: </b>&quot;Danny Kodicek&quot; &lt;usenet@well-spring.co.uk&gt;</td></tr><tr><td><b>Date: </b>20/11/2004, 00:41</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+"Lucas" <a class="moz-txt-link-rfc2396E" href="mailto:lucasbox76@hotmail.com">&lt;lucasbox76@hotmail.com&gt;</a> wrote in message
+<a class="moz-txt-link-freetext" href="news:78e82e95.0411160939.6b7180c3@posting.google.com">news:78e82e95.0411160939.6b7180c3@posting.google.com</a>...
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Hi,
+
+i'm writing my own version of the peg solitaire game.
+The problem is that my program run too slow. On configurations with 32
+pegs, the
+programs can run even for 30 mins.
+
+I use simple brute force, with a cache that store invalid
+configurations (those that cannot
+be reduced to only one peg).
+I order the edges of the search space with a function that try to
+minimize the covered area
+and the "dispersion" of the board.
+This function work better if i use the look-ahead technique.
+But if the move at deep 10 is wrong, than the program simply have to
+consider too much configurations.
+
+I don't have access to two of the most important books on the subject,
+so i really don't know how to go on.
+
+I know, for example, that there are some necessary conditions called
+"pagoda functions". Can someone explain me how to use and generate
+this functions? Can i use a pagoda function with an arbitrary
+configuration
+of pegs?
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I've found genetic algorithms to be quite effective in solving problems of
+this kind. As a simple example, I wrote a GA program to solve the 8-queens
+problem in chess which it does successfully in only a few seconds on average
+(and would take less time if it wasn't displaying the results as it goes). I
+used a similar program to solve a much more difficult problem of finding a
+precursor to a Game of Life position on a large grid (well, it never quite
+<b class="moz-txt-star"><span class="moz-txt-tag">*</span>solved<span class="moz-txt-tag">*</span></b> it, but after several months' runtime it got pretty close...)
+
+I won't go into details of GAs and how they work (there's plenty of
+information on the subject freely available). The only problem I can see is
+in a sequential game like peg solitaire I'm not sure how you'd encode the
+'genome' - there's probably a standard method but I don't know it. The most
+obvious idea that presents itself is to have a gene for each possible board
+position, but of course that's unworkable in practice. The other is to have
+one gene for each move and the alleles would be the numbers of the pegs, but
+then firstly the vast majority of strands would be impossible in principle
+(because a particular peg can't be moved at that moment or has already been
+removed) and secondly this would put disproportionate weight on the initial
+moves, 'locking in' the early moves and making them hard to change.
+
+I'm quite tempted to give this a go now. But I can't. Still, a project for
+later. Anyway, hope that jargon-ridden answer helps.
+
+Danny
+
+
+
+
+</pre></div></body>
+</html>
+</table></div>

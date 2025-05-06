@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Move ordering</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Move ordering</td></tr><tr><td><b>From: </b>hart@cs.utk.edu (Kevin Hart)</td></tr><tr><td><b>Date: </b>24/09/1993, 17:39</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.chess,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:1993Sep23.190431.22459@rational.com">&lt;1993Sep23.190431.22459@rational.com&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:jdart@donner.Rational.COM">jdart@donner.Rational.COM</a> (Jon Dart) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:CDtJyA.7uJ@knot.ccs.queensu.ca">&lt;CDtJyA.7uJ@knot.ccs.queensu.ca&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:colley@qucis.queensu.ca">colley@qucis.queensu.ca</a> (Paul Colley) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+It's obvious that a trying good moves first improves alpha-beta
+performance.  I'm somewhat baffled as to what a good move-ordering
+might look like.  It seems like a chicken-and-egg proglem:  How do I
+tell the good moves from the bad BEFORE I do the search?
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Other heuristics involve keeping lists of moves that have proven to
+generate good scores elsewhere in the search tree.  For example, moves
+that caused beta cutoff may be kept in a list (sometimes these are
+called "killer" moves).  If the same move is legal elsewhere in the
+tree at the same depth, it will be moved up in the search order, on the
+theory that a move that is good in another position may be good in this
+one, too.  There are several variations of this scheme.
+
+-- Jon
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Geez.  I keep hearing about things <b class="moz-txt-star"><span class="moz-txt-tag">*</span>after<span class="moz-txt-tag">*</span></b> I wrack my brain thinking them
+up.  Hmph.  Anyway, I've been working on Alpha-Beta searching a 6x6 othello
+game for the last few years.  (Please don't tell me this has already been
+done. ;-)  One of the simple Heuristics you  can use in that game is
+'corner moves first'.  I implemented the 'killer' moves a few weeks ago,
+and it improved the performance pretty dramatically, by a factor of
+3-4.  Really simple, 5 element queue of moves  for  each level, most
+recent winning move at the head of the queue.
+  Another one I'm thinking  of trying is minimizing the number of moves
+for the other player.  Should work pretty well for othello, but it's
+expensive, so I'll probably only  do it for the  top 10 moves or so.
+  OK, now for the big question.  Parallel A-B searches.  I know there are
+algorithms out there somewhere, but I can't find any references.  (And
+yes, I did slog through vast tracts of the ACM guide.  Probably the
+wrong tracts though.)  My program's performance  keeps improving, but
+I doubt I'll get  the factor-of-30 that  I could get  by distributing
+it over 30 computers.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+--
+Jon Dart  | 3320 Scott Blvd.,          | <a class="moz-txt-link-abbreviated" href="mailto:jdart@rational.com|">jdart@rational.com|</a>
+Rational  | Santa Clara, CA 95054-3197 |                   |
+         | 408-496-3656               |                   |
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+  Kevin Hart (<a class="moz-txt-link-abbreviated" href="mailto:hart@cs.utk.edu">hart@cs.utk.edu</a>)
+
+</pre></div></body>
+</html>
+</table></div>

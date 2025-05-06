@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>TANBO - New game - Uses Go board - Not a variant</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>TANBO - New game - Uses Go board - Not a variant</td></tr><tr><td><b>From: </b>sasheen@ix.netcom.com (Sasheen)</td></tr><tr><td><b>Date: </b>27/03/1995, 03:29</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.go,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+********************************************************
+
+TTTTTTTTTTTTTT     A         N      N  BBBBBBB    OOOOO
+TTTTTTTTTTTTTT    A A        NN     N  B      B  O     O
+      TT         A   A       N N    N  B      B  O     O
+      TT        AAAAAAA      N  N   N  BBBBBBB   O     O
+      TT       A       A     N   N  N  B      B  O     O
+      TT      A         A    N    N N  B      B  O     O
+      TT     A           A   N     NN  B      B  O     O
+      TT    A             A  N      N  BBBBBBB    OOOOO
+
+
+ N   N  EEEE  W       W     GGG     A    M     M  EEEE
+ NN  N  E     W       W    G       A A   MM   MM  E
+ N N N  EEE    W  W  W     G  GG  AAAAA  M M M M  EEE
+ N  NN  E      W W W W     G   G  A   A  M  M  M  E
+ N   N  EEEE    W   W       GGG   A   A  M     M  EEEE  
+
+ **********************    ****************************            
+             
+             by Mark Steere    March 26, 1995
+
+
+AUTHOR'S NOTE:
+Feel free to distribute this document.     
+
+
+***********************
+
+    INTRODUCTION
+
+***********************
+
+
+TANBO IS LIKE GO
+================
+Tanbo requires a Go board and Go stones.  As in Go, players take turns 
+adding their stones to the board, and occasionally a group of stones 
+is removed.
+
+
+TANBO IS NOT LIKE GO
+====================
+In spite of its similarity to Go, Tanbo is basically a different 
+game.  For example, there is no score in Tanbo.  The object is to 
+completely destroy your opponent.  
+
+
+TANBO IS A GAME OF ROOTS
+========================
+Tanbo crudely models a system of plant roots.  Roots which are 
+growing, competing for space, and dying.  In beginner play, the roots 
+grow much as the roots in a garden. Over time, the roots become shrewd 
+and calculating.
+
+FIGURES A - D are excerpts from a novice game.  FIGURE A is the 
+initial configuration.  FIGURES B AND C show roots growing and 
+competing for space.  In FIGURE D, white has won by eliminating the 
+eight black roots.
+
+
+  FIGURE A: INITIAL SETUP - 16 SEEDS
+            o=WHITE, #=BLACK 
+    A B C D E F G H J K L M N O P Q R S T
+19 |o . . . . . # . . . . . o . . . . . #| 19
+18 |. . . . . . . . . . . . . . . . . . .| 18
+17 |. . . . . . . . . . . . . . . . . . .| 17
+16 |. . . + . . . . . + . . . . . + . . .| 16
+15 |. . . . . . . . . . . . . . . . . . .| 15
+14 |. . . . . . . . . . . . . . . . . . .| 14
+13 |# . . . . . o . . . . . # . . . . . o| 13
+12 |. . . . . . . . . . . . . . . . . . .| 12
+11 |. . . . . . . . . . . . . . . . . . .| 11
+10 |. . . + . . . . . + . . . . . + . . .| 10
+ 9 |. . . . . . . . . . . . . . . . . . .|  9
+ 8 |. . . . . . . . . . . . . . . . . . .|  8
+ 7 |o . . . . . # . . . . . o . . . . . #|  7
+ 6 |. . . . . . . . . . . . . . . . . . .|  6
+ 5 |. . . . . . . . . . . . . . . . . . .|  5
+ 4 |. . . + . . . . . + . . . . . + . . .|  4
+ 3 |. . . . . . . . . . . . . . . . . . .|  3
+ 2 |. . . . . . . . . . . . . . . . . . .|  2
+ 1 |# . . . . . o . . . . . # . . . . . o|  1
+    A B C D E F G H J K L M N O P Q R S T
+ 
+
+  FIGURE B: ROOTS SPREAD VIA HORIZONTAL AND VERTICAL
+            ADJACENCIES.  CLUMPS AND CLOSED LOOPS ARE
+            NOT PERMITTED.
+    A B C D E F G H J K L M N O P Q R S T
+19 |o . . . . # # . . . . . o . . . . . #| 19
+18 |o . o # # # . . . . . . o . . . . . #| 18
+17 |o o o o # . . . . . . . . . # # # # #| 17
+16 |. . . o # . . . . + . . . o o + . . .| 16
+15 |. o o o # . . . . . . . # # o . . . .| 15
+14 |. # . # . . o . o . . . # . o o o o o| 14
+13 |# # # # . . o o o . # # # . . . o . o| 13
+12 |. . . . . . o . o . . . # . . . . . .| 12
+11 |. . . . . . . . o . . . # . . . . . .| 11
+10 |. . . + . . o o o + . . # . . + . . .| 10
+ 9 |. . . . . . # . o o . . # . . . . . .|  9
+ 8 |. . . . . . # . . . . . # . . . . . #|  8
+ 7 |o . . . . . # # # . . o o . . . . . #|  7
+ 6 |. . . . . . . . . . . . o o . . . . .|  6
+ 5 |. . . . . . . . . . . . . . . . . . .|  5
+ 4 |. . . + . . . . . + . . . . . + . . .|  4
+ 3 |. . . . . . . . . . . . # # . . . . .|  3
+ 2 |. . . . . . . . . . . . # . . . . . o|  2
+ 1 |# . . . . . o . . . . . # . . . . . o|  1
+    A B C D E F G H J K L M N O P Q R S T
+
+
+  FIGURE C: 16 ROOTS COMPETE FOR SPACE.  SEPARATE,
+            LIKE-COLORED ROOTS MUST NOT BE JOINED.
+    A B C D E F G H J K L M N O P Q R S T
+19 |o . . . . # # . . # o o o . . . o # #| 19
+18 |o . o # # # . . . # . . o o o o o . #| 18
+17 |o o o o # . . . . # . o . . # # # # #| 17
+16 |. . . o # . . . o # o o o o o + . . #| 16
+15 |. o o o # . . . o # # . # # o . . . o| 15
+14 |. # . # . o o . o . # . # . o o o o o| 14
+13 |# # # # . . o o o . # # # # o . o . o| 13
+12 |. . . # . . o . o . . . # . . o # # o| 12
+11 |. . . # . . . . o . . . # # o o o # #| 11
+10 |. o o + # . o o o + . . # . # + o # .| 10
+ 9 |. o . # # # # . o o o . # # # . o # .|  9
+ 8 |. o . . . . # . . # # # # . # o o # #|  8
+ 7 |o o . . . . # # # . o o o . . # o o #|  7
+ 6 |. o . . . . # . # . o . o o . # . o #|  6
+ 5 |. o # . . . # . . . o . . . . # # o o|  5
+ 4 |# # # # # # # . . + o . . . . # . . o|  4
+ 3 |. o o o o o o . . . . # # # # # # # o|  3
+ 2 |. . o . . . o . . . . . # . # . . . o|  2
+ 1 |# . . . . . o . . . . . # # o o o o o|  1
+    A B C D E F G H J K L M N O P Q R S T
+
+
+  FIGURE D: WHITE WINS BY ELIMINATING THE 8 BLACK ROOTS.
+    A B C D E F G H J K L M N O P Q R S T
+19 |o . o o . o . . . . o o o . . . o . .| 19
+18 |o . o . . o o . . . . . o o o o o o .| 18
+17 |o o o o . o . . . . . o . . . . . . .| 17
+16 |. . . o . o o . o + o o o o o + o o .| 16
+15 <code class="moz-txt-verticalline"><span class="moz-txt-tag">|</span>o o o o . o . o o . . o . . o . o . o<span class="moz-txt-tag">|</span></code> 15
+14 <code class="moz-txt-verticalline"><span class="moz-txt-tag">|</span>o . o . . o o . o . . . . . o o o o o<span class="moz-txt-tag">|</span></code> 14
+13 |. . . . . . o o o . . . . o o . o . o| 13
+12 |. . . . o o o . o o . . . o . o . . o| 12
+11 |o o . . o . . . o . o . . . o o o . .| 11
+10 |. o o o . o o o o + o . . . . + o . .| 10
+ 9 |o o . o o . . . o o o o . . . . o . .|  9
+ 8 |. o o . . o o o o . . . . . . o o . .|  8
+ 7 |o o . o o . o . . . . . . . . . o o .|  7
+ 6 |. o o o . . . o . . . . . . o o . o .|  6
+ 5 <code class="moz-txt-verticalline"><span class="moz-txt-tag">|</span>o o . o . . . o . . . . . . o . o o o<span class="moz-txt-tag">|</span></code>  5
+ 4 |. . o + o . o o . o . . . . o o . . o|  4
+ 3 <code class="moz-txt-verticalline"><span class="moz-txt-tag">|</span>o o o o o o o . o o . . . . o . . . o<span class="moz-txt-tag">|</span></code>  3
+ 2 |. . o . o . o . o . . . . o o . o . o|  2
+ 1 <code class="moz-txt-verticalline"><span class="moz-txt-tag">|</span>o o o o . o o o o o o o . . o o o o o<span class="moz-txt-tag">|</span></code>  1
+    A B C D E F G H J K L M N O P Q R S T
+
+
+***********************
+
+    RULES AND OBJECT
+
+***********************
+
+
+EQUIPMENT
+=========
+Tanbo requires a 19 by 19 Go board, 180 white Go stones, and 181 black 
+Go stones.  One player takes ownership of the white stones and becomes 
+"white".  The other player is "black".  In the diagrams, white is "o" 
+and black is "#".
+
+
+INITIAL SETUP
+=============
+Initially, each player has 8 stones on the board as shown in Figure A.
+The stones are interspersed and evenly spaced over the entire board.
+
+
+BASIC MOVES
+===========
+After setting up this initial configuration, black makes the first
+move.  (A "move" will always mean adding exactly one stone to the
+board.  Stones are never actually moved from one point to another on 
+the board.)  Next white makes a move, and the players continue to take 
+turns adding their stones to the board until one player wins.
+
+A newly added stone must "connect" to exactly one stone of the same 
+color, which is already on the board.  Two points "connect" if they 
+are horizontally or vertically adjacent.  Diagonally adjacent points 
+do not connect.  Several examples of legal and illegal moves appear 
+in the following sections.
+
+Players are not allowed to pass.  You must add exactly one stone to 
+the board during your turn.
+
+
+  FIGURE E: EXAMPLES OF LEGAL AND ILLEGAL MOVES FOR WHITE.
+  LEGAL WHITE MOVES: B19, A15, L17, H12
+  ILLEGAL WHITE MOVES (NO CONNECTION): Q13, H9, M10, S10
+  ILLEGAL WHITE MOVES (2+ CONNECTIONS): E6, P7, F2, H2
+    A B C D E F G H J K L M N O P Q R S T
+19 |o . . . . . # . . . . . o . . . . . #| 19
+18 |o . . . . . # . . . . . o . . . . . #| 18
+17 |o o . . . . # # # . . o o . . . . . #| 17
+16 |o . . + . . # . . + . . o . . + . . .| 16
+15 |. # . . . . # # . . . . . . . . . . .| 15
+14 |# # # # # # . . o o o o o . . . . . .| 14
+13 |# . . # . . o o o . . . # # # . . . o| 13
+12 |. . . # . . . . . . . . . . # . . . o| 12
+11 |. . . # . . . . . . . . . . # . . . o| 11
+10 |. . . # . . # . . + . . . . # + . . .| 10
+ 9 |. . . . . . # . . . . . . . . . . . #|  9
+ 8 |. . . . . . # . . . . o . . . . . . #|  8
+ 7 |o o o o o . # # . . . o o o . # # # #|  7
+ 6 |. . . . . # # . . . . o . . o . . . #|  6
+ 5 |. . . . o . # . . . . o . . o . . . #|  5
+ 4 |. . . + o . . . . + . o o . o + # # #|  4
+ 3 |. . . . o o . . . o # . o o o . # . #|  3
+ 2 |. . . . o . o . . o # # # o . . # o o|  2
+ 1 |# # # # o o o o o o o . # o . . # . o|  1
+    A B C D E F G H J K L M N O P Q R S T
+ 
+
+LEGAL MOVES CONNECT TO EXACTLY ONE STONE OF THE SAME COLOR
+==========================================================
+In FIGURE E, points B19, A15, L17, H12 are examples of legal moves for
+white.  Each of these moves connects to exactly one white stone, 
+already on the board.
+
+
+ILLEGAL MOVES THAT DONT CONNECT TO ANY STONES OF THE SAME COLOR
+===============================================================
+Points Q13, H9, M10, S10 are examples of illegal moves for white.  
+These moves don't connect to any white stones.
+
+
+ILLEGAL MOVES THAT CONNECT TO 2 OR MORE STONES OF SAME COLOR
+============================================================
+Points E6, P7, F2, H2 in FIGURE E are examples of illegal moves for 
+white.  These moves are illegal for white because they each connect to 
+two or more white stones already on the board.  
+
+Point E6 for example is an illegal move for white because it connects 
+to two white stones; one white stone is directly above point E6 and 
+the other is directly below point E6.
+
+Point F2 is an illegal move for white because it connects to four 
+white stones: above, below, to the left, and to the right of point F2.
+
+
+ROOTS
+=====
+By adding stones in this manner, the players form "roots" (A root is a 
+group of interconnected stones of the same color.)  In FIGURE B, roots 
+are just beginning to form.  As the roots grow larger, they compete 
+for limited growing space.
+
+In FIGURE C, there are still 16 roots on the board.  After a few 
+games, players can easily discern the individual roots.
+
+When a single root becomes so constricted that it can no longer grow, 
+the entire root is immediately removed from the board.  The 
+surrounding roots can then grow into the area vacated by the removed 
+root.  (Sometimes two or more roots will run out of growing space 
+simultaneously.  This is discussed separately, in detail below.)
+
+In FIGURE D, white has won the game by eliminating the eight black 
+roots.  (See OBJECT OF THE GAME.)
+
+
+  FIGURE F: IMPOSSIBLE FORMATIONS 
+    A B C D E F G H J K L M N O P Q R S T
+19 |o . . . . . # # # # . . o o . . o . #| 19
+18 |o o . . . . # . . # . . o o . . . . #| 18
+17 |. o o . . . # # # # . . o o . # # . #| 17
+16 |. . o o . . . . . + . . . . . # # . #| 16
+15 |. . . o o . . . . . . . . . . # # # #| 15
+14 |. . . . o o o . . . . . . . . . . . .| 14
+13 |. . . . . o o . . . . . . . . o o o o| 13
+12 |. . . . . . . . . . . . . . . . o o .| 12
+11 |. . . . . . . . . . . . . . . . o . .| 11
+10 |# . . + . . . . . + o . . . . + o . .| 10
+ 9 |# . . . o o o o o . o o o . . . . . .|  9
+ 8 |# # . . o . . . o . o . o . . # # . .|  8
+ 7 |# . . . o . . . o . o o o o . # # # #|  7
+ 6 |# . . . o . # . . . . . . o . # . . .|  6
+ 5 |# . . . . . # # # # # # # . . # . . .|  5
+ 4 |. . . + . . . . # + . . # . . + . . .|  4
+ 3 |# # # # # # o o # # . . # . . . . . .|  3
+ 2 |# # . . . # o o . # . . # . . . . o o|  2
+ 1 |# . . . . . o o o # # # # . . . . o .|  1
+    A B C D E F G H J K L M N O P Q R S T
+ 
+
+
+IMPOSSIBLE FORMATIONS
+=====================
+The rules for adding stones make it impossible for certain types of 
+formations to occur in Tanbo.  In particular, separate roots of the 
+same color will never be joined.  Roots will not form closed loops or 
+clumps.  Every root will contain one of the stones of the initial 
+configuration (shown in FIGURE A).  New roots will never be created 
+during the course of the game.
+
+All of the formations in FIGURE F are impossible.  They cannot be 
+created without violating the rules of Tanbo.
+
+
+THE EXPANDED ROOT
+=================
+When a player makes a move, he connects his newly added stone to only 
+one of his roots.  This root increases in size by one and is referred 
+to as the "expanded root" during the player's turn.
+
+The "expanded root" concept is essential to an understanding of the 
+following sections.
+
+
+ROOT SPACE
+==========
+The "root space" of a root consists of the available legal moves 
+which serve to expand that root.  A root is "free" if it has at least 
+one point of root space.  For example, in FIGURE E, point L4 is the 
+only point of root space for the small black root.  Because that root 
+has root space, it is free.
+
+
+BOUNDED ROOTS
+=============
+A root becomes "bounded" when a move is made which completely deprives 
+that root of root space.  For example, in FIGURE E, if white adds a 
+stone to point L4, white deprives the small black root of root space, 
+therefore bounding it.
+
+Alternatively, white could bound one of his own roots by moving to 
+point S3 in FIGURE E.  Expanding this small white root would leave it 
+with no root space, therefore bounding it.
+
+The "bounded root" concept is central to Tanbo.
+
+
+REMOVING BOUNDED ROOTS
+======================
+When a player makes a move which causes one or more roots to become 
+bounded, he will be required to remove at least one of these bounded 
+roots from the board, during his current turn. This is described in 
+detail in the following sections.
+
+
+  FIGURE G:                    FIGURE H:
+  ROOT IS EXPANDED             EXPANDED, BOUNDED ROOT 
+  AND BOUNDED.                 IS REMOVED.
+    A B C D E F G H J            A B C D E F G H J           
+ 9 |. o . o o # . . #| 9      9 |. o . o o # . . #| 9
+ 8 |o o o o # # # # #| 8      8 |o o o o # # # # #| 8
+ 7 |o . o . # . # . .| 7      7 |o . o . # . # . .| 7  
+ 6 |. o o o # . . # .| 6      6 |. o o o # . . # .| 6  
+ 5 |o o + o # # # # #| 5      5 |o o + o # # # # #| 5  
+ 4 |# # o o o o o o o| 4      4 |# # o o o o o o o| 4
+ 3 |. # + # o # + . .| 3      3 |. # + # o # + . .| 3
+ 2 |# # # # # # o o o| 2      2 |# # # # # # . . .| 2
+ 1&gt;|. # . . # o o .&gt;o&lt;&lt;1      1 |. # . . # . . . .| 1
+    A B C D E F G H J            A B C D E F G H J 
+ 
+
+EXPANDED AND BOUNDED ROOT IS REMOVED FROM THE BOARD
+===================================================
+If you make a move which expands and bounds one of your roots, you 
+must immediately remove this expanded and bounded root from the board. 
+FIGURES G and H demonstrate such a move on a 9 by 9 board.  By moving 
+to point J1 in FIGURE G, white expands and bounds the small white root 
+in the lower right corner.  White must immediately remove the expanded 
+and bounded root, as shown in FIGURE H.
+
+
+  FIGURE I:                    FIGURE J:
+  EXPANDED ROOT AND TWO        ONLY THE EXPANDED, 
+  OTHER ROOTS ARE BOUNDED.     BOUNDED ROOT IS REMOVED.
+    A B C D E F G H J            A B C D E F G H J 
+ 9 |o o # # . # # . .| 9      9 |. . # # . # # . .| 9
+ 8 |. o o # . . # # #| 8      8 |. . . # . . # # #| 8
+ 7 |o . o # # # + # .| 7      7 |. . + # # # + # .| 7
+ 6 |o o o o o # # # #| 6      6 |. . . . . # # # #| 6
+ 5&gt;|# # #&gt;o&lt;+ o o o o|&lt;5      5 |# # # . + o o o o| 5
+ 4 |. . # . o o # o .| 4      4 |. . # . o o # o .| 4 
+ 3 |# . # # # # # o .| 3      3 |# . # # # # # o .| 3
+ 2 |# # # . o o o o o| 2      2 |# # # . o o o o o| 2
+ 1 |# o o o o . o . o| 1      1 |# o o o o . o . o| 1
+    A B C D E F G H J            A B C D E F G H J 
+ 
+
+REMOVE ONLY THE EXPANDED, BOUNDED ROOT - NO OTHER ROOTS
+=======================================================
+If your move expands and bounds one of your roots, and simultaneously 
+bounds one or more additional roots of either color, you must 
+immediately remove the expanded root, and only the expanded root.  
+You must not remove any additional roots during your current turn.  
+The additional roots, which are momentarily bounded during your turn, 
+become free again when you remove the expanded root.
+
+FIGURES I and J demonstrate such a move.  By moving to point D5 in 
+FIGURE I, white expands the white root in the upper left corner.  This 
+move simultaneously bounds three roots: the expanded root, the black 
+root in the lower left corner, and the white root in the lower right 
+corner.  White must immediately remove the expanded root, and only the 
+expanded root, as shown in FIGURE J.
+
+Two roots in FIGURE J, which were momentarily bounded during white's 
+turn, became free again when white removed the expanded, bounded root.  
+The white root in the lower right corner reclaimed its one point of 
+root space.  The black root in the lower left corner gained a few 
+points of root space.
+
+At the conclusion of a turn, there should not be any bounded roots on 
+the board.
+
+
+  FIGURE K:                    FIGURE L:
+  EXPANDED ROOT IS NOT         REMOVE THE TWO 
+  BOUNDED, BUT TWO OTHER       BOUNDED ROOTS.
+  ROOTS ARE BOUNDED.
+    A B C D E F G H J            A B C D E F G H J 
+ 9 |o o # # . . # . .| 9      9 |o o # # . . # . .| 9
+ 8 |. o o # . . # # #| 8      8 |. o o # . . # # #| 8
+ 7 |. . o # # # + # .| 7      7 |. . o # # # + # .| 7
+ 6 |o o o o o # # # #| 6      6 |o o o o o # # # #| 6
+ 5&gt;|# # #&gt;o&lt;+ o o o o|&lt;5      5 |. . + o + . + . .| 5
+ 4 |. . # . o o # o .| 4      4 |. . . . . . . . .| 4
+ 3 |# . # # # # # o .| 3      3 |. . + . + . + . .| 3
+ 2 |# # # . o o o o o| 2      2 |. . . . . . . . .| 2
+ 1 |# o o o o . o . o| 1      1 |. . . . . . . . .| 1
+    A B C D E F G H J            A B C D E F G H J 
+ 
+
+IF ONE OR MORE ROOTS GET BOUNDED, AND THE EXPANDED ROOT IS
+==========================================================
+NOT ONE OF THE BOUNDED ROOTS, REMOVE ALL THE BOUNDED ROOTS.
+===========================================================
+If you move to bound one or more roots of either or both colors, and 
+the expanded root is not one of the bounded roots, you must 
+immediately remove all of the roots which you bounded by making that 
+move.
+
+By moving to point D5 in FIGURE K, white expands the root in the upper 
+left corner, and the expanded root is not bounded.  However, two other 
+roots are bounded by this move: the black root in the lower left 
+corner, and the white root in the lower right corner.  White must 
+immediately remove the two bounded roots, as shown in FIGURE L.
+
+
+SUMMARY - WHEN TO REMOVE ROOTS
+==============================
+In summary, whenever a move causes a single root to be bounded, that 
+root is immediately removed.  When a player's move causes two or more 
+roots to be simultaneously bounded, the player must look at the 
+expanded root.  
+
+If the expanded root is one of the bounded roots, then the expanded 
+root, and only the expanded root is removed.
+  
+Otherwise, if the expanded root is not one of the bounded roots, then 
+all of the bounded roots must be removed.  
+
+The rules for removing roots were designed to ensure that when all 
+eight of a player's roots have been eliminated, the other player will 
+still have at least one root remaining on the board.  This prevents 
+ties from occuring.
+
+
+RETURN OPPOSING ROOTS TO OPPONENT
+=================================
+Whenever you remove an opposing root from the board, you must return 
+its stones to your opponent.  Players never take ownership of opposing 
+stones.  After stones have been returned to their owner, they can be 
+played again during later turns.
+
+
+OBJECT OF THE GAME
+==================
+To win, a player must eliminate all eight of his opponent's roots.  
+One player will always win.  It's impossible to repeat a board 
+configuration in Tanbo.  Therefore a game cannot result in a draw.  
+
+
+  FIGURE M:                    FIGURE N:
+  LAST MOVE OF THE GAME.       WHITE HAS WON THE GAME.
+  BLACK MUST SACRIFICE
+  HIS LAST REMAINING ROOT.
+    A B C D E F G H J            A B C D E F G H J 
+ 9&gt;|o o # # . # # .&gt;#&lt;&lt;9      9 |o o . . . . . . .| 9
+ 8 |. o o # . . # # #| 8      8 |. o o . . . . . .| 8
+ 7 |o . o # # # + # .| 7      7 |o . o . + . + . .| 7
+ 6 |o o o o o # # # #| 6      6 |o o o o o . . . .| 6
+ 5 |o . + o + . # . .| 5      5 |o . + o + . + . .| 5
+ 4 |o o . o o o # # #| 4      4 |o o . o o o . . .| 4
+ 3 |o . + . o # # . #| 3      3 |o . + . o . + . .| 3
+ 2 |o . . . o . # . #| 2      2 |o . . . o . . . .| 2
+ 1 |o . . . o # # # .| 1      1 |o . . . o . . . .| 1
+    A B C D E F G H J            A B C D E F G H J 
+ 
+
+FIGURES M and N show the last turn of a game.  In FIGURE M, each 
+player has one root remaining on the board.  Black's only available 
+move is point J9, and point J9 is also the black root's only remaining 
+point of root space. By moving to point J9, black bounds his last 
+remaining root which he immediately removes from the board, as shown 
+in FIGURE N. White has won the game.
+
+
+  FIGURE O:
+    A B C D E F G H J 
+ 9 |. . . . . . . . .| 9
+ 8 |. o . . . . . # .| 8
+ 7 |. . + . + . + . .| 7
+ 6 |. . . . . . . . .| 6
+ 5 |. . + . + . + . .| 5
+ 4 |. . . . . . . . .| 4
+ 3 |. . + . + . + . .| 3
+ 2 |. # . . . . . o .| 2
+ 1 |. . . . . . . . .| 1
+    A B C D E F G H J 
+
+
+
+BEGINNERS CAN USE A 9 BY 9 BOARD
+================================
+Beginners can play Tanbo on a 9 by 9 board with the initial setup 
+shown in FIGURE O.  After a few games, players will easily distinguish 
+one root from another.  And they will keep track of how much root 
+space each root has available.  Players should advance to the 
+tournament size, 19 by 19 board at this point.
+
+
+***********************
+
+    ORIGINS
+
+***********************
+
+Tanbo was, of course, inspired by Go.  I  concentrated nearly 
+continuously for about three weeks, searching inner space for a new 
+game-playing mechanism.  The result was Tanbo.
+
+I played Tanbo for a year and a half before releasing this document,
+and I plan to keep playing for years to come.
+  
+Tanbo is a subtle game.  There's not a lot of capturing.  As with Go, 
+you must safety your groups and you must fight a series of territorial 
+battles. 
+
+My thanks to Hernan Contreras.  He discovered a bug in the initial set 
+of rules, and he plays Tanbo with me often.
+
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+
+
+
+
+
+
+
+
+The author/inventor can be reached by E-Mail via 
+<a class="moz-txt-link-abbreviated" href="mailto:sasheen@ix.netcom.com">sasheen@ix.netcom.com</a> with the word TANBO in the subject line.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+
+*********o*********o*********o*********o*********o*********o*********o
+
+
+
+
+</pre></div></body>
+</html>
+</table></div>

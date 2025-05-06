@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: &quot;Justice&quot; and &quot;Injustice&quot; -- new games, created by wlod (wh)</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: &quot;Justice&quot; and &quot;Injustice&quot; -- new games, created by wlod (wh)</td></tr><tr><td><b>From: </b>quasi &lt;quasi@null.set&gt;</td></tr><tr><td><b>Date: </b>14/06/2007, 17:51</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,sci.math,alt.pl.matematyka</td></tr><tr><td><div class="moz-header-display-name" style="display:inline;">Reply-To: </div> quasi@null.set</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Thu, 14 Jun 2007 03:59:10 -0500, quasi <a class="moz-txt-link-rfc2396E" href="mailto:quasi@null.set">&lt;quasi@null.set&gt;</a> wrote:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+On Thu, 14 Jun 2007 02:44:05 -0000, Wlodzimierz Holsztynski
+<a class="moz-txt-link-rfc2396E" href="mailto:sennajawa@gmail.com">&lt;sennajawa@gmail.com&gt;</a> wrote:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+BTW, a minor, trivial point about the positions
+which have equal number of stones in the
+initial 0-th position: I say "don't worry, just
+play the game". Seriously, we look at question
+of equality of the plates only AFTER a move.
+Initially, there was no move and no issue.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Ok -- it's your game, so you make the rules, but I think the recursive
+analysis is cleaner if the game is over whenever there's a balance,
+even if right away.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+The 2-plate injustice is more complicated.
+In the position:
+
+(P0)  a  0
+
+the first player is lost for a=1
+and wins if a &gt; 1 (for a=0 there is
+no game--there should be at least 1 stone
+on one of the plates).
+
+In the position
+
+(P0)    a  1
+
+the first player is lost for a=0
+and wins if a &gt; 0.
+
+***
+
+Continue with the 2-plate injustice.
+
+(P0)  a  b
+
+where, say,  a &gt;/ b &gt; 1. Neither player
+wants to leave a configuration  A  B,
+where min(A B) &lt; 2, except for the winning
+configurations  1  0  and  0  1, or else
+the opponent on the next move will be able
+to reach  1  0  or  0  1, and win.
+
+We see that position:
+
+(P0)  2  2
+
+is lost for the first player.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+If you change the rules to allow initial positions to be terminal if
+they balance, then (2,2) would be a win for player 1.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+It follows that position
+
+(P0)  a  2
+
+is won for the first player, for any a &gt; 2.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+That's not so clear. In fact, I think (3,2) is a loss for player 1.
+
+But that's only because of your initialization special case rule --
+another reason to undo that.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Correction: Strike the above sentence.
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+Etc., i.e., by induction, we get the
+following modest theorem:
+
+THEOREM  The 2-plate injustice game, with the
+=======  initial position:
+
+(P0)  a  b
+
+is won for the first player in each of the
+following cases:
+
+(i) a =/= b, and min(a b) &gt; 1 -- then
+passing to position  (P1) min(a b) min(a b)
+is the winning move);
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+For injustice, that would be a losing move. In fact, it would be
+instant suicide.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+For Injustice with 2 plates, here is the correct resolution (I think):
+
+The losing initial positions are:
+       
+    (a,a) where a&gt;=2 where a is even
+    (a,a+1), (a+1,a) where a is even.
+
+All other initial positions are winning.
+
+If you change the rules so that, for Injustice, balanced initial
+positions are immediately winning for player 1, then the losing
+initial positions are:
+
+   (a,a+1), (a+1,a) where a is even.
+
+All other initial positions are winning.
+
+The reason for the proposed rule change is simplicity and consistency.
+
+For example, assuming the rule change, for Injustice, you get the
+following:
+
+No need to bar (0,0) as an initial position. The game is over, player
+1 wins.
+
+The initial position (2,2) is a <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>win<span class="moz-txt-tag">_</span></span> for player 1, not a loss.
+
+Thus, (2,2) is a win for whatever player receives it, regardless of
+whether it's an initial position or a position received during play.
+
+In general, the proposed rule change would imply that the status of a
+position depends only on the position, not on whether it is initial or
+not.
+
+Hence, I strongly recommend changing the rules so as to declare
+balanced positions terminal. The status of such balanced initial
+positions would be the same as if player 2 had just finished moving.
+Thus, for Justice, a balanced initial position would be a win for
+player 2, and for Injustice it would be a loss for player 2.
+
+quasi
+
+
+</pre></div></body>
+</html>
+</table></div>

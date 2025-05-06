@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Chess on spherical boards.</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Chess on spherical boards.</td></tr><tr><td><b>From: </b>tuc@calico.cs.wisc.edu (Brian A. Cole)</td></tr><tr><td><b>Date: </b>11/11/1992, 23:19</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Mark-Jason Dominus (<a class="moz-txt-link-abbreviated" href="mailto:mjd@saul.cis.upenn.edu">mjd@saul.cis.upenn.edu</a>) writes:
+]     A good version of spherical chess would have all the squares be the
+] same, each adjacent to exactly eight others, or so it seems to me.
+] Perhaps you could accomplish it this way:
+]
+] +--+--+--+--+--+--+--+--+
+] |A8|B8|C8|D8|E8|F8|G8|H8|
+] +--+--+--+--+--+--+--+--+
+] |A7|B7|C7|D7|E7|F7|G7|H7|
+] +--+--+--+--+--+--+--+--+
+] |A6|B6|C6|D6|E6|F6|G6|H6|
+] +--+--+--+--+--+--+--+--+
+] |A5|B5|C5|D5|E5|F5|G5|H5|
+] +--+--+--+--+--+--+--+--+
+] |A4|B4|C4|D4|E4|F4|G4|H4|
+] +--+--+--+--+--+--+--+--+
+] |A3|B3|C3|D3|E3|F3|G3|H3|
+] +--+--+--+--+--+--+--+--+
+] |A2|B2|C2|D2|E2|F2|G2|H2|
+] +--+--+--+--+--+--+--+--+
+] |A1|B1|C1|D1|E1|F1|G1|H1|
+] +--+--+--+--+--+--+--+--+
+]
+]     First make file A adjacent to file H; square A,i (for some number i)
+] is orthogonally adjacent to H,i and diagonally adjacent to H,(i+1) and
+] H,(i-1) when these exist.  You now have a cylinder.
+
+everything is ok up to here.
+
+]     Now pinch the ends together: x,g8 (for some letter x) is orthogonally
+] adjacent to (x+4 mod 8),8 and diagonally to (x+3 mod 8),8 and (x+5 mod
+] 8),8.
+
+I don't think this behaves the way you want it to.  Consider the bishop
+starting in F1 that wants to move one sqare "southeast".  Where does it
+end up?  I see two possibilities:
+
+1. bishop faces "south", takes a step, rotates 90 degrees inticlockwise,
+   and takes another step.
+2. bishop faces "east", takes a step, rotates 90 degrees clockwise, and
+   takes another step.
+
+The problem is that these are inconsistent.  The lead to different
+destinations.  Consider:
+
+1. Bishop is stading in F1, and is facing "south" (toward B1).  It takes
+   a step, so in is now in B1 facing B2.  It turns 90 degrees anticlock-
+   wise, so it is now still in B1, but now facing A1.  It takes another
+   step, ending up in A1.
+2. Bishop is stading in F1, and is facing "east" (toward G1).  It takes
+   a step, so in is now in G1 facing H1.  It turns 90 degrees clockwise,
+   so it is now still in G1, but now facing C1.  It takes another step,
+   ending up in C1.
+
+The problem is that going over the poles (created by pinching the ends
+together), the notion of direction gets skewed.  The reason is that the
+"squares" (actually closer to triangles) at the "pinched" ends meet three
+other spaces at edges and meet seven (!) others at its corners (five of
+these at the pole).
+
+
+Again, I think the only way (up to isomorphism) to do it is this way:
+
+        a d c b b c d a
+        g . . . . . . j        Squares with the
+        f . . . . . . i        same letter touch.
+        e . . . . . . h
+        e . . . . . . h        Think of folding the
+        f . . . . . . i        corners up till they
+        g . . . . . . j        meet above the center.
+        a m l k k l m a
+
+brian
+<div class="moz-txt-sig">-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~     _______    _____     ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Brian A. Cole                 |_   _  |  |  ___|    Most people think disc golf
+  <a class="moz-txt-link-abbreviated" href="mailto:tuc@cs.wisc.edu">tuc@cs.wisc.edu</a>               | | | |__| |___     is a joke.    It is not.
+  ...!uwvax!cs.wisc.edu!tuc     |_| |__________|    That gives us the element
+                                                    of surprise.
+
+</div></pre></div></body>
+</html>
+</table></div>

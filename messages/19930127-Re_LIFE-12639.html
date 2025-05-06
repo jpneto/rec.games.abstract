@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: LIFE</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: LIFE</td></tr><tr><td><b>From: </b>torbenm@diku.dk (Torben AEgidius Mogensen)</td></tr><tr><td><b>Date: </b>27/01/1993, 12:18</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:fkschmid@cip.informatik.uni-erlangen.de">fkschmid@cip.informatik.uni-erlangen.de</a> (Frank Schmidt) writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I just wrote a coloured LIFE-program. It works the following:
+Two (or more) groups of cells are put randomly in a 100x100 board,
+where left and right side and upper and lower side are connected.
+Each group has (in the beginning) its own colour.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Then LIFE is running normally, regardless of the colours, but
+every "newborn" cell gets a colour depending on the three
+neighboring cells (its "parents"):
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+- if all parent cells have the same colour, the child gets it, too
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+- if e.g. one parent cell is blue and another is red, the child is white
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+- if one or two cells are e.g. red and the other(s) is/are white,
+  the child will be red
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I once wrote a two-colour life using just plain majority rules for the
+colouring of new cells: the dominant colour from the 3 neighbours
+becomes the new colour. Since there are two colurs and three
+neighbours there will always be a unique dominant colour. If you start
+with a random initial configuration (with random colours for every
+life cell) you fairly quickly get separated areas of different
+colours. It is, however, possible to make e.g. gliders that remain of
+composite colour throughout. An alternative rule that will not cause
+separated areas is to make the new colour the opposite of what the
+above rules say. So three identical neighbours spawns a new cell of
+the opposite colour, and a mixed neighbourhood spawns a new cell in
+the minority colour. I haven't done much testing of this idea, so I
+can't tell you what the global behaviour is.
+
+With three colours there may be three different neighbours, so there
+is no "fair" choice for the new colour. If there are four different
+colours one can say that when there are three different neighbours,
+then the new cell gets the fourth colour (that is, the colour not
+present among the neighbours). I expect these rules to cause
+clustering like the first rules I described, as (I think) will any
+rules where majority causes a new cell of the dominant colour. I have
+no results about gliders etc. remaining composite with all four
+colours, but since any configuration having only two colours will
+behave like the two-colour rules above, gliders retaining at least two
+different colours exist.
+
+With more than four colours we again have the question about what to
+do when the three neighbours are different. I have no elegant solution
+to this problem.
+
+	Torben Mogensen (<a class="moz-txt-link-abbreviated" href="mailto:torben@diku.dk">torben@diku.dk</a>)
+
+</pre></div></body>
+</html>
+</table></div>

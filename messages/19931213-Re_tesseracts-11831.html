@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: tesseracts</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: tesseracts</td></tr><tr><td><b>From: </b>beers@nr-tech.cit.cornell.edu (Jim Beers)</td></tr><tr><td><b>Date: </b>13/12/1993, 14:02</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+   ok, i talked with one of my more mathematically inclined friends tonight and
+   we decided it was easier to consider each node of the hypercube as a room, 
+   as opposed to my original idea of each edge of the hypercube being one wall
+   of a given room.
+   we came up with the following arrangement, presuming you number the nodes
+   arbitrarily from 1 to 16 and conside the edges between the nodes as the 
+   passages between the nodes.  
+     1 maps to 2,3,4,9
+     2 maps to 1,6,7,10
+     3 maps to 1,5,7,11
+     4 maps to 1,5,6,12
+     5 maps to 4,3,8,13
+     6 maps to 4,2,8,14
+     7 maps to 3,2,8,15
+     8 maps to 5,6,7,16
+    and 9-16 are symmetric to 1-8
+
+   can anyone verify if this is correct?  
+   thanks,
+    -the count
+
+I don't usually read this group, but I do know about numbering hypercubes.
+Of course you can arbitrarily number the cube, but the normal method, which
+makes it easier to work with, it to start with 0, and make each direction
+represented by a bit.  Thus connected to 0 would be (in binary)
+  0001 0100
+    | /
+  0000-0010
+     \
+      1000 (fourth dimension)
+
+by inverting each of the four bits, you get the four neighbors, if you 
+want the neighbor in the up direction, invert the bit in the up direction.
+0 connects to 1,2,4,8
+
+1 to 0,3,5,9
+2 to 0,3,6,10
+3 to 1,2,7,11
+4 to 5,6,0,12
+5 to 4,7,1,13
+6 to 7,4,2,14
+7 to 6,5,3,15
+etc.
+
+If your making these room, then each bit could be wall with a door
+and each edge a door.
+
+</pre></div></body>
+</html>
+</table></div>

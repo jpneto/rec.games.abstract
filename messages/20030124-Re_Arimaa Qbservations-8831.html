@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Arimaa Qbservations</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Arimaa Qbservations</td></tr><tr><td><b>From: </b>David Rush &lt;drush@aol.net&gt;</td></tr><tr><td><b>Date: </b>24/01/2003, 10:33</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+"Dan Amodeo" <a class="moz-txt-link-rfc2396E" href="mailto:NotMyAddress@example.com">&lt;NotMyAddress@example.com&gt;</a> writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+"David Rush" <a class="moz-txt-link-rfc2396E" href="mailto:drush@aol.net">&lt;drush@aol.net&gt;</a> wrote,
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I can't help myself, but Arimaa feels a <b class="moz-txt-star"><span class="moz-txt-tag">*</span>lot<span class="moz-txt-tag">*</span></b> like Go.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I've been thinking about how to write an AI program to play Arimaa, and all
+I could think of was writing it like a go program, so I was interested to
+see David's remarks. That doesn't help me much though, because I don't know
+how to write a go program. I assume most go programs look for patterns, and
+then generate candidate moves and evaluations based on the patterns, but I
+have no idea how to do that.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Well, 2d pattern matching is definitely a part of a Go program, but
+it's a fairly hard part. There is a fair amount of literature
+available on the subject. Trawling around on researchindex.org might
+get you to some useful papers.
+
+But the one time I tried to write a Go program, I used a cellular
+automaton to do the strategic planning. It provided a very easy way to
+propagate the influence of a single stone. I'm fairly sure that
+working on the notion of influence is key for Arimaa, but you'll need
+to use a more pedantic means of calculating it.
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+I have yet to actually finish a game, but the move system makes it into
+a game of small increments. I find myself able to radically prune my
+lookahead because of this fact, as well.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I didn't think most go programs used look ahead, though I can imagine how an
+Arimaa program might.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+In Go, you have to use some. It's actually my greatest weakness as a
+Go player. Arimaa tempts you to think that look-ahead can provide a
+solution, but I don't think that is in range with current computing
+technologies.
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+Given a particular situation
+in an area, it is fairy easy to determine the subset of pieces that
+can influence the position over the next turn or two because you know
+that there are no pieces with global influence. 
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+The maximum range of any piece (and that's only in the ortho-normal
+directions) is 4 squares. If a piece is more than 4 squares away it
+cannot come into contact with another piece in one move.
+
+The push-pull rules also allow you to prune pieces which are providing
+backup to the battle front from short-term analysis. They can't affect
+your move on the opponent's next turn because they're blocked by their
+own pieces.
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+The fact that you can
+split your move among several pieces means that direct attacks are
+fairly easy to foil, you have to play for a strategic position that
+narrows your opponents options.
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+If you want to think about it in Chess terms, you can take up to 4
+moves in each turn. If your opponent should maneuver a piece into a
+pushing position (one where he could push on his next turn), you are
+under no obligation to move out of the way. You might very well be
+able to move multiple backup pieces into place. Pulls are rather more
+complicated to defend; I don't really have any good ideas on that
+topic, but it's fairly difficult to arrange enough clear space for
+a pull to be useful.
+
+So the big issue is maneuvering your pieces so that yous opponent is
+encouraged and/or limited to playing the moves that you want from
+him.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Interesting. Could you give a little more detail on both of those points,
+David? By the way, are you thinking of trying for the $10,000 prize?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I hope I have given more detail. No, I'm not trying for the
+prize. It's just not big enough to be worth the effort. The bragging
+rights would be cool, but all I'm really trying to do is understand
+the game. I would only be writing code to see if I've developed good
+ideas.
+
+david rush
+<div class="moz-txt-sig">-- 
+Next to the right of liberty, the right of property is the most
+important individual right ... and ... has contributed more to the
+growth of civilization than any other institution established by the
+human race.
+	-- Popular Government (William Howard Taft)
+
+</div></pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,94 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Somewhat Quet-like quickie?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Somewhat Quet-like quickie?</td></tr><tr><td><b>From: </b>Chip Eastham &lt;hardmath@gmail.com&gt;</td></tr><tr><td><b>Date: </b>05/02/2010, 14:48</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Feb 4, 5:12 pm, Phil Carmody <a class="moz-txt-link-rfc2396E" href="mailto:thefatphil_demun...@yahoo.co.uk">&lt;thefatphil_demun...@yahoo.co.uk&gt;</a>
+wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Chip Eastham <a class="moz-txt-link-rfc2396E" href="mailto:hardm...@gmail.com">&lt;hardm...@gmail.com&gt;</a> writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+On Jan 23, 6:19 pm, Phil Carmody <a class="moz-txt-link-rfc2396E" href="mailto:thefatphil_demun...@yahoo.co.uk">&lt;thefatphil_demun...@yahoo.co.uk&gt;</a>
+wrote in part:
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+Here are some mins/maxes from a few thousand simulations of random
+play on a square grid:
+size 1  2  3  4  5  6  7  8  9 10 11 12 13 14
+min  1  4  4  4  6  7  8  9 10 11 13 14 16 17
+max  1  4  6  8 10 12 14 16 17 19 21 23 24 26
+Greedy algorithms might be able to improve those bounds.
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+There is a six-cell selection which fits on the
+5x5 board but actually "covers" the 6x6 board:
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
++---+---+---+---+---+---+
+| X |   | X |   |   |   |
++---+---+---+---+---+---+
+|   |   |   |   |   |   |
++---+---+---+---+---+---+
+| X |   |   |   | X |   |
++---+---+---+---+---+---+
+|   |   |   |   |   |   |
++---+---+---+---+---+---+
+|   |   | X |   | X |   |
++---+---+---+---+---+---+
+|   |   |   |   |   |   |
++---+---+---+---+---+---+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Thus the minimum for size 6 can be lowered
+to 6.  I wrote a Prolog program to solve
+such puzzles, and it finds the solution
+above in about 10 minutes.  I'm making
+some tweaks to how it intializes the
+board for speed, because you have to
+search in some fashion the entire space
+to confirm no smaller solution exists.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Nice! I did notice such N-fits-into-N+1-with-no-room-for-more
+situations in smaller sizes, but by hand it was too much to look
+at the many various 5's.
+
+I can't say I know enough about prolog to know how it would cope
+with bigger board sizes. I presume that it scales roughly as
+scarily as the N-queens problem.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Hi, Phil:
+
+I confirmed the minimum solutions for 7x7 and 8x8
+boards both required 8 marked cells.  The program
+finds solutions quickly, but exhaustively checking
+nonexistence of 7 cell solutions takes 35 minutes
+for the 7x7 board and 7 1/2 hours for the 8x8 board.
+
+There's more efficiency I should implement, avoiding
+checking symmetric configurations more than once.  I
+place the "first mark" in roughly one-eighth of the
+board, which exploits symmetry partially (as rotating
+and reflecting the board can always thus position one
+of the marked cells).  Fully exploiting the symmetry
+of a square board is a topic that I remember kicking
+around with someone (probably for N-queens) in another
+forum.  Having a little absent-mindedness in recalling
+details...
+
+regards, chip
+
+
+</pre></div></body>
+</html>
+</table></div>

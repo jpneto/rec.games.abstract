@@ -1,0 +1,61 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: New game: Orcoon</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: New game: Orcoon</td></tr><tr><td><b>From: </b>Luis BolaÃ±os Mures &lt;luis.9.8.87@gmail.com&gt;</td></tr><tr><td><b>Date: </b>29/04/2012, 20:45</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+El viernes, 27 de abril de 2012 21:47:34 UTC+2, Luis Bolaños Mures  escribió:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Over the past few days, I've been trying to find more such deadlock patterns by trial and error and have found none yet. This is getting intriguing.
+
+I still think there must be more of them, but if I managed to prove the opposite I might be tempted to ban those two and make Orcoon a pure connection game.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Good news!
+
+After a little more research, I've finally come to the conclusion that there aren't any other deadlock patterns in Orcoon than the four ones (including diagonal connections) that I mentioned in my original post, so I'll probably change the rules to make it a pure, drawless connection game, without races. To be honest, all I have for the moment is a partial proof, but it might be enough to my purposes. Here it goes:
+
+It's an obvious fact that every new deadlock pattern, except for the initial one regarding diagonal connections, is based on the previous ones, i.e. it's a deadlock because trying to connect the stones in it by adding a single stone necessarily results in the formation of a different (and simpler) deadlock. For instance:
+
+3  x x o
+2  x . .
+1  o . x
+
+   a b c
+
+Here, if White plays b2 or Black plays b1, b2 or c2, an illegal diagonal connection will be made. If White plays b1 or c2, instead, the following deadlock is formed:
+
+x . o
+o . x
+
+What I have found out is that there can be no deadlock patterns based on the 5x5 one:
+
+5      o x
+4  x . . .
+3  o . x . o
+2    . . . x
+1    x o
+
+   a b c d e
+
+This pattern has a unique property: all the empty points in it form a closed circuit, and all the relevant points around are occupied by stones belonging to the pattern itself. As a result, it's immune to the influence of any other blocking patterns on the outside. The crucial implication is that, if we remove one stone from this deadlock pattern to try and construct a different one based on it, at least one placement in the inner circuit will be enabled in all cases, thus preventing any blockade:
+
+- Removing the central Black stone enables White c2 and Black b2.
+- Removing the white stone on c1 enables White b3.
+- Removing the black stone on b1 enables White b3.
+- [Rotated points omitted.]
+
+The only thing still to be proved is the impossibility of other deadlock patterns based on the 2x3 and 3x3 ones, but the more I think of it the more confident I am that they are indeed impossible. It seems like the combination of all the patterns up to a certain point always produces at most one new pattern, which suggests that, if there were just one more of them, it would have to contain the 5x5 one, a possibility I have just disproved.
+
+I'm excited about this game now. I loved its gameplay from the beginning, maybe even more so than that of Quentin, but I did have some little reservations about race positions. Now that it's about to turn into a pure connection game, I think it could the best one from this streak of square board static connection games that I have released in the last weeks. I'm aware that the prohibition of several specific formations is still an aesthetic issue, but they are really easy to spot from the first play, and the 5x5 one is extremely rare anyway.
+
+I'd like to read other people's opinions of all this.
+
+
+</pre></div></body>
+</html>
+</table></div>

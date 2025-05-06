@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Connecting Graphs Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Connecting Graphs Game</td></tr><tr><td><b>From: </b>qqquet@mindspring.com</td></tr><tr><td><b>Date: </b>03/03/2009, 15:14</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+
+
+Don Woods wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:qqquet@mindspring.com">qqquet@mindspring.com</a> writes:
+...
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+The game is over as soon as there is exactly one connected graph, no
+more, of line-segments drawn on the grid. The initial single connected
+graph, formed when the first move of the game is made, does not end
+the game. (Otherwise, what a dumb game this would be!)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+The description was a bit confusing because you "borrowed" terms from
+graph theory but didn't quite use them as I expected.  In particular,
+I gather your "connected graph" really means "connected subgraph", in
+that it does not (in most cases) include all the dots/vertices.  Or,
+to put it another way, I <b class="moz-txt-star"><span class="moz-txt-tag">*</span>think<span class="moz-txt-tag">*</span></b> you are deliberately NOT counting all
+the unused vertices, which in graph theory would be connected subgraphs
+each consisting of a single vertex and zero edges.  And then, your
+game-ending condition is that all of the vertices THAT HAVE BEEN USED
+SO FAR are in a single connected subgraph.  That's why you needed to
+add your caveat about the first line segment, so that the single
+subgraph with two vertices and one edge did not end the game.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+
+You are right. I didn't consider that the vertices without edges are
+subgraphs too.
+
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+But assuming I'm correct in interpreting your rules, the game is still
+pretty dumb, because the first player cannot win against best play.
+Proof: Suppose it is possible for the first player to force a win.  In
+that case, after the first move (which by the special rule does not end
+the game), the second player should simply add an edge connecting to one
+of the same vertices.  Now there is a single connected (sub)graph with
+two edges, so the game ends in a 0-0 draw!
+
+How about a different special rule?  Instead of treating the first move
+any differently, just say that the game cannot end if the score is 0-0.
+If playing on a finite grid, you'd also need to say the game ends if ALL
+(or all but one) of the vertices are included in the connected graph,
+since that would mean you could no longer create a separate subgraph so
+no further points can be scored.
+
+	-- Don.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I like your no-0-to-0-tie rule-change. But I am a little confused why
+the second player would know that the first player could force a win,
+and so take a dive to tie the game at 0 points each.
+
+As for a diagram, here is a simple example of 2 connected-subgraphs
+that are then connected by a single line-segment:
+(This is from the no-diagonal version of the game.)
+
+ *--*--*--*--*
+ ...|...|.......
+ *..*--*~~*--*
+ ..........|...
+ *..*..*..*
+
+("|" and "--" are vertical and horizontal line-segments. "~~" is the
+horizontal line segment that is later drawn to connect the 2 separate
+connected subgraphs into one connected subgraph. Each "*" is a vertex.
+The "."'s are place-holders for spacing.  I am sorry that this graph
+looks messed up. Damn proportional font!)
+
+Thanks,
+Leroy Quet
+
+
+
+</pre></div></body>
+</html>
+</table></div>

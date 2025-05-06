@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Jigsaw Puzzles</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Jigsaw Puzzles</td></tr><tr><td><b>From: </b>gordon.cheung@analog.com</td></tr><tr><td><b>Date: </b>09/12/1992, 23:55</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:1992Dec4.220321.18150@husc15.harvard.edu">&lt;1992Dec4.220321.18150@husc15.harvard.edu&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:blom@husc15.harvard.edu">blom@husc15.harvard.edu</a> writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Does the complexity of solving a jigsaw puzzle increase on the order of the
+square of the number of pieces in the puzzle?  Obviously if we compared each
+piece with all the other pieces, this would be so. 
+[...]  But the time series of the model might
+still go up as O(n^2).  Is there any way to do say an FFT on something like
+this?  Or is there some sort of parallel method of solution which would be
+faster?
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+    If you split the puzzle pieces up into groups, then you would only 
+have to fit the pieces within each group. Some nice grouping would be
+edges, colors, patterns, shape... As you get more creative in grouping
+pieces of the puzzle, the time it takes also go down. In fact, you can have 
+levels of groupings, say first level by shape, and in each sub group by
+color and so on. If you can divide down into sub groups of a few pieces,
+your puzzle is only O(n*logm), where m is probalbly fractional unless you
+subdivide by same number of catagorys every time. 
+
+<div class="moz-txt-sig">-- 
+------------------------------------------------------------------------------
+|      Gordon Cheung         <a class="moz-txt-link-abbreviated" href="mailto:gordon.cheung@analog.com">gordon.cheung@analog.com</a>                7E      |
+---------------------------------------------------------------------7X-------
+
+
+</div></pre></div></body>
+</html>
+</table></div>

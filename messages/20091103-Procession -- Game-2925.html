@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Procession -- Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Procession -- Game</td></tr><tr><td><b>From: </b>Leroy Quet &lt;qqquet@mindspring.com&gt;</td></tr><tr><td><b>Date: </b>03/11/2009, 21:00</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>sci.math,rec.puzzles,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+This is a game for any plural number of players.
+Needed: piece of paper and a pen/pencil.
+
+Start by writing a row of n 0's on the piece of paper. (n is a
+positive integer decided beforehand by the players. I suggest an n
+between 5 and 10 for a 2 person game. Slightly more for more players.)
+
+After writing the row of n 0's, write the value of n to the right of
+this row.
+
+Next, the players take turns. On a player's move, he/she copies the
+row (which will be of 0's and 1's) immediately above, but with either
+one 1 changed to a 0, or one 0 changed to a 1. (The player can change
+any one digit she/he chooses, under restrictions -- see below.)
+
+Next, that same player writes down (to the right of the row) the
+lengths of the runs of both 0's and 1's in the row he just wrote down.
+Each "run" is made up completely of 0's or completely of 1's, and is
+bounded by runs of the other digit or by the edge of the row. (No two
+consecutive runs are of the same digit.)
+It doesn't matter if a run is of 0's or 1's. All that matters in this
+game is where each boundary is between each run of 0's and the
+adjacent run of 1's.
+
+* A player, though, cannot change a digit on his move such that the
+multiset of run-lengths (of the row of 0's and 1's just created) has
+already occurred in the game.
+(A "multiset" is a list of numbers where the order of the numbers in
+the list is unimportant, but the number of occurrences of each number
+is indeed important. For example, {1,2,1,3) and (2,1,1,3) would be
+considered to be the same multiset, but (1,2,1,3) and (1,2,3,3) would
+not be the same.)
+
+The last player able to move is the winner.
+
+Sample game. Simple example:
+(n=5)
+
+00000     5
+00010     3,1,1
+10010     1,2,1,1
+10011     1,2,2
+(Can't do 10111 here, for example, because the run-length multiset
+3,1,1 already occurred.)
+00011     3,2
+00001     4,1
+
+The player who wrote 00001 wins, because 10001 (run-lengths 1,3,1),
+01001 (1,1,2,1), 00101 (2,1,1,1), 00011 (3,2), and 00000 (5) each have
+a multiset of run-lengths that already occurred.
+
+
+FYI: The total number of moves in a game is no more than the number of
+(unrestricted) partitions of n. (So, there is a maximum of 7 moves in
+an n=5 game.)
+
+Thanks,
+Leroy Quet
+PS: More of my games here:
+<a class="moz-txt-link-freetext" href="http://gamesconceived.blogspot.com/">http://gamesconceived.blogspot.com/</a>
+
+
+
+</pre></div></body>
+</html>
+</table></div>

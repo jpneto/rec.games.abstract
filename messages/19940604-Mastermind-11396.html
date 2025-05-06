@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Mastermind</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Mastermind</td></tr><tr><td><b>From: </b>marzuola@owlnet.rice.edu (Steven Joseph Marzuola)</td></tr><tr><td><b>Date: </b>04/06/1994, 20:49</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+At least eight people responded to my query about Mastermind.  By
+request, here is a summary of what I found out.
+
+Yes, Knuth has a paper on it, as does somebody else, apparently in the
+mid 1970's.  Two different "optimal" strategies are known: It's
+possible to always guess in at most 5 guesses, using one strategy.
+Another "optimal" strategy may take up to (rarely) six guesses, but
+has a lower average number of guesses, (near 4.5) unless the Hider is
+cheating.
+
+I was given references to:  Math Reviews, the Journal of Recreational
+Mathematics, and to Scientific American, in the columns, "Mathematical
+Gamer" and Dewdney's "Computer Recreations".
+
+Also, I've been told that 1 black and 1 white peg indeed allows for
+the greatest number of possible valid combinations.
+
+My computer implementation was written for an AI class, and wasn't
+intended as an exhaustive study of the game.  It used an alpha-beta
+pruning algorithm with ply-limited minimax search.  It works, but I
+have almost never tested it using 6 positions and 4 colors (too slow,
+given the language (Scheme) and, probably, some gross inefficiencies
+in my code.  Mostly I have worked with 4 positions and 3 colors.)  I'm
+also not satisfied with my heuristic, which is supposed to give a
+value of how "good" the board is for the Guesser at any point.
+
+Thanks to all who responded.
+
+Steve
+
+<div class="moz-txt-sig">-- 
+Steve Marzuola (<a class="moz-txt-link-abbreviated" href="mailto:marzuola@owlnet.rice.edu">marzuola@owlnet.rice.edu</a>)
+"Think of us as the Information Superhighway ... without any information!"
+                                                       -- David Letterman
+Any resemblance to the views of Rice University is strictly coincidental.
+
+</div></pre></div></body>
+</html>
+</table></div>

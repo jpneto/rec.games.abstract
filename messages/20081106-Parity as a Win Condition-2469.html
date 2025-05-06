@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Parity as a Win Condition</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Parity as a Win Condition</td></tr><tr><td><b>From: </b>nickobento@gmail.com</td></tr><tr><td><b>Date: </b>06/11/2008, 14:58</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In designing patterns for my game Mind Ninja (<a class="moz-txt-link-abbreviated" href="http://www.mindninja.com">www.mindninja.com</a>), I've
+come across a type of win condition that I particularly love: parity
+conditions, where one player wins when there is an odd number of
+something on the board, and the other wins when there is an even
+number.  I bring it up here because I don't see the concept used very
+much, but it can be applied in many ways and generally leads to games
+with absolutely fascinating tactics and strategy. Note that in Mind
+Ninja, each player can play <b class="moz-txt-star"><span class="moz-txt-tag">*</span>any<span class="moz-txt-tag">*</span></b> color stone he wants on his turn,
+and that may part of the reason that these parity conditions turn out
+to be so cool in Mind Ninja.  In any case, below I've provided four
+example Mind Ninja patterns that involve parity; I want to see what
+you brilliant game designers can come up with, if you're inclined.
+
+(In all the pattern descriptions below, the word "group" refers to a
+connected group of like-colored stones on the board.  The first one
+below is probably my favorite of all Mind Ninja patterns.)
+
+OddGroup
+The board must be completely full of stones, and there must be an odd
+number of groups consisting of at least X stones.  (the pattern
+chooser specifies X when proposing the pattern.  Somewhere around 7-9
+seems ideal on a standard Mind Ninja HexHex board).  When counting
+groups, sum over groups of <b class="moz-txt-star"><span class="moz-txt-tag">*</span>both<span class="moz-txt-tag">*</span></b> colors.
+
+OddEdge I
+The board must be completely full of stones, and the group of stones
+that touches the highest number of board-edges must touch an odd
+number of board edges.  If there is more than one group that touches
+that number of board edges, that number must still be odd.  The color
+of the group doesn't matter. Even a single stone counts as group.
+Stones in corner spaces touch 2 edges.
+
+OddEdge II
+The board must be completely full of stones, and an odd number of
+groups must touch the edges. When counting groups, sum up over groups
+of both colors. Even a single isolated stone counts as a group.
+
+OddGlom
+The board must be completely full of stones, and an odd number of red
+groups must touch the largest blue group. If there's more than one
+largest blue group, add up the total number of red groups in contact
+with at least one of them. Even a single stone counts as a group.
+
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: NIM algorithm, anyone ?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: NIM algorithm, anyone ?</td></tr><tr><td><b>From: </b>kleber@hanalei.berkeley.edu (Michael Kleber)</td></tr><tr><td><b>Date: </b>26/05/1994, 01:55</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>comp.programming,rec.games.abstract,rec.games.misc</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Oops!  Niel Gall asked about Nim, and his message ended:
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+ Two players take it in turns to remove any number of stones
+ from a single row.  The player to remove the last stone loses.
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+As someone pointed out to me, I blithely went ahead and described
+normal Nim, where the player taking the last stone <b class="moz-txt-star"><span class="moz-txt-tag">*</span>wins<span class="moz-txt-tag">*</span></b>.
+
+The spiffy algorithm for Nim that I posted was "leave the piles so
+that when you xor their sizes (written in binary) together, you get
+zero."  Fortunately, this version ("Mise`re Nim") isn't much harder to
+play.
+
+The question is, when are Nim and M-Nim different?  Well, the first
+obvious case is when there's only one pile left, and it has one stone
+in it.  Then you win if you're playing Nim, and lose if you're playing
+M-Nim.  The same thing happens any time all the piles left have only
+one stone: if the number of piles is odd, you win Nim but lose M-Nim;
+if the number of piles is even, vice versa.
+
+The next step is convincing yourself that that is basically the <b class="moz-txt-star"><span class="moz-txt-tag">*</span>only<span class="moz-txt-tag">*</span></b>
+case where to two games are different.  You see, if <b class="moz-txt-star"><span class="moz-txt-tag">*</span>any<span class="moz-txt-tag">*</span></b> pile has
+more than one thing in it, at some point during the game someone will
+have to make a move to reduce that pile to either 0 or 1 stone.  So
+cut to the end of the game, where there's only <b class="moz-txt-star"><span class="moz-txt-tag">*</span>one<span class="moz-txt-tag">*</span></b> pile left with
+more than 1 stone in it.
+
+If you were playing the "win at Nim" strategy, then when you get there
+is <b class="moz-txt-star"><span class="moz-txt-tag">*</span>has<span class="moz-txt-tag">*</span></b> to be your turn, because when you xor a bigger-than-1 number
+together with a lot of 1's, you get something non-zero.  (The key to
+winning at nim is that the xor is 0 at the end of your turn, and never
+0 at the beginning of your turn.)  So if you use the "win at Nim"
+strategy, you eventually get to the case where the xor is nonzero, it's
+your move, and only one pile has more than one thing in it.  When that
+happens, your Nim-move would have been to reduce that one big pile to
+either 0 or 1 (since that's the only way to get 0 as the xor).  So your
+M-Nim move should be the <b class="moz-txt-star"><span class="moz-txt-tag">*</span>other<span class="moz-txt-tag">*</span></b> one, becase once all remaining piles
+have 1 stone, we know Nim and M-Nim are exactly opposite.
+
+I guess it's kind of interesting that this means you don't need to know
+which verison you're playing until near the end-- once all the piles
+have 1 stone in them, it's really a pretty stupid game, and for
+anything more complicated, the same strategy works in both cases.
+
+--Michael Kleber                 I don't have an overactive imagination...
+  <a class="moz-txt-link-abbreviated" href="mailto:kleber@math.berkeley.edu">kleber@math.berkeley.edu</a>       I have an underactive reality...   --EG
+
+</pre></div></body>
+</html>
+</table></div>

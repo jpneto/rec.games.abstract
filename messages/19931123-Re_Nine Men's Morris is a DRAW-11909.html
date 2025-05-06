@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Nine Men&#39;s Morris is a DRAW</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Nine Men&#39;s Morris is a DRAW</td></tr><tr><td><b>From: </b>johnson@ferret.mot.com (Brad Johnson)</td></tr><tr><td><b>Date: </b>23/11/1993, 15:23</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:1993Nov23.124210.5406@neptune.inf.ethz.ch">&lt;1993Nov23.124210.5406@neptune.inf.ethz.ch&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:gasser@inf.ethz.ch">gasser@inf.ethz.ch</a> (Ralph Gasser) writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+The game of Nine Men's Morris (NMM) has been solved. The game is a draw.
+
+As there are different variations of NMM being played, I will first specify
+the rules I used, then give a short summary of how the solution was computed.
+
+
+RULES
+-----
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+[Rules deleted]
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+       -  The first player who has less than three stones loses.
+       -  The first player who cannot make a legal move loses.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Could you tell me how a draw is defined in this game?
+Unless I'm missing something, it sounds like these losing
+conditions preclude a draw.  That is, if I am the first
+player who can't make a move on his turn, then it looks like
+I lose regardless of whether or not the other player now
+has moves remaining.  And if I am correct in inferring that
+there are never times when two players remove stones at the
+same time, then only one player can go from 4 to 3 stones at one
+time, thus losing regardless of the status of the other player.
+
+My only thought was that the game becomes a draw when both
+players can continue making cyclical moves that will never
+cause either of the losing conditions.  Is that right?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+
+HOW IT WAS SOLVED
+-----------------
+
+Retrograde Analysis (well known from Chess) was used to compute
+databases for all mid- and endgame positions (about 10 billion
+different positions). These positions were split into 28
+separate databases characterized by the number of stones on the
+board i.e. all the 3 White stone against 3 Black stone
+positions, the 4-3, 4-4 ... up to 9-9 positions.
+
+An 18 ply alpha-beta search for the opening phase then found
+the value of the initial position (the empty board). Only the
+9-9, 9-8 and 8-8 databases were needed to establish that the
+game is a draw.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Was the "optimal strategy" discovered that would guarantee
+playing to the draw that was discovered?  I imagine it would
+be some sort of symmetic play on the part of the 2nd player,
+or something like that...?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+Ralph Gasser (<a class="moz-txt-link-abbreviated" href="mailto:gasser@inf.ethz.ch">gasser@inf.ethz.ch</a>)
+Informatik, ETH
+CH-8092 Zurich
+Switzerland
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+
+Brad Johnson (<a class="moz-txt-link-abbreviated" href="mailto:johnson@cig.mot.com">johnson@cig.mot.com</a>)
+
+</pre></div></body>
+</html>
+</table></div>

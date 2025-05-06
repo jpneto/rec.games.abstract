@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Upward-Rightward Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Upward-Rightward Game</td></tr><tr><td><b>From: </b>Leroy Quet &lt;qqquet@mindspring.com&gt;</td></tr><tr><td><b>Date: </b>09/06/2010, 17:11</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Here is a game for 2 players, using an n-by-n grid drawn on paper.
+
+
+Each player has a pen/pencil of a color different than their
+opponent's color.
+
+First, the players take turns filling in the squares, one square per
+move in this part of the game.
+The first player fills in the lower left square with his/her color.
+Thereafter, each player fills in the square (with the player's own
+color) either immediately to the right of or immediately above the
+last square filled in by the previous player.
+
+This crooked "line" of squares continues until it reaches the upper
+right square. (So the last few squares filled in this way may be
+forced to be in the top row or most rightward column.)
+
+
+Then, in the second part of the game, the players take turns filling
+in a number of squares. On a single move, a player fills in any empty
+square (of any color) above or right of any square filled in before in
+the game. Then, in that same move, the player may fill in any number
+of empty squares where each square filled in that move is above or
+right of the square filled in previously by the same player during
+that move. This crooked line of squares may terminate at any time, but
+must contain at least one square.
+
+
+When all n^2 squares of the grid are filled in, the game is over.
+
+Player 1 gets as a score:
+sum{k=1 to n} (product of lengths of runs of squares in row k)
+
+Player 2 gets as a score:
+sum{k=1 to n} (product of lengths of runs of squares in column k)
+
+A "run" contains consecutive squares (in a specific row or column) all
+of the same color (either color), bounded on each side by squares of
+the opposite color (or bounded by the end of the row/column).
+
+Largest score wins.
+
+Here is a completed sample 6-by-6 game:
+x x x o X O
+x x x o O x
+o o o O X o
+o X O X o o
+o O o o o x
+O X o o o o
+
+(Capital X and O are drawn during first part of game. Lower-case
+letters are drawn during second part of game. Sample game played
+without strategy.)
+
+Player 1 gets (sum over rows):
+
+3*1*1*1 + 3*2*1 + 4*1*1 + 1*1*1*1*2 + 5*1 + 1*1*4 = 24 points.
+
+Player 2 gets (sum over columns):
+
+2*4 + 2*1*1*1*1 + 2*4 + 3*1*2 + 1*1*1*3 + 1*1*2*1*1 = 29 points.
+
+Player 2 wins.
+
+And of course, players can play with one pen, and "fill" the squares
+each with a different symbol.
+
+Thanks,
+Leroy Quet
+
+
+
+</pre></div></body>
+</html>
+</table></div>

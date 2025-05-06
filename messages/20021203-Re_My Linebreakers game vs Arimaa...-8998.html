@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: My Linebreakers game vs Arimaa...</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: My Linebreakers game vs Arimaa...</td></tr><tr><td><b>From: </b>&quot;Josh Adelson&quot; &lt;jadelson@columbus.rr.com&gt;</td></tr><tr><td><b>Date: </b>03/12/2002, 09:31</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,rec.games.board</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+"Lionel Bonnetier" <a class="moz-txt-link-rfc2396E" href="mailto:leo@SKIPeasynet.fr">&lt;leo@SKIPeasynet.fr&gt;</a> wrote in message
+<a class="moz-txt-link-freetext" href="news:3dec7262$0$13992$afc38c87@news.easynet.fr">news:3dec7262$0$13992$afc38c87@news.easynet.fr</a>...
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I had a look at the ZoG zrf file, it just contains the rules and
+help text, so I don't see how a bias can sneak in, but I'm not a
+ZoG user so I may have overlooked something.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Well, here's the problem as I see it (and I admit well in advance that I
+haven't got a clue, really):  Mr. Syed did not code the Zillions engine,
+therefore he is not in a position to NECESSARILY best exploit the power of
+the engine.  It's a bad example, but if you read his comments (and bear in
+mind at all times that I admire the man and the game and the challenge) you
+will see that he was not able to implement the "draw" processing of his own
+game in Zillions.  I deserve 10 bucks just for spending the last 2 or 3
+hours trying to do it myself.  For all those who try, you can skip using the
+(verify (piece? allset game-state)) test anywhere inside the draw-condition
+syntax--you can, quite amusingly use (pieces-remaining 0 Rabbit) as a
+draw-condition test, which presumably only tests against the player who last
+moved, but the engine tests this immediately, prior to any rabbits having
+been dropped, and decides that there are no valid moves (which seems
+reasonable).  I can imagine Mr. Syed scratching his head a few times during
+the coding of his ZRF file.
+
+But anyway, the point is that since the Zillions developers themselves have
+developed the "AI" behind their engine, it should be up to them to format
+the rules that engine follows in playing the game.  Mr. Syed really can't be
+expected to write the optimal ruleset, if not for reasons of personal bias,
+then for reasons of expertise.  Was that clear?  It's 4:30 a.m. here, and
+I've been screwing around with Zillions for hours.....
+
+The Elephant
+
+
+</pre></div></body>
+</html>
+</table></div>

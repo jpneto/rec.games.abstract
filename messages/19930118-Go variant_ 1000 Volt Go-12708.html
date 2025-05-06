@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Go variant: 1000 Volt Go</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Go variant: 1000 Volt Go</td></tr><tr><td><b>From: </b>kring@efes.physik.uni-kl.de (Thomas Kettenring)</td></tr><tr><td><b>Date: </b>18/01/1993, 16:42</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.go,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Should articles about Go variants still go to rec.games.go or rather to
+rec.games.abstract?  I crossposted this to both.
+There is a rather funny game invented by Ralf Gering, called 1000 Volt Go...
+It is really playable, and you can think a lot.
+
+The rules are the same as with go, but every move has an effect on the
+stones on the same line.  The stones are thought of as having electric charge,
+meaning that a black stone attracts white stones and repels black ones, but
+only in the moment it is put on the board.
+
+Example:
+
+. . . . . . . . . . X . .
+. . . . . . . . . . . . .
+. . . . . . . . . . . . .
+. . . . X . . . . . . . .
+. . X . . . . . . . . . .
+. . . . . . . . . . . . .
+. . . . . . . . . . X . .
+. O . O . . 1 . . . X . .
+. O . . . O . . . . . . .
+. . . . . . . . . . . . .
+. . . . . . O . . . . . .
+. . . . . . . . . . . O .
+. O . . . . . . . . . . .
+
+If in this situation White puts a stone on the point marked 1, the black
+stone right of it will move as far as possible to the left, the white stone
+left of it will move to the left, and the white stone below will move to the
+bottom.  This is how the board looks afterwards:
+
+. . . . . . . . . . X . .
+. . . . . . . . . . . . .
+. . . . . . . . . . . . .
+. . . . X . . . . . . . .
+. . X . . . . . . . . . .
+. . . . . . . . . . . . .
+. . . . . . . . . . X . .
+. O O . . . O X . . . . .
+. O . . . O . . . . . . .
+. . . . . . . . . . . . .
+. . . . . . . . . . . . .
+. . . . . . . . . . . O .
+. O . . . . O . . . . . .
+
+Only those stones move that are connected with the new one by a straight
+line with no stones in between, that is, never more than four.
+
+This is what can happen now during a move:
+
+1) Stone is put on the board
+2) Up to four stones are moving
+3) Opponent's stones without liberties are removed
+4) Own stones without liberties are removed
+
+These are the rules.
+Here is a beginners' problem.
+White to kill:
+4. . . . . . . . . . . . .
+3. . . O O O O O O O . . .
+2. . . O X X X X X O . . .
+1. . . O X . . . X O . . .
+ a b c d e f g h i k l m n
+
+
+
+White 1 at g1 is bad, as two black stones move and the white stone is captured:
+4. . . . . . . . . . . . .
+3. . . O O O O O O O . . .
+2. . . O X X X X X O . . .
+1. . . O . X . X . O . . .
+ a b c d e f g h i k l m n
+
+Black plays 2 at g1 again and the two stones move back.  Black is alive.
+4. . . . . . . . . . . . .
+3. . . O O O O O O O . . .
+2. . . O X X X X X O . . .
+1. . . O X . X . X O . . .
+ a b c d e f g h i k l m n
+
+Correct is White 1 at f1 (or h1):  Only one stone moves.
+4. . . . . . . . . . . . .
+3. . . O O O O O O O . . .
+2. . . O X X X X X O . . .
+1. . . O . . X . X O . . .
+ a b c d e f g h i k l m n
+
+If Black tries to make two eyes at e1, the g1 stone moves away.  Black is dead.
+4. . . . . . . . . . . . .
+3. . . O O O O O O O . . .
+2. . . O X X X X X O . . .
+1. . . O X . . X X O . . .
+ a b c d e f g h i k l m n
+
+But White has to be careful with capturing them.  Don't start at f1...
+Correct: W c1, W g1, W e1, W g1.  (c1 is necessary because if you omit it,
+the d1 stone will go away when you play e1.)
+ 
+--
+thomas kettenring, 3 dan, kaiserslautern, germany
+Philosophy is the art of drawing conclusions from definitions that have been
+chosen so that one can draw the conclusions one would like to get.
+It immediately follows that philosophy is silly.
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,113 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: New game: [As Yet Unnamed]</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: New game: [As Yet Unnamed]</td></tr><tr><td><b>From: </b>&quot;Steven W. Meyers&quot; &lt;raidingfalcon@gmail.com&gt;</td></tr><tr><td><b>Date: </b>08/12/2011, 06:59</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Dec 8, 12:41 am, luigi <a class="moz-txt-link-rfc2396E" href="mailto:luis.9.8...@gmail.com">&lt;luis.9.8...@gmail.com&gt;</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+On 7 dic, 17:53, luigi <a class="moz-txt-link-rfc2396E" href="mailto:luis.9.8...@gmail.com">&lt;luis.9.8...@gmail.com&gt;</a> wrote:
+
+
+
+
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+You're right that, in order to ensure finitude, it's only necessary
+that the group remains joined <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>after<span class="moz-txt-tag">_</span></span> the move, even if it's split for
+a moment during the move. However, that would imply that, in the rare
+cases where this makes a difference, the available moves for a stone
+depend not only on the "move closer" rule, but also on the "don't
+split" rule; i.e. move generation would actually proceed this way:
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+- Can I move this stone? Yes, if taking it away doesn't split the
+group OR it splits the group BUT you move it in such a way that it's
+joined again AND you're closer to the closest friendly unit as a
+result.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+- Where can I move it? To any point adjacent to the same unit and
+closer to the closest friendly unit AND which joins the moving unit
+again in the rare case that it was split during the move.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+In both steps, the two aforesaid rules have to be inquired. Instead,
+in the current rules as written, the process is simpler: first the
+"don't split" rule determines if a stone can be moved, without
+reference to the second rule, and then the "move closer" rule
+determines its available destination points, without further inquiring
+the first rule; i.e.:
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+- Can I move this stone? Yes, if and only if taking it away doesn't
+split the group.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+- Where can I move it? To any point adjacent to the same unit and
+closer to the closest friendly unit. Period.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Hmm, after giving it a second thought I realized something which
+invalidates that line of reasoning. Allowing groups to be split
+momentarily during a turn isn't more complicated, either conceptually
+or computationally, if you approach move generation in reverse order,
+i.e.: first check which points are valid destination points for a
+stone, then check which stones can move there:
+
+1. Is this a valid destination point for a stone? Yes, if it's
+adjacent to any friendly unit and, when occupied, the distance between
+that unit and the closest friendly unit is reduced.
+
+2. Can this stone be moved there? Yes, if all stones which were joined
+in a single group before the move would remain joined after the move.
+
+On 7 dic, 01:04, "Steven W. Meyers" <a class="moz-txt-link-rfc2396E" href="mailto:raidingfal...@gmail.com">&lt;raidingfal...@gmail.com&gt;</a> wrote:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I'm curious about the restriction that you can't split the
+group any time during the move.  Is this really necessary?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+So no, it isn't. Thanks for pointing this out, Steve. Consider it
+fixed :-)
+
+Just to make things clear, the revised rule for moving groups is as
+follows:
+
+"To move a group, you must pick a stone in it and place it on another
+point adjacent to the group. All stones which were joined in a single
+group before the move must remain joined at the end of the move."- Hide quoted text -
+
+- Show quoted text -
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+The amended rule may not affect actual play much, because as you said
+it's only in rare cases where the difference matters.  It's more about
+following the general game design principle that additional rules,
+restrictions etc. only be included if they're clearly necessary.
+("When in doubt leave it out.")   My revised version of Forms is
+actually more restrictive than the original version, however the
+restrictions clearly result in increased strategic interest.  If the
+improvement had only been marginal, I would have left it alone.
+
+btw I like the starting set-up for Ayu.  It occurs to me that many
+games could perhaps be invented using this set-up to advantage.
+
+Steve
+
+
+
+
+</pre></div></body>
+</html>
+</table></div>

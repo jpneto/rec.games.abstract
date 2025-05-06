@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: defects in abstract games</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: defects in abstract games</td></tr><tr><td><b>From: </b>dseal@armltd.co.uk (David Seal)</td></tr><tr><td><b>Date: </b>07/01/1993, 13:25</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:1993Jan6.174837.15285@midway.uchicago.edu">&lt;1993Jan6.174837.15285@midway.uchicago.edu&gt;</a>
+<a class="moz-txt-link-abbreviated" href="mailto:kwhyte@arthur.uchicago.edu">kwhyte@arthur.uchicago.edu</a> (Kevin Whyte) writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:1993Jan6.085328.28673@risky.ecs.umass.edu">&lt;1993Jan6.085328.28673@risky.ecs.umass.edu&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:trodrigu@spock.ecs.umass.edu">trodrigu@spock.ecs.umass.edu</a> (Tao R or Stephen L) writes:
+ This is definitely not true.  The games which can be reduced to Nim
+(Sprouts can't, and hasn't been solved ... another good game, but the
+three lives per vertex is too arbitrary to call it perfect.) ...
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I wouldn't call the "three lives per vertex rule" arbitrary, since it is the
+only number of lives per vertex that leads to an interesting game. I.e. let
+N-Sprouts be the same game as Sprouts, except that each vertex has N lives.
+Then:
+
+  0-Sprouts is uninteresting: it is an immediate loss for the first player.
+
+  1-Sprouts is uninteresting: starting with N spots, the game will always
+  last a total of floor(N/2) moves, ending with the spots joined in pairs.
+
+  2-Sprouts is uninteresting: starting with N spots, the game will always
+  last a total of N moves. (Outline of proof: at any stage in the game, the
+  position consists of a number of chains of 1 or more spots, each with 2
+  lives left, plus a number of loops of 1 or more spots, ech with 0 lives
+  left. Each move either connects the two endpoints of a chain, converting
+  it into a loop, or links two chains into one: i.e. each move reduces the
+  number of chains by 1. The game cannot end until there are no chains left,
+  since a chain can always be converted into a loop by joining its
+  endpoints. So we start with N chains of length 1, lose 1 chain per move
+  and must end with no chains: there are therefore N moves.)
+
+  3-Sprouts is interesting, and is the game usually known as Sprouts.
+
+  N-Sprouts for N=4 and above is uninteresting, since they <b class="moz-txt-star"><span class="moz-txt-tag">*</span>always<span class="moz-txt-tag">*</span></b> lead
+  to infinite games provided there was at least one initial spot. (After a
+  move, the newly created spot can always be connected to itself, so there
+  is always another move available.)
+
+David Seal
+<a class="moz-txt-link-abbreviated" href="mailto:dseal@armltd.co.uk">dseal@armltd.co.uk</a>
+
+All opinions are mine only...
+
+</pre></div></body>
+</html>
+</table></div>

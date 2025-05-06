@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Naturally finite Go variant: Goncrete</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Naturally finite Go variant: Goncrete</td></tr><tr><td><b>From: </b>luigi &lt;luis.9.8.87@gmail.com&gt;</td></tr><tr><td><b>Date: </b>06/07/2011, 18:12</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+I've long been trying to come up with an elegant, simple set of rules
+which succeeded in making Go into a naturally finite game, without the
+need for superko rules. That hypothetical game would no longer be Go,
+of course, but it should feel as close to Go as possible and preserve
+most of its virtues.
+
+Till now, my only (published) attempt at this particular task was
+Paper and Pencil Go (<a class="moz-txt-link-freetext" href="http://senseis.xmp.net/?PaperAndPencilGo">http://senseis.xmp.net/?PaperAndPencilGo</a>), which
+was interesting but still far from ideal, as making life was too easy.
+
+Now I'm presenting Goncrete, which is a much more balanced game and,
+hopefully, closer to Go in its play.
+
+
+
+GONCRETE
+------------------
+
+The rules are those of Go, with the following exceptions:
+
+a) When one player makes a capture, all the surrounded enemy groups
+are flipped (i.e. converted to the player's color). Then, the player
+must remove one stone from as many of the groups just flipped as
+possible without splitting the newly formed group.
+
+b) The game ends when both players pass in succession or when one
+player loses all his stones as a result of a capture.
+
+c) Suicide is illegal.
+
+d) Area scoring is used.
+
+
+Sample positions:
+-------------------------
+
+A Goncrete board should be much larger than the tiny ones shown here.
+'A' represents White's next move. You'll probably have to paste this
+section into Notepad to make the diagrams look right.
+
+.. A . .        . o . .
+o x o .   -&gt;   o o o .
+.. o . x        . o . x
+
+In this case, the single flipped stone can't be removed, because that
+would split the new White group into four groups.
+
+--
+
+.. o o . o o . x        . o o . o o . x        . o o . o o . x
+o x x A x x o .   -&gt;   o o o o o o o .   -&gt;   o . o o o o o .
+o o o . o o . .        o o o . o o . .        o o o . o o . .
+
+In this case, the group on the left allows the removal of one stone
+without splitting the newly formed group, but the one on the right
+does not. Please note that such removals, when possible, are
+mandatory.
+
+--
+
+.. o A . x        . o o . x        . o o . x
+o x x o .   -&gt;   o o o o .   -&gt;   o . o o .
+o o x o .        o o o o .        o o o o .
+.. o o . .        . o o . .        . o o . .
+
+Here, any of the three flipped stones can be removed. In such cases,
+the result will be exactly the same no matter which stone you choose.
+
+--
+
+x x x        o o o        o o o
+x x x   -&gt;   o o o   -&gt;   o . o
+x A o        o o o        o o o
+
+White's last placement ends the game, as all the Black stones have
+been captured. If the game were allowed to continue, an endless series
+of captures and recaptures would take place. Allowing suicide would
+cause a similar problem.
+
+
+</pre></div></body>
+</html>
+</table></div>

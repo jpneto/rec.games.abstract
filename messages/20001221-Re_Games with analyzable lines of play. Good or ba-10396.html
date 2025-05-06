@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Games with analyzable lines of play. Good or bad?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Games with analyzable lines of play. Good or bad?</td></tr><tr><td><b>From: </b>David desJardins &lt;desj@math.berkeley.edu&gt;</td></tr><tr><td><b>Date: </b>21/12/2000, 20:35</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.board,rec.games.abstract</td></tr><tr><td><div class="moz-header-display-name" style="display:inline;">Reply-To: </div> David desJardins &lt;david@desjardins.org&gt;</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Christopher Dearlove <a class="moz-txt-link-rfc2396E" href="mailto:chris@mnemosyne.demon.co.uk">&lt;chris@mnemosyne.demon.co.uk&gt;</a> writes:
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+The fraction of legal chess positions that would ever need to be reached
+in a strategy that would completely solve the game of chess as played
+from the standard opening position would be many many many orders of
+magnitude less than the total number of chess positions.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Now that's the interesting assertion. Obviously I can see why not all
+positions would have to be considered. I can't see a convincing argument
+why this reduction is significant, let alone many orders of magnitude.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+There's a published paper on this (not available online, to my
+knowledge).  "Information Content of Chess Positions", by Jurg
+Nievergelt.
+
+To convince yourself that the "reasonable positions" are a very tiny
+subset of the set of all legal arrangements, just place the 32 chess
+pieces at random on the chessboard (with perhaps a few out of play), and
+then ask yourself, "Does this position look remotely sensible in actual
+play?"  The answer will be no.  Repeat over and over until you get
+bored.  You'll give up long before you can generate a reasonable
+position at random.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+This is based on the assumption that we use backwards analysis from
+the end of the game. Using forwards analysis from the start of the
+game we have to consider something closer to the number of all
+possible games, not just all possible positions,
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+No, you would use some form of memoization or caching to avoid computing
+the value of the same position over and over.  All modern chess programs
+already do something like this.
+
+                                        David desJardins
+
+</pre></div></body>
+</html>
+</table></div>

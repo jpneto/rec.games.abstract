@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Dao revisited</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Dao revisited</td></tr><tr><td><b>From: </b>David desJardins &lt;desj@math.berkeley.edu&gt;</td></tr><tr><td><b>Date: </b>24/04/2001, 23:27</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr><tr><td><div class="moz-header-display-name" style="display:inline;">Reply-To: </div> David desJardins &lt;david@desjardins.org&gt;</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+"Geoff Summerhayes" (invalid address) writes:
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+As i see it, there are about (16 choose 4) * (12 choose 4) positions,
+since it is relevant who is to move as well, which looks a lot more
+than 400 (it's around 900000)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+.... Couple that with eliminating illegal positions, and we can ignore
+move order when the position is symmetric, I'll stand by my guess
+until I get enough energy to slog through and count them.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I don't understand what you mean by "illegal positions".  Dao has 900900
+ways to arrange the pieces on the board.  Of those, 16636 appear to be a
+win for the first player, 16636 are a win for the second player, and 158
+are wins for both players (hence impossible).  That leaves 867470
+positions.  Each position has at most 8 equivalents under rotation and
+reflection, so that means there are over 100000 distinct positions.  How
+can you get anything remotely close to 400?
+
+The rules of Dao appear to be:
+
+1. Start in this position:
+
+   O . . X
+   . O X .
+   . X O .
+   X . . O
+
+2. X moves first, and then players alternate.
+
+3. A move consists of moving one piece horizontally, vertically, or
+   diagonally.  The piece must move at least one space, and must keep
+   moving in that direction until it reaches the edge of the board, or
+   the next space is already occupied.  (The start position has 16 legal
+   moves for X.)
+
+4. A player wins by achieving any of the following.  All four of the
+   player's pieces in a horizontal or vertical row.  All four of the
+   player's pieces in a 2x2 square.  All four of the player's pieces in
+   the four corners.  One of the player's pieces in a corner and the
+   three adjacent spaces all occupied by the other player.
+
+This certainly seems pretty trivial to solve.  I'm guessing it's a draw.
+
+                                        David desJardins
+
+</pre></div></body>
+</html>
+</table></div>

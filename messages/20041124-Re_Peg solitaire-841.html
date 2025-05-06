@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Peg solitaire</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Peg solitaire</td></tr><tr><td><b>From: </b>Ed Murphy &lt;emurphy42@socal.rr.com&gt;</td></tr><tr><td><b>Date: </b>24/11/2004, 00:04</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Tue, 23 Nov 2004 09:27:32 -0800, lucas wrote:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+The problem is that deciding if a configuration c is reducible to a
+configuration c' is NP-complete. So, it's difficult to have that final
+single final configuration.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+A pagoda function does not completely solve this problem; it simply
+identifies some cases in which c is <b class="moz-txt-star"><span class="moz-txt-tag">*</span>not<span class="moz-txt-tag">*</span></b> reducible to c'.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I could use the rule of three to decide if a game is not playable, but
+the rule of three did not give me a method to enumarate all really
+possible final configuration (the rule of three is only a necessary
+condition).
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I believe the standard peg-solitaire problem has exactly one desired
+final configuration:  only one peg remains, and it is in the exact
+center of the board.  If you have something different in mind, then
+please tell us what it is.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I want to write a program that can solve an arbitrary initial
+configuration,
+created by the user. So i don't know the final configuration.
+
+So, which pagoda function should i use???
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+As many as you can find.  Finding them is difficult, but applying them
+is easy.
+
+Let S be the set of all valid final configurations.
+Let pf() be a pagoda function.
+Let PFC be the minimum value of pf(x) where x is an element of S.
+
+If pf(N) &lt; PFC, then N is not reducible to <b class="moz-txt-star"><span class="moz-txt-tag">*</span>any<span class="moz-txt-tag">*</span></b> element of S, and so
+you can immediately stop considering N.  If pf(N) &gt;= PFC, then N might
+be reducible to one or more elements of S.
+
+If N passes all the pagoda functions that you can find, then you can
+perform more complex types of analysis.
+
+
+
+</pre></div></body>
+</html>
+</table></div>

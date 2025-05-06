@@ -1,0 +1,66 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: One x Twice -- Grid Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: One x Twice -- Grid Game</td></tr><tr><td><b>From: </b>James Dow Allen &lt;jdallen2000@yahoo.com&gt;</td></tr><tr><td><b>Date: </b>14/12/2010, 20:34</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Dec 13, 7:38 pm, Leroy Quet <a class="moz-txt-link-rfc2396E" href="mailto:qqq...@mindspring.com">&lt;qqq...@mindspring.com&gt;</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+What kind of strategies will help you win at this game (if you cannot
+read the other player's mind)?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+To be self-consistent I will continue, perhaps perversely,
+to let Even choose the row and win when an even number
+of cells is occupied at game's end.
+
+Whenever Odd has as many columns to choose from
+as Even has rows, Odd wins with a simple strategy.
+For example, on the 7x7 board he plays
+   1,1,2,1,3,1,4,1,5,1,6,1,7,1
+     *   *   *   *   *   *   *
+Odd will win, at one of the turns marked *.
+
+Whenever Even has more rows to choose from
+than Odd has columns, he wins with a simple strategy.
+For example, on the 6x7 board he plays
+    1,2,1,3,1,4,1,5,1,6,1,7,1
+        *   *   *   *   *   *
+Even will win, at one of the turns marked *.
+
+Despite this simplicity, I did write a general
+solver for the game.  The main driver is trivial
+(at least if one doesn't bother detecting
+equivalence symmetries).  The real work is the
+game matrix solver, but I just borrowed the one
+recently linked to by Chip Eastham, translating
+it to C.  (My Javascript knowledge was near zero,
+but I persevered.   :-)  )
+
+Although they won't arise when Even or Odd
+adopts the optimal strategy mentioned above,
+subpositions can arise with complex strategies.
+For example, consider this position:
+
+     X X . .
+     X . X X
+     X . X X
+     . . X .
+     . X . X
+
+Here, Even's optimal mixed strategy is
+   0.255 / 0.093 / 0.093 / 0.303 / 0.255.
+Odd's optimal mixed strategy is
+   0.076 / 0.409 / 0.440 / 0.076.
+Even wins here with probability .4086.
+
+James Dow Allen
+
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Paddachee, new abstract game, interactive play</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Paddachee, new abstract game, interactive play</td></tr><tr><td><b>From: </b>Bob Harris &lt;plasticnitlion@wrappermindspring.com&gt;</td></tr><tr><td><b>Date: </b>14/01/2004, 14:49</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,rec.puzzles,alt.comp.lang.java-games</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+I posted:
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+I've added a new abstract game to my web site, at
+<a class="moz-txt-link-freetext" href="http://nitlion.home.mindspring.com/paddachee/index.html">http://nitlion.home.mindspring.com/paddachee/index.html</a>
+
+The game is "paddachee", a pattern achievement game.  Players alternate
+marking cells with their color.  If you complete a scoring pattern (for
+example, a 2x2 square) you get some points.  Most points wins.
+
+The applet allows interactive play human-vs-human or human-vs-computer.
+Computer player's ability can be adjusted.  Note that the computer player is
+fairly simple, has no lookahead, but plays a strong game none-the-less.  I
+will probably tweak some settings in the computer player to make it stronger.
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+Gerry Quinn replied:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Quite an interesting game - although the fact that the computer plays well
+with no lookahead suggests it may be a bit too tactical and free-flowing.  Are
+there rule versions that the computer plays poorly on - these may be the very
+ones that make the best game?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I haven't found a set of patterns that the computer plays poorly on.  At
+least, not compared to <b class="moz-txt-star"><span class="moz-txt-tag">*</span>my<span class="moz-txt-tag">*</span></b> playing ability.  The simplest patterns are
+squares and lines, for which a human can keep the scoring fairly low.
+Patterns with a little twist in them (like an L-tetromino for example) are
+so easy to achieve that the game quickly becomes a blood bath.  The computer
+player is much better at seeing all the ways the patterns overlap.
+
+So, at least playing against this program, simple patterns are better.
+Four-in-a-row on the hex grid plays pretty well, with (I think) a good mix
+of threat and block.  Ditto for four-in-a-row and two-by-two square on the
+square grid.  The "mickey-and-minnie" variant also has some interesting
+play, but it takes longer for new players to 'see' the patterns.
+
+The computer player does have deficiencies though.  Because it plays based
+on a simple weighted count of patterns, it doesn't make a distinction
+between a move that creates a single threat of 2 points and a move that
+creates two threats of 1 point each.  The former is easily blocked by the
+opponent, while the latter produces a point that can be claimed.
+
+It also will often leave points on the table.  That is, after making a
+threat where it could claim a point, it chooses to move elsewhere rather
+than claiming that point, trying to build bigger threats.  I can easily
+adjust the weightings to prevent this, but I'm not convinced it's an error
+in play. 
+
+Another deficiency is that, without lookahead, it creates threats for which
+the blocking move is also a strong offensive move for the opponent.
+
+It also will not play far from the blob of previously played pieces.  It's
+not clear to me whether it is better to play a weak offensive or defensive
+move, near the blob, or to start new blobs in different parts of the board.
+
+Thanks for your thoughts,
+Bob H
+
+
+
+
+</pre></div></body>
+</html>
+</table></div>

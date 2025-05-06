@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: 1D surround and capture game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: 1D surround and capture game</td></tr><tr><td><b>From: </b>mathwft@math.canterbury.ac.nz (Bill Taylor)</td></tr><tr><td><b>Date: </b>08/01/2002, 03:57</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+"Alan Baljeu" <a class="moz-txt-link-rfc2396E" href="mailto:abaljeu@sympatico.ca">&lt;abaljeu@sympatico.ca&gt;</a> writes in with an intriguing new game:
+
+|&gt; described as go in 1D, but that doesn't work as a serious game. 
+
+Actually, it does, provided of course that you use the superko rule and
+area scoring, (yet another evidential point in favour of these options).
+
+That is, it does about as well as Alan's new game; which is to say they make for
+fascinating analysis, and interesting tactical/timing battles on a large scale, 
+but neither seem to have any "strategic" element, which detracts somewhat.
+A group of us have done extensive analysis on 1xn go, and other micro-boards.
+
+
+|&gt; So I fiddled with the rules a bit and came up with something with surprisingly
+|&gt; complex strategy.
+
+Complex play, certainly.  As I say, I don't <b class="moz-txt-star"><span class="moz-txt-tag">*</span>think<span class="moz-txt-tag">*</span></b> "strategy" is quite exact.
+
+|&gt; Rules:
+
+I have just touched them up slightly, to remove some slight gaps.  I don't
+think I changed the intent of anything.
+
+-------------
+1. Black and white alternate in placing single stones on a line of n points.
+
+2. If placing a stone thereby removes all the go-liberties of any group of stones
+   of the opposite color, those stones are immediately removed.
+
+3. It is illegal to place a stone where one was just removed.
+
+4. Placing is compulsory if legal, and the game ends when the player having 
+   the move cannot legally place anywhere.
+
+5. The winner is the player with the most stones on the board at game end.
+-------------
+
+Rule 5 looks very natural and proper.  It may be noted that alternative scoring
+methods are possible and natural, e.g. go-area (stones plus uniquely surrounded
+empties), or go-territory (surrounded empties only; with or without captures).
+
+That's actually 4 systems, but I feel Alan's original is far and away the most
+natural.  It would be an interesting study to find (attainable) positions
+where the various scoring rules gave a different winner.
+
+It is intriguing to note that no "seki-like" end positions can possibly arise, 
+i.e. where there is an empty space that cannot be played on. 
+
+Optimum results on boards of size    1   2   3   4   5
+                              are    1  -1   1  -2   1 (being 3-2 in fact)
+
+5 was sufficiently exhausting (by hand) for me to stop there, but no doubt
+computer analysis would be practicable for a little bit further.  It would
+be interesting to see if the alternation in winners continued.
+
+It is obviously possible to have <b class="moz-txt-star"><span class="moz-txt-tag">*</span>ties<span class="moz-txt-tag">*</span></b> on any even or odd length board.  ( &gt;3 )
+
+It is also possible to have <b class="moz-txt-star"><span class="moz-txt-tag">*</span>draws<span class="moz-txt-tag">*</span></b> (in the Conway sense, rather than ties),
+on boards of sufficient lentgh.   One obvious try is to go for a "triple ko".
+
+     . X O . O . O X . X O .      X to move   (length 12)
+
+There is a "ko" at each end, and one in the middle.  With co-operation, it is
+now possible for X to capture far right, then O far left, then X centre,
+then O far right, and so on indefinitely.  This would not necessarily be
+optimal for either player, of course.  It would be fun to find a position
+where a draw was <b class="moz-txt-star"><span class="moz-txt-tag">*</span>optimal<span class="moz-txt-tag">*</span></b>, in that if either broke from the cycle they
+would lose.  The above could even be one such, though I doubt it.
+
+The smallest legal cycle I could find was this  7-boarder...
+
+   O . O . O X .    X to move...
+   O . O X . X .
+   O . O X . X O
+   . X . X . X O
+   . X . X O . O
+   X X . X O . O
+   . . O . O . O
+   . . O . O X .
+   O . O . O X .
+   . X O . O X .        ...now O can take on the <b class="moz-txt-star"><span class="moz-txt-tag">*</span>right<span class="moz-txt-tag">*</span></b> side and repeat 
+                           the original position with reversed direction.
+This gives an 18 (!) cycle.
+
+This one is clearly not optimal.  (X should fill far right in the top posish.)
+
+Here is an example that's part of a 10-cycle on this 8-length board...
+
+   O . . . . O O .
+
+...and I leave the solution as an exercise for the reader!
+
+
+|&gt; Anyone want to challenge me to Alak-11?
+
+Yes; I'll email separately.
+
+------------------------------------------------------------------------------
+        Bill Taylor                    <a class="moz-txt-link-abbreviated" href="mailto:W.Taylor@math.canterbury.ac.nz">W.Taylor@math.canterbury.ac.nz</a>
+------------------------------------------------------------------------------
+        Each game is unique and this one is no different to any other
+------------------------------------------------------------------------------
+
+</pre></div></body>
+</html>
+</table></div>

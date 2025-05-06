@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: The Game of Y... proper board / swap rule</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: The Game of Y... proper board / swap rule</td></tr><tr><td><b>From: </b>jferro@nu.ece.cmu.edu (Jonathan R. Ferro)</td></tr><tr><td><b>Date: </b>23/05/2002, 19:28</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,rec.games.board</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:ed@edcollins.com">ed@edcollins.com</a> (Edward D. Collins) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+2) When playing "Y" against the Zillions engine, the swap rule, as I
+understand it, is not being implemented correctly.
+
+In Hex and other connection games (Twixt) where the swap rule is often
+used, normally after Black makes an opening play, White then chooses
+whether to take this move as his own (swapping) or simply let it be
+and move elsewhere.  However, in this Zillions implementation, Black
+moves, then White moves, and THEN White decides to swap colors.  (If
+White does swap, in effect this gives Black the poorest first move
+possible, but of course it's Black's turn again.)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+That really doesn't sound right.  That would mean that the same Player B
+(starting as White) would make a White move, elect to swap, and then
+immediately make a Black move, all while Player A does nothing.
+
+I think this is a bug in implementing a "3-move swap", which should go:
+A: black move; B: white move; A: black move; B: swap; A: white move.  Or
+it could be a "2-move swap" (less likely, in my opinion), which should
+go: A: black move; B: white move; A: swap; B: black move.  In either
+case, the player who chooses to swap is <b class="moz-txt-star"><span class="moz-txt-tag">*</span>not<span class="moz-txt-tag">*</span></b> the player who gets the
+"extra" move immediately afterward.
+
+For comparison, Richard's PBEM Server implements the game with a
+straight hexagonal grid (as you suggest, this is much easier for a
+general-purpose game engine to work with), and uses a 1-move swap rule.
+See <a class="moz-txt-link-freetext" href="http://www.gamerz.net/pbmserv/y.html">http://www.gamerz.net/pbmserv/y.html</a>
+
+-- Jon
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Could someone please post the rules of Zertz?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Could someone please post the rules of Zertz?</td></tr><tr><td><b>From: </b>Richard Rognlie &lt;richard@sendmail.com&gt;</td></tr><tr><td><b>Date: </b>04/04/2001, 04:23</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>To: </b>Bill Taylor &lt;mathwft@math.canterbury.ac.nz&gt;</td></tr><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+This is all I have...
+
+Details are apparently at <a class="moz-txt-link-abbreviated" href="http://www.gipf.com">www.gipf.com</a>
+
+Richard
+
+
+Introduction to playing Z�rtz on Richards PBeM-server.
+
+   REMARK: this is a testversion of Z�rtz, you shouldn't try it if you
+   don't know the game yet.
+
+   This is not an introduction to Z�rtz. If you don't know the game yet
+   but want to learn then you can go and buy it or check the
+gipf-website
+   (<a class="moz-txt-link-abbreviated" href="http://www.gipf.com">www.gipf.com</a>) for the rules. In any case, you should check the
+   gipf-website to know how the moves of a game are written down.
+
+CHALLENGE          
+
+   The challenge-command for Z�rtz is the same as for most games, just
+   give the userid of both players and the fun can start.
+
+   Example:
+          zertz challenge useridplayer1 useridplayer2
+
+   options:
+
+     * If you use the previous command you will play Z�rtz according to
+       the tournament rules. If you want to play with the standard rules
+       then you have to use the '-standard' option.
+
+        Example:
+                zertz challenge -standard useridplayer1 useridplayer2
+
+     * If a player has only one possible capture-move, then the server
+       will automatically make this move without user-intervention. If
+       you you want to make these moves yourself then you have to use
+the
+       '-noforcedmoves' option when starting the game.
+
+        Example:
+                zertz challenge -noforcedmoves useridplayer1
+                useridplayer2
+
+    MOVE The move-command for Z�rtz is a little more complicated than
+       most games.
+
+        The basic command is of the form:
+                zertz move gamenr userid password zertzmove
+
+       When playing a game of Z�rtz, there are 2 possible actions.
+       Depending on the situation on the board, the implementation will
+       indicate what must be done to go on with the game.
+   
+    1. Normal move, bring a new marble into play and remove a tile
+     ex.
+         gc3,a1
+       The first character of your move indicates the color of the
+marble
+       (W for white, G for gray, B for black) you want to add to the
+       board, followed by the position where you want to place it. Then
+a
+       ',' and the position of the tile you want to remove.
+       There are situations where you can't remove a free tile because
+       there are none. In that case you should use 'xx' for the position
+       of the tile to be removed.
+    2. Capture one or more marbles
+     ex.
+         e1-e3-c4
+       The first position indicates the marble that will jump over other
+       marbles to capture them. After this come separated by '-' the
+       positions it is jumping to.
+
+   How to interpret the ASCII-representation of a z�rtz-game
+     * Every hexagon represents one of the tiles that constitute a
+       z�rtz-board. If a tile is removed from the board then the hexagon
+       is replaced by a dot.
+     * White, gray and black marbles are shown on the board as the
+       letters W, G and B in the middle of a hexagon.
+     * The following drawing shows a typical game-situation:
+                   A4 B5 C6 D7 E6 F5 G4
+                            __
+                         __/G \__
+                      __/  \__/  \
+                     /  \__/  \__/.  __
+                   . \__/  \__/  \__/  \
+                      . \__/  \__/  \__/
+                   .  __/  \__/B \__/  \
+                   __/  \__/  \__/  \__/
+                  /W \__/B \__/  \__/  \
+                  \__/  \__/  \__/  \__/
+                  /B \__/  \__/. \__/  \
+                  \__/  \__/  \   . \__/
+                     \__/  \__/.
+                        \__/  \
+                           \__/
+
+                   A1 B1 C1 D1 E1 F1 G1
+     * Coordinates on a z�rtz-board consist of a letter (A-G) and a
+       number (1-7).
+       The letter indicates the column, the number is the position
+within
+       the column when you start counting from the bottom. The following
+       drawing should make things clear:
+                   A4 B5 C6 D7 E6 F5 G4
+                            __
+                         __/7 \__
+                      __/6 \__/6 \__
+                   __/5 \__/6 \__/5 \__
+                  /4 \__/5 \__/5 \__/4 \
+                  \__/4 \__/5 \__/4 \__/
+                  /3 \__/4 \__/4 \__/3 \
+                  \__/3 \__/4 \__/3 \__/
+                  /2 \__/3 \__/3 \__/2 \
+                  \__/2 \__/3 \__/2 \__/
+                  /1 \__/2 \__/2 \__/1 \
+                  \__/1 \__/2 \__/1 \__/
+                     \__/1 \__/1 \__/
+                        \__/1 \__/
+                           \__/
+
+                   A1 B1 C1 D1 E1 F1 G1
+       The extension to the PBeM-server for playing Z�rtz was written by
+       Kurt Van den Branden (<a class="moz-txt-link-abbreviated" href="mailto:kurtvdb@pandora.be">kurtvdb@pandora.be</a>). If you find a problem
+       or a bug, let him know.
+       o Z�rtz, (C) and (R) Don &amp; Co nv, 1999. All rights reserved.
+
+
+<div class="moz-txt-sig">-- 
+ /  \__  | 
+ \__/  \ | Richard Rognlie / Sr. Technical Consultant / Sendmail, Inc.
+ /  \__/ | <a class="moz-txt-link-freetext" href="http://www.gamerz.net/rrognlie/">http://www.gamerz.net/rrognlie/</a>    <a class="moz-txt-link-rfc2396E" href="mailto:rrognlie@gamerz.net">&lt;rrognlie@gamerz.net&gt;</a>
+ \__/    |
+
+</div></pre></div></body>
+</html>
+</table></div>

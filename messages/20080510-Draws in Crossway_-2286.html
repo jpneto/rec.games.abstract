@@ -1,0 +1,132 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Draws in Crossway?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Draws in Crossway?</td></tr><tr><td><b>From: </b>&quot;marksteere@gmail.com&quot; &lt;marksteere@gmail.com&gt;</td></tr><tr><td><b>Date: </b>10/05/2008, 19:09</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+The possibility of draws in Crossway hasn't been proved or disproved.
+
+Anthony Kam (<a class="moz-txt-link-abbreviated" href="mailto:antkam@alum.mit.edu">antkam@alum.mit.edu</a>) has discovered some interesting
+formations in Crossway, eyes if I may borrow a term from Go.  There
+is a formation with a single hole in which neither player can place a
+stone, and a formation with a double hole (two adjacent unoccupied
+spaces) in which only one of the players can place a stone.
+
+H V .
+V . H
+. H V
+
+
+H H V H V
+V H . V V
+V V . H V
+V H V H V
+H H V H H
+
+
+Its Anthonys believe that a draw cannot occur in Crossway, but it
+has yet to be proven either way.  The presence of the eyes certainly
+would complicate any proof.
+
+Here is an analysis of Crossway by Anthony Kam:
+
+. . . there should be no game position where BOTH players cannot move
+(but the game has not been won). I've worked on this for a few days
+and still could not prove it completely. The best I could do was to
+reduce it to a different (and I hope more intuitively obvious)
+hypothesis below.
+
+-----------------------------
+
+Hypothesis: In any game board situation where H has not won, it is
+possible to find a path P with these properties:
+(1) P consists of a sequence of positions (spots) x1, x2, ... xN such
+that successive positions are connected horizontally or vertically
+(but not diagonally).
+(2) Each position of P is empty or occupied by a V stone.
+(3) P touches the top edge and the bottom edge.
+
+"Proof" of Hypothesis: Consider the set of H stones which can be
+traced (via a sequence of horizontal, vertical or diagonal
+connections) back to the left edge. Call this set X. Consider the set
+of the rest of the H stones and call that set Y. By definition, there
+is no stone in X which is a horizontal/vertical/diagonal connection
+away from any stone in Y. Then, "intuitively" there should be a "thick
+barrier" P which separates X from Y. This barrier can contain V stones
+or empty spots. Moreover, since X stones and Y stones dont even touch
+diagonally, it should be possible to find such a barrier which
+satisfies condition (1) above. I know this "proof" is not a rigorous,
+but it's the best I can do for now.
+
+---------------------------------
+
+Theorem: Assuming the Hypothesis above is correct, then Crossway
+cannot end in a state where neither player can move (and neither has
+won).
+
+Proof: It is sufficient to prove that if H has not won, then either H
+has a move, or V has a move, or V has won. So, consider a board where
+H has not won. By Hypothesis above, we can find a path P with
+properties (1), (2) and (3).
+
+If P consists of all V stones, then V has won.
+
+If P consists of some empty spots, then H and/or V will have a move,
+unless ALL empty spots are of the following form:
+
+VH*
+H?V
+*VH
+
+
+Here, ? is the hole where neither can play. (* = doesnt matter) This
+kind of hole (plus reflections/rotations) is the only situation in
+Crossway where neither player can play to an empty spot.
+
+By assumption, P includes the ? hole. By property (1), P also includes
+the V stones horizontally and vertically connected to the ? hole. Now
+consider a path P' which is the same as P, but excludes all such
+unplayable ? holes. This new path P' now has diagonal connections
+(near where the ? holes used to be), but it now consists of only V
+stones (no holes), and still satisfies condition (3), i.e. it touches
+both the top edge and the bottom edge. Therefore, V has won the game
+via this path P'.
+
+I hope some day, someone can come up with a more complete and elegant
+proof!
+
+And a follow up comment from David J. Bush:
+
+Maybe you can prove that this path P exists with a "robot explorer"
+like in the proof that Hex games are decisive. Call HL the set of all
+H stones connected orthogonally or diagonally to the left edge (you
+call this set X.) Start your robot in the top row, the rightmost cell
+which is empty or V and is adjacent to an HL cell on the left. If no
+HL cell exists in the top row, start in the leftmost cell of the top
+row. The robot has two possible states: drop seeking, or left seeking.
+Start the robot in the drop seeking state. From there, follow this
+algorithm:
+
+If the robot is drop seeking
+Then (If the cell below is HL
+Then move one cell to the right, stay in drop seeking mode
+Else the cell below must be vacant or V. move down one cell and switch
+to left seeking.)
+Else the robot is left seeking.
+If the cell to the left is HL or the robot is on the left edge
+Then stay put and switch to drop seeking
+Else move to the left and stay left seeking.
+
+Repeat this process until you reach the bottom row. The path followed
+may have some extraneous left branches, but should include the desired
+path P. It shouldn't be difficult to prove the robot should always
+reach the bottom.
+
+
+</pre></div></body>
+</html>
+</table></div>

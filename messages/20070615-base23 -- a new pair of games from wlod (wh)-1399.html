@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>base23 -- a new pair of games from wlod (wh)</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>base23 -- a new pair of games from wlod (wh)</td></tr><tr><td><b>From: </b>Wlodzimierz Holsztynski &lt;sennajawa@gmail.com&gt;</td></tr><tr><td><b>Date: </b>15/06/2007, 00:41</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,sci.math,alt.pl.matematyka</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Let
+
+    n = Sum(b_k(n)*2^k : k=0 1 ...}
+
+and
+
+    n = Sum(b_k(n)*2^k : k=0 1 ...}
+
+where b_k = 0 or 1, and t_k = 0 or 1 or 2,
+be the unique positional representations of
+natural number n, respectively binary
+and ternary. Define:
+
+    B(n) := Sum(b_k : k=0 1...}
+
+and
+
+    T(n) := Sum(t_k : k=0 1 ...}
+
+to be the sum of digits, of binary or
+ternary respectively.
+
+Game base23, or rather its both versions,
+start with a natural number  n_0.
+Players alternatively choose on their
+i-th move either
+
+    n_{i+1} := B(n_i)
+
+or
+
+    n_{i+1} := B(n_i)
+
+Now consider the "base23, go 1" version:
+you WIN, when on your move you reach 1.
+
+And the other game, "base23, stay big",
+you LOSE when you reach a number &lt; 3,
+i.e. 1 or 2.
+
+Please, I am not joking. These are TWO
+games, not one. If I were jokin' I'd supply
+you with :-). Yeah, right! :-)
+
+EXAMPLE of a game:
+
+Pos.  n_dec n_bin  n_tern  (move B/T)
+
+(P0)    10    1010     101
+
+(P1)     2       10      2    (either)
+
+Comment: the first player had accidentally
+only one choice, since  B(n_0) = T(n_0) = 2.
+
+If they were playing the "stay big" version, then
+the first player would lose at this very moment.
+
+If they are playing "go 1", then the first player
+loses anyway, because now the 2nd player
+can play:
+
+(P2)     1      1      1      (B)
+
+Can you solve this game for special
+number-theoretical cases? E.g. for
+
+    n_0  :=  2^b * 3^t
+
+*******
+
+Needless to say, both base23 games can be
+generalized to any finite set  X  of positional bases.
+If c is the largest positional base in the set, then
+the "stay big" version is, by definition, lost to
+the player who ends up below c. Call these games
+base_X.
+
+Actually, both versions of base_X can be played
+for any set X, finite or infinite, of the bases, with
+the additional rule-requirement:  n_{i+1} &lt; n_{i}
+for i=1 2...
+
+Of course, this additional rule means that
+you may use only the positional bases
+which are \&lt; n_0. Nevertheless, the notion
+of infinite bases is useful because it assists
+us in defining special classes of "base_X"
+games. E.g. you may have  X := P -- the set
+of all primes, or  X := {2^k : k=1 2...) -- the
+set of powers of 2, etc.
+
+Enjoy,
+
+    Wlod
+
+(Wlodzimierz Holsztynski)
+
+
+
+</pre></div></body>
+</html>
+</table></div>

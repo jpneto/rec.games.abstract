@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Binary Primes Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Binary Primes Game</td></tr><tr><td><b>From: </b>Leroy Quet &lt;qqquet@mindspring.com&gt;</td></tr><tr><td><b>Date: </b>13/01/2011, 13:03</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>sci.math,rec.puzzles,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Repost, with edits, of replies to sci.math so that those at
+rec.puzzles and rec.games.abstract can play along too:
+
+Ilmari Karonen wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+["Followup-To:" header set to sci.math.]
+On 2011-01-12, Leroy Quet <a class="moz-txt-link-rfc2396E" href="mailto:qqquet@mindspring.com">&lt;qqquet@mindspring.com&gt;</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+This is a game for two players.
+
+Start by drawing an n-by-n grid on paper. (I don't suggest that n be
+too big, unless you are playing this game on a computer.)
+
+The players take turn filling in squares, each player filling in one
+empty square per move.
+Each player fills in floor(n^2/4) squares total.
+(So, 2*floor(n^2/4) squares are filled in all together at the game's
+completion.)
+
+Now, interpret the filled-in (black) squares and the blank (white)
+squares in each row and column as the digits of a binary number. In
+any particular row or column, either all the black squares represent a
+0 or all of the black squares represent 1. And the white squares each
+equal the opposite binary digit than the black squares represent in
+that row/column. And the binary number can be read either top to
+bottom, or bottom to top (for each column), or left to right, or right
+to left (for each row).
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+ [snip]
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+Player 1 gets as a score the product of all of the primes in the
+columns.
+Player 2 gets as a score the product of all of the primes in the rows.
+
+The player with the largest score wins.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+If n is even, player 2 can force all the columns to be composite as
+follows: whenever player 1 plays (i,j), play ((i + n/2) mod n, j).
+So, at least for even n, optimal play must result in a tie or a win
+for player 2.
+
+(If player 2 follows that specific strategy, it's easy enough for
+player 1 to force a tie.  My guess would be that this is also the
+outcome of optimal play by both players, although I can't quite prove
+that just now.)
+
+--
+Ilmari Karonen
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+
+Thanks for pointing this out. I am amending the rules to require that
+n be odd as a result. Is it possible to force a win if n is odd, in
+general?
+
+
+Wait, I just saw Don Del Grande's response [where he points out that
+for the n=8 case,
+we can still get the number 17 via "ooo*ooo*", say, even with Ilmari's
+strategy].
+A win for player 2, though, can be forced whenever n is even and not
+of the form 2^m, and
+for most n = 2^m, but not when 2^(n/2) + 1 is a Fermat prime.
+Right?
+
+Thanks,
+Leroy Quet
+
+
+</pre></div></body>
+</html>
+</table></div>

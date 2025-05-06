@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Combining And Dividing Integers Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Combining And Dividing Integers Game</td></tr><tr><td><b>From: </b>pacman@kosh.dhis.org (Alan Curry)</td></tr><tr><td><b>Date: </b>08/07/2011, 09:43</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:75bd8819-454c-4e50-ac7f-513c284bbcbf@c41g2000yqm.googlegroups.com">&lt;75bd8819-454c-4e50-ac7f-513c284bbcbf@c41g2000yqm.googlegroups.com&gt;</a>,
+Leroy Quet  <a class="moz-txt-link-rfc2396E" href="mailto:qqquet@mindspring.com">&lt;qqquet@mindspring.com&gt;</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+Players take turns, on each turn writing any positive integer to the
+end of a growing list of integers. The players do this until there is
+a predetermined number of integers in the list. (The number of
+integers is a multiple of the number of players.)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+It seems like the person who adds the last number to the initial list has a
+lot of control, and should probably be able to win. He gets to make the last
+free choice, after which the moves are much more limited.
+
+But if you randomize who moves first in the second phase, that advantage
+mostly disappears. The person who goes last in the first phase theoretically
+still decides whether the initial position is winnable, but since he doesn't
+know who will go first, he might as well try to make it interesting.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+Players then take turns; on each turn a player rewrites the list with
+one of these changes:
+Either:
+The player changes one integer in the list to a product of any number
+of PROPER divisors, each divisor greater than 1, that all multiply to
+that integer. (The divisors must be placed between the same integers
+in the list as the integer they replaced, but they can be in any order
+amongst themselves between those integers.)
+Or:
+The player replaces two adjacent integers in the list with their sum.
+(The sum goes in the same location within the list as the two integers
+it replaces.)
+
+The first player to get a list completely of primes is the winner.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+In your example you have allowed a 1 in the initial list. It's not clear
+whether you'd consider 1 to be a prime for purposes of game termination. I
+think you should... the idea that you can get a list of just primes and 1's
+and still make an addition move feels wrong. (Note: a 1 will never appear in
+the list except if it was there from the beginning).
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+If a large predetermined number of moves have taken place, and no one
+has yet won, then the game is a tie.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Unnecessary; just make repetition a draw. (This was covered already elsewhere
+in the thread.)
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+
+Example:
+
+2 players:
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I wrote a program to determine optimal play in the second phase for 2
+players, with my preferred interpretations (1 is prime for termination
+purposes, and draws only occur by repeating a position). It turns out that
+your example players made a lot of mistakes.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+List to start:
+2, 4, 10, 4, 1, 10
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+The list construction was perfect, assuming that player 2 put the 10 on the
+end. He gave player 1 a list that allows 11 legal moves, all of which lose.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+P1:
+2, 4, 2, 5, 4, 1, 10
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Player 1 had no good moves available, so this was acceptable. If he'd gone to
+"6 10 4 1 10" he would have put player 2 in a more challenging situation,
+with 2 winning moves, 1 drawing move, and 8 losing moves. By doing
+"2 4 2 5 4 1 10" he's given player 2 an easier position, with 3 winning
+moves, 1 drawing move, and 6 losing moves.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+P2:
+2, 4, 2, 5, 5, 10
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Player 2 made a mistake here, which gives player 1 a chance to win. Correct
+move was "2 2 2 2 5 4 1 10" or "2 4 2 5 2 2 1 10" or "2 4 2 5 4 11"
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+P1:
+2, 6, 5, 5, 10
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Player 1 is doing great! He picked the only winning move. The other 7 moves
+all lose.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+P2:
+2, 6, 5, 15
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Any move would lose, but player 2 did a good job here anyway, picking the
+only move that left player 1 with just a single winning move (and no drawing
+moves) in response.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+P1:
+2, 6, 20
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+And player 1 makes his first mistake. "8 5 15" would have forced a win. Now
+he's given player 2 another chance. But there are 11 moves and 10 of them
+lose. Will player 2 find the correct response?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+P2:
+8, 20
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+No, that wasn't it. Player 2 should have said "2 6 2 10". But player 1 still
+doesn't have an easy job. There are 11 legal moves again, and again 10 of the
+lose. (At this point the end is close enough that at least some of the losing
+moves should be obvious.)
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+P1:
+8, 4, 5
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Player 1 missed the win again. "8 10 2" would have done it. Player 2 gets
+another shot at winning. This time there are 6 legal moves, and 4 of them are
+obvious losers. Of the other 2, only one will guarantee a win. (Figure it
+out, it's getting easy now.)
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+P2:
+12, 5
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+That definitely wasn't it.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+P1:
+2, 3, 2, 5
+
+Player 1 wins.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Finally.
+
+There might be real potential for strategy in this game, but first you'd have
+to learn the endgame patterns.
+
+<div class="moz-txt-sig">-- 
+Alan Curry
+
+
+</div></pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Drat -- Grid Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Drat -- Grid Game</td></tr><tr><td><b>From: </b>torbenm@pc-003.diku.dk (Torben Ægidius Mogensen)</td></tr><tr><td><b>Date: </b>13/05/2009, 10:16</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Leroy Quet <a class="moz-txt-link-rfc2396E" href="mailto:qqquet@mindspring.com">&lt;qqquet@mindspring.com&gt;</a> writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+In the first phase of the game players take turns, each placing ANY
+integer from 1 to n^2 into any empty square of the grid on a turn.
+(The same integer may be used more than once in the grid.)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Players thereafter take turns moving their markers from square to
+orthogonally adjacent square.
+
+if it is possible, player B must move so that the
+numbers of his/her consecutively-moved-on squares have either the same
+greatest common divisor or same absolute difference as the last two
+consecutively-moved-on squares of Player A -- where player A is the
+player who moves just before player B (and where who exactly are
+players A and B changes each move -- player B always being the player
+currently moving).
+
+If there are no such adjacent squares that have the same GCD or
+absolute difference, then player B may move to ANY orthogonally
+adjacent square.
+
+If a player is forced to move onto a square already occupied by
+another player's marker, then the SECOND player to occupy the square
+is removed from competition, and his/her marker is removed from the
+grid. (A player landing on an already occupied square is a 'drat', as
+in "Drat!".)
+
+
+Play continues until there is one remaining player, who is then the
+winner.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+It seems fairly easy to force a draw: I expect there are often cases
+where you by moving back and forth between two squares can force the
+other player to move back and forth between two other squares.  But it
+is probably possible to place the numbers in the first phase so this
+can't happen.
+
+It sounds intersting, though I have a feeling it will be a bit too
+complicated for most players.
+
+A game with similar feel might be to have on each square one of N
+symbols that can be in one of N colours and one of N sizes.  With N=4,
+you get 64 different combinations, so you can fill an 8x8 board with
+one of each.
+
+A move must preserve either shape, colour or size.  Additionally, if
+the previous move preserved, say, colour, you must also preseve colour
+(and similar for shape and size).  If the previous move preserved more
+than one property, you must preserve as many as possible of those.
+This includes that, if you can't preserve any of the previous moves
+preserved property, you can make any move, as long as it preserves
+<span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>some<span class="moz-txt-tag">_</span></span> property.
+
+An 8x8 board may be too big for this, so you could have N=2 and
+distribute two of each of the 8 combinations on a 4x4 board.
+
+You could even build a board out of tiles that have these markings.
+
+You could even use a Set deck: Take only the cards that have one
+symbols (that's 27 cards: three shapes, three colours and three
+shadings), shuffle them and lay 25 of them in a 5x5 grid.
+Alternatively, place them in a staggered grid like this:
+
+
+        +---+
+        |   |
+      +-+-+-+-+
+      |   |   |
+    +-+-+-+-+-+-+
+    |   |   |   |
+  +-+-+-+-+-+-+-+-+
+  |   |   |   |   |
++-+-+-+-+-+-+-+-+-+-+
+|   |   |   |   |   |
++-+-+-+-+-+-+-+-+-+-+
+  |   |   |   |   |
+  +-+-+-+-+-+-+-+-+
+    |   |   |   |
+    +-+-+-+-+-+-+
+      |   |   |
+      +-+-+-+-+
+        |   |
+        +---+
+
+so each card has (up to) six neighbours.
+
+	Torben
+
+
+</pre></div></body>
+</html>
+</table></div>

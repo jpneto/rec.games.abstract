@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Chess variant problem - a bug in Zillions?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Chess variant problem - a bug in Zillions?</td></tr><tr><td><b>From: </b>&quot;John Rowland&quot; &lt;johnr@journeyflow.spamspam.demon.co.uk&gt;</td></tr><tr><td><b>Date: </b>18/11/2003, 10:00</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,rec.games.chess.misc</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Hi all,
+
+I've used Zillions Of Games to develop a new chess variant, but I have hit a
+bizarre problem which suggests a bug in Zillions. When Zillions plays my
+game against itself, white wins nearly all of the time in various
+symmetrical starting positions. The obvious conclusions were that my game
+was flawed or that my rule file was flawed, but the test described below
+suggests otherwise.
+
+I have run the start of a game to see which move white picks as its first
+move, and I have then stepped back to the start position and used the
+richt-click menu to set up a starting position in which <b class="moz-txt-star"><span class="moz-txt-tag">*</span>black<span class="moz-txt-tag">*</span></b> has already
+made the equivalent move before white gets to start the game. In effect, I'm
+giving black the first move. You would expect black to now have the
+advantage, but white still wins nearly every game.
+
+I have examined the code for my game and there is no obvious reason why
+white should win regardless of who goes first. The board is 8*8 square. The
+starting positions are symmetrical between players (like western Chess), and
+each player's starting position has left-right symmetry (unlike western
+Chess). All of the pieces have symmetrical move possibilities, including my
+"pawns" which can move (or capture) backwards as well as forwards, so I have
+not needed the Zillions "symmetry" command to make black's pawns move in the
+reverse direction. The only significant mentions of white and black in the
+Zillions file are to specify 1) the turn order 2) starting positions and 3)
+the "promotion" squares (each player has two "promotion" squares in the far
+corners).
+
+Other possibly pertinent details... I'm running Windows 98 on a very slow
+PC, with WinMX usually running permanently. I have the players set to 3
+minutes per move. The starting positions used are not those specified in the
+ZRF file, but have been set up using the right-click menu and saved as a ZSG
+file - this is very convenient when you are still experimenting with
+starting positions.
+
+There is no checkmateable piece: there are two families of piece in the
+game, and each player must retain at least one member of each family. Loss
+occurs (in Zillions) after one player's last member of one family has been
+captured. (This strange-seeming condition makes a decisive game extremely
+likely, and also effectively eliminates the need to resign, since the end is
+not inevitable until it's practically reached - there is no equivalent in my
+game of KRvK taking a dozen moves to reach its inescapable conclusion. It
+also adds massive variety to the end game undreamt of in western Chess.)
+
+Has anyone seen anything like this white-always-wins bug? Thanks.
+
+<div class="moz-txt-sig">-- 
+John Rowland - Spamtrapped
+Transport Plans for the London Area, updated 2001
+<a class="moz-txt-link-freetext" href="http://www.geocities.com/Athens/Acropolis/7069/tpftla.html">http://www.geocities.com/Athens/Acropolis/7069/tpftla.html</a>
+A man's vehicle is a symbol of his manhood.
+That's why my vehicle's the Piccadilly Line -
+It's the size of a county and it comes every two and a half minutes
+
+
+
+
+</div></pre></div></body>
+</html>
+</table></div>

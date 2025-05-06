@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Multiple/Divisor Blob Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Multiple/Divisor Blob Game</td></tr><tr><td><b>From: </b>Leroy Quet &lt;qqquet@mindspring.com&gt;</td></tr><tr><td><b>Date: </b>31/03/2011, 18:15</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>sci.math,rec.puzzles,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+This game is for 2 players.
+
+Start with an n-by-n grid drawn on paper. (n should be at least 8, I
+suggest.)
+
+The first player fills in any one of the grid's squares to start.
+
+Thereafter, players continue to take turns each filling in one empty
+square each turn.
+After the first move, each square that is filled in must be
+immediately next to (in the direction of above, below, left of, or
+right of) at least one square that is already filled in.
+
+After both players have each filled in floor(n^2/4) squares (for
+2*floor(n^2/4) squares filled in total), the game is over.
+
+Player 1 gets as a score the number of ROWS of the grid meeting this
+condition: Every run-length (of runs each of either all filled in
+squares or all empty squares) in that particular row is either a
+multiple or divisor of every other run length in that row.
+
+Player 2 gets as a score the number of COLUMNS of the grid meeting
+this condition: Every run-length (of runs each of either all filled in
+squares or all empty squares) in that particular column is either a
+multiple or divisor of every other run length in that column.
+
+The player with the largest score wins.
+
+Example: (n=12)
+
+o o * o o o o o o o o o
+o o * * o o * * o o o o
+o o o * * o * * o * * *
+o o o o * * * * * * o *
+o o o * * * * o o * * *
+o o o * o o * o * * * o
+o * * * * * * * o o * o
+o * o o * * o * * o * *
+* * o o * * * * o o * *
+* o o o * o o * * o * o
+* * o * * * o o o * * *
+o o o o o * * o * * * o
+
+Run-lengths of rows:
+(2,1,9)
+(2,2,2,2,4) Point!
+(3,2,1,2,1,3)
+(4,6,1,1)
+(3,4,2,3)
+(3,1,2,1,1,3,1)
+(1,7,2,1,1)
+(1,1,2,2,1,2,1,2) Point!
+(2,2,4,2,2) Point!
+(1,3,1,2,2,1,1,1)
+(2,1,3,3,3)
+(5,2,1,3,1)
+
+Run-lengths of columns:
+(8,3,1)
+(6,3,1,1,1) Point!
+(2,4,1,5)
+(1,2,1,3,3,1,1)
+(2,3,1,5,1)
+(3,2,1,3,1,2)
+(1,6,1,1,2,1) Point!
+(1,3,2,4,2)
+(3,1,1,1,1,1,1,1,1,1) Point!
+(2,4,4,2) Point!
+(2,1,1,8) Point!
+(2,3,2,2,1,1,1)
+
+Player 2 wins, 5 to 3.
+
+Thanks,
+Leroy Quet
+PS: See my other games at:
+<a class="moz-txt-link-freetext" href="http://gamesconceived.blogspot.com/">http://gamesconceived.blogspot.com/</a>
+
+
+
+</pre></div></body>
+</html>
+</table></div>

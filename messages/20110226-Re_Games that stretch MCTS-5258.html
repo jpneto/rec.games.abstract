@@ -1,0 +1,70 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Games that stretch MCTS</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Games that stretch MCTS</td></tr><tr><td><b>From: </b>Greg &lt;dreamwafer@yahoo.com&gt;</td></tr><tr><td><b>Date: </b>26/02/2011, 19:59</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Feb 26, 2:22 pm, <a class="moz-txt-link-abbreviated" href="mailto:markste...@gmail.com">markste...@gmail.com</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+On 26-Feb-2011, Greg <a class="moz-txt-link-rfc2396E" href="mailto:dreamwa...@yahoo.com">&lt;dreamwa...@yahoo.com&gt;</a> wrote:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+On Feb 26, 12:40 pm, <a class="moz-txt-link-abbreviated" href="mailto:markste...@gmail.com">markste...@gmail.com</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+On 26-Feb-2011, Greg <a class="moz-txt-link-rfc2396E" href="mailto:dreamwa...@yahoo.com">&lt;dreamwa...@yahoo.com&gt;</a> wrote:
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+One difficulty I can see with programming MC Oust is
+that move generation is expensive due to the group
+detection required for legal placement and capture.
+</pre></blockquote></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+Yep, that too. Oust is reportedly difficult to program
+efficiently even*without* the AI.
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+My 11x11 Oust program searches 4 ply deep and
+examines over 100k moves at 5 secs/move running on a
+"vintage" 2.8Ghz Pentium.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Exactly.  Now run that 80 ply deep and hope the universe doesn't turn cold
+[shaking head, palms outstretched, etc.]
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+The 4 ply search is for a full width alpha-beta search so it
+propagates exponentially.  For an off the cuff back of the envelope
+calculation, let's say there's on average 40 moves/player on the 11x11
+board.  The 4 ply search above corresponds to roughly 40^4 = 2560k
+moves generated.  Due to other factors (e.g. alpha-beta pruning, not
+actually completing the 4th ply), let's knock that down further to a
+conservative 1000k moves generated.  Assume that a single UCT playout
+is typically 80 moves deep from the opening.  1000k/80 would equate to
+approx 13k UCT playouts.  Not huge, but not trivial either, and Axiom
+doesn't result in the fastest possible speed due to it being a general
+game system.
+
+Now, if move generation was made "smarter" via incremental group
+management, that number could rise dramatically.  Also, there might be
+other insights which trade less accurate playouts with a rise in
+playouts that are advantageous.
+
+IMO, no one (including me) has made a compelling argument for or
+against the viability of a UCT player for Oust.  An existence proof
+would help.
+
+-- Greg
+
+
+
+
+</pre></div></body>
+</html>
+</table></div>

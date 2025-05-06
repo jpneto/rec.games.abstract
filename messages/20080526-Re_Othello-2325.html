@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Othello</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Othello</td></tr><tr><td><b>From: </b>torbenm@pc-003.diku.dk (Torben Ægidius Mogensen)</td></tr><tr><td><b>Date: </b>26/05/2008, 09:45</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+jm <a class="moz-txt-link-rfc2396E" href="mailto:jm@alb.fr">&lt;jm@alb.fr&gt;</a> writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Dear sir,
+
+Thanks you very much for your answer, you gave me very interesting tricks.
+
+I have just a question about this part :
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+     2. For positions with N empty spaces (starting with N=1 and
+        moving up), let value be determined by the values of positions
+        reachable in one move (by placing a piece in one empty space).
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+When you say to place a piece in one empty space, you mean to try all
+the possibilities with the current color and do an average of them ?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+More or less, but maybe the average is not the best possibility.
+
+Assume that, when you evaluate a position, it is the opponent's turn
+to move next.  So it makes sense to take the value of the opponents
+best move as the value of the position.  So, for all empty squares
+that the opponent can fill, find the resulting position after the move
+and look up its value in the table, and then take the value that is
+best for the opponent as the value of the position.
+
+There are a few complications:
+
+ 1. Since you don't have the full board (but only two rows), you don't
+    know exactly which empty spaces the opponent can move in.
+
+ 2. For the same reason, you don't know exactly which pieces to flip
+    when a move is made.
+
+So you must approximate in both cases.
+
+A reasonable approximation for the first point is that the opponent
+can place in an empty square in the edge row if you have a
+neighbouring piece in the near-edge row and that the opponent can
+always place in any empty near-edge space.
+
+For the second point, you can get exact results for lines parallel to
+the edge (as you have full information for these), so it is only for
+the three lines that go away from the edge that you need to
+approximate. For near-edge spaces, these are entirely outside the area
+you investigate, so you need no approximation.  For edge spaces, you
+can make the approximation that, if there is one of your pieces on the
+near-edge row on the line in question, then the opponent will flip
+that.  Or you can try both possibilities (flip or no flip) and take
+the average value of the resulting positions.
+
+	Torben
+
+
+</pre></div></body>
+</html>
+</table></div>

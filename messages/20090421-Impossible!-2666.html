@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Impossible!</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Impossible!</td></tr><tr><td><b>From: </b>torbenm@pc-003.diku.dk (Torben Ægidius Mogensen)</td></tr><tr><td><b>Date: </b>21/04/2009, 13:26</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+
+This game is played by two players.
+
+Required components: One standard deck of 52 playing cards (no
+Jokers).
+
+Each player is dealt a hand of 7 cards.
+
+A first player is determined.  The game then consists of the players
+taking turns, where each turn consists of the following phases:
+
+ 1. The player takes three cards from his hand and places them face up
+    on the table as a row of three cards, underneath or above the rows
+    already played (if any).
+
+ 2. The other player can challenge this play by saying "Impossible!".
+    See below for how this challenge is resolved.
+
+ 3. The player draws three new cards for his hand.  If fewer than
+    three cards are available, all the remaining cards are drawn
+    (which may be none).
+
+At a challenge, the challenged player (the one whose turn it is) turns
+over one card in each row.  If the remaining cards (in all rows)
+includes both a red and a black card of the value, the challenge is
+failed (and the challenger wins), but otherwise it is met (and the
+challenged player wins).  A time limit (2-5 minutes) for meeting the
+challenge should be imposed.
+
+Below I use R and B for red and black, numbers 1 to 0 (for 10) and
+letters N, Q and K for knave, queen and king.
+
+Example: The following rows are played:
+
+  R3 B3 R0
+  B0 R3 B2
+
+If challenged, the player can turn over B3 in the first row and B0 in
+the second.  The remaining cards are R3, R0, R3 and B2, so there are
+no value in both black and red.
+
+If we add one more row:
+
+  R2 B0 BQ
+
+the challenge can not be met (try it).
+
+Notes:
+
+No single row can be responsible for failing a challenge, it is always
+a combination of rows.  But just two rows can be enough to make it
+impossible:
+
+R1 B1 R2
+R1 B1 B2
+
+A game can not finish without getting to a point where a challenge
+must fail.  The reason is this:
+
+ - There are 13 values, each with two red and two black cards.
+
+ - A non-failed challenge can have at most two cards of each value,
+   i.e. at most 26 visible cards.
+
+ - 51 cards yield 17 rows.
+
+ - When one card is turned over in each of the 17 rows, there are 34
+   cards left.
+
+So already at the 14th row, the challenge is bound to fail.  But it is
+likely to fail much earlier.
+
+With N rows, there are 3^N ways of turning over a card in each row, so
+determining whether it is possible to meet a challenge can take a long
+time.  Hence the time limit on meeting it.
+
+	Torben
+
+
+</pre></div></body>
+</html>
+</table></div>

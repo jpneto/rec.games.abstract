@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Program for displaying Othello games</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Program for displaying Othello games</td></tr><tr><td><b>From: </b>wchang@cshl.org (William Chang)</td></tr><tr><td><b>Date: </b>06/12/1994, 22:00</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+I have written an awk program that converts an Othello "game score" to a
+chart showing each move and all possible countermoves (i.e. mobility).
+I hope the examples below are self explanatory.  I ran it on the 1992 
+CSC Waterloo Computer Othello Open results that were posted here in
+January '93, and can usually spot the blunders in less than a minute.
+
+Program options include landscape (board is twice as wide in characters as
+it is tall), width (how many boards across), show game score and/or final 
+result.  Each game should fit on one page.  Is something like this useful?
+(I'm working on a similar program for Chinese chess.)  Where can I find
+a collection of <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>good<span class="moz-txt-tag">_</span></span> games?
+
+Comments will be appreciated!
+
+-- Bill Chang (<a class="moz-txt-link-abbreviated" href="mailto:wchang@cshl.org">wchang@cshl.org</a>)
+
+% cat Otest1
+ 0 0 0 0 0 0 0 0
+ 0 9 0 0 0 0 0 0
+ 0 0 8 7 6 5 0 0
+ 0 0 0 o x 4 0 0
+ 0 0 0 x o 1 0 0
+ 0 0 0 0 0 2 0 0
+ 0 0 0 0 0 3 0 0
+ 0 0 0 0 0 0 0 0
+nine-move shutout
+
+% gawk -f o.awk -v mode=nm Otest1
+
+[nine-move shutout]=============================================================
+        |        |        |        |        |        |        |        |
+        |        |        |        |        |   .    |    .   | .      | %
+        |   .    |    .   |  .. .  |    .%. |  ..@x  |  .%Xx. | .@xxx  |  Xxxx
+   ox.  |  .ox   |   ox.  |   oO@  |   oXX. |  .oOx  |   XXx  |  .Oxx  |   Xxx
+   xX%  |   xOx  |  .xox. |   xox  |  .xox. |   xox  |  .xox. |  .xox  |   xXx
+   . .  |    .@  |   . X  |     x  |   . x  |   . x  |     x  |   ..x  |     x
+        |     .  |     %. |     x  |     x. |     x  |     x. |     x  |     x
+        |        |        |        |        |        |        |        |
+-------- -------- -------- -------- -------- -------- -------- -------- --------
+13-0
+
+% cat Otest2
+ 43 49 51 53 52 54 55 34
+ 41 36 48 50 32 31 29 30
+ 42 35  5 47 44 33 28 27
+ 45 15 23  0  0 13 19 25
+ 56 46 12  0  0  6 14 24
+ 58 57  7  4  1  2  3 22
+ 59 40 38 17 16  8 11 21
+ 60 39 37 26  9 10 20 18
+XO92 - Zeus
+
+% gawk -f o.awk -v mode=mr Otest2
+
+[XO92 - Zeus]===================================================================
+ 4349515352545534|        |        |        |        |        |        |
+ 4136485032312930|        |        |        |        |        |        | .
+ 4235 54744332827|        |   .    |    .   |  .     |  %. .  |  x     |  x..
+ 451523 o x131925|   ox.  |  .ox   |   ox.  |  .ox   |   Xx.  |  .xx.. |   xx
+ 564612 x o 61424|   xX   |   xO.  |  .xo   |   Oo   |   oX.  |   oO@  |  .Xoo
+ 5857 7 4 1 2 322|   .%.  |    x@. |   .xX% |  .@xxx |   oxxx.|  .oxxx |  %Xxxx
+ 5940381716 81121|        |        |    . . |        |     .  |   .    |  ......
+ 60393726 9102018|        |        |        |        |        |        |
+-------- -------- -------- -------- -------- -------- -------- -------- --------
+        |        |        |        |        |        |        |        |
+        | .      |        |        |        |        |        | .      |
+  x     |  x..   |  x     |  x.    |  x     |  x...  |  x     |  x.... |  x
+   xx.. |   xx   |   xx.. |  .xx   | ..xx.. |   xx%  | ..xxx..| % xxx  | x xxx.
+   xoo. |  .xoo  |   xoo. |  .xXo .|  @OOo  |  ooXX..|  ooOO@ | .Xoooo.|  xoooo.
+  xxxOx | .xxxox.|  xxxox |  xxxXx.| .xxxxx |  xxxxx.| .xxxxx.|  xxxxx.|  xxOOx.
+     @. |  ...X .|     O. |   . o%.|    .ox | ....ox.|    .ox | ....ox.|   .@ox
+    . . |    %.  |    x@. |   .xo  |    xo. |   .xo  |    xo. |   .xo..|    xo.
+-------- -------- -------- -------- -------- -------- -------- -------- --------
+        |        |        |        |        |        |        |        |
+ .      |        | .      |        | .      |        | .      |        | .
+. x.... |  x     |. x.... |  x     |. x.....|  x     |..x.... |  x     |..x.....
+ x xxx  | x.xxx..| x xxx%.| x xxxx | x xxxx.| x.xxxx | x%xxxx.| xxxxxx.| xxxxxx%
+ .xoooo |  xoooo.| .xooXX.|  xooxx | .xooxx.|  xooxx.| .xXoxx.|  xxoOO@| .xxooXo
+ .xxoox.|  xxoox.| .xxXox.|  xxOox | .xxoox.|  xxooO@| .xxXooo|  xxxooo| .xxxXoo
+ ..%XXx.|   xxxO.| ..xxxo |   xxOo.| ..xxXX%|   xxxOO|  .xxxoo|   xxxoo|  .xxxoo
+  ..xo..|    xo.@|   .xo.o|    xo@o|  ..xooo|    xooo|   .xooo|    xooo|  ..xooo
+-------- -------- -------- -------- -------- -------- -------- -------- --------
+        |        |        |        |       .|        |    ....|        |       @
+        |        | .   ...|      @.| .   .o%|    .@ox| .  %XXx|    xxxx|    xxOO
+  x     |  x   .@|..x...%o|  x   Oo|..x...Xo|  x   Oo|..x...oo|  x  @oo|  x  ooo
+ xxxxxxx| xxxxxOO|.xxxxxXo| xxxxxOo|.xxxxxoo| xxxxxoo|.xxxxxoo| xxxxOoo| xxxxooo
+  xxooxo|  xxooxo| .xxooxo|  xxooOo| .xxoooo|  xxoooo| .xxoooo|  xxoooo|  xxoooo
+  xxxxoo|  xxxxoo| .xxxxoo|  xxxxoo| .xxxxoo|  xxxxoo| .xxxxoo|  xxxxoo|  xxxxoo
+   xxxoo|   xxxoo|  .xxxoo|   xxxoo|  .xxxoo|   xxxoo|  .xxxoo|   xxxoo|   xxxoo
+   @Oooo|   ooooo|  .ooooo|   ooooo|  .ooooo|   ooooo|  .ooooo|   ooooo|   ooooo
+-------- -------- -------- -------- -------- -------- -------- -------- --------
+       o|.  ... o|       o|.  ... o|       o|.  ... o|       o|.  ... o|@..    o
+ .  xxoo|.%..xxoo| x  xxoo|.x..xxoo| x  xxoo|.x..xxoo|@x  xxoo|ox..xxoo|oO..xxoo
+.@x  ooo|.Xx..ooo| xx  ooo|.xx..ooo| xx  ooo|.xx..ooo|.Ox  ooo|%Xx..ooo|xxO..ooo
+ xOxxooo|.xoxxooo| xoxxooo|.xoxxooo| xoxxooo|.xoxxooo| xoxxooo|.xoxxooo| xoOxooo
+  xOoooo| .xooooo|  xooooo| .xooooo|  xooooo| .xooooo|  xooooo| .xooooo|  xooooo
+  xxOxoo| .xxoxoo|  xxoxoo| .xxoxoo|  xOoxoo|..xooxoo|  xooxoo|..xooxoo|  xooxoo
+   xxOoo| ..xxooo|  .Oxooo| .%Xxooo| .Oxxooo|.%Xxxooo| xxxxooo|.xxxxooo| xxxxooo
+   ooooo|  .ooooo|  @ooooo| .oooooo| @oooooo|.ooooooo| ooooooo|.ooooooo| ooooooo
+-------- -------- -------- -------- -------- -------- -------- -------- --------
+o  ... o|o.     o|o  ... o|o.     o|o......o|o@..   o|oo.....o|oo@..  o|ooo.%..o
+oo .xxoo|oo. xxoo|oo..xxoo|oo..xxoo|oo%.xxoo|ooO.xxoo|ooo%xxoo|oooOxxoo|oooXxxoo
+xxo.%ooo|Oxo.xooo|oxo.xooo|oxo@Oooo|oxXooooo|oxxooooo|oxxXoooo|oxxxoooo|oxxxoooo
+.xoXxooo|@Ooxxooo|oXoxxooo|oxoOOooo|oxXooooo|oxxooooo|oxxXoooo|oxxxoooo|oxxxoooo
+..xooooo| .xooooo|.%xooooo| xxooooo|.xxooooo| xxooooo|.xxXoooo| xxxoooo|.xxxoooo
+..xooxoo|  xooxoo|..xooxoo|  xooxoo|..xooxoo|  xooxoo|..xXoxoo|  xxoxoo|..xxoxoo
+.xxxxooo| xxxxooo|.xxxxooo| xxxxooo|.xxxxooo| xxxxooo|.xxxxooo| xxxxooo|.xxxxooo
+.ooooooo| ooooooo|.ooooooo| ooooooo|.ooooooo| ooooooo|.ooooooo| ooooooo|.ooooooo
+-------- -------- -------- -------- -------- -------- -------- -------- --------
+ooo@x. o|oooox%.o|ooooOO@o|oooooooo|oooooooo|oooooooo|oooooooo|oooooooo|oooooooo
+oooOOxoo|ooooXxoo|ooooxOoo|ooooxooo|ooooxooo|ooooOooo|oooooooo|oooooooo|oooooooo
+oxxOoooo|oxxXoooo|oxxxoooo|oxOxoooo|oxoxoooo|oxoOoooo|oxoooooo|oxoooooo|oxoooooo
+oxxOoooo|oxxooooo|oxxooooo|oOxooooo|oXxooooo|oxOooooo|oxoooooo|oxoooooo|oxoooooo
+ xxOoooo|.xxooooo| xxooooo|@OOooooo|oXoooooo|oOoooooo|oooooooo|oooooooo|oooooooo
+  xOoxoo|..xooxoo|  xooxoo|..xooxoo|.%xooxoo|@OOooxoo|oooooxoo|oooooxoo|oooooxoo
+ xxOxooo|.xxoxooo| xxoxooo| xxoxooo|.xxoxooo|.Oxoxooo|%Xxoxooo|OOxoxooo|ooxoxooo
+ ooooooo|.ooooooo| ooooooo| ooooooo|.ooooooo| ooooooo|.ooooooo|@ooooooo|oooooooo
+-------- -------- -------- -------- -------- -------- -------- --------   5-59
+
+
+</pre></div></body>
+</html>
+</table></div>

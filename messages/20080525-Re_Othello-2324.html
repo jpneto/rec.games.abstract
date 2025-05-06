@@ -1,0 +1,109 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Othello</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Othello</td></tr><tr><td><b>From: </b>jm &lt;jm@alb.fr&gt;</td></tr><tr><td><b>Date: </b>25/05/2008, 18:08</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-flowed">Dear sir,
+<br>
+<br>Thanks you very much for your answer, you gave me very interesting tricks.
+<br>
+<br>I have just a question about this part :
+<br>
+<br>&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. For positions with N empty spaces (starting with N=1 and
+<br>&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; moving up), let value be determined by the values of positions
+<br>&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; reachable in one move (by placing a piece in one empty space).
+<br>
+<br>When you say to place a piece in one empty space, you mean to try all 
+the possibilities with the current color and do an average of them ?
+<br>
+<br>
+<br>Best regards,
+<br>
+<br>JM
+<br>
+<br>
+<br>
+<br>Torben Ægidius Mogensen a écrit :
+<br><blockquote type=cite>jm <a class="moz-txt-link-rfc2396E" href="mailto:jm@alb.fr">&lt;jm@alb.fr&gt;</a> writes:
+<br>
+<br><blockquote type=cite>I am a student and I have to do a strong Othello software.
+<br>I studied Michael Buro's reports, I implemented his technics using
+<br>patterns and logistic regression but I have still a 25-30 % of
+<br>prediction error, I think is too much.
+<br>
+<br>Here are the vectors of my regression :
+<br>
+<br>pattern1_value, pattern2_value,&nbsp; ... , pattern52_value,&nbsp; class
+<br>
+<br>where
+<br>patternx_value is the Y+0.5/(N+1.0) - 0.5,&nbsp; with Y=the number of
+<br>victories for this pattern, N the total number of positions where this
+<br>pattern appear
+<br>
+<br>class = 1 if this position has a majority of victories, 0 otherwise
+<br>
+<br>I use 13 differents pattern, and with 4 symmetries, I have a 52 vector
+<br>values.
+<br>
+<br>Is it the good way to proceed, or I made something wrong ?
+<br></blockquote>
+<br>Othello is best played by a computer using brute force.&nbsp; This implies:
+<br>
+<br>&nbsp;- Make a fast move generator.
+<br>
+<br>&nbsp;- Use tables for position evaluation.
+<br>
+<br>&nbsp;- Do complete end-game search using only win/no-win as alpha/beta.
+<br>
+<br>The tables you can use are:
+<br>
+<br>&nbsp;- A table assigning values to edge positions.&nbsp; There are 3^8 = 6561
+<br>&nbsp;&nbsp; possible edge positions in one row, so this table is not very
+<br>&nbsp;&nbsp; large.&nbsp; You can let a table assign values to two-deep edge
+<br>&nbsp;&nbsp; positions (edge row + next row in), which has 3^16 = 43 million
+<br>&nbsp;&nbsp; positions.&nbsp; This easily fits in RAM on a modern computer.&nbsp; Let a
+<br>&nbsp;&nbsp; program analyse all possible positions offline to build the
+<br>&nbsp;&nbsp; table. Use the following strategy to build the table:
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; 1. Assign value to positions with no empty spaces as just the
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; difference between white and black pieces.
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; 2. For positions with N empty spaces (starting with N=1 and
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; moving up), let value be determined by the values of positions
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; reachable in one move (by placing a piece in one empty space).
+<br>
+<br>&nbsp;- Use a table of exceptions.&nbsp; Let the computer play a large number of
+<br>&nbsp;&nbsp; games (against itself or other programs) using, say, four-deep
+<br>&nbsp;&nbsp; search.&nbsp; If the evaluation of a position using four-deep search is
+<br>&nbsp;&nbsp; markedly different from the evaluation using no search (leaf-node
+<br>&nbsp;&nbsp; evaluation), store the four-deep value in a table using a hash of
+<br>&nbsp;&nbsp; the board position as index.&nbsp; An exception table can make an
+<br>&nbsp;&nbsp; opening library superfluous.
+<br>
+<br>So, in the end-game you do complete search and before this, you do an
+<br>N-deep alpha-beta search where you evaluate each leaf-node position in
+<br>the following way:
+<br>
+<br>&nbsp; 1. Hash the position and look in the exception table.&nbsp; If the
+<br>&nbsp;&nbsp;&nbsp;&nbsp; position is there, use the stored value.
+<br>
+<br>&nbsp; 2. Otherwise, look up all four edge positions in the edge table and
+<br>&nbsp;&nbsp;&nbsp;&nbsp; adding up the results.&nbsp; Do not attempt to be more intelligent
+<br>&nbsp;&nbsp;&nbsp;&nbsp; than that.
+<br>
+<br>For the alpha-beta search, evaluate each possible next position using
+<br>leaf-node evaluation and sort the possible moves by this score.&nbsp; Then
+<br>search the next positions in this order.&nbsp; If the returned value is
+<br>markedly different from the leaf-node evaluation, add the current
+<br>position to the exception table.
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Torben
+<br></blockquote>
+<br>
+<br></div></body>
+</html>
+</table></div>

@@ -1,0 +1,53 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Dominatrix -- Simple grid game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Dominatrix -- Simple grid game</td></tr><tr><td><b>From: </b>James Dow Allen &lt;jdallen2000@yahoo.com&gt;</td></tr><tr><td><b>Date: </b>28/07/2010, 01:36</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Jul 27, 4:55 pm, James Dow Allen <a class="moz-txt-link-rfc2396E" href="mailto:jdallen2...@yahoo.com">&lt;jdallen2...@yahoo.com&gt;</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I may write a brute-force solver ...
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Seemed to work, but not certifiable.
+
+To win the 3x3 game, first player
+plays anywhere but center and declares 2.
+
+In 4x4, the three winning first moves are
+   . X . .    Declare 3
+   . . . .
+   . . . .
+   . . . .
+or
+   X . . .    Declare 2 or 3
+   . . . .
+   . . . .
+   . . . .
+
+In 5x5, there are 20 distinct first moves,
+15 of which win.
+
+I wrote (almost) the simplest possible
+brute-force solver.  (I was too slothful
+even to include a transposition cache.)
+It solved the 4x4 in about one-quarter of a
+second, and all starting moves in the 5x5
+in 89 minutes.
+
+More interesting of course would be to
+analyze the game heuristically.  If no
+unreachable holes develop, 1st player wins
+with odd number of empty cells, and indeed
+most 1st moves lose on 4x4, but win on 5x5.
+
+James Dow Allen
+
+
+</pre></div></body>
+</html>
+</table></div>

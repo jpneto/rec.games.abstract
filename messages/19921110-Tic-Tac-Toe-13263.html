@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Tic-Tac-Toe</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Tic-Tac-Toe</td></tr><tr><td><b>From: </b>blom@husc15.harvard.edu</td></tr><tr><td><b>Date: </b>10/11/1992, 21:28</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Tic-Tac-Toe has gotten somewhat trite, but some of its generaliza-
+tions are very interesting.  The original Tic-Tac-Toe is a game in
+2 dimensions on a square 3 units on a side in which 2 players take
+turns filling empty squares until 3 squares in a row have been
+filled by the same player, who is declared the winner.  There are
+four variable parameters here: the dimension-space of the board,
+the size of the board, the number of players, and the number of
+squares which a player must line up to win.  A generalization of
+Tic-Tac-Toe could be:
+
+     A game in d dimensions on an a hypercubic board board s units
+     on a side, in which p players take turn claiming empty cells
+     until l squares in a line all belong to the same player.
+
+For any game, let us call [p,d,s,l] the parameter vector.
+Let us define some terms:
+
+     trivial:       Player 1 can always force a win.
+     non-trivial:   Player 1 can not always force a win.
+     solvable:      There exists an algorithm by which Player 1
+                    will never lose.
+     insoluble:     There does not exist a finite algorithm by
+                    which Player 1 will never lose.
+
+Obviously:
+
+p &gt; 2
+l &lt;= s
+pl &lt; s^d
+
+Some interesting results that can be proven:
+
+[p,d,s,l] is always solvable if s and d are finite.
+[2,2,3,3] (Traditional Tic-Tac-Toe) is non-trivial.
+[2,3,3,3] (3x3x3 Tic-Tac-Toe) is trivial.
+[2,3,4,4] is non-trivial, according to TicTactics, from the
+     Microsoft Entertainment Pack for Windows (c) Microsoft Co.
+[2,d,2,2] is trivial.
+[2,d&gt;3,3,3] is trivial.
+[2,2,infinity,0&lt;l&lt;5] is trivial.
+
+Some conjectures:
+
+[2,d,d,d] is trivial.
+[2,d,d+1,d+1] is non-trivial.
+[2,2,infinity,5+] is trivial.
+
+
+Can anyone add to this list or examine these conjectures further?
+
+
+</pre></div></body>
+</html>
+</table></div>

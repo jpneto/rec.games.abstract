@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: SPROUTS</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: SPROUTS</td></tr><tr><td><b>From: </b>mpf@theory.lcs.mit.edu (Michael P. Frank)</td></tr><tr><td><b>Date: </b>01/04/1993, 13:27</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+I first read about Sprouts in the Piers Anthony book <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>Macroscope<span class="moz-txt-tag">_</span></span>.
+According to <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>Winning Ways<span class="moz-txt-tag">_</span></span> (1), it was invented by M.S. Patterson and
+J.H. Conway (who also invented "life").
+
+For those who don't know, the rules of sprouts are:
+1. Start with some number n of dots on a sheet of paper.
+2. Players take turns. On your turn, draw a line from one dot
+   to another dot (or the same dot) without intersecting any lines
+   (including itself), and put a new dot in the middle of the line.
+3. There can be at most 3 lines coming out of a dot.  Initially
+   there are 3n places to put lines, and each new line eliminates
+   2 and adds 1 new place.  So the game can last at most 3n-1 turns.
+   Usually less because there might be a place that you can't get
+   to without intersecting lines.
+4. The first player who has no legal moves loses (or wins--that
+   version is interesting too).  I forget which is Anthony's version.
+
+<span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>Winning Ways<span class="moz-txt-tag">_</span></span> says a few things about strategies, but not much.  I
+bet a computer player could beat most humans easily by doing a
+brute-force search.  It would be fun to write an X program that could
+play the game.
+
+For reference, here are the outcomes of some initial positions with
+optimal play.  The numbers are how many moves it takes to win the
+game, N means the first player wins, and P means the second player
+wins.  According to <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>Winning Ways<span class="moz-txt-tag">_</span></span>, nobody knows who wins for any
+n greater than 6.
+
+				Value of n (# spots)
+
+		0	1	2	3	4	5	6
+		---	---	---	---	---	---	---
+no moves=lose:	0P	2P	4P	7N	9N	11N	14P
+no moves=win:	0N	2N	5P	7P	9P
+
+-Mike
+
+(1) <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>Winning Ways<span class="moz-txt-tag">_</span></span>, Elwyn R. Berlekamp, John H. Conway, and Richard
+K. Guy, Academic Press, London, 1982.
+
+--
+   , ,                       __               <a class="moz-txt-link-abbreviated" href="mailto:mpf@medg.lcs.mit.edu">mpf@medg.lcs.mit.edu</a>
+  /|/| .  _ |_   _   _  |   |_  _  _  ,_  |,  Clinical Decision-Making Group
+ / | | | (_ | | (_| (-' |   |  |  (_| | | |\  MIT Lab for Computer Science
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Game of pentominos</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Game of pentominos</td></tr><tr><td><b>From: </b>rcbaaw@rw6.urc.tue.nl (Angelo Wentzler)</td></tr><tr><td><b>Date: </b>18/12/1992, 15:24</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>sci.math,rec.games.abstract</td></tr><tr><td><div class="moz-header-display-name" style="display:inline;">Reply-To: </div> rcbaaw@urc.tue.nl</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:pete@bignode.equinox.gen.nz">pete@bignode.equinox.gen.nz</a> (Pete Moore) writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Torben AEgidius Mogensen (<a class="moz-txt-link-abbreviated" href="mailto:torbenm@diku.dk">torbenm@diku.dk</a>) wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:martel@marvin.mr.sintef.no">martel@marvin.mr.sintef.no</a> (Paulo Martel) writes:
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+After several tries I gave up a combinatorial analysis of the game of
+pentominos. Would someone point me to a reference, or briefly explain
+how one could compute the total number of solutions for a grid of a
+given size (6x10, 5x12, 4x15, 3x20). 
+</pre></blockquote></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+I saw a paper once that reported the number of solutions to each of
+these rectangle sizes. It used a heavily optimized machine code
+program to exhaustively search for all solutions. I remember that for
+the 3x20 case there are only two solutions barring reflections and
+rotations. These are quite easy to find by hand. The number of
+solutions for the 6x10 case was quite large, but I don't recall the
+number. I also don't recall the title or author of the paper.
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I can't give an authoritative reference, but according to
+some notes I made back in my young &amp; innocent days when I used to note
+information without references, there are:
+    2  3x20 solutions
+ 2339  6x10 solutions
+ 1010  5x12 solutions
+  368  4x15 solutions
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+If your pentominoes are 3-dimensional (i.e. each could be constructed by
+joining 5 cubes together) rather than 2-dimensional, you can also form a
+3x4x5 rectangular prism from the 12 pentominoes. 
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Gee, this must be my lucky month! I like pentominoes, wrote a program
+once (who didn't) and I rank them right up there along with life,
+rubik's cube and tiled squares (See: tiling problem in this group :-)
+
+
+C.J.Bouwkamp, a professor here at the TUE has computed all solutions
+to this prism as well as to "the steps" which is a three dimensional
+staircase. He's just as mad about pentominoes as I am.
+
+The catalogues are:
+
+"Catalogue of solutions to the rectangular 3x4x5 pentomino problem"
+C.J.Bouwkamp, Eindhoven University of Technology.
+
+"Packing the steps with solid pentominoes"
+C.J.Bouwkamp, Eindhoven University of Technology.
+
+The books are available here, but not in "computerised" format.
+
+
+By the way, has anybody ever tried to write a program to compute all
+(N+1)-ominoes from the set of N-ominoes? It's not difficult:
+Just take one N-omino at a time and fit an extra square onto it. This
+produces one extra (N+1)-omino. Fit a square on all possible positions,
+(just "roll" it along the edge) then proceed with the next N-omino.
+This leaves you with a <b class="moz-txt-star"><span class="moz-txt-tag">*</span>bag<span class="moz-txt-tag">*</span></b> of (N+1)-ominoes, of which you now have to
+make a <b class="moz-txt-star"><span class="moz-txt-tag">*</span>set<span class="moz-txt-tag">*</span></b> (remove multiple copies).
+It would be smart to check for multiples right at the start though...
+
+It would take a lot of computation, but not an awful lot of time.
+
+Angelo Wentzler
+
+</pre></div></body>
+</html>
+</table></div>

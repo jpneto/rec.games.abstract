@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Quad-board connection games.</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Quad-board connection games.</td></tr><tr><td><b>From: </b>anony@nowhere.org</td></tr><tr><td><b>Date: </b>13/12/2008, 18:49</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On  4-Nov-2008, Bill Taylor <a class="moz-txt-link-rfc2396E" href="mailto:w.taylor@math.canterbury.ac.nz">&lt;w.taylor@math.canterbury.ac.nz&gt;</a> wrote:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+A fifth occurs to me, suggested by the close similarity of Quax
+and Crossway styles.
+
+Auto-quax - when two diagonal stones are played, the diagonal
+            connection between them automatically appears if poss.
+
+(OC, in all cases diagonal connections are not allowed to cross.)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+
+Actually, you posted here this last year (Nov 16, 2007) as "Quickway":
+
+<a class="moz-txt-link-freetext" href="http://groups.google.com/group/rec.games.abstract/browse_thread/thread/c92768f325f99a6b">http://groups.google.com/group/rec.games.abstract/browse_thread/thread/c92768f325f99a6b</a>
+
+
+QUICKWAY
+========
+Played on a square quadrangular board of arbitrary size.
+
+
+Players alternately place one of their stones (an unlimited supply) on any
+free cell of the board.  Once placed, a stone is not moved.
+
+
+The goal is for one player to connect the north and south edges by an
+orthogonal path of stones (perhaps augmented by diagonal lines), and the
+other is to connect east and west.
+
+
+When stones of the same colour occur on diagonally adjacent cells, the
+corresponding diagonal line is automatically filled, unless it would cross
+over a previously marked diagonal.
+
+
+
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+If anyone can think
+of any other stymie-resolution plan, we would love to hear of it!
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+
+Off the top of my head:
+
+
+1) The game "TRELLIS" is played on a checkered board. BLACK connects
+diagonally across only DARK squares, WHITE only across LIGHT squares.
+
+
+2) BLACK connects on one diagonal direction, WHITE connects on the other.
+
+
+3) The game "ONYX" suggests several methods that are <b class="moz-txt-star"><span class="moz-txt-tag">*</span>opposite<span class="moz-txt-tag">*</span></b> of first
+come, first connect (aka Quickway aka Autoconnect, etc). Though it is played
+on what amounts to a board of heptagons and squares, it's ideas can be used
+on a 488 and 4444 boards.
+
+
+In Onyx, a player can take a square cell if and only if all four neighbor
+cells are empty.
+
+
+If a player completes a 2x2 checkerboard, she captures the opposing two
+pieces.
+
+
+For example (using a 488 rather than the Onyx board for ascii-simplicity):
+
+  ---   ---
+ /   \ /   \
+|  X  |  O  |
+ \   / \   /
+  ---   ---
+ /   \ /   \
+|  O  |     |
+ \   / \   /
+  ---   ---
+
+Neither player may play in the square, as only 1 of its 4 neighbors are
+empty.
+
+
+If X plays in the lower right, she will capture the two O's, leaving this:
+
+
+  ---   ---
+ /   \ /   \
+|  X  |     |
+ \   / \   /
+  ---   ---
+ /   \ /   \
+|     |  X  |
+ \   / \   /
+  ---   ---
+
+At this point, O can try to block, but X will still be able to connect:
+
+
+  ---   ---
+ /   \ /   \
+|  X  |  X  |
+ \   / \   /
+  ---   ---
+ /   \ /   \
+|  O  |  X  |
+ \   / \   /
+  ---   ---
+
+
+
+This suggests to me several ways that might work on a 4444:
+
+
+3a) Play only on cells. No captures. Player who completes a 2x2 checkerboard
+wins the connection. Vertex is marked to show this.
+
+Before:
++---+---+
+| X | O |
++---+---+
+| O |   |
++---+---+
+
+After:
++---+---+
+| X | O |
++---X---+
+| O | X |
++---+---+
+
+
+3b) As above, but diagonal connections are automatic, immediate and good
+until overridden.
+
+Before:
++---+---+
+| X | O |
++---+---+
+|   |   |
++---+---+
+
+O plays and is connected temporarily:
++---+---+
+| X | O |
++---O---+
+| O |   |
++---+---+
+
+Finally X connection breaks O's permanently:
++---+---+
+| X | O |
++---X---+
+| O | X |
++---+---+
+
+
+3c) As (3a) with captures. No play whatsoever on vertices. ALL connections
+are orthogonal.
+
+
+Before -- no connection:
++---+---+
+| X | O |
++---+---+
+| O |   |
++---+---+
+
+Then X plays to bottom right, capturing both O's -- still no connection:
++---+---+
+| X |   |
++---+---+
+|   | X |
++---+---+
+
+O plays again in one of the two spaces just vacated:
++---+---+
+| X | O |
++---+---+
+|   | X |
++---+---+
+
+But X takes the last space, finally making a connection:
++---+---+
+| X | O |
++---+---+
+| X | X |
++---+---+
+
+
+3d) As (3b)+(3c) Diagonal connections are immediate.
+
+At this point, O has the temporary connection:
++---+---+
+| X | O |
++---O---+
+| O |   |
++---+---+
+
+Then X plays to bottom right, capturing both O's, making her own temporary
+connection:
++---+---+
+| X |   |
++---X---+
+|   | X |
++---+---+
+
+
+
+3e) Full-on Onyx rules. The only way to get a vertex and connect diagonally
+is to play a stone on a vertex. This may ONLY be done if all four squares
+around it are empty. Completing a 2x2 checkerboard captures both enemy
+stones.
+
+I suspect the "vertex can only be played if isolated" rule is not really
+required (in the original game or) here. A player will always have the
+option of playing a cell to better effect:
+
+
+It's O's turn -- Onyx rules say that O cannot play at the central vertex:
++---+---+
+| X | O |
++---+---+
+| O |   |
++---+---+
+
+
+But he wouldn't want to -- it's ALWAYS better to just make the orthogonal
+connection:
+
++---+---+
+| X | O |
++---+---+
+| O | O |
++---+---+
+
+
+
+Edward
+
+
+</pre></div></body>
+</html>
+</table></div>

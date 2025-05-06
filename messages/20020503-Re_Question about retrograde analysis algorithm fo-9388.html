@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Question about retrograde analysis algorithm for endgame databases</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Question about retrograde analysis algorithm for endgame databases</td></tr><tr><td><b>From: </b>jferro@pegasus.ece.cmu.edu (Jonathan R. Ferro)</td></tr><tr><td><b>Date: </b>03/05/2002, 21:05</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.chess.computer,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:mathpoly@yahoo.com">mathpoly@yahoo.com</a> (mathpolymath) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:jferro@nu.ece.cmu.edu">jferro@nu.ece.cmu.edu</a> (Jonathan R. Ferro) wrote in message news:<a class="moz-txt-link-rfc2396E" href="mailto:r1znzqs1ku.fsf@nu.ece.cmu.edu">&lt;r1znzqs1ku.fsf@nu.ece.cmu.edu&gt;</a>...
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:mathpoly@yahoo.com">mathpoly@yahoo.com</a> (mathpolymath) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:jferro@nu.ece.cmu.edu">jferro@nu.ece.cmu.edu</a> (Jonathan R. Ferro) wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+So, the "Y" state is expanded into 19 different states internally (if I
+have counted correctly), 10 of which are terminal, and 9 of which are
+not yet "long enough" to end the game.  These states do not have any
+loopiness, so they can be analyzed normally.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+This seems like a very good way in theory, but in practice, the number
+of states would expand tremendously.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Yep, you got that right.  Welcome to the world of artificial intelligence.
+
+-- Jon
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Aha! I seem to have found a much simpler way, if my logic is correct. 
+Let me know if I have reasoned incorrectly.
+
+...
+
+In this way, I have addressed this complex-valued draw-by-repetition
+problem with negligible additional effort and at the cost of only some
+additional memory (for an intermediary copy of the unsettled values).
+
+Are there any holes in my reasoning?  Can other cases of state
+expansion in game trees be solved similarly?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I would say that you have successfully convinced yourself that you can
+deal with loopy positions algorithmically, but that you are fooling
+yourself that it's simpler.  As far as I can tell, the "intermediary
+copies" that you are referring to are simply dynamically-generated
+versions of the "expanded states" that I proposed above.
+
+I think it is time to pick a simple game with a loopy endgame and try to
+write out the analysis, either by hand or with computer assistance.
+
+Winning Ways has several simple examples, and introduces the concept of
+"sidling" as a generalization of "repeated positions cause the game to
+end".
+
+Here is a paper by another person who is working on other
+loopy-to-non-loopy-conversion issues:
+<a class="moz-txt-link-freetext" href="http://www.msri.org/publications/books/Book29/files/moloopy.pdf">http://www.msri.org/publications/books/Book29/files/moloopy.pdf</a>
+which is included as a chapter in <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>Games of No Chance<span class="moz-txt-tag">_</span></span>
+<a class="moz-txt-link-freetext" href="http://www.amazon.com/exec/obidos/ASIN/0521574110">http://www.amazon.com/exec/obidos/ASIN/0521574110</a>
+
+A lot of the problems and trade-offs of different state-search
+strategies and state-representation issues are discussed in Russel and
+Norvig, chapter 3, and are then applied in chapter 5 specifically to
+the searching of 2-player game trees.
+<a class="moz-txt-link-freetext" href="http://www.amazon.com/exec/obidos/ASIN/0131038052">http://www.amazon.com/exec/obidos/ASIN/0131038052</a>
+
+It sounds like you are having fun with this.  I wish I had time to get
+into it all again.
+
+-- Jon
+
+</pre></div></body>
+</html>
+</table></div>

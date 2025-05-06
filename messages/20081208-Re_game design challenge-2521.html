@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: game design challenge</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: game design challenge</td></tr><tr><td><b>From: </b>torbenm@pc-003.diku.dk (Torben Ægidius Mogensen)</td></tr><tr><td><b>Date: </b>08/12/2008, 10:10</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:nickobento@gmail.com">nickobento@gmail.com</a> writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+There's an argument to be made in favor of the idea that an ideal game
+is <b class="moz-txt-star"><span class="moz-txt-tag">*</span>not<span class="moz-txt-tag">*</span></b> drawless.  The idea is that two perfect players should play
+to a draw in an ideal game, and that any other outcome is both an
+unseemly asymmetry, and a violation of the principle of fairness, to
+be expunged.  So, what would draws in an ideal game be like?  Perhaps
+an ideal game would have exactly one drawn state.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Having exactly one drawn state doesn't really matter.  Consider this
+game:
+
+The board is an odd number of spaces in a line.  A token is placed in
+the middle. Each player starts with N coins.  Players alternate paying
+a number of coins to move the token that many spaces in their
+direction.  You can pass (only) when you have no coins.  The game ends
+when both players have no coins.  The winner is the one who has the
+token closest to himself.  If it is in the middle, it is a draw.
+
+The game obviously has only one drawn position: The token in the
+middle and both players have 0 coins.  But this is the only possible
+outcome of the game, so it is not interesting.
+
+A variant of this is fairly well known and nontrivial: Both players
+secretly bid any number of coins and the winner gets to move the token
+one space in their direction (on a tie the token doesn't move).  Both
+pay their bids.  If both bid 0, the game ends.  The winner is the one
+who has the token closest to himself.  If it is in the middle, it is a
+draw.
+
+Unlike the above, this is not a total-information game, so the notion
+of perfect play doesn't exist.  So we really need to restrict
+ourselces to total-information games,
+
+The interesting properties for a total-information game with draw
+would be:
+
+ 1. No game can go on forever (there is a maximum number of moves in a
+    game).
+
+ 2. With perfect play, no player can obtain more than a draw.
+
+ 3. Perfect play is not obvious.
+
+The first is usually fairly easy to decide, the second is well-defined
+but can be hard to prove.  For example, Chess is AFAIK still not known
+to lead to a draw with perfect play.
+
+The third property is not well-defined, as "obvious" is a subjective
+property.  A reasobable way of defining non-obviousness is
+computational complexity: If the problem of finding an optimal move is
+computationally hard, then it is non-obvious.
+
+Usually, for a game to be computationally hard, there has to be a
+large number of legal (and not obviously bad) moves in each turn and
+the number of turns in a game has to be high.  Go is a prime example:
+You have an average of around 100 possible moves per turn (though many
+are obviously bad) and there number of turns is around 100.
+
+Connection games (Hex or similar) can be modified to be like this in
+the following way: There are not enough tokens to fill the board.
+
+While a completely filled board is a win by one side or the other in
+Hex, Y, etc., partially filled boards can be tied (neither side has a
+connection).  A plausible Hex variant could be: Use an NxN board,
+where N is odd.  Give each player (N^2-1)/2 tokens.  This leaves
+exactly one space empty, and both players get the same number of
+moves.
+
+	Torben
+
+
+</pre></div></body>
+</html>
+</table></div>

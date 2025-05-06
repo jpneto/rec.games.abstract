@@ -1,0 +1,131 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Byg Analysis #3 (in which the rules are utterly revamped)</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Byg Analysis #3 (in which the rules are utterly revamped)</td></tr><tr><td><b>From: </b>Nick Bentley &lt;nickobento@gmail.com&gt;</td></tr><tr><td><b>Date: </b>18/10/2010, 23:19</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Reposted from blog: <a class="moz-txt-link-freetext" href="http://nickbentley.posterous.com/byg-analysis-3-in-which-the-rules-are-utterly">http://nickbentley.posterous.com/byg-analysis-3-in-which-the-rules-are-utterly</a>
+
+My attempt to design Byg has clarified my thinking about the design
+challenge inherent in Byg's win condition, which is:
+
+The game ends when the board is full and the player with the largest
+group wins.  If the players' largest groups are the same size, compare
+their second-largest groups, and so on, until you come to a pair which
+aren't the same size.  Whoever owns the larger, wins.
+
+I like this goal because it's simple, drawless, intuitive, easy to
+visualize in-game and easy to know who won at game-end (it can often
+be seen at a glance).
+
+The difficulty of turning it into a game can be seen if we consider
+what happens in the most basic game we can design: the players take
+turns dropping stones without restriction until the board is full.
+
+What's the problem? there are two fundamental actions in this game:
+create a new group (by placing a stone non-adjacent to any like-
+colored group), or grow a group (by placing a stone adjacent to a like-
+colored group).  The problem with this simple game is that it's always
+better to grow a group than to create one, and this leads to a trivial
+game with obvious choices.
+
+Ideally, I wish for a game in which group-growth and group-creation
+are both important throughout the game, so that it's hard to decide
+between them.
+
+How to do it?
+
+The present rules of Byg are one solution.  The Byg turn rules make
+group-creation valuable, at least during the opening, by making it a
+prerequisite for maximum group-growth at the end.  I've grown
+disenchanted though. The game has two clear phases, where group-
+creation is the obvious choice in the first phase and group-growth the
+is the obvious choice in the second. There are delicious decisions in
+the transition between phases, when it's not clear whether to grow or
+create groups, but the phases themselves leave something to be
+desired.
+
+The first solution I considered was a hard limit on the number of
+groups you can grow.
+
+That lead me to the following rules for Byg:
+
+1. The board begins empty.
+2. To begin, White puts a single stone on the board.
+3. From then on, starting with Black, the players take turns. On your
+turn you may either:
+    * Place one or two stones on vacant cells, not adjacent to like-
+colored groups or to each other; or
+    * Grow up to 3 of your existing groups by one stone each (you must
+grow at least one group).  A stone connecting two or three different
+groups together is considered to have grown all of them (at the end of
+your turn, no group may have more than one new stone in it).
+4. The game ends when the board is full.
+5. The player with the largest group wins.   If the players largest
+groups are the same size, compare their second-largest groups, and so
+on, until you come to a pair of groups that arent the same size.
+Whoever owns the larger group wins.
+
+This works somewhat - it makes group creation less important in the
+early phase, but the late phase remains group-growth only.  I decided
+to keep searching.
+
+Guiding my thinking was this key observation: group-growth becomes
+increasingly important as the game goes on as long as the win
+condition is to have the largest group at the end.  As a result, it's
+important to give strong incentives to create groups late in the game,
+but without making them the only viable choice early .  Tricky.
+
+Grappling with this problem, I came up with the following game:
+
+1. The board begins empty.
+2. To begin, White puts a single stone on any vacant space, and then
+Black does the same.
+3. From then on, starting with Black, the players take turns. On your
+turn you may place as many stones as you have groups, up to three, on
+any vacant spaces (you must place at least one). Except:
+* You may not grow any group by more than one stone.
+* A stone connecting two or three different groups together is
+considered to have grown all of them (at the end of your turn, no
+group may have more than one new stone in it).
+4. The game ends when the board is full.
+5. The player with the largest group wins.   If the players largest
+groups are the same size, compare their second-largest groups, and so
+on, until you come to a pair of groups of different sizes.  Whoever
+owns the larger group wins.
+
+Note that with these rules, you can both grow your groups and create
+new groups on the same turn if you wish.
+
+Now there's no cost to creating new groups late in the game (since
+there's no stone-penalty for doing so).  This allows a natural group-
+creation incentive to operate: groups will merge late in the game and
+you'll have to create new ones to keep your group-count up.
+
+In addition, there's no great cost to merge groups early in the
+game,since you can create new ones on the same turn to keep your group-
+number up to the maximum.  This allows the natural incentive to merge
+groups shine through (up to a point) in the early game.
+
+The dynamic which prevails is clear: each player's goal is to create 3
+groups and stay at 3 groups (either by growing them without connecting
+them, or connecting them and creating new groups) until the last
+possible minute.  If 3 groups seems too low, you can change it by
+changing the limit on the number of stones a player may add. Testing
+will be needed to determine the optimal number.  I suspect somewhere
+between 3-5.
+
+I also don't yet know if there are balance issues.  I'll report more
+enlightenment later.
+
+
+
+
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: New game: Think Small</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: New game: Think Small</td></tr><tr><td><b>From: </b>dubach1@husc10.harvard.edu (joev dubach)</td></tr><tr><td><b>Date: </b>18/11/1992, 10:05</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:1992Nov17.041447.15268@ll.mit.edu">&lt;1992Nov17.041447.15268@ll.mit.edu&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:shoham@ll.mit.edu">shoham@ll.mit.edu</a> (Daniel Shoham) writes:
+
+   [stuff deleted]
+
+   Since all players are competent, they will all use this strategy! hence the
+   probability of victory would be 1/N, regardless of which number <b class="moz-txt-star"><span class="moz-txt-tag">*</span>you<span class="moz-txt-tag">*</span></b> play.
+
+   the probability "1" is the winning play = probability no one else plays "1":
+   1/N = (1-P1)^(N-1)       hence we can solve for P1.
+
+I'm afraid I don't follow how you reached this equation.  You seem to
+have started in the case of "if X follows this general strategy, then
+X will win 1 out of N games on average" and added the condition "X
+plays 1" and concluded that "X wins 1 out of N games on average when
+playing 1."  1/N is the global probability, true, but it's useless in
+finding the local probabilities.  Please explain.
+  
+   the probability "2" is the winning play = probability no one else plays "2" and
+   at least 2 players played "1": (if both "1" and "2" win, we will assign the
+   probability to "1")
+   1/N = P1^2 * (1-P2)^(N-3)       hence we can solve for P2.
+
+nitpick: all else being equal, this should be 
+1/N = (P1^2 + (1-P2-P1)^2) * (1-P2-P1)^(N-3).
+
+Joev
+
+
+--
+_____________________________________________________
+DDDDDDDDD   JJJJJJ      | Joev Dubach
+     D      J     J     | <a class="moz-txt-link-abbreviated" href="mailto:dubach1@husc.harvard.edu">dubach1@husc.harvard.edu</a>
+     D      J     J     | 249 North Mail Center
+D    D      J     J     | Harvard University
+DDDDD    *  JJJJJJ  *   | Cambridge, MA 02138
+
+</pre></div></body>
+</html>
+</table></div>

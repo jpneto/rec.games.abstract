@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>2-d Nim (Re: anybody know this game?)</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>2-d Nim (Re: anybody know this game?)</td></tr><tr><td><b>From: </b>flee@cs.psu.edu (Felix Lee)</td></tr><tr><td><b>Date: </b>13/11/1992, 10:47</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+The game is sometimes called 2-d Nim, and can be played with arbitrary
+boards.  Draw an array of Xs, take turns crossing off a connected line
+of Xs.  The last player to move wins (or loses, in the misere
+version).
+
+Like all impartial 2-player games, 2-d Nim can be analyzed with Nim
+numbers.  (Well, probably not the misere version.  I don't understand
+misere analysis yet.)
+
+Computing the Nim values isn't hard, just somewhat tedious.
+
+Finding general rules helps some.  Like:
+  nim-value XX...X   = n (the number of Xs)
+
+  nim-value XX...X   = n
+            X
+
+  nim-value XX...X   = n - 2, when n - 2 = 2 ** k
+             X         n,     otherwise
+
+Anyone want to explain nim values, nim sums, and the mex rule?
+Perhaps this weekend I'll write a quick tour.
+--
+
+</pre></div></body>
+</html>
+</table></div>

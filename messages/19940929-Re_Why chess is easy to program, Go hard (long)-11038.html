@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Why chess is easy to program, Go hard (long)</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Why chess is easy to program, Go hard (long)</td></tr><tr><td><b>From: </b>cuffell@alumni.cs.colorado.edu (T. M. Cuffel)</td></tr><tr><td><b>Date: </b>29/09/1994, 02:45</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.chess,rec.games.go,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:Cwv0o0.88zA@austin.ibm.com">&lt;Cwv0o0.88zA@austin.ibm.com&gt;</a>,
+Bill Fischofer <a class="moz-txt-link-rfc2396E" href="mailto:wtf@calrissian.bocaraton.ibm.com">&lt;wtf@calrissian.bocaraton.ibm.com&gt;</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I believe that go is harder to program than chess for three reasons:
+
+1. The mathematical state space of go is vastly larger than chess.  
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+So?  Scrabble has a 15x15 board and 27 different playing pieces.  Quite
+possibly it has a state space bigger than chess or go.  But I imagine it
+would be almost trivial to write a Scrabble program that could beat
+any human.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+  If strong go programs arise, it will be
+  because they manage to play go in ways recognizably more similar to
+  the way human masters play than is the case for chess programs.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+This is exactly the same thing they were saying about chess computers 
+twenty years ago.
+
+Computer chess is a bunch of trickery.  One trick is simply
+representing a chess game using a computer.  Another is simulating
+thinking with a minimax seach.  New tricks, like alpha-beta and 
+hash tables, were discovered that greatly enchance the old tricks.
+ 
+These chess tricks have little to with how good players think.  Why
+should the undiscovered go tricks be any different?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+2. Go is far more symmetric than chess.  The different pieces and their
+  moves actually makes tactical analysis easier in chess than in go.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Nonsense.  Go may very well be more difficult to tactically analyze
+than chess, but this has nothing to do with symmetry or piece
+variety.  In general, more piece variety means more complex
+tactics.  Take away a few flavors of chess piece, you have a
+tactically simpler game.  Or add an new kind of go piece, and
+your tactics will probably go throught the roof.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+  In go the value of a stone is a function of its relationship to other
+  stones rather than to anything intrinsic.  
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Context is important in just about every game.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+3. Go evaluation functions must be global to be meaninful whereas chess
+  does quite well with local evaluation functions.  
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I have no idea what this is supposed to mean.  Most every chess evaluation
+function I have seen looks at the whole position.  Sounds global to me.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+  This means that not
+  only does a go program need to consider many more positions than a
+  chess program, but it needs to spend much more time considering each
+  position if it is to do anything meaningful with it.  
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+So far, using techniques developed for chess, a computer has to look at 
+more positions longer in go.  But this probably has something to do
+with fact that they are DIFFERENT GAMES.  A car works well on land,
+but takes a serious performance hit crossing an ocean.  Does this
+mean boats are harder to build?
+
+
+</pre></div></body>
+</html>
+</table></div>

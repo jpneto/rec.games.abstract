@@ -1,0 +1,79 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Games that stretch MCTS</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Games that stretch MCTS</td></tr><tr><td><b>From: </b>Greg &lt;dreamwafer@yahoo.com&gt;</td></tr><tr><td><b>Date: </b>24/02/2011, 01:33</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Feb 23, 2:37 pm, Cameron Browne <a class="moz-txt-link-rfc2396E" href="mailto:cambol...@googlemail.com">&lt;cambol...@googlemail.com&gt;</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Hi,
+
+I'm doing a bit of work on Monte Carlo Tree Search (MCTS) which is a
+new AI approach for move planning in games. The algorithm behaves
+differently for games with different characteristics - some games are
+well suited to it while some resist it - and I'm interested in finding
+the outliers.
+
+Can anyone suggest games of reasonable complexity that exhibit the
+following properties:
+
+1. Unusually slow to calculte legal moves for a given position.
+2. Unusually slow to apply a move to a given board state.
+3. Fast to find Nth legal move (e.g. Gomoku).
+4. Slow to find Nth legal move (e.g. Triskelion?).
+5. Fast to perform short lookahead (e.g. 2 ply) on a given position
+(e.g. Gomoku again).
+6. Slow to perform short lookahead on a given position.
+7. Unusually low branching factor.
+8. Unusually high branching factor.
+9. Long move sequences for either player (e.g. Chinese Checkers).
+10. Delayed reward, i.e. positional strength not clear until the end
+of the game (e.g. Omega, maybe Othello?).
+11. Immediate reward, i.e. immediate positional evaluation is a good
+indication of who will win.
+12. Random playouts give good estimate of who will win.
+13. Random playouts give poor estimate of who will win.
+14. Games in which a win or loss is never far away, i.e. high ratio of
+leaf nodes in the search tree (Palago?).
+15. Games in which a win or loss is very remote at the beginning but
+gets closer as the game progresses (Hex?).
+
+Basically any game that will affect the performance of MCTS/UCT by its
+very nature.
+
+Thanks,
+Cameron
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Hi Cameron,
+
+We may have discussed this before, but I suggest looking at Cluster:
+<a class="moz-txt-link-freetext" href="http://www.boardgamegeek.com/boardgame/22004/cluster">http://www.boardgamegeek.com/boardgame/22004/cluster</a>
+
+I experimented with a UCT player for that game and it did poorly.  The
+goal of the game is to have all pegs placed at a particular hole depth
+and forming a connected group.  I think UCT has difficulty with such a
+specific goal, it's like finding a needle in a haystack.  I don't
+doubt that UCT could play the game and potentially play it well, but
+it seems to me, that in order to do that, some form of domain
+knowledge (e.g. a partial connectivity metric) would be necessary for
+a game such as this.  This observation could extend to the class of
+games where reaching a specific "needle in the haystack" configuration
+of pieces is the goal.
+
+I do wonder about Chess and Chess like games as well.  I haven't found
+any literature concerning the applicability of UCT to those sorts of
+games.
+
+Let us know what you find out!
+
+-- Greg
+
+
+</pre></div></body>
+</html>
+</table></div>

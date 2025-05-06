@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Completely new game:  MAJORITIES</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Completely new game:  MAJORITIES</td></tr><tr><td><b>From: </b>Moh Bel &lt;mohbel63@gmail.com&gt;</td></tr><tr><td><b>Date: </b>15/10/2016, 16:41</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Saturday, July 21, 2007 at 1:55:06 AM UTC-4, Bill Taylor wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+TO ALL ABSTRACT GAMERS
+======================
+Here is, I believe, a rare chance to be in on the ground floor,
+not only of a new game, but of a whole new FAMILY of games!
+
+
+MAJORITIES is a new type of game, with exceptionally simple rules,
+and bearing little relation to other games as yet.  Many variants
+(including a very natural 3-dimensional version) are possible.
+
+It is based on the fact that in politics, or committees with
+sub-committees, a minority of people, in critical places,
+may nonetheless carry a voting motion.  I have long felt that
+this is a weird situation, though a moderately common one
+in close elections, where the winner can often have obtained
+less than half the total vote.
+
+I have devised this family of games to illustrate this phenomenon,
+and have tested it to a considerable extent with other players.
+The basic 2-dimensional game is described below, and is now
+implemented on Richard Rognlie's pbem server, courtesy of
+the indefatigable Cameron Browne, one of the server's
+chief implementers.
+
+It seems to be a game of considerable depth, where one must try to
+identify the "most urgent" points to play, and seize those first.
+
+RULES
+=====
+  The board is initially empty. Player-1 places a stone on any cell
+  of the board, then player-2 places 2 stones; and they continue
+  in turn placing 2 stones at a time, until someone has won
+  a majority of directions.
+
+  Getting a majority (e.g. 4 of 7; 3 of 5) of stones in a line
+  wins that line; winning a majority of parallel lines in some
+  direction wins that direction; winning a majority of directions
+  (i.e. 2 or 3) wins the game.
+====
+
+Apart from settling the shape of the board, that is all there is to
+it!
+
+Please note that the 1-2-2-2-... number of moves per turn is
+quite vital, otherwise it would be an enormous advantage to start,
+far more so than in most other games, and no simple "swap"
+equalization is possible.
+
+A very simple and natural 3-dimensional variant is to have a 3x3x3
+cube,
+with the initial goal being to win 5 or more points in a plane,
+then 2 or 3 planes in one direction, then 2 or 3 directions.
+
+                / |
+              /   |           three directions:
+            /     |
+ ______|   ._|_____     1 horizontal,
+|           |   |           |    2 vertical away from us,
+|      ___|   |___      |    3 vertical across view.
+|     /   |/        /       |
+|__/    '        /_____|
+  /________/  |
+           |        !
+           |      /
+           |    /
+           |  /
+           |/
+
+In two dimensions, we play on a hexagonal board, where
+there are three very obvious directions in the plane -
+horizontal (zero slope), sloping upwards (positive),
+sloping downwards (negative).
+
+Note that one must win not MORE lines than the opponent,
+but merely more lines in any two directions.
+
+The size of the board refers to the number of cells along the edge.
+The server only supports three sizes of board, size 3, 5 and 7.
+At first I thought that the board size would <b class="moz-txt-star"><span class="moz-txt-tag">*</span>have<span class="moz-txt-tag">*</span></b> to be odd,
+to ensure the vital matter that there must be an odd number of
+items in every category, to allow clear majoroities and
+prevent ties.  However, as some cells have to be removed
+from the board anyway, it has been observed (by someone on
+the server - forgot who - apologies to that man!), that
+even-sided boards are also possible, as long as some corner
+or edge cells are among those removed.
+
+But anyway, here are the basic boards:-
+
+The default size board is 5, shown here...
+
+      .  .  .  . .
+     . # .  .  .  .     The cells marked # are NOT on the board;
+   .  .  .  .  .  .  .    they are effectively holes in the board;
+ .  .  .  # .  .  .  .   they cannot be played in and do not
+.  .  .  .  .  # .  #  .  count towards the final scoring.
+  .  .  . #  .  .  .  .
+    .  .  .  .  .  .  .
+      . #  .  .  .  .
+       .  .  .  .  .
+
+   Here is a board of size 3...
+       . . .         This very tiny board is probably susceptible
+      . # . .        to a complete analysis, (but possibly not).
+     . . # # .
+      . # . .        It would make an excellent starting size
+       . . .         for two beginners to get the hang of the game.
+
+The same pattern of blank cells follows all sizes; here is size 7...
+
+      . . . . . . .
+     . # . . . . . .       Note that IN ALL CASES
+    . . . . . . . . .      there is an odd number of rows,
+   . . . # . . . . . .     and every row has an odd number of cells.
+  . . . . . . . . . . .
+ . . . . . # . . . . . .   This is vital, so that every line
+. . . . . . # # . # . # .  can have a clear-cut "majority" winner.
+ . . . . . # . . . . . .
+  . . . . . . . . . . .    The lines are in three possible directions;
+   . . . # . . . . . .     NE/SW, NW/SE, horizontal.
+    . . . . . . . . .
+     . # . . . . . .
+      . . . . . . .
+
+Finally, here is a completed game on the size-3 board:
+
+b   b   a   a   b  &lt;--- Winner of the NW/SE lines
+ \   \    \     \     \
+
+              A    B    A        line won by a
+
+            A    #   A    B     line won by a
+
+         B    B   #    #    B   line won by b
+
+            B   #   A    A      line won by a
+
+              B   B   A          line won by b
+
+ /   /   /   /   /
+a   b   a   b   a  &lt;--- Winner of the NE/SW lines
+
+So we see that A has won the horizontal direction;
+                and B has won the downwards direction;
+                and A has won the upwards direction;
+
+So A wins the game, 2 directions to 1;
+even though B has played more stones.
+_________
+
+Have fun with the new game!   Good luck to all.
+
+                  _________________
+                 / ________________ \
+                / /                            \ \
+               / /                              \ \
+              / /    ============       \ \
+             / /         Bill  Taylor          \ \
+            / /      ============         \ \
+           / /                                      \ \
+          / /   (fan of 7-a-side rugby!)    \ \
+         / /                                           \ \
+        / / <a class="moz-txt-link-abbreviated" href="mailto:W.Taylor@math.canterbury.ac.nz">W.Taylor@math.canterbury.ac.nz</a> \ \
+       : :  ~~~~~~~~~~~~~~~~~~~~~~~   : :
+       `.`.                   ,                       .'.'
+        : :                  /|                      : :
+        `.`.                / |                     .'.'
+         : :               /  |                   : :
+         `.`.       ______| ._|____      .'.'
+          : :      |             | |      |     : :
+          `.`.     |    __| !___      |    .'.'
+           : :     |   /  |/   /   |         : :
+           `.`.    |__/   '   /____|   .'.'
+            : :      /_______/|     : :
+             `.`.         |   !        ,','
+               `.`.       |  /       ,','
+                 `.`.     | /      ,','
+                   `.`.   |/     ,','
+                     `.`. '    ,','
+                       `.`. ,','
+                         `.,'
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+You have 10000 years of mental retardation.
+Maths!!!???
+Do you that this is going to impress me????????
+I know many mathematician at high level who are in fact deeply dumb! 
+I know few illiterate guys and women who are hugely smart.
+When it comes to the game design the mathematical knowledge WILL NEVER REPLACE creativity. NEVER!!!
+
+
+</pre></div></body>
+</html>
+</table></div>

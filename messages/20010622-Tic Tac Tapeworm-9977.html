@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Tic Tac Tapeworm</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Tic Tac Tapeworm</td></tr><tr><td><b>From: </b>georgemw@speakeasy.net (George Weinberg)</td></tr><tr><td><b>Date: </b>22/06/2001, 22:28</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>comp.ai.games,rec.puzzles,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+For those of you who play my 4-D tic tac toe program (I know there are
+at least 2 :-) ),  I've upgraded it with some stronger
+AIs to waste your CPU cycles.  I've also added a
+feature to allow you to arbitrarily place Xs and Os in
+case you maybe want to give yourself an edge,  or just feel like
+seeing what happens in a given position.  In case anyone's interested,
+a discussion of my development process follows.
+
+	Riverman was complaining about how crappy
+my 4-D TTT AIs were a while back (actually,  he just wasn't
+convinced that they demonstrated a win for the first player,  but
+I see insults everywhere these days) so I decided to try to
+improve them.  I kind of figured that I could get a lot of
+performance enhancement with a little effort by optimizing my
+parameters
+and putting in a little look ahead.
+	This turns out to be completely backwards:  because
+I had written Typhus and Roid to only evaluate the immediate
+position,  it turned out there was quite a lot of effeort involved
+giving it look-ahead,  and it gave almost no performance gain.
+I had originally rejected the idea of doing look-ahead because
+the branching ratio was so large (625 first moves!),  but I had
+the insight that so many of these moves obviously suck that
+I could probably just initially do a typhus-like evaluation
+and just search the ten or so most promising moves at each
+level.  The result of this was Rhea.  It turns out that Rhea almost
+always makes the move it considered best in its preliminary analysis
+anyway.  
+	Another thing that didn't help much was setting up a
+"tournament"
+program which played variations of the AI against each other and
+fiddled with the parameters.  It turns out that the original
+parameters I just pulled out of my ass weren't that bad,
+and that the quality of play isn't that sensitive to the precise
+values
+of the parameters anyway.
+	So the next thing I tried was to simplify down to 3-D
+to see if I could get any insights.  I had very reliable information
+saying that 4X4X4 TTT is a forced win for the first player (saw it
+on the web somewher),  and since the branching ratio is "only"
+64 I thought maybe I could conclusively demonstrate this. This
+actually
+helped,  although not directly.  A branching ratio
+of 64 is still too high to search more than a few ply into
+the future.  The program didn't see certain wins which I clearly
+could;
+it would build up these blocks of 4 in the center of a plane,
+and this is clearly a winning pattern to a human,  since if you
+just start moving accross the bottom of the plane,  each move you make
+threatens an immediate win and so must be blocked,  and the third
+threatens two wins at once.
+	Thinking about it some more made me realize it didn't have to
+be the center four,  the four corners work,  4 guys in one corner
+work,  even two guys on the bottom edge and two on the top
+edge will work.  This was good for me;  complicated pattern analysis
+makes my head hurt and hence is indirectly bad for my liver,  but 
+counting is easy.  All I had to do was count X's and O's in each
+plane and give appropriate bonuses for plane scores.  The resultant
+AI I called Tapeworm (tapeworms and planes are both flat,  get it?).
+	Tapeworm proved to be much stronger tha Rhea in the 3-D case.
+I put the 3-D version up on my website also in case anyone wants
+to play,  BTW.  There are only 18 planes to check,  and it doesn't
+take that big an edge in a plane to have a forced win.
+	Didn't work as well in the 4-D case.  It's still definately
+better than Rhea,  but the advantage is smaller.  There are 
+I think 278 planes to check (the AI actually only considers 270 of
+them,
+150 "perpendicular" and 120 "diag1".  Coding for the diag2 planes
+seemed like more trouble than it's worth) so it takes a lot longer,
+and you need to get a 9-0 edge in a plane to have an obvious forced
+win.
+	Of course,  it's "obvious" that the next thing to try is to
+try to score for having a majority in a cube.  In the extremely
+likely event that I have nothing better to do in the near future,
+I  might try this.  The main sticking point (aside from the utter
+futility
+of it all) is that I was having trouble thinking of a cool name,
+probably because I was thinking spaces (intead of cubes),  and
+extension
+of planes (which really should be squares;  I had been thinking
+of the individual spaces where you move as squares,  but of course
+they
+actually should be points).  So now I have my name:  Brick.
+	BTW,  I ran tapeworm through the tournament procedure also,
+and again I don't think it helped much.  But maybe I just didn't
+run it long enough,  I only ran it about three days on my new machine.
+I could be running it for like months on the old machine,
+it's not doing anything right now and I really ought to
+help do my part to help California get over its power glut.
+  
+   George 
+
+
+</pre></div></body>
+</html>
+</table></div>

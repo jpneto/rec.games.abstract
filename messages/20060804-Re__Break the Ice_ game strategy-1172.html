@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: &quot;Break the Ice&quot; game strategy</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: &quot;Break the Ice&quot; game strategy</td></tr><tr><td><b>From: </b>&quot;Arthur J. O&#39;Dwyer&quot; &lt;ajonospam@andrew.cmu.edu&gt;</td></tr><tr><td><b>Date: </b>04/08/2006, 16:37</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>comp.programming,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-flowed">
+<br>On Fri, 4 Aug 2006 <a class="moz-txt-link-abbreviated" href="mailto:jdallen2000@yahoo.com">jdallen2000@yahoo.com</a> wrote:
+<br><blockquote type=cite>Arthur J. O'Dwyer wrote:
+<br><blockquote type=cite>On Thu, 3 Aug 2006, Rob Thorpe wrote:
+<br><blockquote type=cite>James Dow Allen wrote:
+<br><blockquote type=cite>It sounds like you're missing the "transposition cache"
+<br>(memory, e.g. hash table, of previously solved positions).
+<br></blockquote>
+<br>I'd agree with that.&nbsp; It seems best to evaluate a large chunk of the
+<br>game offline and store it in a table.
+<br></blockquote></blockquote>
+<br>I would tend to view the "table of solutions from recent several weeks"
+<br>and "cache of solutions from recent several seconds" as
+<br>separate objectives with separate heuristics that may or may not
+<br>use same data format.
+<br></blockquote>
+<br>&nbsp; I wouldn't; but then I don't know what heuristics or data formats
+<br>to use for either of them, so... :)
+<br>
+<br><blockquote type=cite><blockquote type=cite>&nbsp;&nbsp; But the bottom line is still that the program has to, at some point,
+<br>look at 9! things ...
+<br></blockquote>
+<br>By " 9! " I think you're referring to the permutations of
+<br>{A,B,C,...,H,I}.
+<br>But the opening A-B-C leads to the same position as C-B-A
+<br>(they <b class="moz-txt-star"><span class="moz-txt-tag">*</span>transpose<span class="moz-txt-tag">*</span></b> into each other: that's why we speak of
+<br>"transposition cache") and only one of these openings need be
+<br>considered.&nbsp; Stated differently, the number of positions reached
+<br>in your example is 2^9 not 9!, right?&nbsp; Do I misunderstand?
+<br></blockquote>
+<br>&nbsp; Ah, yes. I misunderstood what you were saying. You're correct; storing
+<br>a table of positions <i class="moz-txt-slash"><span class="moz-txt-tag">/</span>is<span class="moz-txt-tag">/</span></i> cheaper than storing a table of game trees,
+<br>because of all the repeated positions.
+<br>
+<br>-Arthur
+<br>
+<br>
+<br></div></body>
+</html>
+</table></div>

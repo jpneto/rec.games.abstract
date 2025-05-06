@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>solving Seahaven Towers</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>solving Seahaven Towers</td></tr><tr><td><b>From: </b>woods@snap.Eng.Sun.COM (Don Woods)</td></tr><tr><td><b>Date: </b>22/12/1993, 23:07</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+I'm about to post the source for my program that solves Seahaven Towers
+positions.  It only solves opening positions, but it wouldn't be hard to
+extend it to handle midgame positions.  I've pounded on it a bit, in
+particular comparing its results to those of the program in the Modula-3
+distribution, and they agree as to the solubility of all positions tested
+(except for a few where the Modula-3 program couldn't decide).
+
+The program compiles on SunOS 5.1.  It should compile on other Unix
+systems, and I hope I've got the code right for DOS as well.  (There's
+some use of the time functions to initialise a random number generator,
+since one of the options lets you use the program to generate random
+positions.)
+
+Note that the program does not let you interactively play the game; it
+just tests for winnability.  On my SparcStation II it takes about 0.2 sec
+per position.
+
+And for the curious: I had it generate a million random positions to see
+how many were winnable.  The answer: 89.11%.
+<div class="moz-txt-sig">-- 
+--	-- Don Woods.				[*** Generic Disclaimer ***]
+--				    ...!sun!woods.eng -or- <a class="moz-txt-link-abbreviated" href="mailto:Woods@Eng.Sun.com">Woods@Eng.Sun.com</a>
+
+</div></pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Approaches to Othello playing programs</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Approaches to Othello playing programs</td></tr><tr><td><b>From: </b>dvl@hpcupt1.cup.hp.com (Doug Larson)</td></tr><tr><td><b>Date: </b>19/02/1993, 22:35</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+Hmm.  Sorry but that's wrong.  The average number of moves available to a
+player at any stage of the game is roughly 13.  Therefore the branching
+factor is about 3.46 = square root of 13.
+
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Now you have me confused!  Why do you take the square root of the number
+of moves available?  Isn't the average branching factor just the average
+number of moves available?  That's how much the game tree "branches" from
+a node to its children.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	David
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+
+Probably the reason was that the amount of computation necessary for
+doing lookahead is roughly proportional to the square root of the
+average branching factor.
+
+For more detailed analysis I suggest:
+
+"An Analysis of Alpha-Beta Pruning" by Donald E. Knuth and Ronald W. Moore
+	in 'Artificial Intelligence' 6(1975), pp 293-326
+
+
+	 "Put one pound of Alpha Beta Prunes
+ 	   in a jar or dish that has a cover.
+ Pour one quart of boiling water over prunes.
+The longer prunes soak, the plumper they get.
+	        Alpha Beta Acme Markets, Inc.
+		         La Habra, California"
+
+( The above quote is a lead-in to the article.  I've always liked
+  Knuth's lead-in quotes! ).
+
+	Doug Larson
+
+</pre></div></body>
+</html>
+</table></div>

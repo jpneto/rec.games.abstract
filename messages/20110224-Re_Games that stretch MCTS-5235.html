@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Games that stretch MCTS</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Games that stretch MCTS</td></tr><tr><td><b>From: </b>marksteere@gmail.com</td></tr><tr><td><b>Date: </b>24/02/2011, 23:05</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On 24-Feb-2011, Greg <a class="moz-txt-link-rfc2396E" href="mailto:dreamwafer@yahoo.com">&lt;dreamwafer@yahoo.com&gt;</a> wrote:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+As an observation, many (if not most) of Mark Steere's
+games seem to have that property so perhaps Mark has
+created fertile territory for UCT :).
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Random search techniques are not suitable for most games because of the
+enormous computer power required to generate enough random, complete plays
+that meaningful patterns start to emerge in the data.  Having an infinite
+tree certainly doesn't help to this end.  Even my finite games are mostly
+unsuitable for random search, like Oust for example.  Oust would be
+resistant to all forms of AI, especially random search.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+UCT "wants" the search space to be cone shaped
+tapering at the end, it doesn't like "needle in the haystack"
+end games where the ratio of wins &amp; losses to the
+remaining search space is small.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Random search isn't inherently afraid of haystack needles.  All of the bad
+strategies random play engenders cancel each other out, leaving intelligent
+play outstanding.  Again, it's just the raw computer power needed to
+generate all that data.  One essential requirement for random search is a
+virtual nothing of a heuristic.  In Flume, for example, you need to know
+whether an even or an odd number of turns were required to fill in a given
+area, on average.  More specifically, there will be a distribution.  If it's
+a spike on one number, then it's settled.  There are n turns available in
+that region.  If the spikes are divided between two numbers, then there's a
+"switch" in the region - a formation which can require an even or an odd
+number of turns to fill out, depending on how the fill-in is initiated.  The
+data might also indicate two switches in the region, etc.
+
+
+</pre></div></body>
+</html>
+</table></div>

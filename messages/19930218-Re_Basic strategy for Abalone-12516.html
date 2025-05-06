@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Basic strategy for Abalone</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Basic strategy for Abalone</td></tr><tr><td><b>From: </b>mikula@ugcs.caltech.edu (Alf Mikula)</td></tr><tr><td><b>Date: </b>18/02/1993, 08:28</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:omalley@porte-de-st-ouen.ics.uci.edu">omalley@porte-de-st-ouen.ics.uci.edu</a> (Owen O'Malley) writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+One serious problem is that Abalone assumess the players want to win
+and doesn't have a ko rule. This makes a strong defense very hard to
+beat. You would need to judge how aggressive to make the computer
+player.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+Wow.  Teaching a computer ko etiquette...Take the easy solution:  Be
+aggressive.
+
+Seriously, though, if you're going for playing pleasure, you might want
+to randomize the computer's persistence.  If you're going for computer
+vs. computer (you said this was a contest?), i'd test the computer against
+itself and see what it looks like for different measures of persistence.
+(How do you measure persistence, though?  Flag certain behaviors after
+a certain amount of time, or measure position values differently?)
+
+How about the representation problem?  The best i've been able to come up
+with (after speculation about the way arrays work best on computers, and
+speculation that the representation should be as efficient as possible to
+find moves quickly) is the following:  *'s are the board, and .'s are
+dead space:
+
+    ....*****
+    ...******
+    ..*******
+    .********
+    *********
+    ********.
+    *******..
+    ******...
+    *****....
+
+Moves along the vertical, horizontal, and right-left diagonal are legal.
+I'm not sure if this minimizes special-casing, though, because you still
+have to check for the dead space.  I guess i haven't given it <b class="moz-txt-star"><span class="moz-txt-tag">*</span>that<span class="moz-txt-tag">*</span></b> much
+thought.  It just seems like that should be the best board representation.
+Heh.  Maybe just because i came up with it...
+
+Or is this a common way to represent hex maps as arrays?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+ Owen
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+--
+----------------------------------------------------------------------
+ Alf Mikula			| ``When the whole world doubts you,
+ <a class="moz-txt-link-abbreviated" href="mailto:mikula@ugcs.caltech.edu">mikula@ugcs.caltech.edu</a>	| it's time to believe in yourself.''
+----------------------------------------------------------------------
+
+</pre></div></body>
+</html>
+</table></div>

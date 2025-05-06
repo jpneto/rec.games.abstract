@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>The  HEXA-Y  problem.</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>The  HEXA-Y  problem.</td></tr><tr><td><b>From: </b>Bill Taylor &lt;w.taylor@math.canterbury.ac.nz&gt;</td></tr><tr><td><b>Date: </b>25/10/2009, 06:52</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+OK then, it's clearly time for a post on this perennial problem:-
+
+(a) to make a connection game on a Hex-hex board,
+(b) which is win/loss complementary, (like Hex, Atoll, and Y),
+(c) whose winning criterion includes some sort of Y connection,
+(d) but EXcludes winning merely by crossing between opposite sides.
+
+Various attempts have been made.
+_ _ _ _ _ _ _
+
+Cross, by Cameron Browne, was promising, but turns out to be broken.
+
+In Cross, it is merely ILLEGAL to join two opposite sides,
+and wins are executed by connecting 3 alternately-spaced sides.
+
+Alas, this leads to "poisoned cells", with concommitant pass fights
+and cold moves (Nim style).  Though playable, it is not within
+the spirit of regular connection games, where every move is hot,
+i.e. passes are irrelevant and cannot gain.
+
+This situation in Cross is typical:-
+
+|     x x x
+|   o o o o
+|  .  .  .  .  .
+|   x x x x
+|    o o o
+
+One might call this the "corporals' stripes" pattern.
+
+Note that with these four stripes, a standard Y win becomes
+impossible for either player, and the centre cells will fill up
+irrelevantly, and whoever first has to fill a POISONED CELL at
+the east or west corner, automatically loses; (or alternatively
+the game is drawn, depending on the exact rule wording).
+
+Altogether an unsatisfactory situation.
+_ _ _ _ _ _ _ _
+
+A more recent attempt has been made by myself, Joao Neto,
+and Nick Bentley; but has, as I have just discovered,
+also a failing (and I expect common) situation.
+
+Our attempt was to extend the crossing prohibition,
+to ANY similar situation, with the rule wording that -
+
+"No move shall be made that physically prohibits the construction
+ of a Y-group by the opponent, unless that move immediately
+ wins for the player".
+
+In other words, you may not utterly block your opponent, except
+by making a winning group yourself.  As always, a winning group
+is one that touches three alternately-spaced sides.
+
+So neither player would be permitted to complete his second stripe,
+in the above board picture.  Nor could they make a simple crossing.
+
+ALAS!!!   This also fails.
+
+|    x o o
+|   o x x x
+|  x o . o o
+|   x x o x
+|    o . x
+
+Here, neither player may play in the centre, or the bottom,
+without thereby making an illegal cross; and they cannot
+make a Y group without getting to play in BOTH desired cells.
+_ _ _ _ _ _ _ _ _
+
+So - the obvious thought is to allow either player to play
+TWO SIMULTANEOUS cells, provided that that thereby wins instantly.
+!!  Is this a winner?   :-)
+!
+
+ALAS &amp; ALACKADAY......
+
+|     o o o o o
+|    x x x x x x
+|   .  .  .  .  .  .  .     irrelevant rubbish in this row
+|  x x x x o o o o
+| o o o o . x x x x
+|  x x x x o o o o
+|   o o o . x x x
+|    x x x o o o
+|     o o . x x
+
+Neither player may play in any ONE or TWO (simultaneously)
+of the three central lower cells.  To do so would be to
+make illegal corporal stripes as in the very first diagram.
+:
+
+And clearly this type of pattern can be extended (on larger boards)
+to prohibitions on THREE (or more) simulataneous winning moves.
+
+The idea of simultaneous moves, even for an immediate win, is not
+a pleasant one for most game players anyway, but these examples
+show that it would not suffice, even so.
+_ _ _ _ _ _ _ _
+
+These sorts of examples convince me that the dream of finding
+a game to satisy all of (a) to (d) above is chimerical; the fact
+is that there is a sort of "PARITY CURSE" on connection games.
+
+For games with no pre-owned sides, such as Y, there must be
+an odd number of sides to make it playable.  Y can easily be
+extended to boards with 5, 7 etc sides.  (We have played these.)
+
+OTOH, for games with "pre-owned sides", such as Hex and Atoll,
+there must be an "evenly even" number of sides, i.e. a multiple
+of 4.  Hex has 4, Atoll 8; and we have played super-atoll with
+12 and 16 sides, all very playable (with restricted
+multi-move modifiers to speed them up for email).
+
+This leaves boards with "oddly even" numbers of sides,
+such as 6 and 10, quite without playable connection games for them!
+
+This is THE PARITY CURSE of connection games:  NO (4n+2) !
+=======================================    """""""""""""
+
+- it is distantly similar to the curse of Graeco-Latin squares
+and of finite Projective Geometries!
+
+-- Baffled Bill
+
+***  I'm NOT a misogynist, you stupid cow!
+
+
+</pre></div></body>
+</html>
+</table></div>

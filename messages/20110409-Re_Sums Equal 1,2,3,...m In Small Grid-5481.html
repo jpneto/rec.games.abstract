@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Sums Equal 1,2,3,...m In Small Grid</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Sums Equal 1,2,3,...m In Small Grid</td></tr><tr><td><b>From: </b>James Waldby &lt;not@valid.invalid&gt;</td></tr><tr><td><b>Date: </b>09/04/2011, 08:00</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Fri, 08 Apr 2011 13:40:36 -0700, swp wrote:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+On Apr 8, 2:30 pm, Leroy Quet <a class="moz-txt-link-rfc2396E" href="mailto:qqq...@mindspring.com">&lt;qqq...@mindspring.com&gt;</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+This can be considered both a puzzle and a solitaire game.
+
+Make an n-by-n grid on paper. (I suggest that n = 3 for beginners.)
+
+Fill the grid with UNIQUE positive integers, one integer per square of
+the grid. The numbers need not be consecutively valued necessarily.
+
+Your score is the largest integer m such that integers 1 through m all
+occur as sums within the grid (without missing any positive integers
+&lt;=m).
+
+A "sum" is of any number of addends (possibly just 1) that are all
+consecutively placed within a row of the grid or a column of the grid.
+(No diagonals in this variation.)
+
+So, for example, if we have the following 3-by-3 grid:
+
+2 9 8
+3 1 10
+7 6 15
+
+...the sums 1 through 19 all occur in this grid. So, I get a score of
+19.
+(Notice that some values of sums occur more than once.)
+
+I bet it is easy to do better than I did with a 3-by-3 grid, since my
+grid is inefficient, and I didn't try too hard to find it.
+
+(Note: There are 27 possible sums in a 3-by-3 grid of 1, 2, or 3
+addends. I don't know what the largest possible score is for a 3-by-3
+grid, though.)
+
+You can "play" someone else by both of you trying to score as well as
+you can on the same-sized grid. Just try to outscore your opponent.
+
+Thanks,
+Leroy Quet
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+interesting.  for 3x3 the best I can get is 20 (I think) using this:
+13 6 12
+7  2 14
+10 3  1
+
+I am loathe to write a program to compute the best score, but perhaps
+some other enterprising person could make the attempt.  bonus points for
+not using c or perl, of course.  demerits for using recursion, blowing
+the stack, or causing a core fault in the math subprocessor.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+ From a program I wrote:
+  3  1 17      3   4  21   1  18  17     3  16  23  13  20   7
+ 13  9  2     13  22  24   9  11   2     1  10  15   9  14   5
+  7  5  6      7  12  18   5  11   6    17  19  25   2   8   6
+
+The square is shown in 3 left columns of numbers; sums of row 
+elements appear in middle 6 columns; and sums of column elements
+in left 6 columns.  For example, sums for a row p q r are listed
+in order p, p+q, p+q+r, q, q+r, r.  The two repeated sums are
+11 = 9+2 = 5+6 and 18 = 1+17 = 7+5+6.
+
+The program, written in C and recursive to depth at most 28,
+takes about 20 minutes to exhaustively test all possibilities.
+There are 9 other #25 squares with 1 and 2 in the positions 
+shown, and all #25 squares have 1 and 2 in the middle cells 
+of adjacent sides, if my program is to be believed.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+documentation will count for 15% of your final grade, and keep future
+programmers from cursing your name for the clever and obscure ways you
+found to save 11 bytes worth of typing that cost them more than an hour
+of their life which they won't get back.
+
+it seems obvious that the best grids of size n+1 are not supersets of
+the best grid of size n.  that makes this game more fun as you progress.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+"Not supersets" could hold for small grids like this, and completely
+fall down for large grids.  It's easy to imagine that a best N x N
+grid, N a few billion, could look very much like a best N+1 x N+1 grid.
+
+<div class="moz-txt-sig">-- 
+jiw
+
+
+</div></pre></div></body>
+</html>
+</table></div>

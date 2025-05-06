@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Gale&#39;s Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Gale&#39;s Game</td></tr><tr><td><b>From: </b>mjd@saul.cis.upenn.edu (&quot;[*] Jasper Titus&quot;)</td></tr><tr><td><b>Date: </b>20/11/1992, 23:18</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:SUMMERS.92Nov20133840@sanctum.cs.utah.edu">&lt;SUMMERS.92Nov20133840@sanctum.cs.utah.edu&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:summers%sanctum.cs.utah.edu@cs.utah.edu">summers%sanctum.cs.utah.edu@cs.utah.edu</a> (Jim Summers) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+  I'm confused here.  On any MxN board, doesn't player 1 just have to play
+  at (2, 1) to win? i.e.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+    No.  The rules of the game are exactly as follows:  (I changed your
+numbering because it was bizarre)
+
+	1.  Choose integers M and N to be the size of your board.
+
+	2.  A legal move is a choice of integers (p, q), with 1&lt;=p&lt;=M
+	    and 1&lt;=q&lt;=N, and such that there's no previous move (x, y)
+	    with (x&lt;=p and y&lt;=q).
+
+	3.  If you play (1, 1), you lose.
+
+So on an MxN board,
+
+
+        1   2   3        M
+	--- --- --- ...  ---
+        |                    | N
+
+        |                    | N-1
+
+        |....................|
+
+        |                    | 2
+
+        |___ ___ ___ ___ ___ | 1
+
+
+after an opening move at (2, 1),
+
+        1   2   3        M
+	--- --- --- ...  ---
+        |*** *** *** *** *** | N
+
+        |*** *** *** *** *** | N-1
+
+        |....................|
+
+        |111 *** *** *** *** | 2
+
+        |___ ___ ___ ___ ___ | 1
+
+
+the second player can follow with (1, 2) (Since 2&gt;1)
+
+        1   2   3        M
+	--- --- --- ...  ---
+        |*** *** *** *** *** | N
+
+        |*** *** *** *** *** | N-1
+
+        |....................|
+
+        |111 *** *** *** *** | 2
+
+        |___ 222 *** *** *** | 1
+
+which wins.
+
+--
+
+                And for to se, and eek for to be seye
+Mark-Jason Dominus 	  			    <a class="moz-txt-link-abbreviated" href="mailto:mjd@central.cis.upenn.edu">mjd@central.cis.upenn.edu</a> 
+
+
+</pre></div></body>
+</html>
+</table></div>

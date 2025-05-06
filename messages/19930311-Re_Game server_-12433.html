@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Game server?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Game server?</td></tr><tr><td><b>From: </b>&quot;Jonathan R. Ferro&quot; &lt;jf41+@andrew.cmu.edu&gt;</td></tr><tr><td><b>Date: </b>11/03/1993, 19:14</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:positron@quip.eecs.umich.edu">positron@quip.eecs.umich.edu</a> (Jonathan Haas) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+... I'd like to see a bridge or Scrabble server...
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+There is a bridge server, of sorts.  Actually what happens is that there
+is a global server which is just a database of running table servers.
+Each player contacts the Global Player Service (GPS) to see if there is
+a table to join.  If not, the player may spectate at another table or
+become a new table server.  "Serving" registers the new table with the
+GPS so that new players may join.  More information may be obtained by
+rooting around the following FTP sites or asking on rec.games.bridge.
+
+--------------------
+
+Frequently Asked Questions about OkBridge
+---------- ----- --------- ----- --------
+
+1. What is OKbridge?
+
+   OKbridge is a Unix program which allows four people at different
+   locations on the Internet to play the game of bridge together.
+   It has Rubber, Duplicate, Match Point and IMP scoring modes.
+   It allows kibitzers to join a table and watch play, it provides
+   a practice mode whereby a partnership can practice bidding,
+   and it provides support for duplicate play.
+
+2. How can I get OKbridge?
+
+   You can obtain OKbridge for your system by typing the command:
+
+     telnet 132.239.51.7 4441 | csh            (for Sun and NeXT users)
+     telnet 132.239.51.7 4441 | csh -sb -aix   (for AIX users)
+     telnet 132.239.51.7 4441 | csh -sb -hpux  (for HPUX users)
+
+   Also, OKbridge can be obtained using anonymous ftp.  It is currently
+   available at the following locations:
+
+                     North America             Europe
+                     ----- -------             ------
+   Machine Name      suned.cs.yale.edu         nic.funet.fi
+   IP Number         128.36.21.1               128.214.6.100
+   Directory         pub/okbridge              pub/unix/games
+   Filename          okbridge.tar.Z            okbridge-1.7H.tar.Z
+
+   For information about how to use anonymous ftp, ask any local guru or
+   send email to me.
+
+[ FAQ continues...  Further information available from the FTP sites.
+  Note that this is an old copy--the latest version is 1.8B, not 1.7H. ]
+
+-- Jon Ferro               Einsprachigkeit ist heilbar
+
+</pre></div></body>
+</html>
+</table></div>

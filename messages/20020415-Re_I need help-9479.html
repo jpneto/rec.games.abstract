@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: I need help</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: I need help</td></tr><tr><td><b>From: </b>Bruno Wolff III &lt;bruno@cerberus.csd.uwm.edu&gt;</td></tr><tr><td><b>Date: </b>15/04/2002, 17:08</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:3CBADC20.15BD552D@web.page">&lt;3CBADC20.15BD552D@web.page&gt;</a>, Jan Kristian Haugland wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+What solution do you have? It seems that we get the P-positions
+by starting with P_0 = {0, 0} and adding recursively for k &gt;= 1
+
+   P_k = {smallest positive integer not used, same + k}
+
+This gives: {1, 2}, {3, 5}, {4, 7}, {6, 10}, {8, 13}, {9, 15},
+{11, 18}, {12, 20}, {14, 23}, {16, 26}, {17, 28}, ...
+
+I guess it's tricky to find a closed form expression for these.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+That is what I got assuming the normal ending condition (you lose if
+you can't move). I think the misre game will have a similar rule, but
+the starting point will be {0, 1} instead of {1,2}. So that if you subtract
+1 from both coordinates in a P position for the normal game, you get a P
+position in the misre game.
+
+It looks like the number P positions with both coordinates &lt;= n is O(n).
+(I think it is at least [n/4].) So if the original poster wants all of
+the P positions for the 'solution', then it will take O(n) time to return
+them.
+
+</pre></div></body>
+</html>
+</table></div>

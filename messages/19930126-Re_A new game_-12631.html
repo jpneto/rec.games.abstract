@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: A new game?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: A new game?</td></tr><tr><td><b>From: </b>nicholso@pioneer.arc.nasa.gov (Melvin H. Nicholson YBH)</td></tr><tr><td><b>Date: </b>26/01/1993, 01:57</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:1993Jan25.175510.26117@dbased.nuo.dec.com">&lt;1993Jan25.175510.26117@dbased.nuo.dec.com&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:tomj@kibo.enet.dec.com">tomj@kibo.enet.dec.com</a> (Tom Jaskiewicz) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+<a class="moz-txt-link-abbreviated" href="mailto:boll@CS.ColoState.EDU">boll@CS.ColoState.EDU</a> (dave boll) describes a new game:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+   The board: A MxN rectangle of dots.         
+   The play : Players alternate making moves, last one able to move wins
+   A move: A move in this game consists of drawing a straight line 
+      connecting two (previously untouched) dots. The line may not cross
+      any previously drawn line, nor can it pass thru one dot on the way
+      to another. Each dot can have at most one line touching it.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+..
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+ Anyway, has anyone ever heard of a game like this? Thoughts?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+and <a class="moz-txt-link-abbreviated" href="mailto:wms@ssd.intel.com">wms@ssd.intel.com</a> (William Shubert) writes:
+]With this game
+]it's pretty clear immediately that player 1 can win on any MxN board if M
+]or N is even:
+]
+]+   +   +   +
+]       /
+]+   + / +   +
+]     /
+]+   +   +   +
+]
+]From here, any move that player 2 makes can be "mirrored" by player 1; player
+]2 MUST run out of moves first.
+
+On MxN boards with both M and N odd there is a 180 degree rotational symmetry
+around the central point.  Player 2 wins by maintaining the symmetry:
+
++   +   +   +---+   +   +
+      /
++   + / +   +   +   +---+
+    /  |
++   +   +   #   +   +   +
+               |  /
++---+   +   +   + / +   +
+                /
++   +   +---+   +   +   +
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Bzzt.  Sorry, but this won't work.  Consider that any line which touches
+the the center point cannot be follow by the 180 rotation (which also
+must touch the center point.  The 1st player win for even-even and
+even-odd and odd-even boards does hold, however.
+
+(Note that each node has a maximal usage of one)
+
+Mel
+
+
+</pre></div></body>
+</html>
+</table></div>

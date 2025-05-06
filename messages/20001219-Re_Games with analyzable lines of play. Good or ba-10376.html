@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Games with analyzable lines of play. Good or bad?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Games with analyzable lines of play. Good or bad?</td></tr><tr><td><b>From: </b>Graham Wills &lt;gwills@research.bell-labs.com&gt;</td></tr><tr><td><b>Date: </b>19/12/2000, 18:01</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.board,rec.games.abstract,rec.games.design</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Bruno Wolff III wrote:
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+Yes, computers advance quickly. No, digital computers will never solve
+chess.
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+ 
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+It depends on what you mean by solve.
+It may be possible to prove Chess is a draw (or win for one side) with best
+play, without having to look at every possible position.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+ 
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+For example consider Nim played with the one stack containing 10^100000000000
+stones. There are more possible ways to play this game than can ever be
+analysed explicitly. But I know that the right move is to take the whole stack
+(under the normal win condition).
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Chess is a lot more complicated than Nim, but it is possible that something
+similar might be doable.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Let me echo Bruno's comments. I've seen some posts suggesting that the
+only way to solve chess is to store the best position for all possible
+boards. That is not actually the usual definition of solving a game.
+
+I would suggest that if I could come up with an algorithm that would 
+guarantee at least a draw for white (we know that such an algorithm
+exists) then chess would be solved. To do so, I do not need to store
+as massively vast a set of games as previous posts have implied.
+
+One poster says that 6-piece endings can currently be stored in 32 G.
+Adding another piece at worst will multiply that by 58 (spaces) x
+5 (possible pieces at the new square) so we could store 8-piece
+endings in 3 petabytes; knowing how combinatorics work, I'd expect
+that the actual number would be less than a petabyte. Expensive, but
+doable now. By 2020, would 10-piece storage be impossible?
+
+So now all the algorithm would have to do is to reduce the intial
+set of 32 pieces to a subset of the 10-piece solutions that include
+no losses. We don't need a general purpose strategy -- which is what
+is currently being attempted -- we just want to reduce the game to
+a series of piece exchanges that will get us to our solution set.
+
+It is not inconceivable to me that a specific set of openings
+(let's store them in another 50 petabytes) could be found that 
+give a narrow set of positions from which any good player (i.e.
+one at Deep Blue level) can guarantee getting to the 10-piece
+solution set we need.
+
+The deeper question than "is it possible?" is "will anyone bother?"
+
+	- Graham
+
+
+<div class="moz-txt-sig">-- 
+Graham Wills                       Data Visualization, Bell Labs
+<a class="moz-txt-link-abbreviated" href="mailto:gwills@research.bell-labs.com">gwills@research.bell-labs.com</a>      +1 (630) 979 7338
+<a class="moz-txt-link-freetext" href="http://www.bell-labs.com/~gwills">http://www.bell-labs.com/~gwills</a>   Silk for Calde!
+
+</div></pre></div></body>
+</html>
+</table></div>

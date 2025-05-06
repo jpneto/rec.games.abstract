@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: &lt;None&gt;</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: &lt;None&gt;</td></tr><tr><td><b>From: </b>gillcp@vnet.ibm.com (Chris Gill)</td></tr><tr><td><b>Date: </b>06/03/1995, 13:18</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In <a class="moz-txt-link-rfc2396E" href="mailto:1995Mar3.132856.38465@msuvx2.memphis.edu">&lt;1995Mar3.132856.38465@msuvx2.memphis.edu&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:udhrussell@cc.memphis.edu">udhrussell@cc.memphis.edu</a> writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+    Okay, I've got a puzzle I need help with. Actually, it's my brother's
+puzzle and it's driving him crazy. So, if anyone knows the solution to this
+problem let me know. The object is to draw a line through every line but only
+once. I know it sounds easy, but it isn't.
+
+                  -----------------------
+                  [          [          [
+                  [    a     [    b     [
+                  [          [          [
+                  -----------------------       f
+                  [     [         [     [
+                  [  c  [    d    [  e  [
+                  [     [         [     [
+                  -----------------------
+
+I know the drawing looks odd but it's supposed to be two boxes on top of three
+boxes. It's an old puzzle, but I need to find out if there is a solution. Just
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+If you don't have to leave the frame (ie you don't enter region f) then the
+answer is easy: a-&gt;c-&gt;d-&gt;a-&gt;b-&gt;d-&gt;e.  However, you already knew that, so now
+including region f.  Here's a table of edges (lines to cross) for each region:
+a    5
+b    5
+c    4
+d    5
+e    4
+f    9
+You don't have to think for very long to realise that each time you enter a
+region you leave it next move, so except for the start and finish regions,
+each region needs to have an even number of edges.  Look again at the table
+and you see that it's not possible.
+
+It's not too tricky to understand the above explanation once you've seen it
+once.  What is surprising is that if the condition above is met, for whichever
+compliant shape, then that shape will ALWAYS be traceable.  This is proved
+using the Principal of Mathematical Induction.  I was shown it in the second
+year of my BSc.
+
+Chris.
+
+Similar problem (note phrasing):  Can you trace along the lines of this
+diagram without tracing along any line more than once or lifting your
+finger from the screen?
+ ___ ___
+|  /|\  |
+| / | \ |
+|/__|__\|
+|\  |  /|
+| \ | / |
+|__\|/__|
+(the lines are supposed to meet wherever it looks like they are supposed to;
+that's ascii for you!)
+_______________________________
+Chris Gill
+Xyratex, Havant, Hampshire, UK.                These are my opinions;
+<a class="moz-txt-link-abbreviated" href="mailto:gillcp@vnet.ibm.com">gillcp@vnet.ibm.com</a>                       they may or may not be Xyratex's.
+
+</pre></div></body>
+</html>
+</table></div>

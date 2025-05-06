@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Chess on spherical boards.</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Chess on spherical boards.</td></tr><tr><td><b>From: </b>mjd@saul.cis.upenn.edu (&quot;[*] The Power in the Streets&quot;)</td></tr><tr><td><b>Date: </b>11/11/1992, 22:45</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:1992Nov11.191304.19055@math.utexas.edu">&lt;1992Nov11.191304.19055@math.utexas.edu&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:akessler@bernard.ma.utexas.edu">akessler@bernard.ma.utexas.edu</a> (Adam Kessler) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+  Spherical Chess: You would declare every boundry tile to be adjacent.
+  Alternately [I think preferably, but who am I?] you could have 
+  an "extra" square off of the chess board that was adjacent to every 
+  square on the border of the board.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+    That's not enough, because chess is a geometric game, not a
+topologic one.  You need to define what happens when a piece such as a
+bishop moves through this square and out the other side without
+stopping. 
+
+    I question whether this is what you want anyway, because in standard
+(plane-segment) chess a square is adjacent to three, five, or eight
+others, but in your spherical chess, the special square is adjacent to
+thirty (!) others.  (It might be an interesting variation; perhaps
+strategy would center around control of the special square.)
+
+    A good version of spherical chess would have all the squares be the
+same, each adjacent to exactly eight others, or so it seems to me.
+Perhaps you could accomplish it this way:
+
++--+--+--+--+--+--+--+--+
+|A8|B8|C8|D8|E8|F8|G8|H8|
++--+--+--+--+--+--+--+--+
+|A7|B7|C7|D7|E7|F7|G7|H7|
++--+--+--+--+--+--+--+--+
+|A6|B6|C6|D6|E6|F6|G6|H6|
++--+--+--+--+--+--+--+--+
+|A5|B5|C5|D5|E5|F5|G5|H5|
++--+--+--+--+--+--+--+--+
+|A4|B4|C4|D4|E4|F4|G4|H4|
++--+--+--+--+--+--+--+--+
+|A3|B3|C3|D3|E3|F3|G3|H3|
++--+--+--+--+--+--+--+--+
+|A2|B2|C2|D2|E2|F2|G2|H2|
++--+--+--+--+--+--+--+--+
+|A1|B1|C1|D1|E1|F1|G1|H1|
++--+--+--+--+--+--+--+--+
+
+    First make file A adjacent to file H; square A,i (for some number i)
+is orthogonally adjacent to H,i and diagonally adjacent to H,(i+1) and
+H,(i-1) when these exist.  You now have a cylinder.
+
+    Now pinch the ends together: x,g8 (for some letter x) is orthogonally
+adjacent to (x+4 mod 8),8 and diagonally to (x+3 mod 8),8 and (x+5 mod
+8),8.
+
+    I think you'd at least want to tinker the castling rule, because the
+rooks are not where you think: The queen's rook on A1 is already
+adjacent to the king on E1 and the king's rook on H1, for example.
+
+--
+
+                And for to se, and eek for to be seye
+Mark-Jason Dominus 	  			    <a class="moz-txt-link-abbreviated" href="mailto:mjd@central.cis.upenn.edu">mjd@central.cis.upenn.edu</a> 
+
+</pre></div></body>
+</html>
+</table></div>

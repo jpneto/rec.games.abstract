@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Nim game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Nim game</td></tr><tr><td><b>From: </b>jferro@fuchsia.ece.cmu.edu (Jonathan R. Ferro)</td></tr><tr><td><b>Date: </b>20/07/2004, 21:37</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:gnalle@ruc.dk">gnalle@ruc.dk</a> (Niels L. Ellegaard) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I am not a master of combinatorical game theory, so perhaps someone
+could enlighten me. How is the third pile equivalent to 3? I cannot
+grab all three stones in one turn. I would expect something similar
+to:
+
+(.) -&gt; 0
+
+(X) -&gt; 1
+
+(X X) -&gt; 2
+
+(X X X) -&gt; 3
+
+(X X)  
+(X .) -&gt;  &lt;1,2|1,2&gt;
+
+Here the number &lt;1,2|1,2&gt; is surreal. It means that if left player
+moves first he can leave a simple nim pile of size 1 or a simple nim
+pile of size 2. The same goes for the right player.
+<a class="moz-txt-link-freetext" href="http://en.wikipedia.org/wiki/Surreal_number">http://en.wikipedia.org/wiki/Surreal_number</a>
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+All of the numbers are surreal, you just happen to only be seeing the
+surreality in the case you are confused about.  :)
+
+The general rules of manipulating the surreal representations of
+nonpartisan games are:
+1. Both players always have the same options. (definition of nonpartisan)
+2. The value of the position is the smallest value that is NOT available
+as an option. (the Minimal EXcluded, or MEX rule)
+3. Options higher than the MEX are superfluous to determining the
+position's value. (the Sprague-Grundy Theorem)
+
+Here are the surreal representations of the first three cases:
+
+0 = &lt; | &gt;
+1 = &lt;0|0&gt;
+2 = &lt;0,1|0,1&gt;
+3 = &lt;0,1,2|0,1,2&gt;
+
+Now, decompose the final case:
+
+(X X)    &lt; (X .)  (X X)  (X .)  (. X) | (X .)  (X X)  (X .)  (. X) &gt;
+(X .) -&gt; &lt; (X .), (. .), (. .), (X .) | (X .), (. .), (. .), (X .) &gt;
+
+      =  &lt;   2  ,   2  ,   1  , 1(+)1 |   2  ,   2  ,   2  , 1(+)1 &gt;
+
+      = &lt;2,1,0|2,1,0&gt;
+
+      = 3
+
+where "1(+)1" is the nim-sum of the two independent moves from that
+position.
+
+-- Jon
+
+
+</pre></div></body>
+</html>
+</table></div>

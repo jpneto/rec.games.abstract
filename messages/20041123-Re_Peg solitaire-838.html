@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Peg solitaire</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Peg solitaire</td></tr><tr><td><b>From: </b>kingpin@freemail.it (lucas)</td></tr><tr><td><b>Date: </b>23/11/2004, 17:27</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+If you do a google search for the phrase "pagoda function" one of the 
+early results is an article called "Modelling and Solving English Peg 
+Solitaire" which sounds related to your problem.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+The problem is that deciding if a configuration c is reducible to a
+configuration c' is NP-complete. So, it's difficult to have that final
+single final configuration.
+I could use the rule of three to decide if a game is not playable, but
+the rule of three did not give me a method to enumarate all really
+possible
+final configuration (the rule of three is only a necessary condition).
+
+I want to write a program that can solve an arbitrary initial
+configuration,
+created by the user. So i don't know the final configuration.
+
+So, which pagoda function should i use???
+
+ 
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+I ask this because if i can compute the possible final configurations,
+i
+can than compute a pagoda function specialized to work with one of
+that final
+configurations (the manhattan pagoda function). Otherwise, i really
+don't know
+how to use a pagoda function (wich? for wich final configuration?) if
+i have
+to solve an arbitrary initial configuration...
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I'm not sure I understand you; pagoda functions are independent of 
+configurations.  You probably will want a set of many pagoda functions, 
+but not all of these will change after each move.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+No, i'm really new to pagoda function. I have read so little about
+this
+functions and i don't know if i can use this functions to make some
+cut to
+the search space (remember that i use a brute-search algorithm).
+
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Here's what I would try:
+...
+Use DFS.  After each jump you try, just add the difference vector for 
+that jump to the current score, and continue.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Uhmm..., i'll read more carefully what you have wrote..i don't
+understand
+english very well so i have not understood very well what you have
+written..
+ 
+ 
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+By the way, in your initial message you say you are keeping a "cache" of 
+all configurations that cannot be reduced to a single peg - I suspect 
+that this could be quite large (since 33 holes gives roughly 2^33, about 
+8 billion, configurations) so I wonder if memory use is part of the 
+problem.  Also, how are you searching this cache?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I map each configuration to a 64-bit value. The cache is a bb-tree.
+When i search a particular configuration in the cache, i check also
+the
+symmetric configurations (for a given configuration  there are 7
+equivalent other configurations).
+
+The cache really help to speed up the process, because the game is
+highly symmetric. By the way, some configurations take more to
+calculate.
+
+The cause is clear to me: the order in which the possible moves are
+tried
+make the difference.
+
+So, i use a function that try to say:"this move is better than this
+other".
+But this procedure needs to look-ahead 3/4 moves to work decently.
+
+But the look-ahead take much time...so now i have a program that in
+some
+cases work faster without look-ahead than with lookahead.
+
+I've not found any other cut to use to speed-up the process :(
+
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Othello-like games (was Re: 6 x 6 Othello)</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Othello-like games (was Re: 6 x 6 Othello)</td></tr><tr><td><b>From: </b>bdp@cl.cam.ac.uk (Barney Pell)</td></tr><tr><td><b>Date: </b>19/02/1993, 18:22</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:Feb19.164543.81886@yuma.ACNS.ColoState.EDU">&lt;Feb19.164543.81886@yuma.ACNS.ColoState.EDU&gt;</a>, <a class="moz-txt-link-abbreviated" href="mailto:boll@CS.ColoState.EDU">boll@CS.ColoState.EDU</a> (dave boll) writes:
+|&gt; In article <a class="moz-txt-link-rfc2396E" href="mailto:1lvmot$ek1@agate.berkeley.edu">&lt;1lvmot$ek1@agate.berkeley.edu&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:chrisyep@ocf.berkeley.edu">chrisyep@ocf.berkeley.edu</a> (Christopher Yep) writes:
+|&gt; &gt;Currently, the limit of (overnight by a PC) Othello perfect-play
+|&gt; &gt;analysis is within the range of the last 26-28 moves of the game.
+|&gt; &gt;The 6 x 6 game has only 32 moves (31 actually since the first move
+|&gt; &gt;is determined WRT symmetry) and each player has fewer options to
+|&gt; &gt;consider per move (as compared to an 8 x 8 game).  So SURELY the
+|&gt; &gt;6 x 6 game has ALREADY been solved... 
+|&gt;   Some other interesting and solvable variations on Othello are:
+|&gt;     1) 4x4 Othello
+|&gt;     2) 'Reverse' othello - player with the fewest disks at the end of
+|&gt; 	the game wins. This could be a viable 4x4 or 6x6 game
+|&gt;     3) A variation on othello where the 'flipping' rule is changed.
+|&gt;        Instead of just flipping pieces between the just-played piece
+|&gt;        and similarly colored pieces, also flip any other pieces that
+|&gt;        are between similarly colored pieces as a result of the first
+|&gt;        series of flips.
+|&gt;     4) This just popped into my head as I'm typing - but what about
+|&gt;        a semi-Othello-like game where 1) Players can place pieces
+|&gt;        anywhere, and 2) A newly placed piece flips all of the existing
+|&gt;        pieces in the same row or column (regardless of color). Hmmmm,
+|&gt;        I'll have to get out my board and see if it's viable.
+|&gt; 
+
+That's interesting, it looks as though there is an entire class of
+othello-like games, which generalizes othello in the same way that
+my class symmetric chess-like games generalizes chess and checkers. 
+Does anyone want to try to define this class, and possibly produce a
+generator for it?  One interesting consequence would be the need to
+produce a more general evaluation function:  How might we generalize
+features like STABILITY to apply to different sets of rules? 
+
+|&gt;   Also, a general question for the group:
+|&gt; 
+|&gt;   I have a semi-general minimax program that I use (sometimes) to analyze
+|&gt;   games that I have an interest in. It occurs to me that other people have
+|&gt;   this as well, and if they do, that their programs are probably better
+|&gt;   written than mine. This could be useful information to exchange for those
+|&gt;   who are unable to run Barney Pell's (hope I got the name right!) Metagame
+|&gt;   workbench.
+|&gt; -- 
+
+There is also the Smart Game Board by Anders Kierulf, now supported I
+believe by Martin Muller (<a class="moz-txt-link-abbreviated" href="mailto:mueller@inf.ethz.ch">mueller@inf.ethz.ch</a>), but sadly this only
+runs on Macs.  However, Kierulf's phd thesis may give you some ideas
+on how to make a useful general minimax engine.   
+
+What interesting games have you analyzed?  
+
+|&gt;      ------------------------------------------------------------
+|&gt;      Dave Boll  <a class="moz-txt-link-abbreviated" href="mailto:boll@handel.cs.colostate.edu">boll@handel.cs.colostate.edu</a>
+|&gt;                 "The speed of time is 1 second per second"
+|&gt;      ------------------------------------------------------------
+
+<div class="moz-txt-sig">-- 
+==================================================
+
+   Barney Pell
+   Computer Laboratory
+   University of Cambridge
+   phone:  (0223) 334602
+   e-mail:  <a class="moz-txt-link-abbreviated" href="mailto:bdp@cl.cam.ac.uk">bdp@cl.cam.ac.uk</a>
+
+==================================================
+
+
+</div></pre></div></body>
+</html>
+</table></div>

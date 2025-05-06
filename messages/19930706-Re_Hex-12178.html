@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Hex</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Hex</td></tr><tr><td><b>From: </b>hoey@AIC.NRL.Navy.Mil (Dan Hoey)</td></tr><tr><td><b>Date: </b>06/07/1993, 09:50</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:torbenm@diku.dk">torbenm@diku.dk</a> (Torben AEgidius Mogensen) writes of Hex
+
+</pre><blockquote type=cite><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+...with the modification that the board is of size Nx(N-1) and the
+second player has to connect the shortest distance, the game is a
+sure win for player two.
+</pre></blockquote></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+The strategy works as follows: divide the board into two
+equal-sized parts along the short diagonal.  Every time player one
+places a stone in one half of the board, player two places a stone
+in the other half [at a point mirrored across the dividing line].
+</pre></blockquote></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+Last week I took issue with his formulation, ending:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+There may be a winning strategy for the second player on the Nx(N-1)
+board, but I would be quite surprised if it's a simple one.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+At that point <a class="moz-txt-link-abbreviated" href="mailto:ag24@gen.cam.ac.uk">ag24@gen.cam.ac.uk</a> (Aubrey de Grey) was kind enough to
+surprise me with the news that I had misinterpreted Torben's remarks
+(which are approximately correct, though somewhat vague) and provided
+a proof which I present in somewhat modified form below.
+
+Torben's idea is to divide the board in half along (almost, but not
+quite) the short diagonal of the board, and match up the halves as
+(slightly offset) mirror images.  For example, the 7x6 board is
+matched up as in the left diagram below:
+
+                    /
+        a b c d e f/
+         g h i j k F             a b c d e f
+          l m n o K E             g h i j k
+           p q r O J D             l m n o
+            s t R N I C             p q r
+             u T Q M H B             s t
+             /U S P L G A             u
+            /
+
+To prove that this is a second player win, let us identify the two
+halves of the board and let the first player play solitaire on the
+diagram at right.  He puts down a red marker whenever he would play on
+the northwest (lower case) half of the original board, and a blue
+marker whenever he would play on the southeast (upper case) half.  The
+second player's strategy ensures he cannot put both colors down on
+the same point.
+
+Now to see if the first player has won, we connect any two adjacent
+markers of the same color, and to model connections across the mirror,
+we connect pairs along the southeast (utrokf) edge whenever a red
+marker has a blue neighbor to its northeast.  (No connection is made
+when the blue neightbor is to the southwest, because for example
+positions "o" and "R" are not adjacent in the original diagram, while
+positions "r" and "O" are adjacent.)
+
+The object is for the first player to make a path from a red marker on
+the north (abcdef) edge to a blue marker on the southwest (aglpsu)
+edge.  But the only place that the path can change color is on the SE
+edge, and a red path from from the N edge to the SE edge blocks the
+blue NE neighbor from continuing on to the SW edge.
+
+So the first player cannot win, and the impossibility of draws implies
+that the second player wins.
+
+Dan Hoey
+<a class="moz-txt-link-abbreviated" href="mailto:Hoey@AIC.NRL.Navy.Mil">Hoey@AIC.NRL.Navy.Mil</a>
+
+</pre></div></body>
+</html>
+</table></div>

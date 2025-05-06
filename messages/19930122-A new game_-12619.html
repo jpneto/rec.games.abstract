@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>A new game?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>A new game?</td></tr><tr><td><b>From: </b>boll@CS.ColoState.EDU (dave boll)</td></tr><tr><td><b>Date: </b>22/01/1993, 16:55</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+  There I was, there I was, there I was
+  Scribbling around with pen and paper, when I sort of came up with a 
+  new (to me) game. It has some of the flavour of sprouts, and I haven't
+  analyzed it much yet, but here it is:
+
+    The board: A MxN rectangle of dots.         
+    The play : Players alternate making moves, last one able to move wins
+    A move: A move in this game consists of drawing a straight line 
+       connecting two (previously untouched) dots. The line may not cross
+       any previously drawn line, nor can it pass thru one dot on the way
+       to another. Each dot can have at most one line touching it.
+
+  The 3x3 game is trivial, and at 4x4 it starts to get a bit interesting. I
+  think it would become playable 6x6 and up.  
+
+  My (limited) analysis: Like sprouts, you know the maximum length of the
+    game will be INT(MN/2) moves. Also like sprouts, you know you've 
+    decreased the length of the game by one move if certain conditions
+    hold. For this game, you've decreased the length of the game by 1 
+    move every time you divide the board in two pieces, such that there
+    are an odd number of untouched dots in each piece. (I guess you actually
+    decrease it by 2 moves if M or N are even....)
+
+  Anyway, has anyone ever heard of a game like this? Thoughts?
+<div class="moz-txt-sig">-- 
+     ------------------------------------------------------------
+     Dave Boll  <a class="moz-txt-link-abbreviated" href="mailto:boll@handel.cs.colostate.edu">boll@handel.cs.colostate.edu</a>
+                "The speed of time is 1 second per second"
+     ------------------------------------------------------------
+
+</div></pre></div></body>
+</html>
+</table></div>

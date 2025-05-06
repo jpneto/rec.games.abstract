@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>2D Nim</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>2D Nim</td></tr><tr><td><b>From: </b>joc_kay@hotmail.com (Joe)</td></tr><tr><td><b>Date: </b>22/07/2004, 13:47</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Inspired by the discussions under the thread "Nim game" the following
+game occurred to me:
+
+2D Nim
+
+Two players (A and B) compete. Player B puts down a number of square
+pieces in a configuration such that all pieces touch one other along
+at least one edge. Player A either accepts or rejects the start. In
+the latter case player B has to start. In turns each player takes away
+one or more pieces. More pieces can be taken only when they are
+located in a (horizontal or vertical) row and all touch each other.
+The player who makes the last move wins.
+
+
+Example game:
+
+Alice and Bob compete. Bob puts down a configuration consisting of 15
+pieces:
+
+  XXX
+ X X 
+XXXXX
+ X XX
+   XX
+
+Alison accepts the start and removes one piece:
+
+  XXX
+ X X 
+XXX X
+ X XX
+   XX
+
+Bob now removes the top row:
+
+ X X 
+XXX X
+ X XX
+   XX
+
+Alison responds by again moving one piece:
+
+ X X 
+X X X
+ X XX
+   XX
+
+Bob removes the bottom row:
+
+ X X 
+X X X
+ X XX
+
+and Alison removes the rightmost column leaving an even number of
+isolated pieces:
+
+ X X
+X X 
+ X X
+
+Bob gives up.
+
+
+Note that this game contains regular (1D) Nim as special case. For
+example, a configuration like:
+
+ XXXXX
+X
+X    X
+ XXXX
+
+is equivalent to a Nim game with four heaps of size 5, 4, 2 and 1.
+
+
+Of course, the Sprague-Grundy theory applies to this impartial game.
+Configurations can be given Grundy numbers that effectively map the
+game onto regular Nim. A configuration consisting of N pieces can not
+have a Grundy number larger than N. Some example configurations with
+their Grundy numbers are:
+
+X 1     XX 2   XXX 3     XX 3
+                         X
+
+XXXX 4   XXX 4   XXX 2    XX 1   XX 0
+         X        X      XX      XX
+
+ X      XX      X      X
+XXX 3   XXX 1  XXXX 5  XXXX 5  XXXXX 5
+ X
+
+The Grundy number of a configuration that consists of several
+independent subgroups is given by the Nim-sum of the Grundy numbers of
+the subgroups.
+For example, in the above example game Alison's first move leaves a
+configuration consisting of three subgroups of size 5, 5 and 4. These
+subgroups have Grundy numbers 3, 2 and 1. Using Nim addition these
+numbers add up to zero, demonstrating that Alison created a winning
+position in the first move.
+ 
+Joe
+
+
+</pre></div></body>
+</html>
+</table></div>

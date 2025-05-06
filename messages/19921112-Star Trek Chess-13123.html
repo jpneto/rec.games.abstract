@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Star Trek Chess</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Star Trek Chess</td></tr><tr><td><b>From: </b>hansb@cs.ruu.nl (Hans Bodlaender)</td></tr><tr><td><b>Date: </b>12/11/1992, 15:59</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Here are the rules of 3D-chess. This is a repost of something already very
+long ago posted on the newsnet. Have fun. This is the variant where captain
+Kirk always wins from Spock. (Or did he ever lose in an episode of Star Trek?)
+Enjoy!
+			     Hans Bodlaender, Utrecht, the Netherlands
+
+==============================================================================
+
+    3D chess is a very interesting game. I have recently constructed a <b class="moz-txt-star"><span class="moz-txt-tag">*</span>board<span class="moz-txt-tag">*</span></b>  
+from the details given in the <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>Starfleet_Technical_Reference_Manual<span class="moz-txt-tag">_</span></span> (the last 
+appedix, I can't remember the letter). It is a very simple game to learn. The 
+movement of the pieces follows the same rules as in 2D chess only with 3D 
+freedom of movement.
+
+
+    The chessboard consist of three 4x4 square <b class="moz-txt-star"><span class="moz-txt-tag">*</span>levels<span class="moz-txt-tag">*</span></b> and four 2x2 square 
+<b class="moz-txt-star"><span class="moz-txt-tag">*</span>movable<span class="moz-txt-tag">*</span></b> levels (yes, movable). The fixed levels are arranges in a staircase 
+fashion with the last two rows of one level positioned directly under the 
+first two rows of the next. Here is a rough diagram showing the setup:
+
+
+
+                     side view                __ __  &lt;- movable
+                                                |          level
+                                     __ __ __ __|   
+                                                
+                                                  
+                               __ __ __ __     &lt;- fixed
+       movable   -&gt;   __ __                         levels
+         levels         |                   
+                        |__ __ __ __     
+        top view      __ __                   __ __
+                     |b_|w_|__ __ __ __ __ __|b_|w_|    &lt;-movable
+   b-black square    |w_|b_|w_|b_|w_|b_|w_|b_|w_|b_|        level
+   w-white square       |w_|b_|w_|b_|w_|b_|w_|b_|
+                      __|b_|w_|b_|w_|b_|w_|b_|w_|__
+                     |b_|w_|b_|w_|b_|w_|b_|w_|b_|w_|
+                     |w_|b_|                 |w_|b_|
+
+
+    As one can see the four movable levels are positioned at the far corners 
+of the first and third fixed levels. This is the starting position for the 
+levels. The pieces one the board are initially arranged as follows:
+ (the mv-lvls are detacted for clarity)
+
+K - W king                                                 k - B king
+Q - W queen      __ __                             __ __   q - B queen
+R - W rook      |R_|P_|  __ __ __ __ __ __ __ __  |p_|r_|  r - B rook
+N - W knight    |N_|P_| |B_|P_|__|__|__|__|p_|b_| |p_|n_|  n - B knight
+B - W bishop            |Q_|P_|__|__|__|__|p_|q_|          b - B bishop
+P - W pawn       __ __  |K_|P_|__|__|__|__|p_|k_|  __ __   p - B pawn
+                |N_|P_| |B_|P_|__|__|__|__|p_|b_| |p_|n_|
+                |R_|P_|                           |p_|r_|
+-MOVABLE LEVELS -
+    Each of the movable levels can occupy any corner of one of the three fixed
+levels and oriented either up or down:
+
+                                     __ __ 
+                                       |
+                            __ __ __ __|
+                                       |
+                                     __|__ 
+     
+    This distinction allows for two mv-lvls to occupy the same corner as long 
+as one is oriented up and the other down. 
+    The alternating b/w color pattern is consistant through each fixed and 
+movable level, i. e., a black square is always directly under a blcak square 
+and a white square is always directly under a white square.
+    
+    The rules governing the movement of mv-lvls are as follows: 
+  
+    A mv-lvl may be moved by either player only if the mv-lvl is not occupied 
+      by any pieces.
+
+    A mv-lvl may only be moved if it is empty <b class="moz-txt-star"><span class="moz-txt-tag">*</span>or<span class="moz-txt-tag">*</span></b> if it holds only <b class="moz-txt-star"><span class="moz-txt-tag">*</span>one<span class="moz-txt-tag">*</span></b> pawn 
+      of the <b class="moz-txt-star"><span class="moz-txt-tag">*</span>same<span class="moz-txt-tag">*</span></b> color as the player who wishes to move it.
+
+    A mv-lvl may only be made to orient down (or up) if it is not occupied and 
+      if the down (or up) position is not already occupied by another mv-lvl.
+    
+    A mv-lvl may only be moved to an ajacent(sp?) corner of the same fx-lvl or 
+      inverted and moved to an ajacent(sp?) corner of the next high or next 
+      lower fx-lvl:
+                                                      mv - mv-lvl 
+            n                                          n - possible new
+             __ __ __ __  mv   n            mv               position
+            |__|__|__|__|        __ __ __ __ 
+            |__|__|__|__|                   n        Movement
+            |__|__|__|__|                            will work either
+            |__|__|__|__|                            direction
+                          n                            (mv -&gt; n or n -&gt; mv)
+
+
+                                 n
+                                  __ __ __ __ 
+                                mv           n
+                                       n
+                            __ __ __ __ 
+                                    
+    The movement, inversion, or inversion and change mv-vl all count as a 
+      single move just as the movement of a piece counts as a single move, 
+      i.e., you can move a mv-lvl(if can) or you can move a piece(if can).
+
+    Notice the changing of a fx-lvl requires an inversion which requires 
+      that the mv-lvl be unoccupied!
+
+
+-MOVEMENT OF PIECES-
+    The movement of pieces follow the same patterns as they do in standard 
+chess. To determine whether or not a piece may move to a given square in 3D 
+chess depends on two factors(other than- Is the square occupied?).
+    
+    First one must look at the position of the piece on the board from the 
+"bird's eye" point of perspective. If one were to treat this view as flat, the 
+piece in question could move to any valid square within the limits of its 
+2D chess movement constraints.(diagonally only, forward only, etc.)
+    Second, since this is a 3D board the movement must meet a second 
+condition. The piece may only move to the square in question if a 3d path can 
+be found such that each square the piece passes through is both unoccupied 
+(except of course when moving a knight) and exist, i. e. there is an 
+intervening(sp?) mv-lvl or the square is on a fx-lvl.
+    Notice the word intervening(besides sp). This means that a piece may only 
+moved to a new fx-lvl if and only if the is a mv-lvl in its path.
+Observe the diagram:
+
+  r- B rook                  x_ r_ x_ x_   &lt;=fx-lvl
+  x- possible               |                 __ __ __ __ __ __ 
+      positions           x_ x_  &lt;=mv-lvl    |__|__|__|x_|__|__|
+                                             |__|__|__|x_|__|__|
+           fx-lvl=&gt;    x_ x_ x_ __           |__|__|__|x_|__|__|
+                                             |x_|x_|x_|r_|x_|x_|
+                                                |__|__|
+
+  This can lead to some interesting moves: 
+
+  r- B rook                   __ __ __ __     __ __ __ __ __ __ 
+  x- new                     |               |__|__|__|__|__|__|
+      position             __|g_             |__|__|__|__|__|__|
+  t- path                                    |__|__|__|__|__|__|
+  P- W pawn             __ x_ P_ r_          |__|x_|Pg|r_|__|__|
+                                                |__|__|
+
+ The rook "jumped over" the pawn.
+
+
+    General notes-
+    
+    One will notice that when playing 3D chess it will take a considerable 
+amount of time just to move to the neutral level(the fx-lvls are referred to 
+as the white, neutral, and black levels -- the lower, middle, and upper 
+respectivly), in fact longer for black(can the reader guess why?). But after 
+that phase of the game is reached the game can become very complex, very 
+quickly. After a few games one can see how 3D chess can improve starship 
+tactics and inspire three-dimensional thinking (Khan's deficiency and 
+undoing).
+
+    Though of course the hardest thing about 3D chess I have found (next to 
+finding a board- I build mine) is finding players. That is why I am posting 
+this in both rec.arts.startrek and rec.games.chess. 
+
+    I would welcome any takers not to mention suggustions for a standardized 
+notation for 3d chess- for record purposes and/or 3dchess by mail.
+
+    Most of this I had to deduce out of what was inferred in the <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>Tech_Man<span class="moz-txt-tag">_</span></span>. 
+They didn't mention specifics on some movement possiblities and left alot up 
+to interpretation. If any one else has read the <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>Tech_Man<span class="moz-txt-tag">_</span></span> section I would 
+welcome comments in rec.games.chess.
+
+==============================================================================
+"A towel is the most     |               |  James Dixson  
+   useful thing a        |   "He's dead  |    undgrad n Astronomy
+ Hitchhiker can have."   |        Jim"   |  University of Texas at Austin
+         -Hitchhiker's   |               |  Astronomy Dept
+             Guide       |               |
+==============================================================================
+
+
+</pre></div></body>
+</html>
+</table></div>

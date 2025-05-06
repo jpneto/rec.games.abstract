@@ -1,0 +1,124 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: New game: [As Yet Unnamed]</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: New game: [As Yet Unnamed]</td></tr><tr><td><b>From: </b>luigi &lt;luis.9.8.87@gmail.com&gt;</td></tr><tr><td><b>Date: </b>07/12/2011, 16:53</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On 7 dic, 01:04, "Steven W. Meyers" <a class="moz-txt-link-rfc2396E" href="mailto:raidingfal...@gmail.com">&lt;raidingfal...@gmail.com&gt;</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+On Dec 5, 2:11 am, luigi <a class="moz-txt-link-rfc2396E" href="mailto:luis.9.8...@gmail.com">&lt;luis.9.8...@gmail.com&gt;</a> wrote:
+
+
+
+
+
+
+
+
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+On 4 dic, 06:19, "Steven W. Meyers" <a class="moz-txt-link-rfc2396E" href="mailto:raidingfal...@gmail.com">&lt;raidingfal...@gmail.com&gt;</a> wrote:
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+Could you please present a sample game on a small board?  The game
+does look intriguing but I don't fully understand the rules.
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Oh, sure! Here is one:
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-freetext" href="http://gc1.iggamecenter.com/gm.php?sid=230207&amp;lang=en">http://gc1.iggamecenter.com/gm.php?sid=230207&amp;lang=en</a>
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+(The link will expire in one week, I think.)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+______________
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+P.S.:
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+A is teaching B how to play Ayu. This is the dialogue that followed:
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+B: So what did you say the name of this game was?
+A: It's AYU (As Yet Unnamed).
+B: Oh, and what must I do to win?
+A: AYU (Attach Your Units).
+B: I got it, man, but how many of them?
+A (sighs): AYU (All Your Units).
+(A while later:)
+B (making a winning move, at his pieces): AYU? (Are You United?)
+A (angry, at B): AYU? (Are You Unbalanced?)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I'm definitely settling on Ayu as a name for the game :-)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+The sample game was interesting to follow.  The basic tactics seem to
+revolve around joining groups more efficiently than the opponent does,
+capitalizing on the rule that lets you move to any adjacent point in a
+group.  But I'm curious about the restriction that you can't split the
+group any time during the move.  Is this really necessary?  The need
+for it, if there is one, is not at all obvious to me.
+
+Steve
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+It's a bit hard to explain.
+
+You're right that, in order to ensure finitude, it's only necessary
+that the group remains joined <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>after<span class="moz-txt-tag">_</span></span> the move, even if it's split for
+a moment during the move. However, that would imply that, in the rare
+cases where this makes a difference, the available moves for a stone
+depend not only on the "move closer" rule, but also on the "don't
+split" rule; i.e. move generation would actually proceed this way:
+
+- Can I move this stone? Yes, if taking it away doesn't split the
+group OR it splits the group BUT you move it in such a way that it's
+joined again AND you're closer to the closest friendly unit as a
+result.
+
+- Where can I move it? To any point adjacent to the same unit and
+closer to the closest friendly unit AND which joins the moving unit
+again in the rare case that it was split during the move.
+
+In both steps, the two aforesaid rules have to be inquired. Instead,
+in the current rules as written, the process is simpler: first the
+"don't split" rule determines if a stone can be moved, without
+reference to the second rule, and then the "move closer" rule
+determines its available destination points, without further inquiring
+the first rule; i.e.:
+
+- Can I move this stone? Yes, if and only if taking it away doesn't
+split the group.
+
+- Where can I move it? To any point adjacent to the same unit and
+closer to the closest friendly unit. Period.
+
+Also, for this very reason, the game is easier to program on a
+computer in this form. Otherwise, you'd have to write some extra code
+which would only be of any use in very rare occasions.
+
+I don't know if this all will make sense to anyone apart from myself,
+but I do find the game simpler and more natural the way it is now.
+Maybe I think too much like a computer ;-)
+
+
+</pre></div></body>
+</html>
+</table></div>

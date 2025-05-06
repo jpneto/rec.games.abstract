@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Binary Primes Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Binary Primes Game</td></tr><tr><td><b>From: </b>Leroy Quet &lt;qqquet@mindspring.com&gt;</td></tr><tr><td><b>Date: </b>12/01/2011, 16:25</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+This is a game for two players.
+
+Start by drawing an n-by-n grid on paper. (I don't suggest that n be
+too big, unless you are playing this game on a computer.)
+
+The players take turn filling in squares, each player filling in one
+empty square per move.
+Each player fills in floor(n^2/4) squares total.
+(So, 2*floor(n^2/4) squares are filled in all together at the game's
+completion.)
+
+
+Now, interpret the filled-in (black) squares and the blank (white)
+squares in each row and column as the digits of a binary number. In
+any particular row or column, either all the black squares represent a
+0 or all of the black squares represent 1. And the white squares each
+equal the opposite binary digit than the black squares represent in
+that row/column. And the binary number can be read either top to
+bottom, or bottom to top (for each column), or left to right, or right
+to left (for each row).
+
+So, to be clear, the binary digit (0 or 1) represented by a color has
+to remain the same within any particular row or column, but can differ
+between different rows and columns.
+
+And the direction the binary number is read can differ between
+different rows and columns.
+
+So, after the game is complete, the players go through and write down
+in two lists, one for the columns and one for the rows, the decimal
+representation of the largest possible PRIME possible, if any is
+possible, for each row and each column.
+
+Player 1 gets as a score the product of all of the primes in the
+columns.
+Player 2 gets as a score the product of all of the primes in the rows.
+
+The player with the largest score wins.
+
+Example (randomly "played" with no strategy):
+n=6:
+
+.. * * . . *
+* * . . . *
+.. * * * . .
+.. * * . . .
+* . * * * .
+.. * . . * *
+
+Largest primes, or 1 if all possibilities are composite or 1:
+
+For columns:
+1, 61, 29, 53, 3, 1.
+Score =
+61*29*53*3 = 281271.
+
+For rows:
+1, 1, 1, 1, 29, 19.
+29*19 = 551.
+
+Player 1 (columns) wins, obviously.
+
+Thanks,
+Leroy Quet
+
+PS: Here is my games blog:
+<a class="moz-txt-link-freetext" href="http://gamesconceived.blogspot.com/">http://gamesconceived.blogspot.com/</a>
+
+
+
+</pre></div></body>
+</html>
+</table></div>

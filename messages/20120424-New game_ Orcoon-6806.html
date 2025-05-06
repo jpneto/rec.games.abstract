@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>New game: Orcoon</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>New game: Orcoon</td></tr><tr><td><b>From: </b>Luis Bolaños Mures &lt;luis.9.8.87@gmail.com&gt;</td></tr><tr><td><b>Date: </b>24/04/2012, 20:10</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+ORCOON
+
+Orcoon is a drawless connection game for two players: Black and White. It's played on the intersections (points) of a square board, which is initially empty. The top and bottom edges of the board are colored black; the left and right edges are colored white.
+
+Black plays first, then turns alternate. On his turn, a player must either pass or place one stone of his color on an empty point.
+
+It's illegal to form this pattern, its rotations or its mirror images on the board:
+
+x . o
+o . x
+
+After a placement, any two like-colored, diagonally adjacent stones must share at least one orthogonally adjacent, like-colored neighbor.
+
+When a player passes his turn, his opponent can place as many stones of his color as he wants on empty points of the board, one after another, subject to the above restrictions. If by doing so he connects the two opposite board edges of his color with a chain of orthogonally adjacent stones of his color, he wins the game; otherwise, he loses.
+
+The pie rule is used in order to make the game fair. This means that White will have the option, on his first turn only, to change sides instead of making a regular move.
+
+_________
+
+Orcoon was born as a typical connection game where a player had to connect his two opposite sides of the board in order to win. I knew things couldn't be so easy on a square board, though, and I soon found a couple of deadlock patterns:
+
+x x o
+x . .
+o . x
+
+    o x  
+x . . .  
+o . x . o
+  . . . x
+  x o    
+
+I could have simply banned them, but that would have been awkward, not to mention that there might be an unlimited number of them, each one more convoluted than the others.
+
+One possible solution would be considering that two like-colored stones are also connected if they are a knight's jump away from each other and the two intervening points orthogonally or diagonally adjacent to both stones are empty, like this:
+
+x .  
+  . x
+
+The game would be already drawless this way, and my impressions during playtesting were pretty good, but connections would no longer be permanent, something I considered essential to the game's spirit.
+
+I was tempted to release that version anyway, but, after giving it a second thought, I finally came up with the current end game rule, and I liked it from the start. I think it's a nice way to naturally incorporate deadlocks into the game while preventing them to ever become a problem. Two main implications must be noted here:
+
+a) More often than not, deadlocks won't occur, in which case the game will proceed as a normal connection game. When one player connects his two opposite sides of the board, he can simply pass to win the game.
+
+b) When a deadlock pattern occurs, the character of the game changes in a dramatic way. Implicitly, you can now win either by connecting your two opposite sides while dodging the deadlock or by being the first player to connect your two sides to the deadlock itself, thus introducing a race component into the game.
+
+
+</pre></div></body>
+</html>
+</table></div>

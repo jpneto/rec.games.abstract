@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Jigsaw Puzzles</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Jigsaw Puzzles</td></tr><tr><td><b>From: </b>toms@fcs260c2.ncifcrf.gov (Tom Schneider)</td></tr><tr><td><b>Date: </b>06/12/1992, 02:44</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,rec.games.abstract,sci.math,bionet.info-theory</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:1992Dec4.220321.18150@husc15.harvard.edu">&lt;1992Dec4.220321.18150@husc15.harvard.edu&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:blom@husc15.harvard.edu">blom@husc15.harvard.edu</a> writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Does the complexity of solving a jigsaw puzzle increase on the order of the
+square of the number of pieces in the puzzle?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+It seems that this is related to the guessing game you asked about.
+trunc(log2(100)) = 6, so 7 yes-no questions suffice for a person to guess on
+number in 100.  That is, to find one thing in 100 requires log2(100)=6.64
+bits.
+
+Suppose we have a square jigsaw puzzle of side n.  The orientation of each
+piece is a choice of 1 in 4, or 2 bits.  Suppose we start with a corner and
+want to place pieces successively, and that the pieces are unique so that we
+know when we have one.  This requires 2n^2 bits.  Now to chose the next piece
+is a choice of 1 in n^2, so there is an additional log(n^2) = 2log(n) bits.
+Interestingly, the NEXT piece must be chosen using log(n^2-1) bits, the third
+is log(n^2-3) etc.  Clearly the answer is the sum of these.  If you want the
+average per piece, and if the puzzle is linear, a very beautiful result drops
+out, which I will leave you to find.  The 2 dimensional case is a hair
+trickier, but gives similar results...
+
+  Tom Schneider
+  National Cancer Institute
+  Laboratory of Mathematical Biology
+  Frederick, Maryland  21702-1201
+  <a class="moz-txt-link-abbreviated" href="mailto:toms@ncifcrf.gov">toms@ncifcrf.gov</a>
+
+</pre></div></body>
+</html>
+</table></div>

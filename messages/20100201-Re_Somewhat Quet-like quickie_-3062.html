@@ -1,0 +1,54 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Somewhat Quet-like quickie?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Somewhat Quet-like quickie?</td></tr><tr><td><b>From: </b>Chip Eastham &lt;hardmath@gmail.com&gt;</td></tr><tr><td><b>Date: </b>01/02/2010, 17:26</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Jan 23, 6:19 pm, Phil Carmody <a class="moz-txt-link-rfc2396E" href="mailto:thefatphil_demun...@yahoo.co.uk">&lt;thefatphil_demun...@yahoo.co.uk&gt;</a>
+wrote in part:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Here are some mins/maxes from a few thousand simulations of random
+play on a square grid:
+size 1  2  3  4  5  6  7  8  9 10 11 12 13 14
+min  1  4  4  4  6  7  8  9 10 11 13 14 16 17
+max  1  4  6  8 10 12 14 16 17 19 21 23 24 26
+Greedy algorithms might be able to improve those bounds.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+There is a six-cell selection which fits on the
+5x5 board but actually "covers" the 6x6 board:
+
++---+---+---+---+---+---+
+| X |   | X |   |   |   |
++---+---+---+---+---+---+
+|   |   |   |   |   |   |
++---+---+---+---+---+---+
+| X |   |   |   | X |   |
++---+---+---+---+---+---+
+|   |   |   |   |   |   |
++---+---+---+---+---+---+
+|   |   | X |   | X |   |
++---+---+---+---+---+---+
+|   |   |   |   |   |   |
++---+---+---+---+---+---+
+
+Thus the minimum for size 6 can be lowered
+to 6.  I wrote a Prolog program to solve
+such puzzles, and it finds the solution
+above in about 10 minutes.  I'm making
+some tweaks to how it intializes the
+board for speed, because you have to
+search in some fashion the entire space
+to confirm no smaller solution exists.
+
+regards, chip
+
+
+</pre></div></body>
+</html>
+</table></div>

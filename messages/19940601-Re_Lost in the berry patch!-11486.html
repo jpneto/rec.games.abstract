@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Lost in the berry patch!</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Lost in the berry patch!</td></tr><tr><td><b>From: </b>dseal@armltd.co.uk (David Seal)</td></tr><tr><td><b>Date: </b>01/06/1994, 10:55</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:2scbsi$3bj@cantua.canterbury.ac.nz">&lt;2scbsi$3bj@cantua.canterbury.ac.nz&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:wft@math.canterbury.ac.nz">wft@math.canterbury.ac.nz</a>
+(Bill Taylor) writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:CqD79q.9HB@vcd.hp.com">&lt;CqD79q.9HB@vcd.hp.com&gt;</a>, <a class="moz-txt-link-abbreviated" href="mailto:dboll@vcd.hp.com">dboll@vcd.hp.com</a> (David Boll) writes:
+|&gt; 
+|&gt;   The board is a hexagon with a center, and one of the edges removed,
+|&gt;   like this:
+|&gt; 
+|&gt;      0-----0
+|&gt;     / \   / \
+|&gt;    /   \ /   \
+|&gt;   0-----0-----0
+|&gt;    \   / \   /
+|&gt;     \ /   \ /
+|&gt;      0     0
+|&gt; 
+|&gt;   There are 2 players, each player has 3 pieces on the board. The pieces
+|&gt;   inhabit one of the "0"s above; the lines between the "0"s indicate
+|&gt;   valid moves from that location. The goal of the game is to leave your
+|&gt;   opponant without a move. The pieces are initially placed around the 
+|&gt;   perimeter of the board, alternating. i.e. the center is vacant, and
+|&gt;   the order of the pieces is (white,black,white,black,white,black) around
+|&gt;   the edge.
+|&gt; 
+|&gt;   I haven't analyzed the game, but it ought to be a piece of cake. 
+
+Should be!  There're only 30 essentialy different positions!  60 counting
+player-to-move.  So it ought to be a lot simpler than e.g. tic-tac-toe.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Yes, it is easy, though I believe you mean 35 essentially different
+positions, or 70 counting player to move. It is a draw; a drawing strategy
+from the initial position given is to avoid making any of the following four
+moves or their mirror images:
+
+   . X         X X
+  X O O  --&gt;  . O O
+   O X         O X
+
+   . X         X X
+  X O X  --&gt;  . O X
+   O O         O O
+
+   X O         . O
+  . O O  --&gt;  X O O
+   X X         X X
+
+   X O         . O
+  . O X  --&gt;  X O X
+   X O         X O
+
+On the first 3, the opponent has a one move win; on the last, it is a two
+move win.
+
+To be able to draw from any drawn position, there are another five moves to
+avoid; three of them give your opponent a one move win and two give a two
+move win.
+
+The maximum depth of any winning or losing position is 5 plies in the
+following two positions - i.e. a 3 move win for the player (X) to move:
+
+   X X
+  X O O
+   . O
+
+   . X
+  X O O
+   X O
+
+In the first of these, the winning move is forced; in the second, the only
+alternative leads to an immediate loss.
+
+Overall, this means that it is possible to play this game perfectly from any
+starting position with 4 ply lookahead. Given the limited branching factor,
+this is perfectly feasible for a human player. I'd guess this is probably
+the easiest way for a human to remember the perfect strategy, though a
+computer program would probably just be table-driven!
+
+David Seal
+<a class="moz-txt-link-abbreviated" href="mailto:dseal@armltd.co.uk">dseal@armltd.co.uk</a>
+
+All opinions are mine only...
+
+</pre></div></body>
+</html>
+</table></div>

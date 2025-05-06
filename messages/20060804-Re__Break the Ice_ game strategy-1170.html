@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: &quot;Break the Ice&quot; game strategy</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: &quot;Break the Ice&quot; game strategy</td></tr><tr><td><b>From: </b>&quot;Arthur J. O&#39;Dwyer&quot; &lt;ajonospam@andrew.cmu.edu&gt;</td></tr><tr><td><b>Date: </b>04/08/2006, 03:45</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,comp.programming</td></tr></table><br>
+<div class="moz-text-flowed">
+<br>On Thu, 3 Aug 2006, Rob Thorpe wrote:
+<br><blockquote type=cite>James Dow Allen wrote:
+<br><blockquote type=cite>Arthur J. O'Dwyer wrote:
+<br><blockquote type=cite>... But the computer
+<br>would have to examine (on the order of) 9-factorial game trees to
+<br>come to the same conclusion via alpha-beta!
+<br></blockquote>
+<br>It sounds like you're missing the "transposition cache"
+<br>(memory, e.g. hash table, of previously solved positions).
+<br>That will give you a huge performance boost, I think, though
+<br>perhaps not as huge as you'll need and could obtain with
+<br>further heuristics.
+<br></blockquote>
+<br>I'd agree with that.&nbsp; It seems best to evaluate a large chunk of the
+<br>game offline and store it in a table.
+<br></blockquote>
+<br>&nbsp; I agree with the offline-table suggestion, but IMVHO it's just a
+<br>very small step from "compute a table of good moves on the fly" to
+<br>"compute the same table yesterday, store it on disk, and look at it
+<br>again today." It's a bigger step, but doable, to get from "no table
+<br>at all" (where I am now) to "table."
+<br>&nbsp; But the bottom line is still that the program has to, at some point,
+<br>look at 9! things, where a human would apply a counting argument or
+<br>something similar. Maybe you're right, alpha-beta would win if it
+<br>went deep enough and used enough precomputation; but I'm not convinced.
+<br>(Not that you were trying to convince me. :)
+<br>
+<br>&nbsp; As for James' point about breadth-first search: Yeah, I actually
+<br>wanted to do that --- I think there's a stub function in the source
+<br>for it --- but I couldn't figure out how to make it work, in the
+<br>few hours I spent halfheartedly thinking about it. It would require
+<br>an explicit game tree, as well as a queue of pointers into that tree,
+<br>right?
+<br>
+<br>&nbsp; Conclusion so far: There are lots of ways to make alpha-beta better
+<br>than the hacked-together stuff I posted; but I'm not sure that's
+<br>good enough.
+<br>
+<br><blockquote type=cite>Things like Chess playing programs often do this.
+<br></blockquote>
+<br>&nbsp; I know it's redundant to state this again, but: Chess has plenty of
+<br>nice fuzzy patterns to exploit in assigning values to positions.
+<br>"Break the Ice" seems to have basically none.
+<br>
+<br>-Arthur,
+<br>"no, no! anything but more code!"
+<br>
+<br>
+<br></div></body>
+</html>
+</table></div>

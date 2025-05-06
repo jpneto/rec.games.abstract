@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Projective Hex.</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Projective Hex.</td></tr><tr><td><b>From: </b>mathwft@math.canterbury.ac.nz (Bill Taylor)</td></tr><tr><td><b>Date: </b>11/12/2001, 11:31</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,sci.math</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+This article is chiefly for rec.games.abstract; but I cross-post to sci.math
+for the possible interest in tilings of Projective Planes.
+=========================================================
+
+
+One of the great blessings of connection games like Hex and Bridgit is,
+that victory is certain for one or other side, AND the structure of the
+game ensures that a victory for one is <b class="moz-txt-star"><span class="moz-txt-tag">*</span>automatically<span class="moz-txt-tag">*</span></b> a defeat for the
+other, with no special rule needed to say so.  So there is no element of
+a mere "race" to do something first, where both players might achieve
+this goal almost simultaneously.
+
+Although there is no "social" defect in such races, (e.g. even chess can
+be so viewed - a race to capture the opponent's king before he captures
+yours), it is mathematically and game-theoretically slightly unaesthetic,
+compared to the Hexlike feature of   [win = not(loss)]   by structure.
+
+Hex and Bridgit both suffer from another slight unaestheticity though,
+to wit, that the two players have (slightly) different tasks; one must
+make a North/South connection, and the other an East/West one.   Indeed,
+in Bridgit they even play on different points!  Again, this is no barrier
+to playing the game or to its being a jolly good game, but again it seems
+a very slight aesthetic defect.
+
+One game that achieves both goals, i.e. (1) complementary winning conditions
+and (2) identical tasks; is the excellent "Y" version of Hex, which really
+deserves to be better known.  However, I introduce yet a new variant here.
+
+------
+
+Some while ago, Dan Hoey and myself jointly invented a game we called
+PROJECTIVE HEX, invented in this newsgroup, in fact.
+
+It was Dan who, partly inspired by "Y", first ventured onto Projective Planar
+boards for Hex-like games, but couldn't find a nice winning condition,
+surprisingly.  My contribution was to observe that the condition of making
+a GLOBAL LOOP, (i.e. a closed path that crossed the boundary an odd number
+of times) was "THE ONE" - and that it stood out "like a sore thumb".
+Dan agreed about the sore thumb, and kicked himself for not having seen
+it before. Dan also constructed a program to print out beautiful Hex-like
+boards based on the Projective Plane, and thus having 6 pentagons amongst
+a variable number of hexagons.
+
+My latest contribution has been to change the pattern of the boards
+slightly, to make them more homogeneous-looking (though not fully
+homogeneous in fact), and thereby arrange it so that games can
+easily be played at the keyboard, i.e. by email etc.
+
+For the new Projective Hex, now probably the best abstract board game
+in the world (ha-ha!), the boards are similar to this as follows...
+
+    A B C        As you see I've had to insert a 27th alphabet letter!
+   D E F G       Interior cells and interior-edge cells each have 6
+  H I J K L      neighbours, as in Hex; but the 6 corner cells have 5.
+ M N O # P Q
+  R S T U V      The side dimensions are always n and n+1.   Each edge
+   W X Y Z       is flipped end-to-end and laid alongside its opposite.
+
+In this 3-&amp;-4-sided board, there are 15 edge cells which thus connect
+to their opposite cells via Projective connections as shown here...
+
+    z_y_x_w
+   z/A B C\w     Each of the original edge/corner cells "re-appears"
+  v/D E F G\r    on the opposite side, in lower case letters.
+ q/H I J K L\m
+q&lt;M N O # P Q&gt;m  Note once again that each corner has only 5 neighbors.
+ l\R S T U V/h
+  g\W X Y Z/d
+   c~c~b~a~a
+
+So on the original board, cell  H  is connected to D I N M Q V (in order).
+Whereas  M  is connected only to  N R L Q H.
+
+The whole collection of 21 hexagons and 6 pentagons makes up a "standard"
+tiling of the Projective Plane.
+
+
+To play the game, "Projective Hex", one merely plays as at Hex, filling
+any one cell your own colour on your turn; and whoever makes a global
+loop of adjacent cells of their own colour, is the winner.  And, as
+mentioned above, it is only possible for ONE colour to do so, and
+at least one of them must always do so, by the time all cells have
+been coloured.  So complementary winning conditions, and equal tasking
+have both been achieved.
+
+Example: here is a completed game, with both having played 7 moves,
+and the 2nd player (white) has won, despite his opening disadvantage.
+
+    . X O
+   . . X O
+  . . O O .
+ . X O X . .
+  X O X . .
+   X O . .
+
+The loop might be more visible if "ghost" edge cells are entered as well...
+
+    ___o_x
+   /. X O\x
+  /. . X O\x
+ /. . O O .\
+&lt;. X O X . .&gt;
+ \X O X . ./
+ o\X O . ./
+  o~o~x~~~
+
+For actually playing the game, naturally, as always, the first player
+has an enormous advantage; a sure win, in fact, by the usual strategy
+stealing argument.  But beyond the very smallest boards it is very
+hard to find.
+
+This advantage can be left as is, giving the weaker player first move;
+or (say for more formal games), one of the usual equalizing methods
+can be used.  Probably the simplest is the "cut-and-choose" method
+of 3-move equalization (mentioned on another thread recently), whereby
+one player plays 3 opening moves, black-white-black, then the other
+player chooses which colour to be.  It is also conceivable that even
+2-move or 1-move equalization would be suitable, as e.g. the corner
+cells are not quite so valuable as the central ones, so an opening
+move there might well be a losing one, but only just, making 1-move
+equalization a viable option.
+
+--------
+
+In any event, there is the basic game.  I have various other variants
+to disclose, but they can wait for another time.  I have played several
+games against myself, usually on tiny boards, though once on a big one,
+and all the usual Hex style tactics seem to apply.
+
+Give it a go!
+
+------------------------------------------------------------------------------
+            Bill Taylor          <a class="moz-txt-link-abbreviated" href="mailto:W.Taylor@math.canterbury.ac.nz">W.Taylor@math.canterbury.ac.nz</a>
+------------------------------------------------------------------------------
+      Every game is unique, and this one is no different to any other.
+------------------------------------------------------------------------------
+
+</pre></div></body>
+</html>
+</table></div>

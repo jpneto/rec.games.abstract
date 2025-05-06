@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: NIM algorithm, anyone ?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: NIM algorithm, anyone ?</td></tr><tr><td><b>From: </b>kleber@hanalei.berkeley.edu (Michael Kleber)</td></tr><tr><td><b>Date: </b>26/05/1994, 02:44</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>comp.programming,rec.games.abstract,rec.games.misc</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Quoth <a class="moz-txt-link-abbreviated" href="mailto:jos@and.nl">jos@and.nl</a> (Jos Horsmeier):
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+Heh, that reminds me of this little monster I once brewed ...
+This thingy plays a move of nim and the player taking the
+last pebble wins ...
+
+int n;main(i,m)char**m;{while(--i)n^=atoi(m[i]);
+while(*++m)if((n^atoi(*m))&lt;atoi(*m)||atoi(*m)*!n
+){printf("%d\n",(n^atoi(*m))-!n);while(*++m)puts
+(*m);m--;}else puts(*m);} /* play: nim &lt;nums&gt; */
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+That's sweet.  How's this for a modified verison to play the Mise`re
+version, where taking the last pebble loses (rnim.c, "reverse-nim")
+
+int r,n;main(i,m)char**m;{while(--i){n^=atoi(m[i]);r
++=(atoi(m[i])&gt;1);}while(*++m)if((n^atoi(*m))&lt;atoi(*m
+)||atoi(*m)*!n){printf("%d\n",(n^atoi(*m)^!~-r)-!n);
+while(*++m)puts(*m);m--;}else puts(*m);}/* rnim #s */
+
+There must be a better way to figure out whether or not exactly one
+pile is bigger than one stone, but I couldn't come up with it.
+
+--Michael Kleber                 I don't have an overactive imagination...
+  <a class="moz-txt-link-abbreviated" href="mailto:kleber@math.berkeley.edu">kleber@math.berkeley.edu</a>       I have an underactive reality...   --EG
+
+</pre></div></body>
+</html>
+</table></div>

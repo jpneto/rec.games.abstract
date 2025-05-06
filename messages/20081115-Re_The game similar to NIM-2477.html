@@ -1,0 +1,49 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: The game similar to NIM</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: The game similar to NIM</td></tr><tr><td><b>From: </b>Dan Hoey &lt;haoyuep@aol.com&gt;</td></tr><tr><td><b>Date: </b>15/11/2008, 06:02</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:alberto.hi8@gmail.com">alberto.hi8@gmail.com</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I have to consider the following game:
+all rules are the same like in classic 'nim' game except one rule -
+the
+number of stones in heaps are nondecreasing (e.g. (1,2,2,6,7), not
+(5,1,7)). After every move this rule must be keep. So player can
+remove stones from heap X only and only if in heap to the left are
+less piles and he can't remove more stones, than difference between
+heap X and heap to the left.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+[...]
+
+I'm pretty sure this is called "the silver dollar game" (or maybe "the
+silver dollar game without the silver dollar" in <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>On Numbers and Games<span class="moz-txt-tag">_</span></span>.
+I'm pretty sure that a sequence of order-heaps h_1, h_2, ..., h_n acts
+like a Nim game with heaps related to differences of adjacent h_i ,
+that is
+   h_n - h_(n-1),
+   h_(n-2) - h_(n-3), ...,
+   h_(4-(n mod 2)) - h_(3-(n mod 2)),
+   h_(2-(n mod 2)) - h_(1-(n mod 2))
+where h_0=0.  Basically, moving in order-heaps congruent to n (mod 2) is
+like taking stones from a Nim heap, and moving in order-heaps NOT
+congruent to n is like ADDING stones to a Nim heap, which can always be
+answered by reversion (taking the stones back out by moving in the next
+higher order-heap).
+
+Reversion is a little iffy when we deal in the Lost World of mis¨¨re
+games, since reverting the ending moves loses.  So there may be a
+difference in the mis¨¨re Nim endgame.
+
+Dan Hoey
+<a class="moz-txt-link-abbreviated" href="mailto:haoyuep@aol.com">haoyuep@aol.com</a>
+
+
+</pre></div></body>
+</html>
+</table></div>

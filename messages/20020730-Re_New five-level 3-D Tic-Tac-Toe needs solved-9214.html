@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: New five-level 3-D Tic-Tac-Toe needs solved</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: New five-level 3-D Tic-Tac-Toe needs solved</td></tr><tr><td><b>From: </b>nospamfromyounospamforme2@yahoo.com (Edward)</td></tr><tr><td><b>Date: </b>30/07/2002, 15:30</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr><tr><td><div class="moz-header-display-name" style="display:inline;">Reply-To: </div> nospamfromyounospamforme2@yahoo.com</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Whether or not a game is <b class="moz-txt-star"><span class="moz-txt-tag">*</span>theoretically<span class="moz-txt-tag">*</span></b> a first person win or a draw
+has little bearing on how good the game is. 
+
+
+The rules of Pentagonal weren't explicitly stated in the original post
+-- I assume that they are:
+
+1) Players take turns placing pieces in the cells of a 5x5x5 cube.
+2) The central cell is 'free', that is, it counts for <b class="moz-txt-star"><span class="moz-txt-tag">*</span>both<span class="moz-txt-tag">*</span></b> players.
+3) 5 in a row wins.
+
+I believe that players capable looking one move ahead will always play
+to a draw. Even if the first player is allowed to place THREE PIECES
+on her first play, the second player should STILL have no trouble
+drawing the game. 5x5x5 is too small for 5-in-a-row (unless there are
+a few more 'free' cells). 
+
+Unlike 5-in-a-row games on 2 or 3D boards of larger width, forming a
+'double-three' does not force a win. For example, let's ingore the
+free cell for now and give 'X' an enormous head start:
+
+      I           II         III          VI          V
+  a b c d e   a b c d e   a b c d e   a b c d e   a b c d e 
+1 . . . . .   . . . . .   . . . . .   . . . . .   . . . . .
+2 . . . . .   . x . . .   . x x . .   . . . . .   . . . . .
+3 . . . . .   . x x . .   . . x . .   . . x x .   . . . . .
+4 . . . . .   . . . . .   . . x x .   . . . x .   . . . . .
+5 . . . . .   . . . . .   . . . . .   . . . . .   . . . . .
+
+'X' now has a quintuple-three, intersecting at IIIc1. On slightly
+larger board, a simple double-three would be a win. But here, 'O'
+doesn't even have to respond -- she can let 'X' move again and then
+simply block each of the 4-in-a-rows, as they are all single threats:
+
+      I           II         III          VI          V
+  a b c d e   a b c d e   a b c d e   a b c d e   a b c d e 
+1 x . . . .   . . . . .   x . x . .   . . . . .   . . . . .
+2 . . . . .   . x . . .   . x x . .   . . . . .   . . . . .
+3 x . x . .   . x x . .   . . x . .   . . x x .   . . o . o
+4 . . . . .   . . . . .   . . x x .   . . . x .   . . . . .
+5 . . . . .   . . . . .   . . o . o   . . . . .   . . . . o
+
+
+For 'X' to win, she has to form a double-FOUR:
+
+      I           II         III          VI          V
+  a b c d e   a b c d e   a b c d e   a b c d e   a b c d e 
+1 . . . . .   . . . . .   . . . . .   . . . . x   . . . . .
+2 . . . . .   . . . . .   . . . . .   . . . x .   . . . . .
+3 . . x . .   . . x . .   . . x . .   . . . . .   . . . . .
+4 . . . . .   . . . . .   . . . . .   . x . . .   . . . . .
+5 . . . . .   . . . . .   . . . . .   . . . . .   . . . . .
+
+If 'X' move's VIc3, she forms a double-four and wins on the next move
+-- but I don't see how this can happen unless 'O' goes out to the
+kitchen for a snack.
+
+On then next size board, double-three's win:
+
+'X' to move on a 6x6x6 board:
+
+       I
+  a b c d e f
+1 . . . . . .
+2 . . . . . .
+3 . . x . . .
+4 . x x . . .
+5 . . . . x .
+6 . . . . . .
+
+1) d4   e4
+2) b2   a1
+3) f6 wins:
+
+       I
+  a b c d e f
+1 o . . . . .
+2 . x . . . .
+3 . . x . . .
+4 . x x x o .
+5 . . . . x .
+6 . . . . . x
+
+
+
+The question is, what is the smallest NxNxN board, if any, on which
+5-in-a-row is playable? I think 6x6x6 may still be an easy draw. Might
+7x7x7 work?
+
+Edward
+
+
+
+
+On Wed, 24 Jul 2002 19:57:04 -0700, "James Robert Lundberg"
+<a class="moz-txt-link-rfc2396E" href="mailto:jimlund@cts.com">&lt;jimlund@cts.com&gt;</a> wrote:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I have created a new version of 3-D Tic-Tac-Toe that I believe does not
+have a first-move-win solution!  
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+&lt;...snip...&gt;
+
+</pre></div></body>
+</html>
+</table></div>

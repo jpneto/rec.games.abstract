@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Othello: static board evaluation</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Othello: static board evaluation</td></tr><tr><td><b>From: </b>torbenm@diku.dk (Torben AEgidius Mogensen)</td></tr><tr><td><b>Date: </b>17/11/1992, 13:14</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:c89mikho@IDA.LiU.SE">c89mikho@IDA.LiU.SE</a> (Mikael Hovmoller) writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I plan to implement a minimax algorithm with alpha-beta cutoffs. This
+works good enough, as this is a minor project for school, and not an
+olympic winner-to-be. However, I find it hard to implement a good
+static board evaluation. The one I'm currently using gives every
+position on the board a specific value if the computer occupies
+it, minus that same value if the player has it, and 0 if it's
+currently empty.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+This seems reasonable to me, but in reality doesn't play very good.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+This is the method used by most "beginners" trying to make an
+evaluation function, and as you said it isn't very good. In my program
+I use these factors:
+
+  1) How many legal moves does the opponent have. A small number is
+     good.
+
+  2) I have built a table of all possible combinations of pieces on an
+     edge (there are only about 6500) and assigned each of these a
+     value. This is (of course) not done by hand, but by a program
+     that makes an exhaustive search of all plays on the edge. A legal
+     move is is of course one that flips pieces on the edge, but in
+     addition to these I have considered three different lines of
+     play: in the first, the opponent is able to move in any empty
+     square except corners, but you only by flipping. In the second,
+     it is opposite and in the third both are able to move anywhere
+     except corners. At the point where no further moves are
+     possible, the number of safe (unflippable) pieces are counted,
+     with the corner counting extra. The values of the different lines
+     of play are added using weights that reflect playing strategy. A
+     high weight on the case where the opponent has the advantage
+     gives a defensive play, where a high weight on your own advantage
+     gives a more aggresive play. Once the table is made, it is fairly
+     quick to look up any edge position in the table.
+
+  3) I look at the control of the diagonals. If the diagonal space
+     next to a corner is occupied and the corner itself isn't, the
+     values of the neighbouring edges after a move by the opposite
+     colour in the corner are used to modify the value of the
+     position. If a move to the corner is immediately possible, the
+     effect of it counts more than if not, especially near the end of
+     the game.
+
+Note that I nowhere use a weighted sum of the occupied squares.
+However, near the end of the game all remaining moves are explored
+fully, and a simple sum is used as value. The program plays reasonably
+well, though nowhere near as good as the program Colin Springer is
+coauthor of.
+
+Other things you can consider is to make extra deep search of forced
+moves and passes, counting safe pieces not on the corners, counting
+the number of "good" moves rather than the total number of moves when
+counting mobility. A good move could be defined as one that does not
+move next to an empty corner.
+
+	Torben Mogensen (<a class="moz-txt-link-abbreviated" href="mailto:torbenm@diku.dk">torbenm@diku.dk</a>)
+
+</pre></div></body>
+</html>
+</table></div>

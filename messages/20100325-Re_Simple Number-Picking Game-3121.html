@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Simple Number-Picking Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Simple Number-Picking Game</td></tr><tr><td><b>From: </b>Leroy Quet &lt;qqquet@mindspring.com&gt;</td></tr><tr><td><b>Date: </b>25/03/2010, 15:02</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Interesting, TP.
+But even if there is a winning strategy for Player 1 for all n,  when
+n is around 100, say, wouldn't it be possible that the 1st player
+would be ignorant of that strategy? Maybe n should be larger and
+larger as players (especially Player 1, it seems) gain more
+experience.
+:)
+Or is there a strategy that works generally for all n? (Plug n into
+some algorithm.)
+
+Thanks,
+Leroy Quet
+
+
+Transfer Principle wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+On Mar 24, 1:40 pm, Leroy Quet <a class="moz-txt-link-rfc2396E" href="mailto:qqq...@mindspring.com">&lt;qqq...@mindspring.com&gt;</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+PS: I know that the second game at least is not original. It can't
+possibly be, because it is so simple. (Unless there is a major flaw in
+it, and it would make a terrible game.)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Sounds interesting.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+As before, players take turns. On each turn, a player picks one number
+from (2,3,4,...,n) that has not yet been picked in the game.
+Each number, after the first pick, must NOT be coprime to the number
+picked in the previous move by the last player to move.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Let n=2. Then the second player has a winning strategy -- namely,
+to do nothing. This is a trivial case.
+
+Let n=3. Then the second player has a winning strategy -- namely,
+to do nothing. This is a trivial case.
+
+Let n=4. Obviously, the first player shouldn't choose 3, since
+this is an automatic loss. So the first player should choose
+either 2 or 4. Then the second player has no choice but to choose
+the other even number, which loses. Thus, the first player has a
+winning strategy -- namely, to lead with either 2 or 4.
+
+Come to think of it, we know that if p is prime and a and b are
+positive integers, then any integer coprime to p^a must be
+coprime to p^b as well. Thus the numbers 2 and 4 are always
+interchangeable in any strategy -- hence I'll just refer to them
+as "powers of two."
+
+Let n=5. Obviously, the first player shouldn't choose 5, since
+this is an automatic loss. Thus, we are actually reduced to the
+n=4 case, with the same strategy. Thus, the first player has a
+winning strategy -- namely, to lead with either 2 or 4.
+
+Come to think of it, we know that if n=p is prime, playing p
+results in an automatic loss. So the strategy for any n=p is
+equivalent to the game where n=p-1.
+
+Let n=6. Obviously, the first player shouldn't choose 5, since
+this is an automatic loss. Indeed, by Bertrand's postulate,
+there's a prime strictly between n/2 and n, and any such prime
+in this range is always unplayable.
+
+But the number 3 now becomes playable. Suppose the first player
+were to lead with 3. Then the second player is in fact forced to
+choose 6. Then the first player is forced to play one of the
+powers of two. Then the second player is forced to play the
+other power of two, which loses. Thus, there is a winning
+strategy for the first player -- and if that player is rational,
+she must indeed follow that strategy. So as soon as we find a
+winning stratgy for the first player, there's no need to look
+for winning strategies for the second player.
+
+Now n=7 is prime, so it becomes equivalent to the n=6 case.
+
+Let n=8. Now we have a third power of 2 to play with. Now leading
+with 3 is no longer a winning strategy for the first player, since
+the second player is still forced to play 6, but then after each
+player follows with a power of two, the first player is forced to
+play the third power of 2, which loses.
+
+But suppose the first player leads with 6 instead. Then the
+second player, knowing that playing 3 automatically loses, must
+play one of the powers of two. Then the first player is forced to
+play another power of 2. Then the second player is forced to play
+the remaining power of two, which loses. Thus there is a winning
+strategy for the first player -- namely, to lead with 6.
+
+Let n=9. Now we have a second power of 3 to play with. Now leading
+with 6 is no longer a winning strategy for the first player, since
+the second player can play a power of three, forcing the first
+player to play the other power of 3, which loses.
+
+But suppose the first player leads with a power of 2 instead. If
+the second player and then the first player were to follow with
+the other powers of two, then the second player is now forced to
+play 6. Then the first player is forced to play one of the powers
+of three. Then the second player is forced to play the other power
+of 3, which loses.
+
+Realizing this, the second player tries to break this up by playing
+6 on her first move instead. But then the first player follows with
+a second power of 2. Then the second player is forced to play the
+final power of two, which loses. Thus there is a winning strategy
+for the first player -- namely, to play powers of two on each of
+the first two moves.
+
+Let n=10. Now 5 becomes playable for the first time. Suppose the
+first player leads with this 5. So the second player is now forced
+to play 10. Now the first player can play a power of 2 -- which
+reduces us to the n=9 case (where 5 is not playable). Thus there
+is a winning strategy for the first player -- namely, to play 5 on
+the first move and powers of two on the second and third moves.
+
+Now n=11 is prime, so it becomes equivalent to the n=10 case.
+
+So far, we have the following strategies for the first player:
+
+n=4 or 5: lead with 2^a
+n=6 or 7: lead with 3
+n=8: lead with 6
+n=9: lead with 2^a, then play 2^b
+n=10 or 11: lead with 5, then play 2^a, then play 2^b
+
+Now n=12 is the first interesting case. First of all, we note that
+any number coprime to 12 is also coprime to 6, so these numbers
+are interchangeable in any strategy. Also, we know that the primes
+7 and 11 are unplayable. Technically speaking, 5 is playable, but
+unless one leads with 5, it can only be played after 10, but then
+5 played after 10 is an automatic loss.
+
+In deciding whether therefore to lead with the 5, the first player
+notes that there are nine playable numbers {2,3,4,5,6,8,9,10,12},
+and since nine is odd, the first player would play the final such
+number, which loses. Thus, the first player should avoid leading
+with 5, so that there are only eight playable numbers, in the
+hopes that the second player would play the last playable number
+and lose. As 5 becomes unplayable, 10 should be treated as if it
+were a power of two.
+
+So the eight playable numbers are divided into three sets:
+
+A = {2,4,8,10}
+B = {6,12}
+C = {3,9}
+
+Set B, the multiples of six, serves as a "bridge" between sets A
+and B, the powers of 2 and 3 respectively. Thus playing a number
+in set B allows for more flexibility -- and the first player wants
+to limit the second player's flexibility. So let's have the first
+player lead with either member of set B, 6 or 12, in order to
+limit the second player's abillity to play such a number.
+
+Sets A and C have even cardinality. So if the second player plays
+a member of either set, then the first player should follow by
+playing a member of the same set. At some point, the second player
+is forced to play the other member of set B. Then the first player
+can choose any remaining member of A or C, which will end on the
+second player since either set has an even number of members.
+
+Thus, there exists a strategy for n=12 -- namely, the first player
+should lead with one of the multiples of six and save the other
+multiple of six for the second player.
+
+Now n=13 is prime, so it becomes equivalent to the n=12 case.
+
+Let n=14. Then 7 becomes playable for the first time. Just as with
+n=10, the first player can lead with 7, thus forcing the second
+player to play 14. Then the first player can play either 6 or 12,
+thus reducing this to the n=12 case. Or the first player can lead
+with 5, forcing the second player to play 10, and then play 6 or 12
+as above. Thus, there exists a winning strategy for the first
+player -- namely, to lead with 5 or 7, play 6 or 12 on the second
+move, and save the other multiple of six for the second player.
+
+So the first player can force a win for n=4 all the way to n=14. One
+begins to wonder whether the first player can force a win for all
+values of n&gt;3.
+
+Graph theory may be helpful here, since one can think of the numbers
+as nodes, with edges connecting those which aren't coprime.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+
+</pre></div></body>
+</html>
+</table></div>

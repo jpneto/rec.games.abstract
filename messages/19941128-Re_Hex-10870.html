@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Hex</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Hex</td></tr><tr><td><b>From: </b>darse@cs.ualberta.ca (Darse Billings)</td></tr><tr><td><b>Date: </b>28/11/1994, 18:31</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:desj@ccr-p.ida.org">desj@ccr-p.ida.org</a> (David desJardins) writes:
+
+ &gt;Darse Billings <a class="moz-txt-link-rfc2396E" href="mailto:darse@cs.ualberta.ca">&lt;darse@cs.ualberta.ca&gt;</a> writes:
+ &gt;&gt; Isn't it possible to prove, in a more general way, that playing to the
+ &gt;&gt; center of an NxN board (N odd) is always a win for the first player?
+ &gt;&gt; It cannot be a draw, and having the first move cannot be a disadvantage
+ &gt;&gt; for the first player (since the game is monotonically increasing), so
+ &gt;&gt; it is a win.  All that needs to be shown is that playing to the center
+ &gt;&gt; hex is at least as good as any other move, which seems obvious, at
+ &gt;&gt; least intuitively.
+ 
+ &gt;What you have just argued is that the center move seems intuitively
+ &gt;likely to win.  Everyone understands that.  The difference between that
+ &gt;and a proof is rather vast.  The lacuna is that little matter of
+ &gt;"playing to the center hex is at least as good...."
+
+Well of course good intuition does not constitute a proof -- but I never
+claimed the above argument was a proof sketch.  What it does suggest is
+that such a proof may be feasible, unlike your Go example.
+ 
+ &gt;It's like looking for a proof that moving first is an advantage in go.
+ &gt;That is obviously true, and from experience we can even quantify the
+ &gt;advantage fairly precisely.  But a proof is not only not forthcoming, it
+ &gt;is so far beyond what we know how to prove as to be completely
+ &gt;inaccessible.
+ 
+It's not like that at all!  Go is non-monotonic.  Stones can be added or
+subtracted.  Making a certain move may be worse than not making a move at
+all.  In fact, making <b class="moz-txt-star"><span class="moz-txt-tag">*</span>any<span class="moz-txt-tag">*</span></b> move may be worse than passing (in the case of
+seki, for example).
+
+Trying to formally prove that the first move in Go is worth, say, seven
+points appears to be prohibitively difficult, now or in the future.
+Showing that Black can always win with a half-point komi (to eliminate the
+possibility of a game-theoretic draw) would be much easier -- compare it
+to the proof that the first player in Hex has a win.  (It may be necessary
+to add a proviso or prove that best play does not lead to one grand seki,
+in order to avoid the possibility of zugzwang).
+
+There are many things about Hex that can be proven, despite it's inherent
+complexity.  Generalized Hex was the first example of a PSPACE-hard (and,
+in fact, PSPACE-complete) problem.  Does that mean that all things about
+the general game are unknowable?  Absolutely not!
+
+We know that the first player has a win, regardless of the (regular)
+size of the Hex board.  Showing that the center hex is one such winning
+move need not be difficult at all.  Showing that an arbitrary hex is
+winning (or losing) must be prohibitively difficult (unless the hierarchy
+of complexity classes collapses [P=NP]).
+
+Hex is monotonic, by which I mean that making <b class="moz-txt-star"><span class="moz-txt-tag">*</span>any<span class="moz-txt-tag">*</span></b> move is at least as
+good as passing, and stones are never removed from the board.  As such,
+it is possible, in principle, to measure the value of each move with an
+admissible evaluation heuristic.  This heuristic may be quite weak, and
+totally unable to distinguish a winning move from a losing move.  But as
+long as it is able to say that move A is no weaker than move B, in terms
+of game theoretic value, we are done.  I claim that applying such a
+heuristic to all of the initial hexes would show that the center hex is
+at least as strong as any other hex on the board.  This (possibly weak)
+statement, combined with the well-known existential proof, is sufficient
+to show that the center hex is a winning move.
+
+The hard part, of course, is to come up with an admissible function.  
+For Go, with stones being added and removed, I would immediately throw my
+hands up in despair.  With Hex, we need not be so pessimistic.  I don't
+know enough about the game to make any informed suggestions, but the idea
+that such a function is possible should not be dismissed without good
+reason.
+
+It is possible to identify and at least partially quantify certain relevant
+relationships between hexes, in terms of connectivity, independent sets,
+branching of variations, and so on.  This is what humans do when they play
+the game, and what computer programs use in the form of common heuristics.
+Can you offer a single reason why the discovery of an admissible function
+for an empty board should be impossible?
+						Cheers,  - Darse.
+--
+
+char*p="char*p=%c%s%c;main(){printf(p,34,p,34);}";main(){printf(p,34,p,34);}
+
+</pre></div></body>
+</html>
+</table></div>

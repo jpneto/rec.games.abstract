@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: gtkboard *and* pentominoes</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: gtkboard *and* pentominoes</td></tr><tr><td><b>From: </b>&quot;Arthur J. O&#39;Dwyer&quot; &lt;ajo@andrew.cmu.edu&gt;</td></tr><tr><td><b>Date: </b>13/08/2003, 20:56</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+
+On Wed, 13 Aug 2003, Nate Smith wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+Arthur J. O'Dwyer wrote:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+gtkboard only intuitively supports rectangular boards.  You'd have
+to do something like splitting the square cells into triangles and
+conceptualizing the game that way.  OTOH, if you <b class="moz-txt-star"><span class="moz-txt-tag">*</span>did<span class="moz-txt-tag">*</span></b> do that, I
+bet you'd get a lot of props from the gtkboard devteam! :-)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+  i'm not sure i follow this - we're talking about pentominoes?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+<span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>You<span class="moz-txt-tag">_</span></span> were talking about Xong. ;-)
+Back to pentominoes, now...
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+I have downloaded the current build, and I'm currently working on
+the gtkboard interface for Capture Pentominoes.  At the moment,
+my idea is to store the state of the board internally as an
+array of characters in the format I posted in the first message:
+
+   .......
+   ....N..
+   ..wNN..
+   .wwNL..
+   ww.NL..
+   ....L..
+   ....LL.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+ &gt;
+ &gt; where the lowercase letters represent the most recent move.  Then
+ &gt; checking for captures merely entails making a list of all the
+ &gt; 84 edges on the board, and looking at the cells on either side of
+ &gt; each edge.
+
+good! [...]
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Thanks.
+
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+The hardest thing about gtkboard, I think, is that as far as I
+can tell its interface is limited to "capture a click somewhere on
+the board", which means it'll be a pain to select and place
+irregular figures like pentominoes.  Maybe it needs a full
+user interface, something like the following very bad ascii-art:
+
+            --------------
+  FILNPT   |              |
+  UVWXYZ   |              |
+  ------   |  the game    |
+-|   =  |- |   board      |
+&lt;| I=I  |&gt;||              |  ----
+-| =    |- |              | | rm |
+  ------   |              |  ----
+            --------------
+
+   To remove a piece:
+     Click the piece to select it.
+     Click "remove".
+   To place a new piece:
+     Click the letter corresponding to the piece.
+     The piece will appear in the left-hand window.
+     Click the left and right arrows to rotate the piece.
+     Click one of the squares on the piece.
+     Click an empty square on the board.
+     The piece will be placed with the two squares coinciding.
+
+That's a rather involved interface, and even <b class="moz-txt-star"><span class="moz-txt-tag">*</span>more<span class="moz-txt-tag">*</span></b> involved
+for the programmer!  I'm not sure how to get around this.
+Ideas welcome.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+  you probably would have enough room to have the 12 guys drawn
+  off to the side.  then you {mouse over} &amp; click to select it.
+  at this point it is stuck to your mouse pointer
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Nope, I don't think gtkboard can do that.  I think it was the Chess
+game that had a comment like "drag &amp; drop isn't working yet," but
+even so I think they didn't mean that you could <b class="moz-txt-star"><span class="moz-txt-tag">*</span>see<span class="moz-txt-tag">*</span></b> what you were
+dragging, just that you should be able to make a move in one mouse
+motion instead of two.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+  &amp; drags along
+  with it.  a click rotates it to the right, a SHIFT-click to
+  the left (because MAC mice only have 1 button), and then
+  CONTROL-click flips it over if it is asymmetrical &amp; you need
+  the other side of the pentomino.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Dang!  I completely forgot about flipping-over when I wrote up
+that ascii-art interface.  Add <b class="moz-txt-star"><span class="moz-txt-tag">*</span>another<span class="moz-txt-tag">*</span></b> button to flip the selected
+piece over a vertical axis.
+
+And AFAIK each "clickable" thing in gtkboard has to be a "cell" on
+the "board," so even though the board is conceptually only 7x7, I'll
+end up with a board that's like 15x12 by the time the interface is
+done.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+  in my java Xong app i have the release of dragging the piece
+  drop the piece, nestling it into a legal position, so you dont
+  have to have single-pixel precision in your fingertips.
+
+  then you may wish to have a COMMIT MOVE button somewhere to
+  make the move, as opposed to just dragging it around &amp; trying
+  it out in several places whiler you drink another cup of coffee.
+
+  but gtk may not go for this.  ;-)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Yeh.  Nice, though. :-)
+
+I don't yet have access to a Linux graphical testbed, but I will
+in less than two weeks now.  (School. :))  Then I expect to be able
+to run what I have so far, and see how it really looks.
+
+-Arthur
+
+
+</pre></div></body>
+</html>
+</table></div>

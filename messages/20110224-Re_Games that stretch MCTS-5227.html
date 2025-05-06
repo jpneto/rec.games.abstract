@@ -1,0 +1,85 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Games that stretch MCTS</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Games that stretch MCTS</td></tr><tr><td><b>From: </b>Greg &lt;dreamwafer@yahoo.com&gt;</td></tr><tr><td><b>Date: </b>24/02/2011, 17:26</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Feb 24, 3:25 am, Cameron Browne <a class="moz-txt-link-rfc2396E" href="mailto:cambol...@googlemail.com">&lt;cambol...@googlemail.com&gt;</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Thanks guys!
+
+Mark: Flume does indeed look applicable on a number of counts;
+composite moves, large branching factor and the immediate reward of
+each move is not obvious. Would you say that the complexity of the
+moves gives it low in clarity?
+
+Christian: Yes MCTS is revolutionising AI for a lot of games, we might
+be seeing a paradigm shift away from alpha-beta search.
+
+Greg: Thanks I'll check out Cluster. UCT tends to play poorly in most
+cases unless tweaked or enhanced with domain knowledge - do you think
+this was more pronounced than usual with Cluster?
+
+I've also wondered why there have been no publications on UCT for
+Chess - that's usually the first game that AI researchers attack!
+Presumably the results are not good, and the Chess AIs these days are
+so good that there'd be no comparison. I guess the more subgoals or
+strategies that a game requires to be played well, then the more
+domain knowledge has to be incorporated if UCT is to work; perhaps I
+should be looking at the distinction between tactical and strategic
+games.
+
+Cameron
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Cameron wrote:
+
+[Greg: Thanks I'll check out Cluster. UCT tends to play poorly in
+most
+cases unless tweaked or enhanced with domain knowledge - do you think
+this was more pronounced than usual with Cluster? ]
+
+Without adding significant domain knowledge, yes.
+
+Games which UCT excel at seem to be reduction games where the moves
+tend to diminish and/or there is some "force" driving the game to an
+end.
+As an observation, many (if not most) of Mark Steere's games seem to
+have that property so perhaps Mark has created fertile territory for
+UCT :).
+
+Contrast that with positional games which can stalemate.  I'll make an
+arguable and brash statement that, in general, if a game can end in a
+draw (typically with pieces cycling around the board to no end), then
+it's likely not a good fit for UCT since I believe UCT will have a
+hard time finding the narrow line(s) of play which leads to a win.
+UCT "wants" the search space to be cone shaped tapering at the end, it
+doesn't like "needle in the haystack" end games where the ratio of
+wins &amp; losses to the remaining search space is small.
+
+Here's another thought.  Positional games like Chess can be
+problematic due to the heavy demand on move generation during
+playouts.  One could randomly select a piece and select from the
+potential moves for the single piece.  However, that leads to biases
+since not all pieces have the same number of moves available to them
+so pieces which have many moves will tend to be under represented in
+the playouts.  This applies to other games as well.  An unbiased and
+fast playout method is a huge bonus.  As you well know, connection
+games lend themselves to quick playout methods, but that advantage
+doesn't appear to generalize to the broader class of games.
+(e.g. a "random fillout" of pieces in Chess would probably not make
+much sense)
+
+-- Greg
+
+
+
+
+
+</pre></div></body>
+</html>
+</table></div>

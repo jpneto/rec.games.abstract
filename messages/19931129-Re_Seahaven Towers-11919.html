@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Seahaven Towers</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Seahaven Towers</td></tr><tr><td><b>From: </b>&quot;Jonathan R. Ferro&quot; &lt;jf41+@andrew.cmu.edu&gt;</td></tr><tr><td><b>Date: </b>29/11/1993, 01:04</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:ftww@cs.su.oz.au">ftww@cs.su.oz.au</a> (Fred the Wonder Worm) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Are you sure it checks the position?  A friend of mine wrote an (admittedly
+simple) program to check a position for solubility using a backtracking
+algorithm.  Possibly it wasn't very good, but I've had it try to evaluate
+over 58 million possible positions before someone killed it or the machine
+crashed.  This took many many hours.  If he and I missed a simple method
+of deciding it's solubility, we'd both like to know.  Can you describe
+what it's doing?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Yep, you definitely missed some very important simplifying assumptions.
+
+Obviously, by the count of how many positions you considered, you were
+counting each movement of a single card as generating a new position.  A
+vastly superior way to look at the game is to consider only the movement
+of "chunks" of consecutively-numbered cards.  When the tableau is
+initially dealt out there may be up to five chunks per stack (or seven
+chunks per stack if you are playing the 8-stack variation) and two more
+pseudo-chunks in the hold spots.  However, since there is no provision
+for adding an arbitrary card to a stack, the number of chunks in a stack
+will never increase over the course of the game.  This is effectively
+the same reasoning by which it is shown that it never hurts to put cards
+on their aces whenever possible.
+
+ From now on, the program should only consider "moves" which cause an
+entire chunk to be put into a new position.  This reduces your overly
+humongous move tree down to only the interesting branch nodes.  The
+three types of moves remaining are: (a) movement of a chunk onto the
+next higher consecutive chunk on the tableau (provided at least
+chunksize-1 spots are open in the hold area), (b) movement of a chunk
+headed by a King onto an empty stack (provided at least chunksize-1
+spots are open in the hold area), and (c) movement of an entire chunk
+into the hold spots (provided there are at least chunksize open spots
+AND that it is not possible to move this chunk directly to the next
+higher chunk).
+
+Before and/or after each of these moves, the program should also
+simplify the position as much as possible by moving cards to aces (of
+course), and by moving cards down from the hold spots into the tableau.
+These simplifications should <b class="moz-txt-star"><span class="moz-txt-tag">*</span>not<span class="moz-txt-tag">*</span></b> be considered moves in the move
+tree--they are simply natural results of having made the previous "move"
+of a chunk.  That cleaning out the hold area can never hurt is shown
+simply by noting that leaving them in the hold area only obstructs the
+movement of other chunks, and what assistance it does lend to the
+movement of the chunk it belongs to is already considered by the simple
+"chunksize-1 free" check in part (a) above.
+
+Using all of these simplifications greatly reduces the size of the
+"move" tree and the time necessary to construct it.  The shortest
+possible solution (in terms of number of chunks moved, not number of
+cards moved, although I have not seen a situation where they differ) can
+be generated on a Unix workstation, with a C program of about 5 pages,
+in less than a second.
+
+-- Jon Ferro               Einsprachigkeit ist heilbar
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Rating systems suitable for online play</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Rating systems suitable for online play</td></tr><tr><td><b>From: </b>&quot;richardhutnik@optonline.net&quot; &lt;richardhutnik@optonline.net&gt;</td></tr><tr><td><b>Date: </b>19/11/2007, 14:49</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Nov 19, 9:22 am, Harald Korneliussen <a class="moz-txt-link-rfc2396E" href="mailto:vinterm...@gmail.com">&lt;vinterm...@gmail.com&gt;</a> wrote:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I am not a mathematician, so I'm not the right person to develop a
+robust graph-based ranking system. But I can give an example of a very
+simple one, to give an idea how they might work:
+
+Construct a n * n matrix, where n is the number of players in the
+system: One row and one column for each player. The element (i,j) of
+the matrix is player i's win ratio against player j (0.5 if they've
+never played). Now, (if I remember my linear algebra correctly!!) you
+can look upon this as the transition matrix of a markov chain, and by
+repeated multiplication of an initial vector by this matrix, you end
+up with a vector that is a guess of the player's skills.
+
+There exists very efficient algorithms for calculating such a vector,
+so it should scale very well.
+
+Any suggestions? Do you think this is a good idea?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Harald, I will need to study it more.  Your question is one of the
+questions trying to be worked out for a championship series in the
+IAGO World Tour, used to determine player ranking and so on.  If
+people have alternatives to ELO, please let me know.  Please go here
+and start a topic on this (as it is relevant to the IAGO World Tour):
+<a class="moz-txt-link-freetext" href="http://abstractgamers.org/forums/?CategoryID=25">http://abstractgamers.org/forums/?CategoryID=25</a>
+
+Thanks...
+- Rich
+
+
+</pre></div></body>
+</html>
+</table></div>

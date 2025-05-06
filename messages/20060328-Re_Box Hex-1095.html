@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Box Hex</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Box Hex</td></tr><tr><td><b>From: </b>David J Bush &lt;twixt@cstone.net&gt;</td></tr><tr><td><b>Date: </b>28/03/2006, 04:46</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+||&gt; How do you come up with just one shortest winning path in Hex? It
+||&gt; looks to me that an NxN grid would have N shortest winning paths for
+||&gt; each player. Do you agree?
+||
+||Yes, you are correct.  However more shortest paths go through the
+||center point on an odd x odd board than any other point.
+|
+|Ah, you're right,...
+
+
+Uh, actually, that's not right. Consider a 3x3 grid.
+
+
+  A *  *  *
+
+ B *  *  *
+
+C *  *  *
+ 1  2  3
+
+Considering shortest distance paths only, there are two ways
+for the center cell to connect to the top, times two ways to
+connect to the bottom, which results in four shortest distance
+paths which pass through the center.
+
+Now consider the obtuse corner cell A1. There are four shortest
+distance paths which pass through there, as well:
+
+A1-B1-C1
+A1-B1-C2
+A1-B2-C2
+A1-B2-C3
+
+
+In fact, on any size grid, odd or even, all the cells along the
+short diagonal (from one obtuse corner to the other) will have
+2^(N-1) shortest distance paths passing through them. The central
+cell is NOT a unique maximum in this respect.
+
+David
+
+
+</pre></div></body>
+</html>
+</table></div>

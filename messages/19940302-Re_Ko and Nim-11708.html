@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Ko and Nim</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Ko and Nim</td></tr><tr><td><b>From: </b>markb@bloom.iisc.demon.co.uk (markb)</td></tr><tr><td><b>Date: </b>02/03/1994, 10:27</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:kwhyte@dent.uchicago.edu">kwhyte@dent.uchicago.edu</a> (Kevin Whyte) writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+here's a game
+for you.  The game is just nim with 2 extra rules.  The first is 
+that when a player removes counters from a pile they are placed in
+a discard pile.  In addition to the normal nim moves a player may
+return some or all of the discard pile to any one pile.  The second
+rule is the super ko rule : a player may not make a move which 
+repeats a previous position. 
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+This game neatly points up an ambiguity in the definition of Nim, as it's
+usually described. Is the game decided by "the winning player is the one
+who takes the last counter" or "the first player who cannot move loses" ?
+In standard Nim, these rules are equivalent. But look what happens in the
+above version, when we start with an initial pile of just two counters:
+
+Starting from the position &lt;2&gt;, I sweep both counters into the discard pile,
+leaving &lt;0&gt;, an empty table. Using the "last counter rule" I have won. But
+my opponent insists on playing until one of us has no legal move left, and
+restores one counter from the discard to give position &lt;1&gt;. Now I've lost,
+because any move I make repeats an earlier position!
+
+The original post was addressed to " those of you familiar with Berlekamp theory"
+so I guess we have to go with the "No legal move" criterion for ending a game.
+In which a case a single pile of &lt;n&gt; counters is a win for the first player exactly
+when n is odd.
+
+Unfortunately you can't combine the results for single piles to solve the
+general game, the way you can with Nim, because the discard piles from
+the "sub-games" get merged, so I haven't got a full solution yet. As a
+variant on the original posting, what happens if you allow the move of
+taking counters from the discard to form a <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>new<span class="moz-txt-tag">_</span></span> pile ( so a game that
+started &lt;3,4,5&gt; could later become &lt;2, 3, 3, 4&gt; ) ?
+
+Mark Bassett
+( Not sure if these posts are getting through, so any comments
+on the above would be appreciated! )
+
+</pre></div></body>
+</html>
+</table></div>

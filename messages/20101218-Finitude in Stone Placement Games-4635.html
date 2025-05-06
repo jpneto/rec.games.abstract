@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Finitude in Stone Placement Games</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Finitude in Stone Placement Games</td></tr><tr><td><b>From: </b>marksteere@gmail.com</td></tr><tr><td><b>Date: </b>18/12/2010, 22:21</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Stone placement game definition: Players 1 and 2, designated Black and White
+respectively, take turns placing a single stone of their own color on an
+unoccupied cell (or intersection) on the board.  The placement may by itself
+complete a turn, or the player may conclude his turn by removing black
+stones and white stones from the board.
+
+How do you guarantee that the game will end?  Well, the simplest way is not
+to have capturing and just let the board fill up.  This impacts robustness
+though.   On an odd sized grid, Black will have the first move, the last
+move, and altogether one more move than White.  All of this will either be
+an advantage or a disadvantage to Black, but not neither.
+
+So you add capturing to your design, lots of capturing.  Now Black still has
+the first move but it's unknown who will have the last move or who will
+ultimately make more moves.  Much better.  But now with all this capturing,
+it becomes non-trivial how to design finitude into the game.
+
+One special position I always consider when designing stone placement games
+is roughly this: White has completely filled the left half of the board and
+Black has completely filled the right half.  Two questions: "What happens
+now?" and "How do you prevent this position from repeating itself?"
+
+In Go, said special position would be pretty much as described.  The whole
+board would be filled in except for the center point.  White's stones would
+be roughly on the left half and Black's on the right.  The player on turn
+(not necessarily Black) would move onto the center point, killing the other
+player's group, and it would then be the other player's turn to move.
+
+Go bluntly addresses the repeat position question with the brutish superko
+rule.  Players are simply forbidden from creating the special position again
+(with the same player on turn).
+
+Tanbo rule sheet:
+  <a class="moz-txt-link-freetext" href="http://www.marksteeregames.com/Tanbo_rules.pdf">http://www.marksteeregames.com/Tanbo_rules.pdf</a>
+
+For Tanbo, the special position would be a white, root-like structure
+filling the left side of the board, a black, root-like structure filling the
+right side, not necessarily of equal size, and each group only having one
+legal move available - a suicide move.  The player on turn would remove his
+group, ending the game.
+
+Tanbo prevents a repeat of the special position simply by ending the game
+when all groups of one color have been removed.  Players begin the game with
+8 groups of size one (single stones) each.  On your turn you expand one and
+only one of your groups, so you never have more than 8.  Once all of the
+groups of a given color have been removed, there are no more groups left to
+expand for the ousted player, and the game is over.
+
+Oust rule sheet:
+  <a class="moz-txt-link-freetext" href="http://www.marksteeregames.com/Oust_rules.pdf">http://www.marksteeregames.com/Oust_rules.pdf</a>
+
+For Oust, the special position would be a white group nearly filling the
+left side of the board (possibly imbedded with black stones), a black group
+of equal size nearly filling the right side (possibly imbedded with white
+stones), with a single width, vertical line of empty cells separating the
+two groups.  The player on turn would place a stone somewhere in the space,
+connecting the two groups, and killing the enemy group (and embedded enemy
+stones) by doing so.
+
+In Oust, as in Tanbo, the game ends by definition here, preventing a repeat
+of the special position.  Once all stones of one color have been eliminated
+from the board in Oust, the game is over.
+
+Rive rule sheet:
+  <a class="moz-txt-link-freetext" href="http://www.marksteeregames.com/Rive_rules.pdf">http://www.marksteeregames.com/Rive_rules.pdf</a>
+
+For Rive, the special position would be a white group filling the left side
+of the board, a black group of equal size filling the right side, with a
+single width, vertical line of empty cells separating the two groups.  The
+player on turn would place a stone somewhere in the space, connecting the
+two groups.  The player placing the stone would then remove enough black
+stones and/or white stones from the new, single, larger group to reduce its
+size to the previous group size plus one.
+
+Rive prevents the special position from repeating by creating ever larger
+groups.  In the special position, the largest group size was n.  Then it was
+n+1.  It can never go back to n, thereby preventing the special position
+from occurring again.
+
+-Mark
+
+Mark Steere Games
+<a class="moz-txt-link-freetext" href="http://www.marksteeregames.com">http://www.marksteeregames.com</a>
+
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>&quot;Break the Ice&quot; game strategy</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>&quot;Break the Ice&quot; game strategy</td></tr><tr><td><b>From: </b>&quot;Arthur J. O&#39;Dwyer&quot; &lt;ajonospam@andrew.cmu.edu&gt;</td></tr><tr><td><b>Date: </b>01/08/2006, 00:35</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,comp.programming</td></tr></table><br>
+<div class="moz-text-flowed">
+<br>&nbsp; I'm trying, just for fun, to make a computer player for an abstract
+<br>game similar to Milton Bradley's "Dont Break the Ice"
+<br>
+<br>&nbsp; <a class="moz-txt-link-freetext" href="http://en.wikipedia.org/wiki/Don't_Break_the_Ice">http://en.wikipedia.org/wiki/Don't_Break_the_Ice</a>
+<br>
+<br>minus the chance and physical-skill elements. Source code and a 
+DOS/Windows executable available here for anyone who wants them:
+<br>
+<br>&nbsp; <a class="moz-txt-link-freetext" href="http://www.contrib.andrew.cmu.edu/~ajo/disseminate/ice.zip">http://www.contrib.andrew.cmu.edu/~ajo/disseminate/ice.zip</a>
+<br>
+<br>The game is played on a grid of cells, with each cell initially filled
+<br>with an "ice block." Each player, on his turn, "knocks out" one of the
+<br>blocks; if this causes any other blocks to be unsupported, they also
+<br>fall. The player who causes the last block to fall is the loser.
+<br>
+<br>&nbsp; Example game:
+<br>
+<br>&nbsp;&nbsp;&nbsp; 123
+<br>
+<br>&nbsp; a OOO&nbsp;&nbsp;&nbsp; Alice starts by knocking out B2, the central block.
+<br>&nbsp; b OOO
+<br>&nbsp; c OOO
+<br>
+<br>&nbsp;&nbsp;&nbsp; OOO&nbsp;&nbsp;&nbsp; Bob knocks out A3,
+<br>&nbsp;&nbsp;&nbsp; O.O&nbsp;&nbsp;&nbsp; causing A2 and B3 to fall, as they're no longer
+<br>&nbsp;&nbsp;&nbsp; OOO&nbsp;&nbsp;&nbsp; supported by an "arch" of connected blocks.
+<br>
+<br>&nbsp;&nbsp;&nbsp; O..&nbsp;&nbsp;&nbsp; Alice knocks out C2, causing C3 to fall.
+<br>&nbsp;&nbsp;&nbsp; O..
+<br>&nbsp;&nbsp;&nbsp; OOO
+<br>
+<br>&nbsp;&nbsp;&nbsp; O..&nbsp;&nbsp;&nbsp; Bob is forced to knock out one of the blocks
+<br>&nbsp;&nbsp;&nbsp; O..&nbsp;&nbsp;&nbsp; in the remaining arch, causing all three to
+<br>&nbsp;&nbsp;&nbsp; O..&nbsp;&nbsp;&nbsp; fall; he loses the game.
+<br>
+<br>&nbsp; My questions for the rec.games.abstract folks: Has this game been
+<br>analyzed before? Is there any known strategy that applies to many
+<br>different kinds of boards ("go for the corners first," or something
+<br>like that?)
+<br>
+<br>&nbsp; My question for the comp.programming folks: I quickly determined
+<br>that the standard alpha-beta pruning technique doesn't help with
+<br>this game, because I don't know any way to evaluate the "strength"
+<br>of a position except as a win or loss. So most of the branches in
+<br>an alpha-beta tree of any reasonable depth (i.e., not deep enough
+<br>to see all possible endings) end up with a value of zero, which means
+<br>the computer is moving randomly most of the time.
+<br>
+<br>&nbsp; Yet there are some positions, such as (I think)
+<br>
+<br>&nbsp; ....OO
+<br>&nbsp; ....OO
+<br>&nbsp; ....OO
+<br>&nbsp; ....OO
+<br>&nbsp; OOOOOO
+<br>&nbsp; OOOOOO
+<br>
+<br>which a human player can tell are a win for the moving player, without
+<br>having to explicitly examine the whole tree --- we can collapse certain
+<br>"families" of moves into single cases, for example. How do we get the
+<br>computer to do the same thing?
+<br>
+<br>&nbsp; Is there any way to get the computer to play smarter, other than
+<br>adding more and more special cases to the position-evaluation code?
+<br>
+<br>-Arthur
+<br>
+<br>
+<br></div></body>
+</html>
+</table></div>

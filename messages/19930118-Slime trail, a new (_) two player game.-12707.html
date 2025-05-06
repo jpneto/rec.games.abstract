@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Slime trail, a new (?) two player game.</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Slime trail, a new (?) two player game.</td></tr><tr><td><b>From: </b>boll@CS.ColoState.EDU (dave boll)</td></tr><tr><td><b>Date: </b>18/01/1993, 16:59</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+  The traffic on this group has died recently - is no one doing interesting
+  stuff with games?
+
+  I thought I'd post some results for a game called Slime Trail - invented
+  (as far as we know) by Bill Taylor. He and I corresponded for a while
+  re: game trees and strategy for this game, and this is what we came up
+  with:
+
+  Slimetrail:
+    played on an NxM rectangle of squares. Each player takes turns moving
+    a piece around the board. The piece can take one step orthogonally,
+    and may not re-visit a visited square. Each player tries to move
+    the piece into his/her goal square. The two goal squares are located
+    at diagonally opposite corners of the rectangle. The piece starts on
+    any mutually agreed upon square.
+
+    Note: It doesn't matter which player actually ends up moving the 
+	  piece into a goal square; just the fact that it is there means
+	  that someone won.
+
+  Normal slime trail:
+    A first player win exists, starting from any square, provided at least
+    one of the board dimensions is even. On an odd by odd board, winning
+    and losing start squares alternate in a checkerboard pattern. A draw is
+    only possible via cooperation; if one player moves to avoid draws, the
+    other can never force them. We're still wondering if the winning/losing
+    start square pattern means there is an easy strategy for this game that
+    neither of us has seen yet.
+
+  Variations:
+    Chess king slime trail: The piece moved around the board has the movement
+    capabilities of a chess king. Results for small boards (1st player 
+    goes to upper left, 2nd to lower right)
+
+      W = Winning start square for 1st player, assuming perfect play.
+      L = Losing start square for 1st player
+      T = Tied game with perfect play. (A game is tied if neither player
+	  has a move)
+
+       3x3       4x3       4x4         4x5           3x5
+      * W L    * W W L    * W L W    * W W W    * W W W L
+      W W W    W W W W    W W W L    W W W W    W W W W W
+      L W *    L W W *    L W W W    W W W W    L W W W *
+			  W L W *    W W W W
+			             W W W *
+
+    (the additional movement capabilities makes deep search difficult)
+    Seems to be biased toward the 1st player, with losses only cccuring
+    (sometimes) in the vincinity of the non-goal corners. It should be noted
+    that some of the start squares marked W have only one winning move out
+    of the eight available, and the direction of that winning move is not
+    obvious at all - so they still make for fairly good games.
+
+
+    Hex slime trail, targets in obtuse corner: Probably the best version
+    of this game. Here's some small board results:
+
+      4x4         5x5          5x4         4x6
+        * W T L    * W T W T    * W T W T    * W T L
+       W W L T    W W W W W    W W W W W    W W L T
+      T L W W    T W W W T    W W W W W    T L W W
+     L T W *    W W W W W    W T T W *    W W L T
+	       T W T W *                 T L W W
+        				L T W *
+    I think this variation is 'best' because of relative balance of
+    start squares that lead to W, L, or T. We really haven't playtested this
+    one enough to vouch for superior play-ability.
+
+
+    Hex slime trail, targets in acute corner:
+
+      4x4, 4x5: all squares win for 1st player
+
+      5x5
+      * W T T T
+       W L T T T
+        T T L T T
+         T T T L W
+          T T T W *
+
+      Draws are too easy to come by in this version.
+<div class="moz-txt-sig">-- 
+     ------------------------------------------------------------
+     Dave Boll  <a class="moz-txt-link-abbreviated" href="mailto:boll@handel.cs.colostate.edu">boll@handel.cs.colostate.edu</a>
+                "The speed of time is 1 second per second"
+     ------------------------------------------------------------
+
+</div></pre></div></body>
+</html>
+</table></div>

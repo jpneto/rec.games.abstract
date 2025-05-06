@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Question about retrograde analysis algorithm for endgame databases</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Question about retrograde analysis algorithm for endgame databases</td></tr><tr><td><b>From: </b>mathpoly@yahoo.com (mathpolymath)</td></tr><tr><td><b>Date: </b>06/05/2002, 14:53</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.chess.computer,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:jferro@pegasus.ece.cmu.edu">jferro@pegasus.ece.cmu.edu</a> (Jonathan R. Ferro) wrote in message news:<a class="moz-txt-link-rfc2396E" href="mailto:r13cx9ov31.fsf@pegasus.ece.cmu.edu">&lt;r13cx9ov31.fsf@pegasus.ece.cmu.edu&gt;</a>...
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:mathpoly@yahoo.com">mathpoly@yahoo.com</a> (mathpolymath) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:jferro@nu.ece.cmu.edu">jferro@nu.ece.cmu.edu</a> (Jonathan R. Ferro) wrote in message news:<a class="moz-txt-link-rfc2396E" href="mailto:r1znzqs1ku.fsf@nu.ece.cmu.edu">&lt;r1znzqs1ku.fsf@nu.ece.cmu.edu&gt;</a>...
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:mathpoly@yahoo.com">mathpoly@yahoo.com</a> (mathpolymath) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:jferro@nu.ece.cmu.edu">jferro@nu.ece.cmu.edu</a> (Jonathan R. Ferro) wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+So, the "Y" state is expanded into 19 different states internally (if I
+have counted correctly), 10 of which are terminal, and 9 of which are
+not yet "long enough" to end the game.  These states do not have any
+loopiness, so they can be analyzed normally.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+This seems like a very good way in theory, but in practice, the number
+of states would expand tremendously.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Yep, you got that right.  Welcome to the world of artificial intelligence.
+
+-- Jon
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Aha! I seem to have found a much simpler way, if my logic is correct. 
+Let me know if I have reasoned incorrectly.
+
+...
+
+In this way, I have addressed this complex-valued draw-by-repetition
+problem with negligible additional effort and at the cost of only some
+additional memory (for an intermediary copy of the unsettled values).
+
+Are there any holes in my reasoning?  Can other cases of state
+expansion in game trees be solved similarly?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I would say that you have successfully convinced yourself that you can
+deal with loopy positions algorithmically, but that you are fooling
+yourself that it's simpler.  As far as I can tell, the "intermediary
+copies" that you are referring to are simply dynamically-generated
+versions of the "expanded states" that I proposed above.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Actually, the intermediary copies of the state is one static copy of
+each state/position which is unsettled.  Since there are no more
+unsettled positions than positions in the entire database, this is
+obviously no more than doubling the size of the original database for
+a temporary period of time.  Say for a 10GB endgame database, you will
+never need more than 10GB of this so-called intermediary storage.
+
+This additional step I have proposed to the normal retrograde analysis
+algorithm has negligible time since it is simply a comparison of each
+of the n nodes/positions in the original database with each of its
+children and then updating the intermediary copy, which is definitely
+a O(n) operation.
+
+Now of course, my reasoning could be <b class="moz-txt-star"><span class="moz-txt-tag">*</span>completely<span class="moz-txt-tag">*</span></b> wrong and for some
+reason this algorithm I have described will not work.  But that's the
+type of comment I am soliciting.
+
+Note again, that I am trying to only address one aspect of loopiness. 
+That where the position can statically determine a unique
+game-theoretic value when a game ends due to repetition in that
+position.  No move history is required to determine this value.
+
+If you want an example of a real-world game to use as an example, take
+some variants of the game Awari.  This abstract game sees 48 identical
+piece moved about in 12 containers (half assigned to each player) and
+has in some rule variants the feature that a vicious cycle ends the
+game (when either there are insufficient to total forces to effect
+further captures or the pieces are in such a configuration that each
+side can move in such a way during his turn so as to prevent the other
+player from capturing any of his pieces) and that when such a vicious
+cycle occurs, each player gets to keep the game pieces that happen to
+be in his 6 containers.  Since number of game pieces possessed by each
+player determines the score in the game (game-theoretic value), and
+since the number of pieces in each of the 12 containers and in the
+players' possession at any point in the game can be statically
+evaluated without considering the history of the game, clearly this is
+an example of my more general case of draw-by-repetition values
+depending on position when the draw-by-repetition occurs.  Also, in
+this example game, these positions where "vicious cycles" occur are
+not necessarily end nodes in the game tree, but only loops where it is
+preferable to remain in the loop than to exit (for example exiting by
+moving so as to allow the opponent to make some more captures)...  I'm
+not sure that giving my problem a concrete target helps to address the
+correctness of my modification to the retrograde analysis algorithm,
+however.
+
+</pre></div></body>
+</html>
+</table></div>

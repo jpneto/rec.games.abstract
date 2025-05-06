@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: A Game Needing To Be Invented.</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: A Game Needing To Be Invented.</td></tr><tr><td><b>From: </b>torbenm@app-1.diku.dk (Torben Ægidius Mogensen)</td></tr><tr><td><b>Date: </b>04/02/2008, 10:43</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Bill Taylor <a class="moz-txt-link-rfc2396E" href="mailto:w.taylor@math.canterbury.ac.nz">&lt;w.taylor@math.canterbury.ac.nz&gt;</a> writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Well, it's nice to see the silly thread about what is or isn't
+a generalization of something else, is over.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+You wish. :-)
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+But it leaves an interesting question which hasnt been decided.
+
+Is it possible to construct a MindNinja-type game pattern,
+i.e. a fixed pattern to be decided in advance of playing,
+that both players must try to achieve, to be played on
+some Hex or Quad board, that STILL has the property
+of win/loss complementarity?   (As I call it, YMMV)
+That is - that if one player makes this pattern,
+it necessarily excludes the other making it, and that one
+or other is certain to be made once the board is filled up.
+
+So; a one-piece-put-per-move game, on a predetermined
+board, with a predetermined pattern to make, which is
+the same for both players, (i.e. both colours).
+
+Equi-tasking and win-loss complementary.
+The sort of game we purists love best!
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+This is easy to make, albeit not very interesting: The pattern to make
+is to fill the central hex of the board with your colour.  Obviously,
+this is complementary and will be achieved on a filled board.  But it
+is also a completely trivial first-player win.
+
+This pattern includes a specific place on the board, which you might
+not like.  But a finite, fixed pattern that does not include
+localisation constraints can not be complementary on a sufficiently
+large board: Assume you have a board that includes the pattern for one
+colour.  Now make a copy of the board but in reverse colours and embed
+both these boards in a larger board and fill out the remaining hexes
+randomly.  This board will now have the pattern for both sides.
+
+So, to ensure the unique-winner property, you either have to specify
+the board <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>and<span class="moz-txt-tag">_</span></span> the pattern, or you have to include position
+constraints on the pattern (such as relative to the center or edge of
+the board).
+
+Another kind of symmetry can be made in connection games: Instead of
+having two players with differently coloured pieces, you have both
+playing the same colour and the winner is the one that completes a
+specified pattern.  If the pattern can be embedded in the board, there
+will be a unique winner.  Proof:
+
+ 1. The empty board does not contain the pattern, but the full board
+    will.
+
+ 2. If a partially filled board contains the pattern, adding more
+    pieces will not change this.
+
+ 3. Since pieces are never removed, the board will eventually
+    transition from not having the pattern to having the pattern.
+
+An example game could be: On a hexagonal board with a hex grid, the
+first to complete a connection between the central hex and the edge is
+the winner.
+
+These games are a bit like Nim, where the winner is the one to take
+(or not take, depending on which variant you play) the last piece.
+
+Since the games are deterministic and finite, they will be sure wins
+for either the first or the second player, so you would probably want
+to use the pie rule to make them more interesting.
+
+	Torben
+
+
+</pre></div></body>
+</html>
+</table></div>

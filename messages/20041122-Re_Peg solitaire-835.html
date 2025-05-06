@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Peg solitaire</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Peg solitaire</td></tr><tr><td><b>From: </b>Kevin Saff &lt;news@kevin.saff.net&gt;</td></tr><tr><td><b>Date: </b>22/11/2004, 18:13</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-flowed">lucas wrote:
+<br><blockquote type=cite>Bruno Wolff III <a class="moz-txt-link-rfc2396E" href="mailto:bruno@wolff.to">&lt;bruno@wolff.to&gt;</a> wrote in message news:<a class="moz-txt-link-rfc2396E" href="mailto:slrncpsi4i.s9r.bruno@localhost.localdomain">&lt;slrncpsi4i.s9r.bruno@localhost.localdomain&gt;</a>...
+<br>
+<br><blockquote type=cite>In article <a class="moz-txt-link-rfc2396E" href="mailto:25977234.0411191025.4aa45ede@posting.google.com">&lt;25977234.0411191025.4aa45ede@posting.google.com&gt;</a>, lucas wrote:
+<br>
+<br><blockquote type=cite>What do you mean for "desired ending positions"?
+<br></blockquote>
+<br>Example 1:
+<br>Any position with exactly one peg.
+<br>
+<br>Example 2:
+<br>The position with exactly one peg, with the peg in the center of the board.
+<br></blockquote>
+<br>
+<br>If i have an arbitrary configuration to solve, how can i say :"this
+<br>configuration, with a single peg positioned at coordinates (i,j), is
+<br>one of the (really) possible final configuration".
+<br></blockquote>
+<br>If you do a google search for the phrase "pagoda function" one of the 
+early results is an article called "Modelling and Solving English Peg 
+Solitaire" which sounds related to your problem.
+<br>
+<br><blockquote type=cite>I ask this because if i can compute the possible final configurations,
+<br>i
+<br>can than compute a pagoda function specialized to work with one of
+<br>that final
+<br>configurations (the manhattan pagoda function). Otherwise, i really
+<br>don't know
+<br>how to use a pagoda function (wich? for wich final configuration?) if
+<br>i have
+<br>to solve an arbitrary initial configuration...
+<br></blockquote>
+<br>I'm not sure I understand you; pagoda functions are independent of 
+configurations.&nbsp; You probably will want a set of many pagoda functions, 
+but not all of these will change after each move.
+<br>
+<br>Here's what I would try:
+<br>Before you even know the configuration, have some ordered set of pagoda 
+functions.&nbsp; You can create a map from every jump to a list containing 
+its difference for each pagoda function.&nbsp; (I'm assuming the board is 
+known at this point, even if the particular start is not.&nbsp; So by "jump" 
+I mean any particular move possible if pegs were in the right places.) 
+No jump will increase the values, so these will all be non-positive.
+<br>
+<br>Once you have start and goal configurations, calculate a vector of the 
+current score for each pagoda function, and another vector representing 
+the goal.
+<br>
+<br>There are two sets of jumps we'll be interested in: first, the legal 
+jumps from any particular position.&nbsp; Secondly, the set of jumps which 
+decrease any pagoda function to less than the goal value.&nbsp; The size of 
+this second set will always be decreasing as we get deeper, since pagoda 
+functions decrease as legal moves are made.&nbsp; Now, you only need to 
+search the intersection of these two sets.&nbsp; When this intersection is 
+empty, you can start backtracking.&nbsp; This should happen shallower than 
+searching based solely on the set of legal jumps - you may need to 
+change the set of pagoda functions to optimize the program.&nbsp; I think 
+what you are doing is like this, except your set of pagoda functions is 
+empty.
+<br>
+<br>Use DFS.&nbsp; After each jump you try, just add the difference vector for 
+that jump to the current score, and continue.
+<br>
+<br>By the way, in your initial message you say you are keeping a "cache" of 
+all configurations that cannot be reduced to a single peg - I suspect 
+that this could be quite large (since 33 holes gives roughly 2^33, about 
+8 billion, configurations) so I wonder if memory use is part of the 
+problem.&nbsp; Also, how are you searching this cache?
+<br>
+<br>HTH
+<br>--
+<br>Kevin
+<br>
+<br>
+<br></div></body>
+</html>
+</table></div>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>HEX: anyone looked at the pattern of winning moves yet?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>HEX: anyone looked at the pattern of winning moves yet?</td></tr><tr><td><b>From: </b>tromp@cwi.nl (John Tromp)</td></tr><tr><td><b>Date: </b>04/02/1993, 11:42</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Out of curiosity and to get a better feel for the game, I analyzed some
+small HEX-boards to see which initial moves are winning. Who knows, maybe
+there's some pattern to be discovered?!
+
+Well I haven't discovered it yet, but what I did discover is that even on very
+small boards the variations can get very complicated.
+
+The results for boards up to 4x4 seem to be as follows
+(the first player, black, trying to connect from top to bottom, has winning
+initial moves indicated `+' and losing moves as `-')
+
+1x1:
+
++
+
+2x2:
+
+ + -
+- +
+
+3x3:
+
+  + - -
+ + + +
+- - +
+
+4x4:
+
+   + - - -
+  - + - -
+ - - + -
+- - - +
+
+5x5:
+
+beyond me.
+
+Did anybody ever write a program that can handle the next few board sizes,
+or, gasp, analyze it manually?
+
+regards,
+
+-John Tromp (<a class="moz-txt-link-abbreviated" href="mailto:tromp@cwi.nl">tromp@cwi.nl</a>)         f() is total -- R.L. Goodstein
+define s(n){;auto e,r;for(0;n;n/=b)r+=n%b*(b+1)^s(e++);return(r)}
+define f(n){;for(b=2;n;b++)n=s(n)-1;return(b)} for(n=0;1;n++)f(n)
+
+</pre></div></body>
+</html>
+</table></div>

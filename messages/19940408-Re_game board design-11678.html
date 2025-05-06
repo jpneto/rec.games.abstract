@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: game board design</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: game board design</td></tr><tr><td><b>From: </b>damien@b63519.student.cwru.edu (Damien P. Neil)</td></tr><tr><td><b>Date: </b>07/04/1994, 23:38</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.design,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:Cnw5A8.91q@and.nl">&lt;Cnw5A8.91q@and.nl&gt;</a>, Jos Horsmeier <a class="moz-txt-link-rfc2396E" href="mailto:jos@and.nl">&lt;jos@and.nl&gt;</a> wrote:
+
+[Fascinating game deleted]
+
+Well, it seems that what you need is a method of easily representing two
+different values on each piece, one ranging from 1 to 11, and the other
+being in the set {1,2,3,5,8}.
+
+First, each piece must be identified as having a side. Checkers pieces are
+a good size, and come already color-coded for two sides, so I'll use one
+of those as a starter.
+
+Next, each piece has a rank. Write a rank on the top of the checkers
+piece. When a piece changes rank, change the piece to one with an
+appropriate number on the top. I forget how many pieces existed in the
+game, but this means that you will need 5 * (number of pieces) different
+pieces to cover all possible situations.
+
+Finally, you need to indicate decay. Drill a hole in each piece, big enough
+to fit a toothpick. Make a number of little flags out of toothpicks. Write
+a letter from A to K on each flag. For starters, each piece has an A flag
+put in it.
+
+Make a row of boxes along one side of the board, lettered from A to K.
+Put a marker in the A box to start with. At the end of every round, move
+the marker one letter forwards. When it passes K, it wraps around to A.
+If, after moving the marker, a piece has the same letter on it's flag as
+the letter the marker now indicates, it has expired.
+
+Whenever you move a piece, update it's flag to the letter the marker is
+currently indicating.
+
+
+I am certain that there is much room for improvement in this system, but
+it should work.
+
+</pre></div></body>
+</html>
+</table></div>

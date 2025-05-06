@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: New Game: Basic</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: New Game: Basic</td></tr><tr><td><b>From: </b>torbenm@pc-003.diku.dk (Torben Ægidius Mogensen)</td></tr><tr><td><b>Date: </b>24/08/2009, 16:45</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Nick Bentley <a class="moz-txt-link-rfc2396E" href="mailto:nickobento@gmail.com">&lt;nickobento@gmail.com&gt;</a> writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Nice set of constraints to work with.  Though I'm not sure that the
+game tree is actually very big in practice, because of the small
+branch factor combined with the forward-only movement.  I'd wager that
+the tree is small compared to many other games.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I tend to agree, though not for the same reasons.  The size of the game
+tree is determined by the number of reachable positions in the game.
+The branch factor is not relevant for the size of the game tree (if you
+measure only the number of nodes, which is typically the case), but the
+forward-only moves are, since they restrict where each individual piece
+can be.  For example, the top-left red piece can be in only 12 different
+positions on the board plus one off the board, and no piece can be in
+more than 24 different squares.  You do have ordering on pieces in the
+same square, but on the other hand two red pieces are interchangeable,
+so I expect this to even out, so I expect around 10^22 different
+positions.  This is more than you can store on a computer, but not a lot
+compared to many other games.
+
+For example, Othello/Reversi is considerd having a small game tree, and
+it has around 10^28 positions (according to
+<a class="moz-txt-link-freetext" href="http://en.wikipedia.org/wiki/Game_complexity">http://en.wikipedia.org/wiki/Game_complexity</a>).  Compare to Chess with
+10^60 positions and Go with 10^171 positions.
+
+I once suggested a variant of Othello where each piece has a cross on it
+which can be oriented either as and X or as a + (which influences in
+which directions it can be the endpoint of a flip) and where the player
+that places or flips a piece decides the oriention.  This will greatly
+increase the size of the game tree, as each square now has five
+different possible values instead of three.  It also greatly increases
+the branching factor, which was the primary concern: Othello is great
+for computers due to the low branching factor (which makes deep
+brute-force search possible), so by increasing this, I hoped to bring
+humans into the competition again.
+
+One of the things that limit Draughts and Basic is that only the black
+squares are used.  If you allow also moves directly forward, you will
+greatly increase the number of positions.  If you also increase the
+number of pieces per side, this will further increase the tree size.  A
+possible rule that could keep the game interesting is that you are
+allowed to move a piece directly forward if you also move another piece
+directly backwards.  This removes the extreme simplicity, though.
+
+	Torben
+
+
+</pre></div></body>
+</html>
+</table></div>

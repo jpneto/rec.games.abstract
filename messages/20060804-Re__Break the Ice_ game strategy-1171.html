@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: &quot;Break the Ice&quot; game strategy</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: &quot;Break the Ice&quot; game strategy</td></tr><tr><td><b>From: </b>jdallen2000@yahoo.com</td></tr><tr><td><b>Date: </b>04/08/2006, 10:44</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,comp.programming</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+
+Arthur J. O'Dwyer wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+On Thu, 3 Aug 2006, Rob Thorpe wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+James Dow Allen wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+It sounds like you're missing the "transposition cache"
+(memory, e.g. hash table, of previously solved positions).
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I'd agree with that.  It seems best to evaluate a large chunk of the
+game offline and store it in a table.
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+I would tend to view the "table of solutions from recent several weeks"
+and "cache of solutions from recent several seconds" as
+separate objectives with separate heuristics that may or may not
+use same data format.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+   But the bottom line is still that the program has to, at some point,
+look at 9! things ...
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+By " 9! " I think you're referring to the permutations of
+{A,B,C,...,H,I}.
+But the opening A-B-C leads to the same position as C-B-A
+(they <b class="moz-txt-star"><span class="moz-txt-tag">*</span>transpose<span class="moz-txt-tag">*</span></b> into each other: that's why we speak of
+"transposition cache") and only one of these openings need be
+considered.  Stated differently, the number of positions reached
+in your example is 2^9 not 9!, right?  Do I misunderstand?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+   As for James' point about breadth-first search: Yeah, I actually
+wanted to do that ... but I couldn't figure out how to make it work, in the
+few hours I spent halfheartedly thinking about it....
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+It's not really my field, but I think a good starting point would
+be "Conspiracy Numbers" or Victor Allis' related algorithm.
+I did a Google search just now and clicked to get
+"Solving the Game of Checkers"
+<a class="moz-txt-link-freetext" href="http://www.msri.org/publications/books/Book29/files/schaeffer.pdf">http://www.msri.org/publications/books/Book29/files/schaeffer.pdf</a>
+which seems very interesting article, though wide-ranging rather
+than much about Allis' algorithm.  (I was delighted to see the
+first item in "References" for this article I picked almost at
+random.  :-)
+
+I think game-tree exploration and related work is far more
+interesting than most programming problems.
+Have fun!!
+
+James Dow Allen
+
+
+
+</pre></div></body>
+</html>
+</table></div>

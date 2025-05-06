@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>New game:  XANA</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>New game:  XANA</td></tr><tr><td><b>From: </b>w.taylor@math.canterbury.ac.nz</td></tr><tr><td><b>Date: </b>22/06/2005, 04:38</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+-----------------------------------------------------------------------
+
+                          New Game - XANA
+                          """"""""   ====
+
+This flyer is to introduce a new game, invented by Joao Neto (jpn),
+with modifications by Bill Taylor (kiwibill).
+We think it is excellent.
+
+It started out as a variety of Go, but though it still has something
+in common with its parent, the whole "look and feel" of the game is
+quite different and deserves to be known as a separate game idea.
+
+On a hexagonal board, players move in turn doing each of the following,
+in order, either of which can be passed.  Firstly, drop a stack of
+counters (or stones) onto a cell occupied by one's own stones, or
+onto an empty cell in a region of one's own territory or unclaimed
+territory.  Secondly, drop two neutral stones (walls) onto empty cells
+not too far from a stack of one's own; these walls can never be removed
+or moved again.  The counter-dropping part of the move can be replaced
+by a movement of a stack or part of a stack of friendly counters,
+to a friendly stack or empty cell that is not too far away.
+
+Any connected region of empty cells that can be reached from ONLY one's
+own stones, by some track of empty adjacent cells, counts (temporarily)
+as one's territory; and is forbidden to the opponent for drops or moves
+of counters or walls.    But these territories may become neutral again
+if one of the edge cells is a stack of counters that later moves away!
+
+There is an endless supply of walls, but a strictly limited supply
+of one's own counters, so it is unwise to be TOO profligate with them!
+The size of the supply is determined by the size of the board;
+we have generally found it nice to play on the 8-cells-per-side
+board illustrated below, with 169 cells.
+
+Captures can also be made, if a stack of opponent stones becomes
+surrounded by non-empty cells of any type.  Captured stones, and
+empty cells in one's own final territory make up one's final score,
+as in Go with "Japanese" style scoring.
+
+These various features - stone movement, neutral walls, limited stone
+supply, and forbidden regions - make the game so markedly different
+from Go, that it is best to regard it as an altogether different game.
+It is purely about region-building, and very strategic, with none of
+the intricacies of the cut-and-thrust and eye-formation of Go.
+
+We strongly urge all abstract gamers to try it, either on home-made
+boards or by email, and hopefully it will eventually become a standard
+on the pbem server.  The "X" is pronounced like a hard "h" sound,
+though we will not object if you say "ksana" quietly to yourselves!
+
+The game is attractively displayed at Joao's website
+                         <a class="moz-txt-link-freetext" href="http://www.di.fc.ul.pt/~jpn/gv/xana.htm">http://www.di.fc.ul.pt/~jpn/gv/xana.htm</a>
+
+Here is the formal set of rules, and an example game.
+
+======================================================================
+
+XANA is played on a hexagonal board of side-length N.
+Each player has 2N stones. There is an endless supply of walls.
+
+* Accessibility:
+  Any empty cell X is accessible to a player on his 1st move;
+  or if it is stepwise connected by empty cells to some friendly stack.
+
+* Circle: The circle of stack S (with height H) is all cells accessible
+    to S at Hex-Euclidean distance (from S) of less than or equal to H.
+
+At each turn, each player may do two actions:
+
+1) (Optionally) insert or move a friendly stack.
+  * A stack (1+ stones from off board) is placed in an accessible cell.
+  * Any stack must be adjacent to an empty cell,
+                                 unless it produces immediate captures.
+  * A stack may move to an empty or friendly cell of its own circle.
+  * A stack may move only part of its stones (thus splitting in two).
+  * A drop may be onto a friendly stack.
+  * If a stack splits, the distance travelled by the moving part is
+    up to the circle radius of the moving part only.
+
+2) (Optionally) insert up to two walls on friendly circles.
+   Any stack not adjacent to an empty cell, is immediately captured.
+
+There is a swap option on the first move.
+When both players pass, the player with more points wins.
+Score 1 per cell accessible to the scoring player only,
+and 1 point per captured enemy stone.
+....................................................................
+
+In the following game, the cells are co-ordinated orthogonally;
+the moves/drops are recorded 1st, and walls 2nd; and the final board
+has notes around the rim showing the (currently) secured territory
+for each player.  Joao's colour is shown by letters, and Bill's
+by numbers.  (A = 1, B=2, etc indicating the stack size)
+
+
+XANA  game 3
+====
+abcdefghijklmnopqrstuvwxyzABC       Joao (AB..)        Bill (12..)
+                                   ================================
+ b14   . . . # . # # .          1   Ck4  + n3  h5      7o8 + j5  l5
+      # 1 # . . # . 1 A         2   Bq4  + f5  n1      1i2 + i4  l3
+     # . 1 # # # # # # .        3  Ckh3  + g2  k2?     1j3 + f3  g4:3
+    . # # # . # . # . . .  j7   4   Aq4  + k4  p7      1r3 + p3  s4
+   . # # # # . # . # . . .      5   As2  + q2  t3:1    1n5 + o4  p5
+  . . . # . 1 # . # # # # #     6  q4u6  + t5  y6      1v7 + s6  t7
+ . . 4 # B . . # . # . # . .    7  u6w8  + u6  w6      1u2 + r1  r3
+.. . . . # . . . 1 # # . # . .   8   Aw2  + v3  A6   1o8q8  + s8  o6
+ . . . . . # # # # . # . . .    9   Cl11 + n9  p9    o8h9  + h7  l9
+  . . . # # . . . . # C . .    10   Bj7  + r9  u8    n5m6  + i8  t1:1
+   . . 1 . # . . . . # # . j12 11  lj11  + k10 x7:1 h9q12  + v9  y8
+    . . # # # . . . . . #      12  v8v10 + x11 y12  q12l13 + u10 v11
+     . . # 1 A . . . . .       13   An13 + k12 j13 5l13h11 + l11 i12:3
+      . . . # . . . . .        14   Al15 + m12 m14  4h7f11 + i6  i10
+       . . A . . . . .  j28    15
+                                    prisoners captured by...  Joao 2
+abcdefghijklmnopqrstuvwxyzABC                                 Bill 7
+
+Remaining in store:   digit  stones:  3
+                      letter stones:  1
+
+COMMENT: The game was fairly even until Bill made a major mistake
+on move 13, leaving Joao with the huge territory capture of 28
+in the lower right.      Bill resigned soon after.
+
+=========================================================================
+
+
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Sprouts Email Tournament</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Sprouts Email Tournament</td></tr><tr><td><b>From: </b>Nick Wedd &lt;nick@maproom.co.uk&gt;</td></tr><tr><td><b>Date: </b>10/12/2002, 16:14</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-flowed">In message <a class="moz-txt-link-rfc2396E" href="mailto:9a2dfd4d.0212091409.429d543c@posting.google.com">&lt;9a2dfd4d.0212091409.429d543c@posting.google.com&gt;</a>, Danny 
+Purvis <a class="moz-txt-link-rfc2396E" href="mailto:danny_purvis@hotmail.com">&lt;danny_purvis@hotmail.com&gt;</a> writes
+<br><blockquote type=cite>.Nick Wedd <a class="moz-txt-link-rfc2396E" href="mailto:nick@maproom.co.uk">&lt;nick@maproom.co.uk&gt;</a> wrote in message 
+news:<a class="moz-txt-link-rfc2396E" href="mailto:igAvGNFqZH99EACd@maproom.demon.co.uk">&lt;igAvGNFqZH99EACd@maproom.demon.co.uk&gt;</a>...
+<br>
+<br><blockquote type=cite>In all the abstract games which I enjoy, you can play so as to try to
+<br>improve your position.
+<br>
+<br>In sprouts, either you are able to analyse the position fully (when
+<br>either you know that you have a won position, or you know that your
+<br>opponent has a won position but you can hope that he goes wrong), or you
+<br>can't and the move that you make might as well be random.
+<br>
+<br>Can you persuade me otherwise?
+<br></blockquote>
+<br>That's a great summary of the old view of sprouts.&nbsp; I remember many
+<br>years ago at a chess tournament the math professor David Sumner
+<br>expressed exactly the same idea.&nbsp; Lately, though, the concept of
+<br>"survivors" has given the game a strong strategical element.&nbsp; A
+<br>survivor is a live spot in an exhausted position.
+<br></blockquote>
+<br>I don't see how this provides any strategical element at all.&nbsp; I stand 
+by my statement - either I can calculate the full value of the position 
+(and it is then trivial knowing what move to make), or I can't, and I 
+have no reason to prefer any move over any other.&nbsp; I would say this of 
+any impartial game.
+<br>
+<br><blockquote type=cite>A live spot is either a "cannibal" or a "ghost".&nbsp; A cannibal is a live
+<br>spot with 0 or two lines attached.&nbsp; A ghost is a live spot with one
+<br>line attached.
+<br>Any sprouts move must change a position with an even number of
+<br>cannibals to a position with an odd number of cannibals, and vice
+<br>versa.&nbsp; Since a survivor is a cannibal, the player to move in any
+<br>position can count the number of cannibals and instantly know whether
+<br>he needs an even or an odd number of survivors in the final position.
+<br></blockquote>
+<br>Using nim notation, a cannibal is equal to 0, a ghost is equal to *. The 
+number of cannibals in a position is irrelevant, as each cannibal 
+provides either no move, or a move for each player.&nbsp; If you are going to 
+move to a position with nothing but cannibals and ghosts, and you can 
+arrange for the number of ghosts to be even, you win by doing so;&nbsp; and 
+if you make it odd, you lose by doing so.
+<br>
+<br><blockquote type=cite>Play revolves around trying to get an even or an odd number of
+<br>survivors.&nbsp; As the position gets more and more divided up, players try
+<br>to extract desirable numbers of survivors from different sections of
+<br>the position.
+<br></blockquote>
+<br>But they don't know which of odd and even is desirable, unless they can 
+evaluate the whole game.
+<br>
+<br><blockquote type=cite>Often there will be a position or subposition in which
+<br>one player will try to maximize the number of survivors and the other
+<br>player will try to minimize the number of survivors.
+<br></blockquote>
+<br>The number of survivors is irrelevant.&nbsp; It is the number of ghosts (*s) 
+that matters, and it is only the parity of this number that is of 
+interest, not its size.
+<br>
+<br><blockquote type=cite>Sometimes there
+<br>will be cases in which a player succeeds too well, minimizes or
+<br>maximizes too much.&nbsp; There is a lot of room for experience and
+<br>intuition in estimating and trying to influence how many survivors a
+<br>position or subposition will yield.
+<br>
+<br>A surprisingly useful notion is the concept of a "universal trap" or
+<br>UT.&nbsp; A UT is a subposition consisting of two communicating spots, each
+<br>with 0 lines attached, and such that either (1) neither spot
+<br>communicates with any other spot or (2) both spots communicate with
+<br>one other spot, a spot with two lines attached and which itself
+<br>communicates with at least one more spot.&nbsp; We generally try not to
+<br>move to a UT because the second person to move to a UT can determine
+<br>whether the UT will yield an even or an odd number of survivors.
+<br></blockquote>
+<br>Do you mean "we generally try not to move <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>in<span class="moz-txt-tag">_</span></span> a UT"?&nbsp; This would make 
+sense, as the only move in a UT is to *2.
+<br>
+<br>UT (1) has the value {*2|*2}, which is equal to 0.&nbsp; This means that, 
+with competent play, it might as well not exist.&nbsp; But if you can't 
+evaluate the position and you think that your opponent may be able to, 
+it is a good idea to avoid moving in a UT (1), as it increases your 
+opponent's options.&nbsp; (It also increases your own options, but this is no 
+use to you while you can't evaluate the position.)
+<br>
+<br><blockquote type=cite>These ideas and some related ideas explained on the website
+<br><a class="moz-txt-link-abbreviated" href="http://www.geocities.com/chessdp">www.geocities.com/chessdp</a> help make the game a lot of fun to play from
+<br>the first move on.&nbsp; Various rules of thumb give the player a good
+<br>strategical orientation immediately, and he is able to make
+<br>meaningful, goal-oriented moves.
+<br></blockquote>
+<br>Would you say the same about nim?
+<br>
+<br><blockquote type=cite>In the kind of position which you describe in which a player knows he
+<br>is lost, it's the same as in chess.&nbsp; If the player knows his opponent
+<br>has the technique and knowledge to certainly win, he resigns.
+<br>Otherwise he tries to make problems for his opponent, using strategy
+<br>and tactics.&nbsp; But most of sprouts play occurs in difficult, unclear
+<br>positions.&nbsp; One player or the other invariably resigns long before the
+<br>position is exhausted.&nbsp; Beginners are often amazed how early
+<br>resignation comes.&nbsp; In fact, resignation usually comes long before
+<br>meaningful, nonrandom play would have even begun in the old days
+<br>before the survivor concept.
+<br>
+<br>I hope this diatribe has been a reasonable answer to your question!
+<br>
+<br>Danny Purvis
+<br></blockquote>
+<br>Nick
+<br><div class="moz-txt-sig"><span class="moz-txt-tag">--&nbsp;<br></span>Nick Wedd&nbsp;&nbsp;&nbsp; <a class="moz-txt-link-abbreviated" href="mailto:nick@maproom.co.uk">nick@maproom.co.uk</a>
+<br>
+<br></div></div></body>
+</html>
+</table></div>

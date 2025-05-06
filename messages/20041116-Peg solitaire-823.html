@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Peg solitaire</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Peg solitaire</td></tr><tr><td><b>From: </b>lucasbox76@hotmail.com (Lucas)</td></tr><tr><td><b>Date: </b>16/11/2004, 17:39</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Hi,
+
+i'm writing my own version of the peg solitaire game.
+The problem is that my program run too slow. On configurations with 32
+pegs, the
+programs can run even for 30 mins.
+
+I use simple brute force, with a cache that store invalid
+configurations (those that cannot
+be reduced to only one peg).
+I order the edges of the search space with a function that try to
+minimize the covered area
+and the "dispersion" of the board.
+This function work better if i use the look-ahead technique.
+But if the move at deep 10 is wrong, than the program simply have to
+consider too much configurations.
+
+I don't have access to two of the most important books on the subject,
+so i really don't know how to go on.
+
+I know, for example, that there are some necessary conditions called
+"pagoda functions". Can someone explain me how to use and generate
+this functions? Can i use a pagoda function with an arbitrary
+configuration
+of pegs?
+
+Thanks,
+Lucas
+
+
+</pre></div></body>
+</html>
+</table></div>

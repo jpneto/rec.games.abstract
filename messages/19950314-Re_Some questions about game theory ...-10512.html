@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Some questions about game theory ...</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Some questions about game theory ...</td></tr><tr><td><b>From: </b>colley@qucis.queensu.ca (Paul Colley)</td></tr><tr><td><b>Date: </b>13/03/1995, 23:52</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:3k1gh9$51a@panoramix.fi.upm.es">&lt;3k1gh9$51a@panoramix.fi.upm.es&gt;</a>,
+Carlos Linares Lopez <a class="moz-txt-link-rfc2396E" href="mailto:p880060@asterix.fi.upm.es">&lt;p880060@asterix.fi.upm.es&gt;</a> wrote:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+1. Please, help. I'm in trouble with iterative deepening. Do you know how
+  to program it?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+First, the "why" of iterative deepening:
+
+    In alpha-beta, the size of the search tree (and thus the time
+    required for the search) can be massively reduced if the best move
+    is tried <b class="moz-txt-star"><span class="moz-txt-tag">*</span>first<span class="moz-txt-tag">*</span></b> at as many nodes as possible.
+
+    Anything which consistently gets the best move tried first will
+    yield a big payoff in the search.
+
+    The <b class="moz-txt-star"><span class="moz-txt-tag">*</span>assumption<span class="moz-txt-tag">*</span></b> is that normally the best move from a position
+    doesn't change when the search goes one ply deeper.  But a
+    shallower search will run much faster, because the tree grows
+    exponentially with depth.
+
+    So it pays off to do a (d-1)-ply search at a node to determine the
+    probable best move, before doing the full (d)-ply search to
+    determine the real best move.
+
+    In turn, this (d-1)-ply search can be sped up by doing a (d-2) ply
+    search to determine the best moves.  And so on.
+
+Note the paragraph marked <b class="moz-txt-star"><span class="moz-txt-tag">*</span>assumption<span class="moz-txt-tag">*</span></b>.  If you are programming a
+pathological game or a very poor program, these assumptions may not be
+true.
+
+To do iterative deepening, we need some data structure that allows the
+operations "Write(position, move)" and "move = Read(Position)" which
+store a move with a position, and which returns the stored move (if
+any) for a given position, respectively.
+
+This is probably your real question---How do I write those two
+functions?  Unfortunately, the answer depends on what game you are
+programming.  And even for a fixed game, there is a wide variety of
+choices in data structures.
+
+One big decision to be made is whether you are going to store the
+position exactly, or discard some of the information and risk an error
+in reading.  Errors are evil, of course---but storing an entire chess
+or Go position requires a lot of memory!
+
+A popular choice is to use hashing.  For example, write a function that
+takes a position and converts it to 64 bits (8 bytes); if this function
+is well-chosen, the chance of accidently confusing two positions can be
+as low as 1/(2^64).  For most game programs, this is an acceptable
+error rate.
+
+So the "what" of iterative deepening:
+
+    for d = 1 up to depth-limit do
+       alpha-beta-search to depth d
+    end for
+
+Inside your search routine,
+
+   move = Read(Position)
+   if move found then
+	try move
+   end if
+
+   try remaining moves
+
+   Write(Position, best move)
+
+   return best move
+
+Hope that helps.
+
+- Paul Colley
+University:  <a class="moz-txt-link-abbreviated" href="mailto:colley@qucis.queensu.ca">colley@qucis.queensu.ca</a>
+Home:        <a class="moz-txt-link-abbreviated" href="mailto:pacolley@ember.uucp">pacolley@ember.uucp</a>   watmath!ember!pacolley  +1 613 545 3807
+"Anyone who attempts to generate random numbers by deterministic means is,
+of course, living in a state of sin."  - John von Neumann
+
+
+</pre></div></body>
+</html>
+</table></div>

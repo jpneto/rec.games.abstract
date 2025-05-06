@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: A chess player looks at checkers</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: A chess player looks at checkers</td></tr><tr><td><b>From: </b>loeb@labri.u-bordeaux.fr (Daniel Elliott Loeb)</td></tr><tr><td><b>Date: </b>08/06/1994, 11:10</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.chess,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+	Someone once posted on rec.games.abstract a long discussion of all the
+	checker variants and their rules. A repeat would be welcome, together with
+	a short discussion of the history and state of each version, analogous to
+	this post.
+
+I invented one variant which I found enjoyable, since it leads to quick games,
+and often a huge sacrifice can lead to victory.
+
+Players start with men in the 2nd and 3rd ranks only. Victory can be obtained
+either as normal OR by obtaining a king of your own color on your 1st rank.
+
+Here are the rules in MetaGame format.
+
+
+% (AMERICAN) CHECKERS as a symmetric chess-like game.
+%
+% This game implements the full rules of american checkers.
+% Each player must make a capture move if one is available,
+% and a piece continues capturing until it has no more captures.
+% 
+% This is a modified version, invented by Danny Loeb, in which
+% no pieces start on the first row, and the goal is for a player to
+% get his own man back to the first row.  First to do so, wins. 
+
+game checkers
+goals 	stalemate opponent
+	eradicate [ { opponent } any_piece ]
+	arrive [{player} any_piece] AT {(1,1) (3,1) (5,1) (7,1)}
+board_size 8 by 8
+board_type planar
+promote_rank 8
+setup 	man AT {(2,2) (4,2) (6,2) (8,2)
+	        (1,3) (3,3) (5,3) (7,3)}
+
+constraints must_capture
+
+define 	man
+   moving 
+	movement
+	leap &lt;1,1&gt;
+	symmetry {side} 
+        end movement
+   end moving		
+
+   capturing
+	capture by {hop}
+	type [{opponent} any_piece]
+	effect remove
+	movement
+		hop before [X=0]
+		    over   [X=1]
+		    after  [X=0]
+		hop_over   [{opponent} any_piece]
+	&lt;1,1&gt; symmetry {side}
+	end movement
+	end capture
+   end capturing
+
+   promoting
+	promote_to king
+   end promoting
+
+   constraints 
+	continue_captures	
+end define
+
+define 	king
+   moving 
+	movement
+	leap &lt;1,1&gt;
+	symmetry {forward side} 
+        end movement
+   end moving		
+
+   capturing
+	capture by {hop}
+	type [{opponent} any_piece]
+	effect remove
+	movement
+		hop before [X=0]
+		    over   [X=1]
+		    after  [X=0]
+		hop_over   [{opponent} any_piece]
+	&lt;1,1&gt; symmetry {forward side}
+	end movement
+	end capture
+   end capturing
+
+   promoting
+	promote_to king
+   end promoting
+
+   constraints 
+	continue_captures	
+end define
+
+end game .
+
+
+<div class="moz-txt-sig">-- 
+
+Yours, Daniel Loeb, "Proud repapa," <a class="moz-txt-link-abbreviated" href="mailto:loeb@labri.u-bordeaux.fr">loeb@labri.u-bordeaux.fr</a>
+HOME 	150, cours Victor-Hugo; Appt A6; 33000 Bordeaux France
+WORK	LABRI; Universite de Bordeaux I; 33405 Talence Cedex France
+PHONE(H)+(33) 56 31 48 26, (W)+(33) 56 84 69 05, (FAX) +(33) 56 84 66 69
+
+</div></pre></div></body>
+</html>
+</table></div>

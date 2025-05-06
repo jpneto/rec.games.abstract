@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: The Biggest Number Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: The Biggest Number Game</td></tr><tr><td><b>From: </b>acid+@cs.cmu.edu (Christopher Colby)</td></tr><tr><td><b>Date: </b>19/11/1992, 00:26</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:1e821sINNolv@uni-paderborn.de">&lt;1e821sINNolv@uni-paderborn.de&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:jerry@uni-paderborn.de">jerry@uni-paderborn.de</a> (Gerald Siek) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+"The smallest number that cannot be described by 20 or [fewer] words"
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+In article <a class="moz-txt-link-rfc2396E" href="mailto:1992Nov18.165142.11504@wam.umd.edu">&lt;1992Nov18.165142.11504@wam.umd.edu&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:warren@wam.umd.edu">warren@wam.umd.edu</a> (the stupid one) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+"the largest number that can be desribed in twenty words or [fewer] plus one"
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+It has been claimed that these sentences "make no sense".  I disagree.  To
+explain why, let's first look at a formalization of the problem.
+
+For some string S, define the Komolgorov complexity of S (denoted K(S)) be
+the length of the shortest pair of a turing machine and a string &lt;M,S'&gt;
+s.t. M(S')=S.  (Pick your favorite encoding for TMs and pairs.)  E.g., K(S)
+&lt;= |&lt;M_id,S&gt;| = <code class="moz-txt-verticalline"><span class="moz-txt-tag">|</span>S<span class="moz-txt-tag">|</span></code>+c for all strings S, where M_id is the identity
+function and c is the associated overhead of pairing a string with it.
+
+Now, assume an alphabet of {0,1} and interpret strings as binary encodings
+of natural numbers (written as the number itself).  We can interpret these
+English sentences as denoting TMs that take the empty string (e) as input
+and search for a number that satisfies some condition involving the
+(recursively enumerable) lexicographic ordering of all TMs M_1,M_2,... and
+the (recursively enumerable) lexicographic ordering of natural numbers
+0,1,....
+
+For instance, Gerald's sentence (replacing 20 with k) would be a TM M s.t.
+M(x) = `the smallest i such that K(i) &gt; k'.  And if k &gt; |&lt;M,e&gt;|, there is
+an inconsistency because K(M(e)) would be &gt; |&lt;M,e&gt;|.  Contradiction!!
+
+How exactly did this contradiction creep in?  It's actually an illusion!
+We've cheated by including the uncomputable computation K(i) in the "code"
+for M.  In fact, the function that we want M to perform is not computable,
+and so there really is no such M.  Therefore, there is no inconsistency.
+
+How does all this relate back to English sentences?  The notion of an
+English sentence "describing" a number is analogous to a program that
+outputs a number.  So, a sentence describes a number iff there is an
+"effective procedure" (a philosophical notion in the loosest sense) that
+extracts that number from the sentence.  However, if one uses the
+commonly-accepted Church-Turing notion for "effective procedure", then
+Gerald's sentence above DESCRIBES NO NUMBER since it is in general not
+effectively computable to determine the smallest number described by a
+sentence of bounded size.  This is precisely analogous to the machine M
+that we tried to define above, but could not.  Therefore, there is no
+contradiction in sentences of the form of the examples that Gerald or
+Warren provide.  Since they do not qualify as descriptions of numbers
+themselves, there is no paradoxical self-reference.  They are
+"meta-descriptions" if you will, or descriptions equipped with Oracles.
+Either way, they are drawn from a different class from
+effectively-computable descriptions, and so there is no contradiction.  It
+is this structure that the informality of English hides.
+
+-chris
+
+</pre></div></body>
+</html>
+</table></div>

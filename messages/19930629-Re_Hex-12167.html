@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Hex</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Hex</td></tr><tr><td><b>From: </b>torbenm@diku.dk (Torben AEgidius Mogensen)</td></tr><tr><td><b>Date: </b>29/06/1993, 10:07</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:hde+@cs.cmu.edu">hde+@cs.cmu.edu</a> (Herbert Enderton) writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:C9CqF9.LrH@rice.edu">&lt;C9CqF9.LrH@rice.edu&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:almehj@owlnet.rice.edu">almehj@owlnet.rice.edu</a> (Henry John Alme) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Hello:
+
+	I was recently introduced to a simple game called Hex,
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+ I am interested in teaching my computer
+to play this game.  I was wondering what sort of thoughts people had on
+algorithms/strategies for this game.  I have not been able to play very 
+effectively yet, but I am working on it 8^).  
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+As it happens, I am working on a program to play Hex as part of my
+dissertation work.  It seems to be very difficult to make a computer
+play Hex well.  The standard methods used for chess programs are pretty
+feeble for Hex, compared to the reasoning power of us human players.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Does anybody know about any other Hex programs, or articles about
+Hex algorithms?  If so, please mail me about them.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+This will probably not be of much help for the general case, but with
+the modification that the board is of size Nx(N-1) and the second
+player has to connect the shortest distance, the game is a sure win
+for player two.
+
+The strategy works as follows: divide the board into two equal-sized
+parts along the short diagonal. Every time player one places a stone
+in one half of the board, player two places a stone in the other half
+at the position 180 degrees opposite (imagine rotating one board half
+on top of the other). It is relatively easy to show that this will
+eventually end in a win for player two.
+
+I do have a small suggestion for the normal game: calculate for each
+hex the distance to the nearest black minus the distance to the
+nearest white stone. This difference counts towards blacks score. A
+stone is then played to maximize the score.
+
+This is probably not enough in itself to make a good play, but other
+factors can be used to calculate the score.
+
+	Torben Mogensen (<a class="moz-txt-link-abbreviated" href="mailto:torbenm@diku.dk">torbenm@diku.dk</a>)
+
+
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Abstract solitaire : Mobius game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Abstract solitaire : Mobius game</td></tr><tr><td><b>From: </b>Moh Bel &lt;mohbel63@gmail.com&gt;</td></tr><tr><td><b>Date: </b>18/10/2016, 20:18</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Wednesday, September 28, 2016 at 9:43:00 AM UTC-4, Moh Bel wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Hi,
+
+This a new game designed to be played on computer.
+
+Mobius solitaire game.
+
+You take an urn with 100 balls numbered from 1 to 100.
+You start picking randomly one ball noted k(1) :
+- you compute v=mu(k(1)) where mu() is the Mobius function
+- if v=0 then you reput the picked ball on the urn
+- if v=1 you place a new ball numbered (max(A)+1) where is the balls remaining on the urn and put aside the ball with v=1
+- if v=-1 you choose "smartly" one ball from the urn and you replace it by the ball just picked v=-1
+
+You do the process until you empty completely the urn.
+If you play smartly how many picks do you need in the worst case to empty the urn?
+
+Example :
+
+URN : 1,2,3,......,100 
+Pick 1 : k(1)=15 then v=mu(15)=1 as the max(A)=100 you place a new ball numbered 101 on the urn and remove from the game the b all numbered 15
+Pick 2 : k(2)=4 then v=mu(4)=0 you put the picked ball 4 on the urn 
+Pick 3 : k(3)=7 then v=mu(7)=-1 you need to choose one ball from the remaining balls 
+URN contains :1,2,3,...,14,16,17,....,100,101 (15 was removed and 101 was added)
+Let us say that removing a ball with v=0 is "smart" choice (if is up to the player to choose the best strategy not me). So you remove the ball 8 (v=0)
+and so on 
+       
+Enjoy! 
+
+The first one who programs the game will receive a big thank you from me.
+You could only with 10 balls ans see if you could empty the urn.
+If you succeed increase the number of balls.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I produced recently 3 two-players new games using the same principle of Mobius game.
+The three are using each one new original mechanisms (never seen before).
+I will not post them here.
+ 
+
+
+</pre></div></body>
+</html>
+</table></div>

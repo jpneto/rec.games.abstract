@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Nim game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Nim game</td></tr><tr><td><b>From: </b>torbenm@diku.dk (Torben �gidius Mogensen)</td></tr><tr><td><b>Date: </b>20/07/2004, 15:25</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:joc_kay@hotmail.com">joc_kay@hotmail.com</a> (Joe) writes:
+
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+One can generate 'irreducible' representations by:
+1) removing empty rows and columns,
+2) swap columns and rows such that a 'block-diagonal' configuration is
+reached with the rows and columns in each block ordered by size, and
+3) splitting the resulting configuration into 'non-interacting blocks'
+
+So, starting from these two configurations:
+
+X . X . .    and   . X . . .
+. . . . X          . . . . .
+. . . . .          . . X . X
+X . . . .          . X . . .
+. . . . .          . . . . .
+
+we eliminate the empty rows and columns to reach:
+
+X X .        X . .
+. . X        . X X
+X . .        X . .
+
+(i.e. the two configurations given by Thorben), and swap rows and
+columns resulting in:
+
+X X .        . X X
+X . .        X . .
+. . X        X . .
+
+and represent both in the form of 'non-interacting positions':
+
+(X X) + (X)     and      (X) + (X X)
+(X .)                    (X)
+
+Of course, standard theory applies and each non-interacting position
+can be represented by a Groundy number:
+
+  (.) -&gt; 0
+
+  (X) -&gt; 1
+
+(X) = (X X) -&gt; 2
+(X)
+
+(X X)  
+(X .) -&gt; 3
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+How do you find these Groundy numbers?  Is it just the number of X's?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+and Groundy numbers of non-interacting positions can be added using
+Nim-addition. Positions that have a composite Groundy number (=
+Nim-sum of the Groundy numbers of the irreducible configurations)
+equal to 0 are 'cold' positions (last players win), all other
+positions are 'hot (next players win).
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Can you prove this, or is it just a hypothesis?
+
+	Torben
+
+
+</pre></div></body>
+</html>
+</table></div>

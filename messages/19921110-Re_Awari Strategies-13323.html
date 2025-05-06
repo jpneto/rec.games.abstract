@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Awari Strategies</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Awari Strategies</td></tr><tr><td><b>From: </b>janeric@control.lth.se (Jan Eric Larsson)</td></tr><tr><td><b>Date: </b>10/11/1992, 15:43</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Hi!
+
+ From the look of the game boards you show, I guess that this game is
+called Kalah. Correct me if I misunderstand you. Awari, or Ware, is
+played on a board looking like this:
+
+  4 4 4 4 4 4
+
+  4 4 4 4 4 4
+
+There are more complicated moving and taking rules, and games are long.
+
+Concerning Kalah, one, two, and three stone Kalah can be solved by
+full search. In an old AI book by Slagle and Dixon this is stated.
+I wrote a small program myself, with the following printout:
+
+Solving 1 stone Kalah
+
+The beginner wins with 2 stones.
+A total of 2546 nodes were searched.
+The deepest variation was 14 ply.
+The search took 0 seconds.
+
+
+Solving 2 stone Kalah
+
+The beginner wins with 6 stones.
+A total of 1421452 nodes were searched.
+The deepest variation was 49 ply.
+The search took 13 seconds.
+
+
+Solving 3 stone Kalah
+
+The beginner wins with 2 stones.
+A total of 273277910 nodes were searched.
+The deepest variation was 96 ply.
+The search took 43900 seconds.
+
+
+These were times when run on a SPARC station 2. I didn't record the
+best moves here, but the principal variation starts with either a or
+b. For three stone Kalah it is a, if I remember correctly.
+
+   3 3 3 3 3 3
+ 0             0
+   3 3 3 3 3 3
+           ^ ^
+           a b
+
+Hope this helps...
+
+
+
+Jan Eric Larsson                  <a class="moz-txt-link-abbreviated" href="mailto:JanEric@Control.LTH.Se">JanEric@Control.LTH.Se</a>      +46 46 108795
+Department of Automatic Control
+Lund Institute of Technology     "We watched the thermocouples dance to the
+Box 118, S-221 00 LUND, Sweden    spirited tunes of a high frequency band."
+
+</pre></div></body>
+</html>
+</table></div>

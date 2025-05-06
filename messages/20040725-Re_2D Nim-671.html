@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: 2D Nim</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: 2D Nim</td></tr><tr><td><b>From: </b>joc_kay@hotmail.com (Joe)</td></tr><tr><td><b>Date: </b>25/07/2004, 20:48</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:w.taylor@math.canterbury.ac.nz">w.taylor@math.canterbury.ac.nz</a> (Bill Taylor) wrote in message news:<a class="moz-txt-link-rfc2396E" href="mailto:716e06f5.0407232125.5ff737d1@posting.google.com">&lt;716e06f5.0407232125.5ff737d1@posting.google.com&gt;</a>...
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+All correct except the P-pentomino is worth 5, not 1. 
+(It's obviously NOT 1 as it can be reduced to the S-tetromino!)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+You are right Bill! (B.t.w. i like your pentomino nomenclature :).
+
+
+Now that all polyominos up to the pentominos have been assigned a
+Grundy value, the next step is the hexominos. However, there are 35
+hexominos, and at the next level we have 108 heptominos. Not only do
+the number of configurations grow exponentially, also the number of
+possible moves increases rapidly with the size of the polynominos.
+
+Therefore, rather than calculating the Grundy values for the more
+complicated polynominos, one might focus on the polynominos that have
+a Grundy value of 0 (i.e. the 'cold' polynominos). Only even
+polynominos can have zero Grundy value. However, the domino is not
+'cold' and amongst the tetrominos we have only seen one 'cold'
+configuration, the O-tetromino:
+
+XX
+XX
+
+Yet, upon investigating the hexominos I found 8 'cold' configurations:
+
+X   X    X    X   XX   XXX  XXX  XXX  
+XX  XX  XXX   XX  XXX  XX   XX    X   
+XX  XX  X    XX    X   X     X   XX   
+X    X  X    X    
+
+Assuming this very rapid growth of the number of 'cold' configurations
+to continue, numerous octominos can be expected to have zero Grundy
+value.
+
+All of this is of course very relevant for the end-game. 
+
+Based on the observation that only even polynominos can be 'cold', and
+that starting from the O-tetromino the number of 'cold' polynominos
+increases rapidly with size, one might modify the rules a bit:
+
+--- PolyoNimo --- 
+
+Starting from a configuration of 2x2 squares with coinciding edges
+(the 'O-tetromino') both players in turn add exactly two squares to
+the configuration thereby creating a growing polyomino. There is no
+restrictions on where to add the new squares apart from the fact that
+the edges of the newly added squares should be coinciding with edges
+of squares already present.
+
+At any stage, one of the players - instead of further building - can
+decide to remove squares from the polynomino. From that moment on both
+players have to remove squares. However: there is a restriction on
+which removals are allowed: only straight polyominos (a Nx1 rectangle
+of squares, N = 1, 2, 3, ..) can be removed.
+
+The player who makes the last move wins.
+
+-----------------
+
+
+Joe
+
+
+</pre></div></body>
+</html>
+</table></div>

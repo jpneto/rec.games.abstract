@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: NIM algorithm, anyone ?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: NIM algorithm, anyone ?</td></tr><tr><td><b>From: </b>torbenm@diku.dk (Torben AEgidius Mogensen)</td></tr><tr><td><b>Date: </b>26/05/1994, 10:55</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>comp.programming,rec.games.abstract,rec.games.misc</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:kleber@hanalei.berkeley.edu">kleber@hanalei.berkeley.edu</a> (Michael Kleber) writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Oops!  Niel Gall asked about Nim, and his message ended:
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+ Two players take it in turns to remove any number of stones
+ from a single row.  The player to remove the last stone loses.
+</pre></blockquote></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+As someone pointed out to me, I blithely went ahead and described
+normal Nim, where the player taking the last stone <b class="moz-txt-star"><span class="moz-txt-tag">*</span>wins<span class="moz-txt-tag">*</span></b>.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+The spiffy algorithm for Nim that I posted was "leave the piles so
+that when you xor their sizes (written in binary) together, you get
+zero."  Fortunately, this version ("Mise`re Nim") isn't much harder to
+play.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+[goes on to analyse Misere Nim]
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+You can even use a similar reasoning for a variant of Nim, where you
+can take stones from the middle of a row, effectively dividing the
+remainder of the row into two rows. Below is an old posting that
+analyses both normal, Misere and this special Nim in detail.
+
+	Torben Mogensen (<a class="moz-txt-link-abbreviated" href="mailto:torbenm@diku.dk">torbenm@diku.dk</a>)
+
+=======================8&lt;------------------------------
+
+Newsgroups: rec.puzzles
+Subject: Re: Vim anyone?
+Distribution: world
+References: <a class="moz-txt-link-rfc2396E" href="mailto:mikeg.5531@amiganet.chi.il.us">&lt;mikeg.5531@amiganet.chi.il.us&gt;</a>
+
+<a class="moz-txt-link-abbreviated" href="mailto:mikeg@amiganet.chi.il.us">mikeg@amiganet.chi.il.us</a> (Mike Glass) writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Here's an old game which I believe I have figured the trick to winning each
+time, but want to make sure.  you have a pyramid of marks like this:
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+                                 |
+                               | | |
+                             | | | | |
+                           | | | | | | |
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+You may mark off how many ever you want as long as they are in a row
+and are together.  The last person to mark off the last mark loses.  I
+believe if you go first and do the move I am thinking off (won't post
+it for those who wish to figure for themselves) you will always win.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+A winning strategy for simpler versions of this game has long been
+known. I believe I first saw it in one of Martin Gardners Mathematical
+Games books (where the game is called Nim). In the simplest version,
+the player to take the last mark <b class="moz-txt-star"><span class="moz-txt-tag">*</span>wins<span class="moz-txt-tag">*</span></b> and there is no requirement
+that the pieces are <b class="moz-txt-star"><span class="moz-txt-tag">*</span>together<span class="moz-txt-tag">*</span></b> (just that they are in the same row). I
+will start with this, and then show how to modify it the other case.
+
+The idea is to convert the number of marks in the rows to binary.
+This yields in the example above the following numbers:
+
+	001
+	011
+	101
+	111
+
+You then XOR (exclusive or) the numbers (yielding 000 in the example).
+If the number is zero, then the next player loses (if the other player
+plays perfectly). I will use the term "losing position" to mean any
+position that results in a loss by the <b class="moz-txt-star"><span class="moz-txt-tag">*</span>next<span class="moz-txt-tag">*</span></b> player.
+
+Proof:
+
+By induction:
+
+Base case: If there are no marks left, the "next" player has lost (the
+preceding player has just removed the last mark).
+
+Inductive case: If the XOR is 0, any number of marks removed from that
+row will change at least on bit in that row, so the XOR cannot remain
+0. What we then need to prove is that any non-zero position can be
+changed to a zero position in one move.
+
+We call the result of the XOR x. We look at the most significant 1-bit
+of x. At least one of the row numbers must have that bit set, so we
+select any such row, call that number r. We then make r' = r XOR x. r'
+is less than r (because we required that r had the most significant
+1-bit of x set). If we replace r by r' (which we can do by
+subtraction), we now get a zero XOR (x') of the rows. This is seen
+easily by x' = x XOR r XOR r' = x XOR r XOR (x XOR r) = 0.
+								[]
+
+This is how far Gardners book got, but I did a bit of further work
+myself. We now first change the victory condition to be that the last
+person to take a mark loses. The "obvious" solution that zero XOR is
+now a winning position is wrong, as we cannot force a player to
+convert a non-zero XOR position to a zero XOR position. It turns out
+that for most of the game, a zero XOR position is still a losing
+position! The only zero XOR positions that are winning positions
+consist entirely of rows with only one mark. It is easy to see that
+they are winning positions, so what we need to show is that they are
+the only non-losing zero XOR positions. So we state the following
+theorem: Any zero XOR position that has at least one row with two or
+more marks is a losing position.
+
+Proof:
+
+A move either removes a row that contain only one mark, or removes any
+number from a row that contains more than one mark.
+
+In the case where a one-row is removed, we must have another row that
+contains an odd number of marks. Removing one mark from this row will
+make the position a zero XOR position, and will not change the number
+of rows that contain at least two marks. So by induction we are back
+in a losing position.
+
+We note that if one row contains two or more marks in a zero XOR
+position, at least one more row will do so. If we assume that at
+least three rows do so, no two moves will remove the last such row, so
+our general zero XOR preserving strategy will preserve a losing
+position. If there are exactly two rows with more than one mark and
+some marks are taken from one, we consider the two cases: more than
+one mark was left, or at most one mark was left.
+
+If at most one mark was left, we can reduce the other row to zero or
+one mark, whichever will let the position consist of an odd number of
+one-mark rows. This is obviously a losing position.
+
+If at least two marks are left, we still have two rows with at least
+two marks. Since our zero XOR preserving strategy will only take marks
+from one row, we get a zero XOR position with at least one row of two
+or more marks, which by our induction assumption is a losing position.
+
+Thus we have a winning strategy also for the case where the last
+person to take a mark loses.
+
+Now we try to generalize to the case where you require marks to be
+together. Note that we can reformulate the requirement to say that a
+move splits a row into two rows, such that the total number of marks
+is less than the number of marks in the initial row. Either (or both)
+of these numbers can be zero.
+
+We note that since we can do any move that we could do before, we can
+still convert any non-zero XOR position into a zero XOR position in a
+single move. But we must show that it is not possible to obtain a zero
+XOR position from another in <b class="moz-txt-star"><span class="moz-txt-tag">*</span>one<span class="moz-txt-tag">*</span></b> move. In addition to this, we need
+to find out which zero XOR positions are not losing positions, and
+which non-zero XOR positions are.
+
+We can in one move take out any row number and replace it by two row
+numbers. If we want to retain the same XOR, then for any 1-bit in the
+original number, exactly one of the new numbers must have that bit
+set. If we ignore (subtract) the other bits in the new numbers, and
+add the results, we get a sum that is equal to the original number.
+Thus we cannot have a sum that is less than the original number.
+
+In addition to the non-zero XOR positions that were losing positions
+before (odd number of one-mark rows), we also have to consider the
+possiblity of zero XOR positions that can yield these in one move (as
+they are now winning), and non-zero XOR positions that can one of
+those (as they are now losing) etc.
+
+If we want to reach a position consisting entirely of one-mark rows,
+we must start with a position that contain at most one row with more
+than one mark. We can either delete that row, leave one mark or split
+it into two one-mark rows. The latter has the same effect as deleting
+it entirely, so we have no new possibilities.
+
+Thus, a winning strategy is:
+
+If there are only one-mark rows, remove any. If the resulting number
+of rows is odd, you win, otherwise you lose.
+
+If there is exactly one row with two or more marks, reduce this to
+leave an odd number off one-mark rows. You win.
+
+If there are more than one row with more than one mark, then find the
+XOR (x) of the rows. If x is zero, you have lost, so make any move. If
+x is non-zero, make a move that makes it zero. This can be done by
+taking any row that has a number that shares the most significant bit
+with x and replace it by the number obtained by XORing it with x. You
+win.
+
+Thus your claim that the first player would win in the game you
+presented is false, and I challenge you to disprove this.
+
+	Torben Mogensen (<a class="moz-txt-link-abbreviated" href="mailto:torbenm@diku.dk">torbenm@diku.dk</a>)
+
+
+
+
+</pre></div></body>
+</html>
+</table></div>

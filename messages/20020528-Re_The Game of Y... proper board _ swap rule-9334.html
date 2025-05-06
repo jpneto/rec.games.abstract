@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: The Game of Y... proper board / swap rule</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: The Game of Y... proper board / swap rule</td></tr><tr><td><b>From: </b>David J Bush &lt;twixt@nospamtodaycstone.net&gt;</td></tr><tr><td><b>Date: </b>28/05/2002, 04:29</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,rec.games.board</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+|&gt; 1) The Zillions board is slightly different than that of the board
+|&gt; shown in these two diagrams:
+|&gt; 
+|&gt;    <a class="moz-txt-link-freetext" href="http://www.gamepuzzles.com/gameofy.htm">http://www.gamepuzzles.com/gameofy.htm</a>
+|&gt; and
+|&gt;    <a class="moz-txt-link-freetext" href="http://home.flash.net/~markthom/html/the_game_of_y.html">http://home.flash.net/~markthom/html/the_game_of_y.html</a>
+|&gt; 
+|&gt; Can I assume the boards shown in the above two links are the official
+|&gt; "Y" board, and the hexagon board used when playing with the Zillions
+|&gt; engine is simply one of many alternate boards to play on?
+|
+|I think the simple hexagon board was the original format,
+|and that the inventors later found that the slightly
+|altered board gave a better game. Surely the hexagons are
+|easier to implement on Zillions. HTH.
+
+I haven't downloaded the Zillions Y package, but I assume you mean
+a 'plain' triangular grid. This would indeed be easier to implement,
+not just for the sake of the 'grid' command, but because the game object
+would be much easier to define. Ea described the process to me:
+
+Suppose the grid were filled with tokens, and suppose the tokens
+were spherical, held in place on the 'bottom' layer. A triangular
+pyramid of spheres could be built up, one layer at a time, each
+layer is a triangular grid with side length one unit less than
+the layer it sits on. The color of each token is determined by the
+colors of the three tokens it rests on. Majority rule wins; e.g.
+if two of the base tokens are white then the next layer token is
+white. The color of the top token determines the winner of the game!
+I don't know if the Zillions script uses this property of the
+'plain' Y board, but if it does, it might make decent moves in
+the endgame at least.
+
+But this algorithm does not seem to carry over to "official" Y
+or to Hex... :-(
+
+
+David Bush <a class="moz-txt-link-freetext" href="http://www.geocities.com/twixtplayer/">http://www.geocities.com/twixtplayer/</a>
+Remove nospamtoday from my email
+
+
+</pre></div></body>
+</html>
+</table></div>

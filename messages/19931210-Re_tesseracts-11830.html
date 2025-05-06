@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: tesseracts</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: tesseracts</td></tr><tr><td><b>From: </b>matt@severian.chi.il.us (Matt Crawford)</td></tr><tr><td><b>Date: </b>10/12/1993, 03:15</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+When I saw the original question I prepared this reply, but I was
+waiting until I thought of an answer the the second half.  I haven't
+found an easy one yet, so here's the part I do have.
+
+   <a class="moz-txt-link-abbreviated" href="mailto:ejg@remus.rutgers.edu">ejg@remus.rutgers.edu</a>
+   &gt; i am trying to include a 4-dimesional "room" in a game i am designing,
+   &gt;  but cant remember which rooms connect to which rooms by which doors 
+
+
+   Hmm ... the following simple scheme occurs to me now.  It seems to be
+   both correct and useful.
+
+   Number the eight rooms in binary from 000 to 111.  Every room
+   connects to six of the seven others, and the exception is the
+   one whose binary designation is the complement.  So room 010,
+   for example, connects to every room except 101.
+
+   Now as for which doorway leads where, that seems a little
+   vaguer.  I presume you want to have your layout such that
+   traveling through four doorways in the "same direction" brings
+   you back to where you are.
+
+
+If you start in room 000 assign the numbers 001, 010, and 100 to the
+rooms to your east, north, and above you respectively, then you can
+make the following circuits:
+
+northward:	000 -&gt; 001 -&gt; 111 -&gt; 110 -&gt; 000
+eastward:	000 -&gt; 010 -&gt; 111 -&gt; 101 -&gt; 000
+upward:		000 -&gt; 100 -&gt; 111 -&gt; 011 -&gt; 000
+
+I haven't thought of a simple scheme that just gives you the general
+case.
+
+These north, east, and up terms are somewhat bogus, because every
+time you go through a door you must turn a corner that involves the
+fourth dimension.  Let's suppose that the same magic that got you a
+four dimensional maze takes care of that quandary for you.
+__________________________________________________________
+Matt Crawford       <a class="moz-txt-link-abbreviated" href="mailto:matt@severian.chi.il.us">matt@severian.chi.il.us</a>       Java Man
+
+</pre></div></body>
+</html>
+</table></div>

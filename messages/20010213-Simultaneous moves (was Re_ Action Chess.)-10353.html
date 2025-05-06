@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Simultaneous moves (was Re: Action Chess.)</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Simultaneous moves (was Re: Action Chess.)</td></tr><tr><td><b>From: </b>&quot;William Chang&quot; &lt;wchang@sentius.com&gt;</td></tr><tr><td><b>Date: </b>13/02/2001, 09:09</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.design,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Just last week I was thinking of using "simultaneous" moves as a general
+mechanism for removing first mover advantage, and possibly allowing many
+pieces to move in parallel.  This can be done with pen &amp; paper, two boards
+with a screen in between, or a program.  One can capture his own pieces.
+If opposing pieces try to enter the same empty square, they annihilate each
+other.  But if opposing pieces try to enter an occupied square, (only) the
+original occupant survives.  The king becomes a moving target!  I think
+the game would be a blast :-)
+
+In the same vein, I thought of a series of Hex games (where first mover
+normally has a "win") with different conflict resolution rules:
+o Hex2 where neither player gets the spot and must avoid it for one move.
+o Hex3 where a third color (grey) belonging to neither player takes the
+spot.
+o Hex4 where a randomly drawn stone (grey, belonging to neither player, or
+clear, belonging to both), is placed in the spot.
+o HexN where the players enter into a blind auction for the spot; winner
+takes it but pays with stones; if a tie, re-bid or use Hex2 rule.
+
+I also thought of a football-like game where a thrown ball moves kind of
+like Carl describes, MxN squares per iteration...
+
+One idea, many variations :-)  But no, I have not play-tested them -- very
+hard to do solo!
+
+Carl/anyone, how do we get a program written or modified to do this kind
+of thing?  Or just play by email?
+
+-- William
+
+
+
+"Carl G." <a class="moz-txt-link-rfc2396E" href="mailto:cginnow@microprizes.com">&lt;cginnow@microprizes.com&gt;</a> wrote in message
+<a class="moz-txt-link-freetext" href="news:g3kh6.371$0m5.46858@newsread1.prod.itd.earthlink.net">news:g3kh6.371$0m5.46858@newsread1.prod.itd.earthlink.net</a>...
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Recently I was thinking about ways of converting the game of chess into a
+real-time action game.  The game would be played against a computer
+</pre></blockquote><pre wrap class="moz-quote-pre">
+opponent
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+or against another on-line player.  The idea has probably been considered
+many times before (any references?).  I know that there have been computer
+chess programs that animated the pieces, but still followed the standard
+rules of chess.  In the game that I am considering there would be several
+changes in the rules to allow quick-thinking/acting  players a chance to
+beat chess enthusiasts (I realize that chess enthusiasts may dislike
+</pre></blockquote><pre wrap class="moz-quote-pre">
+someone
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+tampering with the rules).  Below is my first attempt at the basic rules.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+I
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+would appreciate any suggestions.  Thank you.
+
+1. The board, the pieces, and the initial layout, are the same as in
+</pre></blockquote><pre wrap class="moz-quote-pre">
+chess.
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+2. The game is won by capturing the opponent's king, rather than
+check-mating.  It is acceptable to place your king in check.
+3. Pieces are moved forward on a clock cycle of around 1/2 second
+(synchronization in on-line games may temporarily delay the clock).  The
+white pieces are moved on the even timer counts, and the black pieces are
+moved on the odd timer counts.
+4. The players command their pieces to move by selecting a piece and the
+piece's destination square.  The mouse is used to select the piece and its
+destination.  The player does not have to wait to command a piece to move,
+so it is possible for a player to have multiple pieces moving at once.
+5. The destination for rooks, bishops, or queens can be several squares
+</pre></blockquote><pre wrap class="moz-quote-pre">
+away
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+(orthogonally, diagonally, or both, as is appropriate for the piece).
+</pre></blockquote><pre wrap class="moz-quote-pre">
+There
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+does not have to be an open path to the destination square, but the
+</pre></blockquote><pre wrap class="moz-quote-pre">
+piece's
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+movement can be temporarily "blocked" as described below.
+6. The destination square for kings, knights, or pawns is one standard
+chess-move away.
+7. The pieces move one square closer to their destination squares every
+other cycle (see 3.).  For knights this "one square" is a move to the
+destination square.
+8. If a player's piece can't move into a square because it is, or would
+</pre></blockquote><pre wrap class="moz-quote-pre">
+be,
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+occupied by another one of the same player's pieces, the piece(s), halt
+their movement.  Once the condition is removed (e.g., the opponent
+</pre></blockquote><pre wrap class="moz-quote-pre">
+captures
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+a blocking pawn), the piece will try to continue its course towards its
+destination square (often capturing the piece that removed the blocking
+piece).
+9. If a piece moves into a square that contains an opponent's piece, the
+opponent's piece is captured and removed from the game and the piece
+continues its course towards the destination square.
+10. Pawns reaching the last rank stay there until they are promoted (the
+player clicks on the piece, and then on a pop-up panel with possible
+selections).
+11. Castling (if it is allowed) is performed in one cycle.
+12. When two players are competing on-line, they don't know the opponent's
+destinations squares.
+
+I'm sure that there are several other details to consider, but this is my
+first attempt at a "real-time action" chess-like game.
+
+Carl G.
+
+
+
+
+
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+
+
+</pre></div></body>
+</html>
+</table></div>

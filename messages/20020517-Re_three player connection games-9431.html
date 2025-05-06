@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: three player connection games</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: three player connection games</td></tr><tr><td><b>From: </b>torbenm@pc-032.diku.dk (Torben �gidius Mogensen)</td></tr><tr><td><b>Date: </b>17/05/2002, 15:18</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Johannes Waldmann <a class="moz-txt-link-rfc2396E" href="mailto:joe@informatik.uni-leipzig.de">&lt;joe@informatik.uni-leipzig.de&gt;</a> writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I wonder what might be an appropriate board for a connection game 
+(like Hex, or Bridge-it) for three (or more) players.
+Is it possible to fulfill the following condition?
+
+  If the board is completely filled (in any way whatsoever),
+  then <b class="moz-txt-star"><span class="moz-txt-tag">*</span>exactly<span class="moz-txt-tag">*</span></b> one player has a winning connection.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+You can, certainly, define patalogical games that fulful this: Imagine
+a graph consisting of N+1 vertices such that vertices 1 to N are all
+connected to vertex 0, but no other connections exist.  The nodes are
+like spokes in a wheel with vertex 0 as the nave. Assume, also, that
+nodes 1-3 are pre-coloured in colours 1-3 and all other nodes are
+empty.  A winning connection is one that connects node 0 to any other
+node.  Clearly, a completely coloured graph will have exactly one
+winning colour.
+
+This isn't very interesting, so let us try for some general results.
+
+Assumptions:
+
+Let us assume that the game uses pieces of different colours, and that
+a player need to make a connection made entirely of his own colour to
+win.  Furthermore, the fact that a connection is winning must depend
+only on the nodes in that connection and not on the colours of nodes
+outside that connection.  Thirdly, we assume that the precoloured
+nodes aren't enough to establish a winning connection for one of the
+colours.
+
+Lemma 1.
+
+A board that fulfils the unique-win condition with three colours must
+also fulfil the unique-win condition with two colours (since a
+possible colouring can omit one colour entirely).  Generally, the
+unique-win condition with N colours implies the unique-win condition
+with M colours for all 0&lt;M&lt;N.
+
+Lemma 2.
+
+Let us call a winning connection minimal if no node in the connection
+can be recoloured to another colour while keeping it a winning
+connection.  Clearly, in any game that has winning conditions, there
+exist minimal winning connections, as we can repeatedly recolour nodes
+in the winning connection until no more can be recoloured.
+
+Let us assume we have a three-player game with the unique-win property
+and let us further assume we have a filled game using only two colours
+(A and B) (apart from precoloured nodes) such that colour A has a
+minimal winning connection.  Now, let us pick any node in the the
+winning connection and recolour it to the third colour C.  Since the
+game has the unique-win property, the new configuration must have a
+winning connection.  This can't be with colour A, since this was
+minimal and we have recoloured one node from it and hence turned it
+into a non-winning connection.  Neither can it be from colour B, since
+we have added no B-coloured node and there was no winning connection
+before.  Hence, the winning connection must be of colour C.  This
+means that there exist winning connections (for colour C) that consist
+of only one node in addition to precoloured nodes.
+
+
+Theorem.
+
+In a three-player game with the above asssumptions, there exist
+winning connections that consist of only one node in addition to any
+precoloured nodes.
+
+As such games aren't very interesting, we can conclude that there
+doesn't exist interesting three-player connection games that obey the
+basic assumptions above.
+
+	Torben Mogensen (<a class="moz-txt-link-abbreviated" href="mailto:torbenm@diku.dk">torbenm@diku.dk</a>)
+
+</pre></div></body>
+</html>
+</table></div>

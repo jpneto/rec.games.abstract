@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Game Complexity Metrics</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Game Complexity Metrics</td></tr><tr><td><b>From: </b>bdp@cl.cam.ac.uk (Barney Pell)</td></tr><tr><td><b>Date: </b>24/02/1993, 22:59</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+There has been much discussion on this group recently about the
+"complexity" of a game.  The goal of this note is to start a
+discussion about the important dimensions along which games could be
+echaracterised, as they are related to the complexity of a game.
+
+In their paper "Which games will survive" (Heuristic Programming in
+Artificial Intelligence: The Second Computer Olympiad, ed. Levy and
+Beal; Ellis Horwood, 1991), Victor Allis and H.J. van den Herik rank a
+set of games along the following dimensions:
+1. Search Complexity
+2. Decision Complexity
+
+Search Complexity relates to properties like the branching factor and
+number of possible positions.  Decision Complexity is much less
+precise, but has to do with the likelihood that a game (or some set of
+positions within it) could be <b class="moz-txt-star"><span class="moz-txt-tag">*</span>solved<span class="moz-txt-tag">*</span></b> even in spite of a high search
+complexity.  As an example of low decision complexity, they imagine a
+simplified version game of GO, which I will call TRIVIAL-GO, with the
+following rules:
+
+0. The game is played on a 19x19 GO board. 
+1. Two players move in turn, starting with White.
+2. For his move, a player may either <b class="moz-txt-star"><span class="moz-txt-tag">*</span>pass<span class="moz-txt-tag">*</span></b>, or place a stone of his
+color on an empty square.
+3. The first player to have 181 stones on the board wins. 
+
+While this game has roughly the same search complexity as GO, it is
+obvious that a player should never pass, and that WHITE wins by always
+placing a stone.  
+
+Thus, it is clear that some measure in addition to search complexity
+is necessary to characterize our intuive notion of game complexity.
+Unfortunately, Decision Complexity has so far only been motivated by
+example.  Instead I would like to find some game complexity measures
+which are quantifiable, so that I could write a program to measure
+candidate games along these dimensions.  I would be interested in
+other people's suggestions for possible metrics of this kind.
+
+To start the list off, I have thought of the following:
+
+1. State Space complexity STATE(Game): The upper bound on the number
+of possible distinct states which could be reached in the game.  This
+could be based either starting from a specified position, or assuming
+only a fixed set of initial pieces placed anywhere on the board.     
+
+2. Avg Search Tree Complexity TREE(Game,X): Let two random players
+play the game against each other until either (a) the game ends, or
+(b) X moves are played, for fixed X.  S_AVG(Game,X) is mean of the
+probability distribution of the average branching factor for the
+player on move, averaged over all positions in the game.  If we let
+the programs play more games, this gives a tighter distribution.
+
+3. Rule Complexity RULE(Game,L): 
+The length of the smallest representation of the rules of the game in
+a pre-specified game description language L.  Different choices of L
+yield different rule complexities.  This brings up the question: "what
+does it mean for some set of rules to be a representation of a game?"
+I'll defer answering this question for this article, assuming that we
+can agree when a program is really playing the game by the right
+rules.   
+
+4. Minimum Game Length LENGTH(Game)
+The minimum number of moves necessary to reach a terminal position in
+the game, if both players cooperated to achieve this end.   
+Note that this problem is NP-Complete for symmetric chess-like games,
+and NP-Hard in general.  
+
+
+This list is still missing something which really corresponds to
+Decision Complexity.  However, it does allow us to make some
+interesting characterizations of games:
+
+o Chess on an 8x8 board vs Chess on a 10x10 board: Both have the same
+RULE and LENGTH complexities, while the larger version has much higher
+STATE and TREE complexities.
+
+o Chess vs. Checkers: Checkers has higher LENGTH complexity, but chess
+is higher on all other dimensions. 
+
+o Chess vs. Chinese-Chess: Pretty similar on all dimensions, but
+chinese probably has somewhat higher RULE complexity for describing
+the hopping capture movement for the Cannon.  
+
+o GO vs. Trivial-Go: Similar LENGTH, STATE, and TREE complexities, but
+GO has much higher RULE complexity for describing the capturing and ko
+rules. 
+
+
+
+<div class="moz-txt-sig">-- 
+==================================================
+
+   Barney Pell
+   Computer Laboratory
+   University of Cambridge
+   phone:  (0223) 334602
+   e-mail:  <a class="moz-txt-link-abbreviated" href="mailto:bdp@cl.cam.ac.uk">bdp@cl.cam.ac.uk</a>
+
+==================================================
+
+
+</div></pre></div></body>
+</html>
+</table></div>

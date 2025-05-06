@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Question about retrograde analysis algorithm for endgame databases</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Question about retrograde analysis algorithm for endgame databases</td></tr><tr><td><b>From: </b>David Eppstein &lt;eppstein@ics.uci.edu&gt;</td></tr><tr><td><b>Date: </b>24/04/2002, 21:32</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.chess.computer,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:98c3bc67.0204241134.2e2806af@posting.google.com">&lt;98c3bc67.0204241134.2e2806af@posting.google.com&gt;</a>,
+ <a class="moz-txt-link-abbreviated" href="mailto:mathpoly@yahoo.com">mathpoly@yahoo.com</a> (mathpolymath) wrote:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Imagine an abstract zero-sum game where among all of the millions of
+possible endgame positions happen to exist 3 positions, X, Y, and Z
+where X-&gt;Y, Z-&gt;Y and both Y-&gt;X or Y-&gt;Z
+
+If X has a score of 1, Y a score of 2, and Z a score of 3 if the game
+draws by repetition on the respective position, then among possible
+scenarios might be these two:
+
+... X Y X Y Z Y (2nd repeat.  score = 2)
+... X Y X Y X (2nd repeat.  score = 1)
+
+In this type of game, how should the retrograde analysis algorithm be
+set up to compute the endgame database for this type of game?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Tricky repetition prevention rules like this tend to have something to 
+do in theory with the boundary between PSPACE-complete and 
+EXPTIME-complete problems.  I think the practical interpretation of this 
+is, you may not be able to solve the resulting problem with forward or 
+retrograde analysis, because the game states become too complicated -- 
+you have to know not just where the pieces are on the game board, but 
+also which positions you've already encountered.
+
+<div class="moz-txt-sig">-- 
+David Eppstein       UC Irvine Dept. of Information &amp; Computer Science
+<a class="moz-txt-link-abbreviated" href="mailto:eppstein@ics.uci.edu">eppstein@ics.uci.edu</a> <a class="moz-txt-link-freetext" href="http://www.ics.uci.edu/~eppstein/">http://www.ics.uci.edu/~eppstein/</a>
+
+</div></pre></div></body>
+</html>
+</table></div>

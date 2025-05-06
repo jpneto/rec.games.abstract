@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Othello-like game in &quot;Seventh Guest&quot;</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Othello-like game in &quot;Seventh Guest&quot;</td></tr><tr><td><b>From: </b>&quot;Dvd Avins&quot; &lt;dvdNOavinsSPAM@pobox.com&gt;</td></tr><tr><td><b>Date: </b>18/12/2003, 21:56</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+"Dave Rusin" <a class="moz-txt-link-rfc2396E" href="mailto:rusin@vesuvius.math.niu.edu">&lt;rusin@vesuvius.math.niu.edu&gt;</a> wrote in message
+<a class="moz-txt-link-freetext" href="news:brt4rb$lfj$1@news.math.niu.edu">news:brt4rb$lfj$1@news.math.niu.edu</a>...
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+A student here recently lent me a computer game (from a few years back)
+entitled "Seventh Guest". The player moves from room to room in a
+creepy house solving various puzzles. One of the puzzles is a game
+which you play against an unseen opponent. I wonder if anyone has
+done an analysis of this game?
+
+It's Othello-like: Two players, each initially having tokens at a pair
+of opposite corners of a 7x7 checkerboard. Players take turns placing
+their tokens on the board's squares until all the playing places are
+filled; the winner is the player controlling the greatest number of
+squares when the game is over.
+
+A player's move consists of moving a token from position (x,y) to
+position (x',y'), where
+   That player has a token at position (x,y)
+   Position (x', y') is vacant
+   | x - x' | &lt; 3,  and likewise | y - y'| &lt; 3
+(If a player has no valid moves, s/he forfeits that turn and play
+passes to the opponent.)
+
+When the player moves the token, several changes take place:
+   The player now has a token at position (x', y')
+   Position (x,y) is now vacant IF  |x-x'| = 2  OR |y-y'| = 2
+   Any opponent's token at (x'', y'') is replaced by this player's token
+     there, if  | x' - x'' | &lt; 2  and | y' - y'' | &lt; 2.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+This is the game of Attaxx (not sure of the spelling). In some versions,
+some squares are blocked out. There's also a hexagonal version, called Hexx.
+
+
+
+
+</pre></div></body>
+</html>
+</table></div>

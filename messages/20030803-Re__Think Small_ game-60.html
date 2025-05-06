@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: &quot;Think Small&quot; game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: &quot;Think Small&quot; game</td></tr><tr><td><b>From: </b>israel@math.ubc.ca (Robert Israel)</td></tr><tr><td><b>Date: </b>03/08/2003, 09:35</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>sci.math.research,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:x_TWa.724$t7.8533@vixen.cso.uiuc.edu">&lt;x_TWa.724$t7.8533@vixen.cso.uiuc.edu&gt;</a>,
+Charles Blair <a class="moz-txt-link-rfc2396E" href="mailto:c-blair@uiuc.edu">&lt;c-blair@uiuc.edu&gt;</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+  I have convinced myself that, with three players, an equillibrium
+has each player use 1 or 2 with probability .5.  
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+No.  If you are in a three-player game and both opponents are using this
+mixed strategy, they will choose the same number with probability 1/2,
+and so if you choose 3 you will win with probability 1/2.  
+
+For the three-player case, I believe an equilibrium strategy must 
+choose j with probability p_j satisfying the equations
+p_j^2 + (1-p_1-...-p_{j+1})^2 = (1-p_1-...-p_j)^2 , j = 1,2,3...
+together with, of course, sum_j p_j = 1 and all p_j &gt; 0.
+
+This is because if two players are using this mixed strategy, the
+third will have no reason to switch iff his probability of winning
+is the same for all pure strategies, and his probability of winning
+by choosing j is sum_{i=1}^{j-1} p_i^2 + (1-p_1-...-p_j)^2
+(i.e. he wins if both opponents choose the same number &lt; j or 
+both choose any numbers &gt; j).  This system of equations looks
+rather formidable to solve; for n &gt; 3 players, it will be even
+more complicated.
+
+In any case, there can't be an equilibrium strategy that involves 
+sometimes using m and never using m+1, because then each player would 
+have an incentive to use m+1 instead of m (if the opponents never use 
+m+1, then m+1 would win in every case where m would win, and would also 
+win in some cases where m would not).
+
+Robert Israel                                <a class="moz-txt-link-abbreviated" href="mailto:israel@math.ubc.ca">israel@math.ubc.ca</a>
+Department of Mathematics        <a class="moz-txt-link-freetext" href="http://www.math.ubc.ca/~israel">http://www.math.ubc.ca/~israel</a> 
+University of British Columbia            
+Vancouver, BC, Canada V6T 1Z2
+
+
+
+</pre></div></body>
+</html>
+</table></div>

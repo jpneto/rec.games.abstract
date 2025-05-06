@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: New Game: Levee</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: New Game: Levee</td></tr><tr><td><b>From: </b>Bertram Felgenhauer &lt;int-e@gmx.de&gt;</td></tr><tr><td><b>Date: </b>08/06/2007, 03:15</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:marksteere@gmail.com">marksteere@gmail.com</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+On Jun 2, 12:23 pm, "Mike Terry"
+<a class="moz-txt-link-rfc2396E" href="mailto:news.dead.person.sto...@darjeeling.plus.com">&lt;news.dead.person.sto...@darjeeling.plus.com&gt;</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+It seems to me that the first player has an easy win by simply playing all
+moves on her opponents home intersections.
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+Boy that'd be embarrassing, wouldn't it?  I hope I never release a
+game with such an obvious flaw.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I'm afraid it's really that easy.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Please see:
+ <a class="moz-txt-link-freetext" href="http://www.marksteeregames.com/Levee_Edge_Fill.pdf">http://www.marksteeregames.com/Levee_Edge_Fill.pdf</a>
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Ok, let's discuss this for the 7x7 board. Assume that black only plays
+on the left and right edge.
+
+Note: For this article, the egdes don't include the four corners of the
+board. So the left and right edge consist of 10 points in total.
+
+The trouble is that White needs at least 7 moves to win on an edge
+(namely, three moves to close the channel above, three moves to close
+it below and one move to close one edge), while black needs only
+5 moves to completely block that edge.
+
+Here is a winning strategy for black:
+a) on the first move, play on the left edge
+b) in reply to white's move, if possible:
+   - if white moves on the center column, play on the right edge
+     (i.e. the edge opposite to the first move)
+   - if white plays on the center row, play on the opposite edge
+     (this is the key trick)
+   - otherwise, play on the edge on the same side of the board white
+     just played on.
+c) if this is not possible, play on the other edge
+d) otherwise, play any valid move.
+
+Note that once both edges are completely filled, white can no longer
+win, and, because draws are impossible, black will win eventually.
+
+If black follows that strategy, white can not win. There are two
+scenarios to consider:
+
+1) white forms a channel on one edge without using black's stones on the
+   other edge. To do that, white must play at least two stones in the
+   center column (meaning that including the first move black has played
+   at least one stone on the edge the channel is on), one stone in the
+   center row, on the side opposite of the channel, and four more stones
+   on the side the channel is on. By the strategy above, black has
+   already played at least 1+1+4-1 = 5 stones on the edge the channel is
+   on at the time white would play the last of these stones, blocking it
+   completely.
+
+2) white forms a channel by blocking it above, using some of black's
+   stones on one edge and blocking it below. So he has to play at
+   least 5 stones below and 5 above the channel, but before that happens,
+   black has already completed 10 moves and filled both edges completely,
+   preventing a win for white.
+
+So white can not win either way.
+
+The argument carries over to larger boards.
+
+regards,
+
+Bertram
+
+
+</pre></div></body>
+</html>
+</table></div>

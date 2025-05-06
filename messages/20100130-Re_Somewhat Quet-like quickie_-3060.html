@@ -1,0 +1,119 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Somewhat Quet-like quickie?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Somewhat Quet-like quickie?</td></tr><tr><td><b>From: </b>Chip Eastham &lt;hardmath@gmail.com&gt;</td></tr><tr><td><b>Date: </b>30/01/2010, 16:58</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Jan 23, 6:19 pm, Phil Carmody <a class="moz-txt-link-rfc2396E" href="mailto:thefatphil_demun...@yahoo.co.uk">&lt;thefatphil_demun...@yahoo.co.uk&gt;</a>
+wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+This came to me while I was asleep, where I was intently playing it
+against an unknown opponent. I have fairly lucid dreams and I think
+I managed to transport a fair number of details back with me to my
+wakened state, but have had to busk a bit too.
+
+The board is a rectilinear grid, the important parts are the gridpoints.
+In its basic form, a game is parametrised by board size, I was playing
+on what seemed to be a 13*13 square in my dreams.
+
+The game had 2 phases -  a preparation phase, then a capturing phase.
+I have no recollection of actually performing the preparation phase,
+but it was clear that there had to have been one.
+
+Preparation phase:
+Players take turns to select and mark a gridpoint which is not colinear
+with any pair of previously selected gridpoints.
+
+Capture phase:
+Players take turns to connect a pair of gridpoints with a straight
+line that does not cross any previously drawn lines. If said line
+completes one or more triangles that contain no marked gridpoints,
+then those triangles are scored according to the scoring rules in
+force.
+
+Scoring:
+Well, there appear to be a fair number of possibilities.
+The value could be twice the area of the triangle (the areas are
+always half an integer), or the number of non-marked grid-points
+in the triangle's interior (easier for pen-and-paper play).
+The recipient of the score seems most sensibly the person who
+completes the triangle, but as the points were placed by the
+players, it would also be possible to give the score to the person
+who has the majority of the 3 points.
+
+Advanced variations:
+Lest the above doesn't have enough complexity, rather than chosing simply
+a size, the two players select and mark outermost points which must remain
+the convex hull of the rest of the points in play.
+
+Only-half-the-game version:
+After explaining the game to my g/f in my just-woken state, wondered
+if perhaps just the preparation phase might be an abstract strategy
+game in its own right with a nim-like last-move-{wins/loses} rule.
+Whilst certainly there's a parity bias, it does appear that there's
+enough variation possible to make this standalone half game strategic
+when the board size is large enough.
+
+Here are some mins/maxes from a few thousand simulations of random
+play on a square grid:
+size 1  2  3  4  5  6  7  8  9 10 11 12 13 14
+min  1  4  4  4  6  7  8  9 10 11 13 14 16 17
+max  1  4  6  8 10 12 14 16 17 19 21 23 24 26
+Greedy algorithms might be able to improve those bounds. (Please do,
+the OEIS calls!)
+
+Don't even mention play-testing - my g/f refuses to play, so I've
+simply not had a chance to play it. As I have the random play code
+written, I could monte-carlo an opponent up for the half-game,
+certainly, but that's a task for another day.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Hi, Phil:
+
+Following up on my reply in sci.math, the
+version where last move wins has a first
+player forced win for size 3.  On the 3x3
+board, the maximal grid markings (subject
+to no-three-in-line) consist of 4, 5, or 6
+marked cells.  Perhaps the simplest way
+for the first player to win (by steering
+into a 5 cell maximal marking) is to put
+the first mark in the center.  That avoids
+any 6 cell maximal marking, as well as the
+4 cell maximal marking that consists of
+the four corners.  After the second player
+moves, the first player can avoid all other
+4 cell endings by taking a corner square
+not adjacent to the second player's move,
+as the following diagram summarizes (up to
+isometry):
+
++---+---+---+
+| b |   | c |   a: first player's 1st move
++---+---+---+   b: alternatives for second
+| b | a |   |      player's following move
++---+---+---+   c: first player's response
+|   |   |   |      forces two more moves
++---+---+---+
+
+The final position will be a rotation or
+reflection of this:
+
++---+---+---+
+| X |   | X |
++---+---+---+
+| X | X |   |
++---+---+---+
+|   | X |   |
++---+---+---+
+
+regards, chip
+
+
+</pre></div></body>
+</html>
+</table></div>

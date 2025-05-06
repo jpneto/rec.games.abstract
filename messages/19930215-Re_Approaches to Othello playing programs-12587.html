@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Approaches to Othello playing programs</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Approaches to Othello playing programs</td></tr><tr><td><b>From: </b>hsieh@math.toronto.edu (Paul Hsieh)</td></tr><tr><td><b>Date: </b>15/02/1993, 07:11</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:TOMF.93Feb14171440@ai.gte.com">&lt;TOMF.93Feb14171440@ai.gte.com&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:tomf@gte.com">tomf@gte.com</a> writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:oauld@ponder.csci.unt.edu">oauld@ponder.csci.unt.edu</a> (Orion Auld) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I'd heard someone mention in passing that there were some static evaluation
+problems.  What is the math on the branching factor?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+I'd be interested to hear what the static evaluation problems are.  
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Although there are well defined important features in the game it can be
+hard to tell exactly how to assess these features.  In Checkers or Chess
+you can simply count up the material and end up with an evaluator which is
+not too shabby.  Put in a few more things about passed pawns or loose
+checkers and there you go.  With Othello one uses mobility, potential
+mobility and edge configurations.  However, some moves are better than
+others and sometimes certain bad edge configurations end up not mattering
+at all.  The history of Othello is much shorter than Chess, Go, checkers
+or other such games.  So the strategy is not quite as well studied as
+other games.  For example, last year's world champion used a disc extracting
+strategy in the finals.  And another important feature is parity ... though
+results from the program Peer Gynt seem to indicated that it may not be
+important, while most strong human players are aware and use parity.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Branching factor:  I think this was hashed out a few months ago and I don't
+have the messages any more.  I calculated about 7.5 or 8 by averaging
+the data from a graph in Rosenbloom's AI Journal paper.  
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Hmm.  Sorry but that's wrong.  The average number of moves available to a
+player at any stage of the game is roughly 13.  Therefore the branching
+factor is about 3.46 = square root of 13.
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+What computer program competitions are held for Othello programs in the US?
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+There is a man-machine tournament held in the summer, though I don't have
+details about it.  I refer you to: The U.S. Othello Association, 920 North-
+gate Ave., Waynesboro, VA 22980 USA.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I don't know of any in the US, but the Waterloo Computer Othello Open is in
+Canada.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Yes, the Waterloo Tournament is quite a big event.  Last years tournament
+saw what had to be the strongest computer Othello tournament ever held.
+For more information please contact:  <a class="moz-txt-link-abbreviated" href="mailto:csc@watmath.uwaterloo.ca">csc@watmath.uwaterloo.ca</a>
+
+Paul Hsieh
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Nim game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Nim game</td></tr><tr><td><b>From: </b>jferro@fuchsia.ece.cmu.edu (Jonathan R. Ferro)</td></tr><tr><td><b>Date: </b>21/07/2004, 00:51</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+"Dvd Avins" <a class="moz-txt-link-rfc2396E" href="mailto:dvdNOavinsSPAM@pobox.com">&lt;dvdNOavinsSPAM@pobox.com&gt;</a> writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+"Jonathan R. Ferro" <a class="moz-txt-link-rfc2396E" href="mailto:jferro@fuchsia.ece.cmu.edu">&lt;jferro@fuchsia.ece.cmu.edu&gt;</a> wrote in message
+<a class="moz-txt-link-freetext" href="news:r1acxu8lfz.fsf@fuchsia.ece.cmu.edu">news:r1acxu8lfz.fsf@fuchsia.ece.cmu.edu</a>...
+
+&lt;snip&gt;
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+The general rules of manipulating the surreal representations of
+nonpartisan games are:
+1. Both players always have the same options. (definition of nonpartisan)
+2. The value of the position is the smallest value that is NOT available
+as an option. (the Minimal EXcluded, or MEX rule)
+3. Options higher than the MEX are superfluous to determining the
+position's value. (the Sprague-Grundy Theorem)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Doesn't your 3rd rule imply equivalence among all positions in which it is
+impossible in a single move to reach a position of value 0?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Correct!  If the MEX value of a position is 0, that means that there is
+no option to move from that position back to a 0 position.  If the value
+of a position is positive, then there must be an option to move to 0,
+otherwise 0 would have been the MEX.  So, the positions can then be
+classified into can-move-to-zero (also called Next-Player-Wins, "N",
+"*", "star", or "hot") and can't-move-to-zero (also called
+Previous-Player-Wins, "P", "0", "zero" or "cold").
+
+So, why do we keep track of the actual values of N-positions?  Because
+it is frequently the case that we are playing the "sum" of multiple
+games.  A sum of games is played by, on your turn, choosing one
+component game to play in, then playing a legal move for that
+component.  In the basic Nim position that has been used in movies,
+there are four heaps of sizes 1, 3, 5, and 7.  This is a sum of four
+games, but just because you know each component is an N-position doesn't
+mean you know whether the overall sum-game is N or P.
+
+The solution is to keep track of the value of each N-position component,
+and then add them up according to the "nim-sum" addition table.  This is
+the famous "add in binary without carrying" rule, which is symbolized by
+using (+) instead of the normal + sign.  The 1-3-5-7 game would sum to
+
+     1      1
+ (+) 3     11
+ (+) 5    101
+ (+) 7    111
+ ------------
+     0    000
+
+so it is a P-position overall.
+
+The process of analyzing any other nonpartisan game is identifying what
+are the independent component games and determining the nim-value of
+each one, and thereby computing the overall Nim value and hopefully
+finding a move that changes one component to make the total Nim value
+zero.  The interesting part of a tricky game like the one we are working
+on (did we come up with a name yet?  I offer "Slicecake", to join the
+existing games Cutcake, Eatcake, and Turncake) is that some moves cause
+a change in the number of subgames the next person gets to choose from.
+
+-- Jon
+
+
+</pre></div></body>
+</html>
+</table></div>

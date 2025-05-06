@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Grid Game Of Differences</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Grid Game Of Differences</td></tr><tr><td><b>From: </b>Leroy Quet &lt;qqquet@mindspring.com&gt;</td></tr><tr><td><b>Date: </b>11/10/2010, 13:29</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+This is a game for two player.
+
+Draw an n-by-n grid on paper, where I suggest that n is at least 8.
+
+The players take turns placing x's in the empty squares of the grid,
+one x per turn.
+
+No two or more x's may be placed in the same row or in the same column
+of the grid.
+
+After n total moves (when there is exactly one x in each row and
+column), the game is over.
+
+Now to determine the score:
+
+Reading left to right, write down the (n-1) absolute values of the
+differences between the consecutive x's' vertical coordinates, in
+terms of number of squares.
+
+In another list, reading bottom to top, write down the (n-1) absolute
+values of the differences between the consecutive x's' horizontal
+coordinates, in terms of number of squares.
+
+Player 1 gets a point for every distinct numerical value occurring in
+the first list of differences.
+Player 2 gets a point for every distinct numerical value occurring in
+the second list.
+If a particular difference occurs at least once in a single list, then
+the player gets one point for that particular difference.
+
+Largest score wins.
+
+We may need an example here:
+
+n=9:
+
+.. x . . . . . . .
+.. . . . . . . . x
+.. . x . . . . . .
+.. . . . . x . . .
+x . . . . . . . .
+.. . . x . . . . .
+.. . . . . . . x .
+.. . . . . . x . .
+.. . . . x . . . .
+
+Player 1's (vertical) differences (reading left to right) are:
+4,2,3,3,5,4,1,5
+The unique values that occur are:
+1,2,3,4,5
+Player 1 gets 5 points.
+
+Player 2's (horizontal) differences (reading bottom to top) are:
+2,1,4,3,5,3,6,7
+The unique values that occur are:
+1,2,3,4,5,6,7
+Player 2 gets 7 points.
+
+In another variation of this game, count ONLY those differences that
+occur exactly once (and no more than once).
+In this variation, player 1 would have gotten 2 points, for the
+differences 1 and 2.
+Player 2 would have gotten 6 points, for the differences 1,2,4,5,6,7.
+(Since 3 is the only difference in this list that occurs more than
+once.)
+
+
+Which variation is more fun?
+
+Thanks,
+Leroy Quet
+
+
+
+</pre></div></body>
+</html>
+</table></div>

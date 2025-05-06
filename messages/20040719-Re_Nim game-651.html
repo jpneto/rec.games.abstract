@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Nim game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Nim game</td></tr><tr><td><b>From: </b>joc_kay@hotmail.com (Joe)</td></tr><tr><td><b>Date: </b>19/07/2004, 00:43</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Martin Moller Pedersen <a class="moz-txt-link-rfc2396E" href="mailto:tusk@daimi.au.dk">&lt;tusk@daimi.au.dk&gt;</a> wrote in message news:<a class="moz-txt-link-rfc2396E" href="mailto:cc9l2a$r4n$1@news.net.uni-c.dk">&lt;cc9l2a$r4n$1@news.net.uni-c.dk&gt;</a>...
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+If N and M is odd then it is a win for the first player else it is a
+win for the second player.
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+This cannot be true as any position on a N x 1 board clearly is a win
+for the first player (a 'hot' position) regardless whether N is odd or
+even.
+
+Also, whilst a full 2 x 2 board indeed is a 'cold' position (a win for
+the second player), a full 3 x 2 board is a win for the first player
+as (s)he can reduce this position to a 2 x 2 board.
+ 
+So: <b class="moz-txt-star"><span class="moz-txt-tag">*</span>if<span class="moz-txt-tag">*</span></b> there is a simple rule for full boards based solely on the
+even/odd-parity of the size, then this rule has to be:
+
+If N and M are even, then a full board is a win for the second player,
+else (N or M odd) it is a win for the first player.
+
+
+Torben's reasoning about symmetric positions (where the second player
+copies the moves of the first player such that the symmetry is
+restored) can be applied to all positions that contain a symmetry that
+does not map any piece onto itself. So, the following end-game
+positions are all a win for the second player ('cold' positions):
+
+.. X
+X .
+
+X X
+X X
+
+.. X .                            . . X
+X . X  which is equivalent to:   . . X
+.. X .                            X X .
+
+.. . X X
+X X . .
+
+X X X X
+X X X X
+
+However, also positions that do not satisfy the above requirement can
+be 'cold'.
+
+Examples are:
+
+X X .
+X X X
+.. X .
+
+X X X
+X X X
+X X .
+
+(In both cases 2 pieces are mapped onto itself under the symmetry
+operator.)
+
+This doesn't imply that all symmetric positions with an even number of
+pieces that get mapped onto themselves are 'cold' positions. A
+counter-example being:
+
+.. X .
+X X X
+
+So, no clue whether or not Bob's configuration 
+
+X X . X
+X . X X
+.. X X .
+X X . .
+
+is a 'cold' one.
+ 
+Joe
+
+
+</pre></div></body>
+</html>
+</table></div>

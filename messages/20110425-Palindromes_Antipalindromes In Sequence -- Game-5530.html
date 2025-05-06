@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Palindromes/Antipalindromes In Sequence -- Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Palindromes/Antipalindromes In Sequence -- Game</td></tr><tr><td><b>From: </b>Leroy Quet &lt;qqquet@mindspring.com&gt;</td></tr><tr><td><b>Date: </b>25/04/2011, 14:35</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Game for 2 players.
+
+Make a row of m squares drawn on paper, where m is decided by both
+players.
+(I suggest that m be &gt;= 16 for beginners.)
+
+Players take turns. On a turn, a player places either a 0 or a 1 into
+any empty square.
+
+After a total of m moves, and when each square has one digit in it,
+play is over.
+
+Player 1 gets the sum of the lengths of all (not necessarily distinct
+but possibly overlapping) palindromes
+(a(1),a(2),a(3)...a(3),a(2),a(1))
+of EVEN length (in the row of 0's and 1's) as her/his score.
+Player 1's score =
+sum{k=1 to [m/2]} 2k*(# of palindromes of length 2k).
+
+Player 2 gets the sum of the lengths of all (not necessarily distinct
+but possibly overlapping) antipalindromes
+(a(1),a(2),a(3)...1-a(3),1-a(2),1-a(1))
+(of even length) (in the row of 0's and 1's) as her/his score.
+Player 2's score =
+sum{k=1 to [m/2]} 2k*(# of antipalindromes of length 2k).
+
+The player with the largest score is the winner.
+
+For example, let us say we have the following row (m=16):
+1001001101000100
+
+We have the following palindromes of even length:
+00, 00, 11, 00, 00, 00
+1001, 1001, 0110
+
+So player 1 gets (2*6 + 4*3 =) 24 points.
+
+We have the following antipalindromes:
+10, 01, 10, 01, 10, 01, 10, 01, 10
+0011, 1010
+100110, 110100
+01001101
+
+So player 2 gets (2*9 + 4*2 + 6*2 + 1*8=) 46 points.
+
+Player 2 wins.
+
+(Did I make a mistake counting up the palindromes and antipalindromes
+in my example?)
+
+I suggest, if this game isn't played on a computer, that players count
+their own (anti)palindromes, and confirm them with their opponent. (If
+a player misses any that would contribute to his/her own score, it
+would be his/her own fault.)
+
+Thanks,
+Leroy Quet
+
+
+
+</pre></div></body>
+</html>
+</table></div>

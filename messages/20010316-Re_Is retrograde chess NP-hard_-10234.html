@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Is retrograde chess NP-hard?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Is retrograde chess NP-hard?</td></tr><tr><td><b>From: </b>hansb@cs.uu.nl (Hans Bodlaender)</td></tr><tr><td><b>Date: </b>16/03/2001, 14:46</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In <a class="moz-txt-link-rfc2396E" href="mailto:98qs11$55k@severi.mit.edu">&lt;98qs11$55k@severi.mit.edu&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:tchow@lsa.umich.edu">tchow@lsa.umich.edu</a> writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Apparently no theorems are known about the computational complexity of
+retrograde analysis in chess (or other well-known abstract games.  I have
+raised this question before but have a couple of new thoughts that maybe
+someone can build on.
+
+There are many ways to formalize the problem of retrograde analysis.  I am
+taking the following as a working definition.
+
+INSTANCE: Two generalized chess positions, a "start position" and an "end
+position."
+
+QUESTION: Does there exist a legal sequence of moves taking us from the
+start position to the end position?
+
+As a variation, we could also specify a bound on the number of moves.
+It is not even immediately clear that this problem is in NP, because the
+obvious "certificate" (i.e., the list of moves) could be exponential in
+length.
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Both versions are NP-hard.
+
+Proofsketch: reduction from Hamiltonian circuit for grid graphs.
+
+A graph is a grid graph, if we can give every vertex a pair of coordinates (i,j),
+such that two vertices are adjacent if they are adjacent in the grid:
+(i,j) is adjacent to (i',j') iff i=i' and |j-j'|=1, or j=j' and |i-i'|=1.
+
+Now, for an instance of this problem, we transform it as follows to the starting
+configuration.
+
+For every vertex (i,j), put a black pawn on a square with coordinates (4i,4j).
+Also, put a white pawn directly before it, such that it cannot be moved, i.e., on
+(4i,4j-1).
+
+Put a white knight on a square where it can capture one of these black pawns.
+
+Put a black pawn on an otherwise empty column.
+
+Then, the ending position has all these black pawns except the last one removed.
+
+(Tiny mistake in the proof: we should specify the location of the white pawn. Not
+really a problem, however; we can transform instead from Hamiltonian path between
+specified endpoints.)
+
+The last pawn moved on the column exactly the number of steps the knight must
+move when it takes all the pawns with a Hamiltonian circuit (basically, twice the
+number of pawns).
+
+That should work, and probably with not a really hard proof, I think.
+
+More interesting would, imho, be a position that does more `unravelling'.
+
+  Hans
+
+--
+Hans Bodlaender - Department of Computer Science - Utrecht University 
+P.O. Box 80.089 - 3508 TB Utrecht - the Netherlands
+<a class="moz-txt-link-abbreviated" href="mailto:hansb@cs.uu.nl">hansb@cs.uu.nl</a>                      <a class="moz-txt-link-freetext" href="http://www.cs.uu.nl/~hansb/index.html">http://www.cs.uu.nl/~hansb/index.html</a>
+
+</pre></div></body>
+</html>
+</table></div>

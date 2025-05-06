@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Zigzag Edge Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Zigzag Edge Game</td></tr><tr><td><b>From: </b>Andrew Poelstra &lt;apoelstra@localhost.localdomain&gt;</td></tr><tr><td><b>Date: </b>17/03/2010, 23:01</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr><tr><td><div class="moz-header-display-name" style="display:inline;">Reply-To: </div> apoelstra@wpsoftware.net</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On 2010-03-17, Leroy Quet <a class="moz-txt-link-rfc2396E" href="mailto:qqquet@mindspring.com">&lt;qqquet@mindspring.com&gt;</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+A game for two players:
+
+Start with a grid of (n-1)-by-(n-1) squares, or n-by-n lines. I
+suggest that n be at least 12.
+
+The players take turns placing dots on the grid, one dot each move at
+any intersection of the grid that does not yet have a dot on either of
+the two intersecting (horizontal and vertical) grid-lines.
+
+After n dots are placed -- and the dots represent a permutation of
+(1,2,3,...n) -- the strategy portion of the game is over.
+
+Either of the players then draws (n-1) straight line-segments (called
+"permutation lines"), starting at the leftmost dot, a line-segment
+drawn between each dot and the dot on the vertical grid-line
+immediately to the right. (So, you get a zigzag, in lots of cases.)
+
+Then, either player draws (n-1) straight line-segments (also called
+permutation lines), starting at the topmost dot, a line-segment drawn
+between each dot and the dot on the horizontal grid-line immediately
+below.
+
+Now, the two intersecting zigzags are inclosed within a polygon (not
+talking about the convex hull), the perimeter of which is made up of
+permutation lines and/or parts of permutation lines.
+Call each straight line-segment along this perimeter an "edge line".
+Two permutation lines that meet at one vertex AND have the same slope
+are considered to both be part of one edge-line. Two edge lines may
+come together somewhere other than at a dot (in which case an edge
+line takes up only part of a permutation line).
+
+Player 1 gets as a score the number of edge lines from the leftmost
+dot to the rightmost dot along the TOP of the bounding polygon's
+perimeter.
+
+Player 2 gets as a score the number of edge lines from the leftmost
+dot to the rightmost dot along the BOTTOM of the bounding polygon's
+perimeter.
+
+Largest score wins.
+
+Note: The bounding polygon may narrow to a single point. Four edge-
+lines are considered to meet at such a point, even though only two
+permutation lines cross there.
+
+
+Example game:
+Let us say we have a grid of 9-by-9 lines.
+Label the grid's vertical lines 1 to 9, starting at the bottom. And
+label the grid's horizontal lines 1 through 9, starting on the left.
+During play, the dots are drawn at these grid-line intersections:
+(1,6), (2,7), (3,8), (4,4), (5,5), (6,9), (7,1), (8,3), (9,2).
+
+Player 1 gets 5 points. Player 2 gets 5 points. A tie.
+
+Note that the permutation-line segments connecting (1,6) to (2,7) to
+(3,8) count as one edge line. Also note that the permutation line
+(6,9) to (7,1) and the permutation line (4,4) to (8,3) intersect
+within a grid-square, and that we have 4 edge-lines (2 edge lines to
+player 1's score, 2 edge lines to player 2's score) meeting at this
+intersection.
+
+
+What is a strategy for this game if you are player 1, or if you are
+player 2?
+
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+My thoughts:
+
+As player 1 you would want to maximize the number of slope changes,
+while keeping the lines as high as possible. This would mean starting
+low, and (moving left to right) try to do:
+
+1, 2, 4, 5, 7, 8, 6, 9, 3
+
+Wherein I started as low as possible and climbed by 1,2 alternately,
+dropping as little as possible when I needed to drop.
+
+As player 2, you would want to do the same, except rotated 90 degrees.
+
+<div class="moz-txt-sig">-- 
+Andrew Poelstra
+<a class="moz-txt-link-freetext" href="http://www.wpsoftware.net/andrew">http://www.wpsoftware.net/andrew</a>
+
+
+</div></pre></div></body>
+</html>
+</table></div>

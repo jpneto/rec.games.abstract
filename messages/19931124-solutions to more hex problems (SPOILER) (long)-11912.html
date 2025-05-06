@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>solutions to more hex problems (SPOILER) (long)</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>solutions to more hex problems (SPOILER) (long)</td></tr><tr><td><b>From: </b>hde+@cs.cmu.edu (Herbert Enderton)</td></tr><tr><td><b>Date: </b>24/11/1993, 22:22</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Problem 1:  H (Horizontal) to play and win
+       7 - - - - - - - 
+      6 - - V - - - - 
+     5 - - - - H - - 
+    4 - - - V - - - 
+   3 - - V H V - - 
+  2 - - - - - - - 
+ 1 - - - - - H - 
+  A B C D E F G 
+
+Most people said H-C4, but that loses to V-E2.
+H must play D2.  Then he can connect the left
+edge to the D2 unit (this is the hard part), D2
+to F1, and F1 to the right.  I.e., H answers any
+of the labeled plays below with another play
+in the same set, in order to preserve his links:
+
+       7 a - - - - - - 
+      6 a a V - c c c 
+     5 a a a - H c c 
+    4 a a a V - c c 	Decomposition after H-D2
+   3 a a V H V c c 
+  2 a a a H b c c 
+ 1 a a a - b H c 
+  A B C D E F G 
+
+Why is the LEFT-D2 link secure using the points
+marked 'a'?  Because H has two threats, C2, which
+links using the points marked '*' below:
+
+       7 - - - - - - - 
+      6 - - V - - - - 
+     5 - - - - H - - 
+    4 * - - V - - - 
+   3 * * V H V - - 	One way H threatens to link LEFT-D2
+  2 * * H H - - - 
+ 1 * * * - - H - 
+  A B C D E F G 
+
+and C4, which uses a similar set of points:
+
+       7 * - - - - - - 
+      6 * * V - - - - 
+     5 * * * - H - - 
+    4 * * H V - - - 	Another way H threatens to link LEFT-D2
+   3 - - V H V - - 
+  2 - - - H - - - 
+ 1 - - - - - H - 
+  A B C D E F G 
+
+The only hope V has to stop both threats is to
+play at the intersection, namely A4.  H-C4 then
+forces V-B5, followed by H-B4 forcing V-A5,
+followed by H-B2 and H links up.
+
+       7 - - - - - - - 
+      6 - - V - - - - 
+     5 V V - - H - - 
+    4 V H H V - - - 	Position after A4 C4 B5 B4 A5 B2
+   3 - - V H V - - 
+  2 - H - H - - - 
+ 1 - - - - - H - 
+  A B C D E F G 
+
+Congrats to John Tromp, the only correspondent who gave the
+correct solution (his proof was less wordy too).
+
+My Hex program solves the above problem in about 30 seconds
+(on a DECstation 5000) (4323 nodes of search), using analysis
+very similar to the above.
+
+Problem 2:  Horizontal to play and win
+
+       7 - - - - - - - 
+      6 - H - - - - - 
+     5 - - - V - - - 
+    4 - - - V - - - 
+   3 - - - - - - - 
+  2 - - - - - - - 
+ 1 - - - - - - - 
+  A B C D E F G 
+
+At first glance I was confident that V was winning, but H can
+just barely stop him.  The key moves are H-E6 and H-D3, and the
+order probably isn't important.  After H-E6, H threatens
+to win at C7, and V will have to play there (or near there) to
+stop him.  V might first want to play a forcing move against
+the E6-RIGHT link, and it turns out there is only one potentially
+useful forcing move to be played there, namely V-F5.  (I won't
+explain the analysis of useful forcing moves here, but note that
+V-G4 is met by H-F5, after which that G4 stone isn't going to be
+useful to V.)  V has no useful forcing moves against the
+LEFT-B6 link.
+
+       7 - - - - * * * 
+      6 - H - - H * * 
+     5 - - - V - * *
+    4 - - - V - - * 	H's E6-RIGHT link.  V's only good forcing move
+   3 - - - - - - - 	is F5; any other * move would be locally refuted.
+  2 - - - - - - - 
+ 1 - - - - - - - 
+  A B C D E F G 
+
+So let's say V plays F5, H responds at F6, then V plays C7
+(or equivalently C6, D6, B7, or D7).  Now H plays D3:
+
+       7 - - V - - - - 
+      6 - H - - H H - 
+     5 - - - V - V - 
+    4 - - - V - - - 	H wins, but it's still complicated.
+   3 - - - H - - - 	In some sense, V's moves are forced to this point.
+  2 - - - - - - - 
+ 1 - - - - - - - 
+  A B C D E F G 
+
+This is a won position for H, but I can't find a concise proof.
+There are some tricky lines; e.g., against V-B3, H must play C2.
+I'll leave the rest of the analysis as an exercise for the reader :)
+My program did 8600 nodes of search before claiming that all V
+moves lose.  Unfortunately, when I ran it on the original problem,
+it clunked away for twenty minutes and then seg faulted :(
+
+  -- Bert
+
+</pre></div></body>
+</html>
+</table></div>

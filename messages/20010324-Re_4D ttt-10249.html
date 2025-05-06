@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: 4D ttt</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: 4D ttt</td></tr><tr><td><b>From: </b>mmn@mmn.bellatlantic.net (Michael Naunton)</td></tr><tr><td><b>Date: </b>24/03/2001, 04:27</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,rec.puzzles,comp.ai.games</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Tue, 20 Mar 2001 17:40:51 GMT, George Weinberg wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+On Tue, 20 Mar 2001 17:50:09 +0200, "octripper" <a class="moz-txt-link-rfc2396E" href="mailto:myronbuck@yahoo.com">&lt;myronbuck@yahoo.com&gt;</a>
+wrote:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+Russell Wallace <a class="moz-txt-link-rfc2396E" href="mailto:rwallace@esatclear.ie">&lt;rwallace@esatclear.ie&gt;</a> wrote in message
+<a class="moz-txt-link-freetext" href="news:3ab57c1f.195806058@news.iol.ie">news:3ab57c1f.195806058@news.iol.ie</a>...
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Interesting! What's the algorithm, standard alpha-beta? I suspect
+you'd need more skill than I have at visualizing 4D space to defeat
+the program. (Has anyone done so yet?)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+There's no look-ahead,  I figured the branching was too much
+(625 first moves).  The The algorithm for rating a move is
+that it assigns a "score" for each row that the square includes
+and just adds them.  I didn't try to hard to optimize what the
+"scores" were, I just wanted to make sure that the "score"
+for a row that already contains 4 of your guys is much higher than
+anything else (so the computer iswill win if it can),  the score
+for a row with 4 of the enemy's guys is high enough that it will
+block your attempts at winning, and so on.  A row that has
+at least one of each type already is worth nothing,  but an
+empty row is worth a little so it will preferentially make moves
+that are part of more rows.  The center square is part of
+40 different rows!  
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I've always loved this algorithm.  I was writing a 4dTTT for a machine
+with 8k RAM (it was 1982,) and this was the only way to get fast,
+good play.  A smart player can often beat it, but the computer plays 
+sensible, "intelligent" moves all the time.
+
+
+</pre></div></body>
+</html>
+</table></div>

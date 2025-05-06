@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Nim game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Nim game</td></tr><tr><td><b>From: </b>torbenm@diku.dk (Torben �gidius Mogensen)</td></tr><tr><td><b>Date: </b>07/07/2004, 09:38</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:jferro@fuchsia.ece.cmu.edu">jferro@fuchsia.ece.cmu.edu</a> (Jonathan R. Ferro) writes:
+
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+A fundamental theorem of combinatorial game theory states that all
+impartial or non-partisan games (i.e., games where there are no moves
+which are reserved to a particular player) are equivalent to nim.  So,
+for game A it certainly is the case that a general strategy exists.
+Finding the strategy (i.e., computing the nim-values of each of the
+states) might be a chore, since there are so many legal moves from each
+position and there's no simple chart-like way to tabulate all of the
+positions, but it certainly exists.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Indeed, but if finding the winning strategy (or, equivalently,
+deciding if a position is winning or losing) is very computationally
+intensive, then the game can be considered interesting (as opposed to
+Nim, where the simple strategy makes the game uninteresting).  This is
+not unlike, e.g., Chess, Reversi or Go, which are deterministic but
+computationally hard, so it isn't possible to formulate a simple
+winning strategy.
+
+For game A it is, currently, not known if there is a simple strategy
+(except in situations with even symmetry).
+
+For the general case we can, however, make an observation that may or
+may not help finding a strategy: You can permute the rows and columns
+as much as you like without changing the win/lose property of a
+position.  This isn't hard to verify: You first realise that a single
+swap of two columns or rows doesn't change the property, and then by
+induction you show that this applies to any number of swaps.
+
+We can, however, not just sort the rows and columns by size and then
+look at the number of stones in the rows and columns.  For example:
+
+   XX           XX
+     X   and   X
+   X           X
+
+Both have the sequences 2,1,1 both vertically and horisontally, but
+the first pattern is a first-player win (by removing the top row) and
+the second pattern is a 2nd player win (as the 2nd player can mirror
+the first player's moves over the diagonal).
+
+	Torben
+
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: FANO NIM</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: FANO NIM</td></tr><tr><td><b>From: </b>&quot;gcrhoads@yahoo.com&quot; &lt;gcrhoads@yahoo.com&gt;</td></tr><tr><td><b>Date: </b>03/04/2005, 21:18</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,rec.puzzles</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+I will leave it as a fun exercise for fans to compile a list,
+hopefully exhaustive, of all the "N positions" (Next player wins),
+and all the "P positions" (Previous player wins).
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I generated the P positions (and by consequence the N positions)
+using a computer program and there are too many to list even for
+small numbers of seeds.  First, any position in which the number
+of vertices with some seeds is &lt;= 2 is a P position since no
+move is possible.  Filtering out these, there are still 35
+P positions where no vertex has more than one seed (if you
+consider the symmetries, then there are really only 6 distinct
+ones but the positions become harder to describe).
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+6??  I'm not sure what I was thinking but there are only two.
+The Fano plane is more symmetric than it appears from a casual
+glance at the 2-d diagram.  All points and all lines (including
+the "circular" line) are equivalent.
+
+The two positions with no move where at least three distinct
+vertices have one seed on them are as follows.  The first position
+is obtained by placing a seed at any two distinct vertices and
+then placing a third seed at any vertex that is not on the unique
+line determined by the first two vertices.  For the second
+position, pick any line L.  Then place one seed at each of four
+vertices not on line L.
+
+Given an arbitrary position, it's not exactly obvious when
+you can move to a position with no following moves.  Hence,
+the above characterization is pretty useless when it comes
+to playing the game.
+
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Now if you
+filter out all positions where there is no move, we are left
+with the following (by "restricted" P positions, I mean those
+P positions from which there is at least one legal move, the
+number of seeds at any vertex is &lt;= N, and at least one vertex
+has N seeds).
+
+    # restricted
+N   P positions
+=   ============
+1            0
+2          315
+3         2500
+4         9430
+5        27616
+
+Obviously, memorizing a list of positions is not the way to go.
+The highly regular structure of the fano plane gives one reason
+to hope for a nice elegant way to compute the nimber of an
+arbitrary position.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+
+
+</pre></div></body>
+</html>
+</table></div>

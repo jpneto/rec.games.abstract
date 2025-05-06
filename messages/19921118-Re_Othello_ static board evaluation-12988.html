@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Othello: static board evaluation</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Othello: static board evaluation</td></tr><tr><td><b>From: </b>eadengle@watcgl.uwaterloo.ca (Ed &quot;Cynwrig&quot; Dengler)</td></tr><tr><td><b>Date: </b>18/11/1992, 16:15</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:1992Nov17.131442.14679@odin.diku.dk">&lt;1992Nov17.131442.14679@odin.diku.dk&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:torbenm@diku.dk">torbenm@diku.dk</a> (Torben AEgidius Mogensen) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+This seems reasonable to me, but in reality doesn't play very good.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+This is the method used by most "beginners" trying to make an
+evaluation function, and as you said it isn't very good. In my program
+I use these factors:
+
+ 1) How many legal moves does the opponent have. A small number is
+    good.
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+Be careful of this one! Remember, a good way of minimizing your opponent's
+moves is to let him wipe you out (ie. he has 0 moves left). You should
+try to also maximize your moves. This measure can be a difference
+(ie. my moves - his moves) or a ratio (such as if I have more moves, the
+score is (my moves + 1) / (his moves + 1), else if he has more moves, then
+the score is -(his moves + 1) / (my moves + 1), else it is 0).
+
+The second ratio method has the advantage that you having 2 moves and him
+having 1 move is better than you having 4 moves and him having 3.
+
+Ed
+
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Nim!</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Nim!</td></tr><tr><td><b>From: </b>joelr@tucson.Princeton.EDU (Joel Evan Rosenberg)</td></tr><tr><td><b>Date: </b>17/02/1994, 17:54</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:CLDpDK.9B7@ssd.intel.com">&lt;CLDpDK.9B7@ssd.intel.com&gt;</a>,
+William Shubert <a class="moz-txt-link-rfc2396E" href="mailto:wms@ssd.intel.com">&lt;wms@ssd.intel.com&gt;</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:kgowen@cie.uoregon.edu">kgowen@cie.uoregon.edu</a> (Kevin Gowen):
+  In nim, there are piles of matches.  Players take turns removing as many
+matches as they want, but only from one pile per turn.  The player whe removes
+the last match wins.
+
+******** HOW TO WIN **********
+
+  So long as, after the end of your turn, all pile counts XOR to zero,
+you will win.  e.g.,
+
+Pile 1: 11 matiches ||||| ||||| |
+Pile 2:  6 matiches ||||| |
+Pile 3:  3 matiches |||
+
+11 ^ 6 ^ 3 = 0b1011 ^ 0b110 ^ 0b11 = 0b1110
+
+So we need to toggle the two, 4, and 8 bits of any pile.  Try pile 1.
+0b1011 ^ 0b1110 = 0b101 = 5 so we want 5 matches in pile 1.  So we remove
+6 matches from pile 1 for our turn and have 5/6/3.  5^6^3 = 0.
+
+  Now notice that NO MATTER WHAT YOUR OPPONENT DOES, the piles will not
+XOR to 0 because they're going to toggle some bits, somewhere, and since
+the bits XOR to 0 now these toggled bits will no longer be 0.  So then you
+can readjust to bring the XOR to 0 again, then they move, etc.  Since all
+piles of size 0 (the winning position) also XORs to 0, you HAVE to win
+eventually if you play this way.
+				-Bill (<a class="moz-txt-link-abbreviated" href="mailto:wms@ssd.intel.com">wms@ssd.intel.com</a>)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+One slight quibble: you need to show that from any position whose XOR
+(also known as Nim-sum) is non-zero, you can get to a position whose
+Nim-sum is zero. The proof goes like this:
+
+Say the Nim-sum is X. We would like to change a pile P into a pile
+P^X, so we need to know that the value P-(P^X) is positive for some
+pile P. Well, let X have its highest "on" bit in position b.  Then at
+least one of the given piles, call it P, must have bit b on.  Then,
+X^P &lt; P, because the highest bit changed goes from 1 to 0, so
+P - (P^X) &gt; 0, and we have found a winning move.
+
+
+
+</pre></div></body>
+</html>
+</table></div>

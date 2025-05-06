@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Calculation solitaire -- example and puzzle</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Calculation solitaire -- example and puzzle</td></tr><tr><td><b>From: </b>jdallen2000@yahoo.com (James Dow Allen)</td></tr><tr><td><b>Date: </b>19/06/2003, 08:45</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Google won't let me follow-up to old messages, so I've cut and pasted
+from an old message in this group to give the rules of Calculation solitaire
+below.
+
+The rules describe G(4); G(3) is the same but only three holding piles
+are allowed (Alpha, Beta, Gamma).  I win G(3) about 65% of the time.
+
+I was asked for a sample game, so copied this one down.
+I didn't record the moves to get to this position, but
+remember thinking early on that ``if I lose it will
+be because I got too many 6's before any 3's.''
+
+But by the time I took the ``snapshot,'' all 3's had appeared
+and the dangerous holes left by the 6's had been taken care of.
+
+Here is the position:
+------------------------
+
+        Building Board:    A23   2468TQA3   36    48Q3
+
+        Workpile Alpha          Workpile Beta           Workpile Gamma
+            K---                    -J--                    ---6
+               K                     9                         2
+            Q                         7                     6   
+               9                      4                       8
+               5                     7                         7
+            J                         A                       2
+                                      J                       Q
+                                    9                           
+                                     5                          
+                                    8                           
+                                       T                        
+
+(I've staggered the workpile cards to show where they will eventually
+play on the board.)
+
+The remaining eleven cards (in unknown order) are KKTT55J974A.
+
+
+What is the chance you wil win from this position?
+---------------------------------------------------
+
+Less than 100% surely, as you have no chance if the next
+four cards are K,K,T,T in that order.
+Another sequence that hurts is 5,5,7 but this is not necessarily
+deadly -- you win if the following cards are 4,9 (in either order).
+
+In can be shown (I think) that you have a definite win over 5/9
+of the time: as long as a K appears before a T (that is any
+of six permutations except TTKK, although K at <b class="moz-txt-star"><span class="moz-txt-tag">*</span>very<span class="moz-txt-tag">*</span></b>
+end is no trouble) and a 7 appears before a 5
+(that is any of three permutations except 557).
+Even then you win if (94 or 49) appear early enough,
+or combinations like (55J94).
+
+I'll try to calculate and post the exact odds of winning,
+if there's interest and no one beats me to it.
+
+James
+<a class="moz-txt-link-freetext" href="http://freepages.genealogy.rootsweb.com/~jamesdow/Tech">http://freepages.genealogy.rootsweb.com/~jamesdow/Tech</a>
+
+ ===========  Rules of Calculation Solitaire ============
+
+In the recent millenium in <a class="moz-txt-link-rfc2396E" href="mailto:CFuKA4.Bu1@cantua.canterbury.ac.nz">&lt;CFuKA4.Bu1@cantua.canterbury.ac.nz&gt;</a>
+Bill Taylor (<a class="moz-txt-link-abbreviated" href="mailto:wft@math.canterbury.ac.nz">wft@math.canterbury.ac.nz</a>) described a solitaire game:
+# CALCULATION
+# ~~~~~~~~~~
+# A shuffled pack is face-down before you,
+# and cards turned over one by one.
+#
+# Each card, on being turned over, must be played onto either:
+! one of H "holding piles", or:  one of four "goal piles".
+!    We'll call this game G(H).  Usually G(4) is played.
+!    The top card of a holding pile can also be moved to an
+!    appropriate goalpile at any time. [jda]
+# The four goalpiles are built up regardless of suit, but in different ways.
+# One must begin with an Ace, one with a 2, one with a 3, and one with a 4.
+# Subsequent cards may be put on, if the number is exactly "n" above the last
+# card placed, for pile with base "n";  all done modulo 13;J=11,Q=12, K=13.
+#
+That is to say the four goalpiles are built up, without regard to
+suit, as:
+ A,2,3,4,5,6,7,8,9,T,J,Q,K.
+ 2,4,6,8,T,Q,A,3,5,7,9,J,K.
+ 3,6,9,Q,2,5,8,J,A,4,7,T,K.
+ 4,8,Q,3,7,J,2,6,T,A,5,9,K.
+The game is won if you play all 52 cards to the goalpiles.
+#
+# [At first, G(4)] seemed so hard that I couldn't believe it would
+# ever come out, not beyond a lucky 1% at most, anyway.  But as I
+# struggled more ... I almost thought I could win nearly every time,
+# if I <b class="moz-txt-star"><span class="moz-txt-tag">*</span>really<span class="moz-txt-tag">*</span></b> concentrated on the calculations!)
+#
+# Give it a whirl !
+
+</pre></div></body>
+</html>
+</table></div>

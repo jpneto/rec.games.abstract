@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Move ordering</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Move ordering</td></tr><tr><td><b>From: </b>colley@qucis.queensu.ca (Paul Colley)</td></tr><tr><td><b>Date: </b>23/09/1993, 19:13</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.chess,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+I think I now understand Alpha-Beta (thanks, Ken Sloan!).
+
+I've cross-posted to rec.games.abstract because this is relevant to all
+abstract games, not just chess.  Please trim the newsgroups line if
+your posting is non-chess, or chess-only in scope.
+
+The remainder of this posting contains virtually no facts.  It's just
+an attempt to start a discussion.
+
+------
+
+It's obvious that a trying good moves first improves alpha-beta
+performance.  I'm somewhat baffled as to what a good move-ordering
+might look like.  It seems like a chicken-and-egg proglem:  How do I
+tell the good moves from the bad BEFORE I do the search?
+
+The best thing I can think of is to make each proposed move, call your
+evaluation function, and sort on this result to get the move-ordering
+for the recursive search.
+
+But doing 30 board evaluations just to get a move ordering seems
+computationally expensive.  Is something simpler usually done?
+Something like "checks, captures, piece moves, pawn moves" (for chess)
+perhaps?
+
+Assuming the second choice, an idea that occurs to me is:
+
+	Take a large database of master-level games, and compare the
+	move made to its position in the ordering of several proposed
+	heuristics.
+
+Hmmm... of course, for the purpose of testing, a program could do this
+on its own searches.  Something like, "in evaluating this position,
+move-ordering heuristic A would have given the result faster than
+heuristic B."  (But this analysis would only be valid with alpha-beta
+turned off for the test (?)).
+
+Analyzing the program's own searches gives results that are 100%
+accurate for the program, but searching a large database would allow
+thousands of times as many moves to be evaluated for their place in the
+ordering.
+
+So, now that I've babbled about some half-baked ideas, what is REALLY
+done?
+
+- Paul Colley
+University:  <a class="moz-txt-link-abbreviated" href="mailto:colley@qucis.queensu.ca">colley@qucis.queensu.ca</a>
+Home:        <a class="moz-txt-link-abbreviated" href="mailto:pacolley@ember.uucp">pacolley@ember.uucp</a>   watmath!ember!pacolley  +1 613 545 3807
+"Quantum Mechanics:  The dreams stuff is made of"    - Ken Burnside
+
+
+</pre></div></body>
+</html>
+</table></div>

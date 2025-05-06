@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Mastermind</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Mastermind</td></tr><tr><td><b>From: </b>marzuola@owlnet.rice.edu (Steven Joseph Marzuola)</td></tr><tr><td><b>Date: </b>31/05/1994, 00:33</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+I've been curious for many years about the game Mastermind.
+
+For those unaware, it is played by two players, a Hider and a Guesser.
+First, the Hider chooses a secret arrangement of colored pegs.  Then,
+play alternates: the Guesser places a permutation of colored pegs on
+the board, and the Hider compares the latest guess to the hidden code.
+If they match exactly (in color and position) then the game is over;
+otherwise, the Hider gives a Black clue peg for each peg in the guess
+which is the same color and occupies the same position as a
+corresponding peg in the hidden code, and a White clue peg for each
+peg in the guess which appears in the hidden code, but in a different
+position.  The object is for the Guesser to get the right code in the
+least number of guesses.  (There really isn't much for the Hider to do
+after the game starts).
+
+Recently I wrote a computer implementation of the game, which played
+both sides of the game, with one addition.  Basically, the Hider can
+cheat, by changing the hidden code at any time, as long as every clue
+given in response to every previous guess is still valid.  The program
+works, but I am not sure that it is playing the "best" it can play
+(partly because I don't know for sure what that strategy is!)
+
+I have a couple of questions: Has anybody else studied this game, and
+can somebody refer me to any published studies?  In particular, for
+the standard game (6 possible colors, 4 positions) I believe (from
+experience) that even with bad luck it should take no more than 5
+turns for a Guesser to pin down the hidden code.  Also, if allowed to
+"cheat", I believe that the best possible response to a guess by the
+Guesser is for the Hider to place either 1 Black and 1 White clue peg,
+or 2 White pegs.  These statements should be provable, (or
+disprovable) but I'm not sure how to do it.
+
+Thanks for any response.  Email please, and if there are more than
+just a few responses I'll post a summary.
+
+
+
+<div class="moz-txt-sig">-- 
+Steve Marzuola (<a class="moz-txt-link-abbreviated" href="mailto:marzuola@owlnet.rice.edu">marzuola@owlnet.rice.edu</a>)
+"Think of us as the Information Superhighway ... without any information!"
+                                                       -- David Letterman
+Any resemblance to the views of Rice University is strictly coincidental.
+
+</div></pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: 3D (4x4x4) Noughts and Crosses / Tic Tac Toe</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: 3D (4x4x4) Noughts and Crosses / Tic Tac Toe</td></tr><tr><td><b>From: </b>&quot;Rainer aus dem Spring&quot; &lt;Rainer.adS.BERA_GmbH@t-online.de&gt;</td></tr><tr><td><b>Date: </b>10/05/2002, 23:48</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Of course, the second player can't win. As usual this is proved with a
+strategy stealing argument.
+
+Rainer adS
+
+
+"Tim Lund" <a class="moz-txt-link-rfc2396E" href="mailto:tim@lund-tvam.antispam.demon.co.uk">&lt;tim@lund-tvam.antispam.demon.co.uk&gt;</a> schrieb im Newsbeitrag
+<a class="moz-txt-link-freetext" href="news:1021018163.26003.0.nnrp-14.d4e4f118@news.demon.co.uk">news:1021018163.26003.0.nnrp-14.d4e4f118@news.demon.co.uk</a>...
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Thanks for that reply. I didn't know about that other newsgroup, so I'll
+post it there. I sort of know Visual Basic, but have the feeling that I'd
+</pre></blockquote><pre wrap class="moz-quote-pre">
+do
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+better learning a fully OO language. Why not Smalltalk?
+
+The strategy I coded did the sorts of things you suggest in the
+</pre></blockquote><pre wrap class="moz-quote-pre">
+"endgame" -
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+i.e. where there's a three or less move forced win, but I chickened out of
+anything more complex, and went for a random pick from moves which sort of
+looked best.
+
+I'm interested to know if either player (presumably the first) has a
+</pre></blockquote><pre wrap class="moz-quote-pre">
+forced
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+win.
+
+Tim
+
+"David J Bush" <a class="moz-txt-link-rfc2396E" href="mailto:twixt@nospamtodaycstone.net">&lt;twixt@nospamtodaycstone.net&gt;</a> wrote in message
+<a class="moz-txt-link-freetext" href="news:o13mdusgpk0r05p46jevu2jh5bh196i1qv@4ax.com">news:o13mdusgpk0r05p46jevu2jh5bh196i1qv@4ax.com</a>...
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+On Thu, 9 May 2002 20:59:08 +0100, "Tim Lund"
+<a class="moz-txt-link-rfc2396E" href="mailto:tim@lund-tvam.antispam.demon.co.uk">&lt;tim@lund-tvam.antispam.demon.co.uk&gt;</a> wrote:
+
+|I recently created a MSW Logo project for playing this game, including
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+a
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+|procedure, advisebest, which is meant to work out what the best next
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+move
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+is
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+|for either player - although I don't think it actually is the best.  If
+|anyone would like to have a look at it, I put a link to it from the web
+</pre></blockquote><pre wrap class="moz-quote-pre">
+page
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+|<a class="moz-txt-link-abbreviated" href="http://www.lund-tvam.demon.co.uk/3d0sandxs/">www.lund-tvam.demon.co.uk/3d0sandxs/</a>.  On this page I list the commands
+</pre></blockquote><pre wrap class="moz-quote-pre">
+to
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+|play the game, and also post the following further questions and
+|suggestions.
+|
+|  1. Is there a mathematically proven best strategy for this game which
+</pre></blockquote><pre wrap class="moz-quote-pre">
+can
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+|be encoded reasonably easily?
+
+There are several programs out there that play this game perfectly.
+Programming is probably not very easy, and you are advised to do it in
+a more appropriate language such as C++ or Visual Basic or Java.
+You might do better to ask rec.games.abstract about this.
+
+Here are some crude guidelines:
+
+The first move should be in one of the 8 corner cells, or one of the 8
+central cells. SUbsequent moves should probably be in the same
+"region" as the first move, during the opening phase. If you are
+interested in a more fair variant, restrict the first move to any
+cell OTHER than these 16 cells.
+
+Three tokens of one color in any planar 4x4 cross section, without
+any opposing tokens in that cross section, is usually a threat to
+win. (cross sections can be diagonal as well as orthagonal.)
+
+SOme winning sequences can be 25 ply or maybe more. But this may be
+manageable, since the opponent's reply is forced each time, and the
+only subsequent moves you consider are continuing threats. You need
+to watch out for forced replies that themselves make 3 in a row;
+if the block to that "returns the volley" by making a 3 threat in
+return, then that branch might still work.
+
+
+David Bush <a class="moz-txt-link-freetext" href="http://www.geocities.com/twixtplayer/">http://www.geocities.com/twixtplayer/</a>
+Remove nospamtoday from my email
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+
+
+</pre></div></body>
+</html>
+</table></div>

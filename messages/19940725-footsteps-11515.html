@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>footsteps</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>footsteps</td></tr><tr><td><b>From: </b>karl@kelp.boston.ma.us (Karl Heuer)</td></tr><tr><td><b>Date: </b>25/07/1994, 04:51</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+About four months ago, we were discussing the game "footsteps", which I
+think of as an idealized tug-of-war game.  (One-dimensional board with a
+single token on it; each turn, each of the two players decides how much of
+his personal energy supply to expend; the one who picks the larger value
+pulls the token one space; whoever pulls the token off the board wins.)
+
+I was analyzing the simplest nontrivial board: only two spaces, so that
+one player needs only one turn to win, and the other needs two.  I let the
+computer grind through the lowest values of the discrete game (where the
+players must select a positive integer), but I was more interested in the
+continuous game, or equivalently, the limit of the discrete game as the
+energy supply tends to infinity.  I conjectured that if the player 1 has
+the positional advantage and has M units of energy, and player 2 has N,
+then the game value is -1 \/ 3-(2N/M) /\ +1.  (\/ and /\ are infix max and
+min operators.)
+
+I've encountered further evidence in favor of this conjecture, and if it's
+true, then I've found an optimal strategy for both players in the case
+N/M &gt;= 3/2.  The case N/M &lt; 3/2 seems to be harder; I haven't had time to
+investigate it very thoroughly.
+
+A tentative conjecture for the 3-space board with the token in the middle
+is that the game value is -1 \/ 3(M-N)/(M+N) /\ +1.  I don't have a guess
+for the general case yet.
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>How to Play Sprouts with Playing Cards</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>How to Play Sprouts with Playing Cards</td></tr><tr><td><b>From: </b>&quot;Josh  Purinton&quot; &lt;joshpurinton@gmail.com&gt;</td></tr><tr><td><b>Date: </b>24/09/2006, 06:39</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Introduction
+
+It's not much fun to play sprouts with playing cards, but it is
+possible. Why would anyone want to do such a thing? Maybe it will be
+easier to analyze the game this way, or more straightforward to
+implement it on a computer. Maybe you're just fresh out of pens and
+paper.
+
+To play a game with N initial spots, you'll need three identical decks
+of playing cards with at least 3N+1 distinct cards in each deck. This
+way each card will have exactly two identical "twins". (Actually, the
+cards are incidental; integers will suffice. This document is really
+about how to generate legal moves and update a position represented in
+Dan Hoey's boundary-list notation.) In the rules below, we'll assume
+you've combined the three decks into one large deck. You will also
+need a flat space for at least 2N+1 rows of cards. A large wooden
+table will do nicely. Each row will contain zero or more stacks of
+cards, and each stack will contain one or more cards.
+
+To "cut" a stack of cards means the usual thing: remove one or more
+cards from the top of the stack (preserving order) and put them under
+the remaining cards in the stack.
+
+To "play" a card, remove it from the deck and place it in the
+specified location.
+
+Initial position and play
+
+The initial position consists of N different cards, each in an
+isolated stack, all in the same row. Players take turns moving. There
+are two kinds of moves, joining moves and dividing moves. On his turn,
+a player must execute either a legal joining move or a legal dividing
+move, but not both in the same turn.  Under the normal play
+convention, the last player wins. Under the misere play convention,
+the last player loses.
+
+Joining moves
+
+A joining move combines two stacks in the same row. If any step of the
+move is not possible, the move is illegal.
+
+   1. Choose two different nonempty stacks A and B in the same row.
+      Optionally, cut stack A. Optionally, cut stack B.
+   2. If A has more than one card, then play a twin of the top card to
+      the bottom of stack A.
+   3. If B has more than one card, then play a twin of the top card to
+      the bottom of stack B.
+   4. From the deck, remove two identical cards that are not already
+      on the table. Place one on top of A, and one on top of B.
+   5. Place A on top of B.
+
+Dividing moves
+
+A dividing move divides a stack into two stacks, one of which is
+placed in a new row. One or more stacks from the original row may be
+moved to the new row.  If any step of the move is not possible, the
+move is illegal.
+
+   1. Choose a nonempty stack. Optionally, cut it.
+   2. Play a twin of the top card to the bottom of the stack.
+   3. Remove one or more cards -- but not all of them -- from the top
+      of the stack and place them in a new row.
+   4. If the original stack or the new stack has more than one card,
+      then play a twin of the the bottom card of the new stack to the
+      top of the original stack.
+   5. From the deck, remove two identical cards that are not already
+      on the table. Place one on top of the new stack, and one on top
+      of the original stack.
+   6. Optionally, move one or more stacks -- other than the original
+      stack -- from the original row to the new row.
+
+Example game
+
+Consider the following game (in the notation used by the World Game of
+Sprouts Association): 2+ 1(3)2 1(4)2 1(5)4 2(6)3
+
+Here's how that game would be played with cards. To represent the
+position in text, we will use the following conventions: A stack of
+cards is written in order from top card to bottom, with a comma
+between each card. A semicolon separates each stack from adjacent
+stacks in the same row. A slash separates each row from its neighbors.
+is the notation used by Dan Hoey in his paper on sprouts
+notation.)
+
+(2) initial position:
+
+    * 1;2
+
+(3) joining move:
+
+   1. 1;2
+   2. (skipped)
+   3. (skipped)
+   4. 1,3;2,3
+   5. 1,3,2,3
+
+(4) dividing move:
+
+   1. 1,3,2,3
+   2. 1,3,2,3,1
+   3. 1,3,2/3,1
+   4. 1,3,2/2,3,1
+   5. 4,1,3,2/4,2,3,1
+   6. (skipped)
+
+(5) dividing move:
+
+   1. 1,3,2,4/4,2,3,1
+   2. 1,3,2,4,1/4,2,3,1
+   3. 1,3,2,4/1/4,2,3,1
+   4. 1,3,2,4/4,1/4,2,3,1
+   5. 5,1,3,2,4/5,4,1/4,2,3,1
+   6. (skipped)
+
+(6) dividing move:
+
+   1. 5,1,3,2,4/5,4,1/2,3,1,4
+   2. 5,1,3,2,4/5,4,1/2,3,1,4,2
+   3. 5,1,3,2,4/5,4,1/2,3/1,4,2
+   4. 5,1,3,2,4/5,4,1/2,3/3,1,4,2
+   5. 5,1,3,2,4/5,4,1/6,2,3/6,3,1,4,2
+   6. (skipped)
+
+Analogy with graph theory
+
+We have represented a plane graph using rows of stacks of cards.
+Playing card term       Graph theory term
+card                    occurrence of vertex in boundary
+stack                   left-hand walk of vertices on boundary
+row                     face, i.e. set of boundaries
+table                   plane graph, i.e. set of faces
+
+
+
+</pre></div></body>
+</html>
+</table></div>

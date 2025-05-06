@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Hex</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Hex</td></tr><tr><td><b>From: </b>torbenm@diku.dk (Torben AEgidius Mogensen)</td></tr><tr><td><b>Date: </b>01/07/1993, 11:20</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:dbush@csugrad.cs.vt.edu">dbush@csugrad.cs.vt.edu</a> (David Bush) writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:torbenm@diku.dk">torbenm@diku.dk</a> (Torben AEgidius Mogensen) writes:
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+This will probably not be of much help for the general case, but with
+the modification that the board is of size Nx(N-1) and the second
+player has to connect the shortest distance, the game is a sure win
+for player two.
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+The strategy works as follows: divide the board into two equal-sized
+parts along the short diagonal. Every time player one places a stone
+in one half of the board, player two places a stone in the other half
+at the position 180 degrees opposite (imagine rotating one board half
+on top of the other). It is relatively easy to show that this will
+eventually end in a win for player two.
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I'm not sure if I understand you, but consider this sample game where
+player two follows your strategy. N=5, long dimension lettered A-E,
+short dimension numbered 1-4. Each cell is designated by a letter-number
+pair. The corner cells are A1, E1, A4, E4. Let us say that E1 and A4 are
+the obtuse corners, A1 and E4 the acute corners. Player 1's task is to
+connect column A with column E. Player 2 must connect row 1 with row 4:
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+1.C2 C3 2.D2 B3 3.B2 D3 4.E2 A3 5.A2 and player 1 wins.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+My mistake. My recollection was a bit vague: you shouldn't <b class="moz-txt-star"><span class="moz-txt-tag">*</span>rotate<span class="moz-txt-tag">*</span></b>
+the other half of the board, you should <b class="moz-txt-star"><span class="moz-txt-tag">*</span>mirror<span class="moz-txt-tag">*</span></b> it across the
+dividing line.
+
+I have tried a few games with this strategy, and it does seem to work.
+
+	Torben Mogensen (<a class="moz-txt-link-abbreviated" href="mailto:torbenm@diku.dk">torbenm@diku.dk</a>)
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>FOUR-WAY FENCES</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>FOUR-WAY FENCES</td></tr><tr><td><b>From: </b>Bill Taylor &lt;w.taylor@math.canterbury.ac.nz&gt;</td></tr><tr><td><b>Date: </b>09/07/2010, 08:26</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+As promised, here is our (Joao Neto's and my) best variant of
+pure race Quoridor games.
+
+The basic idea is that each player has FOUR pawns, which can
+move one step horizontally or vertically, each pawn starting
+on one edge of the board, and having to make its way to the
+opposite edge, and cross over it off the board.
+
+As in all Quoridor games, no player may make a move that
+prevents any pawn from eventually achieving its objective.
+We deliberated as to what the overall game object should be -
+
+1.  To get at least one off;
+2.  To get at least two off;
+3.  To get at least three off;
+4.  To get all four off.
+
+After some brief experimentation, we decided on 3; it seems to
+give the best balance between having to get most/all off,
+but not being completely crippled by having a single pawn
+sent into a horrible tangly maze.
+
+As to the walls, it is also up for grabs whether or not:
+
+A:  Should they be allowed to be placed along the board edges?
+B:  Should they be merely length-2 traditional straight walls,
+    or also allow L-shaped length-2 walls?
+
+After many trials, we eventually settled on allowing both
+walls along edges AND L-shaped walls.  As people's mileages
+vary on the matter of traditionalism/freedom among variants,
+these two rules could be considered variable without changing
+the essential nature of the game.  L-shaped walls seem weird
+at first, but there are many places where it is the most
+natural and skill-promoting thing to have.
+
+So then, hoping that the diagrams come out right for your server,
+here is our final version...
+
+- - - - - - -
+
+FOUR-WAY FENCES
+===============
+* One player has stones n s e w, the other N S E W.
+
+* Each stone must try to cross
+                     the boundary furthest in its name-direction.
+* With 2444 equalizer, in each turn each of a player's stones,
+   (move order at the mover's discretion), must move one orthogonal
+    step; then a length-2 wall or L is played, it may be along
+                                 the boundaries but not beyond.
+* A player may not completely block off any opponent stone
+                                                    from its goal.
+* If any stones are adjacent to the moving stone in its
+  chosen direction, it may jump them to the next vacant cell.
+  If a wall blocks this direction part-way through such a jump,
+                        either available right-angle may be turned.
+* The winner is the first player to get three stones off the board.
+
+The initial board set-up is as below:
+
+     A   B  C  D   E   F  G   H  I   J
+a + - - - - - - - - - - - - - - -  + a
+   :               S              s               :
+b :   +   +   +   +   +   +   +   +   +   : b
+   :                                                :
+c :   +   +   +   +   +   +   +   +   +   : c
+   :                                                :
+d :   +   +   +   +   +   +   +   +   +   : d
+   : e                                         W :
+e :   +   +   +   +   +   +   +   +   +   : e
+   :                                                :
+f  :   +   +   +   +   +   +   +   +   +   : f
+   :                                                :
+g :   +   +   +   +   +   +   +   +   +   : g
+   : E                                         w :
+h :   +   +   +   +   +   +   +   +   +   : h
+   :                                                :
+i  :   +   +   +   +   +   +   +   +   +    : i
+   :                                               :
+j  :   +   +   +   +   +   +   +   +   +   : j
+   :               n             N                :
+k + - - - - - - - - - - - - -  - - + k
+     A  B  C   D   E   F  G   H  I    J
+
+_______________________________________________________
+
+Here is a sample game, to hopefully clarify any rule ambiguity.
+
+(Note that the "equalization" referred to above, means that
+ on the first move the first plater makes only two moves.)
+
+The recording notation is pretty obvious I hope - numbers denote
+L-pieces, 1 is a first quadrant sketch; 2, 2nd; etc as for graphs.
+
+The piece moves are recorded in order "NEWS" - an easy mnemonic! :)
+Numbers in the piece move section indicate jumps.
+
+        joao                  BILL
+1.  n e - -  Bg3         N S W S  Di-
+2.  e e w s  Hi-         W E W S  Fi-
+3.  2 e w s  Gj|         W E W 2  Gd1
+4.  e e w e  Ge1         W N E S  Hj-
+5.  e s w 2  Dg1         W E 2 E  Jj-
+6.  n 2 3 2  Eh|         W 2 W N  Jh3
+7.  w e 2s e Bi4         S N W N  Gg|
+8.  2 3 s w  Hh4         W N 2 S  Gh3
+9.  w e w n  Ef-         N S 2 EN Ge3
+10  n s - n  Ee|         N S 2 2  Fc-
+11. n e - e  Dd2         E N 2 2W Eb3
+
+   A   B   C   D   E   F   G   H   I   J   K
+ a + - - - - - - - - - - - - - - - - - - - + a
+   :                                                      :
+ b :   +   +   +---.   +   +   +   +   +   : b
+   :                            |                       :
+ c :   +   +   +   +-------+   +   +   +   : c
+   :                       | S   W     |               :
+ d :   +   +   +---+   +   `---+   +   +   : d
+   :                             |       |               :
+ e :   +   +   +   |   +---`---+   +   +   : e
+   :                             |       |               :
+ f :   +   +   +-------+   +   +   +   +   : f
+   :     E     |     n     |     s         :
+ g :---+   +   +---+   +   |   +   +   +   : g
+   :   |           |       |               :
+ h :   +   +   +   |   +---.   +---+---.   : h
+   :     N         |       |   |       |   :
+ i :   +---+-------+-------+-------+   +   : i
+   :   |                   |             e :
+ j :   +   +   +   +   +   |-------+-------: j
+   :                       |               :
+ k + - - - - - - - - - - - - - - - - - - - + k
+   A   B   C   D   E   F   G   H   I   J   K
+
+At this point, Joao (small letters) seems to be ahead.
+His s piece has a huge way to go, but one piece can be
+abandoned for the race, and he can still use it to help others
+with jumping.  (Somewhat of a Halma element there!)
+
+BUT... it may have been a mistake to take "w" off so early,
+or at least to get it so isolated, because Bill is now able
+to make better use of the jumpinmg rule:
+
+12. e n - e  Cc1         2 S 2 2  Bb1
+13. n n - e  Cg3         E S 2 2  Cd|
+14. w 2 - 2  Cf-         S E 2 2  Dh|
+15. n 2 - 2  Be1         2 2 S W  Jb|
+
+   A   B   C   D   E   F   G   H   I   J   K
+ a + - - - - - - - - - - - - - - - - - - - + a
+   :   |                               |   :
+ b :   |   +   +---.   +   +   +   +   |   : b
+   :   |   |       |                   | s :
+ c :   +   +---+   +-------+   +   +   +   : c
+   : S   W |   |           |             e :
+ d :   +   |   +---+   +   `---+   +   +   : d
+   :   |   |       | n     |               :
+ e :   +---+   +   |   +---`---+   +   +   : e
+   :               |       |               :
+ f :   +-------+-------+   +   +   +   +   : f
+   :     N   E |           |               :
+ g :---+---+   +---+   +   |   +   +   +   : g
+   :   |   |   |   |       |               :
+ h :   +   +   |   |   +---.   +---+---.   : h
+   :           |   |       |   |       |   :
+ i :   +---+-------+-------+-------+   +   : i
+   :   |                   |               :
+ j :   +   +   +   +   +   |-------+-------: j
+   :                       |               :
+ k + - - - - - - - - - - - - - - - - - - - + k
+   A   B   C   D   E   F   G   H   I   J   K
+
+Bill&gt;  My next 5 moves are  4222, N333, N333, N333, out;
+Bill&gt;  with a Bf| as soon as I've past it.
+Bill&gt;  Which leaves you one move short of victory!
+Bill&gt;   YAAAAAAAAAAAAAAYYY!!!
+Bill&gt;  Let's hear it for the jumping counters!!
+Bill&gt;   A long-awaited victory!
+Bill&gt;  the board after 3 more moves each:-
+
+   A   B   C   D   E   F   G   H   I   J   K
+ a + - - - - - - - - - - - - - - - - - - - + a
+   : N |                               |   :
+ b :   |   +   +---.   +   +   +   +   |   : b
+   :   |   |     n |                   | s :
+ c :   +   +---+   +-------+   +   +   +   : c
+   :       |   |           |             e :
+ d :   +   |   +---+   +   `---+   +   +   : d
+   :   |   |       |       |               :
+ e :   +---+   +   |   +---`---+   +   +   : e
+   :               |       |               :
+ f :   +-------+-------+   +   +   +   +   : f
+   :           |           |               :
+ g :---+---+   +---+   +   |   +   +   +   : g
+   :   |   |   |   |       |               :
+ h :   +   +   |   |   +---.   +---+---.   : h
+   : E   S   W |   |       |   |       |   :
+ i :   +---+-------+-------+-------+   +   : i
+   :   |                   |               :
+ j :   +   +   +   +   +   |-------+-------: j
+   :                       |               :
+ k + - - - - - - - - - - - - - - - - - - - + k
+   A   B   C   D   E   F   G   H   I   J   K
+__________________________________________________________________
+
+Damn:  the pictures don't seem toi have come out at all.
+
+A curse on variable-width fonts!!!!!!!!!!!!!!
+
+
+</pre></div></body>
+</html>
+</table></div>

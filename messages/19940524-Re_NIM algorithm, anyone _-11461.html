@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: NIM algorithm, anyone ?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: NIM algorithm, anyone ?</td></tr><tr><td><b>From: </b>kleber@hanalei.berkeley.edu (Michael Kleber)</td></tr><tr><td><b>Date: </b>24/05/1994, 19:43</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>comp.programming,rec.games.abstract,rec.games.misc</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Neil Gall asked:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+ Does anyone have an algorithm for the game Nim ?  I think it
+ goes by other names sometimes, so I'll describe it.
+ 
+ You lay out matches or stones or something like this:
+ 
+ 
+             * * *
+           * * * * *
+         * * * * * * *
+         
+ Two players take it in turns to remove any number of stones
+ from a single row.  The player to remove the last stone loses.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+As Bruno Wolff said, you should definitely look at <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>Winning Ways<span class="moz-txt-tag">_</span></span>
+(by Berlecamp, Conway and Guy).  But here's a capsule summary
+of the (really easy) nim algorithm.
+
+The general form of the game has n piles, with sizes s_1, s_2,...,
+s_n, and you're allowed in your turn to decrease any one pile by any
+amount.  The goal is to make it the other player's turn when all of
+the piles have size 0.
+
+Think of the numbers s_1 to s_n as being written down in binary.  Then
+the "sum" of all the piles is what you get by taking s_1 to s_n and
+xor'ing them together.  (ie, bitwise addition without carry.  In your
+example, n=3, s_1=3, s_2=5, s_3=7, so in binary that's 11, 101, 111,
+and xor'ing them gives you 001.)
+
+The reason you care about the "sum" is that, in a single move, you
+can do the following (trust me for now):
+
+1. If the sum is not 0, in a single move it is always possible to make
+   a move so that the sum becomes 0.
+
+2. If the sum is 0, then any move makes the sum non-0.
+
+So to insure a win, you can just make sure that the "sum" is always 0
+at the <b class="moz-txt-star"><span class="moz-txt-tag">*</span>end<span class="moz-txt-tag">*</span></b> of your turn.  (You always can-- that's rule 1 above.)
+Then at the <b class="moz-txt-star"><span class="moz-txt-tag">*</span>beginning<span class="moz-txt-tag">*</span></b> of your turn, the sum can never be 0 (by rule
+2 above), so you can never lose.  And in this game, if you never lose,
+you win.  Poof.  So in the above case, the "winning moves" are to take
+one match from any pile, so the xor becomes 000.  If you play most of
+the "commercailly available" variations on this game, things often
+start out "just right" so that the xor at the beginning of the game is
+0, so it's a second-player-win.
+
+Property 2 is pretty clear, since changing just one number <b class="moz-txt-star"><span class="moz-txt-tag">*</span>has<span class="moz-txt-tag">*</span></b> to
+change the xor.  To show property 1, just find a pile whose size is
+<b class="moz-txt-star"><span class="moz-txt-tag">*</span>larger<span class="moz-txt-tag">*</span></b> than that same size xor'ed with the "sum".  Showing that such
+a pile always exists is left as an exercise to the interested reader.
+
+--Michael Kleber                 I don't have an overactive imagination...
+  <a class="moz-txt-link-abbreviated" href="mailto:kleber@math.berkeley.edu">kleber@math.berkeley.edu</a>       I have an underactive reality...   --EG
+
+</pre></div></body>
+</html>
+</table></div>

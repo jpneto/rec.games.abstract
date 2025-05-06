@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Chess variant problem - a bug in Zillions?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Chess variant problem - a bug in Zillions?</td></tr><tr><td><b>From: </b>Alfred Pfeiffer &lt;apf@informatik.tu-chemnitz.de&gt;</td></tr><tr><td><b>Date: </b>21/11/2003, 14:24</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,rec.games.chess.misc</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+John Rowland wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+...
+When Zillions plays my game against itself, white wins nearly all 
+of the time in various symmetrical starting positions. The obvious
+conclusions were that my game was flawed or that my rule file was
+flawed, but the test described below suggests otherwise.
+...
+All of the pieces have symmetrical move possibilities, including 
+my "pawns" which can move (or capture) backwards as well as 
+forwards, so I have not needed the Zillions "symmetry" command 
+to make black's pawns move in the reverse direction.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Maybe the absence of symmetry commands is the reason for the
+differences in the play of white and black.  
+
+I assume that the move generation will be done in the order 
+of the statements that you have coded in your zrf. 
+
+If (for example) you write in your zrf for the "pawns"
+
+  (moves
+     (pawn-move n)
+     (pawn-move s)
+  )
+
+then Zillions will generate with the white pawns:
+
+  first the forwards (offensive) moves, and
+  second the backwards (defensive) moves - 
+
+but for the black pawns this order is the contrary: 
+  defensive moves will be generated before the offensive moves.
+
+Similarily this should happen with the other pieces too.
+
+
+Friendly greetings,
+Alfred Pfeiffer
+
+P.S. It would be nice we  could seem your new game.
+
+
+</pre></div></body>
+</html>
+</table></div>

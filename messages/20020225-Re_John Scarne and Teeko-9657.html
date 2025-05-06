@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: John Scarne and Teeko</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: John Scarne and Teeko</td></tr><tr><td><b>From: </b>David J Bush &lt;twixt@nospamtodaycstone.net&gt;</td></tr><tr><td><b>Date: </b>25/02/2002, 20:19</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Thanks for the link! Based on the photo and the description of the
+rules given, Teeko sounds like it could fall prey to computer
+analysis. This, of course, would depend on knowing the exact
+ruleset (or rulesets), but consider this simple analysis:
+
+I call the first player Red and the 2nd player Black here.
+The board is 5x5, and any position would have k red tokens
+and either k or k-1 black tokens, where k = 0,1,2,3, or 4.
+(Of course there cannot be 0 red and -1 black tokens.)
+If a position is defined by the arrangement of all the pieces
+plus whose move it is, there are 174,438,376 positions.
+Actually there are less than that, since positions where
+both players have a teeko, or the player to move has a teeko,
+cannot occur in a game.
+
+A computer could scan and label all positions as follows:
+On the first scan, all positions with a teeko are labeled as
+wins. Then on the next scan, all positions where the player to
+move can make a teeko, are labeled as wins for that player.
+Then all positions where the player to move cannot avoid giving
+the next player a win, are labeled as losses for that player.
+On the next scan, all positions where the player can put the
+opponent in a losing position are labeled as wins, and so on.
+In the case of draws by repetition, there may be rules which
+prohibit one side from making a move that repeats a previous
+position under certain circumstances. The number of repeats
+is irrelevant to the analysis of that position; just tell the
+computer to avoid all such prohibited moves. In other words,
+if a player is prohibited from repeating a position 3 times
+or is prohibited from repeating once, the resulting analysis
+of the game outcome would be the same. There may be some
+positions which allow repetition. If all the moves from a
+given position are labeled, and a drawn position can be reached
+but a win cannot, then that node is labeled as a draw. So, every
+node can be labeled this way, without any recursive tree search
+needed. All that is needed, to solve Teeko this way, would be the
+exact ruleset or rulesets used, and a computer with sufficient
+memory to store all positions. The algorithm would need a way of
+numbering each position. Just five possible tags are needed:
+"Not labeled yet," "Red Win," "Draw," "Black win," and possibly
+"illegal position." If the memory is available, perhaps the entire
+game tree could be stored.
+
+Actually, dealing with draw by repetition would be more complicated
+than I describe, but I believe the algorithm is possible nonetheless.
+
+So, who has the exact ruleset or rulesets for Teeko?
+
+David Bush <a class="moz-txt-link-freetext" href="http://www.geocities.com/twixtplayer/">http://www.geocities.com/twixtplayer/</a>
+Remove nospamtoday from my email
+
+
+</pre></div></body>
+</html>
+</table></div>

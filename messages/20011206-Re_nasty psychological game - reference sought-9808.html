@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: nasty psychological game - reference sought</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: nasty psychological game - reference sought</td></tr><tr><td><b>From: </b>David J Bush &lt;twixt@nospamtodaycstone.net&gt;</td></tr><tr><td><b>Date: </b>06/12/2001, 18:03</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Thu, 06 Dec 2001 16:58:57 +0100, Jan Kristian Haugland
+<a class="moz-txt-link-rfc2396E" href="mailto:jkhaug00@studNOSPAM.hia.no">&lt;jkhaug00@studNOSPAM.hia.no&gt;</a> wrote:
+|
+|Nasty indeed! I tried to analyze a version with only two lines,
+|and any real number between 0 and one's score as a possible bid.
+|So what is B's probability of winning in the following position
+|assuming perfect play?
+|
+|    |  |       Score
+|  A |  O B     A: 1
+|    |  |       B: x
+|
+|Let's call it p(x). Clearly p(x) = 0 for x &lt; 1/2, and p(x) = 1
+|for x &gt; 1. I found it tricky to work out p(x) for 1/2 &lt; x &lt; 1. 
+|Eventually I came up with p(x) = 2 - 1/x, but it's not really
+|a proof (yet). Is it right, though?
+
+I'm not sure, but I notice you do not mention the case x=1.
+At first, I thought this would be a sure win for B, until I
+saw bids must be &lt; 1. But this leads to a problem with the
+game definition. Suppose x=1. If players could bid exactly 1,
+B could win by bidding 1 immediately. Either the ball moves
+to B immediately, or both players run down to 0, and B wins
+by virtue of the ball being closer to B. But if players must
+bid less than 1, it is in B's interest to immediately bid
+a value larger than A. That's like asking two players to
+simultaneously bid any integer, and the larger value wins.
+B wants to bid a value 1-epsilon where epsilon is closer
+to zero than A's epsilon. This leads to practical problems.
+How many pages of symbolic notation would be allowed, to
+define this value? Would recursive definitions be allowed?
+What a mess!
+
+I agree p(x) = 1 if x &gt; 1. Suppose x is of the form 1+alpha
+where alpha &gt; 0. B immediately bids 1 - (alpha/2). The only
+way to avoid immediate loss, is for A to bid more than B.
+This leaves A with something less than alpha/2. B can then
+win the next two bids in a row, by bidding alpha/2 each
+time.
+
+You also do not mention x = 1/2, but p(x)= 0 there.
+A bids 1/2 immediately. The only way B can stop A is by
+bidding the full 1/2, leaving B with 0, and A wins.
+If B bids 0 on the initial bid, A can still win on the
+next bid with 1/2, since either A wins or both players
+run out with the ball closer to A.
+
+Did I misinterpret your rules? Is a bid of 1 allowed?
+
+I'm not sure p(x) is even well defined for .5 &lt; x &lt; 1.
+Assumptions have to be made about the likelihood of
+players making certain bids. A probablilty distribution
+over the range of allowed bid values for each move.
+Presumably, such a distribution would be based on 
+the assumption that each player will strive to maximize
+their likelihood of winning. But this is a circular
+definition, is it not? Am I being too simplistic?
+
+David Bush <a class="moz-txt-link-freetext" href="http://www.geocities.com/twixtplayer/">http://www.geocities.com/twixtplayer/</a>
+Remove nospamtoday from my email
+
+
+</pre></div></body>
+</html>
+</table></div>

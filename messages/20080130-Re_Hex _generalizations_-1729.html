@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Hex &quot;generalizations&quot;</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Hex &quot;generalizations&quot;</td></tr><tr><td><b>From: </b>torbenm@app-2.diku.dk (Torben Ægidius Mogensen)</td></tr><tr><td><b>Date: </b>30/01/2008, 10:53</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-rfc2396E" href="mailto:marksteere@gmail.com">"marksteere@gmail.com"</a> <a class="moz-txt-link-rfc2396E" href="mailto:marksteere@gmail.com">&lt;marksteere@gmail.com&gt;</a> writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I keep seeing the term "generalization of Hex" bandied about to
+describe variants of Hex and families of variants of Hex.  Most
+recently in Board Game News:
+
+There is only one generalization of Hex: Atoll.  Atoll is a precisely
+defined, infinite set of games all of whose members share the central,
+defining, geometric principals of Hex: The goal is to connect opposite
+segments, and on a filled board you have exactly one winner.  In the
+special case of Atoll in which the set member has the least allowable
+number of perimeter segments, four, Atoll is exactly equivalent to
+Hex.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Atoll is only one of many generalisations of Hex.  Atoll fixes the
+shape of the board and the positions and sizes of the pre-filled
+groups, but you can generalise even further.  My analysis found that
+you can get the property of exactly one winner on a full board if the
+following two criteria are fulfilled:
+
+ 1. If a group of tokens of one colour is a winning connection, then
+    even if all the other hexes are filled by the other colour, this
+    can not be a winning connection for that colour.
+
+ 2. If a group of tokens of one colour is a winning connection, then
+    you can replace any part of this by a group of the opposite colour
+    as long as this new group doesn't touch anything else of its
+    colour (including precoloured pieces or borders), and the original
+    group will still be a winning connection.
+
+The first criterion guarantees that there can't be two winners, and
+the second that a filled board will have a winner.
+
+You can use this to make a toroid variant of Hex:
+
+The board is a torus with a hexagonal tiling.  You can simulate this
+by a rectangular or parallelogram board that wraps around both top
+to bottom and left to right.  There are no edges on this board.
+
+In order to win, Black must make a closed loop that encircles the rim
+of the torus and White must make a closed loop that encircles the
+center of the torus.
+
+Criteria 1 is clearly fulfilled, as a loop around the rim and a loop
+around the center must cross, so both can't exist at the same time.
+Criteria 2 is fulfilled because replacing part of a loop by the other
+colour can't make it into a non-loop unless the new pieces touch old
+pieces of their own colour.
+
+On a rectangular or parallelogram board with wrap, this means that
+Black must make a loop that crosses the top/bottom wrap an odd number
+of times and the left/right wrap and even number of times (including
+0) and White must make a loop that crosses the left/right wrap an odd
+number of times and the top/bottom wrap an even number of times
+(including 0).
+
+This is a generalisation of Hex, as if you precolour the top/bottom
+wrap black and the left/right wrap white, you get Hex.
+
+We can call this toroidal Hex variant "Torex".
+
+	Torben
+
+
+</pre></div></body>
+</html>
+</table></div>

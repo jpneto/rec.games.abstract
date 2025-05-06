@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: &quot;Break the Ice&quot; game strategy</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: &quot;Break the Ice&quot; game strategy</td></tr><tr><td><b>From: </b>&quot;Chris Uppal&quot; &lt;chris.uppal@metagnostic.REMOVE-THIS.org&gt;</td></tr><tr><td><b>Date: </b>01/08/2006, 13:46</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,comp.programming</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Arthur J. O'Dwyer wrote:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+  My question for the comp.programming folks: I quickly determined
+that the standard alpha-beta pruning technique doesn't help with
+this game, because I don't know any way to evaluate the "strength"
+of a position except as a win or loss. So most of the branches in
+an alpha-beta tree of any reasonable depth (i.e., not deep enough
+to see all possible endings) end up with a value of zero, which means
+the computer is moving randomly most of the time.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Perhaps you could borrow the concept of stress (or do I mean strain?)
+from engineering.  The stress on any given blocks is the number of
+blocks that would move (including itself) if it were knocked out.   You
+could then try minimaxing on something like one of:
+     minimise the total stress
+     maximise the number of "low" stress blocks
+     minimise the number of "high" stress blocks
+subject to the constraint that there must be an even number of
+unsaturated (stress &lt; number of remaining blocks) after each move.
+
+Just a thought -- I've no idea whether it'd work....
+
+    -- chris
+
+
+</pre></div></body>
+</html>
+</table></div>

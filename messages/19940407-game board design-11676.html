@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>game board design</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>game board design</td></tr><tr><td><b>From: </b>jos@and.nl (Jos Horsmeier)</td></tr><tr><td><b>Date: </b>07/04/1994, 14:25</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.design,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Greetings and salutations,
+
+	About ten years ago, while enjoying one of my frequent attacks
+of utmost idiocy and extreme silliness, I came up with a game. It's a
+board game like chess, checkers, go etc. etc. During the years I 
+sincerely became to <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>hate<span class="moz-txt-tag">_</span></span> this game, because I just can't build it. 
+
+I've written a couple of simulations, running on a computer, but that's
+no fun at all, I want a real board; a real game. Allow me to explain
+the rules of this game I detest so much.
+
+The board consists of eleven by eleven squares. Both players start off
+with eleven pieces. Every piece has a value, a so called `strength'.
+This is the initial board configuration:
+
+		+--+--+--+--+--+--+--+--+--+--+--+
+		|  |1b|  |1b|  |1b|  |1b|  |1b|  |
+		+--+--+--+--+--+--+--+--+--+--+--+
+		|  |  |2b|  |  |2b|  |  |2b|  |  |
+		+--+--+--+--+--+--+--+--+--+--+--+
+		|  |  |  |3b|  |  |  |3b|  |  |  |
+		+--+--+--+--+--+--+--+--+--+--+--+
+		|  |  |  |  |  |  |  |  |  |  |  |
+		+--+--+--+--+--+--+--+--+--+--+--+
+		|  |  |  |  |  |5b|  |  |  |  |  |
+		+--+--+--+--+--+--+--+--+--+--+--+
+		|  |  |  |  |  |  |  |  |  |  |  |
+		+--+--+--+--+--+--+--+--+--+--+--+
+		|  |  |  |  |  |5w|  |  |  |  |  |
+		+--+--+--+--+--+--+--+--+--+--+--+
+		|  |  |  |  |  |  |  |  |  |  |  |
+		+--+--+--+--+--+--+--+--+--+--+--+
+		|  |  |  |3w|  |  |  |3w|  |  |  |
+		+--+--+--+--+--+--+--+--+--+--+--+
+		|  |  |2w|  |  |2w|  |  |2w|  |  |
+		+--+--+--+--+--+--+--+--+--+--+--+
+		|  |1w|  |1w|  |1w|  |1w|  |1w|  |
+		+--+--+--+--+--+--+--+--+--+--+--+
+
+The aim of the game is reaching the other side of the board with one
+piece. A move is simple -- one move consists of moving exactly one
+piece one square to the left, right, forward or backwards. The opponent's
+pieces cannot be captured, unlike e.g. chess or checkers.
+
+There are two ways to `block' an opponent's piece:
+
+- a physical block, i.e. if a square is occupied by a piece, one cannot
+  move another piece to that particular square.
+
+- `strength blocking'; if the sum of the strengths of the opponent's
+  pieces on a destination row is at least equal to the sum of the
+  strengths of your own pieces on the row of the current position of
+  a piece, the piece is effectively blocked. An example:
+
+		+--+--+--+--+--+--+--+--+--+--+--+
+		|  |  |  |  |  |5b|  |  |  |  |  |
+		+--+--+--+--+--+--+--+--+--+--+--+
+		|  |  |  |5w|  |  |  |  |  |  |  |
+		+--+--+--+--+--+--+--+--+--+--+--+
+
+  white cannot move her/his piece forward, 'cause the strengths are equal.
+
+		+--+--+--+--+--+--+--+--+--+--+--+
+		|  |  |  |1b|  |5b|  |  |  |  |  |
+		+--+--+--+--+--+--+--+--+--+--+--+
+		|  |  |  |5w|  |  |  |  |  |  |  |
+		+--+--+--+--+--+--+--+--+--+--+--+
+
+  there are two reasons why white cannot move forwards: there's a 
+  physical block (1b) and there's not enough strength to move
+  forwards (5w &lt; 1b+5b == 6b).
+
+The value (or strength) of a piece is not fixed. If a piece with
+strength `n' moves backwards beyond row `n' (or 12-`n' in case
+black moves backwards), its value will degrade, according to the
+following sequence: 5-&gt;3-&gt;2-&gt;1. Note that a piece has at least a
+strength of one. 
+
+If a piece with strength `n' moves <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>forwards<span class="moz-txt-tag">_</span></span> `n' rows (relative
+to the starting position) its value will upgrade according to the
+following sequence: 1-&gt;2-&gt;3-&gt;5-&gt;8. Note the fibonacci sequence BTW.
+
+There's a third situation where the value of a piece may decline.
+Every piece has a life span of eleven turns. If, a piece is <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>not<span class="moz-txt-tag">_</span></span> 
+moved, its life span goes down one generation (or move). Note that
+after a move all but one pieces have their life span reduced. If
+a piece <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>is<span class="moz-txt-tag">_</span></span> moved, its life span is restored to eleven turns again.
+
+The adjustment of the value and the life spans is done <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>after<span class="moz-txt-tag">_</span></span> a
+piece has moved. The opponent's pieces are only updated after s/he
+made her/his move. A piece with a strength of one receiving a life
+span equal to zero, must be removed from the board.
+
+Well, this is basically what it's all about -- and I really would
+like to build a real, cheap, portable game board. But there's one
+small problem however: how do I build a thingy like this? Do I have
+to stick some `intelligence' in all 22 pieces and build in something
+like 22 connectors in that board; or is it a better idea to make
+those pieces out of glass (or something else, transparent) and display
+all the necessary information (value and life span) from underneath.
+This alternative needs 121 display `units', one per square of the
+board. But how do I detect the presence or absence of a piece then?
+
+I'd appreciate any tips, pointers, whatsoever that'll help me build
+this terrible game I became to hate so much ;-) Although I'm posting
+to these group (rec.games.[design|abstract]), I'm not so sure whether
+or not my site receives them both; so, could you please send me an e-mail
+copy of your reply/follow-up too? I'll post a summary if there's
+enough interest or I'll send you one through e-mail if you prefer.
+Just drop me a mail. 
+
+And for now -- thank's y'all in advance and have a good one,
+
+Jos aka <a class="moz-txt-link-abbreviated" href="mailto:jos@and.nl">jos@and.nl</a>
+----------------------------------------------------------------------------
+defenestration: (n) the act of throwing someone out of the window.
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Chess on spherical boards.</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Chess on spherical boards.</td></tr><tr><td><b>From: </b>tuc@calico.cs.wisc.edu (Brian A. Cole)</td></tr><tr><td><b>Date: </b>12/11/1992, 20:45</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+The chessboard we are talking about here is this one:
+] Mark-Jason Dominus (<a class="moz-txt-link-abbreviated" href="mailto:mjd@saul.cis.upenn.edu">mjd@saul.cis.upenn.edu</a>) writes:
+] ]     A good version of spherical chess would have all the squares be the
+] ] same, each adjacent to exactly eight others, or so it seems to me.
+] ] Perhaps you could accomplish it this way:
+] ] 
+] ] +--+--+--+--+--+--+--+--+
+] ] |A8|B8|C8|D8|E8|F8|G8|H8|
+] ] +--+--+--+--+--+--+--+--+
+] ] |A7|B7|C7|D7|E7|F7|G7|H7|
+] ] +--+--+--+--+--+--+--+--+
+] ] |A6|B6|C6|D6|E6|F6|G6|H6|
+] ] +--+--+--+--+--+--+--+--+
+] ] |A5|B5|C5|D5|E5|F5|G5|H5|
+] ] +--+--+--+--+--+--+--+--+
+] ] |A4|B4|C4|D4|E4|F4|G4|H4|
+] ] +--+--+--+--+--+--+--+--+
+] ] |A3|B3|C3|D3|E3|F3|G3|H3|
+] ] +--+--+--+--+--+--+--+--+
+] ] |A2|B2|C2|D2|E2|F2|G2|H2|
+] ] +--+--+--+--+--+--+--+--+
+] ] |A1|B1|C1|D1|E1|F1|G1|H1|
+] ] +--+--+--+--+--+--+--+--+
+] ] 
+] ]     First make file A adjacent to file H; square A,i (for some number i)
+] ] is orthogonally adjacent to H,i and diagonally adjacent to H,(i+1) and
+] ] H,(i-1) when these exist.  You now have a cylinder.
+] ] 
+] ]     Now pinch the ends together: x,g8 (for some letter x) is orthogonally
+] ] adjacent to (x+4 mod 8),8 and diagonally to (x+3 mod 8),8 and (x+5 mod
+] ] 8),8.
+
+Ok, on with the post.
+
+Mark-Jason Dominus (<a class="moz-txt-link-abbreviated" href="mailto:mjd@saul.cis.upenn.edu">mjd@saul.cis.upenn.edu</a>) writes:
+] ... <a class="moz-txt-link-abbreviated" href="mailto:tuc@calico.cs.wisc.edu">tuc@calico.cs.wisc.edu</a> (Brian A. Cole) writes:
+] &gt;   I don't think this behaves the way you want it to.  Consider the bishop
+] &gt;   starting in F1 that wants to move one sqare "southeast". 
+]
+]     A1.  The bishop could also have moved to H2 or G3 instead.  Or,
+] going `southwest', to C1, D2, or E3.  Note that the white-square bishop
+] has just turned into a black-sqare bisop.  That's the breaks.
+
+yes, but I was talking about how many places the bishop could go that
+were only <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>one<span class="moz-txt-tag">_</span></span> space away.  The problem is that in this board, the
+obvious notion of a "diagonal" is ambiguous.  So you either have to
+allow the bishop to move in either of the two "southwest diagonal"
+directions, or you have to (arbitrarily) limit it to one of them, and
+such a limit changes the topology of the board (see below).
+
+] &gt;   "squares" (actually closer to triangles) at the "pinched" ends meet three
+] &gt;   other spaces at edges and meet seven (!) others at its corners (five of
+] &gt;   these at the pole).
+]
+]     I must be missing something.  I think E1 is adjacent to D2, E2, F2;
+] D1, F1; and H1, A1, B1, and no others, which makes eight total, as it
+] should be.
+
+Well, there's two seperate things going on here.  One is the topological
+shape of the board, and the other is the game we will play on it.
+
+First, consider the shape of your board.  It <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>is<span class="moz-txt-tag">_</span></span> a sphere, but the
+"pinching" of the end causes <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>all<span class="moz-txt-tag">_</span></span> of the squares in the bottom row
+to touch each other at a point.  B1 shares an edge with A1, B2, and
+C1; and share a corner with A2 and C2 (in the usual way) and with
+D1, E1, F1, G1, and H1 (because of the pinch).  Again, the board
+<span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>is<span class="moz-txt-tag">_</span></span> a sphere.
+
+OK, now consider the rules of the game.  The rules don't handle what
+to do with a square that meets 5 (!) squares at one of its corners
+instead of just one, so the rules need a patch.  Fine, you just simply
+declare that
+    A1 meets E1 and doesn't meet C1, D1, F1, or G1
+    B1 meets F1 and doesn't meet D1, E1, G1, or H1
+    etc.
+This is a reasonable solution, and it makes the game quite playable
+(except for the diagonal problem).  The problem is that THE BOARD IS
+NO LONGER A SPHERE (in fact, it isn't even continous, which is why the
+diagonals are strange).  Again, this doesn't mean that the game we are
+playing fun or worthwhile, it just means we're not playing it on a sphere.
+
+This does makes sense, right?  We can't take to regions of a shere that
+share a corner, alter the sphere so that they don't share a corner any
+more, and still expect to have a sphere.
+
+] &gt;   Again, I think the only way (up to isomorphism) to do it is this way:
+
+]     Any time you try to bend a chessboard into a funny shape some
+] properties are going to change, to talking about an `only way' without
+] first discussing the properties you want to preserve is a little silly.
+
+You must have missed the post to which I was referring with the
+word "Again".  I'll include the relevant part of it here:
+
+# I think that this spherical board (or ones isomorphic to it) is the
+# only one in which these properties hold:
+#   1. each square shares one edge each with four other squares.
+#   2. moving one square "left" then one square "down" takes you the
+#      same place as moving one square "down" then one square "left"
+#      (and so on for other paths-that-should-go-the-same-place).
+# 
+#         a d c b b c d a
+#         g . . . . . . j        Squares with the
+#         f . . . . . . i        same letter touch.
+#         e . . . . . . h
+#         e . . . . . . h        Think of folding the
+#         f . . . . . . i        corners up till they
+#         g . . . . . . j        meet above the center.
+#         a m l k k l m a
+
+It happens to preserve other "nice" properties as well.  For instance,
+diagonals are well defined, with one-color bishops.  Also, if you pick
+any two adjacent squares for the white king and queen to start on, and
+then put the other 30 pieces down in the correct squares (relative to
+the king and queen), the game is mathematically the same no matter which
+initial squares you picked.
+
+] The board I've shown has some desirable properties (uniformity,
+] diagonals are great circles) and some undesirable ones.  (Diagonals are
+] each half black and half white.)  Yours has some good points and some
+] weak points too. (Left `k' is adjacent to right `k' in two different
+] directions, for example.)
+
+"diagonals" on your board are ambiguous without further clarification, but
+that's not the point.  The point is that it is not a sphere, but some other
+strange (perhaps more interesting) shape.
+
+brian
+<div class="moz-txt-sig">-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~     _______    _____     ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Brian A. Cole                 |_   _  |  |  ___|    Most people think disc golf
+  <a class="moz-txt-link-abbreviated" href="mailto:tuc@cs.wisc.edu">tuc@cs.wisc.edu</a>               | | | |__| |___     is a joke.    It is not.
+  ...!uwvax!cs.wisc.edu!tuc     |_| |__________|    That gives us the element
+                                                    of surprise.
+
+</div></pre></div></body>
+</html>
+</table></div>

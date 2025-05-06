@@ -1,0 +1,49 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Games that stretch MCTS</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Games that stretch MCTS</td></tr><tr><td><b>From: </b>christian &lt;christian@mindsports.nl&gt;</td></tr><tr><td><b>Date: </b>25/02/2011, 19:00</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Feb 25, 7:45 pm, <a class="moz-txt-link-abbreviated" href="mailto:markste...@gmail.com">markste...@gmail.com</a> wrote:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+The obvious tiny heuristic in a game of total annihilation is
+"Who has more pieces remaining on the board?"  This would lead to precisely
+the wrong moves in Oust opening gameplay, causing the program to kill
+everything within reach, ultimately leading to certain self defeat.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+MC is based on the endresults of playouts. It doesn't care about
+'counter intuitive' or heuristics. This is from "Creating an Upper-
+Confidence-Tree program for Havannah" by F. Teytaud and O. Teytaud:
+
+"Upper Confidence Trees are the most straightforward choice when
+implementing a Monte-Carlo Tree Search. The basic principle is as
+follows. As long as there is time before playing, the algorithm
+performs random simulations from a UCT tree leaf. These simulations
+(playouts) are complete possible games, from the root of the tree
+until the game is over, played by a random player playing both black
+and white. In its most simple version, the random player, which is
+used when in a situation s which is not in the tree, just plays
+randomly and uniformly among legal moves in s; we did not implement
+anything more sophisticated, as we are more interested in algorithms
+than in heuristic tricks. When the random player is in a situation s
+already in the UCT tree, then its choices depend on the statistics:
+number of wins and number of losses in previous games, for each legal
+move in s. The detailed formula used for choosing a move depending on
+statistics is termed a bandit formula, discussed below. After each
+simulation, the first situation of the simulated game that was not yet
+in memory is archived in memory, and all statistics of numbers of wins
+and numbers of defeats are updated in each situation in memory which
+was traversed by the simulation."
+
+<a class="moz-txt-link-freetext" href="http://ticc.uvt.nl/icga/acg12/proceedings/Contribution128.pdf">http://ticc.uvt.nl/icga/acg12/proceedings/Contribution128.pdf</a>
+
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: New game: Think Small</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: New game: Think Small</td></tr><tr><td><b>From: </b>barnett@mummy.agsm.unsw.OZ.AU (Glen Barnett)</td></tr><tr><td><b>Date: </b>03/12/1992, 04:45</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:By21D1.C74.1@cs.cmu.edu">&lt;By21D1.C74.1@cs.cmu.edu&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:Marc.Ringuette@GS80.SP.CS.CMU.EDU">Marc.Ringuette@GS80.SP.CS.CMU.EDU</a> writes:
+ [stuff deleted]
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+I took a different approach in computing the optimal strategy:
+assuming all N players use a probabilistic strategy s(x) which
+specifies a fixed probability of choosing each x, I compute the
+probability that an N+1th player can win by choosing a number y.
+Rather than reformat the equation, here's the code: (input is y and the
+function s(x):
+
+	sum=0.0;
+	for (x=1; x&lt;y; ++x) {
+		sum+= (s[x]/norm)*N*pow(1.0-(s[x]/norm),N-1.0) * (1-sum);
+	}
+	return (1-sum)*pow(1-(s[y]/norm),N*1.0);
+
+I implemented a simple iterative search for the best function s(x) by
+taking an initial s, finding the number w with maximum probability of
+winning, and increasing s(w) for the next iteration.
+
+Just for your interest, here's a histogram of s(x) for N=40:
+
+s(x) =    0.00                       0.05                             0.10
+         ---------------------------------------------------------------
+ x =  1: ************************************************************
+      2: ***********************************************************
+      3: *********************************************************
+      4: ********************************************************
+      5: *****************************************************
+      6: ****************************************************
+      7: **************************************************
+      8: ***********************************************
+      9: ********************************************
+     10: *****************************************
+     11: **************************************
+     12: **********************************
+     13: *****************************
+     14: ***********************
+     15: ****************
+     16: ********
+     17: **
+     18: *
+     19: 
+     20: 
+
+
+It sure looks like a binomial distribution, but I still haven't worked
+out the closed form.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+No way is that binomial - even approximately!
+
+Glen
+
+
+
+</pre></div></body>
+</html>
+</table></div>

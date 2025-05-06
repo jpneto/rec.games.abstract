@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: LOA for Zillions</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: LOA for Zillions</td></tr><tr><td><b>From: </b>dtroyka@justice.com (Dan Troyka)</td></tr><tr><td><b>Date: </b>21/12/2002, 18:49</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Revision to last post, correcting an error:
+
+
+You can make the script detect loss by capture as follows:
+
+1.  change the players statement to read (players Black Neutral White
+Neutral)
+
+2.  add this macro:
+
+(define check-enemy-group
+  (go to)
+  (if (and enemy? (not-flag? won))
+  (set-position-flag not-enemy true)
+  a1
+  (while (or not-enemy? (position-flag? not-enemy))
+    next
+  )
+  (set-position-flag enemy-group true)
+  a1
+  (set-flag done false)
+  (while (not-flag? done)
+    (set-flag done true)
+    a1
+    (while (not-position? end)
+      (if (and (and enemy? (not-position-flag? not-enemy))
+               (not-position-flag? enemy-group)
+               (adjacent-to? enemy-group))
+        (set-position-flag enemy-group true)
+        (set-flag done false)
+      )
+      next
+    )
+  )
+  a1
+  (set-flag won true)
+  (while (not-position? end)
+    (if (and (and enemy? (not-position-flag? not-enemy))
+             (not-position-flag? enemy-group))
+      (set-flag won false)
+    )
+    next
+  )
+  (if (flag? won) (change-owner indicator) (flip indicator) (flip
+indicator)))
+)
+
+3.  insert (check-enemy-group) after (check-group) in the
+line-of-action macro.
+
+
+No warranties on this code.  I didn't test it much but it worked in
+the situations I tried.   It treats simultaneous connections as a win
+for the moving player.
+
+Patrick Duff has a deluxe version of LoA that has been in the works
+for a couple of years, which he described recently at the ZoG
+discussion board.  It ought to be the definitive version when it comes
+out.
+
+</pre></div></body>
+</html>
+</table></div>

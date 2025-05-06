@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Line-Segments In Circle Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Line-Segments In Circle Game</td></tr><tr><td><b>From: </b>Dan Hoey &lt;haoyuep@aol.com&gt;</td></tr><tr><td><b>Date: </b>02/09/2008, 22:59</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-flowed">Leroy Quet wrote:
+<br><blockquote type=cite>Here is a game of mine that is NOT based on an n-by-n grid...
+<br></blockquote>
+<br>It is also the first of your games to which I suspect applicability
+<br>of combinatorial game theory.
+<br>
+<br><blockquote type=cite>The game is for 2 players.
+<br>
+<br>Draw a circle on a piece of paper. (Preferably the circle is drawn
+<br>with a compass, but this is not necessary. The circle should be drawn
+<br>carefully, however.)
+<br>
+<br>Put a dot at the circle's center.
+<br>
+<br>Players take turns drawing straight line-segments (preferably with a
+<br>straight-edge) within the circle as follows:
+<br></blockquote>
+<br>Given the rules, the circle can be replaced by any simple curve
+<br>of strictly positive curvature.&nbsp; That is, the curve would be the
+<br>boundary of a convex shape and would include no straight segment.
+<br>For the center we may use any point of the interior.
+<br>
+<br><blockquote type=cite>*A segment can go from the dot at the circle's center to the edge of
+<br>the circle.
+<br>
+<br>*A segment can go from {an intersection of another segment and the
+<br>circle} to {another intersection of a segment and the circle}.
+<br></blockquote>
+<br>I advise combining this into a single rule (R1) and making it explicit
+<br>that these are the only permissible moves.&nbsp; It would make sense to call
+<br>these two kinds of moves "radii" and "chords".&nbsp; We should probably have
+<br>a simple name for those points on the circle to which radii have been
+<br>drawn.&nbsp; For the time being, I'll call them "used points".
+<br>
+<br><blockquote type=cite>*A segment can pass through at most ONE line-segment that has already
+<br>been drawn.
+<br></blockquote>
+<br>The fact that this rule (R2) applies only to previously-drawn line-
+<br>segments makes the possible ending diagrams depend on order of moves.
+<br>For instance, the move sequence
+<br>&nbsp; 1. OA, 2. OB,
+<br>&nbsp; 3. OC, 4. AC(crossing OB),
+<br>&nbsp; 5. OD(crossing AC)
+<br>could not be played with moves 4 and 5 interchanged, because AC could
+<br>not be drawn crossing OB and OD.&nbsp; This suggests a variant ruleset in
+<br>which (R2) is replaced by
+<br>&nbsp; (R2') No segment may cross more than one other segment.
+<br>which would prohibit move 5 above.
+<br>
+<br><blockquote type=cite>*A segment can not coincide with a previously drawn segment. (ie. Two
+<br>segments can coincide at at most one point.)
+<br>
+<br>*A segment cannot be drawn from the center to the circle that is 180
+<br>degrees away from the segment last drawn by the other player, if the
+<br>last segment was drawn from the center to the circle. (This prevents a
+<br>player from simply matching the other player's moves, and so
+<br>automatically winning.)
+<br></blockquote>
+<br>Calling these (R3) and (R4), another alternate ruleset would
+<br>replace (R4) with
+<br>
+<br>&nbsp; (R4') No two radii may be collinear.
+<br>
+<br>I suspect this ruleset would be more tractable, because it removes
+<br>the entailment inherent in rule (R4).&nbsp; (Entailment is the restriction
+<br>of moves depending on the immediately preceding move).&nbsp; It would also
+<br>simplify (R3) to prohibit drawing a segment that had previously been
+<br>drawn.
+<br>
+<br>While the rules appear to permit a continuum of positions,
+<br>the description of a position can be simplified.&nbsp; Let A,B,C,...
+<br>be symbols for the used points, except that we denote by x' a used
+<br>point that is 180 degrees from a used point x.&nbsp; We also denote by (x')
+<br>an unused point 180 degrees from a used point x.&nbsp; The actual positions
+<br>of the points is then irrelevant; only the circular order of the symbols
+<br>x, x', and (x') matters.&nbsp; In addition, we would record which segments
+<br>xy (or xy' or x'y') had been drawn, and which arcs of the circle are
+<br>traversed by two chords, thus prohibiting further radii.&nbsp; In order to
+<br>enforce rule (R4), it is also be necessary to note the last move if it
+<br>is a radius.
+<br>
+<br>If rule (R4') is used, we would not need to use symbols x' or (x').
+<br>Instead, we would only have to record which pair of neighboring used
+<br>points are separated by more than 180 degrees, if any.
+<br>
+<br>The rule for drawing chords is simple: a "neighbor chord" is a chord
+<br>between two used points that have no intervening used points.&nbsp; A
+<br>"crossing chord" is a chord between two used points that have exactly
+<br>one intervening used point.&nbsp; An undrawn neighbor chord may always be
+<br>drawn.&nbsp; An undrawn crossing chord may be drawn if and only if the
+<br>intervening point has no crossing chord.&nbsp; No other chords may be drawn.
+<br>
+<br>I'm adding rec.games.abstract to this reply, in hopes that someone may
+<br>be able to attack this with the theory of impartial games.&nbsp; Perhaps
+<br>entailment is not quite the bugbear I fear, and rule (R4) can be dealt
+<br>with as well.
+<br>
+<br>Dan Hoey
+<br>haoyuep at aol.com
+<br>
+<br>
+<br></div></body>
+</html>
+</table></div>

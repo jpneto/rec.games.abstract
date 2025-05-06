@@ -1,0 +1,53 @@
+ï»¿<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Nim game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Nim game</td></tr><tr><td><b>From: </b>joc_kay@hotmail.com (Joe)</td></tr><tr><td><b>Date: </b>20/07/2004, 19:30</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:torbenm@diku.dk">torbenm@diku.dk</a> (Torben Ægidius Mogensen) wrote in message news:<a class="moz-txt-link-rfc2396E" href="mailto:7zk6wyzrgj.fsf@pc-032.diku.dk">&lt;7zk6wyzrgj.fsf@pc-032.diku.dk&gt;</a>...
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+How do you find these Groundy numbers?  Is it just the number of X's?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+No, it's not simply the number of X's. For instance, the Grundy value
+for
+
+(X X)
+(X X)
+
+is 0. For non-trivial impartial games, computing Grundy values
+constitutes a tedious task (per definition: if this computation would
+be easy, the game would be trivial!), and the game under discussion is
+no exception.
+
+The Grundy number for any position is a non-negative integer defined
+recursively as:
+
+1) the end-position (empty board) has a Grundy value of 0.
+
+2) a position with a non-zero Grundy value has some follower with any
+smaller Grundy value
+ 
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Can you prove [that Grundy values of non-interacting block positions 
+can be added together using Nim-addition], or is it just a hypothesis?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Non-interacting blocks constitute 'parallel games' the same way as
+individual Nim-heaps in the standard game of Nim constitute 'parallel
+games'. The only difference between standard Nim and the game A)
+described above, is that an individual Nim-heap constitutes a trivial
+game (with Grundy value equal to the heap size), whilst an individual
+block position in game A) is all but trivial.
+
+Joe
+
+
+</pre></div></body>
+</html>
+</table></div>

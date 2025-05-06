@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Battle FAQ</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Battle FAQ</td></tr><tr><td><b>From: </b>mac18@cus.cam.ac.uk (Sparky)</td></tr><tr><td><b>Date: </b>13/02/1994, 16:13</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+	Heres the latest version of the Battle FAQ, if anyone is interested
+take a look at the rules etc and mail me, theres a few places free in some
+current games and if theres enough interest I have a willing GM for another
+game.
+
+
+Battle FAQ (Frequently Asked Questions) V1.0
+Devised by: Richard Ashely
+Map drawing program and modifications: Colin Bell, Chris Carr, John Sloan
+(Last modified 13/2/94 Mark Cheverton)
+
+	This file contains some of the questions that are most commonly asked
+of GMs by the players. If you have a query about the rules then please have
+a look through this file first to see if its already been answered.
+	Do not take this document as law, always look at the local rule
+variations for the game you are playing. If your GM disagrees with any of the
+decisions in this document s/he will state their ruling there.
+
+--(Contents)-------------------------------------------------------------------
+
+	=1= Introduction to battle
+	=2= General questions
+	    =2.1=	How do I get the files?
+	    =2.2=	How do I view the map?
+	    =2.3=	Whats press for?
+	=3= Rules queries
+	    =3.1=	Movement
+	    =3.2=	Attack
+	    =3.3=	Elite
+	    =3.4=	Storage
+	    =3.5=	Power Chains
+	    =3.6=	Conversion
+	    =3.7=	Construction
+	    =3.8=	Defence
+	    =3.9=	Explosion
+	    =3.10=	Tunneling
+	    =3.11=	Range
+	    =3.12=	Hover
+	    =3.13=	General
+
+--(=1=)-------------------------------------------------------(Introduction)--
+
+	BATTLE is a play by mail strategy game with deadlines roughly every half
+week depending on the GM. For those who have little time, it should take at most
+about half an hour to think out your moves and mail them. Usually it doesnt
+take more than about five minutes.
+	The game is played with 12 players on a playing field made up of
+hexagons. Each player has a base which has a certain amount of power and can
+build and improve units. Units can be given attributes like move and attack
+but these have to be researched first by the base. The aim of the game is to
+eliminate the other players and be the last one surviving, games usually last
+about thirty moves.
+
+--(=2=)--------------------------------------------------(General Questions)--
+
+--(=2.1=)------------------------------------------(How do I get the files?)--
+
+	There are two methods for retrieving the files needed to play battle,
+the first is to use the BatServ robot in IRC...
+
+	Short instructions for operating batserv:
+
+	/msg batserv list	-	A list of files you can retrieve
+	/msg batserv send &lt;file&gt;-	Send you the file. You should
+					type /dcc get batserv which will
+					start the link.
+	Other commands will be added soon and hell be neatened up, mail me
+if you have any features you think should be added.
+
+	Alternatively the files can be retrieved by anonymous ftp from
+oozelum.csi.cam.ac.uk in /dist/Battle. Thanks to Nick McClaren for this service.
+	A quick guide to using ftp, Im assuming you're on a UNIX system here 
+because thats what I use, if not the messages may be slightly different but the
+commands should be the same , if you are on a vax or something with filename
+length restrictions you may have to replace 'get game16_status.txt' with
+'get game16_status.txt status' which will save it on your system as status,
+which is short enough. Everything you type below is marked with a ** before it -
+dont type the **) And replace my email address with yours when asked for a
+password.
+
+
+** ftp oozelum.csi.cam.ac.uk
+ftp&gt; Connected to oozelum.csi.cam.ac.uk.
+220 oozelum FTP server (Version 1.7.109.2 Tue Jul 28 23:46:52 GMT 1992) ready.
+Name (oozelum.csi.cam.ac.uk:mac18):  ** anonymous
+331 Guest login ok, send ident as password.
+Password: ** <a class="moz-txt-link-abbreviated" href="mailto:mac18@cus.cam.ac.uk">mac18@cus.cam.ac.uk</a>
+230 Guest login ok, access restrictions apply.
+ftp&gt; ** cd dist/Battle/game16
+250 CWD command successful.
+ftp&gt; ** get game16_status.txt
+200 PORT command successful.
+150 Opening ASCII mode data connection for game16_status.txt (1913 bytes).
+226 Transfer complete.
+local: game16_status.txt remote: game16_status.txt
+1994 bytes received in 0.0057 seconds (3.4e+02 Kbytes/s)
+ftp&gt; ** get game16_map.ps
+200 PORT command successful.
+150 Opening ASCII mode data connection for game16_map.ps (44161 bytes).
+226 Transfer complete.
+local: game16_map.ps remote: game16_map.ps
+44512 bytes received in 0.36 seconds (1.2e+02 Kbytes/s)
+ftp&gt; ** quit
+221 Goodbye.
+
+--(=2.2=)-------------------------------------------(How do I view the map?)--
+
+	The map is in postscript format so there are usually two ways to look
+at it - firstly the easiest and best is to just print it out. If youre unsure
+how to do this ask someone in the know or go to your computing service. The
+other method is if you can get access to a graphics terminal like an xterm,
+then, depending on what operating system youre using you can view it with a
+program like ghostview (for UNIX). Ghostview is also available for Windows.
+
+--(=2.3=)-------------------------------------------------(Whats press for?)--
+
+	Press is a means by which you can reach all the players instantly
+with just a mail message. This can be used for pompous declarations of war or
+peace or just for character building. Let your imagination roam free and do
+a bit of role playing - the press doesn't count in the actual game but it adds
+to the feel. To mail some press send the message to <a class="moz-txt-link-abbreviated" href="mailto:mac18@cus.cam.ac.uk">mac18@cus.cam.ac.uk</a> with
+the subject line pressX where X is the game number. Press can also be mailed
+anonymously by sending it to the same address and asking (but don't make the
+title pressX or it'll be forwarded!)
+
+--(=3=)-----------------------------------------------------(Rules Queries)--
+
+--(=3.1=)--------------------------------------------------------(Movement)--
+
+	What happens if you have two adjectant pieces, neither of which
+can attack, are they stuck there?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	Yes, they are stuck there. Both can be considered to be attacking, but
+</pre></blockquote><pre wrap class="moz-quote-pre">
+without the capability (ie they do no damage). Any two adjacent enemy units must
+stop and combat is mandatory, unless elite statuses are used.
+	
+.............................................................................
+
+	Am I correct in assuming that a piece in combat cannot move away
+(except using elite statuses), even if the piece it is in combat with moves away
+on the same movement phase (using elite again)? What about if the other piece 
+has moved away on a previous movement phase?
+
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	Yes, you cannot disengage unless you use elite. If the piece moves away
+</pre></blockquote><pre wrap class="moz-quote-pre">
+using elite you cannot move away on the same phase unless you too use elite, but
+on subsequent phases you can move
+
+.............................................................................
+
+	Take two pieces, one at height 0 and the other at height 1 in a C-wards
+direction. The lower piece is ordered to move C and the upper piece F
+(so in effect they swap places on the map) does this require elite (if they're
+enemy pieces that is)
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	No, they are not adjacent when they move, so no elite is necessary.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+Note that if piece A has move 2 and piece B has move 1, they WILL become
+adjacent once piece A has moved. The solution to this is for piece A to order
+move 0C while piece B moves F so that they move in the same movement phase.
+
+--(=3.2=)----------------------------------------------------------(Attack)--
+
+        Suppose there are 2 units 1A12 &amp; 1B41 in adjacent hexes. They battle.
+How is the battle run? Do they damage each other by 'attack' amounts each turn,
+or is the battle fought to a conclusion in the turn that they meet?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	The former, they each do 'attack' damage on each other per turn
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+.............................................................................
+
+	If I have a unit with attributes 221 and it's attacking a unit with
+attributes 132 then at the end of the turn, assuming the elite status isn't used
+to run away or target attacks the two units end up as 110 and 022, don't they?
+Or am I misunderstanding the attack rules?
+
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	Correct, the attack is simultaneous, and piece 1 loses 3, 1 move, 1
+</pre></blockquote><pre wrap class="moz-quote-pre">
+attack, 1 elite, piece 2 loses 2, 1 move, 1 attack.
+
+.............................................................................
+
+	Can I specify that I dont want a unit to attack an adjectant enemy?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	It is possible to not attack a piece if you're adjacent to it, by using
+</pre></blockquote><pre wrap class="moz-quote-pre">
+elite to ignore adjectancy just like in the Move phase. Note that to attack a
+piece with range when adjectant to an enemy piece takes two elite - one to
+ignore the adjectancy and then another to split the attack between the two
+pieces.
+
+.............................................................................
+
+	Can one use elite to attack with less than one's full strength?
+	
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	Yes, but it takes two elite to do so, one to split, and one to ignore
+</pre></blockquote><pre wrap class="moz-quote-pre">
+adjacency of the bit you don't want to attack. Note that if you are adjacent to
+more than one unit, it takes one elite to split (assuming you wish to only
+attack <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>one<span class="moz-txt-tag">_</span></span> unit at less than full strength, and waste the rest of your attack)
+, and one elite to ignore EACH of the adjacent units. Eg. if you are surrounded
+by three units, and wish to attack one of them at less than full strength and
+ignore the rest, you must use a total of four elite. If you wish to attack two
+of them (but still not use all your attack) you need 5 elite : two for splitting
+, 3 for ignoring.
+
+--(=3.3=)-----------------------------------------------------------(Elite)--
+
+	Can two elite 1 pieces combine to work as an elite 2 piece?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	Yes
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+--(=3.4=)---------------------------------------------------------(Storage)--
+
+	If I build a unit with movement and storage and then put power into it, 
+I assume I can do all this in one turn.  Can I then, however, also in the same
+turn move the unit, and transfer the power out of it?  It would be nice, but I
+guess it's not possible.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	Correct. You can build it, but since build comes before movement, once
+</pre></blockquote><pre wrap class="moz-quote-pre">
+the piece has moved, it can no longer build.
+
+.............................................................................
+
+	Can you build a unit with storage, fill it, and then use that stored
+power to build up another unit?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	Yes. See above.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+.............................................................................
+
+1)	Can pieces use stored power to modify themselves?
+2)	Can you use stored power passing to do part of an attribute? Each to
+increase something from 1 to 2 can you put in one point from the base and
+one point of passed power from a neighbouring piece?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	1) Yes  2) Yes, since this is effectively a power chain and chains are
+</pre></blockquote><pre wrap class="moz-quote-pre">
+instantaneous so all the power is in one place and usable. Also power can be
+passed through a base to do this as if the base had infinite storage.
+
+.............................................................................
+
+	Can a piece which has 1 power storage, with 2 points of power stored
+do the following...
+	1) Pass 2 points of power along a chain
+	2) Get 2 more in from another source as a refill
+	3) Use the new 2 power to upgrade (not pass power to, but upgrade) a
+neighbour?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	1) Yes  2) Yes  3)  No
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+--(=3.5=)----------------------------------------------------(Power Chains)--
+
+        Given this scenario:
+
+	NOTQUITEREAL  Random Player  <a class="moz-txt-link-abbreviated" href="mailto:user@ideal.world.gov">user@ideal.world.gov</a>
+	  Base A1       Research Level:4        Power:11
+	  1A1111/0  A2
+	  2A1111/0  A3
+	  3A1111/0  A4
+	  4A1       A5
+
+1)	Would it be possible to transmit 2 power down the line to 4A giving it
+  Attack &amp; Elite 1?
+2)	Would it be possible to transmit 2 power down the line to 4A giving it
+  Attack &amp; Elite 1 and leave 2 power in each of 1A,2A,3A?
+3)	Would it be possible to transmit 11 power down the line to 4A giving it
+  Attack, Elite &amp; Storage 2 with 2 stored power?   If not then would it be
+  possible to increase 1A to storage 2, pass power to 1A &amp; increase 2A to
+  storage 2, pass power to 2A and increase 3A to storage 2, then pass 4 power
+  down the chain to give 4A Attack 2 &amp; Elite 1?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	1) Yes  2) No  3) No  4) No, but some of that is possible.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+	The basic idea about power chains (I know this isn't detailed very well
+in the rules) is that a unit can have storage built in it and pass on power in
+the same build phase, but a unit can only give and/or receive the max amount of
+power it can handle ONCE in each build phase. ie A unit can start off a turn
+with stored power, give it and then receive it from another source again that
+phase, but not pass on the second lot of power. Similarly an empty unit can
+pass on one lot of power, but not receive a second lot.
+
+.............................................................................
+
+        Can you move power up and down (in chains or from a base)?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	Power may only be passed down, allowing passing up makes it far too easy
+</pre></blockquote><pre wrap class="moz-quote-pre">
+to build hardhats, etc., but it was agreed to allow passing down to facilitate
+repair of tunnelling units.
+
+--(=3.6=)------------------------------------------------------(Conversion)--
+
+	Can a piece convert two pieces in one turn, by splitting its convert?
+Could this be done by expending an extra elite to perform the split (as in
+splitting attacks?)
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	A unit can split its convert, no elite is needed 
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+.............................................................................
+
+	Is it possible for 2+ units to gang up &amp; pool their convert whilst
+attempting to convert others, or is it purely a 1:1 thing. If not, what if
+1X1000/0 2, 2X1000/0 2,1Y1000/0 2 all attempt to convert 1Z1 at the same time?
+Do 1X &amp; 1Y 'Stand off' whilst 2X converts successfully?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	Units of the same faction can pool to effect a conversion.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+--(=3.7=)----------------------------------------------------(Construction)--
+
+	In the rules it sates (under Hover) that "The perimeter wall is at all
+heights but interior walls only start at height 0."
+
+1)	Do the walls between bases, ie between M and A count as interior walls?
+2)	Do the walls surrounding the +5 hex count as interior walls?
+3)	Can these walls be 'removed' by construction units?
+4)	Can the perimeter walls be 'removed' by construction units (by removing
+  the wall at the bottom the rest falls down...)?  (not that there's much
+  point in this...)
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	1) Yes  2) Yes  3) Yes  4) No
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+.............................................................................
+
+	Can a piece build or destroy a wall more than once in the same turn
+if it has more than one construct?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	Yes, in the event of two pieces doing opposing things then the the one
+</pre></blockquote><pre wrap class="moz-quote-pre">
+using more levels of construction will succeed.
+
+--(=3.8=)---------------------------------------------------------(Defence)--
+
+	No questions!
+
+--(=3.9=)-------------------------------------------------------(Explosion)--
+
+	Is explosion blocked by defence?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	No, this may vary in some games see the local rule variations.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+--(=3.10=)------------------------------------------------------(Tunneling)--
+
+	If a piece tunnels into a hex causing a wall to fall down, can another
+piece move 'through' that wall on the same movement phase?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	Yes, the jusitification is the following: the movement phase can b
+</pre></blockquote><pre wrap class="moz-quote-pre">
+thought to consist of three subphases:
+	1. Any pieces of earth needing to be removed for tunnelling are removed
+and any walls falling down fall down now.
+	2. All the pieces are moved
+	3. Any piece without sufficient hover to stay where they are fall.
+
+
+Perhaps the following illustration would be helpful.  (This is a side view)
+                         _____
+                        W     |        In the case where X moves to the left
+                        W  Z  |       then both walls (W) fall down.  Z and
+        _______         W_____|       Y can the move through where the walls
+        |      W    |||||             were the following movement phase.
+        |  Y   W    |||||
+        |______W    |||||
+               |||||     |
+               |||||  X  |
+               |||||_____|
+
+.............................................................................
+
+	Is it possible to tunnel under a base?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	No
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+--(=3.11=)----------------------------------------------------------(Range)--
+
+	If two pieces are separated by one range and there is a wall directly
+along their line of sight (eg a piece at L7 and on at M9 with a wall at L8A)
+do the pieces have los on each other.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	 No the wall blocks the los.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+.............................................................................
+
+	Exactly how does line of sight work?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	Draw a straight line between the <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>centres<span class="moz-txt-tag">_</span></span> of the two pieces involved,
+</pre></blockquote><pre wrap class="moz-quote-pre">
+and look at all the hexes it goes through (define hex here as a location a piece
+can sit in, ie A4 and A4+1 are distinct hexes). Look at all the hexes it goes
+through: if there's a piece in any of them or a wall at the point it goes
+between two hexes then the shot is blocked.
+	Trouble starts when you attempt to shoot along lines which go through
+points on the boundaries of more than two hexes. There are two possibilities for
+this: either (a) you shoot along an edge of a hex, or (b) you shoot through a
+point which is on one of the top edges or bottom edges of a hex.
+	In case (a), you need to look at what happens just left or just right
+of the line. If either is clear, then you can see the target.
+	Case (b) only arises when you're shooting down one of the 6 compass
+directions and also requires (x-height difference)/(y height difference) to be
+either an odd integer or the reciprocal of an odd integer. In this case, you
+look at what happens just above and just below the line.
+
+	The following is useful: if you're trying to hit a piece, if you're
+higher up than you are further away, then you need to have a clear line to the
+top of the piece, if you're lower down then you need to have a clear line to the
+side of the piece. If you're equally high up and far away (which means you need
+to be shooting down one of the compass directions), then you can do it either
+way.
+
+--(=3.12=)----------------------------------------------------------(Hover)--
+
+	At what points do units which have had their flying gear shot to bits
+fall out of the sky.  Before or after the conversion phase?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	Before
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+.............................................................................
+
+	If a piece with two hover moves over a piece that is hovering at a
+height 0 over a 2 deep hole with only two hover, does the lower piece fall?
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	Two pieces vertically adjectant only fall until the lower piece is at
+</pre></blockquote><pre wrap class="moz-quote-pre">
+its hover limit, hence the piece can move on top with only two hover and
+doesn't fall.
+
+--(=3.13=)--------------------------------------------------------(General)--
+
+	Please confirm that it is possible to make your movement orders
+conditional on other players' builds.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	This is possible since the movement phase is after Build and so can be
+</pre></blockquote><pre wrap class="moz-quote-pre">
+conditional on what happened.
+
+.............................................................................
+
+	How are points restored to bases which have been attacked? Say someone
+knocks 3 points of somoene's base.. how much does it cost to get back to full
+power? Is it 1+2+3 or 8+9+10 or...
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	The former.  Also, you don't need to do it in one turn.  if you are down
+</pre></blockquote><pre wrap class="moz-quote-pre">
+6, you could regenerate 3 then 2 then 1 over 3 turns at a total cost of 6+3+1 =
+10.
+
+
+----------------------------------------------------------------------------
+<div class="moz-txt-sig">-- 
+_   /\/|  _   _   /  _                                     IRC: Brandoch
+   /   |_( /_/ '_/7     Email:  <a class="moz-txt-link-abbreviated" href="mailto:mac18@cus.cam.ac.uk">mac18@cus.cam.ac.uk</a>
+Mark Cheverton     \_)  SnailMail: 363 Kings College, Cambridge, England
+     "Time is sufficient to those who utilise it" - Leonardo da Vinci
+
+</div></pre></div></body>
+</html>
+</table></div>

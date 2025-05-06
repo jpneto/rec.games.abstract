@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: 3-D go</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: 3-D go</td></tr><tr><td><b>From: </b>torbenm@diku.dk (Torben AEgidius Mogensen)</td></tr><tr><td><b>Date: </b>17/06/1993, 15:30</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Andrew Lewis Tepper <a class="moz-txt-link-rfc2396E" href="mailto:at15+@andrew.cmu.edu">&lt;at15+@andrew.cmu.edu&gt;</a> writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+3-D go may be unplayable, but what about go on an arbitrary graph: It's
+a superset of normal go, but some vertices would have a higher "value"
+than others because they are adjacent to more other vertices. Any
+research on this?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I have (briefly) looked into using Penrose tiles for Go.
+
+In case you haven't heard of these, they consist (in this version) of
+two different rhombic tiles, both with all sides being length 1, but
+with different angles (36 and 144 versus 72 and 108). With these tiles
+you can tile the infinite plane, but (with some purely local
+restrictions on placement) it can only be done non-periodically.
+
+The game consists of two phases: first you construct the board, then
+you play. Constructing the board consists of alternately placing tiles
+on the table, in such a way that a new tile must touch as many of the
+already laid tiles as possible. This continues until a certain number
+of tiles have been placed. Then the game is played using the normal Go
+rules, with the only exception being that you play on the tiles
+instead of the vertices.
+
+Due to the shape of the tiles, every tile has four freedoms (like in
+normal Go), but the number of tiles that meet at a vertex can vary
+from 3 to 10. As the board grows, the ratio of the tiles approach the
+golden mean (1.618...), so one could count the tiles differently in
+the final score. In any case, the number of available tiles should be
+in this ratio, preferably by choosing two consecutive fibonacci
+numbers (e.g. 55 and 89, giving a total of 144 tiles). The board
+should be somewhat smaller than a normal Go board, as the complexity
+is higher. Also, the tiles have to be larger than the gridsize of a
+normal Go board, as they are hard to handle otherwise.
+
+	Torben Mogensen (<a class="moz-txt-link-abbreviated" href="mailto:torbenm@diku.dk">torbenm@diku.dk</a>)
+
+</pre></div></body>
+</html>
+</table></div>

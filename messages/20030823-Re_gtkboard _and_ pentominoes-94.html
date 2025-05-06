@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: gtkboard *and* pentominoes</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: gtkboard *and* pentominoes</td></tr><tr><td><b>From: </b>arvindn1@yahoo.com (Arvind Narayanan)</td></tr><tr><td><b>Date: </b>23/08/2003, 07:57</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+"Arthur J. O'Dwyer" <a class="moz-txt-link-rfc2396E" href="mailto:ajo@andrew.cmu.edu">&lt;ajo@andrew.cmu.edu&gt;</a> wrote in message news:<a class="moz-txt-link-rfc2396E" href="mailto:Pine.LNX.4.55L-032.0308141023000.1995@unix48.andrew.cmu.edu">&lt;Pine.LNX.4.55L-032.0308141023000.1995@unix48.andrew.cmu.edu&gt;</a>...
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+On Wed, 13 Aug 2003, Bob Harris wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+[snip]
+snprintf() is standard C99, and (all of my copies of) gcc support it
+(even though gcc isn't C99-compliant).  But it wasn't in C89, the standard
+that most everybody uses.  [It's safer than plain sprintf(), which is why
+they recommended it.]
+</pre></blockquote><pre wrap class="moz-quote-pre">
+That's true. With sprintf() it is difficult to know before hand that you
+won't exceed the size of the string. If you resolve never to use string 
+functions without an 'n' in them, you'll solve most of your buffer overflow
+bugs :)
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+But yeah, gtkboard #includes something called &lt;glib.h&gt; and uses functions
+like g_strdup(), which look to me like garbage-collection.  I sure hope
+</pre></blockquote><pre wrap class="moz-quote-pre">
+As another poster mentioned glib exists for windows also.
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I'm right about that. ;-)  And the Gtk interface stuff is woven into
+the getmove() functions pretty tightly.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+Not so! How can that be when game.h doesn't #include &lt;gtk.h&gt;?
+Currently getmove_kb() requires gdkkeysyms.h, but adding a trivial
+abstraction layer will remove that dependency, which I'm planning
+to do soon.
+
+Arvind
+
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Othello - move ordering question</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Othello - move ordering question</td></tr><tr><td><b>From: </b>anw@maths.nott.ac.uk (Dr A. N. Walker)</td></tr><tr><td><b>Date: </b>22/12/1994, 14:20</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+[Disclaimer:  I'm <b class="moz-txt-star"><span class="moz-txt-tag">*</span>not<span class="moz-txt-tag">*</span></b> a strong player, but Joel Feinstein, frequent
+British champion and author of a strong program, is;  and I have done
+some work with Joel on developing his program.  Joel is currently away,
+but requests for further info should probably go to <a class="moz-txt-link-rfc2396E" href="mailto:jff@maths.nott.ac.uk">"jff@maths.nott.ac.uk"</a>
+rather than to me. -- ANW]
+
+In article <a class="moz-txt-link-rfc2396E" href="mailto:3d9s8s$4a9@mycroft.rand.org">&lt;3d9s8s$4a9@mycroft.rand.org&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:jim@acm.org">jim@acm.org</a> writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I've been poking around with optimal play on reduced Othello boards, and
+trying to make my tree search efficient enough to get up to interesting
+sizes.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+	What do you call "interesting"?  6x6 is completely solved, and
+anything much larger might as well be the complete game!
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+	 After incorporating alpha-beta and large transposition tables,
+it's usual to add the killer heuristic
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+	Joel's program doesn't use transposition tables.  <b class="moz-txt-star"><span class="moz-txt-tag">*</span>I<span class="moz-txt-tag">*</span></b> think they
+would help, but Joel isn't convinced.  Certainly they are much less use
+than in chess or go, where it is common for any permutation of a move
+sequence to lead to the same position.  It "sort-of" uses killers, but
+in a rather convoluted way [they affect move ordering].
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+if there's a corner move, take it; otherwise try all the moves in
+numerical order (like a TV scan across the board).
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+	Joel's program has a rather devious permutation method;  the "raw"
+numerical order is not just left-to-right, top-to-bottom, but involves
+a pre-determined sequence that visits interesting squares first.  This
+sequence evolves as some moves become killers and others are "used up".
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Oddly, this degraded the tree-searching performance dramatically from
+just leaving the moves in numerical order, although it of course ends up
+with the same result.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+	I found the same when fiddling with Joel's program!  Even when
+he and I were both agreed that something should be an improvement, it
+actually always made things worse.  I conclude that his program is
+evolutionarily stable against small changes.  This applies both to
+move ordering and to positional evaluations.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Could a human Othello player comment on this?  I thought perhaps retaining
+the threat of moving into a corner might be more effective than grabbing
+it immediately; does this correspond to a known human strategy?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+	I can't comment usefully in the case of Othello, but the equivalent
+is well-known in chess:  "The threat is stronger than the execution!".
+
+<div class="moz-txt-sig">-- 
+Andy Walker, Maths Dept., Nott'm Univ., UK.
+<a class="moz-txt-link-abbreviated" href="mailto:anw@maths.nott.ac.uk">anw@maths.nott.ac.uk</a>
+
+</div></pre></div></body>
+</html>
+</table></div>

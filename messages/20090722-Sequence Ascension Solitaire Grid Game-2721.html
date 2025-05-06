@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Sequence Ascension Solitaire Grid Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Sequence Ascension Solitaire Grid Game</td></tr><tr><td><b>From: </b>Leroy Quet &lt;qqquet@mindspring.com&gt;</td></tr><tr><td><b>Date: </b>22/07/2009, 21:20</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+This is a game/challenge for one player. Start by drawing an n-by-n
+grid on paper. (n could be about 5 to 10, maybe.)
+
+Next, either use a pre-existing integer sequence (such as {a(k)},
+where a(n) = the number of divisors of n), or randomly pick the
+integers in the sequence.
+If randomly picking the sequence, first write down n^2 numbers in a
+list before continuing to the next part of the game.
+It might help to first write down the numbers even if you are using a
+preexisting sequence. Write down n^2 numbers, just in case they are
+needed.
+
+Next, place the integers into the grid, starting at any square, and
+then placing each number -- in order by the order of the indexes (a
+(1), then a(2), then a(3)...etc), each number in any empty square
+horizontally, vertically, or diagonally adjacent to the last square
+filled with a number.
+(a(k) is always next to a(k-1).)
+Continue doing this until you cannot place any more integers (because
+there are no empty squares next to where you last put a number).
+
+Next, starting at any square with a number in it, draw a path of
+connected line segments from square to adjacent square -- adjacent and
+in the direction of either vertical, horizontal, or diagonal -- such
+that each number drawn to is greater than or equal to the number in
+the previous square of the path.
+(The numbers of the path never descend.)
+The path must not visit any square more than once. But two diagonal
+segments of the path may cross.
+
+Move until you can't move anymore. (The last square visited by the
+path will not be bordered by any unvisited square with a number &gt;= the
+value in the last square.)
+
+Your score is the number of squares your path visits.
+
+Note: I realize that you could use the all-1's sequence, say, and
+score a perfect n^2 points each time, but that wouldn't be much fun.
+
+As an easy challenge to myself I used the first 16 terms of the number-
+of-divisors sequence (1,2,2,3,2,4,2,4,3,4,2,6,2,4,4,5)
+and a 4-by-4 grid. I got a top score of 13 (in several ways).
+Can you do better?
+Of course you can!
+
+Thanks,
+Leroy Quet
+See more of my games at: gamesconceived.blogspot.com/
+
+
+</pre></div></body>
+</html>
+</table></div>

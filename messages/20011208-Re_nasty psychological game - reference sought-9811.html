@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: nasty psychological game - reference sought</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: nasty psychological game - reference sought</td></tr><tr><td><b>From: </b>Don Woods &lt;don@iCynic.com&gt;</td></tr><tr><td><b>Date: </b>08/12/2001, 20:48</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+David J Bush <a class="moz-txt-link-rfc2396E" href="mailto:twixt@nospamtodaycstone.net">&lt;twixt@nospamtodaycstone.net&gt;</a> writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+|Nasty indeed! I tried to analyze a version with only two lines,
+|and any real number between 0 and one's score as a possible bid.
+|So what is B's probability of winning in the following position
+|assuming perfect play?
+|
+|    |  |       Score
+|  A |  O B     A: 1
+|    |  |       B: x
+|
+|Let's call it p(x). Clearly p(x) = 0 for x &lt; 1/2, and p(x) = 1
+|for x &gt; 1. I found it tricky to work out p(x) for 1/2 &lt; x &lt; 1. 
+|Eventually I came up with p(x) = 2 - 1/x, but it's not really
+|a proof (yet). Is it right, though?
+
+I'm not sure, but I notice you do not mention the case x=1.
+At first, I thought this would be a sure win for B, until I
+saw bids must be &lt; 1.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I don't see where he said bids were &lt; 1.  He said "between 0 and
+one's score".  And if you allow bids of exactly 0 or one's score,
+then you eliminate all those nasty questions of "who can name the
+smaller epsilon".
+
+Given this, you can generalise the position by observing that
+multiplying both player's scores by the same amount (other than
+zero) has no effect on the probability.  So then, given a pair of
+scores, you can represent each player's strategy as a probability
+distribution P(s) where P(s) is the probability that the player
+bids s.  (Or perhaps the probability he bids less than or equal
+to s; I'm not sure which works better.)  The function P(s) will,
+of course, be a function of the two scores.  Then B's chance of
+winning is the double-integral across all possible bids by both
+players, of the chance of those particular bids, times the
+probability of B winning given the resulting scores.
+
+I don't have time to do the math beyond that, but that's what
+you're trying to solve for.
+
+	-- Don.
+
+</pre></div></body>
+</html>
+</table></div>

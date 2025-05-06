@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Multiplication Within The Permutation -- Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Multiplication Within The Permutation -- Game</td></tr><tr><td><b>From: </b>Leroy Quet &lt;qqquet@mindspring.com&gt;</td></tr><tr><td><b>Date: </b>10/11/2010, 13:17</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Leroy Quet wrote:
+\ This may be a stupid game. I think it may be easy to see that with
+\ optimum play, we end up with something like this (or its reflection
+\ about the horizontal center-line):
+\
+\ . 3 . . . . .
+\ . . 5 . . . .
+\ . . . 7 . . .
+\ . . . . 6 . .
+\ . . . . . 4 .
+\ . . . . . . 2
+\ 1. . . . . .
+\
+
+What???
+
+Okay, let's assume that player 1 starts both parts of the game.
+Let's assume that the x's are in the same locations as in my "optimal"
+game above.
+But I will renumber the grid so that each player takes the largest
+possible number of points without any look-ahead. (Greedy algorithm.)
+
+Then we have:
+.. 3 . . . . .
+.. . 5 . . . .
+.. . . 7 . . .
+.. . . . 2 . .
+.. . . . . 6 .
+.. . . . . . 4
+1. . . . . .
+
+Player 1 gets: 12+25+9 = 46 points.
+Player 2 gets: 9+16+4 = 29 points.
+
+Now, player 2 could know he is going to lose with the no-look-ahead
+strategy. So what would happen if instead of placing the 3 where he
+does, he places it in a different location, then both players continue
+the game using the no-look-ahead Greedy "algorithm"?
+
+.. 5 . . . . .
+.. . 3 . . . .
+.. . . 7 . . .
+.. . . . 2 . .
+.. . . . . 6 .
+.. . . . . . 4
+1. . . . . .
+
+Player 1 gets: 12+16+16 = 44 points.
+
+Player 2 gets: 4+25+4 = 33 points.
+
+Player 1 still wins, but by fewer points.
+
+So, I am guessing that if player 2 is going to win the n = 7 case, he
+may need to place his x's in different locations in the first part of
+the game.
+
+So, the question is, is this a stupid game? What if there are more
+players or if the grid is bigger?
+
+Thanks,
+Leroy Quet
+
+
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Divisors/Multiples Sequence Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Divisors/Multiples Sequence Game</td></tr><tr><td><b>From: </b>Leroy Quet &lt;qqquet@mindspring.com&gt;</td></tr><tr><td><b>Date: </b>21/04/2011, 18:23</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Here is a game for any plural number of players.
+
+r is a positive integer agreed upon by all players before the start of
+the game.
+I suggest that r be congruent to 1 mod {the number of players}.
+
+The game starts with a(1) = 1 and b(1) = 1. m and n both equal 1.
+
+Players alternate moves.
+
+(*)n=n+1.
+(**)m=m+1.
+A player on his move picks an integer a(m) that is either a divisor or
+a multiple of a(m-1).
+a(m) must be &lt;= r.
+The player gets max(a(m),a(m-1))/min(a(m),a(m-1)) added to his score
+if a(m) is not among (b(1),b(2),...b(n-1)).
+But the player gets
+2*max(a(m),a(m-1))/min(a(m),a(m-1))
+added to his score if a(m) is among (b(1),b(2),...b(n-1)).
+The player continues his turn as far as he wants, but until a(m) is
+not amongst (b(1),b(2),...b(n-1)).
+If the player is to continue his move, he goes to (**).
+If a(m) is not among (b(1),b(2),...b(n-1)) and the player wants to end
+his move, then b(n) = a(m), and switch whose turn it is, go to (*) if
+n is &lt; r.
+
+Play until n = r, and (b(1),b(2),...b(n)) is a permutation of the
+integers 1 through r.
+The winner is then the player with the LOWEST score.
+
+Thanks,
+Leroy Quet
+
+
+
+</pre></div></body>
+</html>
+</table></div>

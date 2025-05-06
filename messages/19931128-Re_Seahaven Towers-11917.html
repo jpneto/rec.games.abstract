@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Seahaven Towers</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Seahaven Towers</td></tr><tr><td><b>From: </b>ftww@cs.su.oz.au (Fred the Wonder Worm)</td></tr><tr><td><b>Date: </b>28/11/1993, 08:39</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:2c47kq$dac@fnnews.fnal.gov">&lt;2c47kq$dac@fnnews.fnal.gov&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:matt@severian.chi.il.us">matt@severian.chi.il.us</a> (Matt Crawford) writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+The game is not always winnable*.  I've played an X-windows version of
+the game.  In that, if you click "give up," the program checks to see
+whether the game was winnable from the initial position.  If it
+wasn't, it credits you with a "win" for purposes of recording your
+longest winning streak.
+
+(* Or, there's a flaw in the program.  But it seems correct to me.)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+That it's not always winnable is fairly easy to see.  Consider the following
+cards in the initial deal:
+
+          6 5
+  A
+  T
+  9
+  8
+  7
+
+Where they are all of the same suit.  To get the ace up requires moving the
+ten.  Moving the ten requires putting the 9, 8 and 7 on empty piles.  But
+this requires moving the 6 or 5.  The only place the 5 can go is on the 6,
+and the only place the 6 can go is on the 7.  i.e. you can't move the ten,
+and hence the ace, so you can't complete the game.
+
+Are you sure it checks the position?  A friend of mine wrote an (admittedly
+simple) program to check a position for solubility using a backtracking
+algorithm.  Possibly it wasn't very good, but I've had it try to evaluate
+over 58 million possible positions before someone killed it or the machine
+crashed.  This took many many hours.  If he and I missed a simple method
+of deciding it's solubility, we'd both like to know.  Can you describe
+what it's doing?
+
+Cheers,
+Geoff.
+
+-------------------------------------------------------------------------------
+Geoff Bailey (Fred the Wonder Worm)   |   Programmer by trade --
+<a class="moz-txt-link-abbreviated" href="mailto:ftww@cs.su.oz.au">ftww@cs.su.oz.au</a>                      |       Gameplayer by vocation.
+-------------------------------------------------------------------------------
+
+
+</pre></div></body>
+</html>
+</table></div>

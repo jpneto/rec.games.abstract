@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Divisor Over Sums -- Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Divisor Over Sums -- Game</td></tr><tr><td><b>From: </b>James Waldby &lt;not@valid.invalid&gt;</td></tr><tr><td><b>Date: </b>12/06/2011, 19:47</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Sat, 11 Jun 2011 11:19:26 -0700, Leroy Quet wrote:
+....
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Players take turns placing 1,2,3,... n^2 into empty squares of the grid,
+one number each turn.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+....
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Let H represent the collection of variables h, where each h is the sum
+of a HORIZONTALLY-adjacent pair of integers in the grid.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+....[similarly but vertically for V]
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+(So, H and V each consist of n*(n-1) variables.)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+....
+In the above and in snipped lines, you refer to a number of
+computed values as "variables".  The term "values" would be better.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+[H] score: d*(number of h's that are divisible by d)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+....
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+[V] score: d'*(number of v's that are divisible by d')
+The player with the largest score wins.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+That score function seems (at least in your example game below) 
+to lead to somewhat mediocre play experience.  Perhaps something
+like "sum of numbers divisible by d, minus the largest number
+divisible by d, with d=1 disallowed" would make the game more 
+interesting.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+For example, let us say two poorly-playing players have this n=4 grid:
+
+08 09 01 10
+03 11 16 07
+02 14 15 05
+04 12 06 13
+
+H = (17,10,11, 14,27,23, 16,29,20, 16,18,19)
+
+Let us say that player 1 picks 4, then he gets 4*3 = 12 points. (Because
+h's = 16, 20, and 16 are divisible by 4.) Had he picked 29, he could
+have gotten 29, however.
+
+V = (11,5,6, 20,25,26, 17,31,21, 17,12,18)
+
+Player 2 picks 3 and gets 3*4 = 12 points. She should have picked 31.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Presumably to allow the H player to feel less bad in defeat?
+31 is enough to win, but 17 would score 3 points more.  
+
+With the alternate score function I mentioned above (sum of divisibles,
+less largest divisible) scores like the following would result:
+1: 178    2: 56    3: 36    4: 12    5: 25
+6: 18     7-16: 0  17: 17   &gt;17: 0
+which suggests that this function would tend to favor divisors like
+2 or 3 (if 1 is disallowed), which apparently would give rather boring 
+play.  Probably there is no easy way to make this game playable in its
+original form; to be "interesting", a score functions probably should 
+give fairly uniform results across a wide range of divisors, which 
+then leads to a lot of tedium when comparing choices of divisors.
+
+In the above, much of the game time would consist of figuring out 
+what divisor to choose, after all the numbers have been recorded in
+the grid.  However, if the players record their divisors in advance, 
+there would be more emphasis on number placement strategy, and 
+presumably more-interesting game play.  The recorded divisors could
+be concealed until end, or, optionally, revealed at game beginning.
+
+A simple variant that might be easy and interesting:  After H and V 
+players take turns placing 1, 2, ... n^2 into an n x n grid, the score
+of each is the largest horizontal-pair sum or vertical-pair sum, 
+respectively, that he or she finds, and the larger score wins.  This
+should give a playable game.  Does a winning strategy exist?
+
+<div class="moz-txt-sig">-- 
+jiw
+
+
+</div></pre></div></body>
+</html>
+</table></div>

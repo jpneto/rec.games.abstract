@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Chess variant problem - a bug in Zillions?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Chess variant problem - a bug in Zillions?</td></tr><tr><td><b>From: </b>&quot;John Rowland&quot; &lt;johnr@journeyflow.spamspam.demon.co.uk&gt;</td></tr><tr><td><b>Date: </b>30/11/2003, 22:50</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,rec.games.chess.misc</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+"Alfred Pfeiffer" <a class="moz-txt-link-rfc2396E" href="mailto:apf@informatik.tu-chemnitz.de">&lt;apf@informatik.tu-chemnitz.de&gt;</a> wrote in message
+<a class="moz-txt-link-freetext" href="news:3FBE2026.3107@informatik.tu-chemnitz.de">news:3FBE2026.3107@informatik.tu-chemnitz.de</a>...
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+John Rowland wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+...
+When Zillions plays my game against itself,
+white wins nearly all of the time in various
+symmetrical starting positions.
+...
+All of the pieces have symmetrical move possibilities,
+including my "pawns" which can move (or capture)
+backwards as well as forwards, so I have not needed
+the Zillions "symmetry" command to make black's
+"pawns" move in the reverse direction.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Maybe the absence of symmetry commands is the
+reason for the differences in the play of white and black.
+
+I assume that the move generation will be done in the order
+of the statements that you have coded in your zrf.
+
+If (for example) you write in your zrf for the "pawns"
+
+  (moves
+     (pawn-move n)
+     (pawn-move s)
+  )
+
+then Zillions will generate with the white pawns:
+
+  first the forwards (offensive) moves, and
+  second the backwards (defensive) moves -
+
+but for the black pawns this order is the contrary:
+  defensive moves will be generated before the offensive moves.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+This is exactly what was happening! It's taken me a while to recode the
+script to use the symmetry command (for complicated reasons), but now that
+I've done it, black and white seem to be winning equal amounts. Thank you so
+much! You can't imagine how much time I wasted trying different starting
+positions to find a fair one, when they were probably all fair...
+
+Thanks also to Dan Troyka, whose advice was also useful.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+P.S. It would be nice we  could seem your new game.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I will upload it to the Zillions site when I am sure everything is okay.
+I'll email you to let you know when it happens. Thanks again!
+
+<div class="moz-txt-sig">-- 
+John Rowland - Spamtrapped
+Transport Plans for the London Area, updated 2001
+<a class="moz-txt-link-freetext" href="http://www.geocities.com/Athens/Acropolis/7069/tpftla.html">http://www.geocities.com/Athens/Acropolis/7069/tpftla.html</a>
+A man's vehicle is a symbol of his manhood.
+That's why my vehicle's the Piccadilly Line -
+It's the size of a county and it comes every two and a half minutes
+
+
+
+
+</div></pre></div></body>
+</html>
+</table></div>

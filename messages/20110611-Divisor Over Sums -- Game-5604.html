@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Divisor Over Sums -- Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Divisor Over Sums -- Game</td></tr><tr><td><b>From: </b>Leroy Quet &lt;qqquet@mindspring.com&gt;</td></tr><tr><td><b>Date: </b>11/06/2011, 19:19</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Here is another game that uses an n-by-n grid drawn on paper.
+
+This game is for 2 players.
+
+Players take turns placing 1,2,3,... n^2 into empty squares of the
+grid, one number each turn.
+(So, player 1 places the odd numbers into the grid, and player 2
+places the evens.)
+
+
+Let H represent the collection of variables h, where each h is the sum
+of a HORIZONTALLY-adjacent pair of integers in the grid.
+
+Let V represent the collection of variables v, where each v is the sum
+of a VERTICALLY-adjacent pair of integers in the grid.
+
+(So, H and V each consist of n*(n-1) variables.)
+
+Player 1 then chooses a variable d which divides at least one of the
+h's.
+Player 1 gets as a score:
+d*(number of h's that are divisible by d)
+
+Player 2 then chooses a variable d' which divides at least one of the
+v's.
+Player 2 gets as a score:
+d'*(number of v's that are divisible by d')
+
+
+The player with the largest score wins.
+
+
+For example, let us say two poorly-playing players have this n=4 grid:
+
+08 09 01 10
+03 11 16 07
+02 14 15 05
+04 12 06 13
+
+H =
+(17,10,11, 14,27,23,
+16,29,20, 16,18,19)
+
+Let us say that player 1 picks 4, then he gets 4*3 = 12 points.
+(Because h's = 16, 20, and 16 are divisible by 4.)
+Had he picked 29, he could have gotten 29, however.
+
+
+V =
+(11,5,6, 20,25,26,
+17,31,21, 17,12,18)
+
+Player 2 picks 3 and gets 3*4 = 12 points.
+She should have picked 31.
+
+Yes, you can always score at least n*(n-1) by picking d or d' = 1.
+
+As implied in the example, a player is responsible for finding his/her
+own score.
+
+Thanks,
+Leroy Quet
+
+
+</pre></div></body>
+</html>
+</table></div>

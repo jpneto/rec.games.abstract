@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: &quot;Break the Ice&quot; game strategy</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: &quot;Break the Ice&quot; game strategy</td></tr><tr><td><b>From: </b>Gerry Quinn &lt;gerryq@DELETETHISindigo.ie&gt;</td></tr><tr><td><b>Date: </b>01/08/2006, 13:36</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,comp.programming</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article &lt;Pine.LNX.4.60-041.0607311921010.5855
+@unix46.andrew.cmu.edu&gt;, <a class="moz-txt-link-abbreviated" href="mailto:ajonospam@andrew.cmu.edu">ajonospam@andrew.cmu.edu</a> says...
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+
+   I'm trying, just for fun, to make a computer player for an abstract
+game similar to Milton Bradley's "Dont Break the Ice"
+
+   <a class="moz-txt-link-freetext" href="http://en.wikipedia.org/wiki/Don't_Break_the_Ice">http://en.wikipedia.org/wiki/Don't_Break_the_Ice</a>
+
+minus the chance and physical-skill elements. Source code and a 
+DOS/Windows executable available here for anyone who wants them:
+
+   <a class="moz-txt-link-freetext" href="http://www.contrib.andrew.cmu.edu/~ajo/disseminate/ice.zip">http://www.contrib.andrew.cmu.edu/~ajo/disseminate/ice.zip</a>
+
+The game is played on a grid of cells, with each cell initially filled
+with an "ice block." Each player, on his turn, "knocks out" one of the
+blocks; if this causes any other blocks to be unsupported, they also
+fall. The player who causes the last block to fall is the loser.
+
+   Example game:
+
+     123
+
+   a OOO    Alice starts by knocking out B2, the central block.
+   b OOO
+   c OOO
+
+     OOO    Bob knocks out A3,
+     O.O    causing A2 and B3 to fall, as they're no longer
+     OOO    supported by an "arch" of connected blocks.
+
+     O..    Alice knocks out C2, causing C3 to fall.
+     O..
+     OOO
+
+     O..    Bob is forced to knock out one of the blocks
+     O..    in the remaining arch, causing all three to
+     O..    fall; he loses the game.
+
+   My questions for the rec.games.abstract folks: Has this game been
+analyzed before? Is there any known strategy that applies to many
+different kinds of boards ("go for the corners first," or something
+like that?)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Unlikely, since the win lose condition is determined by the last move.  
+
+It may be that there is some sort of symmetry-based winning solution, 
+but in this case the game is degenerate and should be modified to have 
+some random blocks removed at the start.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+   My question for the comp.programming folks: I quickly determined
+that the standard alpha-beta pruning technique doesn't help with
+this game, because I don't know any way to evaluate the "strength"
+of a position except as a win or loss. So most of the branches in
+an alpha-beta tree of any reasonable depth (i.e., not deep enough
+to see all possible endings) end up with a value of zero, which means
+the computer is moving randomly most of the time.
+
+   Yet there are some positions, such as (I think)
+
+   ....OO
+   ....OO
+   ....OO
+   ....OO
+   OOOOOO
+   OOOOOO
+
+which a human player can tell are a win for the moving player, without
+having to explicitly examine the whole tree --- we can collapse certain
+"families" of moves into single cases, for example. How do we get the
+computer to do the same thing?
+
+   Is there any way to get the computer to play smarter, other than
+adding more and more special cases to the position-evaluation code?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I don't think so, other than making a general analysis.  Maybe there is 
+some set of numerical values that can be calculated from a given 
+system, and then the game reduces to Nim... that kind of thing.
+
+- Gerry Quinn
+
+
+</pre></div></body>
+</html>
+</table></div>

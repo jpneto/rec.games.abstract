@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: New game: Think Small</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: New game: Think Small</td></tr><tr><td><b>From: </b>Marc.Ringuette@GS80.SP.CS.CMU.EDU</td></tr><tr><td><b>Date: </b>21/11/1992, 06:42</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Daniel Shoham's reasoning (backwards from assuming a 1/N
+probability of winning for any choice by the Nth player) is
+interesting, but isn't quite correct.  You see, it might be the case
+that <span class="moz-txt-underscore"><span class="moz-txt-tag">_</span>no one<span class="moz-txt-tag">_</span></span> wins the contest.  In fact, for 40 people using optimal
+strategy, the probability of a 41st player winning is uniformly 1/44.2
+for any x he chooses....and the chance of nobody winning is 1/44.2 .
+
+I took a different approach in computing the optimal strategy:
+assuming all N players use a probabilistic strategy s(x) which
+specifies a fixed probability of choosing each x, I compute the
+probability that an N+1th player can win by choosing a number y.
+Rather than reformat the equation, here's the code: (input is y and the
+function s(x):
+
+	sum=0.0;
+	for (x=1; x&lt;y; ++x) {
+		sum+= (s[x]/norm)*N*pow(1.0-(s[x]/norm),N-1.0) * (1-sum);
+	}
+	return (1-sum)*pow(1-(s[y]/norm),N*1.0);
+
+I implemented a simple iterative search for the best function s(x) by
+taking an initial s, finding the number w with maximum probability of
+winning, and increasing s(w) for the next iteration.
+
+Just for your interest, here's a histogram of s(x) for N=40:
+
+s(x) =    0.00                       0.05                             0.10
+          ---------------------------------------------------------------
+  x =  1: ************************************************************
+       2: ***********************************************************
+       3: *********************************************************
+       4: ********************************************************
+       5: *****************************************************
+       6: ****************************************************
+       7: **************************************************
+       8: ***********************************************
+       9: ********************************************
+      10: *****************************************
+      11: **************************************
+      12: **********************************
+      13: *****************************
+      14: ***********************
+      15: ****************
+      16: ********
+      17: **
+      18: *
+      19: 
+      20: 
+
+
+It sure looks like a binomial distribution, but I still haven't worked
+out the closed form.
+
+Here's the C code for my iterative solver - have fun!
+
+
+-- Marc Ringuette (<a class="moz-txt-link-abbreviated" href="mailto:mnr@cs.cmu.edu">mnr@cs.cmu.edu</a>)
+
+
+
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+#define MAX 40
+#define N 40
+#define ITERS 2000
+#define delta 0.01
+double s[MAX],norm;
+
+double win(y)
+	int y;
+{
+	int x;
+	double sum;
+
+	sum=0.0;
+	for (x=1; x&lt;y; ++x) {
+		sum+= (s[x]/norm)*N*pow(1.0-(s[x]/norm),N-1.0) * (1-sum);
+	}
+	return (1-sum)*pow(1-(s[y]/norm),N*1.0);
+}
+
+main()
+{
+	int i,j,maxj;
+	double w,maxwin;
+
+	norm = 1.0;
+
+	for (i=1;i&lt;MAX;++i) s[i]=0.0;
+	s[1]=1.0;
+
+	for (i=0;i&lt;ITERS;++i) {
+		maxwin= -1.0;
+		maxj= -1;
+		for (j=1;j&lt;MAX;++j) {
+			w=win(j);
+			if (w&gt;maxwin) {
+				maxwin=w;
+				maxj=j;
+			}
+		}
+		s[maxj]+=delta;
+		norm = norm + delta;
+	}
+
+	for (i=1; i&lt;MAX-1;++i) {
+		printf("s[%2d] = %.6f, win[%2d]=%.6f\n",i,s[i]/norm,i,win(i));
+	}
+	printf("\n\n");
+	for (i=1; i&lt;MAX-1;++i) {
+		printf("%2d: ",i);
+		for (j=0;j&lt;(60/s[1]*norm)*s[i]/norm;++j) printf("*");
+		printf("\n");
+	}
+}
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Add/Residue Game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Add/Residue Game</td></tr><tr><td><b>From: </b>Leroy Quet &lt;qqquet@mindspring.com&gt;</td></tr><tr><td><b>Date: </b>24/08/2010, 20:02</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,sci.math,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+A game for any plural number of players:
+
+Every player "gets" the numbers, twice each, of 1 to n -- where n is
+some pre-determined positive integer -- to play with; the integers 1
+to n placed in each player's "mod pile", and the numbers 1 to n placed
+in each player's "add pile".
+
+(A pile may simply be a list of integers that the player crosses off
+as each integer is played. Or if n = 13, for instance, and there are
+two players, then there can be 4-total actual piles where the numbers
+are represented by playing cards of certain suits.)
+
+When the game begins, we have the initial value of the variable m,
+m(0), equal to 0.
+
+The players take turns moving.
+On a move, the player moving can choose a number from either their mod
+pile or their add pile. Let this number be c(k). Each number can only
+be picked once from a given pile. If playing with playing cards, place
+the card representing c(k) in the "used pile". Only pick from cards in
+your mod or add piles, not in the used pile.
+
+On the kth move of the game, the player, depending on whether they
+chose their number from the add pile or the mod pile, sets m(k) to
+equal:
+
+m(k) = m(k-1) + c(k), if c is chosen from the add pile.
+
+m(k) = m(k-1) (mod c(k)), if c is chose from the mod pile.
+0 &lt;= m(k) &lt;= c(k)-1.
+
+If, and only if, c(k) was chosen from the mod pile, then m(k) is added
+to the moving player's score.
+
+
+Play until the numbers from both piles of all the players are picked.
+(There will be 2*n*(number of players) moves.)
+
+Largest score wins.
+
+Thanks,
+Leroy Quet
+
+
+
+</pre></div></body>
+</html>
+</table></div>

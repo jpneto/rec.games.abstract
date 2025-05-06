@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: How are fruit/slot machine programs written?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: How are fruit/slot machine programs written?</td></tr><tr><td><b>From: </b>torbenm@app-7.diku.dk (=?iso-8859-1?q?Torben_=C6gidius_Mogensen?=)</td></tr><tr><td><b>Date: </b>13/09/2005, 09:33</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+John Latter <a class="moz-txt-link-rfc2396E" href="mailto:jorolat@tiscali.co.uk">&lt;jorolat@tiscali.co.uk&gt;</a> writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Hi,
+
+I've heard that fruit machine programs are based on "Game Theory" and
+was wondering if there are any online examples or descriptions of them
+(sorta "Know Thy Enemy" impulse prompted me to ask).
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I can't say how modern digital slot machine programs are written, as
+I'm sure it is a closely guarded secret.  But I can tell you how the
+old-fashioned machines worked and how you figure out the average
+payback of those.  Early digital slot machines probably micmicked
+their mechanical counterparts, and in some sense the digital ones
+should do so in order to avoid being accused of cheating.
+
+Anyway, the traditional slot machine has three wheels with symbols.
+The symbols occur in different numbers on the different wheels, and
+are usually arranged to give an impression that winning combinations
+are easier to get than they actually are.  For example, there might be
+more lemons on the first and third wheel than on the second wheel, so
+you fairly often get two lemons (first and third) but rarely three, as
+the lemon would be rare on the middle wheel.
+
+The figure out the probability of a winning combinations, you must
+know th enumbers of each symbol on each wheel (and, consequently, how
+many symbols total thare aer on a wheel).  In the old mechanical
+machines, you can in most cases assume that all symbols are equally
+likely, so the change of three lemons would be
+
+  (lemons on wheel 1)*(lemons on wheel 2)*(lemons on wheel 3)/N^3
+
+where N is the number of symbols on a wheel.  This gives a probability
+between 0 and 1, to get a percentage multiply this by 100.
+
+If you multiply with the payback for the combination and add up this
+for all paying combinations, you get the total payback.  This will be
+less than 1 (or less than 100%, if you converted the probabilities to
+percentages), so the owner will earn on the machine.  Some countries
+and states have laws on minimal payback percentages.
+
+Anyway, due to human nature, it is not the payback percentage that
+makes players choose machines, it is the top payout (jackpot) -- no
+matter how unlikely this is.  This prompted the addition of a fourth
+and fifth wheel on slot machines, so you can make the jackpot
+combination extremely unlikely, so you fairly safely can put a huge
+prize on it.  To spread out the risk for the owner, the high-jackpot
+machines are usually found in places with a large number of machines
+(or in chains of gaming dens).
+
+Now, it gets a bit more complicated if the slot machine allows a
+player to hold some of the wheels on non-payout combinations.  Here,
+you must for each combination of held wheels recalculate the average
+payout under the condition that one or two wheels are fixed.  If this
+is higher than the payout on non-held wheels, you must add the
+probability of the held combination times half of the conditional
+payout to the total payout calculated above (half because you need an
+extra coin to exploit the held combination).  You normally can't hold
+twice in a row, so you don't have to iterate this for the conditional
+payout calculation.
+
+Again, you can add in psychology.  Even if the ability to hold wheels
+increases average payout (and it doesn't have to, as you can adjust
+the mis of symbols to decrease the payout equivalently), it may prompt
+players to play more.  And you can also add combinations that might
+seem to be worth holding, but which actually reduce the payout.  For
+example, if three (or four or five) bars give the maximum payout,
+people may tend to hold even a single bar.  Though this increases the
+chance of jackpot, it might well decrease the average payout (which is
+what the owners mainly care about).
+
+I don't know if you call this game theory, but I'm sure a lot of this
+type of thought is put into the distribution of symbols on slot
+machines.
+
+        Torben
+
+
+</pre></div></body>
+</html>
+</table></div>

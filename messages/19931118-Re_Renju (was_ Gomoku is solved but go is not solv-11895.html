@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Renju (was: Gomoku is solved but go is not solved)</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Renju (was: Gomoku is solved but go is not solved)</td></tr><tr><td><b>From: </b>darse@cs.UAlberta.CA (Darse Billings)</td></tr><tr><td><b>Date: </b>18/11/1993, 20:11</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.go,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+[Note: I am cross-posting this to rec.games.abstract, since that is the
+proper place for it.  Hopefully future discussions will use this newsgroup,
+since that is exactly what it was created for (ie. this class of games,
+which do not have their own newsgroup).]
+ 
+<a class="moz-txt-link-abbreviated" href="mailto:leonid@iil.intel.com">leonid@iil.intel.com</a> (Gluhovsky Leonid) writes:
+
+  &gt;Achim Flammenkamp (<a class="moz-txt-link-abbreviated" href="mailto:achim@hrz.uni-bielefeld.de">achim@hrz.uni-bielefeld.de</a>) wrote:
+  &gt;: In article <a class="moz-txt-link-rfc2396E" href="mailto:1993Nov15.224737.5254@Csli.Stanford.EDU">&lt;1993Nov15.224737.5254@Csli.Stanford.EDU&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:matsubar@csli.stanford.edu">matsubar@csli.stanford.edu</a> (Hitoshi Matsubara) writes:
+  &gt;: &gt;I do believe this is NOT true. Victor Allis SOLVEd the 
+  &gt;: &gt;game of Go-moku. I think you heard that.
+  &gt;: &gt;
+  &gt;: &gt;Hitoshi Matsubara
+  
+  &gt;: Apropos: What about Renju ?  (the japanese professional variante)
+  
+  &gt;Unlike unrestricted gomoku, Renju is probably as hard to solve as chess,
+  &gt;because
+  
+  &gt;(1) In Renju, positions that emerge after the opening are often of a 
+  &gt;    "chaotic" nature, as the Japanese say.  It means that no one of the two
+  &gt;    sides has a clear attack; many plans and many moves are possible, so
+  &gt;    that the combinatorial explosion is really an explosion.  (Well, in Go
+  &gt;    the phenomenon is more pronounced :-)).
+  
+  &gt;    This is very much in contrary to unrestricted gomoku, where, if
+  &gt;    Black plays correctly, there are always few obviously strong moves
+  &gt;    for Black and to each of these moves, a still fewer number of White's
+  &gt;    responses (many times just one) that don't lose very soon.
+  
+  &gt;(2) Renju is a moving target.  Renju has a complicated "opening rule"
+  &gt;    that serves to ensure more or less equal chances for Black and White
+  &gt;    <b class="moz-txt-star"><span class="moz-txt-tag">*</span>and<span class="moz-txt-tag">*</span></b> a large variety of openings.  From time to time (appr. every
+  &gt;    15-20 years) this opening rule is changed.  (The middle-game rules
+  &gt;    (forbidden 3x3, 4x4 and 6 for Black) haven't changed since 1936).
+  
+  &gt;    It is interesting that the main idea of the current opening rule, 
+  &gt;    adopted in 1988-89, is the balancing scheme discussed not long ago in
+  &gt;    rec.games.abstract: after the third move of the game (made by Black)
+  &gt;    White can "change colors", i.e. decide that from now on, *(s)he* will
+  &gt;    play as Black.  (This is only the main idea, there are many additional
+  &gt;    bangs and whistles).
+  
+  &gt;    By the way, gomoku with appropriate opening rules is perfectly playable,
+  &gt;    in fact, there were a couple of world chamionships.
+
+From your description, it may be closer in difficulty to Checkers than
+Chess.  In the Checkers program Chinook, the use of huge endgame databases
+has a tremendous influence on good play.  Similarly, in Renju, a slight
+modification of Allis' search technique could make finding a finishing
+combination, if it exists, relatively easy for a computer program.
+
+If the moves in the early phases of Renju are as complicated as you say,
+then yes it would be extremely hard to solve, since we'd be dealing with
+both a large search space and a high decision complexity.  In contrast,
+Checkers has a narrow (effective) branching factor, so alpha-beta search
+does well.  But I don't think the difficulty of Renju is clear yet, from a
+computing standpoint.  Certainly, the strategic goal of Renju is not as
+amorphous as it is in Go, or even Chess.  Perhaps time will tell.
+
+  &gt;I haven't heard before that Victor Allis (, too,) solved gomoku, but with 
+  &gt;all respect for him, the Black's win in unrestricted gomoku is known since 
+  &gt;the 19th century, so that the <b class="moz-txt-star"><span class="moz-txt-tag">*</span>fact<span class="moz-txt-tag">*</span></b> is not new, it can be only a new kind 
+  &gt;of proof.
+
+By all accounts, this "fact" has never been proven before, so it was never
+"known", only believed.  In mathematics, conjectures believed to be true are
+often <b class="moz-txt-star"><span class="moz-txt-tag">*</span>disproved<span class="moz-txt-tag">*</span></b>, so the distinction between fact and belief is important.
+
+  &gt;Disclaimer: I quit playing Renju seriously several years ago, so maybe 
+  &gt;something drastic has happened in the Renju community that I am not aware of.
+
+  &gt;IF ANYONE COULD SEND ME ANY INFORMATION ABOUT VICTOR ALISS' PROOF, I WILL BE
+  &gt;VERY GRATEFUL.
+
+  &gt;Leonid
+
+See my recent post entitled "Go-Moku Solved (Summary and References)", in
+either rec.games.go or rec.games.abstract.  If you missed it, let me know
+and I'll send you a copy.
+					Cheers,  - Darse.
+
+--
+
+ - Darse Billings, 2065 CFC, 7 kyu.
+
+Go is better than Chess.  Poker is more lucrative.  Sex is more fun.
+
+</pre></div></body>
+</html>
+</table></div>

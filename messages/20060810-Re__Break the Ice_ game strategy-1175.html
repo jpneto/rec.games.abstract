@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: &quot;Break the Ice&quot; game strategy</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: &quot;Break the Ice&quot; game strategy</td></tr><tr><td><b>From: </b>Mike &lt;m.fee@iirrll..ccrrii..nnzz&gt;</td></tr><tr><td><b>Date: </b>10/08/2006, 01:05</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,comp.programming</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:7wpsf91xwj.fsf@ca.icynic.com">&lt;7wpsf91xwj.fsf@ca.icynic.com&gt;</a>, <a class="moz-txt-link-abbreviated" href="mailto:don-ns@iCynic.com">don-ns@iCynic.com</a> says...
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+"Arthur J. O'Dwyer" <a class="moz-txt-link-rfc2396E" href="mailto:ajonospam@andrew.cmu.edu">&lt;ajonospam@andrew.cmu.edu&gt;</a> writes:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+   One thing we humans can handle that the program can't, also, is
+seeing when there's only one "major" arch left, and counting the number
+of things that branch off of it. For example,
+
+     OO.......
+     OO.......
+     OO.......
+     OO.......
+     .O.......
+     .OOOOOOOO
+     .OOOOOOOO
+     OO.......
+     .OOOOOOOO
+
+That game board has one arch in the second column, and then eight 
+independent "branches" coming off of it. We immediately determine that
+the game will last exactly nine more moves (since each move knocks out
+exactly one branch), and so we know who will win. But the computer
+would have to examine (on the order of) 9-factorial game trees to
+come to the same conclusion via alpha-beta!
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+There are a few steps involved in a human analysis of that position,
+and I think you should be able to mimic most of the steps in a program.
+Indeed, you seem to have implicitly assumed the program was doing the
+first step, which is to recognise various classes of equivalent single
+moves.  E.g., c1, d1, e1, etc., all lead to the same position, so it
+doesn't matter which of them is chosen.
+
+The next step would seem to be to recognise independent classes of moves.
+That is, if one of the moves c1...i1 is chosen, and the move a6 is also
+chosen, the resulting position is the same regardless of what order they
+are chosen in.  As someone else has pointed out in this thread, that's
+why this position really leads to only 2^8 or so positions, reflecting
+which of the 8 independent classes of moves have been taken so far.
+
+The final step would be to recognise that the classes themselves are
+interchangeable and thus all that really matters is how many of the
+moves have been made, not which ones.  That's probably harder to write
+define in a way that's easy to analyse in general, but you might not
+need that level of analysis to get acceptable performance.
+
+	-- Don.
+
+-------------------------------------------------------------------------------
+-- Don Woods (<a class="moz-txt-link-abbreviated" href="mailto:don-ns@iCynic.com">don-ns@iCynic.com</a>)     Note: If you reply by mail, I'll get to
+-- <a class="moz-txt-link-freetext" href="http://www.iCynic.com/~don">http://www.iCynic.com/~don</a>	     it sooner if you remove the "hyphen n s"
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+On the other hand, even for very small boards, a human can have very little chance of determining the winner or optimal 
+move. For example, what is the best move for the first player on a 5x5 board - and how much will they lose by with 
+optimal play. Or, in the position:
+
+xxxxx
+xxxxx
+xxxxx
+xxxxx
+xx.xx
+
+what move (with optimal play afterwards) leads to a win in 14 moves, and what move leads to a loss in 15?
+
+A possible way to seek a suitable scoreing heuristic for an alpha-beta search might be to solve the game for smaller 
+boards (up to 6x6 appears practical) and search for patterns in the winning/losing moves that may, or may not, be 
+applied to larger boards. If this approach works then you could tune the scoring parameters for larger boards by 
+playing different versions of the program against itself. On the other hand, combinatorial games theory has shown some 
+games that show no discernable pattern in optimal play. In these games, there is no short-cut to knowing the complete 
+game tree.
+
+Mike
+
+
+</pre></div></body>
+</html>
+</table></div>

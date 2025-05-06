@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: defects in abstract games</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: defects in abstract games</td></tr><tr><td><b>From: </b>dseal@armltd.co.uk (David Seal)</td></tr><tr><td><b>Date: </b>11/01/1993, 13:13</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:C0GHGM.K3G@SSD.intel.com">&lt;C0GHGM.K3G@SSD.intel.com&gt;</a> <a class="moz-txt-link-abbreviated" href="mailto:wms@ssd.intel.com">wms@ssd.intel.com</a> (William Shubert)
+writes [with my additions to condense the context in square brackets]:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:desj@ccr-p.ida.org">desj@ccr-p.ida.org</a> (David desJardins) writes:
+  Ummm...the game [Sprouts] DOES terminate with 4 provided that with a new point on a
+line the two new lines must appear on opposite sides.  Sounds odd, but it
+works as a game.  It's called "Brussell Sprouts" (sp?) and instead of points
+crosses are used so a game goes like:
+
+ +          +        +        +          +
+            |        |        |          |
+            +        +        +-X      /-+-X
+            |        |        | |     +  | |
+ +    +     +   +    +-+-+    +-+-+    \-+-+-+
+
+etc. Note that at the "X" and the leftmost "+" only one new line can be drawn
+because the other growth possibility has no point to connect to without
+crossing a line.
+  So, with some modifications it can be said that there are at least TWO
+integers in that range. [between trivial games and infinite games] ...
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Not really, I'm afraid. Brussels Sprouts is a joke game. The reason is that
+it always lasts the same number of turns, regardless of how it is played.
+
+Outline of proof: the game starts with N completely disconnected crosses,
+  with a total of 4N "lives". Each turn gets rid of two lives and creates
+  two new lives, so there are always 4N lives in total.
+
+  Each turn either connects two previously unconnected sets of lines and
+  crosses together, or divides one of the existing regions into which the
+  plane is divided into two regions. In the former case, each region of
+  the plane has exactly the same number of lives as it had originally (one
+  region lost two lives, but the same region gained the two new lives
+  produced by the new cross). In the latter case, when the cross is drawn on
+  the new line, it always leaves each of the two regions with at least one
+  life internal to it. This means that each region into which the plane is
+  divided always has at least one life internal to it. If any region has two
+  lives or more, another turn is possible by playing in that region. So the
+  game must end with the plane divided into 4N regions, each with precisely
+  one life.
+
+  From the point of view of each connected set of lines and crosses, this
+  also means that every region adjacent to it, including its external
+  region, has at least 1 life. If there are two or more connected sets of
+  lines and crosses, not connected to each other, any region next to at
+  least two of them has at least two lives. This means that a turn can be
+  played; the game therefore cannot end with two or more connected sets of
+  lines and crosses which are not connected to each other - all the lines
+  and crosses must form one connected set at the end of the game.
+
+  So we start with N sets of lines and crosses (each containing just one
+  cross) and end with a single connected set of lines and crosses; we also
+  start with the plane divided into just one region and end with it divided
+  into 4N regions. Since each turn either reduces the number of connected
+  sets of lines and crosses by one, or increases the number of regions by
+  one, the game must last a total of (N-1)+(4N-1) = 5N-2 turns.
+
+Since the number of turns the game will last must be 5N-2, the outcome of
+the game is a foregone conclusion: player 2 will be the first to be unable
+to move if N is odd, and player 1 if N is even. Note that this isn't simply
+a case like Nim where a winning strategy is known: in the case of Brussels
+Sprouts, any move is as good as any other and it isn't even <b class="moz-txt-star"><span class="moz-txt-tag">*</span>possible<span class="moz-txt-tag">*</span></b> to
+play badly...
+
+David Seal
+<a class="moz-txt-link-abbreviated" href="mailto:dseal@armltd.co.uk">dseal@armltd.co.uk</a>
+
+All opinions are mine only...
+
+</pre></div></body>
+</html>
+</table></div>

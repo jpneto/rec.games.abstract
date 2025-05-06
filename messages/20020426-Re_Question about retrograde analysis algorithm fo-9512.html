@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Question about retrograde analysis algorithm for endgame databases</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Question about retrograde analysis algorithm for endgame databases</td></tr><tr><td><b>From: </b>mathpoly@yahoo.com (mathpolymath)</td></tr><tr><td><b>Date: </b>26/04/2002, 19:29</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.chess.computer,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+"R Gibert" <a class="moz-txt-link-rfc2396E" href="mailto:gibert@cox.net">&lt;gibert@cox.net&gt;</a> wrote in message news:<a class="moz-txt-link-rfc2396E" href="mailto:voLx8.7446$ab.420090@news2.west.cox.net">&lt;voLx8.7446$ab.420090@news2.west.cox.net&gt;</a>...
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+The following is what I've worked out:
+
+Define the EGTB as an array of unsigned char. Each element has one of 3 types of meanings:
+(1) 255: Unknown
+(2) 254: Draw
+(3) 0-254 : number of ply to mate
+
+Step 1: First pass mark all the stalemates as 254, all the mates as 0 and the remainder as 255 for now.
+
+Step 2: For the next pass over all the elements if the current element is 255 (unknown) make all the legal moves for the
+corresponding position and look them up in the table. For all the ones that are mate, select the shortest mate of these. Add 1 to
+the mate score and store in the table for the current element. If all of them are 254, mark the current element as 254.
+
+Step 3: Repeat step 2 until a pass is made without making any changes to the table.
+
+Now you have a complete EGTB for a particular type of ending. All the positions that remain with a value of 255 are draws or are
+"broken", but for purposes of interpreting 255 when looking up a position legally arrived at, the 255 is interpreted as a draw only.
+All the positions with a value of 254 are draws. The remainder give the DTM (=Distance To Mate).
+
+A legal move can be a capture, so such positions must be looked up in another EGTB table.
+
+The reason why we bother with marking positions with 254 as draws is to speed things up. Otherwise, you can simplify further by
+ignoring this.
+
+There are no complications with repetition of position and the 50 move rule is ignored.
+
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Even this version of the retrograde analysis algorithm doesn't handle
+the case in an abstract game if repetition draws from different
+positions have different values.  This is not relevant in chess since
+all positions ultimately have a value of -1 (loss), 0 (draw) or 1
+(win).  But imagine a case where you get 0.5 points if you draw when
+you have a certain position, but -0.5 points if you draw in another
+position...
+
+</pre></div></body>
+</html>
+</table></div>

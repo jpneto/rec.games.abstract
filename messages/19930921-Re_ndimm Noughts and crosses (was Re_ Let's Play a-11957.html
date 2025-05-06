@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: ndimm Noughts and crosses (was Re: Let&#39;s Play a different game</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: ndimm Noughts and crosses (was Re: Let&#39;s Play a different game</td></tr><tr><td><b>From: </b>dbush@csugrad.cs.vt.edu (David Bush)</td></tr><tr><td><b>Date: </b>21/09/1993, 17:41</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+<a class="moz-txt-link-abbreviated" href="mailto:phillips@swanee.ee.uwa.edu.au">phillips@swanee.ee.uwa.edu.au</a> (Christopher Phillips) writes:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+So in more general terms, for what N and D can a draw be found,
+and is it the same set as all values of (N,D) for which the
+first player of an N^D noughts and crosses game cannot force a win?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I beleive the answer to the second question is yes, and my knowlege
+of the first is as following:
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+(d indicates a draw possible,
+1 indicates the first player can always win and no draw is known possible
+D indicates a draw is possibel and a drawing strategy for the second
+player is known.)
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+\ D 0 1 2 3 4 5 6 7 8
+N\_____________________________
+1 | 1 1 1 1 1 1 1 1 1  ...
+2 | 1 D 1 1 1 1 1 1 1  ...
+3 | 1 D D 1 1 1 1 1 1  ...
+4 | 1 D D d d
+5 | 1 D D
+8 | 1 D D
+9 | 1 D D
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+   . . .
+   . . .
+   . . .
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+For D=3, N=4 the first player can force a win. Regrettably I cannot
+describe what a precise winning plan is here, but here's the general
+idea:
+
+* Start in one of the corner cells. (You could also implement this plan
+  in the central cells; they are isomorphic to the corner cells.)
+* Continue to play in the corner cells for the first four moves, generally
+  avoiding your opponent's blocks. Try to establish one of these patterns:
+
+   X...    ....    ....    X...           X...    ....    ....    X..X
+   ....    ....    ....    ....    OR     ....    ....    ....    ....
+   ....    ....    ....    ....           ....    ....    ....    ....
+   X..X    ....    ....    ....           ....    ....    ....    X...
+
+* Be aware that if on your move there is some 4x4 planar cross-section of
+  the board which contains 3 of your tokens but is otherwise blank, you
+  can usually force a win in that plane. You may have to deviate from the
+  above plan in order to block such a threat from your opponent. Generally
+  the best blocking move is one which deprives one of the rows which goes
+  "in 3 dimensions" from one corner to its opposite from your opponent.
+* After making 4 or 5 such moves, you should have a forced win, meaning a
+  sequence of immediate threats culminating in an unavoidable double threat.
+
+For D=4, N=4 again the first player can win by essentially sticking to the
+above plan for 3 dimensions. Actually, I strongly suspect the first player
+always wins whenever N=D. John Conway's book "Winning Ways For Your
+Mathematical Plays" probably covers this territory; if your local library
+has it you might want to check it out. (Perhaps I should take my own advice!)
+
+Whenever N is odd the game is not very interesting, because the first player
+gets a huge advantage by playing in the center cell, unless D is so low
+that it's easy for the 2nd player to draw. One variant that seems intriguing
+is D=3, N=6, object is to get 5 in a row instead of 6. Overlines, or getting
+6 in a row, also win. This would be a blow-off for the first player without
+the following ritual (taken from a suggestion in Games magazine): One player
+places two Xs and one O on an otherwise empty board, producing a position
+with O to move. As an alternative, perhaps only one X could be placed.
+The other player then decides which side to play. Play proceeds from this
+position. Someday I hope to write a program to play this game.
+
+David Bush    Blacksburg, Virginia      <a class="moz-txt-link-abbreviated" href="mailto:dbush@csugrad.cs.vt.edu">dbush@csugrad.cs.vt.edu</a>
+
+</pre></div></body>
+</html>
+</table></div>

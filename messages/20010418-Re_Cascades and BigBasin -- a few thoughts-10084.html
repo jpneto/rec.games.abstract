@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Cascades and BigBasin -- a few thoughts</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Cascades and BigBasin -- a few thoughts</td></tr><tr><td><b>From: </b>&quot;William Chang&quot; &lt;williamichang@hotmail.com&gt;</td></tr><tr><td><b>Date: </b>18/04/2001, 05:55</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+"Ralf Gering" <a class="moz-txt-link-rfc2396E" href="mailto:zxmge08@mail.uni-tuebingen.de">&lt;zxmge08@mail.uni-tuebingen.de&gt;</a> wrote in message
+<a class="moz-txt-link-freetext" href="news:Pine.LNX.4.30.0104172138200.15389-100000@linux40.zdv.uni-tuebingen.de">news:Pine.LNX.4.30.0104172138200.15389-100000@linux40.zdv.uni-tuebingen.de</a>..
+.
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+       o x o x o x         (1) Double-move -- x places one stone, then
+      . . . . . . .            players alternate placing up to two
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+stones.
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+     . . . . . . . .       (2) Each stone is placed next to and below a
+    . . . . . . . . .          stone of the same color.
+   . . . . . . . . . .     (3) Player who occupies more of the
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+bottom-most
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+  . . . . . . . . . . .        row wins.
+The game couldn't be simpler or quicker to play, but I haven't "figured
+it out" after several games.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+The game appears to be interesting. However, I would like to see a
+much bigger board or do you intend to create another children's game?
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+High praise from you!  Especially for a game with such obvious rules.
+
+The game generalizes to any MxN board.  Without more experience
+playing and "figuring it out" I don't know how M and N affect playability.
+My intuition suggests 8x8 (really 8x15 if you measured it at the bottom)
+is already nontrivial and 10x10 might be "tournament".  Of course, this
+assumes the game isn't "solved" in short order...
+
+(By the way, in my experience a motivated "child" can beat almost all
+adults who after all have to worry about living.)
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+The next variant would allow a stone to be
+placed at the same level as a friendly stone (2A).
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I think i just solved this variant for any board size.
+Both players try to reach the central square(s) of the bottom-most row as
+fast as possible. This results in a straight race of one flow by each
+player. As soon the bottom is reached the players spread their stones to
+one side of the board.
+If the bottom-most row numbers an even number of squares the game is a
+draw, otherwise it is a win for the second player because he is ahead in
+the race.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Very good, thank you.  I will work on a fix.
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+A more chaotic variant
+requires only adjacency to a stone of either color (2B), but a stone cut
+off from receiving (downward or sideways) "flow" is immediately removed
+(similar idea as Greg's).
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+The pieces cannot move, right? This means that a stone cannot be cut off
+from the "flow" except it is placed on a square where it is not connected
+to the flow right from the beginning. However, it doesn't make sense in
+this game to place a  stone on the board which is removed immediately.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I meant and should have written "potential" flow.  Hope this clarifies.
+
+A black stone can be placed below white stones so that in theory it can
+receive flow later -- but if white fenced it in (by playing above and to
+both
+sides of it for example) it may become a "dead" stone.  One can legitimately
+ask whether it becomes dead as soon as it's fenced in, or only when there
+is no possible further play (namely the elimination of stones above and to
+the side of it) that can give it "life".  Let's take the simpler rule for
+now --
+capture is defined without consideration of future capture.  (There are
+two different games here; let's call the other 2D.)  Example:
+
+      x x x _ x    say black can capture three white stones by filling in _
+    x o o o x
+      o x o &lt;- does this white stone capture the black stone next to it?
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+Finally, stones can be placed anywhere (2C).
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+This makes no sense to me either. Could you please explain your idea?
+What would be the goal of this game, etc. ???
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Let's say black placed stones in the bottom row while white filled in the
+topmost playable row.  The black stones are eliminated and white wins
+a shutout.  The game is actually Hex-like but with life and death defined
+by possible connection to the row of origin.  It is quite possible that one
+could prove mathematically that playing "higher" is always better -- then
+the game is flawed and the rules should be rewritten.  (A simple rule
+change would be to score all territory instead of just the bottom row.)
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+I call this series of games Cascades.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Except the first one, these are not games. These are just ideas of games.
+
+Panther
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+These are prototypes that need playtesting, as was requested.
+At least the first one is clear :-)  At the conclusion of each of these
+games, the following is true:  Each stone in the bottom row is connected
+to the row of origin by a possibly meandering flow of friendly stones.
+How many essentially different final configurations are possible?
+
+Looking forward to further comments,
+
+-- William
+
+
+
+
+</pre></div></body>
+</html>
+</table></div>

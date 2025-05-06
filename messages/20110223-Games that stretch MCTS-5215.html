@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Games that stretch MCTS</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Games that stretch MCTS</td></tr><tr><td><b>From: </b>Cameron Browne &lt;cambolbro@googlemail.com&gt;</td></tr><tr><td><b>Date: </b>23/02/2011, 19:37</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Hi,
+
+I'm doing a bit of work on Monte Carlo Tree Search (MCTS) which is a
+new AI approach for move planning in games. The algorithm behaves
+differently for games with different characteristics - some games are
+well suited to it while some resist it - and I'm interested in finding
+the outliers.
+
+Can anyone suggest games of reasonable complexity that exhibit the
+following properties:
+
+1. Unusually slow to calculte legal moves for a given position.
+2. Unusually slow to apply a move to a given board state.
+3. Fast to find Nth legal move (e.g. Gomoku).
+4. Slow to find Nth legal move (e.g. Triskelion?).
+5. Fast to perform short lookahead (e.g. 2 ply) on a given position
+(e.g. Gomoku again).
+6. Slow to perform short lookahead on a given position.
+7. Unusually low branching factor.
+8. Unusually high branching factor.
+9. Long move sequences for either player (e.g. Chinese Checkers).
+10. Delayed reward, i.e. positional strength not clear until the end
+of the game (e.g. Omega, maybe Othello?).
+11. Immediate reward, i.e. immediate positional evaluation is a good
+indication of who will win.
+12. Random playouts give good estimate of who will win.
+13. Random playouts give poor estimate of who will win.
+14. Games in which a win or loss is never far away, i.e. high ratio of
+leaf nodes in the search tree (Palago?).
+15. Games in which a win or loss is very remote at the beginning but
+gets closer as the game progresses (Hex?).
+
+Basically any game that will affect the performance of MCTS/UCT by its
+very nature.
+
+Thanks,
+Cameron
+
+
+</pre></div></body>
+</html>
+</table></div>

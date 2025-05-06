@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Move ordering</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Move ordering</td></tr><tr><td><b>From: </b>gerwen@research.ptt.nl (Emile van Gerwen)</td></tr><tr><td><b>Date: </b>28/09/1993, 08:03</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Some people have asked for references on (parallel) AB-search. About a 
+year ago I asked the same question and got an answer from Claude Diderich.
+I hereby include his bibliography and added some references on articles
+I came across since then. I hope someone will find these references usefull.
+All credits go to Claude of course.
+
+
+Emile van Gerwen.
+
+
+
+
+
+
+@STRING{header = "
+-----------------------------------------------------------------------------
+File:       minimax.bib
+Version:    V01-000 of October 27th, 1992
+Author:     Claude G. Diderich
+            30, Avenue S.Reymondin, CH-1009 Pully, Switzerland, Europe
+            E-mail: <a class="moz-txt-link-abbreviated" href="mailto:diderich@di.epfl.ch">diderich@di.epfl.ch</a>
+Copyright:  (c) 1992 by Claude G. Diderich
+            Non commercial usage permitted as long as the above copyright no-
+            tice is included.
+Note:       Please  send  all  modifications  and  additions  to this file to
+            <a class="moz-txt-link-abbreviated" href="mailto:diderich@di.epfl.ch">diderich@di.epfl.ch</a>. AVAILABLE indicates if a copy of the article
+            is available to me (If you have  a copy  of an article marked NO,
+            I would be gratefull if you could send me a copy of it).
+-----------------------------------------------------------------------------
+"}
+
+@STRING{artint          = "Artificial Intelligence"}
+@STRING{ieeetopami      = "{IEEE} Transactions on Patters Analysis and
+    Machine Intelligence"}
+@STRING{jpdc            = "Journal of Parallel and Distributed Computing"}
+@STRING{parcomp         = "Parallel Computing"}
+@STRING{infocon         = "Information and Control"}
+
+@ARTICLE{Abra89,
+    AUTHOR      = "Bruce Abramson",
+    TITLE       = "Control Strategies for Two-Player Games",
+    JOURNAL     = acmcs,
+    VOLUME      = 21,
+    NUMBER      = 2,
+    PAGES       = "137--161",
+    MONTH       = Jun,
+    YEAR        = 1989
+}
+
+@ARTICLE{Alk82,
+    AUTHOR      = "Alk, Selim G. and Barnard, David T. and Doran, Ralph J.",
+    TITLE       = "Design, Analysis, and Implementation of a Parallel Tree
+                Search Algorithm",
+    JOURNAL     = ieeetopami,
+    YEAR        = 1982,
+    VOLUME      = "PAMI-4",
+    NUMBER      = 2,
+    MONTH       = mar,
+    PAGES       = "192--203"
+}
+
+@ARTICLE{Alth90,
+    AUTHOR      = {Ingo Alth\"ofer},
+    TITLE       = "An Incremental Negamax Algorithm",
+    JOURNAL     = artint,
+    YEAR        = 1990,
+    VOLUME      = 43,
+    PAGES       = "57--65"
+}
+
+@ARTICLE{Atal86,
+    AUTHOR      = "Mikhail J. Atallah and Susanne E. Hambrusch",
+    TITLE       = "Solving Tree Problems on a Mesh-Connected Processor Array",
+    JOURNAL     = infocon,
+    YEAR        = 1986,
+    VOLUME      = 69,
+    PAGES       = "168--187"
+}
+
+@ARTICLE{Ball83,
+    AUTHOR      = "Bruce W. Ballard",
+    TITLE       = "The *-Minimax Search Procedure for Trees Containing Chance
+                Nodes",
+    JOURNAL     = artint,
+    VOLUME      = 21,
+    PAGES       = "327--350",
+    YEAR        = 1983
+}
+
+@ARTICLE{Baud78a,
+    AUTHOR      = "G\'erard M. Baudet",
+    TITLE       = "On the Branching Factor of the Alpha-Beta Pruning
+                   Algorithm",
+    JOURNAL     = artint,
+    VOLUME      = 10,
+    PAGES       = "173--199",
+    YEAR        = 1978
+}
+
+@PHDTHESIS{Baud78b,
+    AUTHOR      = "G\'erard M. Baudet",
+    TITLE       = "The Design and Analysis of Algorithms for Asynchronous
+                Multiprocessors",
+    SCHOOL      = "Carnegie Mellon University",
+    YEAR        = 1978,
+    NUMBER      = "CMU-CS-78-116",
+    ADDRESS     = "Pittsburgh, PA",
+    AVAILABLE   = "NO"
+}
+
+@PHDTHESIS{Berl75,
+    AUTHOR      = "Hans Jack Berliner",
+    TITLE       = "Chess as Problem Solving",
+    SCHOOL      = "Carnegie Mellon University",
+    YEAR        = 1975,
+    ADDRESS     = "Pittsburgh, PA",
+    AVAILABLE   = "NO"
+}
+
+@ARTICLE{Berl89,
+    AUTHOR      = "Hans Jack Berliner and C. Eberling",
+    TITLE       = "Pattern Knowledge and Search: {T}he {SUPREME}
+                Architecture",
+    JOURNAL     = artint,
+    YEAR        = 1989,
+    VOLUME      = 38,
+    NUMBER      = 2,
+    PAGES       = "161--198"
+}
+
+@ARTICLE{Berl90,
+    AUTHOR      = "Hans Jack Berliner and G. Goetsch and M. S. Campbell and
+                C. Ebeling",
+    TITLE       = "Measuring the Performance Potential of Chess Programs",
+    JOURNAL     = artint,
+    YEAR        = 1990,
+    VOLUME      = 43,
+    NUMBER      = 1,
+    PAGES       = "7-20",
+    AVAILABLE   = "NO"
+}
+
+@ARTICLE{Bett88,
+    AUTHOR      = "Bettadapu Prakash and T. A. Marsland",
+    TITLE       = "Accuracy and Savings in Depth-Limited Capture Search",
+    JOURNAL     = "International Journal of Man-Machine Studies",
+    YEAR        = 1988,
+    VOLUME      = 29,
+    NUMBER      = 6,
+    PAGES       = "497--502",
+    AVAILABLE   = "NO"
+}
+
+@ARTICLE{Camp83,
+    AUTHOR      = "Murray S. Campbell and T. A. Marsland",
+    TITLE       = "A Comparison of Minimax Tree Search Algorithms",
+    JOURNAL     = artint,
+    VOLUME      = 20,
+    PAGES       = "347--367",
+    YEAR        = 1983
+}
+
+@ARTICLE{Darw83,
+    AUTHOR      = "Nevin M. Darwish",
+    TITLE       = "A Quantitative Analysis of the Alpha-Beta Pruning
+                Algorithm",
+    JOURNAL     = artint,
+    VOLUME      = 21,
+    PAGES       = "405--433",
+    YEAR        = 1983
+}
+
+@ARTICLE{Fink82,
+    AUTHOR      = "Raphale A. Finkel and John P. Fishburn",
+    TITLE       = "Parallelism in Alpha-Beta Search",
+    JOURNAL     = artint,
+    YEAR        = 1982,
+    VOLUME      = 19,
+    PAGES       = "89--106"
+}
+
+@ARTICLE{Fink83,
+    AUTHOR      = "Raphale A. Finkel and John P. Fishburn",
+    TITLE       = "Improved Speedup Bounds for Parallel Alpha-Beta Search",
+    JOURNAL     = ieeetopami,
+    YEAR        = 1983,
+    VOLUME      = "PAMI-5",
+    NUMBER      = 1,
+    PAGES       = "89--92"
+}
+
+@INBOOK{Fish84,
+    AUTHOR      = "John P. Fishburn",
+    TITLE       = "Analysis of Speedup in Distributed Algorithms",
+    CHAPTER     = "4 -- {P}arallel Alpha-Beta Search",
+    PAGES       = "11-54",
+    PUBLISHER   = "UMI Research Press",
+    YEAR        = 1984,
+    VOLUME      = 14,
+    SERIES      = "Computer Science: Distributed Database Systems",
+    NOTE        = "Revision of thesis (PhD) -- University of Wisconsin,
+                Madison, 1981"
+}
+
+@ARTICLE{Hora90,
+    AUTHOR      = "Helmut Horacek",
+    TITLE       = "Reasonning with Uncertainty in Computer Chess",
+    JOURNAL     = artint,
+    YEAR        = 1990,
+    VOLUME      = 43,
+    PAGES       = "37--56"
+}
+
+@PHDTHESIS{Hsu90,
+    AUTHOR      = "Feng-hsiung Hsu",
+    TITLE       = "Large Scale Parallelization of Alpha-Beta Search: An
+                Algorithmic and Architectural Study with Computer Chess",
+    SCHOOL      = "Carnegie Mellon University",
+    YEAR        = 1990,
+    NUMBER      = "CMU-CS-90-108",
+    ADDRESS     = "Pittsburgh, PA",
+    AVAILABLE   = "NO"
+}
+
+@ARTICLE{Ibar86,
+    AUTHOR      = "Toshi Ibaraki",
+    TITLE       = "Generalization of Alpha-Beta and {SSS*} Search Procedures",
+    JOURNAL     = artint,
+    YEAR        = 1986,
+    VOLUME      = 29,
+    PAGES       = "73--117"
+}
+
+@ARTICLE{Kain91,
+    AUTHOR      = "Kaindl, Hermann and Shams, Reza and Horacek, Helmut",
+    TITLE       = "Minimax Search Algorithms with and without Aspiration
+                Windows",
+    JOURNAL     = ieeetopami,
+    YEAR        = 1991,
+    VOLUME      = "PAMI-13",
+    NUMBER      = 12,
+    MONTH       = Dec,
+    PAGES       = "1225--1235"
+}
+
+@ARTICLE{Kato88,
+    AUTHOR      = "Y. Katoh and T. Ibaraki",
+    TITLE       = "Game Solving Procesure SSSR is Unsurpassed",
+    JOURNAL     = "Systems and computers in Japan",
+    YEAR        = 1988,
+    VOLUME      = 19,
+    NUMBER      = 7,
+    PAGES       = "93-103",
+    AVAILABLE   = "NO"
+}
+
+@ARTICLE{Knut75,
+    AUTHOR      = "Donald E. Knuth and Ronald W. Moore",
+    TITLE       = "An Analysis of Alpha-Beta Pruning",
+    JOURNAL     = artint,
+    VOLUME      = 6,
+    NUMBER      = 4,
+    PAGES       = "293--326",
+    YEAR        = 1975
+}
+
+@ARTICLE{Mars82,
+    AUTHOR      = "T. A. Marsland and Murray S. Campbell",
+    TITLE       = "Parallel Search of Strongly Ordered Game Trees",
+    JOURNAL     = acmcs,
+    VOLUME      = 14,
+    NUMBER      = 4,
+    PAGES       = "533--551",
+    MONTH       = Dec,
+    YEAR        = 1982
+}
+
+@ARTICLE{Mars85,
+    AUTHOR      = "T. A. Marsland and Fred Popowich",
+    TITLE       = "Parallel Game-Tree Search",
+    JOURNAL     = ieeetopami,
+    YEAR        = 1985,
+    VOLUME      = "PAMI-7",
+    NUMBER      = 4,
+    MONTH       = jul,
+    PAGES       = "442--452"
+}
+
+@ARTICLE{Mars87,
+    AUTHOR      = "Marsland, T. A. and Reinefeld, Alexander and Schaeffer,
+                Jonathan",
+    TITLE       = "Low Overhead Alternatives to {SSS*}",
+    JOURNAL     = artint,
+    VOLUME      = 31,
+    PAGES       = "185--199",
+    YEAR        = 1987
+}
+
+@ARTICLE{McAl88,
+    AUTHOR      = "David Allen McAllester",
+    TITLE       = "Conspiracy Numbers for Min-Max Searching",
+    JOURNAL     = artint,
+    VOLUME      = 35,
+    PAGES       = "287--310",
+    YEAR        = 1988
+}
+
+@ARTICLE{Nau83,
+    AUTHOR      = "Danna S. Nau",
+    TITLE       = "Pathology on Game Trees Revisited, and an Alternative to
+                Minimaxing",
+    JOURNAL     = artint,
+    VOLUME      = 21,
+    PAGES       = "221--244",
+    YEAR        = 1983
+}
+
+@ARTICLE{Newb77,
+    AUTHOR      = "Monroe M. Newborn",
+    TITLE       = "The Efficiency of the Alpha-Beta Search on Trees with
+                Branch-dependent Terminal Node Scores",
+    JOURNAL     = artint,
+    VOLUME      = 8,
+    PAGES       = "137--153",
+    YEAR        = 1977
+}
+
+@ARTICLE{Newb88,
+    AUTHOR      = "Monroe M. Newborn",
+    TITLE       = "Unsynchronized Iteratively Deepening Parallel Alpha-Beta
+                Search",
+    JOURNAL     = ieeetopami,
+    YEAR        = 1988,
+    VOLUME      = "PAMI-10",
+    NUMBER      = 5,
+    PAGES       = "687--694",
+}
+
+@ARTICLE{Pear80,
+    AUTHOR      = "Judea Pearl",
+    TITLE       = "Asymptotical Properties of Minimax Trees and Game
+                   Searching Procedures",
+    JOURNAL     = artint,
+    VOLUME      = 14,
+    NUMBER      = 2,
+    PAGES       = "113--138",
+    YEAR        = 1980
+}
+
+@PHDTHESIS{Pijl91,
+    AUTHOR      = "Wim Pijls",
+    TITLE       = "Shortest Paths and Game Trees",
+    SCHOOL      = "Erasmus University Rotterdam",
+    YEAR        = 1991,
+    MONTH       = Nov,
+    ADDRESS     = "Rotterdam, NL",
+    AVAILABLE   = "THESIS BOOK"
+}
+
+@TECHREPORT{Pijl92a,
+    AUTHOR      = "Wim Pijls and Arie Bruin",
+    TITLE       = "Another View of the {SSS*} Algorithm",
+    INSTITUTION = "Erasmus University Rotterdam",
+    YEAR        = 1992,
+    MONTH       = Jan,
+    ADDRESS     = "Rotterdam, NL"
+}
+
+@TECHREPORT{Pijl92b,
+    AUTHOR      = "Wim Pijls and Arie Bruin",
+    TITLE       = "Searching Informed Game Trees",
+    NOTE        = "extended abstract",
+    INSTITUTION = "Erasmus University Rotterdam",
+    YEAR        = 1992,
+    ADDRESS     = "Rotterdam, NL"
+}
+
+@TECHREPORT{Pijl92c,
+    AUTHOR      = "Wim Pijls and Arie Bruin",
+    TITLE       = "Searching Informed Game Trees",
+    INSTITUTION = "Erasmus University Rotterdam",
+    YEAR        = 1992,
+    MONTH       = Aug,
+    ADDRESS     = "Rotterdam, NL"
+}
+
+@ARTICLE{Rive87,
+    AUTHOR      = "Ronald L. Rivest",
+    TITLE       = "Game Tree Searching by Min/Max Approximation",
+    JOURNAL     = artint,
+    YEAR        = 1987,
+    VOLUME      = 34,
+    NUMBER      = 1,
+    PAGES       = "77--96",
+    AVAILABLE   = "NO"
+}
+
+@ARTICLE{Roiz83,
+    AUTHOR      = "Igor Roizen and Judea Pearl",
+    TITLE       = "A Minimax Algorithm Better than Alpha-Beta? Yes and No",
+    JOURNAL     = artint,
+    VOLUME      = 21,
+    PAGES       = "199--230",
+    YEAR        = 1983
+}
+
+@ARTICLE{Scha89a,
+    AUTHOR      = "Jonathan Schaeffer",
+    TITLE       = "Distributed Game-Tree Searching",
+    JOURNAL     = jpdc,
+    VOLUME      = 6,
+    PAGES       = "90--114",
+    YEAR        = 1989
+}
+
+@ARTICLE{Scha89b,
+    AUTHOR      = "Jonathan Schaeffer",
+    TITLE       = "The History Heuristic and Alpha-Beta Search Enhancements
+                in Practice",
+    JOURNAL     = ieeetopami,
+    YEAR        = 1989,
+    VOLUME      = "PAMI-11",
+    NUMBER      = 1,
+    MONTH       = Nov,
+    PAGES       = "1203--1212"
+}
+
+@ARTICLE{Scha90,
+    AUTHOR      = "Jonathan Schaeffer",
+    TITLE       = "Conspiracy Numbers",
+    JOURNAL     = artint,
+    YEAR        = 1990,
+    VOLUME      = 43,
+    PAGES       = "67--84"
+}
+
+@ARTICLE{Slag69,
+    AUTHOR      = "James H. Slagle and John K. Dixon",
+    TITLE       = "Experiments With SOme Programs That Search Game Trees",
+    JOURNAL     = jacm,
+    VOLUME      = 16,
+    NUMBER      = 2,
+    YEAR        = 1969,
+    MONTH       = Apr,
+    PAGES       = "189--207"
+}
+
+@ARTICLE{Stoc79,
+    AUTHOR      = "G. Stockman",
+    TITLE       = "A Minimax Algorithm Better than alpha-beta?",
+    JOURNAL     = artint,
+    VOLUME      = 12,
+    NUMBER      = 2,
+    PAGES       = "179--196",
+    YEAR        = 1979
+}
+
+@article{AkBD80,
+   author = "S.G. Akl and D.T. Barnard and R.J. Doran",
+   booktitle = "International Conference on Parallel Processing",
+   pages = "231--234",
+   title = "Simulation and analysis in deriving time and storage
+ requirements for a parallel alpha-beta algorithm",
+   year = "1980"
+}
+
+@article{AlBa91,
+   author = "Ingo Alth{\"o}fer and Bernhard Balkenhol",
+   journal = "Artificial Intelligence",
+   pages = "183--190",
+   title = "A game tree with distinct leaf values which is easy for the alpha-beta algorithm",
+   volume = "52",
+   year = "1991"
+}
+
+@techreport{CuRo91,
+   author = "Van-Dat Cung and Catherine Roucairol",
+   institution = "INRIA",
+   month = nov,
+   note = "In French, will be appear in English",
+   number = "1549",
+   title = "Parallel Minimax Tree Searching",
+   type = "RR",
+   year = "1991"
+}
+
+
+@inproceedings{FMMV90,
+   author = "R. Feldmann and B. Monien and P. Mysliwietz and Oliver Vornberger",
+   booktitle = "Parallel Algorithms for Machine Intelligence and Vision",
+   editor = "Springer-Verlag",
+   pages = "66--101",
+   title = "Distributed Game Tree Search",
+   year = "1990"
+}
+
+
+@inbook{FeMM90,
+   author = "R. Feldmann and P. Mysliwietz and B. Monien",
+   chapter = "1 A Fully Distributed Chess Program",
+   edition = "D. Beal",
+   pages = "1--27",
+   publisher = "Ellis Horwood",
+   title = "Advances in Computer Chess 6",
+   year = "1990"
+}
+
+@inproceedings{FeMM91,
+   author = "R. Feldmann and P. Mysliwietz and B. Monien",
+   editor = "Springer-Verlag",
+   month = sep,
+   pages = "270--288",
+   series = "Data structures and efficient algorithms~: final report on the DFG special joint initiative",
+   title = "Distributed Game Tree Search on a Massively Parallel System",
+   volume = "594",
+   year = "1991"
+}
+
+@inproceedings{FeOt88a,
+   author = "E.W. Felten and S.W. Otto",
+   booktitle = "The Third Conference on Hypercube Concurrent
+ Computers and Applications",
+   editor = "Geoffrey Fox",
+   pages = "1329--1341",
+   title = "Chess on a Hypercube",
+   volume = "II-Applications",
+   year = "1988"
+}
+
+
+@techreport{FuGG73,
+   author = "S.H. Fuller and J.G. Gaschnig and J.J. Gillogly",
+   address = "Pittsburgh",
+   institution = "Carnegie-Mellon University, Dept. of Computer Science",
+   month = jul,
+   title = "An analysis of the Alpha-beta pruning algorithm",
+   year = "1973"
+}
+
+
+@inbook{HACN89,
+   author = "F-h. Hsu and T. S. Anantharaman and M. S. Campbell and A. Nowatzyk",
+   chapter = "5 Deep Thought",
+   pages = "55--78",
+   title = "Computers, Chess, and Cognition",
+   year = "1989"
+}
+
+@article{HMMT87,
+   author = "Usui Hiromoto and Yamashita Masafumi and Imai Masaharu and
+ Ibaraki Toshihide",
+   journal = "Systems and Computers in Japan",
+   number = "8",
+   pages = "97--109",
+   title = "Parallel Searches of Game Trees",
+   volume = "18",
+   year = "1987"
+}
+
+
+@article{Hunt88,
+   author = "Matthew M. Huntbach",
+   journal = "Information Sciences",
+   pages = "3--17",
+   title = "Alpha-Beta Search on Virtual Tree Machines",
+   volume = "44",
+   year = "1988"
+}
+
+
+@article{HySu89,
+   author = "R.M. Hyatt and B.W. Suter",
+   journal = "Parallel Computing",
+   pages = "299--308",
+   title = "A parallel alpha/beta tree searching algorithm",
+   volume = "10",
+   year = "1989"
+}
+
+@article{IbKa90,
+   author = "Toshihide Ibaraki and Yoshiroh Katoh",
+   journal = "Annals of Mathematics and Artificial Intelligence",
+   pages = "141--153",
+   title = "Searching Minimax Game Trees Under Memory Space Constraint",
+   volume = "1",
+   year = "1990"
+}
+
+
+@inproceedings{Ibar87,
+   author = "T. Ibaraki",
+   booktitle = "Discrete Algorithms and Complexity",
+   editor = "D. S. Johnson and al.",
+   pages = "185--200",
+   title = "Game Solving Procedure H* is Unsurpassed",
+   year = "1987"
+}
+
+
+@article{KaZh89,
+   author = "Richard M. Karp and Yanjun Zhang",
+   journal = "First ACM Annual symposium on parallel algorithms and
+ architectures",
+   pages = "409--420",
+   title = "On parallel evaluation of game trees",
+   year = "1989"
+}
+
+
+
+@article{KuKa84,
+   author = "Vipin Kumar and Laveen N. Kanal",
+   journal = "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+   month = nov,
+   number = "6",
+   pages = "768--778",
+   title = "Parallel Branch-and-Bound Formulations for AND/OR Tree Search",
+   volume = "PAMI-6",
+   year = "1984"
+}
+
+
+
+@article{LeKa85,
+   author = "Daniel B. Leifker and Laveen N. Kanal",
+   journal = "IJCAI",
+   pages = "1044--1046",
+   title = "A Hybrid $SSS^*$/Alpha-Beta Algorithm for Parallel
+ Search of Game Trees",
+   year = "1985"
+}
+
+
+
+@techreport{Lind83,
+   author = "Gary Lindstrom",
+   address = "Salt Lake City",
+   institution = "University of Utah, Department of Computer Science",
+   month = mar,
+   number = "UUCS 83-101",
+   title = "The Key Node Method : A Highly-Parallel Alpha-Beta
+ Algorithm",
+   year = "1983"
+}
+
+
+@book{Nils80,
+   author = "Nils J. Nilsson",
+   publisher = "Tioga Publishing Co.",
+   title = "Principles of Artificial Intelligence",
+   year = "1980"
+}
+
+
+@book{Pear84,
+   author = "Judea Pearl",
+   publisher = "Addison-Wesley",
+   title = "Heuristics",
+   year = "1984"
+}
+
+
+@article{ReSM85,
+   author = "Alexander Reinefeld and Jonathan Schaeffer and T. A. Marsland",
+   journal = "9th IJCAI",
+   pages = "1040--1043",
+   title = "Information Acquisition in Minimal Window Search",
+   volume = "2",
+   year = "1985"
+}
+
+
+@article{ShSh91,
+   author = "Rajjan Shinghal and Sofia Shved",
+   journal = "International Journal of Pattern Recognition and Artificial Intelligence",
+   number = "5",
+   pages = "809--833",
+   title = "Proposed Modifications to Parallel State Space Search of Game Trees",
+   volume = "5",
+   year = "1991"
+}
+
+
+@inproceedings{StSo90,
+   author = "Igor Steinberg and Marvin Solomon",
+   booktitle = "International Conference on Parallel Processing",
+   pages = "III-9 -- III-17",
+   title = "Searching Game Trees in Parallel",
+   year = "1990"
+}
+
+
+@inproceedings{VoMo87,
+   author = "Oliver Vornberger and Burkhard Monien",
+   booktitle = "IFIP Conference on Distributed Processing",
+   month = oct,
+   pages = "613--625",
+   title = "Parallel Alpha-Beta versus Paralle SSS*",
+   year = "1987"
+}
+
+@article{Mon92a,
+   author = "G. Montgomery",
+   journal = "AI Expert",
+   month = mar,
+   pages = "38--43",
+   title = "Improving State Space Search",
+   year = "1992"
+}
+
+@article{Mon92b,
+   author = "G. Montgomery",
+   journal = "AI Expert",
+   month = apr,
+   pages = "40--47",
+   title = "Mastermind: Improving the Search",
+   year = "1992"
+}
+
+
+</pre></div></body>
+</html>
+</table></div>

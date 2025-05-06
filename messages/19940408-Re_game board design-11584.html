@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: game board design</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: game board design</td></tr><tr><td><b>From: </b>gary@lf.hp.com (Gary Jackoway)</td></tr><tr><td><b>Date: </b>08/04/1994, 14:33</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.design,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Damien P. Neil (<a class="moz-txt-link-abbreviated" href="mailto:damien@b63519.student.cwru.edu">damien@b63519.student.cwru.edu</a>) wrote:
+: In article <a class="moz-txt-link-rfc2396E" href="mailto:Cnw5A8.91q@and.nl">&lt;Cnw5A8.91q@and.nl&gt;</a>, Jos Horsmeier <a class="moz-txt-link-rfc2396E" href="mailto:jos@and.nl">&lt;jos@and.nl&gt;</a> wrote:
+
+: [Fascinating game deleted]
+
+: Well, it seems that what you need is a method of easily representing two
+: different values on each piece, one ranging from 1 to 11, and the other
+: being in the set {1,2,3,5,8}.
+
+: First, each piece must be identified as having a side. Checkers pieces are
+: a good size, and come already color-coded for two sides, so I'll use one
+: of those as a starter.
+
+Yes, but checkers have another feature: they stack...
+
+: Next, each piece has a rank. Write a rank on the top of the checkers
+: piece. When a piece changes rank, change the piece to one with an
+: appropriate number on the top. I forget how many pieces existed in the
+: game, but this means that you will need 5 * (number of pieces) different
+: pieces to cover all possible situations.
+
+How about this: instead of writing the number on the top, why not just
+stack up n checkers to represent the strength.  That would give a much
+more visual representation, and be easy to manipulate.
+
+: Finally, you need to indicate decay. Drill a hole in each piece, big enough
+: to fit a toothpick. Make a number of little flags out of toothpicks. Write
+: a letter from A to K on each flag. For starters, each piece has an A flag
+: put in it.
+
+: Make a row of boxes along one side of the board, lettered from A to K.
+: Put a marker in the A box to start with. At the end of every round, move
+: the marker one letter forwards. When it passes K, it wraps around to A.
+: If, after moving the marker, a piece has the same letter on it's flag as
+: the letter the marker now indicates, it has expired.
+
+: Whenever you move a piece, update it's flag to the letter the marker is
+: currently indicating.
+
+Alternatively, how about little stickies like post-its that have the numbers
+1-99.  Each time you move a piece, you stick the move number on top.  The
+current move is the lowest sticky you still have.  The only thing I don't
+like is that it is hard to tell when a piece is going critical.  Maybe you
+could use the color wheel for this.  Make the stickies from 1-11 go from
+red to violet and back to red for #12.  Then you could tell by color which
+ones were decaying.  (You'd still need the numbers of course but the color
+would be a reminder of which pieces are going bad.)
+
+My 2 cents.
+
+Gary Jackoway
+
+</pre></div></body>
+</html>
+</table></div>

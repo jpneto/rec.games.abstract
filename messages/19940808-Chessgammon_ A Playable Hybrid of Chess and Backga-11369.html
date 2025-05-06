@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Chessgammon: A Playable Hybrid of Chess and Backgammon</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Chessgammon: A Playable Hybrid of Chess and Backgammon</td></tr><tr><td><b>From: </b>darse@cs.ualberta.ca (Darse Billings)</td></tr><tr><td><b>Date: </b>08/08/1994, 00:43</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,rec.games.chess,rec.games.backgammon</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Chessgammon: A Playable Hybrid of Chess and Backgammon
+
+Copyright (C) Darse Billings, August 1994.
+
+While playing around with idea of combining the nice properties of
+backgammon and chess, I hit upon the following highly playable game,
+which I call "chessgammon" for obvious reasons.
+
+The existing forms of dice chess, such as Modern Chaturanga, are
+rather unsatisfying.  By applying the dice rules and doubling cube
+from backgammon to the game of chess, an interesting and exciting
+hybrid is formed.  The result is similar to backgammon in tempo, but
+is (arguably) richer in strategy, because the goal is to capture the
+enemy King instead of winning a race.
+
+Chessgammon should appeal to anyone who enjoys backgammon and knows
+the rules of chess.  Chessgammon could also become highly popular
+among serious chess players who are always looking for fast and fun
+alternatives to their favourite game.
+
+In chessgammon, each value of the dice corresponds to a type of piece,
+as follows:
+
+roll piece
+---- -----
+  1  Pawn
+  2  Knight
+  3  Bishop
+  4  Rook
+  5  Queen
+  6  King
+
+These values are easy to remember because they correspond to the strengths
+of the pieces.  The pips on the dice can also serve as a mnemonic: one dot
+for a pawn, three diagonal dots for a bishop, a square pattern for the
+rook, five dots like the crown of a Queen, and so on.
+
+On each turn, a player rolls two dice and moves two men (if possible) as
+indicated by those values.  As in backgammon, the player must use both
+rolls if possible to do so.  For example, on an opening roll of 6-1, the
+player must move a pawn and the King, so the only pawns that may be
+moved are the d, e, and f pawns, and there are exactly six legal moves
+to choose from.
+
+If a player has no piece of the type indicated by a die roll, or if all
+pieces of that type have no legal move, then that die roll cannot be
+used (but the other die roll must still be used if possible).  It is not
+uncommon for all or part of a roll to be unusable.
+
+Rolling doubles allows a player to move two pieces of that type, or the
+same piece twice (which can be a very powerful roll).  At the beginning
+of the game, each player rolls one die, and the player rolling the
+higher value moves first, using those two die rolls.  Ties are re-rolled,
+so no game may begin with doubles.
+
+The rules for piece movement are exactly as in chess, except that it is
+legal to move into check and to ignore checks.  The object is to capture
+the enemy King, which ends the game.  Pawns may promote to any piece
+other than a King.  All other rules, including castling and en passant
+captures, apply in the obvious way.
+
+As most serious backgammon players know, the use of the doubling cube
+adds a lot to the strategy and skill element of the game.  Use of the
+doubling cube is strongly recommended for chessgammon.
+
+One difference between the two games is that backgammon has the
+possibility of winning a double game (gammon).  This sometimes
+discourages the use of the cube in very strong positions, making for
+longer games.  Chessgammon has no such deterrent to doubling, and
+combined with the sudden-death nature of victory, the average game may
+be considerably shorter.  For those who enjoy the possibility of
+gammons, a double game can be awarded for capturing all sixteen of the
+opponents pieces (ie. baring the enemy King and then capturing it).
+
+The following is a sample game which should clarify how the game is
+played, and illustrate some of the strategic aspects of the game.
+First I will give the raw game score, then I will give an annotated
+version.
+
+ 1. 6 4 ---       2. 5 3 ---       3. 2 1 Nc3 e3    4. 4 1 h5 Rh6
+ 5. 6 1 Ke2 b4    6. 3 3 ---       7. 6 4 Ke1 Rb1   8. 6 5 ---
+ 9. 5 2 Qf3 Nb5  10. 3 2 Na6      11. 4 2 Rb3 Nc7  12. 6 6 ---
+13.     doubles  14.     accepts  15. 3 1 Ba6 h4   16. 3 1 e5 Bd6
+17. 6 4 Kf1 Rh3  18. 5 3 Qc7 Be7  19. 5 1 Qf7 d3   20. 4 1 Rf6 ba6
+21. 5 3 Qe8#     White wins 2 points
+
+White rolls 6
+Black rolls 4
+
+White starts the game.
+
+ 1. 6 4 ---
+ 2. 5 3 ---
+ 3. 2 1 Nc3 e3
+
+White chooses e3 instead of e4 to avoid opening lines against her own
+King.  King safety is a key strategic element in chessgammon, just as
+it is in chess.  Indeed, many chess principles carry over to the
+probabilistic game.
+
+ 4. 4 1 h5 Rh6
+
+As in backgammon, Black must use both die rolls if possible to do so,
+and this is clearly the best of the six legal moves.
+
+ 5. 6 1 Ke2 b4
+
+White loses the right to castle and is forced to a more vulnerable
+square, both of which are common occurences in chessgammon.  White
+selects b4 to develop the queenside bishop, again not wanting to expose
+the King by moving the d or f pawns.
+
+ 6. 3 3 ---
+ 7. 6 4 Ke1 Rb1
+ 8. 6 5 ---
+ 9. 5 2 Qf3 Nb5
+
+White has a large lead in development resulting from Black's three
+useless rolls, and now makes two serious threats against the King.  A
+one-on-one match-up between two pieces, each having an 11/36 chance of
+capturing the other, gives the first player to act about a 59% chance
+of succeeding, assuming no other pieces intervene.  Thus, Nxc7 would
+give White about a 40% chance of winning immediately, with relatively
+little to lose, and is therefore a dangerous threat to Black.  In
+addition, White threatens to win immediately with rolls of 2 2 or 5 5.
+
+10. 3 2 Na6
+
+Defending the c7 square is clearly the highest priority for the Knight.
+
+11. 4 2 Rb3 Nxc7 ?!
+
+White captures on c7 anyway, attacking the King but leaving the knight
+"en prise" to two pieces.  Black has a 20/36 chance of capturing, and
+White will have an 11/36 chance should Black fail.  This gives White
+about a 20% chance of winning instantly.  If the knight is lost, White
+estimates her chances of winning at around 50%, since she still has a
+lead in development which compensates for the lost material.  Thus her
+equity for the game is about 0.60, and it looks like a good move.
+However, Nd6 was a clearly superior move, since Black could not then
+use fives, and because he already has good uses for fours, such as Rf6.
+
+Note also that this move would not be as good if White did not have
+another knight on the board, since then she would be risking the use
+of all rolled twos.  Keeping at least one piece of each type on the
+board is another important strategic principle.
+
+12. 6 6 ---
+13.     doubles
+
+With Black's miss, White now has about a 44% chance of capturing the
+King with the knight, increasing the equity to around 0.72.  Equity
+values in chessgammon are often highly volatile, since you usually
+have many "market losers" in threatening to win the game instantly...
+
+14.     accepts
+15. 3 1 Bxa6 h4 
+
+Not c4 or b5, because White wants to keep the c4 square open for the bishop.
+
+16. 3 1 e5 Bd6
+17. 6 4 Kf1 Rh3
+18. 5 3 Qxc7 Be7
+
+Probably better was Bxc7 Qf6.  Both Queens are defended three times, so
+there is about a 90% chance of recapturing, making the risk of losing
+the Queen outright around 6%.  In return, Black relieves some of the
+pressure on f7, and threatens to take the bishop on a6 with check.
+
+19. 5 1 d3 Qxf7 !?
+
+White defends against 5 5 Qc4 Qf1# with d3, and plays the very sharp
+move Qxf7.  Black has 13 rolls to capture the Queen (including 4 4 and
+5 5), and failing will give White an 11/36 chance to win.  Ignoring
+secondary defences (which are not great, but not insignificant), this
+gives White about a 35% chance of winning immediately.  If the King
+captures the Queen, it will still be exposed on f7, and the h3 rook or
+the a6 bishop may finish the job.  White estimates she has a 40% chance
+of winning without the Queen (perhaps optimistic), giving a cubeless
+equity of about 0.61.  However, this does not account for Black's
+potential double in the event that White fails.  This, combined with
+the loss of all rolled fives, probably makes a less risky move
+preferable.
+
+20. 4 1 Rf6 ba6
+21. 5 3 Qe8#    White wins 2 points
+
+Rack'em up and play again!  Despite this lengthy analysis, this game
+would have probably taken less than five minutes to play.
+
+
+There is an easy method for computing the probabilities commonly
+encountered in chessgammon.  For example, suppose two Kings are
+adjacent to each other, with no other pieces on the board (an unlikely
+occurence!).  Each King has an 11/36 chance of capturing, so the
+probability that the first player to act will win is:
+
+(11/36) + (11/36)(25/36)(25/36) + (11/36)[(25/36)^4] + ...
+
+while the second player's chances are:
+
+(11/36)(25/36) + (11/36)[(25/36)^3] + (11/36)[(25/36)^5] + ...
+
+But notice that each pair of terms in this infinite sequence have the
+same ratio (because (25/36)^2 is a common factor).  So to compute the
+exact probability, we need only compute the ratio of the first two terms:
+
+  Player A first move: (11/36)          = 0.3056
+  Player B first move: (11/36)(25/36)   = 0.2122
+
+  Prob [Player A wins] = 0.3056 / (0.3056 + 0.2122) = 0.5901 = 1296/2196
+
+In general, if Pa and Pb are the probabilities of player A or B
+hitting, respectively, then the probability that player A wins is:
+
+  Pa / (Pa + Pb(1 - Pa))
+
+Computing actual probabilities during a game is not essential.  As
+with backgammon, accurate estimates become second nature with
+experience, and familiar patterns become recognizable.
+
+						Cheers,  - Darse.
+--
+  Go is better than Chess.  Poker is more lucrative.  Sex is more fun.
+
+  Darse Billings, 7 kyu; 2065 CFC; meaningless IRC sb/hand ratios:
+  (rayzor on IRC)		   Hold'em +0.22 ; HiLo Omaha +0.56
+
+</pre></div></body>
+</html>
+</table></div>

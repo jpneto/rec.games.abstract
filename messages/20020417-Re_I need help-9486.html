@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: I need help</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: I need help</td></tr><tr><td><b>From: </b>Bob Harris &lt;nitlion@mindspring.com&gt;</td></tr><tr><td><b>Date: </b>17/04/2002, 13:01</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Prem wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I need the info reg. the following game. This is somewhat similar
+to nim. Played between two players. There are two heaps of coins of
+size m,n. Each player may take x coins from any of the heap or from
+both the heaps such that x &gt; 0. Can you please give me the details
+about this game? I have a solution for this game. But I donno the
+complete details of this game.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+and Jan Kristian Haugland replied:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+... It seems that we get the P-positions by starting with P_0 = {0, 0} and
+adding recursively for k &gt;= 1
+
+P_k = {smallest positive integer not used, same + k}
+
+This gives: {1, 2}, {3, 5}, {4, 7}, {6, 10}, {8, 13}, {9, 15},
+{11, 18}, {12, 20}, {14, 23}, {16, 26}, {17, 28}, ...
+
+I guess it's tricky to find a closed form expression for these.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+to which David desJardins remarked:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I think these are the pairs {floor(k*phi), floor(k*phi^2)} for
+k=1,2,3,..., where phi=(1+sqrt(5))/2.  These have the well-known
+property that the k-th pair has gap size k, and every natural number
+occurs exactly once in the sequence.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+By pure twist of fate, I happened upon this game in "Exploring Mathematics
+With Your Computer", by Arthur Engel, page 169.  It is called "Wythoff's
+Game".  An exercise on page 171 confirms David desJardins statement, and
+suggests it can be proven using "Beatty's Theorem" about complementary
+sequences.
+
+Hope that helps,
+Bob H
+
+
+</pre></div></body>
+</html>
+</table></div>

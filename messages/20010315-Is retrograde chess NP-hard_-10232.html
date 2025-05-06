@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Is retrograde chess NP-hard?</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Is retrograde chess NP-hard?</td></tr><tr><td><b>From: </b>tchow@lsa.umich.edu</td></tr><tr><td><b>Date: </b>15/03/2001, 16:52</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,rec.games.chess.misc,comp.theory,sci.math</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Apparently no theorems are known about the computational complexity of
+retrograde analysis in chess (or other well-known abstract games.  I have
+raised this question before but have a couple of new thoughts that maybe
+someone can build on.
+
+There are many ways to formalize the problem of retrograde analysis.  I am
+taking the following as a working definition.
+
+INSTANCE: Two generalized chess positions, a "start position" and an "end
+position."
+
+QUESTION: Does there exist a legal sequence of moves taking us from the
+start position to the end position?
+
+As a variation, we could also specify a bound on the number of moves.
+It is not even immediately clear that this problem is in NP, because the
+obvious "certificate" (i.e., the list of moves) could be exponential in
+length.
+
+Leaving that aside, can we show that the problem is NP-hard?  The thought
+I have is to reduce 3-SAT to retrograde chess, along the following lines.
+Given an instance of 3-SAT with n variables and m clauses, we design a
+generalized chess position in which White has n "Capturers" (pieces or
+pawns that will function as capturers of Black pieces) and Black has m
+"Sacrificers" (pieces or pawns that will sacrifice themselves to the
+White Capturers).  In the start position, all the Capturers and Sacrificers
+will be present, and in the end position, the Capturers will still be there
+but the Sacrificers will be gone.  The positions should be designed so that:
+
+1. Each Capturer has two ways of getting from their start positions to
+   their end positions, and it is not immediately clear which path they
+   took.  Label the two paths "0" and "1."  Let's also require that the
+   paths be disjoint.
+
+2. For each Sacrificer, there are just three places where it could have
+   been captured (call these places "altars").  Specifically, if the ith
+   clause in the 3-SAT instance is (for example) x_r V ~x_s V x_t, then
+   the three altars of the ith Sacrificer must appear on the "1" path of
+   the rth Capturer, the "0" path of the sth Capturer, and the "1" path
+   of the tth Capturer respectively.
+
+However, I haven't been able to convert this rough outline into a specific
+construction.  Can anyone else do so?
+<div class="moz-txt-sig">-- 
+Tim Chow       tchow-at-alum-dot-mit-dot-edu
+The range of our projectiles---even ... the artillery---however great, will
+never exceed four of those miles of which as many thousand separate us from
+the center of the earth.  ---Galileo, Dialogues Concerning Two New Sciences
+
+</div></pre></div></body>
+</html>
+</table></div>

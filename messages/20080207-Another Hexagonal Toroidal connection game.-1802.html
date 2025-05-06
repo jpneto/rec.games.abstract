@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Another Hexagonal Toroidal connection game.</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Another Hexagonal Toroidal connection game.</td></tr><tr><td><b>From: </b>Bill Taylor &lt;w.taylor@math.canterbury.ac.nz&gt;</td></tr><tr><td><b>Date: </b>07/02/2008, 05:25</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Here is my first attempt (for this year!) to construct
+a toroidal and locally-hex form of connection game.
+
+It is not really satisfactory, as we will see.
+
+The type of board that I'm REALLY keen on(!), is this:-
+
+|            .   .   .   .
+|          .   .   .   .   .
+|        .   .   .   .   .   .
+|      .   .   .   .   .   .   .
+|    .   .   .   .   .   .   .   .
+|      .   .   .   .   .   .   .
+|        .   .   .   .   .   .
+|          .   .   .   .   .
+
+Obviously this can extend to any size,
+with alternately  n  and  n+1  length edges.
+
+This has THREE glueing connections, rather than just 2;
+top to bottom, NE to SW, NW to SE.  They glue while
+maintaining the locally-hex connections.   As shown here:
+
+|          o  n  m  l k
+|        h  A  B C D r          The original board is shown with
+|       i   U  .  .   .  E q        the rim cells marked with caps.
+|      j  T   .   .   .  . F p
+|    k  S  .  .   .   .  . G o    Surrounding is an outer rim of
+|  d  R  .  .   .   .  .  . H a   "ghost cells" in lowercase,
+|    e  Q .  .   .   .  .  I u     such that when a real rim cell
+|      f  P  .   .   .  . J  t       is played, a similar stone
+|       g  O N M L K s        automatically appears in its
+|         h  a  b  c d r          ghost of the same letter.
+
+So, standard sort of direct, cross-board connections.
+
+It looks at first as if this might be some sort of
+"super-torus", but mathies will easily recognize it
+as merely a different representation of a 4x12 hex-torus.
+
+It has much nicer symmetry properties this way, though!
+
+To win, a player must make a global loop of
+the appropriate type.  That is, NW/SE, NE/SW, or N/S.
+That is unfortunately three types for just two players!!
+(Nor does a 3-player version work, alas!)
+
+One possible solution is to play 2 winning-loops for one
+player, and 1 winning-loop for the other.  This would require
+having both players play cells for the less-favoured player,
+until someone says:   "Enough, I take the less-favoured!"
+This would add an unbalanced "chicken"-like element,
+as in Unlur.  (NB, Joao and I play a lot of these
+unbalanced variants, BTW - and they're good fun!)
+
+To keep the players evenly balanced, it can be done,
+but at the cost of some unsatisfactory direction bias.
+Easiest-to-view is to make the N/S direction the biassed one.
+
+Player 1 wins if he makes a NW/SE loop; otherwise
+player 2 wins if he makes a NW/SE loop; otherwise
+either player wins if he makes a N/S loop that is
+"further west" than the other player's similar loop
+(if he can make one).
+
+As an example of criterion 3, here is one...
+
+|           .  o  x  .
+|          .  o  .  x  .       They have both made a N/S loop,
+|       o  o  .   .  x  .      but clearly o's is further west,
+|      .  o   .  .  x  .  .     so he wins.
+|    .   .  o  .  x   .  .  .   (And X has no chance of
+|      .  o  .  x  .   .   .         a more westerly one now.)
+|        .  o  .  x   .  .
+|          .  o  .  x  .
+
+Unfortunately there are more difficult cases where
+a N/S loop is partly on the west side and partly on the east,
+making comparison more difficult, though not impossible,
+just more "artificial".)
+
+|            .  o  x  .
+|          .  o   .  x   .      Both have a N/S loop.
+|        o o   .   .   x   .
+|      x  .   .   .  x  o  o
+|    x  x  x  x  x  o  x  x
+|      x   .  .   x  .   o  o
+|       o   o  .   x   .   .
+|          .   o  .   x   .
+
+The simplest criterion would be to award victory to
+whoever has the most westerly path that is entirely
+on the centre part of the board.  In the above case, X.
+
+OC, x has part of his GROUP on the other side, but it
+contains within it a N/S path which is entirely within
+the board itself - no E/W crossings.  So he wins.
+_ _ _
+
+Well, there it is.  No name for this game as yet.
+Pity it has a slightly artificial criterion -
+the "more westerly" attribute.
+
+So, not as "natural" as NZ.
+
+-- Bill the Board-gamer
+
+
+
+</pre></div></body>
+</html>
+</table></div>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Definitions of abstract strategy games document.  Please comment.</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Definitions of abstract strategy games document.  Please comment.</td></tr><tr><td><b>From: </b>Rich Hutnik &lt;getrich@1upandup.com&gt;</td></tr><tr><td><b>Date: </b>29/10/2007, 18:51</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract,rec.games.board</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In an attempt to standardize abstract strategy games, I have worked on
+this below, and would like feedback on it.
+
+
+[Key elements]
+There are multiple key elements that define all abstract strategy
+games. These elements are:
+1. Turns. A turn is defined an action or a series of actions that a
+player can perform that change the state of pieces in a game.
+2. Players. Actors in a game who change the states of pieces in the
+game.
+3. Pieces. These are items players control in the game that are used
+to define state of game.
+4. Board (play area). Board is a term used to describe area where
+pieces are positioned and interact with one another. A board may also
+represent a Board with no spaces.
+5. Null (off play area/board). This is used to descibe where pieces
+are located that are not on the board. Null can be defined and
+configured many different ways. It can consist of a queue or multiple
+queues.
+
+[Turn attributes]
+* Sequencing of turns:
+- Turn order: Only one player may perform actions at a time. Rules
+governing when order of players moving.
+- Real-time: All players perform their actions at same time.
+- Simultaneous: All players plan and record all their moves and then
+they the moves are acted out at same time.
+* Information level: Degree to which what players do is known. Perfect
+means everything is revealed to all at same time. Hidden means that
+some or all of moves are revealed, or only revealed when certain
+criterion are met.
+
+[Players]
+* Types:
+- Intelligent (aware of game conditions and acts upon information in
+game to adjust plans)
+- Unintelligent (Unaware of game conditions and acts either
+deterministic, reactive or random). Can act as a mix of all three.
+
+   1.
+      Deterministic (unaware of conditions in game, and acts
+according. Non-reactive, objective driven)
+   2.
+      Reactive (deterministically, by rules, acts based upon
+conditions in game, but not goal-driven)
+   3.
+      Random (unaware of conditions of game, and acts unpredictably)
+
+* Relationships:
+- Enemies: Has goals opposing other players in the game.
+- Partners (Allies): Share common goals, and win conditions.
+- Neutral: Has no goals in game (can't win).
+
+[Piece attributes]
+* Ownership (who owns the piece): Piece(s) may be owned by one or more
+players. Ownership is defined as a player being able to manipulate a
+piece during their turn.
+* Traits: States of a piece that determines how it is governed by
+rules.
+
+[Board attributes]
+* Discreteness of spaces:
+- Discrete (finite): Multiple spaces that fit distinct piece on each
+other.
+- Non-Discrete (Infinite): Can be argued it is a "spaceless" board.
+Boundaries are defined by pieces, not spaced on board.
+* Boundness of board:
+- Board is finite: Board has boundaries
+- Board has infinite number of spaces (non-discrete): Board is
+expandable, and has boundaries extended.
+* Traits: Attributes of board spaces (and board) that are governed by
+rules, and impact how rules govern pieces.
+- Static: Attributes don't change
+- Dynamic: Attributes can change
+
+[Relationship of Board to Pieces]
+* Unispace: Each space on board may contain only one piece.
+* Multispace: Each space on board may contain multiple pieces. Rules
+regarding limits to quantities is required (even if unlimited).
+Mancala and stacking games apply to this.
+- Queued (stack): Pieces enter and leave in a sequence from one
+another.
+- Pile (Mancala games): pieces freely leave or gather independent of
+each other, not in sequence.
+
+Rules govern which pieces may be grouped together on which spaces, and
+leaving.
+
+[Null attributes]
+* Types:
+- Void: Pieces into Null never return to game (eliminated).
+- Single space: Has capacity of one. Prior pieces sent to equivalent
+of Void (described above)
+- Pool: Pieces can enter back into play into play in any order
+- Queue: Pieces enter back into play into a sequence.
+- Multiple Queue: Each player has his own queue.
+
+[Proposed Categorization by C.D Rodeffer]
+Board Target (claim, occupy, connect or capture a specific goal space
+or spaces)
+Piece Target (claim, capture, immobilize, eliminate or checkmate a
+specific goal piece or pieces)
+Board Majority (claim, occupy, connect or capture the most (or more
+important) goal spaces)
+Piece Majority (claim, capture, immobilize, eliminate checkmate the
+most (or more important) goal pieces)
+
+Claim, occupy, connect, capture, immobilize, eliminate
+
+
+[Categories of abstract strategy games]
+Classes of game types (based on Zillions site, used for Athlon
+determination):
+1. Escape (Breakthrough/Race) [Location of pieces to positions on
+board matters]: Players try to get a piece(s) onto key positions on
+board.
+* Bi-sided (Race): Both players try to get from one location to
+another with one or more of their pieces. Arimaa is here. Both sides
+have key positions to get to. Locations can be identical or different.
+* Uni-sided (Breakthrough: Navigate/block): One player tries to get
+piece or pieces to location(s) on board and opponent tries to stop
+them. Tablut is here.
+
+In Escape (Breakthrough/race), win positions for pieces on board is
+absolute. Victory is occupation 100% of all critical areas.
+
+
+2. Territory (Occupy/Claim): Player tries to control/own most spaces
+on board. Go and Othello count here.
+* Occupy (absolute): Players occupy spaces directly. Othello applies
+here.
+* Claim (relative): Players try to own spaces indirectly, based on
+position of pieces on board, according to some rules. Go applies here.
+
+In Territory, ownership of board spaces determines winner. Victory is
+a control/own majority of all critical areas.
+
+
+3. Positioning (Chain/Cluster or Connection/Arrangement) [Relationship
+of pieces' locations to each other matters]: Players configure groups
+of pieces on the board in some manner.
+* Connection (chain): Players try to connect two or more spaces on the
+board with a chain of their pieces. Hex and Twixt are here.
+* Arrangement (cluster): Players try to get their pieces in a certain
+configuration. Lines of Action, Groups and Teeko are here.
+
+In Positioning, win positions for pieces on board is relative.
+Relative here means pieces could end up partly being on absolute
+spots. But the relative positions are governed by a set of rules.
+
+
+4. Elimination (Capture/Immobilization) [Quantity of usable pieces on
+board matters]: Players seek to capture or immobilize one or more of
+opponent's piece(s).
+* Royal: Players try to capture or put a particular opponent's piece
+or all of a type of pieces where piece(s) are threatened and into a
+place they can't escape capture (checkmate). This is for chess, chess
+variants, Shogi, Chinese chess, Ploy, kinglet, extinction chess, etc...
+* Multipiece: Players try to eliminate (or immobilize) all, or a
+number, of an opponent's pieces (in general, not) before their
+opponent. Checkers fits here.
+
+In Elimination, win condition are piece(s) in Null (meaning not on
+board) or piece(s) are immobilized. Try to eliminate something for
+win.
+
+
+5. Fortuna: This is a unique category. It is for games that are less
+than perfect/pure abstract strategy games. Games with either hidden
+information or a randomizer fit here. To be part of IAGO, a game in
+the Fortuna category either belongs in Hidden or Tali, but not both.
+* Hidden: These are games where players don't have perfect
+information. Kriegspiel (Dark Chess) and Stratego would fit here.
+* Tali: These are games where a player uses a randomizer before they
+start their turn, such as dice. Backgammon and Parchisi fit here.
+Tali is Latin for Knucklebones (a type of dice used in ancient roman
+games). Games randomized at start of game, before either player moves,
+don't fit here, but can still be an official game for IAGO, provided
+that they are fair to all players (either board layout is balanced,
+players have free setup that is fair, or players get to play all set
+ups by all players in the game).
+
+
+[Action types]: Move, capture, place
+* Move: transferring location of piece on board from one location to
+another. A move can also be defined as moving a piece to the Null
+area, and then back onto board in following turn (with the prior
+position recorded). Rules governing movement are based on position of
+piece on board at start of move, the type of piece it is (or other
+pieces are), and/or the relationship of the piece to other piece(s) in
+the game.
+* Capture: Transfer of piece from Board to Null. Pieces may either
+return to board (capture) or not (eliminate). A capture may change
+atttributes of piece as it goes into Null (such as ownership).
+- Immobilize is a contrary subset of capture, where piece stays on
+board, but is incapable of being used by its owner.
+* Place: Transfer from Null to Board.
+
+
+[Elements that reduce determinism of players in an abstract strategy
+game]
+1. Degree playing environment is not controlled by players
+(randomized). This involves pre-game set up and post game set up.
+Also, randomization of player set up fits into this. Players having
+complete control over where they place pieces doesn't count as
+randomization. Only exception for randomization would be the
+determining of turn order/player seating may be determined at random
+(ideally it would be preferred this not happen).
+2. Degree information to players is perfect. This means known at start
+of turn or the game, players know the exact conditions they are
+facing, and expected results based on what moves they make.
+3. Variants of board environment, and degree players have control over
+it. In a case where players have a fixed set up and the board set up
+is randomly determined, unless the set up is balanced for all players.
+4. Number of players. More than two leads to more uncertainty. It is
+implied that there is a minimum of two players for a game.
+
+[Elements of a game that is 100% deterministic (pure abstract)]
+1. Playing environment: no randomness. Players either control their
+set up of pieces, or they are fixed (not randomly determined). All
+players in the game are intelligent.
+2. No hidden information.
+3. The board is identical every game, or at least symmetric in its set
+up so that it is fair to all players.
+4. The game is played with two players only.
+
+
+[Other issues]
+Stacking games(?): I personally would include this under what other
+category they belong to like, Elimination. Focus and Byte would
+possible be here. These would usually be best fit under elimination
+games, unless like Dipole, then that is an Elimination game. This
+could possibly relate to sowing games.
+Sowing games: Pieces start in a pile, and are distributed. Games in
+the Mancala family. Also included would be games like Swahili or Space
+Walk.
+* Solution: Have classic abstract strategy games in their own
+division, not codified like this. Also the idea of board attributes
+covers this.
+
+Also note that a game could combine one or more of the above. The
+trick is to see what is most dominant, or perhaps have an order of
+priority. A game where you have breakthrough OR capture, would likely
+be just breakthrough, because capturing is just a way to prevent a
+person from breaking through. Using this reasoning, elimination games
+will be classified as something else, if they have another class of
+games they belong to.
+
+Misere' versions of game fit into mirror versions of what they are
+opposite. A game where you try to get all your pieces or all pieces of
+one type of yours onto the board would be a be a misere' version of
+capture/immobilize. A game where you try to get all your pieces off a
+certain spaces on the board would be a misere' version of breakthrough/
+race. A game where you force your opponent into a certain
+configuration is a misere' version of chain/group game.
+
+
+
+[Categories/Classes/Divisions of games to be played]
+1. Classic (and Classic variants): There are classics such as chess
+and go. There is also variants on classics, like Speed chess,
+bughouse, and mini-Go. These games are one off the main games and I
+don't believe have champions, and no association to promote them. Also
+fitting in here would be the idea of -athalons. Multigame events where
+players play a set of very different games. Like someone plays speed
+chess, mini-go and another game (say checkers) as a classic
+triathalon.
+2. Standard (Modern): These games use classic game equipment, but
+things completely different. Mark's designs fit into this
+particularly. These games center around a standardize set of equipment
+for IAGO.
+3. Alternative (Commercial): These games are usually one game
+standalone products, which require purchasing of separate equipment.
+If a game is not able to be played with standard classic game
+equipment, then it would fit here.
+
+
+
+</pre></div></body>
+</html>
+</table></div>

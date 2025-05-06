@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Puissance 4</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Puissance 4</td></tr><tr><td><b>From: </b>dbarzin@vub.ac.be (BARZIN DIDIER)</td></tr><tr><td><b>Date: </b>11/02/1994, 12:02</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+/* Could you give a look at this */
+
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+
+/*
+#define debug
+*/
+
+struct GAME
+{
+	int nbrcoups;
+	int lastX,lastY;
+	int t[9][8];
+	int lastpos[8];
+} game;
+
+#define computer -1
+#define player 	  1
+#define free 	  0
+#define other     2
+
+void init()
+{
+	short i,j;
+	game.nbrcoups=0;
+	for (i=0;i&lt;=8;i++)
+	{
+		game.t[i][0]=other;
+		game.t[i][7]=other;
+	}
+	for(i=0;i&lt;=7;i++)
+	{
+		game.t[0][i]=other;
+		game.t[8][i]=other;
+		game.lastpos[i]=0;
+	}
+	for (i=1;i&lt;=7;i++)
+		for(j=1;j&lt;=6;j++)
+			game.t[i][j]=free;
+}
+
+void display()
+{
+	int i,j;
+	printf("\n  1 2 3 4 5 6 7\n\n");
+	for (i=6;i&gt;=0;i--)
+	{
+		for (j=0;j&lt;=8;j++)
+		{
+			if (game.t[j][i]==player) printf("X");
+			else
+				if (game.t[j][i]==computer) printf("O");
+				else
+					if (game.t[j][i]==free) printf(".");
+					else printf("@");
+			printf(" ");
+		}
+		printf("\n");
+	}
+}
+
+/* ========================== game ===================================*/
+
+#define MaxVal 128
+
+#define COUP int				/* Generateur de coup */
+
+#define InitCoup(x) x=1
+#define CoupSvt(x) x++
+#define LastCoup(x) (x&gt;7)
+                                                /* Mouvements dans le jeu */
+#define put(i,colour) \
+	game.t[i][++game.lastpos[i]]=colour;\
+	game.nbrcoups++;\
+	game.lastY=game.lastpos[i];\
+	game.lastX=i;\
+
+#define get(i) \
+	game.t[i][game.lastpos[i]--]=0;\
+	game.nbrcoups--;\
+
+#define finish() (game.nbrcoups==46)			/* regles du jeu */
+
+#define good(i) (game.lastpos[i]!=6)
+
+int win(colour)
+int colour;
+{
+	int c;					/* vertical */
+	c=0;
+	if (game.t[game.lastX][game.lastY-1]==colour)
+	{
+		c++;
+		if (game.t[game.lastX][game.lastY-2]==colour)
+		{
+			c++;
+			if (game.t[game.lastX][game.lastY-3]==colour)
+				return (1);
+		}
+	}
+	c=0;					/* horizontal */
+	if (game.t[game.lastX-1][game.lastY]==colour)
+	{
+		c++;
+		if (game.t[game.lastX-2][game.lastY]==colour)
+		{
+			c++;
+			if (game.t[game.lastX-3][game.lastY]==colour)
+				return(1);
+		}
+	}
+	if (game.t[game.lastX+1][game.lastY]==colour)
+	{
+		c++;
+		if (game.t[game.lastX+2][game.lastY]==colour)
+		{
+			c++;
+			if (game.t[game.lastX+3][game.lastY]==colour)
+				return(1);
+		}
+	}
+	if (c&gt;=3) return(1);
+	c=0;					/* diagonal gauche */
+	if (game.t[game.lastX+1][game.lastY-1]==colour)
+	{
+		c++;
+		if (game.t[game.lastX+2][game.lastY-2]==colour)
+		{
+			c++;
+			if (game.t[game.lastX+3][game.lastY-3]==colour)
+				return (1);
+		}
+	}
+	if (game.t[game.lastX-1][game.lastY+1]==colour)
+	{
+		c++;
+		if (game.t[game.lastX-2][game.lastY+2]==colour)
+		{
+			c++;
+			if (game.t[game.lastX-3][game.lastY+3]==colour)
+				return (1);
+		}
+	}
+	if (c&gt;=3) return(1);
+	c=0;					/* diagonal droite */
+	if (game.t[game.lastX+1][game.lastY+1]==colour)
+	{
+		c++;
+		if (game.t[game.lastX+2][game.lastY+2]==colour)
+		{
+			c++;
+			if (game.t[game.lastX+3][game.lastY+3]==colour)
+				return(1);
+		}
+	}
+	if (game.t[game.lastX-1][game.lastY-1]==colour)
+	{
+		c++;
+		if (game.t[game.lastX-2][game.lastY-2]==colour)
+		{
+			c++;
+			if (game.t[game.lastX-3][game.lastY-3]==colour)
+				return (1);
+		}
+	}
+	if (c&gt;=3) return(1);
+	return(0);
+}
+
+int Heurist(X,colour)
+int X; int colour;
+{
+	int c,Y,vertic,horiz,diagg,diagd;
+	/* vertical */
+	Y=game.lastpos[X];
+
+	vertic=0;
+	c=0;
+	if ((game.t[X][Y-1]==colour)||(game.t[X][Y-1]==0))
+	{
+		vertic++;
+		if (game.t[X][Y-1]==colour) c++;
+		if ((game.t[X][Y-2]==colour)||(game.t[X][Y-2]==0))
+		{
+			vertic++;
+			if (game.t[X][Y-2]==colour) c++;
+			if (game.t[X][Y-3]==colour) c++;
+			else
+				if (game.t[X][Y-3]==0) vertic++;
+		}
+	}
+
+	if ((game.t[X][Y+1]==colour)||(game.t[X][Y+1]==0))
+	{
+		vertic++;
+		if (game.t[X][Y+1]==colour) c++;
+		if ((game.t[X][Y+2]==colour)||(game.t[X][Y+2]==0))
+		{
+			vertic++;
+			if (game.t[X][Y+2]==colour) c++;
+			if (game.t[X][Y+3]==colour) c++;
+			else
+				if (game.t[X][Y+3]==0) vertic++;
+		}
+	}
+	if (vertic&gt;=3) vertic=vertic-2+2*c;
+	else vertic=0;
+
+	c=0;                                                    /* horizontal */
+	horiz=0;
+	if ((game.t[X-1][Y]==colour)||(game.t[X-1][Y]==0))
+	{
+		horiz++;
+		if (game.t[X-1][Y]==colour) c++;
+		if ((game.t[X-2][Y]==colour)||(game.t[X-2][Y]==0))
+		{
+			horiz++;
+			if (game.t[X-2][Y]==colour) c++;
+			if (game.t[X-3][Y]==colour) c++;
+			else
+				if (game.t[X-3][Y]==0) horiz++;
+		}
+	}
+
+	if ((game.t[X+1][Y]==colour)||(game.t[X+1][Y]==0))
+	{
+		horiz++;
+		if (game.t[X+1][Y]==colour) c++;
+		if ((game.t[X+2][Y]==colour)||(game.t[X+2][Y]==0))
+		{
+			horiz++;
+			if (game.t[X+2][Y]==colour) c++;
+			if (game.t[X+3][Y]==colour) c++;
+			else
+				if (game.t[X+3][Y]==0) horiz++;
+		}
+	}
+	if (horiz&gt;=3) horiz=horiz-2+2*c;
+	else horiz=0;
+
+	c=0;                                            /* diag gauche */
+	diagg=0;
+	if ((game.t[X-1][Y-1]==colour)||(game.t[X-1][Y-1]==0))
+	{
+		diagg++;
+		if (game.t[X-1][Y-1]==colour) c++;
+		if ((game.t[X-2][Y-2]==colour)||(game.t[X-2][Y-2]==0))
+		{
+			diagg++;
+			if (game.t[X-2][Y-2]==colour) c++;
+			if (game.t[X-3][Y-3]==colour) c++;
+			else
+				if (game.t[X-3][Y-3]==0) diagg++;
+		}
+	}
+
+	if ((game.t[X+1][Y+1]==colour)||(game.t[X+1][Y+1]==0))
+	{
+		diagg++;
+		if (game.t[X+1][Y+1]==colour) c++;
+		if ((game.t[X+2][Y+2]==colour)||(game.t[X+2][Y+2]==0))
+		{
+			diagg++;
+			if (game.t[X+2][Y+2]==colour) c++;
+			if (game.t[X+3][Y+3]==colour) c++;
+			else
+				if (game.t[X+3][Y+3]==0) diagg++;
+		}
+	}
+	if (diagg&gt;=3) diagg=diagg-2+2*c;
+	else diagg=0;
+
+	c=0;                                    /* diag droite */
+	diagd=0;
+	if ((game.t[X+1][Y-1]==colour)||(game.t[X+1][Y-1]==0))
+	{
+		diagd++;
+		if (game.t[X+1][Y-1]==colour) c++;
+		if ((game.t[X+2][Y-2]==colour)||(game.t[X+2][Y-2]==0))
+		{
+			diagd++;
+			if (game.t[X+2][Y-2]==colour) c++;
+			if (game.t[X+3][Y-3]==colour) c++;
+			else
+				if (game.t[X+3][Y-3]==0) diagd++;
+		}
+	}
+	if ((game.t[X-1][Y+1]==colour)||(game.t[X-1][Y+1]==0))
+	{
+		diagd++;
+		if (game.t[X-1][Y+1]==colour) c++;
+		if ((game.t[X-2][Y+2]==colour)||(game.t[X-2][Y+2]==0))
+		{
+			diagd++;
+			if (game.t[X-2][Y+2]==colour) c++;
+			if (game.t[X-3][Y+3]==colour) c++;
+			else
+				if (game.t[X-3][Y+3]==0) diagd++;
+		}
+	}
+	if (diagd&gt;=3) diagd=diagd-2+2*c;
+	else diagd=0;
+
+	return(vertic+horiz+diagg+diagd);
+}
+
+/* ============================= Min Max ========================== */
+
+int Max(int, int);
+
+int Min(level, Seuil)
+int level; int Seuil;
+{
+	int BestVal,Val;
+	COUP Coup;
+	InitCoup(Coup);
+	BestVal=MaxVal;
+	do
+	{
+		if (good(Coup))
+		{
+			put(Coup,player);
+			if (win(player)) Val= -level;
+			else if ((level==0)||(finish())) Val=0;
+			else Val=Max(level-1,BestVal);
+			if (Val&lt;BestVal) BestVal=Val;
+			get(Coup);
+		}
+		CoupSvt(Coup);
+	}
+	while ((!LastCoup(Coup))&amp;&amp;(BestVal&gt;=Seuil));
+	return(BestVal);
+}
+
+int Max(level, Seuil)
+int level; int Seuil;
+{ 
+	int BestVal,Val;
+	COUP Coup;
+	InitCoup(Coup);
+	BestVal= -MaxVal;
+	do
+	{
+		if (good(Coup))
+		{
+			put(Coup,computer);
+			if (win(computer)) Val=level;
+			else if ((level==0)||(finish())) Val=0;
+			else Val=Min(level-1,BestVal);
+			if (Val&gt;BestVal) BestVal=Val;
+			get(Coup);
+		}
+		CoupSvt(Coup);
+	}
+	while ((!LastCoup(Coup))&amp;&amp;(BestVal&lt;Seuil));
+	return(BestVal);
+}
+
+COUP Min_Max(level)
+int level;
+{
+	int Val,BestVal,BestHVal,HVal;
+	COUP Coup,BestCoup;
+	InitCoup(Coup);
+	BestHVal=0;
+	BestVal= -MaxVal;
+	while (!LastCoup(Coup))
+	{
+		if (good(Coup))
+		{
+			put(Coup,computer);
+			if (win(computer)) Val=level;
+			else if (finish()||(level==0)) Val=0;
+			else Val=Min(level,BestVal);
+			if (BestVal&lt;=Val)
+			{
+				HVal=Heurist(Coup,computer);
+				if ((BestVal&lt;Val)||((BestVal==Val)&amp;&amp;
+				    ((BestHVal&lt;HVal)||
+				    ((BestHVal==HVal)&amp;&amp;(rand()&lt;RAND_MAX/2)))))
+				{
+					BestVal=Val;
+					BestCoup=Coup;
+					BestHVal=HVal;
+				}
+			}
+			get(Coup);
+#ifdef debug
+	         	printf("(%d, %d), ",Val,HVal);
+	        	fflush(stdout);
+	        	HVal=0;
+#endif
+                }
+		CoupSvt(Coup);
+	}
+	if (BestVal&gt;0) printf("\nYou'll lose !\n");
+	else
+		if (BestVal&lt;0) printf("\nYou could win !\n");
+	return(BestCoup);
+}
+
+/* ====================== Main ================================*/
+
+int main()
+{
+	int i,level,end,turn;
+	char c;
+	init();
+	end=0;
+	srand((unsigned)time(NULL));
+	printf("\nThanks playing whith me.\n");
+	printf("Witch level(0-..):");
+	fflush(stdin);
+	scanf("%d",&amp;level);
+	printf("\nDo you want to start (y/n)?");
+	fflush(stdin);
+	scanf("%c",&amp;c);
+	if ((c=='Y')||(c=='y')) turn=player;
+	else turn=computer;
+	do
+	{
+		display();
+		if (turn==player)
+		{
+			do
+			{
+				printf("\n You play:");
+				fflush(stdin);
+				scanf("%d",&amp;i);
+			}			while ((i&lt;1)||(i&gt;7)
+			    ||(!good(i)));
+			put(i,player);
+			end=win(player);
+			turn=computer;
+		}
+		else
+		{
+			i=Min_Max(level);
+			printf("\nI play: %d\n",i);
+			put(i,computer);
+			end=win(computer);
+			turn=player;
+		}
+	}	while ((!finish())&amp;&amp;(end==0));
+
+	display();
+
+	if (end==0) printf("\nDraw.\n");
+	else
+		if (turn==player) printf("\nI win !\n");
+		else
+			printf("\nYou win.\n");
+
+return(0);
+}
+
+</pre></div></body>
+</html>
+</table></div>

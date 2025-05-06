@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Othello - move ordering question</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Othello - move ordering question</td></tr><tr><td><b>From: </b>Jim Gillogly &lt;jim@acm.org&gt;</td></tr><tr><td><b>Date: </b>21/12/1994, 18:30</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr><tr><td><div class="moz-header-display-name" style="display:inline;">Reply-To: </div> jim@acm.org</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+I've been poking around with optimal play on reduced Othello boards, and
+trying to make my tree search efficient enough to get up to interesting
+sizes.  After incorporating alpha-beta and large transposition tables,
+it's usual to add the killer heuristic (which I haven't done yet) and
+then try to get as close to perfect ordering on the move generations as
+possible, to let alpha-beta do its thing with maximal efficiency.
+
+I thought before I went into the tricky stuff like reducing the opponent's
+mobility or trying for known good patterns, I'd try something dead simple:
+if there's a corner move, take it; otherwise try all the moves in
+numerical order (like a TV scan across the board).
+
+Oddly, this degraded the tree-searching performance dramatically from
+just leaving the moves in numerical order, although it of course ends up
+with the same result.
+
+Could a human Othello player comment on this?  I thought perhaps retaining
+the threat of moving into a corner might be more effective than grabbing
+it immediately; does this correspond to a known human strategy?
+<div class="moz-txt-sig">-- 
+	Jim Gillogly
+	Highday, 1 Yule S.R. 1994, 18:30
+
+</div></pre></div></body>
+</html>
+</table></div>

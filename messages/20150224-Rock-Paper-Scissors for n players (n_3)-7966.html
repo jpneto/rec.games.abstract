@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Rock-Paper-Scissors for n players (n&gt;3)</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Rock-Paper-Scissors for n players (n&gt;3)</td></tr><tr><td><b>From: </b>mohbel63@gmail.com</td></tr><tr><td><b>Date: </b>24/02/2015, 15:19</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+Here is how the game works.
+For n players (n&gt;3) each player is dealt k cards where k=int(n/2)+1.
+The game starts.
+Each player choose secretly a card from his hand and put it on the table face visible down. 
+Once all the players place their cards on the table then they show the visible face simultaneously.
+How to determine the only winner or tie?
+The concept at the basis of the win condition is a uniqueness.
+Rules: if a value is repeated twice or more than twice then those who play this cards are not winners and only those with unique values will compete to win. How to define which one is the winner among them? If the sum of the values is odd then the biggest value win. If it is even then the lowest value win.
+
+Example of n=four players.
+k=int(4/2)+1=3
+Each player is dealt 3 cards numbered from 1 to 3.
+
+Player A drop 1
+Player B drop 1 
+Player C drop 3
+Player D drop 2 
+
+Sum=1+1+3+2=7 (odd means biggest value win)
+
+Player A and B loose because the value 1 is repeated twice 
+Player C and D have unique values (2 and 3 are not repeated)
+Player C wins because the sum 7 is odd (odd=biggest). 3 is bigger than 2.
+
+Other example with tie 
+If no one has unique value then it is tie
+A=1
+B=1
+C=2
+D=2
+
+No one win. Each player retake his dropped card and we redo the process.
+
+Instead of using cards players can use like RPS their fingers for example (up to 10 fingers for each player means 19 players could play such way).
+
+Those are the principles of my method.
+Maybe there are things remaining to fix.
+
+Any useful comment is welcomed.
+
+Using this principle we could build 1000 games (card games, boardgames and so on).
+The main purpose of this metagame is GAMBLING!!!
+You could gamble at home no matter how many players.
+You could use your fingers, you could use chickpeas and so on.
+I have created solitaire game based on this game.
+Anyway there is no limit for creativity! 
+Enjoy it! 
+ 
+
+
+</pre></div></body>
+</html>
+</table></div>

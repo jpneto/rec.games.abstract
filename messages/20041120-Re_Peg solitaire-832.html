@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: Peg solitaire</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: Peg solitaire</td></tr><tr><td><b>From: </b>Ted Hwa &lt;hwatheod@xenon.Stanford.EDU&gt;</td></tr><tr><td><b>Date: </b>20/11/2004, 20:48</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.puzzles,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In rec.games.abstract lucas <a class="moz-txt-link-rfc2396E" href="mailto:kingpin@freemail.it">&lt;kingpin@freemail.it&gt;</a> wrote:
+
+: What do you mean for "desired ending positions"?
+: I use a brute-force search, with a cache, look-ahead and an evalutation
+: function that try to order the edges of the search tree to catch the best
+: moves first.
+: But if there are 25 or more pegs and there is an error at deep 1 or 2, than
+: the program take too long to backtrack at that level...
+
+: In practice, how can i use the pagoda function to cut the search space?
+
+If f is any pagoda function, and
+
+f(current position) &lt; f(final position)
+
+then you cannot reach the final position from the current position and 
+you don't have to search any further.
+
+It is helpful to have several pagoda functions to test.  Different
+pagoda functions are useful in different situations.  
+
+A very simple pagoda function, for example, would be to simply count the
+number of pegs that whose coordinates are (even, even).  Of course, you
+can substitute any combination of odd or even, to get 4 different pagoda
+functions.  At the very least these should be implemented.
+
+
+
+Ted
+
+
+</pre></div></body>
+</html>
+</table></div>

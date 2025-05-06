@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Progressive Go-muko &amp; Questions about Gereralized Tic-tac-toe</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Progressive Go-muko &amp; Questions about Gereralized Tic-tac-toe</td></tr><tr><td><b>From: </b>Edward Jackman &lt;ejackman@delphi.com&gt;</td></tr><tr><td><b>Date: </b>07/01/1995, 17:45</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+A friend of mine and I were talking about a new game invented
+called, PROGRESSIVE GO-MOKU. Played on a standard 19x19 Go board,
+each player in turn takes one more move than the previous player,
+with the restriction that all moves in a single turn must be _mutually
+non-adjacent_, and 5 in a row wins. Who has the win? What is the maximum
+length forcable row on an infinite board and who can force it -- or is
+there no maximum with best play?
+
+This got me looking in my files and I found this from Chris
+Sanderson <a class="moz-txt-link-rfc2396E" href="mailto:cisande@gamma.std.com">&lt;cisande@gamma.std.com&gt;</a>:
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+Five in a row (go-moku) is really a variant to tic-tac-toe.
+Go-moku is one example of a number of games based on getting
+n-in-a-row. Also, the rule can state four directions only, or
+all directions are allowed. All tic-tac-toe games are either a
+win for the first player, or the second player can force a tie.
+
+Here is rundown of the tic-tac-toe like games and their current
+status at to being winnable or not.
+
+1. normal tic-tac-toe. A draw only because the board is so
+   small. Obviously three in a row is easy on a large board.
+
+2. 3x3x3 tic tac toe. An easy win for the first player.
+
+3. 4x4x4 tic tac toe. Recently show to be a win for the first
+   player. The strategy for doing it is rather involved.
+
+And now on to n in a row on an arbitrary board. (19x19 is large enough)
+
+4. 1,2,3 in a row a win for the first player
+
+5. 4 in a row, 8 directions. A win for the first player.
+
+6. 4 in a row, 4 direstions (NSEW). A draw can be forced by the
+   second player. To do this, each square has a well defined
+   compliment square. For every stone put by the first player, the
+   second puts his ston on the complement square. The details are
+   complicated.
+
+7. 5 in a row, 4 direction. Same as above.
+
+8. 5 in a row, 8 directions. This is the commonly played go-moku
+   game. I list it this way to show that go-moku is actually one of
+   a family of similar games, each of which can be put into the
+   winable or drawable class. Five in a row was only recently shown to be a
+   win for the first player. This was the hardest of the
+   tic-tac-toe like games to solve. However, this does not mean
+   that just because its won that the player will find the right
+   moves. In fact, of all such games, this one did require the most
+   computer time and analysis to solve. Of all these types of
+   games, this one is the most challenging. Still, it is just
+   tic-tac-toe, and you should really play a good game of chess.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+
+I'm wondering which of this questions have been answered:
+
+  1. Is 6 in a row* a draw on an infinite board? If not, 
+     what is the minimum n in a row that is known to be 
+     a draw on an infinte board?
+
+  2. What is the smallest square board on which 5 in a row is a known 
+     to be a win for the first player?
+
+  3. What is the smallest square board on which 4 in a row is a win for 
+     the first player?  [Order 6, right?]
+
+  4. Is six or more in a row forcable on an infinite board if we extend
+     the definition of a row to include ANY set of equally spaced colinear
+     squares? For example:
+
+     x - - x - - x - - x - - x - - x
+     - y - - - - - - - - - - - - - -
+     - - - y - - - - - - - - - - - -
+     - - - - - y - - - - - - - - - -
+     - - - - - - - y - - - - - - - -
+     - - - - - - - - - y - - - - - -
+     - - - - - - - - - - - y - - - -
+
+
+Moving to three dimensions:
+
+  5. What is the minimum size cube on which 5 in a row is known to be a
+     win for the first player?^ 
+
+  6. What is the minimum n in a row that is a draw on an infinite 3d board?
+
+  7. What is known about generalized tic-tac-toe in 4 or more dimensions?
+
+
+On a Hexagonal grid:
+
+  8. What is them maximum length row that can be forced by the first player
+     on an infinite hexagonal grid?#
+
+  9. What is the minimum order hexagonal grid on which 3, 4 or 5 in a
+     row can be forced by the first player?
+
+
+* A row can be in any of 4 orientations to win:
+  two orthoganal, two diagaonal.
+
+^ A row can be in any of 13 orientations to win:
+  3 orthoganal, 6 plane diagonal, 4 cubic diagonal.
+  (A 4d row has 40 orientations and 5d rows have 
+  121 ... I think.)
+
+# A row can be in any of 3 orientations to win, one 
+  each parallel to each pair of sides of the grid.
+
+
+Then of course there's DOUBLEMOVE GO-MOKU -- the first player makes one
+mark and from then on, each player in turn plays twice, 6 in a
+row wins. Who has the win? Is 6 the maximum length forcable on an
+infinite board? Doublemove is also played on an order 5
+cube -- 5 in a row wins, and on a order 6 cube.
+
+
+Email responses and I'll summarize here.
+
+Edward Jackman
+
+
+</pre></div></body>
+</html>
+</table></div>

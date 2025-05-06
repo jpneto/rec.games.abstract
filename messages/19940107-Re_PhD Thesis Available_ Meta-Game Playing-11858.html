@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: PhD Thesis Available: Meta-Game Playing</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: PhD Thesis Available: Meta-Game Playing</td></tr><tr><td><b>From: </b>pell@mullin.arc.nasa.gov (Barney Pell)</td></tr><tr><td><b>Date: </b>07/01/1994, 02:58</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>comp.ai,rec.games.chess,rec.games.abstract,comp.ai.neural-nets</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+In article <a class="moz-txt-link-rfc2396E" href="mailto:2ghtsd$528@cmcl2.NYU.EDU">&lt;2ghtsd$528@cmcl2.NYU.EDU&gt;</a>, <a class="moz-txt-link-abbreviated" href="mailto:rhk8563@acf4.nyu.edu">rhk8563@acf4.nyu.edu</a> (rhk8563) writes:
+|&gt; 
+|&gt; 	It would be interesting to see how this program would function with
+|&gt; some chess variants taken at random from World Game Review #10 (which con-
+|&gt; tains 600+ variants). 
+
+That would be fun.  However, while the class of games is fairly general, 
+it is  not possible to represent (easily) the idiosyncracies of many games
+within the current grammar for symmetric chess-like games used by Metagamer.
+Anyone who is interested is encouraged to get the code for the program,
+which is available from ftp.cl.cam.ac.uk:users/bdp/metagame3a.tar.Z
+(warning: the code is in PROLOG).
+
+|&gt; 	How does the program determine the value of a piece when the values
+|&gt; of certain pieces can change radically in the course of a game?  I humbly 
+|&gt; suggest that the value of a piece can be a rather nebulous concept at times.
+|&gt; 	In Unambiguous Chess, the rules state that a piece can only be moved
+|&gt; if its move can be written unambiguously with three alphanumeric characters.
+|&gt; Therefore, you can't move, say, N-B3 if there is more than one way of doing
+|&gt; this. This rule has the peculiar result of making a piece worth almost as
+|&gt; much (maybe more, sometimes) as two pieces of that kind would be worth. 
+|&gt; 	Piece values cannot necessarily be added. When computing the value
+|&gt; of a pair of bishops, it definitely makes a difference whether or not they
+|&gt; are on opposite color squares.
+
+Yes, there are many ways to improve upon the use of a static set of 
+linear piece values. The static piece values developed by Metagamer 
+for a given game are just one component of its evaluation function, 
+as discussed in my thesis. 
+
+Extending consideration beyond just a single game (like chess or checkers) makes
+the necessity for this even clearer.   It also provides a way to demonstrate the
+improvement in strength across a class of games by adding, for example, 
+dynamic considerations to an otherwise static program.   Such experiments
+are also discussed in the thesis.
+
+|&gt; 
+|&gt; Robin
+
+Thanks for your interest,
+   Barney
+
+========================================
+   Barney Pell
+   NASA Ames Research Center
+   e-mail:  <a class="moz-txt-link-abbreviated" href="mailto:pell@ptolemy.arc.nasa.gov">pell@ptolemy.arc.nasa.gov</a>
+========================================
+
+
+
+</pre></div></body>
+</html>
+</table></div>

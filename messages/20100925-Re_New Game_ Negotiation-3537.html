@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Re: New Game: Negotiation</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Re: New Game: Negotiation</td></tr><tr><td><b>From: </b>Mark Steere &lt;marksteere@gmail.com&gt;</td></tr><tr><td><b>Date: </b>25/09/2010, 13:51</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+On Sep 25, 3:30 am, Matteo Perlini <a class="moz-txt-link-rfc2396E" href="mailto:epicuru...@gmail.com">&lt;epicuru...@gmail.com&gt;</a> wrote:
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+On 24 Set, 04:00, Mark Steere <a class="moz-txt-link-rfc2396E" href="mailto:markste...@gmail.com">&lt;markste...@gmail.com&gt;</a> wrote:
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+</pre><blockquote type=cite><blockquote type=cite><pre wrap class="moz-quote-pre">
+I haven't put a huge amount of thought into this, but I don't think
+Ecalper would be as complex as Oust on the same size board.
+</pre></blockquote></blockquote><pre wrap class="moz-quote-pre">
+
+Oust: <a class="moz-txt-link-freetext" href="http://www.marksteeregames.com/Oust_rules.pdf">http://www.marksteeregames.com/Oust_rules.pdf</a>
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I didn't put that table for competing with other games.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+I think that's exactly what you did.  Your claim that Ecalper has a
+particularly large game tree for a given board size is a very
+provocative invitation for comparison with other games played on the
+same size board having possibly an even larger game tree.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+I did it just
+for explaining Ecalper is a deep game, also with just 127 stones.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+....compounding your chicanery.  A big game tree doesn't guarantee a
+deep game.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+The reason why it has a so big game-tree complexity is because Ecalper
+is (more or less) a three-move game.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Wrong and completely irrelevant.  One move per turn, three moves per
+turn, 63 moves per turn...  Moves per turn translates to jack squat.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+How many possible moves in Oust does the player have in the second
+turn? I think it's 120. In Ecalper, however, during the second turn
+player has 930372 possible moves to choose from.
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+Mathematically absurd.  By partitioning the total number of turns into
+n-move stone placements you reduce the total number of turns by a
+factor of n.  It's like we both have 127 Gummi bears and you, after
+partitioning yours into 42 bags of 3, claim to have an astronomical
+number of Gummi bears.
+
+</pre><blockquote type=cite><pre wrap class="moz-quote-pre">
+This, to me, is a strong clue Ecalper has a bigger game-tree
+complexity than Outs (with a fair and meaningful number of turns).
+</pre></blockquote><pre wrap class="moz-quote-pre">
+
+"Fair and meaningful" has nothing to do with the overall game tree
+size.  It's just a subjective way to prune the tree.
+
+There's a huge amount of tree-shrinking redundancy in Ecalper.  If
+you're putting three black stones on cells x, y, and z, does it matter
+if you instead place them in the order y, z, x?  No, it doesn't.  All
+that tree-expanding freedom of movement has a tree-shrinking
+redundancy counterpart.
+
+
+
+</pre></div></body>
+</html>
+</table></div>

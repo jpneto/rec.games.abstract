@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Question about retrograde analysis algorithm for endgame databases</title>
+<link rel="important stylesheet" href="">
+<style>div.headerdisplayname {font-weight:bold;}
+</style></head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part1 moz-main-header"><tr><td><b>Subject: </b>Question about retrograde analysis algorithm for endgame databases</td></tr><tr><td><b>From: </b>mathpoly@yahoo.com (mathpolymath)</td></tr><tr><td><b>Date: </b>24/04/2002, 09:52</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="moz-header-part2 moz-main-header"><tr><td><b>Newsgroups: </b>rec.games.chess.computer,rec.games.abstract</td></tr></table><br>
+<div class="moz-text-plain"><pre wrap class="moz-quote-pre">
+(Thanks Bob for the answer concerning chess draw-by-repetition
+algorithms!)
+
+
+
+Can someone help me with a question concerning the retrograde analysis
+algorithm?
+
+As I understand it, the retrograde analysis algorithm works something
+like:
+
+(1) Initialize each endgame positions with number of possible moves
+from this position (children)
+(2) Check each position in the database to see if the position score
+is the best possible and then notify the parents.  Best possible moves
+either have the maximum possible score or are ones where all the
+children have been fully evaluated (in an alpha-beta sense).
+(3) Iterate #2 a certain number of times depending on the maximum
+range of scores which are possible for positions in the database
+(4) All remaining unsettled positions get a score of 0
+
+Now I understand step #4 is based on the assumption that all repeating
+positions have a certain score, which would be true in chess (where
+repeats = draw so score = 0).  But what about a game whose score would
+depend on the exact position of the first (or for that matter N'th)
+repeat?  Imagine a game where the rules say the game ends whenever a
+position is repeated twice (as in chess), but with the additional
+caveat that the score might vary depending on the actual position when
+this 2nd repeat occurs (in chess, the score of the 2nd repeat is
+0=draw)?
+
+How could the retrograde analysis algorithm be changed to take this
+variable score on a repeat into account?
+
+THANKS IN ADVANCE!
+
+</pre></div></body>
+</html>
+</table></div>
