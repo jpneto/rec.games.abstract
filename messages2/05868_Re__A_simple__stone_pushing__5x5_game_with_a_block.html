@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: A simple &quot;stone-pushing&quot; 5x5 game with a blockading goal.</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: A simple &quot;stone-pushing&quot; 5x5 game with a blockading goal.</h1>
+    <p><strong>From:</strong> David Eppstein &lt;eppstein@ics.uci.edu&gt;<br>
+    <strong>Date:</strong> Tue, 10 Sep 2002 15:24:49 -0700</p>
+    <hr>
+    <div>In article &lt;89910b8c.0209101406.5e122d93@posting.google.com&gt;,<br>
+ pristy@excite.com (Jason) wrote:<br>
+<br>
+&gt; _ B W B W<br>
+&gt; B W B W B<br>
+&gt; W B W B W<br>
+&gt; B W B W B<br>
+&gt; W B W B W<br>
+&gt; where here, _ means the square is empty. At any stage during the game,<br>
+&gt; only one stone can occupy any given square and there are no captures<br>
+&gt; or introduction of new stones. During each turn by black, he has to<br>
+&gt; move one of his black stones to a empty square adjacent to it (only<br>
+&gt; orthogonally, not diagonally) and similarly for white. If one of the<br>
+&gt; players run out of legal moves, that means he has lost. Otherwise,<br>
+&gt; once it becomes obvious the game would simply continue forever (in<br>
+&gt; practice, we could impose the rather artificial rule that if the game<br>
+&gt; doesn&#x27;t end after let&#x27;s say 200 moves, it&#x27;s a draw), it&#x27;s declared a<br>
+&gt; draw. From the initial setup, black moves first.<br>
+&gt; <br>
+&gt; At first glance, this game looks rather trivial, and it looks as if<br>
+&gt; there ought to be a simple strategy to draw no matter what the<br>
+&gt; opponent does or for one side to force a win, but after playing a few<br>
+&gt; games with it and analyzing it a bit, it definitely seems more<br>
+&gt; complicated than that. Of course, maybe I&#x27;m just being stupid and one<br>
+&gt; of you can come up with a simple strategy or simple analysis of this<br>
+&gt; game which would leave me wondering why I didn&#x27;t think of it earlier<br>
+&gt; in hindsight.<br>
+<br>
+White imagines covering the nonempty squares by a set of dominos, each <br>
+containing one black and one white stone.  When black moves a stone out <br>
+of its domino, white moves the other stone from the same domino so that <br>
+the two moved stones can again be covered by a domino.  In this way, <br>
+white can avoid ever running out of moves.<br>
+<br>
+So it&#x27;s either a draw or a second player win...<br>
+<br>
+-- <br>
+David Eppstein       UC Irvine Dept. of Information &amp; Computer Science<br>
+eppstein@ics.uci.edu http://www.ics.uci.edu/~eppstein/<br>
+<br>
+<br>
+</div>
+</body>
+</html>

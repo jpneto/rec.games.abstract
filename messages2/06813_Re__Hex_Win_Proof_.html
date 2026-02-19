@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Hex Win Proof?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Hex Win Proof?</h1>
+    <p><strong>From:</strong> Chan-Ho Suh &lt;suh@math.ucdavis.nospam.edu&gt;<br>
+    <strong>Date:</strong> Sat, 20 Mar 2004 01:48:07 -0800</p>
+    <hr>
+    <div>In article &lt;3dfcbf81.0403191414.33bb386a@posting.google.com&gt;, Jonathan<br>
+Welton &lt;j_welton@hotmail.com&gt; wrote:<br>
+<br>
+&gt; &gt; w.taylor@math.canterbury.ac.nz (Bill Taylor) wrote in message<br>
+&gt; &gt; news:&lt;716e06f5.0403181938.72a82f90@posting.google.com&gt;...<br>
+&gt; &gt; &gt; It is an old theorem that in Hex, once the board has been completely<br>
+&gt; &gt; &gt; filled in with two colours, there *must* be a winning path for one<br>
+&gt; &gt; &gt; or other of them.<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; Now, I can prove this easily enough mathematically, but I&#x27;m wondering if<br>
+&gt; &gt; &gt; there is a simple proof, or proof outline, that would be understandable<br>
+&gt; &gt; &gt; and reasonably convincing to the intelligent layman.<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; Can anyone help out please?<br>
+&gt; &gt; <br>
+&gt; <br>
+&gt; Neither of the proofs (which are basically the same) posted so far is<br>
+&gt; correct. Both would apparently conclude that a winning path would be<br>
+&gt; formed on a squared board, whereas this is not the case - a squared<br>
+&gt; board could end in a draw.<br>
+&gt; <br>
+&gt; An actual proof must use the hex nature of the board or,<br>
+&gt; alternatively, that 3 cells meet at each vertex. A proof is given in<br>
+&gt; Cameron Browne&#x27;s book Hex Strategy, but whether it would convince an<br>
+&gt; intelligent layman is not clear.<br>
+&gt; <br>
+&gt; Maybe a simpler proof could be achieved by induction?<br>
+&gt; <br>
+<br>
+Im not sure what proof you are thinking of, but you make it sound like<br>
+it&#x27;s rather complicated.<br>
+<br>
+Here&#x27;s a proof I think is pretty simple and straightforward (but as<br>
+we&#x27;ve some evidence of, not simple to come up with!); you&#x27;ll have to<br>
+tell me if this is the same as Browne&#x27;s proof.  I think the following<br>
+proof is understandable to the so-called intelligent layman:<br>
+<br>
+Suppose we&#x27;ve filled up the board with black and white colors.<br>
+The boundaries of the hexagons form a graph with edges and vertices. <br>
+We can look at the edges that separate hexagons of different colors. <br>
+Because of the way the hexagons meet (three to a vertex), there is<br>
+always a unique way to continue one of these special edges to another<br>
+edge that separates different colors.  <br>
+<br>
+In other words, we can&#x27;t have more than two of these color separating<br>
+edges meeting at a common vertex.  <br>
+<br>
+So the boundary between the colors consists of either loops (that don&#x27;t<br>
+intersect each other or themselves) and/or paths (that don&#x27;t intersect<br>
+themselves) from a spot on the boundary of the board to another spot on<br>
+the boundary of the board.<br>
+<br>
+Now we&#x27;re not done since we haven&#x27;t shown the boundary between colors<br>
+has at least one of these paths, and furthermore, even if we knew that,<br>
+we would have to show there&#x27;s a path connecting one side of the board<br>
+to the opposite side.  Then we could conclude there&#x27;s a chain of one<br>
+color joining opposite sides, i.e. there is a winning path.<br>
+<br>
+Here&#x27;s a simply way to accomplish both these goals.  At each corner of<br>
+the board, there is a hexagon that is basically shared by each side. <br>
+We extend the graph (given by taking the boundaries of all the hexagons<br>
+on the board) by adding an edge to each corner hexagon: there&#x27;s only<br>
+one way of doing this without favoring either side.  We also pretend<br>
+that each side of the board has an extra row of hexagons already<br>
+colored by one color.  So if one side belongs to white, then the extra<br>
+row added adjacently is colored black, and vice versa.  Note that the<br>
+edge we added at each corner separates these newly added rows and so is<br>
+one of the color separating edges of our graph.  <br>
+<br>
+Now we&#x27;ve killed two birds with one stone.  Since the boundary between<br>
+colors now has edges that can&#x27;t close up to be loops, we must have<br>
+paths going from one side to one side (possibly the same side).  By<br>
+checking the possibilities of where a path starting at a corner can end<br>
+up, we can easily see we have a winning path.<br>
+<br>
+I struggled a little in explaining the modification of the board; I can<br>
+only wish I was adept in ASCII since with pictures it&#x27;s pretty simple. <br>
+Hopefully people can figure it out.<br>
+<br>
+Final observation, it still remains to show there is *only* one winner! <br>
+This is harder (basically one needs to prove a piecewise-linear version<br>
+of the Jordan separation theorem), so I&#x27;ll stop here.  In any case, it<br>
+doesn&#x27;t seem the OP was interested in more than showing there is at<br>
+least one winner.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

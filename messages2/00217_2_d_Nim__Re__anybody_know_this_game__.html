@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>2-d Nim (Re: anybody know this game?)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>2-d Nim (Re: anybody know this game?)</h1>
+    <p><strong>From:</strong> flee@cs.psu.edu (Felix Lee)<br>
+    <strong>Date:</strong> Fri, 13 Nov 1992 10:47:33 GMT</p>
+    <hr>
+    <div>The game is sometimes called 2-d Nim, and can be played with arbitrary<br>
+boards.  Draw an array of Xs, take turns crossing off a connected line<br>
+of Xs.  The last player to move wins (or loses, in the misere<br>
+version).<br>
+<br>
+Like all impartial 2-player games, 2-d Nim can be analyzed with Nim<br>
+numbers.  (Well, probably not the misere version.  I don&#x27;t understand<br>
+misere analysis yet.)<br>
+<br>
+Computing the Nim values isn&#x27;t hard, just somewhat tedious.<br>
+<br>
+Finding general rules helps some.  Like:<br>
+  nim-value XX...X   = n (the number of Xs)<br>
+<br>
+  nim-value XX...X   = n<br>
+            X<br>
+<br>
+  nim-value XX...X   = n - 2, when n - 2 = 2 ** k<br>
+             X         n,     otherwise<br>
+<br>
+Anyone want to explain nim values, nim sums, and the mex rule?<br>
+Perhaps this weekend I&#x27;ll write a quick tour.<br>
+--<br>
+<br>
+<br>
+</div>
+</body>
+</html>

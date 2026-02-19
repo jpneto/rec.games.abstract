@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: nasty psychological game - reference sought</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: nasty psychological game - reference sought</h1>
+    <p><strong>From:</strong> David J Bush &lt;twixt@nospamtodaycstone.net&gt;<br>
+    <strong>Date:</strong> Sat, 08 Dec 2001 19:46:12 -0500</p>
+    <hr>
+    <div>On Sat, 08 Dec 2001 20:48:57 GMT, Don Woods &lt;don@iCynic.com&gt; wrote:<br>
+<br>
+|David J Bush &lt;twixt@nospamtodaycstone.net&gt; writes:<br>
+|&gt; |Nasty indeed! I tried to analyze a version with only two lines,<br>
+|&gt; |and any real number between 0 and one&#x27;s score as a possible bid.<br>
+|&gt; |So what is B&#x27;s probability of winning in the following position<br>
+|&gt; |assuming perfect play?<br>
+|&gt; |<br>
+|&gt; |    |  |       Score<br>
+|&gt; |  A |  O B     A: 1<br>
+|&gt; |    |  |       B: x<br>
+|&gt; |<br>
+|&gt; |Let&#x27;s call it p(x). Clearly p(x) = 0 for x &lt; 1/2, and p(x) = 1<br>
+|&gt; |for x &gt; 1. I found it tricky to work out p(x) for 1/2 &lt; x &lt; 1. <br>
+|&gt; |Eventually I came up with p(x) = 2 - 1/x, but it&#x27;s not really<br>
+|&gt; |a proof (yet). Is it right, though?<br>
+|&gt; <br>
+|&gt; I&#x27;m not sure, but I notice you do not mention the case x=1.<br>
+|&gt; At first, I thought this would be a sure win for B, until I<br>
+|&gt; saw bids must be &lt; 1.<br>
+|<br>
+|I don&#x27;t see where he said bids were &lt; 1.  He said &quot;between 0 and<br>
+|one&#x27;s score&quot;.  And if you allow bids of exactly 0 or one&#x27;s score,<br>
+|then you eliminate all those nasty questions of &quot;who can name the<br>
+|smaller epsilon&quot;.<br>
+<br>
+Okay, my bad.<br>
+<br>
+|Given this, you can generalise the position by observing that<br>
+|multiplying both player&#x27;s scores by the same amount (other than<br>
+|zero) has no effect on the probability.  So then, given a pair of<br>
+|scores, you can represent each player&#x27;s strategy as a probability<br>
+|distribution P(s) where P(s) is the probability that the player<br>
+|bids s.  (Or perhaps the probability he bids less than or equal<br>
+|to s; I&#x27;m not sure which works better.)  The function P(s) will,<br>
+|of course, be a function of the two scores.  Then B&#x27;s chance of<br>
+|winning is the double-integral across all possible bids by both<br>
+|players, of the chance of those particular bids, times the<br>
+                                                  ^^^^^^^^^<br>
+|probability of B winning given the resulting scores.<br>
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^<br>
+<br>
+The purpose of your P(s) is to find a value for the original<br>
+poster&#x27;s p(x), correct?<br>
+<br>
+p(x) is the probability of B winning from the given initial<br>
+position. You are calculating this probability, in terms of<br>
+the probabilites of winning from all the possible positions that<br>
+can result after one bid.<br>
+<br>
+Strictly from a practical point of view, how are all those<br>
+probabilities to be calculated? It would seem, the same<br>
+process would have to be applied to most of those positions<br>
+as well, which would imply that most of the (uncountably infinite?)<br>
+2-ply positions have to be evaluated the same way, etc.<br>
+<br>
+<br>
+David Bush http://www.geocities.com/twixtplayer/<br>
+Remove nospamtoday from my email<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

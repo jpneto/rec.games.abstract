@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: New game: Think Small</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: New game: Think Small</h1>
+    <p><strong>From:</strong> Marc.Ringuette@GS80.SP.CS.CMU.EDU<br>
+    <strong>Date:</strong> Sat, 21 Nov 1992 06:42:00 GMT</p>
+    <hr>
+    <div>Daniel Shoham&#x27;s reasoning (backwards from assuming a 1/N<br>
+probability of winning for any choice by the Nth player) is<br>
+interesting, but isn&#x27;t quite correct.  You see, it might be the case<br>
+that _no one_ wins the contest.  In fact, for 40 people using optimal<br>
+strategy, the probability of a 41st player winning is uniformly 1/44.2<br>
+for any x he chooses....and the chance of nobody winning is 1/44.2 .<br>
+<br>
+I took a different approach in computing the optimal strategy:<br>
+assuming all N players use a probabilistic strategy s(x) which<br>
+specifies a fixed probability of choosing each x, I compute the<br>
+probability that an N+1th player can win by choosing a number y.<br>
+Rather than reformat the equation, here&#x27;s the code: (input is y and the<br>
+function s(x):<br>
+<br>
+	sum=0.0;<br>
+	for (x=1; x&lt;y; ++x) {<br>
+		sum+= (s[x]/norm)*N*pow(1.0-(s[x]/norm),N-1.0) * (1-sum);<br>
+	}<br>
+	return (1-sum)*pow(1-(s[y]/norm),N*1.0);<br>
+<br>
+I implemented a simple iterative search for the best function s(x) by<br>
+taking an initial s, finding the number w with maximum probability of<br>
+winning, and increasing s(w) for the next iteration.<br>
+<br>
+Just for your interest, here&#x27;s a histogram of s(x) for N=40:<br>
+<br>
+s(x) =    0.00                       0.05                             0.10<br>
+          ---------------------------------------------------------------<br>
+  x =  1: ************************************************************<br>
+       2: ***********************************************************<br>
+       3: *********************************************************<br>
+       4: ********************************************************<br>
+       5: *****************************************************<br>
+       6: ****************************************************<br>
+       7: **************************************************<br>
+       8: ***********************************************<br>
+       9: ********************************************<br>
+      10: *****************************************<br>
+      11: **************************************<br>
+      12: **********************************<br>
+      13: *****************************<br>
+      14: ***********************<br>
+      15: ****************<br>
+      16: ********<br>
+      17: **<br>
+      18: *<br>
+      19: <br>
+      20: <br>
+<br>
+<br>
+It sure looks like a binomial distribution, but I still haven&#x27;t worked<br>
+out the closed form.<br>
+<br>
+Here&#x27;s the C code for my iterative solver - have fun!<br>
+<br>
+<br>
+-- Marc Ringuette (mnr@cs.cmu.edu)<br>
+<br>
+<br>
+<br>
+#include &lt;stdio.h&gt;<br>
+#include &lt;math.h&gt;<br>
+<br>
+#define MAX 40<br>
+#define N 40<br>
+#define ITERS 2000<br>
+#define delta 0.01<br>
+double s[MAX],norm;<br>
+<br>
+double win(y)<br>
+	int y;<br>
+{<br>
+	int x;<br>
+	double sum;<br>
+<br>
+	sum=0.0;<br>
+	for (x=1; x&lt;y; ++x) {<br>
+		sum+= (s[x]/norm)*N*pow(1.0-(s[x]/norm),N-1.0) * (1-sum);<br>
+	}<br>
+	return (1-sum)*pow(1-(s[y]/norm),N*1.0);<br>
+}<br>
+<br>
+main()<br>
+{<br>
+	int i,j,maxj;<br>
+	double w,maxwin;<br>
+<br>
+	norm = 1.0;<br>
+<br>
+	for (i=1;i&lt;MAX;++i) s[i]=0.0;<br>
+	s[1]=1.0;<br>
+<br>
+	for (i=0;i&lt;ITERS;++i) {<br>
+		maxwin= -1.0;<br>
+		maxj= -1;<br>
+		for (j=1;j&lt;MAX;++j) {<br>
+			w=win(j);<br>
+			if (w&gt;maxwin) {<br>
+				maxwin=w;<br>
+				maxj=j;<br>
+			}<br>
+		}<br>
+		s[maxj]+=delta;<br>
+		norm = norm + delta;<br>
+	}<br>
+<br>
+	for (i=1; i&lt;MAX-1;++i) {<br>
+		printf(&quot;s[%2d] = %.6f, win[%2d]=%.6f\n&quot;,i,s[i]/norm,i,win(i));<br>
+	}<br>
+	printf(&quot;\n\n&quot;);<br>
+	for (i=1; i&lt;MAX-1;++i) {<br>
+		printf(&quot;%2d: &quot;,i);<br>
+		for (j=0;j&lt;(60/s[1]*norm)*s[i]/norm;++j) printf(&quot;*&quot;);<br>
+		printf(&quot;\n&quot;);<br>
+	}<br>
+}<br>
+<br>
+<br>
+</div>
+</body>
+</html>

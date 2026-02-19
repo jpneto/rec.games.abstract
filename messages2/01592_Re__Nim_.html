@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Nim!</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Nim!</h1>
+    <p><strong>From:</strong> joelr@tucson.Princeton.EDU (Joel Evan Rosenberg)<br>
+    <strong>Date:</strong> Thu, 17 Feb 1994 17:54:30 GMT</p>
+    <hr>
+    <div>In article &lt;CLDpDK.9B7@ssd.intel.com&gt;,<br>
+William Shubert &lt;wms@ssd.intel.com&gt; wrote:<br>
+&gt;kgowen@cie.uoregon.edu (Kevin Gowen):<br>
+&gt;   In nim, there are piles of matches.  Players take turns removing as many<br>
+&gt;matches as they want, but only from one pile per turn.  The player whe removes<br>
+&gt;the last match wins.<br>
+&gt;<br>
+&gt;******** HOW TO WIN **********<br>
+&gt;<br>
+&gt;   So long as, after the end of your turn, all pile counts XOR to zero,<br>
+&gt;you will win.  e.g.,<br>
+&gt;<br>
+&gt;Pile 1: 11 matiches ||||| ||||| |<br>
+&gt;Pile 2:  6 matiches ||||| |<br>
+&gt;Pile 3:  3 matiches |||<br>
+&gt;<br>
+&gt;11 ^ 6 ^ 3 = 0b1011 ^ 0b110 ^ 0b11 = 0b1110<br>
+&gt;<br>
+&gt;So we need to toggle the two, 4, and 8 bits of any pile.  Try pile 1.<br>
+&gt;0b1011 ^ 0b1110 = 0b101 = 5 so we want 5 matches in pile 1.  So we remove<br>
+&gt;6 matches from pile 1 for our turn and have 5/6/3.  5^6^3 = 0.<br>
+&gt;<br>
+&gt;   Now notice that NO MATTER WHAT YOUR OPPONENT DOES, the piles will not<br>
+&gt;XOR to 0 because they&#x27;re going to toggle some bits, somewhere, and since<br>
+&gt;the bits XOR to 0 now these toggled bits will no longer be 0.  So then you<br>
+&gt;can readjust to bring the XOR to 0 again, then they move, etc.  Since all<br>
+&gt;piles of size 0 (the winning position) also XORs to 0, you HAVE to win<br>
+&gt;eventually if you play this way.<br>
+&gt;				-Bill (wms@ssd.intel.com)<br>
+<br>
+One slight quibble: you need to show that from any position whose XOR<br>
+(also known as Nim-sum) is non-zero, you can get to a position whose<br>
+Nim-sum is zero. The proof goes like this:<br>
+<br>
+Say the Nim-sum is X. We would like to change a pile P into a pile<br>
+P^X, so we need to know that the value P-(P^X) is positive for some<br>
+pile P. Well, let X have its highest &quot;on&quot; bit in position b.  Then at<br>
+least one of the given piles, call it P, must have bit b on.  Then,<br>
+X^P &lt; P, because the highest bit changed goes from 1 to 0, so<br>
+P - (P^X) &gt; 0, and we have found a winning move.<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

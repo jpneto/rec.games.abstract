@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Grid Game Of Differences</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Grid Game Of Differences</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Wed, 13 Oct 2010 12:35:10 -0700 (PDT)</p>
+    <hr>
+    <div><br>
+<br>
+Leroy Quet wrote:<br>
+&gt; This is a game for two player.<br>
+&gt;<br>
+&gt; Draw an n-by-n grid on paper, where I suggest that n is at least 8.<br>
+&gt;<br>
+&gt; The players take turns placing x&#x27;s in the empty squares of the grid,<br>
+&gt; one x per turn.<br>
+&gt;<br>
+&gt; No two or more x&#x27;s may be placed in the same row or in the same column<br>
+&gt; of the grid.<br>
+&gt;<br>
+&gt; After n total moves (when there is exactly one x in each row and<br>
+&gt; column), the game is over.<br>
+&gt;<br>
+&gt; Now to determine the score:<br>
+&gt;<br>
+&gt; Reading left to right, write down the (n-1) absolute values of the<br>
+&gt; differences between the consecutive x&#x27;s&#x27; vertical coordinates, in<br>
+&gt; terms of number of squares.<br>
+&gt;<br>
+&gt; In another list, reading bottom to top, write down the (n-1) absolute<br>
+&gt; values of the differences between the consecutive x&#x27;s&#x27; horizontal<br>
+&gt; coordinates, in terms of number of squares.<br>
+&gt;<br>
+&gt; Player 1 gets a point for every distinct numerical value occurring in<br>
+&gt; the first list of differences.<br>
+&gt; Player 2 gets a point for every distinct numerical value occurring in<br>
+&gt; the second list.<br>
+&gt; If a particular difference occurs at least once in a single list, then<br>
+&gt; the player gets one point for that particular difference.<br>
+&gt;<br>
+&gt; Largest score wins.<br>
+&gt;<br>
+&gt; We may need an example here:<br>
+&gt;<br>
+&gt; n=9:<br>
+&gt;<br>
+&gt; . x . . . . . . .<br>
+&gt; . . . . . . . . x<br>
+&gt; . . x . . . . . .<br>
+&gt; . . . . . x . . .<br>
+&gt; x . . . . . . . .<br>
+&gt; . . . x . . . . .<br>
+&gt; . . . . . . . x .<br>
+&gt; . . . . . . x . .<br>
+&gt; . . . . x . . . .<br>
+&gt;<br>
+&gt; Player 1&#x27;s (vertical) differences (reading left to right) are:<br>
+&gt; 4,2,3,3,5,4,1,5<br>
+&gt; The unique values that occur are:<br>
+&gt; 1,2,3,4,5<br>
+&gt; Player 1 gets 5 points.<br>
+&gt;<br>
+&gt; Player 2&#x27;s (horizontal) differences (reading bottom to top) are:<br>
+&gt; 2,1,4,3,5,3,6,7<br>
+&gt; The unique values that occur are:<br>
+&gt; 1,2,3,4,5,6,7<br>
+&gt; Player 2 gets 7 points.<br>
+&gt;<br>
+&gt; In another variation of this game, count ONLY those differences that<br>
+&gt; occur exactly once (and no more than once).<br>
+&gt; In this variation, player 1 would have gotten 2 points, for the<br>
+&gt; differences 1 and 2.<br>
+&gt; Player 2 would have gotten 6 points, for the differences 1,2,4,5,6,7.<br>
+&gt; (Since 3 is the only difference in this list that occurs more than<br>
+&gt; once.)<br>
+&gt;<br>
+&gt;<br>
+&gt; Which variation is more fun?<br>
+&gt;<br>
+<br>
+What would a good strategy for each of the two variations?<br>
+The only strategy I can think of is try to have a large difference<br>
+between consecutive x&#x27;s in the direction that contributes to your<br>
+score, while trying to minimize the differences at a right angle to<br>
+that. This is because, for smaller n anyway, there seem to be a lot<br>
+more lower valued differences. Is there anything more to a good<br>
+strategy than doing this?<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

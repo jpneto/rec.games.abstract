@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>&quot;Break the Ice&quot; game strategy</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>&quot;Break the Ice&quot; game strategy</h1>
+    <p><strong>From:</strong> &quot;Arthur J. O&#x27;Dwyer&quot; &lt;ajonospam@andrew.cmu.edu&gt;<br>
+    <strong>Date:</strong> Mon, 31 Jul 2006 19:35:54 -0400 (EDT)</p>
+    <hr>
+    <div><br>
+   I&#x27;m trying, just for fun, to make a computer player for an abstract<br>
+game similar to Milton Bradley&#x27;s &quot;Dont Break the Ice&quot;<br>
+<br>
+   http://en.wikipedia.org/wiki/Don&#x27;t_Break_the_Ice<br>
+<br>
+minus the chance and physical-skill elements. Source code and a <br>
+DOS/Windows executable available here for anyone who wants them:<br>
+<br>
+   http://www.contrib.andrew.cmu.edu/~ajo/disseminate/ice.zip<br>
+<br>
+The game is played on a grid of cells, with each cell initially filled<br>
+with an &quot;ice block.&quot; Each player, on his turn, &quot;knocks out&quot; one of the<br>
+blocks; if this causes any other blocks to be unsupported, they also<br>
+fall. The player who causes the last block to fall is the loser.<br>
+<br>
+   Example game:<br>
+<br>
+     123<br>
+<br>
+   a OOO    Alice starts by knocking out B2, the central block.<br>
+   b OOO<br>
+   c OOO<br>
+<br>
+     OOO    Bob knocks out A3,<br>
+     O.O    causing A2 and B3 to fall, as they&#x27;re no longer<br>
+     OOO    supported by an &quot;arch&quot; of connected blocks.<br>
+<br>
+     O..    Alice knocks out C2, causing C3 to fall.<br>
+     O..<br>
+     OOO<br>
+<br>
+     O..    Bob is forced to knock out one of the blocks<br>
+     O..    in the remaining arch, causing all three to<br>
+     O..    fall; he loses the game.<br>
+<br>
+   My questions for the rec.games.abstract folks: Has this game been<br>
+analyzed before? Is there any known strategy that applies to many<br>
+different kinds of boards (&quot;go for the corners first,&quot; or something<br>
+like that?)<br>
+<br>
+   My question for the comp.programming folks: I quickly determined<br>
+that the standard alpha-beta pruning technique doesn&#x27;t help with<br>
+this game, because I don&#x27;t know any way to evaluate the &quot;strength&quot;<br>
+of a position except as a win or loss. So most of the branches in<br>
+an alpha-beta tree of any reasonable depth (i.e., not deep enough<br>
+to see all possible endings) end up with a value of zero, which means<br>
+the computer is moving randomly most of the time.<br>
+<br>
+   Yet there are some positions, such as (I think)<br>
+<br>
+   ....OO<br>
+   ....OO<br>
+   ....OO<br>
+   ....OO<br>
+   OOOOOO<br>
+   OOOOOO<br>
+<br>
+which a human player can tell are a win for the moving player, without<br>
+having to explicitly examine the whole tree --- we can collapse certain<br>
+&quot;families&quot; of moves into single cases, for example. How do we get the<br>
+computer to do the same thing?<br>
+<br>
+   Is there any way to get the computer to play smarter, other than<br>
+adding more and more special cases to the position-evaluation code?<br>
+<br>
+-Arthur<br>
+<br>
+<br>
+</div>
+</body>
+</html>

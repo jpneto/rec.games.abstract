@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Trax FAQ</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Trax FAQ</h1>
+    <p><strong>From:</strong> D.G.Bailey@massey.ac.nz (Donald G Bailey)<br>
+    <strong>Date:</strong> Wed, 22 Jun 1994 09:34:07 +1200</p>
+    <hr>
+    <div>============================================================================<br>
+TRAX: Answers to common questions.<br>
+============================================================================<br>
+This FAQ is copyright 1994 by Donald Bailey. The rules are copyright by<br>
+David Smith, and are used here with permission. Any suggestions, questions,<br>
+or comments should be sent to Donald Bailey: D.G.Bailey@massey.ac.nz<br>
+============================================================================<br>
+CONTENTS:<br>
+<br>
+A: INTRODUCTION<br>
+   A1) What is Trax?<br>
+   A2) What is required to play Trax?<br>
+   A3) Where can I obtain a set?<br>
+   A4) What is the history of Trax?<br>
+B: RULES<br>
+   B1) How is Trax played?<br>
+   B2) What is Supertrax?<br>
+   B3) What happens if we both win on the same move?<br>
+   B4) Why do the rules require that you extend currently existing loops?<br>
+   B5) What happens if different fill algorithms generate different boards?<br>
+   B6) What is the precise definition of a &quot;line&quot; for win purposes?<br>
+   B7) Which 8x8 counts for line wins?<br>
+   B8) Is there a complete set of rules available online?<br>
+C: DEFINITIONS<br>
+   C1) What is a &quot;loop attack&quot;?<br>
+   C2) What is a &quot;corner&quot;?<br>
+   C3) What is a &quot;connectable pair&quot;?<br>
+   C4) What is a &quot;cave&quot;?<br>
+D: NOTATION<br>
+   D1) How do I record a game (other than drawing the position each turn)?<br>
+   D2) Is there a convenient ASCII representation of a position?<br>
+   D3) What do you do if the game area is wider than 26 (&#x27;Z&#x27;) ?<br>
+E: STRATEGY<br>
+   E1) Which is more important, loops or lines?<br>
+   E2) How can I tell who has the best position?<br>
+   E3) If I don&#x27;t know what to do, what is wrong with attacking?<br>
+   E4) When should I attack?<br>
+   E5) When should I start worrying about my opponent&#x27;s lines?<br>
+   E6) What are the typical stages of a Trax game?<br>
+   E7) What is the strategic significance of caves?<br>
+   E8) Are there any general principles for how to play well?<br>
+   E9) How can I find out more about Trax strategy?<br>
+F: ORGANISATIONS<br>
+   F1) rec.games.abstract archives<br>
+   F2) Trax server<br>
+   F3) Mailing list<br>
+   F4) Clubs<br>
+ACKNOWLEDGEMENTS<br>
+============================================================================<br>
+A: INTRODUCTION<br>
+<br>
+----------------------------------------------------------------------------<br>
+A1) What is Trax?<br>
+<br>
+Trax is a strategy game for two players, that relies on pure skill. It is <br>
+played with a set of identical tiles with sections of black and white track<br>
+<br>
+on them. Players take turns at playing the tiles, with the purpose of <br>
+completing either a closed loop of their colour or continuous path from one<br>
+<br>
+side to the other of the playing area (either horizontally or vertically).<br>
+<br>
+While Trax is a simple game to learn, there is plenty of scope for<br>
+strategic play. Like many other strategy games, Trax can be played at a<br>
+range of <br>
+levels. Learning to play Trax is one thing, learning to play well is<br>
+another.<br>
+That is why Trax has often been called &quot;The game for those who love a<br>
+challenge!&quot;<br>
+----------------------------------------------------------------------------<br>
+A2) What is required to play Trax?<br>
+<br>
+                _____________     _____________<br>
+               |     | |     |   |     | |     |<br>
+               |     | |     |   |    / /      |<br>
+               |     | |     |   |___/ /       |<br>
+               |#############|   |____/    ####|<br>
+               |     | |     |   |      ####   |<br>
+               |     | |     |   |     ##      |<br>
+               |_____|_|_____|   |_____##______|<br>
+<br>
+Trax is a game played with a set of 64 identical tiles. These tiles have <br>
+white and black straight sections on one side and white and black curved<br>
+sections on the other. The most common form of tiles is red plastic<br>
+measuring 31.5 mm square, 6.4 mm thick. The black and white paths are <br>
+painted in recesses 5.5 mm wide.<br>
+<br>
+In addition to the tiles, all you need is a flat surface on which to play.<br>
+----------------------------------------------------------------------------<br>
+A3) Where can I obtain a set?<br>
+<br>
+Sets have been published in many countries around the world, in a variety<br>
+of<br>
+styles of packaging. If you are unable to find a set in your area, they are<br>
+available via mail order from the New Zealand Trax Association (contact<br>
+D.G.Bailey@massey.ac.nz) or in the United States from the Bay Area Trax<br>
+Club<br>
+(contact mel@soda.berkeley.edu).<br>
+----------------------------------------------------------------------------<br>
+A4) What is the history of Trax?<br>
+<br>
+Trax was invented in New Zealand in 1980 by David Smith. It was first <br>
+published in New Zealand and the United States in 1982. It is now published<br>
+and played virtually worldwide. The first club was the Canterbury Trax Club<br>
+formed in 1985 in Christchurch NZ. <br>
+<br>
+Trax was a Games 100 game from 1982 to 1986, and won the Parents&#x27; Choice<br>
+Magazine&#x27;s Gold Seal Award in 1987.<br>
+============================================================================<br>
+B: RULES<br>
+<br>
+Note: as Trax is a proprietry game these rules are copyright by David<br>
+Smith.<br>
+They have been reproduced here with permission.<br>
+----------------------------------------------------------------------------<br>
+B1) How is Trax played?<br>
+<br>
+1  Two players decide who shall be white and who shall be black.<br>
+2  White always plays first (there is no advantage).<br>
+3  Each player in turn plays one tile either side up, adjacent to any <br>
+   already played tile such that the colours match. eg<br>
+           +--|--+      +--|--+          +--|--+--|--+<br>
+           | /   |      |  |  |          | /      |  |<br>
+           --   ##  &lt;=  #######  giving  --   ########<br>
+           |   # |      |  |  |          |   #    |  |<br>
+           +--#--+      +--|--+          +--#--+--|--+<br>
+4  Each player may join track of either or both colours at any turn.<br>
+5  If any played tile results in an adjacent space or spaces that has two <br>
+   tracks of the same colour entering it a `forced&#x27; tile is played so as to<br>
+<br>
+   join the two tracks together. If this tile creates other spaces with two<br>
+<br>
+   tracks of the same colour entering, then further forced tiles are<br>
+played. <br>
+   eg playing this       forces this         then this         giving this<br>
+   +--|--+   +--#--+    +--|--+--#--+      +--|--+--#--+      +--|--+--#--+<br>
+   |   \ |   |   # |    |   \     # |      |   \     # |      |   \     # |<br>
+   ##   -- &lt; --   ##    ##   ---   ##      ##   ---   ##      ##   ---   ##<br>
+   | #   |   | \   |    | #     \   |      | #     \   |      | #     \   |<br>
+   +  #  +   +--|--+    +  #  +--|--+      +  #  +  |  +      +  #  +  |  +<br>
+   |  #  |              |  #  | +--|--+    |  #    /   |      |  #    /   |<br>
+   ---#---              ---#--- | /   |    ---#----   ##      ---#----   ##<br>
+   |  #  |              |  #  | --   ##    |  #      # |      |  #      # |<br>
+   +  #  +              +  #  + |   # |    +  #  +--#--+      +  #  +  #  +<br>
+   |   # |              |   # | +--#--+    |   # | +--#--+   |   #   #  <br>
+|<br>
+   --   ##              --   ##            --   ##| #   |    --   ###   --<br>
+   | \   |              | \   |            | \   | ##   --    | \       / |<br>
+   +--|--+              +--|--+            +--|--+ |   / |    +--|--+--|--+<br>
+                                                   +--|--+<br>
+   The player&#x27;s turn ends when all forced tiles have been played. <br>
+6  Missed forced moves should be played as soon as noticed, at no penalty<br>
+to <br>
+   either player.<br>
+7  If a tile or forced tile is played that results in a space with three or<br>
+<br>
+   four tracks of the same colour entering, the move is illegal and must be<br>
+<br>
+   taken back and replayed (at no penalty).<br>
+8  The winner is the player whose track first forms a LOOP or a LINE.<br>
+9  A loop is any path of track that connects to itself, whatever its shape.<br>
+                        +--#--+--#--+--#--+   <br>
+                        | #      #      # |<br>
+                        ##   ----#----   ##<br>
+                        |   /    #    \   |<br>
+   A white loop:        +  |  +  #  +  |  +<br>
+                        |   \    #    /   |<br>
+                        ##   ----#----   ##<br>
+                        | #      #      # |<br>
+                        +--#--+--#--+--#--+<br>
+10 A line is a continuous path that connects opposite and outermost edges<br>
+of <br>
+   the layout, at least 8 rows of tile across or down.<br>
+                                    +--#--+--#--+--#--+--|--+--#--+<br>
+                                    | #      #      #     \    #  |<br>
+                                    ##   ----#----   ###   ----#---<br>
+                                    |   /    #    \     #      #  |<br>
+                              +--|--+  |  +  #  +  |  +  #  +  #  +--#--+<br>
+                              | /       \     #     \    #     #     #  |<br>
+   A horizontal white line:   --   ###   ---   ###   ----#-----#-----#---<br>
+                              |   #   #     \     #      #     #     #  |<br>
+                        +--#--+  #  +  #  +  |  +  #  +--#--+--#--+--#--+<br>
+                        |  #     #     #    /     #   |<br>
+                        ---#-----#-----#----   ###   --<br>
+                        |  #     #     #      #     / |<br>
+                        +--#--+--#--+--#--+--#--+--|--+<br>
+11 If a loop or a line is formed by both colours during either players<br>
+turn, <br>
+   the game is won by that player.<br>
+12 The playing area may not be extended beyond 8 rows wide and 8 rows deep <br>
+   (Regular Trax).<br>
+13 If a win is not achieved after all 64 tiles have been played, the result<br>
+<br>
+   is a draw.<br>
+----------------------------------------------------------------------------<br>
+B2) What is Supertrax?<br>
+<br>
+Supertrax is a variation of Trax played in tournaments. It is played with<br>
+no <br>
+size limits, so the game continues until one player or the other wins. No <br>
+draws are permitted. (Rules 12 and 13 above are cancelled).<br>
+----------------------------------------------------------------------------<br>
+B3) What happens if we both win on the same move?<br>
+<br>
+This is a win for the player who made the move (see rule 11 in B2).<br>
+There was a rule change since the early sets were printed. In Supertrax <br>
+there have never been any draws, since it was decided that this would give<br>
+it <br>
+a considerable advantage over games such as chess and the like, hence the <br>
+arbitrary decision of making it a win for the player who played. Supertrax <br>
+was not played seriously until late 1986 when it was first used for the <br>
+finals of the inaugural World Championship. After that, there has been a <br>
+gradual move away from regular Trax to Supertrax as the game played by <br>
+serious players. However the discrepancy in the rules between the two games<br>
+<br>
+over simultaneous wins was confusing at first for players who &#x27;graduated&#x27;<br>
+to <br>
+Supertrax. It was therefore decided to make the two games more consistent<br>
+by <br>
+making the minor rule change to Trax to simplify the process of moving from<br>
+<br>
+one game to the other.<br>
+----------------------------------------------------------------------------<br>
+B3) Why do the rules require that you extend currently existing paths?<br>
+<br>
+(See rule 3 in B2). Playing the tiles in arbitrary positions causes the<br>
+game<br>
+to degenerate. For example if there is a curved tile, it is possible to<br>
+force a loop in a single turn by playing diagonally off the corner. This<br>
+gives two forced tiles which close the loop.<br>
+        Playing this         would result in this<br>
+        +--#--+                 +--#--+--#--+<br>
+        | #   |                 | #       # |<br>
+        ##   --                 ##   ---   ##<br>
+        |   / |                 |   /   \   |<br>
+        +--|--+--|--+           +  |  +  |  +<br>
+              | /   |           |   \   /   |<br>
+              --   ##           ##   ---   ##<br>
+              |   # |           | #       # |<br>
+              +--#--+           +--#--+--#--+<br>
+----------------------------------------------------------------------------<br>
+B4) What do you do if different fill algorithms generate different boards?<br>
+<br>
+This does not happen. It can be shown that the pattern of forced tiles<br>
+played in a legal move is unique, so it doesn&#x27;t matter what order that the<br>
+forced tiles are placed. A move is illegal if it results in a position<br>
+where<br>
+there are 3 or 4 lines of the same colour going into an empty space. Such<br>
+moves will allways be illegal, regardless of the order in which the forced<br>
+tiles are played. An illegal move must be taken back and an alternative<br>
+move<br>
+played (see rule 7 in B2).<br>
+----------------------------------------------------------------------------<br>
+B5) What is the precise definition of a &quot;line&quot; for win purposes?<br>
+<br>
+A line is a single path of track that joins the outermost opposite edges of<br>
+the playing area across at least 8 rows or columns. The line does not have<br>
+be a straight path, it may be as convoluted as you like, as long as it<br>
+reaches the outermost opposite edges of the playing area. The two ends of<br>
+the line do not even need to be directly opposite, as long as they come out<br>
+somewhere on the opposite sides. In other words one end of a horizontal<br>
+line<br>
+must come out on the left hand side of the leftmost tile in the playing<br>
+area,<br>
+and the other end must come out on the right hand side of the rightmost<br>
+tile<br>
+in the playing area. Similarly for vertical lines. (See rule 10 in B2).<br>
+----------------------------------------------------------------------------<br>
+B6) Which 8x8 counts for line wins?<br>
+<br>
+In regular Trax, the final position of the 8x8 playing area depends on<br>
+where <br>
+the tiles are played. It is defined as the 8th row or 8th column is added, <br>
+limiting the playing area in that direction.<br>
+<br>
+With Supertrax, it is not the 8x8 that is important, but that the line <br>
+reaches the outermost edges of the playing area spanning at least 8 rows or<br>
+<br>
+columns. See question B5. <br>
+----------------------------------------------------------------------------<br>
+B7) Is there a complete set of rules available online?<br>
+<br>
+Rules are available on the rec.games.abstract anonymous FTP archive <br>
+(pprg.eece.unm.edu [129.24.24.10]) in the<br>
+pub/rec.games.abstract/games/trax/ <br>
+directory.<br>
+<br>
+Rules are also available by sending e-mail to munch@soda.berkeley.edu with <br>
+help: trax: rules  in the subject line.<br>
+============================================================================<br>
+C: DEFINITIONS<br>
+<br>
+----------------------------------------------------------------------------<br>
+C1) What is a &quot;loop attack&quot;?<br>
+<br>
+A loop attack is any path which may be made into a loop in a single turn.<br>
+An<br>
+attack by your opponent must be defended immediately, otherwise you will<br>
+lose the game. There are two sorts of loop attacks:<br>
+        +--|--+--|--+              +--|--+--#--+--|--+<br>
+        |   \   /   |              |   \    #    /   |<br>
+narrow  ##   ---   ##    and wide  ##   ----#----   ##<br>
+        | #       # |              | #      #      # |<br>
+        +--#--+--#--+              +--#--+--#--+--#--+<br>
+The narrow loop attack is closed by turning either end of the attack toward<br>
+the other. The wide attack is closed by playig a straight in the centre.<br>
+----------------------------------------------------------------------------<br>
+C2) What is a &quot;corner&quot;?<br>
+<br>
+A corner is any single path that may be formed into a loop attack in a <br>
+single turn. The simplest type of corner is a single curve. Corners are <br>
+important in Trax because they represent attacking potential. Examples of<br>
+white corners:<br>
+        +--|--+--#--+           +--|--+--#--+--#--+--#--+--|--+<br>
+        |   \    #  |           |   \    #     #     #    /   |<br>
+        ##   ----#---           ##   ----#-----#-----#----   ##<br>
+        | #      #  |           | #      #     #     #      # |<br>
+        +--#--+--#--+           +--#--+--#--+--#--+--#--+--#--+<br>
+Note that a corner can be made into an attack in two ways, by turning<br>
+either<br>
+end around toward the other.<br>
+----------------------------------------------------------------------------<br>
+C3) What is a &quot;connectable pair&quot;?<br>
+<br>
+A connectable pair is a pair of adjacent paths, which when linked at either<br>
+<br>
+end, will result in a loop attack at the other end. Connectable pairs and <br>
+corners are of similar importance in terms of potential.<br>
+                           +--|--+--#--+--|--+<br>
+                           |   \     #    |  |<br>
+A white connectable pair:  ##   ---   ########<br>
+                           | #     \      |  |<br>
+                           +--#--+--|--+--|--+<br>
+----------------------------------------------------------------------------<br>
+C4) What is a &quot;cave&quot;?<br>
+<br>
+A cave is an empty region of the playing area which has tile on three or <br>
+four sides. An example of a cave:<br>
+                +--#--+           +--#--+<br>
+                | #   |           |   # |<br>
+                ##   --           --   ##<br>
+                |   / |           | \   |<br>
+                +  |  +--#--+--#--+  |  +<br>
+                | /     #      #    /   |<br>
+                --   ###   ----#----   ##<br>
+                |   #     /    #      # |<br>
+                +--#--+--|--+--#--+--#--+<br>
+============================================================================<br>
+D: NOTATION<br>
+<br>
+----------------------------------------------------------------------------<br>
+D1) How do I record a game (other than drawing the position each turn)?<br>
+<br>
+An algebraic coding scheme has been devised to record each turn. The game<br>
+is <br>
+recorded as viewed by white. Three symbols are used to record the first<br>
+tile <br>
+played in any turn. Forced tiles do not need to be recorded as these are <br>
+self evident.<br>
+<br>
+1: A letter is used to denote the column played  reading left to right<br>
+AFTER <br>
+   the tile is played.<br>
+2: A number is used to denote the row played reading top to bottom AFTER<br>
+the <br>
+   tile is played.<br>
+3: The third symbol is a letter indicates the tile played:<br>
+   S is used whenever straights are played<br>
+   C is used whenever curves is played as the first tile or  against 2<br>
+edges<br>
+   otherwise U, D, L or R are used when the track extended is turned up, <br>
+   down, left or right respectively.<br>
+   In the rare circumstance when a curve is played across the mouthe of a<br>
+   cave and the symbol C is ambiguous, the direction that the white track<br>
+is<br>
+   extended should be specified.<br>
+<br>
+The order of the first two symbols is reversed to distinguish a tile played<br>
+<br>
+ABOVE rather than TO THE LEFT of the top left corner. <br>
+                                1A<br>
+                               ,--.<br>
+                           A1  |  |  B1<br>
+                               `--&#x27;<br>
+                                A2<br>
+For notational purposes, the first tile must be played with the while line <br>
+vertical (if straights) or between the top and left corners (if curves) ie<br>
+                +--|--+         +--|--+<br>
+                |  |  |         | /   |<br>
+        either  #######    or   --   ##<br>
+                |  |  |         |   # |<br>
+                +--|--+         +--#--+<br>
+----------------------------------------------------------------------------<br>
+D2) Is there a convenient ASCII representation of a position?<br>
+<br>
+The representation used so far in the FAQ is one possible representation<br>
+allowing the position to be seen reasonably clearly. However, for large<br>
+games, or for manually entering a position, this notation is a little<br>
+cumbersome. A more compact representation in common use is:<br>
+<br>
+           . o .            . o .           . o . x .    Two tiles <br>
+straights  x   x    curves  o / x           x \ o   o    side by side<br>
+           . o .            . x .           . x . x .<br>
+<br>
+where the white path is represented by o and the black by x. Note that this<br>
+representation is not as clear, particularly for larger positions. It can<br>
+be<br>
+made clearer if printed out and the two sets of paths drawn over in<br>
+different coloured pens.<br>
+----------------------------------------------------------------------------<br>
+D3) What do you do if the game area is wider than 26 (&#x27;Z&#x27;) ?<br>
+<br>
+The columns are labelled A B C ... Y Z AA AB AC ... AZ BA etc<br>
+In practise, the largest I have seen for a real game was somewhere around<br>
+S or T<br>
+============================================================================<br>
+E: STRATEGY<br>
+<br>
+----------------------------------------------------------------------------<br>
+E1) Which is more important, loops or lines?<br>
+<br>
+They are both equally important. Trax is all about a balance in between the<br>
+<br>
+two. Defending loops tends to straighten them into lines, while defending <br>
+lines tends to bend them into loops.<br>
+<br>
+This said, loops are faster to make since any corner can be made into an <br>
+attack. They are also easier to defend (usually). Lines take several turns <br>
+to build, and are more obviously threatening because you can see them grow.<br>
+<br>
+They are also harder to defend, often requiring several turns.<br>
+----------------------------------------------------------------------------<br>
+E2) How can I tell who has the best position?<br>
+<br>
+This is a difficult question. The most straight forward approach is to look<br>
+<br>
+at attacking potential. The number of corners and connectable pairs that a <br>
+player has gives an indication of the attacking potential of that player. <br>
+Corners and connectable pairs form part of more complex multiple stage <br>
+threats such as Ls and edges. If there are strong line possibilities, then <br>
+these should be counted as well.<br>
+<br>
+Note that the approach of counting corners does not take into account their<br>
+<br>
+position relative to the rest of the playing area. It is possible to have <br>
+only a single corner and be able to win the game, or have many corners yet <br>
+have a relatively weak position. The strength of a position also depends on<br>
+<br>
+who has the initiative. A more detailed analysis is beyond the scope here. <br>
+Having said this, corner counting does provide a useful FIRST ESTIMATE of <br>
+the strength of a position.<br>
+----------------------------------------------------------------------------<br>
+E3) If I don&#x27;t know what to do, what is wrong with attacking?<br>
+<br>
+This is one of the most common strategic errors of new Trax players.<br>
+Corners <br>
+represent attacking potential. However, by making an attack prematurely,<br>
+you <br>
+actually weaken your position. The reason for this is twofold. First, when <br>
+you attack, you use up a corner, reducing your potential. Second, when your<br>
+<br>
+opponent defends, they can usually do so in a way that gains them a corner.<br>
+So, in general, you not only weaken your own position, but also strengthen <br>
+your opponent.<br>
+<br>
+If you don&#x27;t know what to do, DON&#x27;T attack. Kill one of your opponent&#x27;s <br>
+corners instead.<br>
+----------------------------------------------------------------------------<br>
+E4) When should I attack?<br>
+<br>
+Given that attacking without purpose more often than not harms a position, <br>
+the best time to attack is when it helps the position. There are three <br>
+circumstances where this is the case:<br>
+<br>
+1) When you can force a win.<br>
+2) When your opponent has several independent threats (which cannot be <br>
+   defused simultaneously).<br>
+3) If after the attack or attack sequence is over, your position has <br>
+   improved regardless of what defences your opponent makes.<br>
+<br>
+Care needs to be taken with case 1 since it is very easy to overlook a <br>
+counterattack, which can be fatal. If there are corners around that will <br>
+cause counterattack problems, it is usually better to defend the potential <br>
+counterattacks before starting the attack sequence.<br>
+----------------------------------------------------------------------------<br>
+E5) When should I start worrying about my opponent&#x27;s lines?<br>
+<br>
+There is no easy answer to this. Probably as soon as you recognise them! <br>
+Lines can be a problem from about 3 tiles long if that is all there is. ie <br>
+if the playing area is only 3 tiles wide and the line is the same length,<br>
+it <br>
+could easily become a serious threat. Also, segments which are on their own<br>
+<br>
+on one side of the playing area (without any other lines of the same<br>
+colour) <br>
+can also be dangerous since they can easily grow very quickly. Some hints <br>
+for defending lines:<br>
+<br>
+1) Start early! A line threat can take several turns to defend properly.<br>
+2) Turn lines toward your own corners to slow them down.<br>
+3) The best way of defending a line is to link it back to a parallel path.<br>
+4) Be careful when turning a line back that you don&#x27;t give your opponent a <br>
+   loop threat.<br>
+----------------------------------------------------------------------------<br>
+E6) What are the typical stages of a Trax game?<br>
+<br>
+A typical game goes through at least three stages:<br>
+1) the opening, where players are jostling for initial advantage. Any <br>
+   mistakes at this stage usually result in loop wins.<br>
+2) the growing stage, as the position approaches and passes through the 8x8<br>
+<br>
+   threshold. Often lines, if there are any present, can become critical <br>
+   during this stage. Losses here can be either loops or lines.<br>
+3) after the position becomes much bigger, line threats usually lose their <br>
+   significance, and loop threats tend to predominate. As the position gets<br>
+<br>
+   larger it tends to become more and more unstable, until one player <br>
+   gradually loses the advantage and loses.<br>
+----------------------------------------------------------------------------<br>
+E7) What is the strategic significance of caves?<br>
+<br>
+Playing in caves generally results in more forced moves than playing <br>
+elsewhere on the playing area. This can make it harder to see what is going<br>
+<br>
+to happen as a result of the move. This is made worse by some moves in<br>
+caves <br>
+being illegal. For these reasons, most players do not like caves and tend<br>
+to <br>
+fill them at the earliest opportunity. However, in spite of their <br>
+difficulties, caves have two aspects that make them important.<br>
+<br>
+Certain attacks into caves are not able to be defended. Therefore cave <br>
+attacks provide an alternative to Ls and other multiple loop threats for <br>
+forcing a win.<br>
+<br>
+The second significance of caves is that it is possible to have caves in <br>
+which there are no legal moves. Such &quot;dead&quot; caves can provide an extremely <br>
+strong defensive element since any lines entering the cave can no longer be<br>
+<br>
+used in a win as they cannot be joined. Lines and loop threats may be <br>
+defended permanently by linking them to a path going into a dead cave.<br>
+----------------------------------------------------------------------------<br>
+E8) Are there any general principles for how to play well?<br>
+<br>
+Detailed long term strategies are very hard to form. Most threats tend to<br>
+be <br>
+fairly localised so the game tends to progress from one hot spot to<br>
+another. <br>
+Trax is more of a waiting game - playing for long term advantage in terms<br>
+of <br>
+potential, while seizing whatever opportunities your opponent gives you. <br>
+Several general principles that I have found helpful:<br>
+<br>
+1) Killing your opponent&#x27;s corners, replacing them with your own.<br>
+2) Keep your options open. If a path can be used for either a loop or a <br>
+   line, don&#x27;t commit it either way. Work on something else and wait for <br>
+   your opponent to make the move for you. That way you gain a turn.<br>
+3) Do not make pointless attacks or even pointless Ls. You lose attacking <br>
+   potential when your opponent defends them.<br>
+4) Where possible, try to make your move do more than one thing. Don&#x27;t just<br>
+<br>
+   defend, but defend and set up a threat for yourself at the same time.<br>
+5) Play in such a way as to limit the number of safe moves your opponent <br>
+   has. Your opponent is then more likely to make a mistake and give you<br>
+the <br>
+   game.<br>
+6) Use sacrifice to good advantage. If you can set up something obvious <br>
+   (such as an L or an edge) at the same time as setting up something more <br>
+   subtle, most players will see the obvious threat, and fall for the<br>
+   subtle. In other words you can sacrifice some corners or even a strong <br>
+   line to improve your overall position.<br>
+----------------------------------------------------------------------------<br>
+E9) How can I find out more about Trax strategy?<br>
+<br>
+An excellent introduction to Trax strategy can be found in<br>
+<br>
+&quot;Trax Strategy for Beginners&quot;, by Donald G Bailey<br>
+(D.G.Bailey@massey.ac.nz). <br>
+Published by D.G. Bailey, 1 Salisbury Ave, Palmerston North, New Zealand. <br>
+(1992) ISBN 0-473-01592-7<br>
+<br>
+If you are at all serious about playing Trax then you should get this book.<br>
+<br>
+Highly recommended.<br>
+============================================================================<br>
+F: ORGANISATIONS<br>
+<br>
+----------------------------------------------------------------------------<br>
+F1) rec.games.abstract archives<br>
+<br>
+Annotated game logs, and a description of the game are available on the <br>
+rec.games.abstract anonymous FTP archive (pprg.eece.unm.edu [129.24.24.10])<br>
+<br>
+in pub/rec.games.abstract/games/trax/<br>
+----------------------------------------------------------------------------<br>
+F2) Trax server<br>
+<br>
+Two automated e-mail servers have been set up to handle trax games:<br>
+<br>
+Server                      Contact             Address for problems<br>
+munch@soda.berkeley.edu     Mel Nicholson       mel@soda.berkeley.edu<br>
+pbmserv@netcom.com          Richard Rognlie     rrognlie@netcom.com<br>
+<br>
+Send a mail message to either server with &#x27;help&#x27; in the subject line to get<br>
+information on how to use that server. Note that all messages must be sent <br>
+in the subject line. Anything in the main body is ignored.<br>
+----------------------------------------------------------------------------<br>
+F3) Mailing list<br>
+<br>
+There is a mailing list, used to broadcast challenges, announcements, etc <br>
+relating to Trax. So sign onto the mailing list, e-mail the following <br>
+message to  listserv@massey.ac.nz<br>
+    subscribe trax &lt;your name&gt;<br>
+    set trax mail ack<br>
+Note that all text to listserv must be in the body, the subject is ignored.<br>
+<br>
+The first line subscribes Joe Bloggs to one of the addresses in his header <br>
+(make sure you are on the server you would normally wish to send from, or <br>
+you will be refused). the second line is optional and changes the default <br>
+setting so that what you send will be returned to you. If you have it on<br>
+and <br>
+you want it off, just send:<br>
+    set trax mail noack<br>
+that&#x27;s it. Once you&#x27;ve done that, you can send (to listserv@massey.ac.nz)<br>
+    recipients trax<br>
+to get a list of everyone on the mailing list. To broadcast a message on<br>
+the <br>
+mailing list, e-mail the message to  trax@massey.ac.nz.<br>
+<br>
+It you have difficulty with the server, send e-mail describing your problem<br>
+<br>
+to T.Siegenthaler@massey.ac.nz.<br>
+----------------------------------------------------------------------------<br>
+F4) Clubs<br>
+<br>
+Known Trax clubs and contacts:<br>
+<br>
+Canterbury Trax Club   David Smith, 37 Bannister Place, Christchurch, NZ<br>
+Manawatu Trax Club     Tom Siegenthaler: T.Siegenthaler@massey.ac.nz<br>
+Bay Area Trax Club     Mel Nicholson: mel@soda.berkeley.edu,<br>
+mel@ssr.nca.com<br>
+Wellington Region      Michael Norrish: Michael.Norrish@comp.vuw.ac.nz<br>
+<br>
+The New Zealand Trax Association is an association of Trax clubs and <br>
+individuals within New Zealand. The NZTA publishes a newsletter which comes<br>
+<br>
+out three or four times a year. NZTA contact is D.G.Bailey@massey.ac.nz<br>
+----------------------------------------------------------------------------<br>
+F5) Tournaments<br>
+<br>
+Many of the clubs listed above have annual tournaments. Tournaments are<br>
+also held on the Trax server from time to time. Most of the open<br>
+tournaments are<br>
+announced on the Trax mailing list and where applicable, in the<br>
+rec.games.abstract and rec.games.pbm newsgroups.<br>
+<br>
+The world Trax championship is held every two years on even years. This <br>
+consists of a series of regional qualifier tournaments, the winners of<br>
+which<br>
+proceed to the Candidate&#x27;s tournament. The winner of the Candidate&#x27;s <br>
+tournament challenges the incumbent champion in the Challenge Match.<br>
+============================================================================<br>
+ACKNOWLEDGEMENTS:<br>
+<br>
+Particular thanks go to David Smith, the inventor and owner of the rights<br>
+of<br>
+Trax, for his permission to include the rules, and support for the FAQ.<br>
+<br>
+Many thanks to the subscribers of trax@massey.ac.nz for their questions, <br>
+without which we wouldn&#x27;t have a FAQ sheet, and for their helpful <br>
+suggestions regarding the arrangement of material presented here.<br>
+<br>
+<br>
+-- <br>
+-----------------------------------------------------------------<br>
+Donald G Bailey,                  e-mail: D.G.Bailey@massey.ac.nz<br>
+Director, Image Analysis Unit     phone:  +64-6-350 4063<br>
+Massey University                 fax:    +64-6-354 0207<br>
+-----------------------------------------------------------------<br>
+<br>
+<br>
+</div>
+</body>
+</html>

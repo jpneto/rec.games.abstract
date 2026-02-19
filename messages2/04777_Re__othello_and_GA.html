@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: othello and GA</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: othello and GA</h1>
+    <p><strong>From:</strong> torbenm@diku.dk (Torben AEgidius Mogensen)<br>
+    <strong>Date:</strong> 3 Apr 2001 10:40:49 +0200</p>
+    <hr>
+    <div>&quot;Geoff Summerhayes&quot; &lt;sNuOmSrPnAoMt@hNoOtSmPaAiMl.com&gt; writes:<br>
+<br>
+<br>
+&gt;&quot;Robert&quot; &lt;kazimir@ci3ux.ci.pwr.wroc.pl&gt; wrote in message news:3ac8525c@news.vogel.pl...<br>
+&gt;&gt; Does anyone have experience with GA in games.<br>
+&gt;&gt; I develop a project to play othello using GA.<br>
+&gt;&gt; It works perfect with a teacher.<br>
+&gt;&gt; Problems start when you want to get rid of any teachers and play by<br>
+&gt;&gt; themselves.<br>
+&gt;&gt; I would talk about fitness function.<br>
+&gt;&gt;<br>
+<br>
+&gt;GA? genetic algorithm? graphic arts? Georgia? Glasgow Airport?<br>
+<br>
+&gt;I&#x27;m guessing the first one. :-)<br>
+&gt;But I&#x27;m not sure what you mean by the presence/absence of a teacher,<br>
+&gt;you need a way to eliminate poor strategies from the pool and ensure<br>
+&gt;the success of the strong ones, that is what the fitness function is<br>
+&gt;for. A lot depends on how the `gene&#x27; translates into strategy/tactics<br>
+&gt;for the engine as well.<br>
+<br>
+A simple fitness test is to play games to completion and see which<br>
+programs wins most often. To avoid repetition, a number of random<br>
+start positions should be tested rather than complete games.<br>
+Otherwise, you risk that your population converge to a program that<br>
+plays a single line of play perfectly but do miserably on all others.<br>
+You should use positions from all stages of the game, from initial<br>
+game to endgame.<br>
+<br>
+Additional parameters in the fitness function can be time and memory<br>
+usage (smaller == better).<br>
+<br>
+	Torben Mogensen (torbenm@diku.dk)<br>
+<br>
+<br>
+</div>
+</body>
+</html>

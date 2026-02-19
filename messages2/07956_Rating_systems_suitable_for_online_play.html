@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Rating systems suitable for online play</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Rating systems suitable for online play</h1>
+    <p><strong>From:</strong> Harald Korneliussen &lt;vintermann@gmail.com&gt;<br>
+    <strong>Date:</strong> Mon, 19 Nov 2007 06:22:21 -0800 (PST)</p>
+    <hr>
+    <div>Most online competitive boardgaming sites use some variant of Elo<br>
+rating for comparing player skill. But it seems to me it has a number<br>
+of problems, which become especially serious in online play:<br>
+<br>
+1. In online play, you can usually play a ranked game anytime you have<br>
+a willing opponent, and you can always refuse a ranked game. As I<br>
+understand it, federations aren&#x27;t that liberal, and for good reason:<br>
+It becomes easy to score by playing the metagame well instead of the<br>
+game. Never play against an underrated opponent, and if you are<br>
+overrated yourself (which would be the goal of the metagame!), you<br>
+must be very, very picky, and only play people even more overrated<br>
+than yourself.<br>
+<br>
+2. Even without such gaming of the system, it becomes much more<br>
+chaotic than conventional ratings, because playing patterns are non-<br>
+random. Likely you play more with people you know, and more with<br>
+people in the same time zone. In an extreme example, suppose you only<br>
+play one other player, and he&#x27;s the best on the site. You lose every<br>
+game. Now you could in reality be the second best player on the site,<br>
+but you will quickly look like the worst in the ratings. Now you may<br>
+even find that others won&#x27;t play against you, because after the first<br>
+match they notice how severely underrated you are!<br>
+In general, clustering distorts rankings. If there are two clusters,<br>
+whose members only plays against people in their own group (this can<br>
+easily happen if players are separated by language as well as time<br>
+zone!), there just is no way to compare people&#x27;s skills cross-clusters<br>
+accurately.<br>
+<br>
+3. To make matters even worse, there are robot players. The thing<br>
+about robot players is that they are predictable, and they can often<br>
+make rankings non-commutative: If player A can beat robot B, and it in<br>
+turn can beat player C, it does not follow that A can beat C. In most<br>
+games there exist some forms of anti-bot tactics, and knowledge of<br>
+these is a skill that can be independent of overall skill<br>
+(particularly against bad bots).<br>
+<br>
+My claim is that Elo-type systems are inadequate for online rankings.<br>
+They are created for a very different environment, and even in those<br>
+they have problems, which become especially severe in online play.<br>
+<br>
+But to get constructive here: There&#x27;s no reason we have to rely on<br>
+these systems. For practical reasons, they don&#x27;t make use of the<br>
+player&#x27;s past history, except as summed up into a single number. But<br>
+we have much more computing power at our fingertips than Elo could<br>
+have dreamed about in 1960. Especially for online play, it&#x27;s pointless<br>
+not to use it. It should be possible to get much better approximations<br>
+of player skill by developing algorithms that take the whole graph<br>
+into account - with each player as a node, and each possible pairing<br>
+as an edge in the graph, with weights according to the number of games<br>
+played, how old said games are, etc. A player&#x27;s rating (and the<br>
+uncertainty associated with it) could be computed from a player&#x27;s<br>
+whole history of games, considered individually.<br>
+<br>
+It might even be possible to design systems with incentives for<br>
+recruitement and training of new players.<br>
+<br>
+---<br>
+<br>
+I am not a mathematician, so I&#x27;m not the right person to develop a<br>
+robust graph-based ranking system. But I can give an example of a very<br>
+simple one, to give an idea how they might work:<br>
+<br>
+Construct a n * n matrix, where n is the number of players in the<br>
+system: One row and one column for each player. The element (i,j) of<br>
+the matrix is player i&#x27;s win ratio against player j (0.5 if they&#x27;ve<br>
+never played). Now, (if I remember my linear algebra correctly!!) you<br>
+can look upon this as the transition matrix of a markov chain, and by<br>
+repeated multiplication of an initial vector by this matrix, you end<br>
+up with a vector that is a guess of the player&#x27;s skills.<br>
+<br>
+There exists very efficient algorithms for calculating such a vector,<br>
+so it should scale very well.<br>
+<br>
+Any suggestions? Do you think this is a good idea?<br>
+<br>
+<br>
+</div>
+</body>
+</html>

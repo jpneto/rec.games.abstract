@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Othello - move ordering question</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Othello - move ordering question</h1>
+    <p><strong>From:</strong> Jim Gillogly &lt;jim@acm.org&gt;<br>
+    <strong>Date:</strong> 21 Dec 1994 10:30:51 -0800</p>
+    <hr>
+    <div>I&#x27;ve been poking around with optimal play on reduced Othello boards, and<br>
+trying to make my tree search efficient enough to get up to interesting<br>
+sizes.  After incorporating alpha-beta and large transposition tables,<br>
+it&#x27;s usual to add the killer heuristic (which I haven&#x27;t done yet) and<br>
+then try to get as close to perfect ordering on the move generations as<br>
+possible, to let alpha-beta do its thing with maximal efficiency.<br>
+<br>
+I thought before I went into the tricky stuff like reducing the opponent&#x27;s<br>
+mobility or trying for known good patterns, I&#x27;d try something dead simple:<br>
+if there&#x27;s a corner move, take it; otherwise try all the moves in<br>
+numerical order (like a TV scan across the board).<br>
+<br>
+Oddly, this degraded the tree-searching performance dramatically from<br>
+just leaving the moves in numerical order, although it of course ends up<br>
+with the same result.<br>
+<br>
+Could a human Othello player comment on this?  I thought perhaps retaining<br>
+the threat of moving into a corner might be more effective than grabbing<br>
+it immediately; does this correspond to a known human strategy?<br>
+-- <br>
+	Jim Gillogly<br>
+	Highday, 1 Yule S.R. 1994, 18:30<br>
+<br>
+<br>
+</div>
+</body>
+</html>

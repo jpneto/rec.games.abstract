@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Games that stretch MCTS</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Games that stretch MCTS</h1>
+    <p><strong>From:</strong> christian &lt;christian@mindsports.nl&gt;<br>
+    <strong>Date:</strong> Fri, 25 Feb 2011 11:00:58 -0800 (PST)</p>
+    <hr>
+    <div>On Feb 25, 7:45 pm, markste...@gmail.com wrote:<br>
+<br>
+&gt; The obvious tiny heuristic in a game of total annihilation is<br>
+&gt; &quot;Who has more pieces remaining on the board?&quot;  This would lead to precisely<br>
+&gt; the wrong moves in Oust opening gameplay, causing the program to kill<br>
+&gt; everything within reach, ultimately leading to certain self defeat.<br>
+<br>
+MC is based on the endresults of playouts. It doesn&#x27;t care about<br>
+&#x27;counter intuitive&#x27; or heuristics. This is from &quot;Creating an Upper-<br>
+Confidence-Tree program for Havannah&quot; by F. Teytaud and O. Teytaud:<br>
+<br>
+&quot;Upper Confidence Trees are the most straightforward choice when<br>
+implementing a Monte-Carlo Tree Search. The basic principle is as<br>
+follows. As long as there is time before playing, the algorithm<br>
+performs random simulations from a UCT tree leaf. These simulations<br>
+(playouts) are complete possible games, from the root of the tree<br>
+until the game is over, played by a random player playing both black<br>
+and white. In its most simple version, the random player, which is<br>
+used when in a situation s which is not in the tree, just plays<br>
+randomly and uniformly among legal moves in s; we did not implement<br>
+anything more sophisticated, as we are more interested in algorithms<br>
+than in heuristic tricks. When the random player is in a situation s<br>
+already in the UCT tree, then its choices depend on the statistics:<br>
+number of wins and number of losses in previous games, for each legal<br>
+move in s. The detailed formula used for choosing a move depending on<br>
+statistics is termed a bandit formula, discussed below. After each<br>
+simulation, the first situation of the simulated game that was not yet<br>
+in memory is archived in memory, and all statistics of numbers of wins<br>
+and numbers of defeats are updated in each situation in memory which<br>
+was traversed by the simulation.&quot;<br>
+<br>
+http://ticc.uvt.nl/icga/acg12/proceedings/Contribution128.pdf<br>
+<br>
+<br>
+</div>
+</body>
+</html>

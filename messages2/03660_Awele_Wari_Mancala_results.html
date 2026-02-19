@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awele/Wari/Mancala results</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Awele/Wari/Mancala results</h1>
+    <p><strong>From:</strong> Yann DAVID &lt;100552.1400@CompuServe.COM&gt;<br>
+    <strong>Date:</strong> 18 07 1997 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+Hello.<br>
+<br>
+Some time ago, I posted the following problem:<br>
+<br>
+#################################################################<br>
+<br>
+&lt;&lt; I have been working lately on an intriguing puzzle inspired by<br>
+the african game of &quot;Awele&quot;, without much success; maybe someone<br>
+on the net will be happier with it ?<br>
+<br>
+Here goes:<br>
+<br>
+consider a (finite) circular list of boxes and a (finite) set of<br>
+tokens. At any time the tokens are distributed between the boxes;<br>
+a box may contain any number of tokens (including none at all).<br>
+<br>
+A move consists in taking the tokens from one of the boxes and<br>
+redistributing them clockwise, one token at a time, into the boxes,<br>
+starting with the one following the emptied box - and without<br>
+omitting that box.<br>
+<br>
+The question is: given to distributions A and B of the tokens,<br>
+is there ALWAYS a series of moves which can bring the game from A<br>
+to B ?<br>
+<br>
+The apparent, &quot;practical&quot; answer is yes: I haven&#x27;t been able to<br>
+come up with a counter-example yet, and I strongly doubt there is<br>
+any; on the other hand, I cannot figure any proof of that property<br>
+- except in the obvious subcase in which there are less tokens<br>
+than boxes. Also, it is very easy to bring all of the tokens<br>
+into any of the boxes.<br>
+<br>
+Of course that problem is not extraordinarily general or even<br>
+useful, but it has a world of variants; and even the subproblem<br>
+with only two boxes is difficult enough, in my opinion.<br>
+When there are more (than two) boxes, to which extent can you <br>
+choose the number of tokens inside ONE box - not even considering<br>
+the entire token distribution ? <br>
+I guess a bit of number theory might help... &gt;&gt;<br>
+<br>
+#################################################################<br>
+<br>
+I have come up with a few results since then. The basic idea is to <br>
+introduce an inter-distribution distance, and to show that playing the<br>
+same series of &quot;moves&quot; (boxes) on two distributions (generally) reduces<br>
+that distance (one obtains two distributions that are closer two one<br>
+another). In order to transform a distribution A into a distribution B,<br>
+you don&#x27;t have to worry much about A; just build a series of moves<br>
+(playing backwards) which maps some distribution on B and is long enough:<br>
+it will map (at least in some versions of the problem) EVERY distribution<br>
+onto B.<br>
+<br>
+That scheme was inspired by the continuous counterpart of the game<br>
+with only two boxes. It works well on that version; in the continuous<br>
+n-boxes version with n&gt;2, some pathological distributions (with two empty<br>
+boxes at least) may arise. The discrete versions are even trickier,<br>
+because they are less &quot;linear&quot; : we have to use euclidian division, and<br>
+the rests are a problem. <br>
+<br>
+Nevertheless, the use of step functions allows one to solve the discrete<br>
+2-boxes version, and yields a plausible algorithm for the n-boxes version.<br>
+Only the discrete verions are developped in the sequel.<br>
+<br>
+Notations<br>
+=========<br>
+n: number of boxes<br>
+C: number (or quantity) of tokens of a distribution<br>
+X, X&#x27;: distributions<br>
+b(i): number of tokens of the ith box in X<br>
+b&#x27;(i): number of tokens of the ith box in X&#x27;<br>
+<br>
+Distance between two distributions<br>
+==================================<br>
+&quot;City block distance&quot;: sum of the absolute values of the differences<br>
+of the numbers of tokens in the boxes with the same rank (!):<br>
+<br>
+		   __	<br>
+		   \	<br>
+	d(X, X&#x27;) = /	| b(i) - b&#x27;(i) |<br>
+		   --<br>
+<br>
+Distance : discrete version, n=2<br>
+================================<br>
+d(X, X&#x27;) = 2 | b(1) - b&#x27;(1) | = 2 | b(2) - b&#x27;(2) |<br>
+(note that, in the discrete versions, the value of the distance is even).<br>
+<br>
+Suppose WNLOG that we play box 1, and b(1) &gt;= b&#x27;(1).<br>
+<br>
+b(1) = 2k + r [r = 0 or 1], b&#x27;(1) = 2k&#x27; + r&#x27; [r&#x27; = 0 or 1].<br>
+d(X, X&#x27;) = 2 [2(k - k&#x27;) + r - r&#x27;]<br>
+<br>
+After the move, we obtain the distributions Xa and X&#x27;a.<br>
+<br>
+d(Xa, X&#x27;a) = 2(k - k&#x27;)<br>
+d(X, X&#x27;) - d(Xa, X&#x27;a) = 2[(k - k&#x27;) + (r - r&#x27;)] <br>
+<br>
+* The difference is always positive : the distance cannot increase.<br>
+* Whenever b(1) &gt;= b&#x27;(1) + 2, the difference is STRICTLY positive :<br>
+  when the distance is big enough, it decreases.<br>
+<br>
+<br>
+Distance : discrete version, n &gt;= 2<br>
+===================================<br>
+Suppose again that we play box 1, and b(1) &gt;= b&#x27;(1).<br>
+<br>
+Let us split the set of the other boxes (of which the indexes belong to<br>
+{2,...,n}) in three sets S1, S2, S3:<br>
+- S1 is the set of the boxes i such that b(i) &gt;= b&#x27;(i)<br>
+  (hence b(i)a &gt;= b&#x27;(i)a, after the move);<br>
+- S2 is the set of the boxes i such that b(i) &lt; b&#x27;(i) and b(i)a &gt;= b&#x27;(i)a;<br>
+- S3 is the set of the boxes i such that b(i) &lt; b&#x27;(i) and b(i)a &lt; b&#x27;(i)a.<br>
+<br>
+Let D1, D2, D3 be the distances associated with S1, S2, S3 respectively.<br>
+<br>
+A straightforward calculation shows that:<br>
+<br>
+d(X, X&#x27;) - d(Xa, X&#x27;a) = 2 { D2 + |S3| [(b(1) - b&#x27;(1)) : n] }<br>
+<br>
+(&#x27;:&#x27; denoting the euclidian division, |S3| the size of S3).<br>
+<br>
+Again:<br>
+* The difference is always positive : the distance cannot increase.<br>
+* Whenever b(1) &gt;= b&#x27;(1) + n, the difference is STRICTLY positive :<br>
+  when the distance is big enough, it decreases (that point is admitedly<br>
+  slightly more difficult to prove in the general case).<br>
+<br>
+<br>
+Alas! The distance does not necessarily decrease when it is small.<br>
+I have even found for the 2-boxes version a sequence of moves that leaves<br>
+unchanged two distinct distributions:<br>
+	- sequence: 1, 1, 2, 2;<br>
+	- distributions: (3, 1) and (4, 0).<br>
+In that case, the distance never decreases: it remains the same forever.<br>
+<br>
+<br>
+&quot;Stairs&quot; functions for the 2-boxes version<br>
+==========================================<br>
+A distribution is characterized by the number of tokens in the box #1,<br>
+b(1). Let us see how the two possible moves (namely 1 and 2) affect b(1).<br>
+<br>
+Playing box 1: b(1)a = b(1) : 2 = f( b(1) )<br>
+<br>
+Playing box 2: b(1)a = C - [ (C - b(1)) : 2 ] = g( b(1) )<br>
+<br>
+Both f and g are simple &quot;stairs&quot; functions:<br>
+<br>
+	  ^ f(x)<br>
+	  |<br>
+	4 |<br>
+	  |<br>
+	3 |                  *  *<br>
+	  | <br>
+	2 |            *  *<br>
+	  |<br>
+	1 |      *  *<br>
+	  |<br>
+	0 |*  *  <br>
+	   ----------------------&gt; x<br>
+	   0  1  2  3  4  5  6  7 <br>
+<br>
+	  ^ g(x)<br>
+	  |<br>
+	4 |         *  *    <br>
+	  |<br>
+	3 |   *  *               <br>
+	  | <br>
+	2 |*              (example: C = 4)<br>
+	  |<br>
+	1 |      <br>
+	  |<br>
+	0 |  <br>
+	   ----------------------&gt; x<br>
+	   0  1  2  3  4  5  6  7 <br>
+<br>
+The composition of two stairs functions a, b with stair lengths La, Lb<br>
+yields a new stairs function with stair length La * Lb, that is increasing<br>
+if a and b are both increasing or decreasing, decreasing otherwise.<br>
+<br>
+Now, given a distribution D, it is fairly easy to play **backwards**,<br>
+that is to find a distribution and a move that yield D (for instance:<br>
+consider the box with the lower number of tokens; multiply it by two, and<br>
+substract it from the other box). Let us iterate that process. Since there<br>
+are finitely many distributions, we finally reach a distribution that we<br>
+have already encountered (a loop appears); we come up with a distribution<br>
+D1 and a sequence of moves s1 that maps D1 onto itself.<br>
+<br>
+The stairs function f1 associated with s1 admits at least one fixed point<br>
+(corresponding to D1). Let us compose f1 with itself repetitively: the<br>
+stair associated with D1 grows wider, until it reaches at least one of<br>
+0 and C (the lower and upper bounds on b(1)). Happily, those values are<br>
+very easy to obtain: playing a box C times in a row empties it.<br>
+<br>
+Hence the following algorithm: from D, play backwards, get s1 and D1; then<br>
+play s1 on (0, C) until you loop on a distribution D2, on (C, 0) until<br>
+you loop on a distribution D3. At least one of D2 and D3 is D1, a known<br>
+&quot;ancestor&quot; of D; therefore you come up with a known ancestor of D that is <br>
+easily reached from any distribution. QED<br>
+<br>
+<br>
+n-boxes version<br>
+===============<br>
+It is still feasible and easy to play back to the past. One finally<br>
+loops on a distribution D and comes up with a sequence s of moves that <br>
+maps D onto itsel. s **probably** maps at least one the concentrated<br>
+distributions (0, ..., C, 0, ...) (all of the boxes are empty, except one<br>
+that contains all the tokens) onto D, when played a number of times,<br>
+by analogy with the 2-boxes version.<br>
+It is easy to decide whether a concentrated distribution is or is not<br>
+mapped onto D by the iterations of s: a loop appears anyway; if it is<br>
+not on D, you have to try another concentrated distribution.<br>
+Those &quot;black hole&quot; distributions are very easy to reach, from any original<br>
+distribution.<br>
+<br>
+The trouble is, the functions at work are much more complicated than the<br>
+stairs functions.<br>
+<br>
+<br>
+Any comments and suggestions are most welcome.<br>
+Cheers!<br>
+<br>
+	Yann David<br>
+	100552.1400@compuserve.com<br>
+	FRANCE<br>
+<br>
+	<br>
+NB: Since I am not a regular reader of this newsgroup, please<br>
+e-mail your answers.<br>
+<br>
+&quot;Vous mariez pas, les filles!&quot; - Boris Vian<br>
+<br>
+<br>
+ <br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

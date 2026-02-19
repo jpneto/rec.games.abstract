@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Toe-Tac-Tic problem (minimal # of lines)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Toe-Tac-Tic problem (minimal # of lines)</h1>
+    <p><strong>From:</strong> whuang@ugcs.caltech.edu (Wei-Hwa Huang)<br>
+    <strong>Date:</strong> 13 12 1996 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+elkies@brauer.harvard.edu (Noam Elkies) writes:<br>
+<br>
+&gt;In article &lt;58pjoq$ckt@gap.cco.caltech.edu&gt; whuang@ugcs.caltech.edu<br>
+&gt;(Wei-Hwa Huang) writes:<br>
+&gt;&gt;Well, my brute-force program finished faster than I expected.<br>
+<br>
+&gt;&gt;The minimal number of threes in the 3x3x3 is, in fact, 4;<br>
+&gt;&gt;although there are a whole lot of solutions.<br>
+<br>
+&gt;What if you sort them by the distribution of these lines -- maybe<br>
+&gt;4-0 or 2-2 splits are particularly rare?<br>
+<br>
+I&#x27;m not quite sure what you mean by &quot;distribution.&quot;<br>
+Over planes?  Intersecting groups?  Diagonals vs. straights?<br>
+<br>
+&gt;Also, did you try all X/O configurations or only those that could<br>
+&gt;arise in an actual games (i.e. 14 X&#x27;s and 13 O&#x27;s or vice versa)?<br>
+&gt;One might ask how lopsided a distribution can still have only<br>
+&gt;four monochromatic lines.<br>
+<br>
+I tried all X/O configurations (if you think about it, it&#x27;s easier<br>
+to write a brute force program that does that than one which bothers<br>
+to count distribution, although it may be slower).<br>
+<br>
+I&#x27;ve modified the program to search for lopsided distributions.  So<br>
+far, it&#x27;s found one with a 16/11 distribution:<br>
+<br>
+1 0 1 0 0 1 0 1 0<br>
+0 0 0 1 1 0 0 1 1<br>
+1 0 1 0 1 0 0 0 0<br>
+<br>
+(At first I thought it found a lot, but then they turned out to<br>
+be the same grid rotated.)<br>
+<br>
+There are about 52 million combinations left to search, but <br>
+so far nothing interesting.<br>
+<br>
+(Except my program, which hold the record of &quot;largest number of<br>
+continue statements ever written inside a single C for loop.&quot;  :) )<br>
+<br>
+--<br>
+Wei-Hwa Huang, whuang@ugcs.caltech.edu, http://www.ugcs.caltech.edu/~whuang/<br>
+-------------------------------------------------------------------------------<br>
+Statistics show that Ster Trek films without Shatner do better at box offices.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

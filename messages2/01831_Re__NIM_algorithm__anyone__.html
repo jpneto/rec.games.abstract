@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: NIM algorithm, anyone ?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: NIM algorithm, anyone ?</h1>
+    <p><strong>From:</strong> kleber@hanalei.berkeley.edu (Michael Kleber)<br>
+    <strong>Date:</strong> 26 May 1994 01:44:22 GMT</p>
+    <hr>
+    <div>Quoth jos@and.nl (Jos Horsmeier):<br>
+&gt;<br>
+&gt; Heh, that reminds me of this little monster I once brewed ...<br>
+&gt; This thingy plays a move of nim and the player taking the<br>
+&gt; last pebble wins ...<br>
+&gt;<br>
+&gt; int n;main(i,m)char**m;{while(--i)n^=atoi(m[i]);<br>
+&gt; while(*++m)if((n^atoi(*m))&lt;atoi(*m)||atoi(*m)*!n<br>
+&gt; ){printf(&quot;%d\n&quot;,(n^atoi(*m))-!n);while(*++m)puts<br>
+&gt; (*m);m--;}else puts(*m);} /* play: nim &lt;nums&gt; */<br>
+<br>
+That&#x27;s sweet.  How&#x27;s this for a modified verison to play the Mise`re<br>
+version, where taking the last pebble loses (rnim.c, &quot;reverse-nim&quot;)<br>
+<br>
+int r,n;main(i,m)char**m;{while(--i){n^=atoi(m[i]);r<br>
++=(atoi(m[i])&gt;1);}while(*++m)if((n^atoi(*m))&lt;atoi(*m<br>
+)||atoi(*m)*!n){printf(&quot;%d\n&quot;,(n^atoi(*m)^!~-r)-!n);<br>
+while(*++m)puts(*m);m--;}else puts(*m);}/* rnim #s */<br>
+<br>
+There must be a better way to figure out whether or not exactly one<br>
+pile is bigger than one stone, but I couldn&#x27;t come up with it.<br>
+<br>
+--Michael Kleber                 I don&#x27;t have an overactive imagination...<br>
+  kleber@math.berkeley.edu       I have an underactive reality...   --EG<br>
+<br>
+<br>
+</div>
+</body>
+</html>

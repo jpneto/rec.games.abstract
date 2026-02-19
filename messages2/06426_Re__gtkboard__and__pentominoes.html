@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: gtkboard *and* pentominoes</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: gtkboard *and* pentominoes</h1>
+    <p><strong>From:</strong> &quot;Arthur J. O&#x27;Dwyer&quot; &lt;ajo@andrew.cmu.edu&gt;<br>
+    <strong>Date:</strong> Thu, 14 Aug 2003 10:28:42 -0400 (EDT)</p>
+    <hr>
+    <div><br>
+On Wed, 13 Aug 2003, Bob Harris wrote:<br>
+&gt;<br>
+&gt; I wrote:<br>
+&gt; &gt;&gt; Is there something about linux that makes GUI programming easier than on<br>
+&gt; &gt;&gt; other platforms?<br>
+&gt;<br>
+&gt; and Arthur replied:<br>
+&gt; &gt; [...]<br>
+&gt; &gt; In short, the emphasis was on the &quot;only&quot; part, not the &quot;Linux&quot; part.<br>
+&gt;<br>
+&gt; Fair enough.  I agree that the gtk people don&#x27;t seem to have had that<br>
+&gt; motivation (I wish I were wrong about that).  But even beyond the graphics<br>
+&gt; part, they seem to be using non-standard C.  At least one of the routines<br>
+&gt; mentioned in the &quot;how to write code for this project&quot; page, snprintf (or<br>
+&gt; something like that), doesn&#x27;t appear in any of the standard C references on<br>
+&gt; my bookshelf.<br>
+<br>
+snprintf() is standard C99, and (all of my copies of) gcc support it<br>
+(even though gcc isn&#x27;t C99-compliant).  But it wasn&#x27;t in C89, the standard<br>
+that most everybody uses.  [It&#x27;s safer than plain sprintf(), which is why<br>
+they recommended it.]<br>
+<br>
+But yeah, gtkboard #includes something called &lt;glib.h&gt; and uses functions<br>
+like g_strdup(), which look to me like garbage-collection.  I sure hope<br>
+I&#x27;m right about that. ;-)  And the Gtk interface stuff is woven into<br>
+the getmove() functions pretty tightly.<br>
+<br>
+&gt; So platform portability seems to have left out of the<br>
+&gt; equation, even in things unrelated to graphics.<br>
+&gt;<br>
+&gt; If I&#x27;m right about that, it&#x27;s a sad choice on their part.  In *my* opinion,<br>
+&gt; of course.  Hard to pick on someone who&#x27;s providing a nice package for free,<br>
+&gt; just because it doesn&#x27;t suit *my* needs.<br>
+<br>
+Yeah, I know how that is. ;-)<br>
+<br>
+-Arthur<br>
+<br>
+<br>
+</div>
+</body>
+</html>

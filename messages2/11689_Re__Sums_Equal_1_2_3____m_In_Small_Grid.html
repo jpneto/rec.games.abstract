@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Sums Equal 1,2,3,...m In Small Grid</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Sums Equal 1,2,3,...m In Small Grid</h1>
+    <p><strong>From:</strong> &quot;Bruce Norskog&quot; &lt;capella321-math@yahoo.com&gt;<br>
+    <strong>Date:</strong> Tue, 26 Apr 2011 14:32:55 +0000 (UTC)</p>
+    <hr>
+    <div>On Tue, 26 Apr 2011 03:37:00 +0000 (UTC),<br>
+&quot;Bruce Norskog&quot; &lt;capella321-math@yahoo.com&gt; wrote in message<br>
+news:115_2011_233643_GON@news.aioe.org<br>
+<br>
+&gt; On Sun, 17 Apr 2011 21:40:30 +0000 (UTC),<br>
+&gt; &quot;Bruce Norskog&quot; &lt;capella321-math@yahoo.com&gt; wrote in message<br>
+&gt; news:107_2011_17409_GON@news.aioe.org<br>
+&gt; <br>
+&gt; &gt; On Fri, 8 Apr 2011 11:30:30 -0700 (PDT),<br>
+&gt; &gt; Leroy Quet &lt;qqquet@mindspring.com&gt; wrote in message<br>
+&gt; &gt; news:796c3453-ee1b-40fe-a1fb-c75788df8b48@p3g2000vbv.googlegroups.com<br>
+&gt; &gt; <br>
+&gt; &gt; &gt; This can be considered both a puzzle and a solitaire game.<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; Make an n-by-n grid on paper. (I suggest that n = 3 for beginners.)<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; Fill the grid with UNIQUE positive integers, one integer per square of<br>
+&gt; &gt; &gt; the grid. The numbers need not be consecutively valued necessarily.<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; Your score is the largest integer m such that integers 1 through m all<br>
+&gt; &gt; &gt; occur as sums within the grid (without missing any positive integers<br>
+&gt; &gt; &gt; &lt;=m).<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; A &quot;sum&quot; is of any number of addends (possibly just 1) that are all<br>
+&gt; &gt; &gt; consecutively placed within a row of the grid or a column of the grid.<br>
+&gt; &gt; &gt; (No diagonals in this variation.)<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; So, for example, if we have the following 3-by-3 grid:<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; 2 9 8<br>
+&gt; &gt; &gt; 3 1 10<br>
+&gt; &gt; &gt; 7 6 15<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; ...the sums 1 through 19 all occur in this grid. So, I get a score of<br>
+&gt; &gt; &gt; 19.<br>
+&gt; &gt; &gt; (Notice that some values of sums occur more than once.)<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; I bet it is easy to do better than I did with a 3-by-3 grid, since my<br>
+&gt; &gt; &gt; grid is inefficient, and I didn&#x27;t try too hard to find it.<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; (Note: There are 27 possible sums in a 3-by-3 grid of 1, 2, or 3<br>
+&gt; &gt; &gt; addends. I don&#x27;t know what the largest possible score is for a 3-by-3<br>
+&gt; &gt; &gt; grid, though.)<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; You can &quot;play&quot; someone else by both of you trying to score as well as<br>
+&gt; &gt; &gt; you can on the same-sized grid. Just try to outscore your opponent.<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; Thanks,<br>
+&gt; &gt; &gt; Leroy Quet<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; For the 4x4 grid, the maximum possible score is at least 55.<br>
+&gt; &gt; <br>
+&gt; &gt; See below the spoiler for the grid I found with a score of 55.<br>
+&gt; &gt; <br>
+&gt; &gt; SPOILER<br>
+&gt; &gt; <br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; .<br>
+&gt; &gt; . <br>
+&gt; &gt; <br>
+&gt; &gt; 03 04 05 08<br>
+&gt; &gt; 25 27 01 18<br>
+&gt; &gt; 14 02 34 12<br>
+&gt; &gt; 15 22 10 11<br>
+&gt; &gt; <br>
+&gt; I have now found a few 4x4 grids with a score of 59. This is the best <br>
+&gt; I&#x27;ve been able to find so far. One of these that I show below has no<br>
+&gt; sums higher than 59 (but has 5 duplicate sums, specifically 22, 31, 40,<br>
+&gt; 42, and 57).<br>
+&gt; <br>
+&gt; 10 40 03 05<br>
+&gt; 21 01 23 12<br>
+&gt; 06 14 02 30<br>
+&gt; 07 04 29 09<br>
+&gt; <br>
+&gt; I believe I have also ruled out that it is possible to get a score of<br>
+&gt; 53 or higher (on a 4x4 grid) while also satisfying both of these<br>
+&gt; additional constraints:<br>
+&gt; 1) No duplicate sums generated.<br>
+&gt; 2) No sum greater than or equal to 65 generated.<br>
+&gt; <br>
+&gt; Since getting a &quot;perfect score&quot; of 64 would require these conditions<br>
+&gt; to be satisfied, I am convinced a score of 64 is not possible to<br>
+&gt; achieve. Thus, I believe the best possible score for a 4x4 grid to be<br>
+&gt; at least 59 and not more than 63.<br>
+<br>
+I have now found a 4x4 grid with a score of 60. I note that this grid <br>
+also has no duplicate sums. The extra sums are 68, 82, 84, and 90.<br>
+<br>
+13 07 30 03<br>
+08 36 15 31<br>
+04 05 23 24<br>
+10 01 16 02<br>
+<br>
+A note about my previous post. Of course, the two extra conditions of<br>
+no duplicate sums and no sums &gt;= 65 together imply that the score would<br>
+have to be 64, so the part about a score greater &gt;= 53 may seem silly.<br>
+But my search was considering scores of grids prior to having every<br>
+square populated with a number (with any &quot;sum&quot; not having all of its<br>
+squares filled in being ignored). So for instance, the following<br>
+partially populated grid scores 52 and satisfies both of the extra<br>
+conditions. (I note that for this grid, regardless of what number is<br>
+used to fill in the last square, a duplicate sum is guaranteed to be<br>
+generated.)<br>
+<br>
+01 02 05 32<br>
+21 12 11 04<br>
+28 06 13 --<br>
+10 25 17 09<br>
+<br>
+So basically, I was claiming that even during the process of filling<br>
+up the grid, you can&#x27;t achieve a score of 53 (or higher) without<br>
+violating these extra conditions.<br>
+-- <br>
+- Bruce Norskog<br>
+<br>
+<br>
+</div>
+</body>
+</html>

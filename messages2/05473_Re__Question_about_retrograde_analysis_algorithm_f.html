@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Question about retrograde analysis algorithm for endgame databases</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Question about retrograde analysis algorithm for endgame databases</h1>
+    <p><strong>From:</strong> &quot;R Gibert&quot; &lt;gibert@cox.net&gt;<br>
+    <strong>Date:</strong> Sat, 27 Apr 2002 01:23:18 GMT</p>
+    <hr>
+    <div><br>
+&quot;R Gibert&quot; &lt;gibert@cox.net&gt; wrote in message news:VUmy8.11636$ab.784032@news2.west.cox.net...<br>
+&gt;<br>
+&gt; &quot;mathpolymath&quot; &lt;mathpoly@yahoo.com&gt; wrote in message news:98c3bc67.0204261029.1981ec94@posting.google.com...<br>
+&gt; &gt; &quot;R Gibert&quot; &lt;gibert@cox.net&gt; wrote in message news:&lt;voLx8.7446$ab.420090@news2.west.cox.net&gt;...<br>
+&gt; &gt; &gt; The following is what I&#x27;ve worked out:<br>
+&gt; &gt; &gt;<br>
+&gt; &gt; &gt; Define the EGTB as an array of unsigned char. Each element has one of 3 types of meanings:<br>
+&gt; &gt; &gt; (1) 255: Unknown<br>
+&gt; &gt; &gt; (2) 254: Draw<br>
+&gt; &gt; &gt; (3) 0-254 : number of ply to mate<br>
+&gt; &gt; &gt;<br>
+&gt; &gt; &gt; Step 1: First pass mark all the stalemates as 254, all the mates as 0 and the remainder as 255 for now.<br>
+&gt; &gt; &gt;<br>
+&gt; &gt; &gt; Step 2: For the next pass over all the elements if the current element is 255 (unknown) make all the legal moves for the<br>
+&gt; &gt; &gt; corresponding position and look them up in the table. For all the ones that are mate, select the shortest mate of these. Add 1<br>
+&gt; to<br>
+&gt; &gt; &gt; the mate score and store in the table for the current element. If all of them are 254, mark the current element as 254.<br>
+&gt; &gt; &gt;<br>
+&gt; &gt; &gt; Step 3: Repeat step 2 until a pass is made without making any changes to the table.<br>
+&gt; &gt; &gt;<br>
+&gt; &gt; &gt; Now you have a complete EGTB for a particular type of ending. All the positions that remain with a value of 255 are draws or<br>
+are<br>
+&gt; &gt; &gt; &quot;broken&quot;, but for purposes of interpreting 255 when looking up a position legally arrived at, the 255 is interpreted as a draw<br>
+&gt; only.<br>
+&gt; &gt; &gt; All the positions with a value of 254 are draws. The remainder give the DTM (=Distance To Mate).<br>
+&gt; &gt; &gt;<br>
+&gt; &gt; &gt; A legal move can be a capture, so such positions must be looked up in another EGTB table.<br>
+&gt; &gt; &gt;<br>
+&gt; &gt; &gt; The reason why we bother with marking positions with 254 as draws is to speed things up. Otherwise, you can simplify further<br>
+by<br>
+&gt; &gt; &gt; ignoring this.<br>
+&gt; &gt; &gt;<br>
+&gt; &gt; &gt; There are no complications with repetition of position and the 50 move rule is ignored.<br>
+&gt; &gt; &gt;<br>
+&gt; &gt;<br>
+&gt; &gt; Even this version of the retrograde analysis algorithm doesn&#x27;t handle<br>
+&gt; &gt; the case in an abstract game if repetition draws from different<br>
+&gt; &gt; positions have different values.  This is not relevant in chess since<br>
+&gt; &gt; all positions ultimately have a value of -1 (loss), 0 (draw) or 1<br>
+&gt; &gt; (win).  But imagine a case where you get 0.5 points if you draw when<br>
+&gt; &gt; you have a certain position, but -0.5 points if you draw in another<br>
+&gt; &gt; position...<br>
+&gt;<br>
+&gt; Evidently, I did not read your original question carefully.<br>
+&gt;<br>
+&gt; Give a specific rule for scoring repetition draws and I will think about it. How you go about it depends on what the rule is.<br>
+&gt;<br>
+&gt;<br>
+<br>
+I looked at some of the other posts in this thread and it seems you are including &quot;history&quot; information in the score. This &quot;history:<br>
+information must be made a part of the indexing scheme, so that 2 otherwise identical positions with a different history will<br>
+generate a distinct index. I think this can be made to work, since the algorithm I gave can accomodate different kinds of draws with<br>
+different scoring. Unfortunately, including history information will blow up the EGTB size like crazy.<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

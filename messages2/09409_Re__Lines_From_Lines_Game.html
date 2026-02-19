@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Lines-From-Lines Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Lines-From-Lines Game</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Mon, 5 Apr 2010 07:44:08 -0700 (PDT)</p>
+    <hr>
+    <div>Actually, there is even an easier way for the first player to lose, if<br>
+that is what he wants to do.<br>
+Just connect two vertices on your first move such that the line does<br>
+not intersect any intermediate vertices. Connecting two adjacent<br>
+vertices will do. You&#x27;ll lose before the second player even moves.<br>
+<br>
+As far as losing by playing the symmetric moves after first bisecting<br>
+the grid with a line, I don&#x27;t think that will necessarily work either.<br>
+Remember that no lines can be drawn from any vertices that already<br>
+have lines terminating there. So, reflective symmetry about the first<br>
+(main diagonal) line won&#x27;t work if the second player draws lines from<br>
+that first line. Rotational symmetry won&#x27;t work if there are an odd<br>
+number of dots, and the second player draws from the center dot, which<br>
+is on the first line.<br>
+<br>
+Still, the goal is to WIN, not to lose.  :)<br>
+<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+Chip Eastham wrote:<br>
+&gt; On Apr 4, 1:57 pm, Leroy Quet &lt;qqq...@mindspring.com&gt; wrote:<br>
+&gt; &gt; Sorry if this is unoriginal.<br>
+&gt; &gt;<br>
+&gt; &gt; Here is a game for two players. It is played on an n-by-n grid drawn<br>
+&gt; &gt; (practically perfectly) on paper. I suggest that n be at least 8.<br>
+&gt; &gt;<br>
+&gt; &gt; Note: (The lines of the grid do not come into play here. Only the<br>
+&gt; &gt; &quot;grid-vertices&quot; {where the lines of THE GRID intersect} are important<br>
+&gt; &gt; as far as the grid is concerned.)<br>
+&gt; &gt; By &quot;lines&quot; below, I am referring to straight line-segments drawn by<br>
+&gt; &gt; players during play.<br>
+&gt; &gt;<br>
+&gt; &gt; The first player to move draws a line from any grid-vertex to any<br>
+&gt; &gt; other grid-vertex.<br>
+&gt; &gt;<br>
+&gt; &gt; The players thereafter take turns drawing lines, one line per move,<br>
+&gt; &gt; such that:<br>
+&gt; &gt; * each line starts at a grid-vertex intersected by any previously<br>
+&gt; &gt; drawn line (drawn by either player).<br>
+&gt; &gt; * each line ends at any grid-vertex not yet touched by a line.<br>
+&gt; &gt; * no line crosses another line or coincides with another line.<br>
+&gt; &gt; * no line starts/ends at or crosses another line&#x27;s end-point (whether<br>
+&gt; &gt; or not yet another line passes completely through that vertex).<br>
+&gt; &gt;<br>
+&gt; &gt; If you can move, you must. (The other player can help you find<br>
+&gt; &gt; allowable moves.)<br>
+&gt; &gt;<br>
+&gt; &gt; The LAST player to be able to move LOSES.<br>
+&gt; &gt;<br>
+&gt; &gt; There must be an easy strategy to always win. Anyone know of one?<br>
+&gt; &gt;<br>
+&gt; &gt; Thanks,<br>
+&gt; &gt; Leroy Quet<br>
+&gt;<br>
+&gt; Hi, Leroy:<br>
+&gt;<br>
+&gt; Thanks for posting this interesting puzzle.<br>
+&gt;<br>
+&gt; It&#x27;s something you may have already considered,<br>
+&gt; but there&#x27;s an easy strategy to always lose as<br>
+&gt; first player, and perhaps it can be adapted to<br>
+&gt; a strategy for winning.<br>
+&gt;<br>
+&gt; As first player to lose, one draws a diagonal<br>
+&gt; line from one corner of the grid to another,<br>
+&gt; so thereafter any moves must take place solely<br>
+&gt; on one side or the other of this diagonal, and<br>
+&gt; the first player can adopt a mirror strategy:<br>
+&gt; whatever move the second player makes, first<br>
+&gt; player makes on the opposite diagonal side.<br>
+&gt; Thus the first player moves last and loses!<br>
+&gt;<br>
+&gt; Can this be adapted to a winning strategy?<br>
+&gt; I&#x27;m not sure if it can, or that adapting it<br>
+&gt; can be considered &quot;easy&quot;.  A move requires<br>
+&gt; an end-point that has not previously been<br>
+&gt; touched by a line, and these are fairly easy<br>
+&gt; to keep track of.  However, although each<br>
+&gt; move eliminates one such end-point from<br>
+&gt; future consideration, grid points may also<br>
+&gt; be &quot;dead&quot; despite being untouched because<br>
+&gt; they became isolated by surrounding line<br>
+&gt; segments from all possible start-points.<br>
+&gt;<br>
+&gt; regards, chip<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Yann&#x27;s MANCALA problem - solved!</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Yann&#x27;s MANCALA problem - solved!</h1>
+    <p><strong>From:</strong> Elliot Lipeles &lt;lipeles@mail.lns.cornell.edu&gt;<br>
+    <strong>Date:</strong> 05 08 1997 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+Bill Taylor wrote:<br>
+&gt; <br>
+&gt; |&gt; You can also get to this position by operating with<br>
+&gt; |&gt; the reverse operation: Just keep running the reverse<br>
+&gt; |&gt; operation on every space except the first. Since you<br>
+&gt; |&gt; everytime you pass over the first space you deposit<br>
+&gt; |&gt; one token and you can go until all the space are depleted,<br>
+&gt; |&gt; the first space will end up with all the tokens.<br>
+&gt; <br>
+&gt; What&#x27;s all this nonsense?<br>
+<br>
+Okay, Okay <br>
+<br>
+I made a mistake<br>
+<br>
+here is a real proof that you can go from any state to (N,O,O...0)<br>
+using the reverse operation<br>
+<br>
+It has already been shown for the forward operation.<br>
+<br>
+-------------------------------------------------------------<br>
+Given an arbitrary state consider the set of all states that<br>
+you can get to via any sequence of reverse operations. This<br>
+set is &quot;closed&quot; under the reverse operationm, so the &quot;in&quot; degree<br>
+for the entire set is zero.<br>
+<br>
+out degree set = out degree states - &quot;out&quot;&#x27;s give elements of the set<br>
+in degree set = in degree states - &quot;in&quot;&#x27;s give members of the set<br>
+<br>
+Note that every out that gives and element of the set is an in<br>
+that gives an element of the set and <br>
+out degree states = in degree states<br>
+has already been seen.<br>
+<br>
+so out degree set = in degree set = 0<br>
+<br>
+So the out degree of the set is zero and any state can be sent<br>
+to (N,0,0...0) via forward (out) operations so (N,0,0,..,0)<br>
+must be in the set of states that can be reached by the reverse<br>
+operation.<br>
+----------------------------------------------------------------<br>
+<br>
+The rest of the proof is the same as the erroneous previous version.<br>
+<br>
+This of course now hinges on the same details as the original <br>
+proof by another poster and is now longer an constructive proof.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Peg solitaire and branching factor</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Peg solitaire and branching factor</h1>
+    <p><strong>From:</strong> torbenm@diku.dk (=?iso-8859-1?q?Torben_=C6gidius_Mogensen?=)<br>
+    <strong>Date:</strong> 05 Jan 2005 15:51:47 +0100</p>
+    <hr>
+    <div>kingpin@freemail.it (lucas) writes:<br>
+<br>
+&gt; Hi, <br>
+&gt; <br>
+&gt; i need a (good) bound to the maximum branching factor in peg solitaire game.<br>
+&gt; <br>
+&gt; I know that, if we play on n x n boards, i could say that 4n^2 is an upper<br>
+&gt; bound, but i need a better and more realistic upper bound...).<br>
+<br>
+Any peg will have to move to an empty space, so you have two upper<br>
+bounds:<br>
+<br>
+ 1) Each peg can move to at most four empty spaces, so 4*P is an upper<br>
+    bound, where P is the number of remaining pegs.<br>
+<br>
+ 2) Each empty hole can have at most four pegs moving to it, so 4*H<br>
+    is an upper bound, where H is the number of empty holes.<br>
+<br>
+H+P is the size S of the board (i.e., the total number of holes, full<br>
+or empty).  So an upper bound is 4*min(H,P) &lt;= 2*S.<br>
+<br>
+On a finite board, we can&#x27;t reach this upper bound, as pieces on the<br>
+edges can only move in two or three directions and holes can only<br>
+receive moves from two or three directions.<br>
+<br>
+Even assuming a wrap-around board, where there is no edges, the limit<br>
+can not be achieved: A peg that can move in four directions must be<br>
+surrounded with four pegs and four holes, as in the picture:<br>
+<br>
+    O<br>
+    X<br>
+  OXXXO<br>
+    X<br>
+    O<br>
+<br>
+where X is a peg and O a hole.  But each of the four pegs surrounding<br>
+the middle can move at most in two directions.  For example, the top X<br>
+can not move up, as there is no peg to jump and it can&#x27;t move down, as<br>
+there is no hole to jump to.  So you can, obviously, can&#x27;t have four<br>
+moves available for all pegs.  I think an average of two is the best.<br>
+It is, however, possible to have four moves available to all empty<br>
+holes, for example if there is only one empty hole in the middle of<br>
+the board.  So it seems likely that the maximumis achieved when<br>
+4*H=2*P, i.e., when 2/3 of all holes are filled.<br>
+<br>
+The best pattern I can come up with for maximizing moves is:<br>
+<br>
+   OXXOXX<br>
+   XOXXOX<br>
+   XXOXXO<br>
+   OXXOXX<br>
+   XOXXOX<br>
+   XXOXXO<br>
+<br>
+which, as expected, has 2/3 of all holes filled and two moves for<br>
+every peg (assuming wrap-around), so 4/3*S moves total.  I have no<br>
+proof that this is a hard limit, but I believe so.<br>
+<br>
+        Torben<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Under-doubling dice?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Under-doubling dice?</h1>
+    <p><strong>From:</strong> David Ullrich &lt;ullrich@math.okstate.edu&gt;<br>
+    <strong>Date:</strong> 05 01 1998 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+Gary Wong wrote:<br>
+&gt; <br>
+&gt; David Ullrich &lt;ullrich@math.okstate.edu&gt; writes:<br>
+&gt; &gt; Gary Wong wrote:<br>
+&gt; &gt; &gt; mathwft@math.canterbury.ac.nz (Bill Taylor) writes:<br>
+&gt; &gt; &gt; &gt; Although the existence of somewhat backgammon-like games with<br>
+&gt; &gt; &gt; &gt; doubling cubes and undefined (i.e. infinite-infinite) expectations was<br>
+&gt; &gt; &gt; &gt; vaguely known to me, I&#x27;d not realized that such things could actually<br>
+&gt; &gt; &gt; &gt; appear in a real backgammon game!  Indeed, I never even knew till just<br>
+&gt; &gt; &gt; &gt; now that it was possible for both players to simultaneously have checkers<br>
+&gt; &gt; &gt; &gt; on the bar; though the mechanism is obvious enough once mentioned.<br>
+&gt; &gt; &gt; &gt; BTW, have any players here ever had this situation arise in a real game?<br>
+&gt; &gt; &gt;<br>
+&gt; &gt; &gt; Not I :-)<br>
+&gt; &gt;<br>
+&gt; &gt;       Not that I see what it matters, but I&#x27;ve played plenty of games<br>
+&gt; &gt; where both players were on the bar at some point.<br>
+&gt; <br>
+&gt; So have I, but none of them have been troublesome because the probability<br>
+&gt; of reaching the same state with a higher cube value was very small.  Both<br>
+&gt; players being on the bar is relatively common; a position being troublesome<br>
+&gt; must be extremely rare.<br>
+&gt; <br>
+&gt; &gt; [...]<br>
+&gt; &gt; &gt; David Ullrich questions whether the lack of E(X) implies that no &quot;optimal<br>
+&gt; &gt; &gt; strategy&quot; can exist for backgammon (for suitable definition of &quot;optimal<br>
+&gt; &gt; &gt; strategy&quot;).  I assert that optimal strategies still do exist: let us call a<br>
+&gt; &gt; &gt; strategy &quot;optimal&quot; if and only if there exists no opponent&#x27;s strategy that<br>
+&gt; &gt; &gt; dominates it.  To define domination: let the random value X follow the<br>
+&gt; &gt; &gt; distribution (points won by player using strategy S after n games) -<br>
+&gt; &gt; &gt; (points won by player using strategy O after n games).  It has already been<br>
+&gt; &gt; &gt; established that there exist strategies S and O such that X&#x27;s distribution<br>
+&gt; &gt; &gt; is well defined, but E(X) is not.  Therefore our definition of dominance<br>
+&gt; &gt; &gt; may not include E(X) if it is to include those strategies.  Instead, let&#x27;s<br>
+&gt; &gt; &gt; define strategy S as dominating strategy O if and only if the limit P(X&gt;0)<br>
+&gt; &gt; &gt; is greater than 0.5 as n increases without bound.[...]<br>
+&gt; &gt; &gt;<br>
+&gt; &gt; &gt; Anyway, with this definition of an optimal strategy, does the lack of E(X)<br>
+&gt; &gt; &gt; mean optimal strategies cannot exist?<br>
+&gt; &gt;<br>
+&gt; &gt;       I never claimed that this implied that with _this_ definition<br>
+&gt; &gt; of &quot;optimal strategy&quot;. Definitions are definitions, but I don&#x27;t feel<br>
+&gt; &gt; this is the &quot;right&quot; definition of &quot;optimal strategy&quot;. Let&#x27;s say<br>
+&gt; &gt; this is a Wong-optimal strategy. It can happen that a strategy S is<br>
+&gt; &gt; Wong-optimal, but nonetheless if you play an infinite sequence of<br>
+&gt; &gt; games using strategy S there is almost surely a point where your<br>
+&gt; &gt; average winnings are - 1,000,000 . (_Not_ because of an unlucky<br>
+&gt; &gt; streak, it can happen that a strategy is Wong-optimal but you&#x27;re<br>
+&gt; &gt; still &quot;assured&quot; of being this far behind at some point, assuming<br>
+&gt; &gt; perfectly &quot;random&quot; dice.) A strategy that lets you lose this<br>
+&gt; &gt; much does not strike me as all that great.<br>
+&gt; <br>
+&gt; Ah, that&#x27;s true.  But I suspect you can only get a distribution like that<br>
+&gt; if the games are not independent --  <br>
+<br>
+	Why is that?<br>
+<br>
+&gt; I have thought about it a bit and the<br>
+&gt; only cases I can think of with E(X) &lt; 0 but P(X&gt;0) &gt; 0.5 for unbounded n<br>
+&gt; are eg. roulette where the house has a slight advantage, but you start your<br>
+&gt; bets at 1 for the initial game or immediately following a win, and double<br>
+&gt; your previous bet immediately following a loss.  I suspect the same<br>
+&gt; difficulty cannot occur in backgammon, because in general the cube can only<br>
+&gt; reach twice the value at which the previous player lost with the<br>
+&gt; co-operation of both players, and if the doubling decisions of an optimal<br>
+&gt; strategy are independent of previous games, then X as n increases without<br>
+&gt; bound becomes the sum of a large number of independent random variables and<br>
+&gt; tends to a normal distribution.<br>
+&gt; <br>
+&gt; So, can we agree on some other definition of optimality then?  Perhaps<br>
+&gt; optimality isn&#x27;t such a good term for it; what would be nice is a<br>
+&gt; definition sufficient to show that the following strategies are<br>
+&gt; &quot;unbeatable&quot;:<br>
+&gt; <br>
+&gt;  - the house is unbeatable at roulette even if the stakes are unlimited and<br>
+&gt; one adopts the doubling strategy above -- the player is also unbeatable if<br>
+&gt; there are no zeroes on the wheel;<br>
+&gt; <br>
+&gt;  - both players are unbeatable (loosely defined as that they expect to at<br>
+&gt; least break even, though what &quot;expectation&quot; is is somewhat unclear) in the<br>
+&gt; P(X=(-4)^y) = 1/2^y (for all y &gt;= 1) game?<br>
+&gt; <br>
+&gt; If a definition is general enough to satisfy both of those cases, then I<br>
+&gt; believe I can demonstrate that optimal strategies exist in the same sense<br>
+&gt; for backgammon.<br>
+<br>
+	Well, you can make any definition you want. The definition I<br>
+gave _does_ seem to me to be the &quot;right&quot; one. It seems like you&#x27;re<br>
+deciding what you want to prove and then deciding how you need to<br>
+define your terms in order to prove it.<br>
+<br>
+	Not that it matters, because if I start with infinitely much<br>
+money then when I win a dollar I don&#x27;t have any more money than I had<br>
+before, but if we consider roulette with no limit on the sice of<br>
+the bet (and if we assume that I have infinitely much money, so there&#x27;s<br>
+_really_ no limit on the size of the bet) then the house is simply<br>
+_not_ &quot;unbeatable&quot; at roulette. If I simply repeatedly bet 1 + the amount<br>
+I&#x27;ve lost so far (sparing us those nasty geometric series) then eventually<br>
+I will win a game, and then I will be a dollar ahead. Given this, why do<br>
+you want a definition of &quot;optimal&quot; that makes the house &quot;unbeatable&quot;<br>
+in no-limit roulette? <br>
+	I mean, if I wanted to disprove the fact that every natural<br>
+number has a unique prime factorization I could look for a definition<br>
+of &quot;prime&quot; such that 2 and 4 are both primes. Why would I do that?<br>
+<br>
+-- <br>
+David Ullrich<br>
+<br>
+sig.txt not found<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

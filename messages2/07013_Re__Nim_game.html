@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Nim game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Nim game</h1>
+    <p><strong>From:</strong> joc_kay@hotmail.com (Joe)<br>
+    <strong>Date:</strong> 18 Jul 2004 16:43:54 -0700</p>
+    <hr>
+    <div>Martin Moller Pedersen &lt;tusk@daimi.au.dk&gt; wrote in message news:&lt;cc9l2a$r4n$1@news.net.uni-c.dk&gt;...<br>
+&gt; <br>
+&gt; If N and M is odd then it is a win for the first player else it is a<br>
+&gt; win for the second player.<br>
+&gt; <br>
+<br>
+This cannot be true as any position on a N x 1 board clearly is a win<br>
+for the first player (a &#x27;hot&#x27; position) regardless whether N is odd or<br>
+even.<br>
+<br>
+Also, whilst a full 2 x 2 board indeed is a &#x27;cold&#x27; position (a win for<br>
+the second player), a full 3 x 2 board is a win for the first player<br>
+as (s)he can reduce this position to a 2 x 2 board.<br>
+ <br>
+So: *if* there is a simple rule for full boards based solely on the<br>
+even/odd-parity of the size, then this rule has to be:<br>
+<br>
+If N and M are even, then a full board is a win for the second player,<br>
+else (N or M odd) it is a win for the first player.<br>
+<br>
+<br>
+Torben&#x27;s reasoning about symmetric positions (where the second player<br>
+copies the moves of the first player such that the symmetry is<br>
+restored) can be applied to all positions that contain a symmetry that<br>
+does not map any piece onto itself. So, the following end-game<br>
+positions are all a win for the second player (&#x27;cold&#x27; positions):<br>
+<br>
+. X<br>
+X .<br>
+<br>
+X X<br>
+X X<br>
+<br>
+. X .                            . . X<br>
+X . X  which is equivalent to:   . . X<br>
+. X .                            X X .<br>
+<br>
+. . X X<br>
+X X . .<br>
+<br>
+X X X X<br>
+X X X X<br>
+<br>
+However, also positions that do not satisfy the above requirement can<br>
+be &#x27;cold&#x27;.<br>
+<br>
+Examples are:<br>
+<br>
+X X .<br>
+X X X<br>
+. X .<br>
+<br>
+X X X<br>
+X X X<br>
+X X .<br>
+<br>
+(In both cases 2 pieces are mapped onto itself under the symmetry<br>
+operator.)<br>
+<br>
+This doesn&#x27;t imply that all symmetric positions with an even number of<br>
+pieces that get mapped onto themselves are &#x27;cold&#x27; positions. A<br>
+counter-example being:<br>
+<br>
+. X .<br>
+X X X<br>
+<br>
+So, no clue whether or not Bob&#x27;s configuration <br>
+<br>
+X X . X<br>
+X . X X<br>
+. X X .<br>
+X X . .<br>
+<br>
+is a &#x27;cold&#x27; one.<br>
+ <br>
+Joe<br>
+<br>
+<br>
+</div>
+</body>
+</html>

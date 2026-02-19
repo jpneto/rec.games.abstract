@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: gtkboard *and* pentominoes</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: gtkboard *and* pentominoes</h1>
+    <p><strong>From:</strong> Nate Smith &lt;greystone@NET1Plus.com&gt;<br>
+    <strong>Date:</strong> Wed, 13 Aug 2003 14:57:22 -0400</p>
+    <hr>
+    <div>Arthur J. O&#x27;Dwyer wrote:<br>
+<br>
+&gt; gtkboard only intuitively supports rectangular boards.  You&#x27;d have<br>
+&gt; to do something like splitting the square cells into triangles and<br>
+&gt; conceptualizing the game that way.  OTOH, if you *did* do that, I<br>
+&gt; bet you&#x27;d get a lot of props from the gtkboard devteam! :-)<br>
+<br>
+  i&#x27;m not sure i follow this - we&#x27;re talking about pentominoes?<br>
+<br>
+&gt; I have downloaded the current build, and I&#x27;m currently working on<br>
+&gt; the gtkboard interface for Capture Pentominoes.  At the moment,<br>
+&gt; my idea is to store the state of the board internally as an<br>
+&gt; array of characters in the format I posted in the first message:<br>
+&gt; <br>
+&gt;    .......<br>
+&gt;    ....N..<br>
+&gt;    ..wNN..<br>
+&gt;    .wwNL..<br>
+&gt;    ww.NL..<br>
+&gt;    ....L..<br>
+&gt;    ....LL.<br>
+ &gt;<br>
+ &gt; where the lowercase letters represent the most recent move.  Then<br>
+ &gt; checking for captures merely entails making a list of all the<br>
+ &gt; 84 edges on the board, and looking at the cells on either side of<br>
+ &gt; each edge.<br>
+<br>
+<br>
+good!  see, unfortunately i probably would have come up with<br>
+<br>
+      .......<br>
+      ....2..<br>
+      ..322..<br>
+      .3321..<br>
+      33.21..<br>
+      ....1..<br>
+      ....11.<br>
+  1L<br>
+  2N<br>
+  3W<br>
+<br>
+or even<br>
+<br>
+.......<br>
+....2..<br>
+..322..<br>
+.3321..<br>
+33.21..<br>
+....1..<br>
+....11.<br>
+  1 54 Sssl =&gt; move#, start coords, direction(N,E,S,W),<br>
+               [r]ight, [l]eft, or [s]traight to next square<br>
+  2 52 Srls<br>
+  3 15 Elrl<br>
+<br>
+&gt; <br>
+&gt; The hardest thing about gtkboard, I think, is that as far as I<br>
+&gt; can tell its interface is limited to &quot;capture a click somewhere on<br>
+&gt; the board&quot;, which means it&#x27;ll be a pain to select and place<br>
+&gt; irregular figures like pentominoes.  Maybe it needs a full<br>
+&gt; user interface, something like the following very bad ascii-art:<br>
+&gt; <br>
+&gt;             --------------<br>
+&gt;   FILNPT   |              |<br>
+&gt;   UVWXYZ   |              |<br>
+&gt;   ------   |  the game    |<br>
+&gt; -|   =  |- |   board      |<br>
+&gt; &lt;| I=I  |&gt;||              |  ----<br>
+&gt; -| =    |- |              | | rm |<br>
+&gt;   ------   |              |  ----<br>
+&gt;             --------------<br>
+&gt; <br>
+&gt;    To remove a piece:<br>
+&gt;      Click the piece to select it.<br>
+&gt;      Click &quot;remove&quot;.<br>
+&gt;    To place a new piece:<br>
+&gt;      Click the letter corresponding to the piece.<br>
+&gt;      The piece will appear in the left-hand window.<br>
+&gt;      Click the left and right arrows to rotate the piece.<br>
+&gt;      Click one of the squares on the piece.<br>
+&gt;      Click an empty square on the board.<br>
+&gt;      The piece will be placed with the two squares coinciding.<br>
+&gt; <br>
+&gt; <br>
+&gt; That&#x27;s a rather involved interface, and even *more* involved<br>
+&gt; for the programmer!  I&#x27;m not sure how to get around this.<br>
+&gt; Ideas welcome.<br>
+&gt; <br>
+&gt; -Arthur<br>
+<br>
+<br>
+  you probably would have enough room to have the 12 guys drawn<br>
+  off to the side.  then you {mouse over} &amp; click to select it.<br>
+  at this point it is stuck to your mouse pointer &amp; drags along<br>
+  with it.  a click rotates it to the right, a SHIFT-click to<br>
+  the left (because MAC mice only have 1 button), and then<br>
+  CONTROL-click flips it over if it is asymmetrical &amp; you need<br>
+  the other side of the pentomino.<br>
+<br>
+  in my java Xong app i have the release of dragging the piece<br>
+  drop the piece, nestling it into a legal position, so you dont<br>
+  have to have single-pixel precision in your fingertips.<br>
+<br>
+  then you may wish to have a COMMIT MOVE button somewhere to<br>
+  make the move, as opposed to just dragging it around &amp; trying<br>
+  it out in several places whiler you drink another cup of coffee.<br>
+<br>
+  but gtk may not go for this.  ;-)<br>
+<br>
+<br>
+- nate, getting another cup of coffee<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

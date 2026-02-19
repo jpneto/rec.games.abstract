@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sprouts</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Sprouts</h1>
+    <p><strong>From:</strong> boll@CS.ColoState.EDU (dave boll)<br>
+    <strong>Date:</strong> Mon, 16 Nov 1992 14:25:40 GMT</p>
+    <hr>
+    <div><br>
+  Re: Sprouts<br>
+<br>
+  Someone posted an article requesting strategy for the topological game<br>
+  sprouts. Here&#x27;s *my* strategy - it may not be all that great, but it&#x27;s<br>
+  at least maybe sort of a bit on the right track.<br>
+<br>
+  Say you&#x27;re playing sprouts with 7 dots and you&#x27;re moving first. Well, <br>
+  you know that a sprouts game can last at most 3n-1 moves (n=number of<br>
+  starting dots), or 20 moves in this case. Since you&#x27;re moving first,<br>
+  you want the game to last an odd number of moves. So, you make a <br>
+  table of numbers of possible moves for the game: 20, 19, 18, 17, 16,<br>
+  etc. (I believe the minimum # of moves in sprouts is 2n or 2n+1).<br>
+  Now, each time a new &#x27;stranded dot&#x27; is created, cross off the highest<br>
+  number on the list. New stranded dots are created every time you<br>
+  chop the playing field up into 2 areas that are each guarenteed to<br>
+  contain a dot that is not totally used up by the game&#x27;s end.<br>
+<br>
+  Try to get to the part of the game where no more dots can be<br>
+  stranded with an odd number at the head of the list.<br>
+<br>
+  Beware of creating semi-stranded dots that give your opponant the<br>
+  option of actually stranding a dot or not (Ex: picture a circle with<br>
+  4 dots on the perimeter, and with other stuff outside the circle.)<br>
+  There are cases when you&#x27;d want to do this, but be careful.<br>
+<br>
+  This isn&#x27;t so much a strategy as it is a way of deciding what type of<br>
+  move to make: a non-stranded-dot move (ex: connect 2 points), a<br>
+  stranded dot move (ex: encircle an open point), or a semi-stranded<br>
+  dot move (ex: connect a point to itself, now your opponant has the<br>
+  option of connecting the 2 dots on the inside or outside of the<br>
+  circle).<br>
+-- <br>
+     ------------------------------------------------------------<br>
+     Dave Boll  boll@handel.cs.colostate.edu<br>
+                &quot;The speed of time is 1 second per second&quot;<br>
+     ------------------------------------------------------------<br>
+<br>
+<br>
+</div>
+</body>
+</html>

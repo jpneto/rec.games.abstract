@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: First Player loses?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: First Player loses?</h1>
+    <p><strong>From:</strong> gcrhoads@yahoo.com (Glenn C. Rhoads)<br>
+    <strong>Date:</strong> 11 Mar 2004 15:38:32 -0800</p>
+    <hr>
+    <div>Michael Abramowski &lt;michael.abramowsky@nokia.com&gt; wrote in message news:&lt;405076C4.C1E2AA4@nokia.com&gt;...<br>
+&gt; <br>
+&gt;  This is my forst post to this ng, but with such a low traffic volume,<br>
+&gt; it should be quite welcome.<br>
+&gt;  Has anyone won this: http://www.transience.com.au/pearl.html yet? It&#x27;s<br>
+&gt; a variation of the game where you have 10 matches, can take 1-3 on your<br>
+&gt; turn, and whoever takes the last one loses.<br>
+&gt;  As most of you probably know, the trick is to reduce the number of<br>
+&gt; matches to 9, then to 5, then to 1, i.e. basically complementing the<br>
+&gt; number your opponent took to 4. If you win, you take 1 and cannot lose.<br>
+&gt;  In this newer version, it&#x27;s not as easy. Any ideas whether it is<br>
+&gt; possible to win as starting player? Arguments welcome.<br>
+&gt;  Cheers,<br>
+&gt; 	Michael<br>
+<br>
+This is just the Misere form of Nim.<br>
+<br>
+In the normal form, the person who takes the last item *wins*.<br>
+To find a winning move, write down the number of items in<br>
+each row in binary. E.g. the starting position is<br>
+<br>
+3 = 0 1 1<br>
+4 = 1 0 0<br>
+5 = 1 0 1<br>
+<br>
+You want to move to a position such that each column in the<br>
+binary representation contains an even number of 1s.  There is<br>
+only one move to accomplish this, namely take two items from<br>
+the row with three in it achieving.<br>
+<br>
+3 = 0 0 1<br>
+4 = 1 0 0<br>
+5 = 1 0 1<br>
+<br>
+By following this strategy for every move, the first player<br>
+will win.  The strategy for the misere form is exactly the same<br>
+except for the move that reduces the last row with more than one<br>
+item in it to either zero or 1 item.  In this case, if the winning<br>
+nim move is to take the entire row, then take all but 1 and if<br>
+the winning nim move is to take all but one, then take the entire<br>
+row.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Seahaven Towers</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Seahaven Towers</h1>
+    <p><strong>From:</strong> woods@colossal.Eng.Sun.COM (Don Woods)<br>
+    <strong>Date:</strong> 16 Nov 1993 04:39:55 GMT</p>
+    <hr>
+    <div>Gregory Rhodes writes:<br>
+| I&#x27;ve been playing a solitare game called &quot;Seahaven Towers&quot; on my Mac.<br>
+    [rules omitted]<br>
+| ANYWAY, my question is this: from a theoretical point of view, should<br>
+| this game be always win-able? How can I find out? Is there any good<br>
+| books on this subject?<br>
+<br>
+There&#x27;s a version of this game under the name &quot;solitaire&quot; in the Modula-3<br>
+distribution.  I have it running on my Sun.  There are definitely unwinnable<br>
+positions.  The Modula-3 implementation includes a feature where you can ask<br>
+it if a position is winnable.  (You can also ask it to show you the first<br>
+move of a winning sequence, but I don&#x27;t do that.)  This feature does have the<br>
+unfortunate property that, if over-used, it makes the game go too quickly.<br>
+I.e., you can ask and find that you&#x27;ve reached an unwinnable position, then<br>
+back up a few moves and ask again, etc.<br>
+<br>
+Incidentally, the Modula-3 version enforces one rule that Gregory didn&#x27;t<br>
+mention, so I don&#x27;t know if it&#x27;s in the Mac version or not.  To wit: If you<br>
+get an empty space in the tableau (i.e., one of the 10 columns goes empty),<br>
+then ONLY a King can be moved into that space.<br>
+<br>
+I&#x27;ve also seen a PC-clone version, with somewhat different rules.  I forget<br>
+all the details, but I think it used alternating colors for building in the<br>
+tableau (but still in suit for building up on the Aces).  In the version where<br>
+both places build strictly in suit, there&#x27;s never any reason not to move cards<br>
+onto the Aces piles whenever possible.  In the PC version that&#x27;s not the case.<br>
+<br>
+<br>
+<br>
+-- <br>
+--	-- Don Woods.				[*** Generic Disclaimer ***]<br>
+--				    ...!sun!woods.eng -or- Woods@Eng.Sun.com<br>
+<br>
+<br>
+</div>
+</body>
+</html>

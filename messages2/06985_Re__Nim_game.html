@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Nim game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Nim game</h1>
+    <p><strong>From:</strong> &quot;Mike Terry&quot; &lt;news.dead.person.stones@darjeeling.plus.com&gt;<br>
+    <strong>Date:</strong> Tue, 6 Jul 2004 02:24:59 +0100</p>
+    <hr>
+    <div>&quot;Torben gidius Mogensen&quot; &lt;torbenm@diku.dk&gt; wrote in message<br>
+news:7zllhy1ojs.fsf@pc-032.diku.dk...<br>
+&gt; joc_kay@hotmail.com (Joe) writes:<br>
+&gt;<br>
+&gt; &gt; Martin Moller Pedersen &lt;tusk@daimi.au.dk&gt; wrote in message<br>
+news:&lt;cc9l2a$r4n$1@news.net.uni-c.dk&gt;...<br>
+&gt; &gt; &gt;<br>
+&gt; &gt; &gt; If N and M is odd then it is a win for the first player else it is a<br>
+&gt; &gt; &gt; win for the second player.<br>
+&gt; &gt; &gt;<br>
+&gt; &gt; Only in case you start with a full board I presume?<br>
+&gt; &gt;<br>
+&gt; &gt; However, the idea was to start with random configurations (0 or 1<br>
+&gt; &gt; piece on each field). [One might think about starting with an empty<br>
+&gt; &gt; board and both players &#x27;building up&#x27; a configuration until one of the<br>
+&gt; &gt; players - when it is her turn - decides it is advantageous to start<br>
+&gt; &gt; removing pieces according to above rules.]<br>
+&gt; &gt;<br>
+&gt; &gt; Where can I find a derivation of the &#x27;a full board of odd sizes gives<br>
+&gt; &gt; a N-position&#x27; rule?<br>
+&gt;<br>
+&gt; Actually, on a full NxN board, it is a win for the second player<br>
+&gt; unless N=1 (in which case, it is obviously a first-player win).<br>
+&gt;<br>
+&gt; If the board is initially full, it doesn&#x27;t matter which row or column<br>
+&gt; you take, as they are all alike.  This is true even after a number of<br>
+&gt; rows or column are taken.  Hence, all that matters is whether you take<br>
+&gt; a row or a column.  So we may as well assume you always take the<br>
+&gt; leftmost column or topmost row.  If you start with a square, the<br>
+&gt; second player can (by taking row when the first player takes column<br>
+&gt; and vice-versa) always force it into a square with one less colunm and<br>
+&gt; row, i.e., from NxN to (N-1)x(N-1) etc.  So, if N&gt;1, the first player<br>
+&gt; is eventually faced with a 2x2 board.  If he removes a row or column,<br>
+&gt; the second player removes the other and thereby wins.<br>
+&gt;<br>
+&gt; Torben<br>
+&gt;<br>
+<br>
+no no no, Joe never said a player has to take a complete row or column, only<br>
+that all the removed stones must either reside in the same row or in the<br>
+same column!<br>
+<br>
+E.g. in this position:<br>
+ +-------+<br>
+ | # # # |<br>
+ | # # # |<br>
+ | # # # |<br>
+ | # # # |<br>
+ +-------+<br>
+<br>
+a player could move to leave either of the following:<br>
+<br>
+ +-------+<br>
+ | #   # |<br>
+ | # # # |<br>
+ | #   # |<br>
+ | # # # |<br>
+ +-------+<br>
+<br>
+or<br>
+<br>
+ +-------+<br>
+ | # # # |<br>
+ | # # # |<br>
+ |     # |<br>
+ | # # # |<br>
+ +-------+<br>
+etc.<br>
+<br>
+Mike.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

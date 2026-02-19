@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Algorithm for possible positions</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Algorithm for possible positions</h1>
+    <p><strong>From:</strong> hwatheod@leland.Stanford.EDU (theodore hwa)<br>
+    <strong>Date:</strong> 11 03 1999 00:00:00 GMT</p>
+    <hr>
+    <div>QSCGZ (qscgz@aol.com) wrote:<br>
+: Ted wrote:<br>
+:  &gt;I don&#x27;t think there is a &quot;(relatively) simple algorithm&quot; for it. <br>
+:  {determine whether a chess-position is legal =&quot;retro-problem&quot; }<br>
+:  &gt;The things you mentioned<br>
+:  &gt;above go a long way towards pruning the tree, and rule out many illegal<br>
+:  &gt;positions, but there are many complicating factors (which pawns promoted<br>
+:  &gt;to what, and what path they took, etc.), not the least of which is<br>
+:  &gt;positions involving &quot;time pressure&quot; ..<br>
+: <br>
+: So, are there any positions , where it&#x27;s still unknown,<br>
+: whether they are illegal or not ?<br>
+<br>
+I certainly don&#x27;t know of one.  Even though there are many restrictions<br>
+that one has to take into consideration, for any given position there<br>
+won&#x27;t be too many that one has take into account, so it seems.  But <br>
+automating all of it into a program to work for an arbitrary position is a<br>
+lot of work.  Also, it&#x27;s hard to define the criterion under which to<br>
+&quot;stop&quot; the search, i.e., when you know the position definitely is legal.<br>
+<br>
+: Comparing the hardest retro-problem with the hardest &quot;matt in n&quot; problem , <br>
+: what would n be ?<br>
+<br>
+Depending on what &quot;hard&quot; means... there are mates in 270, etc., that have<br>
+been constructed.  There are also positions that (supposedly, I haven&#x27;t<br>
+checked it myself) requires 163 moves to reach from the opening<br>
+position.  Also positions in which the last 54 (half-) moves are uniquely <br>
+determined.<br>
+<br>
+: What amount of programming effort has to be made (e.g.compared to<br>
+: programming efforts spent on normal chess-programs) in order<br>
+: to have a program, that is able to solve any retro-problem<br>
+: in -say- some hours on a PC ?<br>
+:<br>
+: What do you estimate, when will we have such a program ? (if ever)<br>
+ <br>
+I think the first step will have to be to make a &quot;catalog&quot; of types of<br>
+known legal positions, to try to aim the search for these positions.  (We<br>
+can stop once we reach those positions.)  I don&#x27;t know of any work in this<br>
+direction, but I think it will be needed.  It just seems too hard to come<br>
+up with a general sufficient condition for legality.<br>
+<br>
+Then one will have to write routines to rule out illegalities.  I have<br>
+done some of this in a retro program I developed with a friend last year<br>
+(mentioned in an earlier post in this thread).  <br>
+<br>
+One difficult part that I<br>
+didn&#x27;t do was handle all the information that could be drawn from<br>
+promotions.  &quot;Long-range&quot; information (i.e. things that could not be<br>
+determined from a mere search) from promotions include things such as<br>
+which square(s) the promoted pawns could have come from, what path they<br>
+took to promote, what square they promoted on, how the promoted pieces<br>
+escaped from the promotion square, and whether the promoted piece is still<br>
+on the board or was captured (and where, etc...)  This is probably the<br>
+area for the greatest potential improvement for Retractor.<br>
+<br>
+Another difficult aspect is to handle information from captures.  Counting<br>
+pawn captures is one thing (and not trivial!!) but then using<br>
+information regarding what _pieces_ were captured, etc., could also be<br>
+very important.  And where those pieces were captured, etc.  <br>
+All that would have to be stored as possible information.<br>
+<br>
+Then there are some exceptional cases to consider, such as the class of<br>
+positions where the side to move is determined because the position<br>
+determines the parity of the number of moves made (&quot;parity argument&quot;).<br>
+<br>
+: What is the probability, that a random chess-position (satisying the<br>
+: obvious constraints) is illegal ?<br>
+<br>
+Ah, but here&#x27;s the problem.  Which constraints are &quot;obvious&quot; ?  Is a<br>
+position with 8 white pawns on the board, with 2 of them on b2 and d2, and<br>
+a white bishop on h2, &quot;obviously&quot; illegal?  <br>
+<br>
+<br>
+Ted<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

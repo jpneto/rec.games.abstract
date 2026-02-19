@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: 6x6 Othello</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: 6x6 Othello</h1>
+    <p><strong>From:</strong> jff@maths.nott.ac.uk (Joel F Feinstein)<br>
+    <strong>Date:</strong> Tue, 8 Jun 93 17:50:51 GMT</p>
+    <hr>
+    <div>Jan Eric Larsson writes:<br>
+&gt;Joel feinstein writes:<br>
+&gt;&gt;I now have an optimal sequence for 6x6 Othello, if anyone<br>
+&gt;&gt;is interested. The second player wins 20-16.<br>
+&gt;I would be very happy if you would post your results. If you have some<br>
+&gt;more information, like time used, how you did it, search method, ect.,<br>
+&gt;I am sure it would be appreciated.<br>
+<br>
+My strategy for solving 6x6 Othello was to modify my 8x8 player to<br>
+play 6x6, using a similar mid-game strategy in terms of corner regions<br>
+and potential mobility (aim: maximize the number of empty squares<br>
+touching opponents discs) to the 8x8 version.<br>
+<br>
+In the following please note that, in my notation, the top left square <br>
+of the 6x6 Othello board is denoted by b2, for reasons explained in a <br>
+previous posting.<br>
+<br>
+My endgame analyser uses short midgame searches to order the moves for<br>
+its (unsophisticated) alpha-beta search. I was surprised to find that <br>
+the program could solve win-loss-draw with 29 empty squares in a day in most <br>
+cases (in 8x8 it can only do 25-27 in this time). So, with no further thought<br>
+required I was able to show that the second player had a forced win using about<br>
+1.5 weeks cpu time on our silicon graphics crimson chip.<br>
+This seems to have been a little lucky: the &quot;parallel opening&quot;<br>
+(1.d3 2.e3) turns out to be VERY complicated, and I still don&#x27;t know<br>
+who wins. But it didn&#x27;t take too long to show that white can not win<br>
+by more than 4, which turns out to be critical (see below). The &quot;diagonal&quot; <br>
+opening 1.d3 2.c3 is an easy loss, and only took one night. The remaining <br>
+&quot;perpendicular&quot; opening, 1.d3 2.c5, wins by 4.  (This calculation took <br>
+two weeks of cpu time: much quicker than I had expected. It helped<br>
+that I guessed that the score would be strictly between 18-18 and 21-15.<br>
+I was again fortunate that the return value was inside my window).<br>
+The two calculations together required that about 60-70,000,000,000 <br>
+positions be evaluated. I expect that more sophisticated search techniques <br>
+could reduce this figure by a large factor.<br>
+<br>
+By symmetry, black&#x27;s first move is forced. Thus white can use the following<br>
+book to achieve a won position after three moves each. I do not claim that <br>
+these lines are optimal for white. <br>
+<br>
+d3 c5 b6 e3 f5 e6<br>
+            f4 d2 <br>
+            d6 c4 <br>
+            f2 d2 <br>
+            f6 d2 <br>
+            f3 d2 <br>
+      c6 e3 b5 d2 <br>
+            c4 b5 <br>
+            f5 d2 <br>
+            f3 f4 <br>
+      d6 e3 b4 d2 <br>
+            f4 d2 <br>
+            b5 d2 <br>
+            f5 f4 <br>
+            f3 e2<br>
+      e6 d2 c2 b2 <br>
+            c3 e3 <br>
+            c4 b5 <br>
+            b5 f4 <br>
+            c6 f4<br>
+      f6 d2 c4 b5 <br>
+            c3 f5 <br>
+            c6 f5 <br>
+            c2 b2 <br>
+            b5 f4 <br>
+<br>
+Joel Feinstein (jff@maths.nott.ac.uk)<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Yahtzee analysis (Was: Chess ...)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Yahtzee analysis (Was: Chess ...)</h1>
+    <p><strong>From:</strong> Graham Wills &lt;gwills@research.att.com&gt;<br>
+    <strong>Date:</strong> 23 10 1996 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+Joseph Bartlo wrote:<br>
+<br>
+&gt; I&#x27;ve seen people talk about things, thinking they have a<br>
+&gt; correct and efficient solution until they try it.<br>
+<br>
+Actually I&#x27;ve been sufficiently stimulated by this discussion to code up<br>
+a yahtzee tree builder. <br>
+<br>
+My first naive attempt would have taken 324 years to run.<br>
+<br>
+By improving on the rolling mechanism (pre-calculating the 252 rolls<br>
+for 4s, the 126 rolls for 3s etc. and their weights) I dropped it down<br>
+to<br>
+8 years.<br>
+<br>
+Next I optimized the code a little to bring it down to 3 years.<br>
+<br>
+Then I put in some pruning code (EG If you need only Yahtzee and sixes,<br>
+you never want to keep two different dice and roll the rest) to bring it<br>
+down to 1.6 years (I had hoped this would do much better)<br>
+<br>
+Then I put in some code that recognized when scoring over 65 above the<br>
+line was impossible and so made the above line score irrelevant, leading<br>
+to a bit of state collapsing. I&#x27;m not sure how efficient that makes the<br>
+code, but my guess is it&#x27;ll at least halve it (if all the above line<br>
+categories are filled, or filled with low scores, it reduces those<br>
+states by a factor of 32).<br>
+<br>
+Finally I ran the code on a slightly faster computer to reduce it by a<br>
+factor of 3/4. So maybe 6-8 months?<br>
+<br>
+Now the algorithm is extremely parallelizable, so on a massively<br>
+parallel machine each machine could be calculating for each roll of the<br>
+dice. With, say 128 processors, we could solve yahtzee in 3-4 days.<br>
+<br>
+Now, (tracing the thread right back to its roots), we can&#x27;t do *that*<br>
+with chess.<br>
+<br>
+<br>
+-- <br>
+Graham Wills                    Data Visualization group, Lucent<br>
+Technologies<br>
+gwills@research.bell-labs.com   Bell Laboratories, Indian Hill,<br>
+Naperville IL<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

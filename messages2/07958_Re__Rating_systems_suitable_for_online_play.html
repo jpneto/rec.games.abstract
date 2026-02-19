@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Rating systems suitable for online play</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Rating systems suitable for online play</h1>
+    <p><strong>From:</strong> &quot;richardhutnik@optonline.net&quot; &lt;richardhutnik@optonline.net&gt;<br>
+    <strong>Date:</strong> Mon, 19 Nov 2007 06:49:50 -0800 (PST)</p>
+    <hr>
+    <div>On Nov 19, 9:22 am, Harald Korneliussen &lt;vinterm...@gmail.com&gt; wrote:<br>
+<br>
+&gt; I am not a mathematician, so I&#x27;m not the right person to develop a<br>
+&gt; robust graph-based ranking system. But I can give an example of a very<br>
+&gt; simple one, to give an idea how they might work:<br>
+&gt;<br>
+&gt; Construct a n * n matrix, where n is the number of players in the<br>
+&gt; system: One row and one column for each player. The element (i,j) of<br>
+&gt; the matrix is player i&#x27;s win ratio against player j (0.5 if they&#x27;ve<br>
+&gt; never played). Now, (if I remember my linear algebra correctly!!) you<br>
+&gt; can look upon this as the transition matrix of a markov chain, and by<br>
+&gt; repeated multiplication of an initial vector by this matrix, you end<br>
+&gt; up with a vector that is a guess of the player&#x27;s skills.<br>
+&gt;<br>
+&gt; There exists very efficient algorithms for calculating such a vector,<br>
+&gt; so it should scale very well.<br>
+&gt;<br>
+&gt; Any suggestions? Do you think this is a good idea?<br>
+<br>
+Harald, I will need to study it more.  Your question is one of the<br>
+questions trying to be worked out for a championship series in the<br>
+IAGO World Tour, used to determine player ranking and so on.  If<br>
+people have alternatives to ELO, please let me know.  Please go here<br>
+and start a topic on this (as it is relevant to the IAGO World Tour):<br>
+http://abstractgamers.org/forums/?CategoryID=25<br>
+<br>
+Thanks...<br>
+- Rich<br>
+<br>
+<br>
+</div>
+</body>
+</html>

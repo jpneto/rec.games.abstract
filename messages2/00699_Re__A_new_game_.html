@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: A new game?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: A new game?</h1>
+    <p><strong>From:</strong> nicholso@pioneer.arc.nasa.gov (Melvin H. Nicholson YBH)<br>
+    <strong>Date:</strong> Tue, 26 Jan 1993 01:57:34 GMT</p>
+    <hr>
+    <div>In article &lt;1993Jan25.175510.26117@dbased.nuo.dec.com&gt; tomj@kibo.enet.dec.com (Tom Jaskiewicz) writes:<br>
+&gt;<br>
+&gt;boll@CS.ColoState.EDU (dave boll) describes a new game:<br>
+&gt;&gt;    The board: A MxN rectangle of dots.         <br>
+&gt;&gt;    The play : Players alternate making moves, last one able to move wins<br>
+&gt;&gt;    A move: A move in this game consists of drawing a straight line <br>
+&gt;&gt;       connecting two (previously untouched) dots. The line may not cross<br>
+&gt;&gt;       any previously drawn line, nor can it pass thru one dot on the way<br>
+&gt;&gt;       to another. Each dot can have at most one line touching it.<br>
+&gt;..<br>
+&gt;&gt;  Anyway, has anyone ever heard of a game like this? Thoughts?<br>
+&gt;<br>
+&gt;and wms@ssd.intel.com (William Shubert) writes:<br>
+&gt;]With this game<br>
+&gt;]it&#x27;s pretty clear immediately that player 1 can win on any MxN board if M<br>
+&gt;]or N is even:<br>
+&gt;]<br>
+&gt;]+   +   +   +<br>
+&gt;]       /<br>
+&gt;]+   + / +   +<br>
+&gt;]     /<br>
+&gt;]+   +   +   +<br>
+&gt;]<br>
+&gt;]From here, any move that player 2 makes can be &quot;mirrored&quot; by player 1; player<br>
+&gt;]2 MUST run out of moves first.<br>
+&gt;<br>
+&gt;On MxN boards with both M and N odd there is a 180 degree rotational symmetry<br>
+&gt;around the central point.  Player 2 wins by maintaining the symmetry:<br>
+&gt;<br>
+&gt;+   +   +   +---+   +   +<br>
+&gt;       /<br>
+&gt;+   + / +   +   +   +---+<br>
+&gt;     /  |<br>
+&gt;+   +   +   #   +   +   +<br>
+&gt;                |  /<br>
+&gt;+---+   +   +   + / +   +<br>
+&gt;                 /<br>
+&gt;+   +   +---+   +   +   +<br>
+<br>
+Bzzt.  Sorry, but this won&#x27;t work.  Consider that any line which touches<br>
+the the center point cannot be follow by the 180 rotation (which also<br>
+must touch the center point.  The 1st player win for even-even and<br>
+even-odd and odd-even boards does hold, however.<br>
+<br>
+(Note that each node has a maximal usage of one)<br>
+<br>
+Mel<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

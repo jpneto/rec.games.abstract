@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: &quot;simultaneous&quot; movement</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: &quot;simultaneous&quot; movement</h1>
+    <p><strong>From:</strong> mathwft@math.canterbury.ac.nz (Bill Taylor)<br>
+    <strong>Date:</strong> 22 12 1998 00:00:00 GMT</p>
+    <hr>
+    <div>Don Woods &lt;don@clari.net&gt; writes:<br>
+<br>
+|&gt;   I think a more interesting version would be if<br>
+|&gt; simultaneous 5&#x27;s are treated as a form of illegal move. <br>
+<br>
+Good idea!  Though I still think the idea of making the followup<br>
+banning last for more than that one move is very bad.<br>
+<br>
+<br>
+|&gt; This could lead to some intriguing guessing games.  E.g., suppose one<br>
+|&gt; player has an &quot;open 4&quot; (extensible in both directions) or some other<br>
+|&gt; position with two possible winning moves, and the other has only a single<br>
+|&gt; winning move.  Thus:<br>
+|&gt; 			a X X X X b . . . . X O O O O c<br>
+|&gt; <br>
+|&gt; I&#x27;m sure there&#x27;s a mixed (randomised) strategy that optimises the outcome<br>
+<br>
+<br>
+AAAARGGHH!   It&#x27;s actually worse than it looks, because one must *first*<br>
+solve the simpler problem, of what to do, and what the value is, for<br>
+even a single half-open four!<br>
+<br>
+e.g.   . O X X X X . .<br>
+<br>
+Either can try to play at the end (E) or elsewhere on the board (B).<br>
+<br>
+Then we get                O<br>
+                       E       B<br>
+                    ---------------<br>
+                   |       |       |    where v is the value of the game<br>
+               E   |   v   |   1   |    after both make a move elsewhere,<br>
+                   |       |       |    (which is probably, but I&#x27;m not sure<br>
+          X        |-------+-------|     definitely, the same as the value<br>
+                   |       |       |     we&#x27;re trying to calculate here)<br>
+               B   |   m   |   v   |<br>
+                   |       |       |    and  m  is the value of the game<br>
+                    ---------------     after a free move by X and the       <br>
+                                        open 4 closed off.<br>
+<br>
+Even assuming you can get an estimate for m, and thus solve for v,<br>
+[ v = (v^2 - m)/(2v - m - 1) ], that still assumes the three v&#x27;s are the same.<br>
+<br>
+Nasty one!<br>
+<br>
+   _______<br>
+  /\ o o o\               ==============================================<br>
+ /o \ o o o\_____         Bill Taylor     W.Taylor@math.canterbury.ac.nz<br>
+&lt;    &gt;------&gt; o /|    =====================================================<br>
+ \o /  o   /___/ |    God does not play dice with the universe, he plays Go<br>
+  \/______/  o |o|    =====================================================<br>
+        |      | |<br>
+        | o  o | ;<br>
+        |______|/<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

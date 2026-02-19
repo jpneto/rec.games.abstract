@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: The Biggest Number Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: The Biggest Number Game</h1>
+    <p><strong>From:</strong> acid+@cs.cmu.edu (Christopher Colby)<br>
+    <strong>Date:</strong> 19 Nov 92 00:26:09 GMT</p>
+    <hr>
+    <div>In article &lt;1e821sINNolv@uni-paderborn.de&gt; jerry@uni-paderborn.de (Gerald Siek) writes:<br>
+&gt;&quot;The smallest number that cannot be described by 20 or [fewer] words&quot;<br>
+<br>
+In article &lt;1992Nov18.165142.11504@wam.umd.edu&gt; warren@wam.umd.edu (the stupid one) writes:<br>
+&gt;&quot;the largest number that can be desribed in twenty words or [fewer] plus one&quot;<br>
+<br>
+It has been claimed that these sentences &quot;make no sense&quot;.  I disagree.  To<br>
+explain why, let&#x27;s first look at a formalization of the problem.<br>
+<br>
+For some string S, define the Komolgorov complexity of S (denoted K(S)) be<br>
+the length of the shortest pair of a turing machine and a string &lt;M,S&#x27;&gt;<br>
+s.t. M(S&#x27;)=S.  (Pick your favorite encoding for TMs and pairs.)  E.g., K(S)<br>
+&lt;= |&lt;M_id,S&gt;| = |S|+c for all strings S, where M_id is the identity<br>
+function and c is the associated overhead of pairing a string with it.<br>
+<br>
+Now, assume an alphabet of {0,1} and interpret strings as binary encodings<br>
+of natural numbers (written as the number itself).  We can interpret these<br>
+English sentences as denoting TMs that take the empty string (e) as input<br>
+and search for a number that satisfies some condition involving the<br>
+(recursively enumerable) lexicographic ordering of all TMs M_1,M_2,... and<br>
+the (recursively enumerable) lexicographic ordering of natural numbers<br>
+0,1,....<br>
+<br>
+For instance, Gerald&#x27;s sentence (replacing 20 with k) would be a TM M s.t.<br>
+M(x) = `the smallest i such that K(i) &gt; k&#x27;.  And if k &gt; |&lt;M,e&gt;|, there is<br>
+an inconsistency because K(M(e)) would be &gt; |&lt;M,e&gt;|.  Contradiction!!<br>
+<br>
+How exactly did this contradiction creep in?  It&#x27;s actually an illusion!<br>
+We&#x27;ve cheated by including the uncomputable computation K(i) in the &quot;code&quot;<br>
+for M.  In fact, the function that we want M to perform is not computable,<br>
+and so there really is no such M.  Therefore, there is no inconsistency.<br>
+<br>
+How does all this relate back to English sentences?  The notion of an<br>
+English sentence &quot;describing&quot; a number is analogous to a program that<br>
+outputs a number.  So, a sentence describes a number iff there is an<br>
+&quot;effective procedure&quot; (a philosophical notion in the loosest sense) that<br>
+extracts that number from the sentence.  However, if one uses the<br>
+commonly-accepted Church-Turing notion for &quot;effective procedure&quot;, then<br>
+Gerald&#x27;s sentence above DESCRIBES NO NUMBER since it is in general not<br>
+effectively computable to determine the smallest number described by a<br>
+sentence of bounded size.  This is precisely analogous to the machine M<br>
+that we tried to define above, but could not.  Therefore, there is no<br>
+contradiction in sentences of the form of the examples that Gerald or<br>
+Warren provide.  Since they do not qualify as descriptions of numbers<br>
+themselves, there is no paradoxical self-reference.  They are<br>
+&quot;meta-descriptions&quot; if you will, or descriptions equipped with Oracles.<br>
+Either way, they are drawn from a different class from<br>
+effectively-computable descriptions, and so there is no contradiction.  It<br>
+is this structure that the informality of English hides.<br>
+<br>
+-chris<br>
+<br>
+<br>
+</div>
+</body>
+</html>

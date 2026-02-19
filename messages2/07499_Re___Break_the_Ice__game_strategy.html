@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: &quot;Break the Ice&quot; game strategy</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: &quot;Break the Ice&quot; game strategy</h1>
+    <p><strong>From:</strong> &quot;Arthur J. O&#x27;Dwyer&quot; &lt;ajonospam@andrew.cmu.edu&gt;<br>
+    <strong>Date:</strong> Fri, 4 Aug 2006 11:37:18 -0400 (EDT)</p>
+    <hr>
+    <div><br>
+On Fri, 4 Aug 2006 jdallen2000@yahoo.com wrote:<br>
+&gt; Arthur J. O&#x27;Dwyer wrote:<br>
+&gt;&gt; On Thu, 3 Aug 2006, Rob Thorpe wrote:<br>
+&gt;&gt;&gt; James Dow Allen wrote:<br>
+&gt;&gt;&gt;&gt; It sounds like you&#x27;re missing the &quot;transposition cache&quot;<br>
+&gt;&gt;&gt;&gt; (memory, e.g. hash table, of previously solved positions).<br>
+&gt;&gt;&gt;<br>
+&gt;&gt;&gt; I&#x27;d agree with that.  It seems best to evaluate a large chunk of the<br>
+&gt;&gt;&gt; game offline and store it in a table.<br>
+&gt;<br>
+&gt; I would tend to view the &quot;table of solutions from recent several weeks&quot;<br>
+&gt; and &quot;cache of solutions from recent several seconds&quot; as<br>
+&gt; separate objectives with separate heuristics that may or may not<br>
+&gt; use same data format.<br>
+<br>
+   I wouldn&#x27;t; but then I don&#x27;t know what heuristics or data formats<br>
+to use for either of them, so... :)<br>
+<br>
+&gt;&gt;    But the bottom line is still that the program has to, at some point,<br>
+&gt;&gt; look at 9! things ...<br>
+&gt;<br>
+&gt; By &quot; 9! &quot; I think you&#x27;re referring to the permutations of<br>
+&gt; {A,B,C,...,H,I}.<br>
+&gt; But the opening A-B-C leads to the same position as C-B-A<br>
+&gt; (they *transpose* into each other: that&#x27;s why we speak of<br>
+&gt; &quot;transposition cache&quot;) and only one of these openings need be<br>
+&gt; considered.  Stated differently, the number of positions reached<br>
+&gt; in your example is 2^9 not 9!, right?  Do I misunderstand?<br>
+<br>
+   Ah, yes. I misunderstood what you were saying. You&#x27;re correct; storing<br>
+a table of positions /is/ cheaper than storing a table of game trees,<br>
+because of all the repeated positions.<br>
+<br>
+-Arthur<br>
+<br>
+<br>
+</div>
+</body>
+</html>

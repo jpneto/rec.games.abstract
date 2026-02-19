@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Game of pentominos</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Game of pentominos</h1>
+    <p><strong>From:</strong> rcbaaw@rw6.urc.tue.nl (Angelo Wentzler)<br>
+    <strong>Date:</strong> 18 Dec 92 15:24:24 GMT</p>
+    <hr>
+    <div>pete@bignode.equinox.gen.nz (Pete Moore) writes:<br>
+<br>
+&gt;Torben AEgidius Mogensen (torbenm@diku.dk) wrote:<br>
+&gt;&gt;martel@marvin.mr.sintef.no (Paulo Martel) writes:<br>
+<br>
+&gt;&gt;&gt;After several tries I gave up a combinatorial analysis of the game of<br>
+&gt;&gt;&gt;pentominos. Would someone point me to a reference, or briefly explain<br>
+&gt;&gt;&gt;how one could compute the total number of solutions for a grid of a<br>
+&gt;&gt;&gt;given size (6x10, 5x12, 4x15, 3x20). <br>
+<br>
+&gt;&gt;I saw a paper once that reported the number of solutions to each of<br>
+&gt;&gt;these rectangle sizes. It used a heavily optimized machine code<br>
+&gt;&gt;program to exhaustively search for all solutions. I remember that for<br>
+&gt;&gt;the 3x20 case there are only two solutions barring reflections and<br>
+&gt;&gt;rotations. These are quite easy to find by hand. The number of<br>
+&gt;&gt;solutions for the 6x10 case was quite large, but I don&#x27;t recall the<br>
+&gt;&gt;number. I also don&#x27;t recall the title or author of the paper.<br>
+<br>
+&gt;I can&#x27;t give an authoritative reference, but according to<br>
+&gt;some notes I made back in my young &amp; innocent days when I used to note<br>
+&gt;information without references, there are:<br>
+&gt;     2  3x20 solutions<br>
+&gt;  2339  6x10 solutions<br>
+&gt;  1010  5x12 solutions<br>
+&gt;   368  4x15 solutions<br>
+<br>
+&gt;If your pentominoes are 3-dimensional (i.e. each could be constructed by<br>
+&gt;joining 5 cubes together) rather than 2-dimensional, you can also form a<br>
+&gt;3x4x5 rectangular prism from the 12 pentominoes. <br>
+<br>
+Gee, this must be my lucky month! I like pentominoes, wrote a program<br>
+once (who didn&#x27;t) and I rank them right up there along with life,<br>
+rubik&#x27;s cube and tiled squares (See: tiling problem in this group :-)<br>
+<br>
+<br>
+C.J.Bouwkamp, a professor here at the TUE has computed all solutions<br>
+to this prism as well as to &quot;the steps&quot; which is a three dimensional<br>
+staircase. He&#x27;s just as mad about pentominoes as I am.<br>
+<br>
+The catalogues are:<br>
+<br>
+&quot;Catalogue of solutions to the rectangular 3x4x5 pentomino problem&quot;<br>
+C.J.Bouwkamp, Eindhoven University of Technology.<br>
+<br>
+&quot;Packing the steps with solid pentominoes&quot;<br>
+C.J.Bouwkamp, Eindhoven University of Technology.<br>
+<br>
+The books are available here, but not in &quot;computerised&quot; format.<br>
+<br>
+<br>
+By the way, has anybody ever tried to write a program to compute all<br>
+(N+1)-ominoes from the set of N-ominoes? It&#x27;s not difficult:<br>
+Just take one N-omino at a time and fit an extra square onto it. This<br>
+produces one extra (N+1)-omino. Fit a square on all possible positions,<br>
+(just &quot;roll&quot; it along the edge) then proceed with the next N-omino.<br>
+This leaves you with a *bag* of (N+1)-ominoes, of which you now have to<br>
+make a *set* (remove multiple copies).<br>
+It would be smart to check for multiples right at the start though...<br>
+<br>
+It would take a lot of computation, but not an awful lot of time.<br>
+<br>
+Angelo Wentzler<br>
+<br>
+<br>
+</div>
+</body>
+</html>

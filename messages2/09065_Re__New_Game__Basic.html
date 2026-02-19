@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: New Game: Basic</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: New Game: Basic</h1>
+    <p><strong>From:</strong> torbenm@pc-003.diku.dk (Torben =?iso-8859-1?Q?=C6gidius?= Mogensen)<br>
+    <strong>Date:</strong> Tue, 25 Aug 2009 10:47:00 +0200</p>
+    <hr>
+    <div>Mark Steere &lt;marksteere@gmail.com&gt; writes:<br>
+<br>
+&gt; On Aug 24, 8:45 am, torb...@pc-003.diku.dk (Torben gidius Mogensen)<br>
+&gt; wrote:<br>
+&gt;<br>
+&gt;&gt; Nick Bentley &lt;nickobe...@gmail.com&gt; writes:<br>
+&gt;<br>
+&gt;&gt; &gt; I&#x27;d wager that the tree is small compared to many other games.<br>
+&gt;<br>
+&gt;&gt; I tend to agree, though not for the same reasons.<br>
+&gt;<br>
+&gt; You guys both seem to be responding to something that wasn&#x27;t written,<br>
+&gt; at least not by me.  Allow me to repeat what I did say:<br>
+&gt;<br>
+&gt; &quot;The design objective was to construct the largest possible game tree<br>
+&gt; *using Checkers equipment* (emphasis newly added).&quot;<br>
+&gt;<br>
+&gt; Checkers has 64 squares, and 24 pieces.  Go, in comparison, has 361<br>
+&gt; points and 361 pieces.  Do you really think I was hoping to create a<br>
+&gt; game tree as big as Go&#x27;s with Checker&#x27;s equipment?  Sure, the<br>
+&gt; stackability of checkers gives you a lot of extra mileage, but not<br>
+&gt; *that* much extra mileage!<br>
+&gt;<br>
+&gt;&gt; One of the things that limit Draughts and Basic is that only the black<br>
+&gt;&gt; squares are used.  If you allow also moves directly forward, you will<br>
+&gt;&gt; greatly increase the number of positions.<br>
+&gt;<br>
+&gt; Of course!  Why didn&#x27;t I think of that??  Oh, that&#x27;s right...  my<br>
+&gt; pesky design imperative prohibiting ergonomic abomination.  Checkers<br>
+&gt; (the pieces) have evolved over hundreds of years to be about the same<br>
+&gt; size as the board squares, which is perfect given that only the dark<br>
+&gt; squares are intended to be used.  If you now use all of the squares<br>
+&gt; instead of only the dark squares, it becomes impossible to pick up or<br>
+&gt; slide a stack without disturbing the surrounding stacks with your fat<br>
+&gt; fingers.  Lovely.<br>
+<br>
+You could be a bit more civil in your replies.  Your point about<br>
+restricting to Checkers equipment is valid, but your original post did<br>
+not mention such ergonomic restrictions.  Mentioning them now is<br>
+perfectly O.K., but please do so in a more civil manner.<br>
+<br>
+&gt; Any other suggestions?  How about a game requiring 26 checkers so that<br>
+&gt; the 24 in the box won&#x27;t be enough?<br>
+<br>
+As Nick mentions, allowing backwards movement will greatly increase the<br>
+size of the game tree, as it will roughly double the number of squares<br>
+each piece can reach.  As far as I can tell, this will allow all<br>
+possible distributions of pieces on (and off) the board to be reached in<br>
+a game, so it would maximize the number of nodes in the game tree.<br>
+<br>
+I can&#x27;t see it as a complication of the rules, and it adds a strategic<br>
+choice: Do I move further away from my goal to block an enemy piece, or<br>
+do I move forward to get closer to my own goal?<br>
+<br>
+If you also want to increase the number of edges, you can allow either<br>
+simultaneous move by two or more pieces, allow a piece to move more than<br>
+one square away, or allow a stack of pieces to move together.<br>
+<br>
+Regardless, the size of the game tree is not necessarily a measure of<br>
+the quality of the game.  Sure, a very small tree will allow full<br>
+analysis, but even moderately-sized trees defeat this.  Also, there are<br>
+games with large game trees that are easily analysable (Nim, for<br>
+example), so to prove a game hard to analyse, you need to prove that no<br>
+&quot;local&quot; analysis can provide perfect play.  This has been proven for<br>
+many traditional games (by proving, e.g., that perfect play is in<br>
+EXP-time).  And even hard-to-analyse games are not necessarily<br>
+interesting: If the game is so hard to analyse that you have no<br>
+realistic way to judge if one move is better than another, playing is no<br>
+fun.<br>
+<br>
+	Torben<br>
+<br>
+<br>
+</div>
+</body>
+</html>

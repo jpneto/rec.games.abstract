@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Nim game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Nim game</h1>
+    <p><strong>From:</strong> torbenm@diku.dk (Torben gidius Mogensen)<br>
+    <strong>Date:</strong> 20 Jul 2004 16:25:00 +0200</p>
+    <hr>
+    <div>joc_kay@hotmail.com (Joe) writes:<br>
+<br>
+<br>
+&gt; One can generate &#x27;irreducible&#x27; representations by:<br>
+&gt; 1) removing empty rows and columns,<br>
+&gt; 2) swap columns and rows such that a &#x27;block-diagonal&#x27; configuration is<br>
+&gt; reached with the rows and columns in each block ordered by size, and<br>
+&gt; 3) splitting the resulting configuration into &#x27;non-interacting blocks&#x27;<br>
+&gt; <br>
+&gt; So, starting from these two configurations:<br>
+&gt; <br>
+&gt; X . X . .    and   . X . . .<br>
+&gt; . . . . X          . . . . .<br>
+&gt; . . . . .          . . X . X<br>
+&gt; X . . . .          . X . . .<br>
+&gt; . . . . .          . . . . .<br>
+&gt; <br>
+&gt; we eliminate the empty rows and columns to reach:<br>
+&gt; <br>
+&gt; X X .        X . .<br>
+&gt; . . X        . X X<br>
+&gt; X . .        X . .<br>
+&gt; <br>
+&gt; (i.e. the two configurations given by Thorben), and swap rows and<br>
+&gt; columns resulting in:<br>
+&gt; <br>
+&gt; X X .        . X X<br>
+&gt; X . .        X . .<br>
+&gt; . . X        X . .<br>
+&gt; <br>
+&gt; and represent both in the form of &#x27;non-interacting positions&#x27;:<br>
+&gt; <br>
+&gt; (X X) + (X)     and      (X) + (X X)<br>
+&gt; (X .)                    (X)<br>
+&gt; <br>
+&gt; Of course, standard theory applies and each non-interacting position<br>
+&gt; can be represented by a Groundy number:<br>
+&gt; <br>
+&gt;   (.) -&gt; 0<br>
+&gt; <br>
+&gt;   (X) -&gt; 1<br>
+&gt; <br>
+&gt; (X) = (X X) -&gt; 2<br>
+&gt; (X)<br>
+&gt; <br>
+&gt; (X X)  <br>
+&gt; (X .) -&gt; 3<br>
+<br>
+How do you find these Groundy numbers?  Is it just the number of X&#x27;s?<br>
+<br>
+&gt; and Groundy numbers of non-interacting positions can be added using<br>
+&gt; Nim-addition. Positions that have a composite Groundy number (=<br>
+&gt; Nim-sum of the Groundy numbers of the irreducible configurations)<br>
+&gt; equal to 0 are &#x27;cold&#x27; positions (last players win), all other<br>
+&gt; positions are &#x27;hot (next players win).<br>
+<br>
+Can you prove this, or is it just a hypothesis?<br>
+<br>
+	Torben<br>
+<br>
+<br>
+</div>
+</body>
+</html>

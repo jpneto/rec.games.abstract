@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Why chess is easy to program, Go hard (long)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Why chess is easy to program, Go hard (long)</h1>
+    <p><strong>From:</strong> torbenm@diku.dk (Torben AEgidius Mogensen)<br>
+    <strong>Date:</strong> Mon, 26 Sep 1994 10:55:55 GMT</p>
+    <hr>
+    <div>shrier@protocol.zycad.com (George Shrier) writes:<br>
+<br>
+&gt;	The game of Othello is particularly illuminating. The object of the<br>
+&gt;game is to end up with the most disks of your color. However, an evaluation<br>
+&gt;function that simply counts disks performs poorly. The problem is that when<br>
+&gt;a disk flips to your color, that is no achievement, since it can easily flip<br>
+&gt;again.  However, a corner square once gained can never be lost. When that<br>
+&gt;happens, the squares two away begin to loom as permanent prizes also. The<br>
+&gt;invariants in Othello sometimes really are invariant in an absolute sense.<br>
+&gt;The evaluations are hence less subject to error, and the programs are very<br>
+&gt;strong indeed.<br>
+<br>
+There are other factors that make Othello suitable for computers:<br>
+<br>
+	1) The endgame will often decide games, and is very difficult<br>
+           to track for humans, because of the large changes each move<br>
+	   can cause in the position. However, a computer can easily<br>
+	   evaluate the last N (typically 8-12) ply _perfectly_, due<br>
+	   to the guaranteed decreasement of the branching factor.<br>
+<br>
+	2) The branching factor (number of possible moves) is<br>
+	   typically less than in e.g. chess.<br>
+<br>
+	3) The positions on the edges are important to the game, but<br>
+           the number of possible configurations is small enough to<br>
+           tabulate, which makes it possible to make a reasonable<br>
+           board evaluation very quickly. (Obviously, edge positions<br>
+	   aren&#x27;t everything, but they are important).<br>
+<br>
+    Torben Mogensen (torbenm@diku.dk)<br>
+<br>
+<br>
+</div>
+</body>
+</html>

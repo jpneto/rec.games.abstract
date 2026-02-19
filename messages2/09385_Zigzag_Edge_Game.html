@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Zigzag Edge Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Zigzag Edge Game</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Wed, 17 Mar 2010 13:56:10 -0700 (PDT)</p>
+    <hr>
+    <div>A game for two players:<br>
+<br>
+Start with a grid of (n-1)-by-(n-1) squares, or n-by-n lines. I<br>
+suggest that n be at least 12.<br>
+<br>
+The players take turns placing dots on the grid, one dot each move at<br>
+any intersection of the grid that does not yet have a dot on either of<br>
+the two intersecting (horizontal and vertical) grid-lines.<br>
+<br>
+After n dots are placed -- and the dots represent a permutation of<br>
+(1,2,3,...n) -- the strategy portion of the game is over.<br>
+<br>
+Either of the players then draws (n-1) straight line-segments (called<br>
+&quot;permutation lines&quot;), starting at the leftmost dot, a line-segment<br>
+drawn between each dot and the dot on the vertical grid-line<br>
+immediately to the right. (So, you get a zigzag, in lots of cases.)<br>
+<br>
+Then, either player draws (n-1) straight line-segments (also called<br>
+permutation lines), starting at the topmost dot, a line-segment drawn<br>
+between each dot and the dot on the horizontal grid-line immediately<br>
+below.<br>
+<br>
+Now, the two intersecting zigzags are inclosed within a polygon (not<br>
+talking about the convex hull), the perimeter of which is made up of<br>
+permutation lines and/or parts of permutation lines.<br>
+Call each straight line-segment along this perimeter an &quot;edge line&quot;.<br>
+Two permutation lines that meet at one vertex AND have the same slope<br>
+are considered to both be part of one edge-line. Two edge lines may<br>
+come together somewhere other than at a dot (in which case an edge<br>
+line takes up only part of a permutation line).<br>
+<br>
+Player 1 gets as a score the number of edge lines from the leftmost<br>
+dot to the rightmost dot along the TOP of the bounding polygon&#x27;s<br>
+perimeter.<br>
+<br>
+Player 2 gets as a score the number of edge lines from the leftmost<br>
+dot to the rightmost dot along the BOTTOM of the bounding polygon&#x27;s<br>
+perimeter.<br>
+<br>
+Largest score wins.<br>
+<br>
+Note: The bounding polygon may narrow to a single point. Four edge-<br>
+lines are considered to meet at such a point, even though only two<br>
+permutation lines cross there.<br>
+<br>
+<br>
+Example game:<br>
+Let us say we have a grid of 9-by-9 lines.<br>
+Label the grid&#x27;s vertical lines 1 to 9, starting at the bottom. And<br>
+label the grid&#x27;s horizontal lines 1 through 9, starting on the left.<br>
+During play, the dots are drawn at these grid-line intersections:<br>
+(1,6), (2,7), (3,8), (4,4), (5,5), (6,9), (7,1), (8,3), (9,2).<br>
+<br>
+Player 1 gets 5 points. Player 2 gets 5 points. A tie.<br>
+<br>
+Note that the permutation-line segments connecting (1,6) to (2,7) to<br>
+(3,8) count as one edge line. Also note that the permutation line<br>
+(6,9) to (7,1) and the permutation line (4,4) to (8,3) intersect<br>
+within a grid-square, and that we have 4 edge-lines (2 edge lines to<br>
+player 1&#x27;s score, 2 edge lines to player 2&#x27;s score) meeting at this<br>
+intersection.<br>
+<br>
+<br>
+What is a strategy for this game if you are player 1, or if you are<br>
+player 2?<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

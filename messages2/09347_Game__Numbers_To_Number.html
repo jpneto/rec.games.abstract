@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Game&quot; Numbers To Number</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Game&quot; Numbers To Number</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Thu, 4 Feb 2010 10:32:27 -0800 (PST)</p>
+    <hr>
+    <div>This is a game for 2 players. Needed: 3 blank pieces of paper, one for<br>
+each player and one common piece of paper. 2 pens/pencils, one for<br>
+each player.<br>
+<br>
+Let m be an integer decided on by both players. m should probably be<br>
+&gt;= 6. Players also decide who is player 1 and who is player 2 at the<br>
+beginning of the game.<br>
+<br>
+At the beginning of each round, that round&#x27;s &quot;binary list&quot; is blank.<br>
+(The binary list is a series of 1&#x27;s, 0&#x27;s and _&#x27;s written on the common<br>
+piece of paper, one new binary list for each round.)<br>
+<br>
+On a turn, both players secretly write down on their piece of paper<br>
+any number from 1 to 2^m -1 that has yet to be written down by that<br>
+player in the game (in any previous round or in the current round).<br>
+<br>
+The two players&#x27; numbers are then revealed to each other.<br>
+<br>
+If player 1&#x27;s number is &gt; player 2&#x27;s number, then append a 1 to the<br>
+right side of that round&#x27;s binary list.<br>
+<br>
+If player 1&#x27;s number is &lt; player 2&#x27;s number, then append a 0 to the<br>
+right side of that round&#x27;s binary list.<br>
+<br>
+If player 1&#x27;s number is = player 2&#x27;s number, then append a _<br>
+(underscore) to the right side of that round&#x27;s binary list.<br>
+<br>
+After m moves (where one move is both players moving simultaneously)<br>
+have passed in the round, the round is over.<br>
+Treat the binary list as a set of binary numbers, with each _ treated<br>
+as either a 0 or a 1. Convert each binary integer to decimal.<br>
+So, the binary list represents 2^(number of _&#x27;s) different integers.<br>
+Let the set of decimal integers for that round be D.<br>
+<br>
+So, for instance, if the binary list (m=8) looks like this:<br>
+<br>
+01_001_1,<br>
+<br>
+then D for that round contains:<br>
+69, 71, 101, and 103.<br>
+<br>
+Each player gets a point for every element of D that was an integer<br>
+played by the player IN THAT ROUND.<br>
+<br>
+After a round is over, the player crosses off all the numbers played<br>
+by that player in the round (so that the player can tell the<br>
+difference between numbers played in that round and numbers player in<br>
+earlier rounds).<br>
+<br>
+A game consists of floor((2^m -1) /m) rounds.<br>
+<br>
+Add up scores from all rounds to get each player&#x27;s grand score.<br>
+Highest grand score wins.<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

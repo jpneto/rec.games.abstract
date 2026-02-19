@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Let&#x27;s start off with TWIXT</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Let&#x27;s start off with TWIXT</h1>
+    <p><strong>From:</strong> flee@cs.psu.edu (Felix Lee)<br>
+    <strong>Date:</strong> Fri, 13 Nov 1992 22:20:26 GMT</p>
+    <hr>
+    <div>W. Douglas West:<br>
+&gt; Not a draw at all!<br>
+<br>
+Quite right.  I originally meant to draw the correct draw, but on the<br>
+awkward grid I made, the diagonals wouldn&#x27;t work right, so I changed<br>
+the position to something I could draw, not noticing that the new<br>
+drawing was no longer a draw.<br>
+<br>
+Anyway.  Yes, draws are possible on any size board larger than 4x4.<br>
+Build a draw by extending the arms of the &quot;square knot&quot; to the board&#x27;s<br>
+edges.  Note that a chain of N bridges in a fan-fold shape can span<br>
+any horizontal distance between N and 2*N, by flexing some folds<br>
+between the smaller and the larger angle.<br>
+<br>
+(Puzzle: Take a chain of N bridges and put one end at (0, 0).  Where<br>
+are all the places the other end can be?  Related puzzle: Given a<br>
+point (x, y), what&#x27;s the shortest chain that will connect it to the<br>
+origin?)<br>
+<br>
+How can we make draws illegal in Twixt?  Consider this rule:<br>
+<br>
+A player is not allowed to make a move that completely blocks off his<br>
+opponent, if the move doesn&#x27;t win.  So, for example, in<br>
+   .   b   X-_ .   .   .<br>
+              --__<br>
+   .   O   .   a  -X   .<br>
+      /<br>
+   . / c   .   .   .   .<br>
+    /<br>
+   O   .   X   O-_ .   .<br>
+          /       --__<br>
+   .   . / .   .   .  -O<br>
+        /<br>
+   .   X   .   .   .   .<br>
+it&#x27;s illegal for X to move on the square marked &quot;a&quot;, but it<br>
+would be legal if there were an X on &quot;b&quot;.<br>
+<br>
+Now, note also that it&#x27;s illegal for O to move on square &quot;c&quot;.  This<br>
+raises the question: does there exist a position where prohibited<br>
+moves are the only useful moves a player can make?  If so, then this<br>
+position is also a draw.  In that case, we would need either a<br>
+stronger or a weaker anti-draw rule.<br>
+--<br>
+<br>
+<br>
+</div>
+</body>
+</html>

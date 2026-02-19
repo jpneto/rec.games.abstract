@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Othello</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Othello</h1>
+    <p><strong>From:</strong> jm &lt;jm@alb.fr&gt;<br>
+    <strong>Date:</strong> Sun, 25 May 2008 19:08:48 +0200</p>
+    <hr>
+    <div>Dear sir,<br>
+<br>
+Thanks you very much for your answer, you gave me very interesting tricks.<br>
+<br>
+I have just a question about this part :<br>
+<br>
+ &gt;      2. For positions with N empty spaces (starting with N=1 and<br>
+ &gt;         moving up), let value be determined by the values of positions<br>
+ &gt;         reachable in one move (by placing a piece in one empty space).<br>
+<br>
+When you say to place a piece in one empty space, you mean to try all <br>
+the possibilities with the current color and do an average of them ?<br>
+<br>
+<br>
+Best regards,<br>
+<br>
+JM<br>
+<br>
+<br>
+<br>
+Torben gidius Mogensen a crit :<br>
+&gt; jm &lt;jm@alb.fr&gt; writes:<br>
+&gt; <br>
+&gt;&gt; I am a student and I have to do a strong Othello software.<br>
+&gt;&gt; I studied Michael Buro&#x27;s reports, I implemented his technics using<br>
+&gt;&gt; patterns and logistic regression but I have still a 25-30 % of<br>
+&gt;&gt; prediction error, I think is too much.<br>
+&gt;&gt;<br>
+&gt;&gt; Here are the vectors of my regression :<br>
+&gt;&gt;<br>
+&gt;&gt; pattern1_value, pattern2_value,  ... , pattern52_value,  class<br>
+&gt;&gt;<br>
+&gt;&gt; where<br>
+&gt;&gt; patternx_value is the Y+0.5/(N+1.0) - 0.5,  with Y=the number of<br>
+&gt;&gt; victories for this pattern, N the total number of positions where this<br>
+&gt;&gt; pattern appear<br>
+&gt;&gt;<br>
+&gt;&gt; class = 1 if this position has a majority of victories, 0 otherwise<br>
+&gt;&gt;<br>
+&gt;&gt; I use 13 differents pattern, and with 4 symmetries, I have a 52 vector<br>
+&gt;&gt; values.<br>
+&gt;&gt;<br>
+&gt;&gt; Is it the good way to proceed, or I made something wrong ?<br>
+&gt; <br>
+&gt; Othello is best played by a computer using brute force.  This implies:<br>
+&gt; <br>
+&gt;  - Make a fast move generator.<br>
+&gt; <br>
+&gt;  - Use tables for position evaluation.<br>
+&gt; <br>
+&gt;  - Do complete end-game search using only win/no-win as alpha/beta.<br>
+&gt; <br>
+&gt; The tables you can use are:<br>
+&gt; <br>
+&gt;  - A table assigning values to edge positions.  There are 3^8 = 6561<br>
+&gt;    possible edge positions in one row, so this table is not very<br>
+&gt;    large.  You can let a table assign values to two-deep edge<br>
+&gt;    positions (edge row + next row in), which has 3^16 = 43 million<br>
+&gt;    positions.  This easily fits in RAM on a modern computer.  Let a<br>
+&gt;    program analyse all possible positions offline to build the<br>
+&gt;    table. Use the following strategy to build the table:<br>
+&gt; <br>
+&gt;      1. Assign value to positions with no empty spaces as just the<br>
+&gt;         difference between white and black pieces.<br>
+&gt; <br>
+&gt;      2. For positions with N empty spaces (starting with N=1 and<br>
+&gt;         moving up), let value be determined by the values of positions<br>
+&gt;         reachable in one move (by placing a piece in one empty space).<br>
+&gt; <br>
+&gt;  - Use a table of exceptions.  Let the computer play a large number of<br>
+&gt;    games (against itself or other programs) using, say, four-deep<br>
+&gt;    search.  If the evaluation of a position using four-deep search is<br>
+&gt;    markedly different from the evaluation using no search (leaf-node<br>
+&gt;    evaluation), store the four-deep value in a table using a hash of<br>
+&gt;    the board position as index.  An exception table can make an<br>
+&gt;    opening library superfluous.<br>
+&gt; <br>
+&gt; So, in the end-game you do complete search and before this, you do an<br>
+&gt; N-deep alpha-beta search where you evaluate each leaf-node position in<br>
+&gt; the following way:<br>
+&gt; <br>
+&gt;   1. Hash the position and look in the exception table.  If the<br>
+&gt;      position is there, use the stored value.<br>
+&gt; <br>
+&gt;   2. Otherwise, look up all four edge positions in the edge table and<br>
+&gt;      adding up the results.  Do not attempt to be more intelligent<br>
+&gt;      than that.<br>
+&gt; <br>
+&gt; For the alpha-beta search, evaluate each possible next position using<br>
+&gt; leaf-node evaluation and sort the possible moves by this score.  Then<br>
+&gt; search the next positions in this order.  If the returned value is<br>
+&gt; markedly different from the leaf-node evaluation, add the current<br>
+&gt; position to the exception table.<br>
+&gt; <br>
+&gt; 	Torben<br>
+<br>
+<br>
+</div>
+</body>
+</html>

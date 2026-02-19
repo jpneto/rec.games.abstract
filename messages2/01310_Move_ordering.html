@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Move ordering</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Move ordering</h1>
+    <p><strong>From:</strong> colley@qucis.queensu.ca (Paul Colley)<br>
+    <strong>Date:</strong> Thu, 23 Sep 1993 18:13:22 GMT</p>
+    <hr>
+    <div>I think I now understand Alpha-Beta (thanks, Ken Sloan!).<br>
+<br>
+I&#x27;ve cross-posted to rec.games.abstract because this is relevant to all<br>
+abstract games, not just chess.  Please trim the newsgroups line if<br>
+your posting is non-chess, or chess-only in scope.<br>
+<br>
+The remainder of this posting contains virtually no facts.  It&#x27;s just<br>
+an attempt to start a discussion.<br>
+<br>
+------<br>
+<br>
+It&#x27;s obvious that a trying good moves first improves alpha-beta<br>
+performance.  I&#x27;m somewhat baffled as to what a good move-ordering<br>
+might look like.  It seems like a chicken-and-egg proglem:  How do I<br>
+tell the good moves from the bad BEFORE I do the search?<br>
+<br>
+The best thing I can think of is to make each proposed move, call your<br>
+evaluation function, and sort on this result to get the move-ordering<br>
+for the recursive search.<br>
+<br>
+But doing 30 board evaluations just to get a move ordering seems<br>
+computationally expensive.  Is something simpler usually done?<br>
+Something like &quot;checks, captures, piece moves, pawn moves&quot; (for chess)<br>
+perhaps?<br>
+<br>
+Assuming the second choice, an idea that occurs to me is:<br>
+<br>
+	Take a large database of master-level games, and compare the<br>
+	move made to its position in the ordering of several proposed<br>
+	heuristics.<br>
+<br>
+Hmmm... of course, for the purpose of testing, a program could do this<br>
+on its own searches.  Something like, &quot;in evaluating this position,<br>
+move-ordering heuristic A would have given the result faster than<br>
+heuristic B.&quot;  (But this analysis would only be valid with alpha-beta<br>
+turned off for the test (?)).<br>
+<br>
+Analyzing the program&#x27;s own searches gives results that are 100%<br>
+accurate for the program, but searching a large database would allow<br>
+thousands of times as many moves to be evaluated for their place in the<br>
+ordering.<br>
+<br>
+So, now that I&#x27;ve babbled about some half-baked ideas, what is REALLY<br>
+done?<br>
+<br>
+- Paul Colley<br>
+University:  colley@qucis.queensu.ca<br>
+Home:        pacolley@ember.uucp   watmath!ember!pacolley  +1 613 545 3807<br>
+&quot;Quantum Mechanics:  The dreams stuff is made of&quot;    - Ken Burnside<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: defects in abstract games</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: defects in abstract games</h1>
+    <p><strong>From:</strong> dseal@armltd.co.uk (David Seal)<br>
+    <strong>Date:</strong> 7 Jan 93 13:25:11 GMT</p>
+    <hr>
+    <div>In article &lt;1993Jan6.174837.15285@midway.uchicago.edu&gt;<br>
+kwhyte@arthur.uchicago.edu (Kevin Whyte) writes:<br>
+<br>
+&gt;In article &lt;1993Jan6.085328.28673@risky.ecs.umass.edu&gt; trodrigu@spock.ecs.umass.edu (Tao R or Stephen L) writes:<br>
+&gt;  This is definitely not true.  The games which can be reduced to Nim<br>
+&gt;(Sprouts can&#x27;t, and hasn&#x27;t been solved ... another good game, but the<br>
+&gt;three lives per vertex is too arbitrary to call it perfect.) ...<br>
+<br>
+I wouldn&#x27;t call the &quot;three lives per vertex rule&quot; arbitrary, since it is the<br>
+only number of lives per vertex that leads to an interesting game. I.e. let<br>
+N-Sprouts be the same game as Sprouts, except that each vertex has N lives.<br>
+Then:<br>
+<br>
+  0-Sprouts is uninteresting: it is an immediate loss for the first player.<br>
+<br>
+  1-Sprouts is uninteresting: starting with N spots, the game will always<br>
+  last a total of floor(N/2) moves, ending with the spots joined in pairs.<br>
+<br>
+  2-Sprouts is uninteresting: starting with N spots, the game will always<br>
+  last a total of N moves. (Outline of proof: at any stage in the game, the<br>
+  position consists of a number of chains of 1 or more spots, each with 2<br>
+  lives left, plus a number of loops of 1 or more spots, ech with 0 lives<br>
+  left. Each move either connects the two endpoints of a chain, converting<br>
+  it into a loop, or links two chains into one: i.e. each move reduces the<br>
+  number of chains by 1. The game cannot end until there are no chains left,<br>
+  since a chain can always be converted into a loop by joining its<br>
+  endpoints. So we start with N chains of length 1, lose 1 chain per move<br>
+  and must end with no chains: there are therefore N moves.)<br>
+<br>
+  3-Sprouts is interesting, and is the game usually known as Sprouts.<br>
+<br>
+  N-Sprouts for N=4 and above is uninteresting, since they *always* lead<br>
+  to infinite games provided there was at least one initial spot. (After a<br>
+  move, the newly created spot can always be connected to itself, so there<br>
+  is always another move available.)<br>
+<br>
+David Seal<br>
+dseal@armltd.co.uk<br>
+<br>
+All opinions are mine only...<br>
+<br>
+<br>
+</div>
+</body>
+</html>

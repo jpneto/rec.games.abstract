@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Game: Fractured Toe</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Game: Fractured Toe</h1>
+    <p><strong>From:</strong> **Alexandre Muniz &lt;munizao@cyberhighway.net&gt;<br>
+    <strong>Date:</strong> 16 11 1997 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+Here&#x27;s one I invented when I was 15. It helped make my math class <br>
+bearable.<br>
+<br>
+The goal of Fractured Toe is to place three symbols (x&#x27;s or o&#x27;s or <br>
+whatnot,) in a row, horizontally, vertically, or diagonally. Sound <br>
+familiar?<br>
+<br>
+The initial board consists of a single segment connecting two adjacent <br>
+points on an infinite square grid. (In practice, it can be smaller than <br>
+infinite.)<br>
+<br>
+Players alternate turns. A turn has two stages:<br>
+<br>
+First: placing a symbol. One may place one&#x27;s symbol only in an empty <br>
+square that is adjacent to a segment. For example, if the board is as <br>
+follows,<br>
+<br>
+  +-<br>
+  |o<br>
+<br>
+x may place eir symbol to the left of the o:<br>
+<br>
+ +-<br>
+x|o<br>
+<br>
+Second: placing a segment. The segment must be an edge of a cell in the <br>
+grid that connects to a segment that has already been placed. Using the <br>
+example above, player x may place a segment as below:<br>
+<br>
+ +-<br>
+x|o<br>
+-+<br>
+<br>
+Generally, the second part of the turn involves more strategy than the <br>
+first, as there are always many more legal moves. Often the symbol <br>
+placement is forced.<br>
+Whenever a player places a segment between two adjacent symbols (or <br>
+already available empty cells,) the number of moves available for symbol <br>
+placement is decreased. How should the case in which no legal moves for <br>
+symbol placement remain be resolved? The possibilities I see are:<br>
+<br>
+1) It is illegal to place a segment such that no available cells for <br>
+symbol placement remain. This is the variant I have generally played. <br>
+<br>
+2) If no available cells remain, a player must pass on the symbol <br>
+placement portion of the turn, but must still place a segment.<br>
+<br>
+3) Each player has a counter which is incremented whenever e places a <br>
+segment that opens two cells, and is decremented whenever e places a <br>
+segment that opens no new cells. The counters are initially set to 0 and <br>
+may not become negative. I haven&#x27;t tried this. Setting the second <br>
+player&#x27;s counter initially to 1 might help offset the first player&#x27;s <br>
+advantage while still guaranteeing that symbols can be placed. <br>
+<br>
+<br>
+Another problem is that, quite frequently, situations where both players <br>
+would (as below) have a threat to win in a square if the other player <br>
+first extended a segment there begin to crowd the board.<br>
+<br>
+<br>
+o|o<br>
+ +-<br>
+ |x<br>
+ +<br>
+x|<br>
+<br>
+The game seems too closed as it is without the restriction in laying <br>
+segments that this creates. Perhaps a solution would be to put a mark <br>
+between the square where the mutual threat lies and adjacent cells at <br>
+the time the second threat is created, with a rule that a row of 3 <br>
+spanning this mark would not be a win. <br>
+<br>
+o|o&#x27;<br>
+ +-`<br>
+ |x<br>
+ +<br>
+x|<br>
+<br>
+I&#x27;ve never had a chance to try this variant.<br>
+<br>
+I suspect that optimal play would cause the game to be endless, (at <br>
+least with variant 1 above) but proving that might be difficult. <br>
+<br>
+I would be interested in playing a few games of this by e-mail, but if I <br>
+get too many responses, I will, with permission, refer them to each <br>
+other. Thoughts? Variants? Strategies? Game records?<br>
+Maybe I should work out some sort of notation. <br>
+<br>
+I also want to make a java applet for this game. As I am lazy, I would <br>
+be interested in finding a board game applet out there with source <br>
+available that I can adapt. I&#x27;d prefer GPL or similar, but would settle <br>
+for obtaining-the-kind-permission-of-the-programmer-ware.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Question about retrograde analysis algorithm for endgame databases</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Question about retrograde analysis algorithm for endgame databases</h1>
+    <p><strong>From:</strong> mathpoly@yahoo.com (mathpolymath)<br>
+    <strong>Date:</strong> 26 Apr 2002 11:29:35 -0700</p>
+    <hr>
+    <div>&quot;R Gibert&quot; &lt;gibert@cox.net&gt; wrote in message news:&lt;voLx8.7446$ab.420090@news2.west.cox.net&gt;...<br>
+&gt; The following is what I&#x27;ve worked out:<br>
+&gt; <br>
+&gt; Define the EGTB as an array of unsigned char. Each element has one of 3 types of meanings:<br>
+&gt; (1) 255: Unknown<br>
+&gt; (2) 254: Draw<br>
+&gt; (3) 0-254 : number of ply to mate<br>
+&gt; <br>
+&gt; Step 1: First pass mark all the stalemates as 254, all the mates as 0 and the remainder as 255 for now.<br>
+&gt; <br>
+&gt; Step 2: For the next pass over all the elements if the current element is 255 (unknown) make all the legal moves for the<br>
+&gt; corresponding position and look them up in the table. For all the ones that are mate, select the shortest mate of these. Add 1 to<br>
+&gt; the mate score and store in the table for the current element. If all of them are 254, mark the current element as 254.<br>
+&gt; <br>
+&gt; Step 3: Repeat step 2 until a pass is made without making any changes to the table.<br>
+&gt; <br>
+&gt; Now you have a complete EGTB for a particular type of ending. All the positions that remain with a value of 255 are draws or are<br>
+&gt; &quot;broken&quot;, but for purposes of interpreting 255 when looking up a position legally arrived at, the 255 is interpreted as a draw only.<br>
+&gt; All the positions with a value of 254 are draws. The remainder give the DTM (=Distance To Mate).<br>
+&gt; <br>
+&gt; A legal move can be a capture, so such positions must be looked up in another EGTB table.<br>
+&gt; <br>
+&gt; The reason why we bother with marking positions with 254 as draws is to speed things up. Otherwise, you can simplify further by<br>
+&gt; ignoring this.<br>
+&gt; <br>
+&gt; There are no complications with repetition of position and the 50 move rule is ignored.<br>
+&gt; <br>
+<br>
+Even this version of the retrograde analysis algorithm doesn&#x27;t handle<br>
+the case in an abstract game if repetition draws from different<br>
+positions have different values.  This is not relevant in chess since<br>
+all positions ultimately have a value of -1 (loss), 0 (draw) or 1<br>
+(win).  But imagine a case where you get 0.5 points if you draw when<br>
+you have a certain position, but -0.5 points if you draw in another<br>
+position...<br>
+<br>
+<br>
+</div>
+</body>
+</html>

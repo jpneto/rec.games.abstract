@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Winning Ways</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Winning Ways</h1>
+    <p><strong>From:</strong> RVerlinde@alva-bv.nl (Reinder)<br>
+    <strong>Date:</strong> 03 07 1998 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+In article &lt;359bbb3c.419503742@news.frontiernet.net&gt;, mwdaly@pobox.com wrote:<br>
+<br>
+&gt;<br>
+&gt;Without violating anyone&#x27;s copyright, perhaps someone can explain this<br>
+&gt;comment in the afterward of &quot;Surreal Numbers&quot;, which might move me along.<br>
+&gt;&quot;Every pseudo-number p corresponds to a position in a two-person game<br>
+&gt;between players Left and Right, where the four relations p&gt;0, p&lt;0, p=0,<br>
+&gt;p||0 correspond respectively to the conditions Left wins, Right wins,<br>
+&gt;Second Player wins, First Player wins.&quot;<br>
+&gt;<br>
+Can mathematics be copyrigthed? I am willing to take that risk. Basically,<br>
+both players take turns and the last one with a legal move wins. So, let&#x27;s<br>
+take a nim variant where there are two heaps, every player has his own heap<br>
+and a turn is to take one from one&#x27;s own heap. This game is not too<br>
+difficult to analyze (in fact, it could be used to learn a two-year old<br>
+some concepts on numbers, but it would probably be not interesting enough<br>
+for that, unless it is played with cookies):<br>
+<br>
+Let p be the number of items on my heap minus the number of items on your heap:<br>
+<br>
+p &gt; 0 : my heap is larger than yours; I win, no matter who starts the game.<br>
+p &lt; 0 : my heap is smaller than yours; you win, no matter who starts the game<br>
+p = 0 : both heaps are equally large, he who starts the game looses<br>
+<br>
+p || 0 does not occur with this game. If I remember correctly this is<br>
+called &#x27;p is confused with 0&#x27;. It happens in a simple NIM-game with one<br>
+heap, with one item left.<br>
+<br>
+The fun thing is that one can add games (where each player must play in<br>
+exactly one game in the sum of games): The first game with p = 0 plus the<br>
+second game gives you a game where the beginner wins, e.g. a game with p ||<br>
+0. He ends the second game by taking the bean, and forces his opponent to<br>
+start playing the p == 0 game.<br>
+<br>
+Volume 1 of Winning ways is filled with determining how to add up these<br>
+&#x27;nimbers&#x27; (I haven&#x27;t read &#x27;Surreal numbers&#x27;, but assume that these are the<br>
+same numbers), and classifying games according to their &#x27;nim value&#x27;. This<br>
+leads to categorizations such as &#x27;hot games&#x27;, where making a move is a good<br>
+thing to do. The first game above, for instance, is certainly not hot. If<br>
+my heap has N items, I have N moves there, and there is nothing I nor my<br>
+opponent can do to change that.<br>
+<br>
+Hope this helps a bit,<br>
+<br>
+-- <br>
+Reinder Verlinde<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

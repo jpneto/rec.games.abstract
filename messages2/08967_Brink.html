@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Brink</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Brink</h1>
+    <p><strong>From:</strong> nickobento@gmail.com<br>
+    <strong>Date:</strong> Wed, 15 Apr 2009 09:42:53 -0700 (PDT)</p>
+    <hr>
+    <div>Brink:<br>
+<br>
+Another unplayed, untested idea.  I love the idea of the win condition<br>
+&quot;largest group wins&quot;, because it&#x27;s one of the most intuitive ideas in<br>
+all of game-dom.  But it needs a tweak to make an interesting game.<br>
+One attempt follows.  I hope this one works out because I like its<br>
+concept.<br>
+<br>
+For two players, played with black and white stones on a hexagonal<br>
+tiling.  I don&#x27;t know what the optimal board shape/size will be yet.<br>
+<br>
+Player 1 owns the black stones and player 2 owns the white.<br>
+<br>
+1.  Board begins empty.<br>
+2.  Starting with black, players take turns putting a stone onto any<br>
+empty space.<br>
+3.  Game ends when board is full.<br>
+4.  The player with the largest connected group on the board loses,<br>
+*unless* that group is at least X stones larger than the largest<br>
+connected group of the other color.  In that case, the player with the<br>
+largest group wins.<br>
+<br>
+If the largest groups of both colors are of the same size, then<br>
+compare second-largest groups.  Whoever&#x27;s second-largest group is<br>
+bigger wins.  If *those* are tied, compare 3rd largest groups, etc.<br>
+If it&#x27;s tied all the way down the line, the game is a draw.<br>
+<br>
+The idea is to set the value of X so that there is a good balance<br>
+between trying to make the smallest group and trying to make the<br>
+largest group in order to win.  Obviously, the ideal value for X will<br>
+depend on the board you&#x27;re playing on.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

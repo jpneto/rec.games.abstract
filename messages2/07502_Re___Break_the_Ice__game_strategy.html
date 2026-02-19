@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: &quot;Break the Ice&quot; game strategy</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: &quot;Break the Ice&quot; game strategy</h1>
+    <p><strong>From:</strong> Mike &lt;m.fee@iirrll..ccrrii..nnzz&gt;<br>
+    <strong>Date:</strong> Thu, 10 Aug 2006 12:05:21 +1200</p>
+    <hr>
+    <div>In article &lt;7wpsf91xwj.fsf@ca.icynic.com&gt;, don-ns@iCynic.com says...<br>
+&gt; &quot;Arthur J. O&#x27;Dwyer&quot; &lt;ajonospam@andrew.cmu.edu&gt; writes:<br>
+&gt; &gt;    One thing we humans can handle that the program can&#x27;t, also, is<br>
+&gt; &gt; seeing when there&#x27;s only one &quot;major&quot; arch left, and counting the number<br>
+&gt; &gt; of things that branch off of it. For example,<br>
+&gt; &gt; <br>
+&gt; &gt;      OO.......<br>
+&gt; &gt;      OO.......<br>
+&gt; &gt;      OO.......<br>
+&gt; &gt;      OO.......<br>
+&gt; &gt;      .O.......<br>
+&gt; &gt;      .OOOOOOOO<br>
+&gt; &gt;      .OOOOOOOO<br>
+&gt; &gt;      OO.......<br>
+&gt; &gt;      .OOOOOOOO<br>
+&gt; &gt; <br>
+&gt; &gt; That game board has one arch in the second column, and then eight <br>
+&gt; &gt; independent &quot;branches&quot; coming off of it. We immediately determine that<br>
+&gt; &gt; the game will last exactly nine more moves (since each move knocks out<br>
+&gt; &gt; exactly one branch), and so we know who will win. But the computer<br>
+&gt; &gt; would have to examine (on the order of) 9-factorial game trees to<br>
+&gt; &gt; come to the same conclusion via alpha-beta!<br>
+&gt; <br>
+&gt; There are a few steps involved in a human analysis of that position,<br>
+&gt; and I think you should be able to mimic most of the steps in a program.<br>
+&gt; Indeed, you seem to have implicitly assumed the program was doing the<br>
+&gt; first step, which is to recognise various classes of equivalent single<br>
+&gt; moves.  E.g., c1, d1, e1, etc., all lead to the same position, so it<br>
+&gt; doesn&#x27;t matter which of them is chosen.<br>
+&gt; <br>
+&gt; The next step would seem to be to recognise independent classes of moves.<br>
+&gt; That is, if one of the moves c1...i1 is chosen, and the move a6 is also<br>
+&gt; chosen, the resulting position is the same regardless of what order they<br>
+&gt; are chosen in.  As someone else has pointed out in this thread, that&#x27;s<br>
+&gt; why this position really leads to only 2^8 or so positions, reflecting<br>
+&gt; which of the 8 independent classes of moves have been taken so far.<br>
+&gt; <br>
+&gt; The final step would be to recognise that the classes themselves are<br>
+&gt; interchangeable and thus all that really matters is how many of the<br>
+&gt; moves have been made, not which ones.  That&#x27;s probably harder to write<br>
+&gt; define in a way that&#x27;s easy to analyse in general, but you might not<br>
+&gt; need that level of analysis to get acceptable performance.<br>
+&gt; <br>
+&gt; 	-- Don.<br>
+&gt; <br>
+&gt; -------------------------------------------------------------------------------<br>
+&gt; -- Don Woods (don-ns@iCynic.com)     Note: If you reply by mail, I&#x27;ll get to<br>
+&gt; -- http://www.iCynic.com/~don	     it sooner if you remove the &quot;hyphen n s&quot;<br>
+&gt; <br>
+On the other hand, even for very small boards, a human can have very little chance of determining the winner or optimal <br>
+move. For example, what is the best move for the first player on a 5x5 board - and how much will they lose by with <br>
+optimal play. Or, in the position:<br>
+<br>
+xxxxx<br>
+xxxxx<br>
+xxxxx<br>
+xxxxx<br>
+xx.xx<br>
+<br>
+what move (with optimal play afterwards) leads to a win in 14 moves, and what move leads to a loss in 15?<br>
+<br>
+A possible way to seek a suitable scoreing heuristic for an alpha-beta search might be to solve the game for smaller <br>
+boards (up to 6x6 appears practical) and search for patterns in the winning/losing moves that may, or may not, be <br>
+applied to larger boards. If this approach works then you could tune the scoring parameters for larger boards by <br>
+playing different versions of the program against itself. On the other hand, combinatorial games theory has shown some <br>
+games that show no discernable pattern in optimal play. In these games, there is no short-cut to knowing the complete <br>
+game tree.<br>
+<br>
+Mike<br>
+<br>
+<br>
+</div>
+</body>
+</html>

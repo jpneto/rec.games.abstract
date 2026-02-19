@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: &quot;Break the Ice&quot; game strategy</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: &quot;Break the Ice&quot; game strategy</h1>
+    <p><strong>From:</strong> &quot;Arthur J. O&#x27;Dwyer&quot; &lt;ajonospam@andrew.cmu.edu&gt;<br>
+    <strong>Date:</strong> Tue, 1 Aug 2006 11:44:12 -0400 (EDT)</p>
+    <hr>
+    <div><br>
+[Dave, your headers said your e-mail was copied to r.g.a and c.p, but<br>
+I haven&#x27;t seen it on my server yet. Copying the whole message...]<br>
+<br>
+On Mon, 31 Jul 2006, Dave Rusin wrote:<br>
+&gt; Arthur O&#x27;Dwyer writes:<br>
+&gt;<br>
+&gt;&gt;   I&#x27;m trying, just for fun, to make a computer player for an abstract<br>
+&gt;&gt; game similar to Milton Bradley&#x27;s &quot;Dont Break the Ice&quot;<br>
+&gt;<br>
+&gt; Interesting. Did you run an analysis of the commercial game itself?<br>
+&gt; (6x6 board, with the center 2x2 block locked into one unit and untouchable<br>
+&gt; by the players).<br>
+<br>
+   No; when I got the idea, I&#x27;d forgotten the details of the commercial<br>
+game. (And IIRC, the point of the commercial game is much more about<br>
+physical coordination than abstract strategy; even if you can predict<br>
+the whole game in theory, your hand could still slip and knock out a<br>
+few extra blocks.)<br>
+<br>
+&gt; I played against your program on square boards up to 9x9; I always won<br>
+&gt; (going first) and it wasn&#x27;t especially hard. I didn&#x27;t really study your<br>
+&gt; source code -- did you examine the search space all the way or just<br>
+&gt; use heuristics past a certain depth?<br>
+<br>
+   It only does alpha-beta up to a certain depth, and that depth was 2<br>
+by default -- i.e., not far at all. At the leaves at that depth, it<br>
+looks for the &quot;one arch left&quot; condition that it knows is a win, but<br>
+that&#x27;s pretty much all it has to distinguish between good and bad<br>
+positions. So most of the time it&#x27;s moving &quot;randomly,&quot; with no way to<br>
+tell whether it&#x27;s winning or losing. Like I said, alpha-beta /really/<br>
+fails here.<br>
+<br>
+&gt; If it&#x27;s really true that<br>
+&gt; the first player can always win,<br>
+<br>
+   It&#x27;s not, in general. Trivially, the 2x2 board is a second-player<br>
+win (as is the 1x1! :) The 3x3 is a first-player win. I think the 4x4<br>
+is a second-player win.<br>
+<br>
+&gt; it might be worth experimenting with<br>
+&gt; rule changes to come up with a rule set which is &quot;more even&quot; (e.g. which<br>
+&gt; favors player 2 for some sizes of board, which would perhaps suggest that<br>
+&gt; the player who can force a win would have to play very carefully to do so).<br>
+&gt;<br>
+&gt; Sample: I won when trying my first 9x9. My moves (and computer&#x27;s response):<br>
+&gt; B9 (H7)<br>
+&gt; D8 (I9)<br>
+&gt; C5 (H9)<br>
+&gt; E4 (G9)<br>
+&gt; F3 (I6)<br>
+&gt; A2 (loses)<br>
+&gt;<br>
+&gt; My strategy is pretty much one of eliminating as many long rows/columns<br>
+&gt; as possible except along the edges; then when there are few such rows<br>
+&gt; left it&#x27;s possible for me as a human to work out the whole game tree<br>
+&gt; (I can handle up to a depth of maybe 2 moves per player, tops).<br>
+&gt; That&#x27;s why with each move I am destroying yet another full row and<br>
+&gt; another full column. I don&#x27;t know why that should be an optimal strategy!<br>
+<br>
+   One thing we humans can handle that the program can&#x27;t, also, is<br>
+seeing when there&#x27;s only one &quot;major&quot; arch left, and counting the number<br>
+of things that branch off of it. For example,<br>
+<br>
+     OO.......<br>
+     OO.......<br>
+     OO.......<br>
+     OO.......<br>
+     .O.......<br>
+     .OOOOOOOO<br>
+     .OOOOOOOO<br>
+     OO.......<br>
+     .OOOOOOOO<br>
+<br>
+That game board has one arch in the second column, and then eight <br>
+independent &quot;branches&quot; coming off of it. We immediately determine that<br>
+the game will last exactly nine more moves (since each move knocks out<br>
+exactly one branch), and so we know who will win. But the computer<br>
+would have to examine (on the order of) 9-factorial game trees to<br>
+come to the same conclusion via alpha-beta!<br>
+<br>
+&gt; What is abstractly a minor issue, but which human players may dislike,<br>
+&gt; is that your program is completely deterministic: it searches the<br>
+&gt; game tree in the same order all the time, and in particular takes the<br>
+&gt; rows and columns in order, so that it tends to respond with cubes<br>
+&gt; near the lower right. Some randomization would make it strike out into<br>
+&gt; other regions when there is no reason not to.<br>
+<br>
+   Yeah, well, at the moment what I as a human player dislike is the fact<br>
+that the computer is so horribly easy to beat. Once it can win a few games<br>
+once in a while, it might be worth investing in a random number generator.<br>
+:)<br>
+<br>
+<br>
+&gt;<br>
+&gt; dave<br>
+&gt;<br>
+&gt;<br>
+<br>
+-Arthur<br>
+<br>
+<br>
+</div>
+</body>
+</html>

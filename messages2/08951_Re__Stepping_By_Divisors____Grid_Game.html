@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Stepping By Divisors -- Grid Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Stepping By Divisors -- Grid Game</h1>
+    <p><strong>From:</strong> Don Woods &lt;don-ns@iCynic.com&gt;<br>
+    <strong>Date:</strong> 18 Mar 2009 22:43:03 -0700</p>
+    <hr>
+    <div>I&#x27;ll start by suggesting that qqquet&#x27;s designs might be easier to follow<br>
+if he&#x27;d describe them more as games and less as mathematical theorems. :-)<br>
+So let me try to rephrase the rules for this one.<br>
+<br>
+Pick a size m, make an m-by-m grid.  Choose a player to go first.  That<br>
+player places a 1 in any square of the grid, then in clockwise order<br>
+players take turns writing 2, 3, ... in order to m^2, one number per<br>
+square.<br>
+<br>
+Then the first player (or maybe just continuing clockwise if m^2 does<br>
+not divide evenly by the number of players?) chooses any square and<br>
+crosses it out, announcing &quot;1&quot;.  Continuing clockwise, each player on<br>
+his turn crosses out another square, which must be orthogonally<br>
+adjacent to at least one square that was already crossed out.  Then<br>
+he announces any integer divisor of the newly crossed-out number,<br>
+*except* the number announced by the immediately preceding player.<br>
+He then scores points equal to the absolute difference between his<br>
+number and the previous one, and play proceeds to the next player.<br>
+When all squares have been crossed out, the LOW score wins.<br>
+<br>
+There, did I miss anything?<br>
+<br>
+Now, as to the game itself: I think you need to ensure an equal number<br>
+of turns for each player, unless going early is somehow enough of an<br>
+advantage to make up for having to take one more turn than a later<br>
+player.  But I think there are more serious issues, like the fact that<br>
+in a two-player game, one player places all the even numbers in the<br>
+first stage, while the other player places all but one of the primes.<br>
+The primes are of course critical since they have only two possible<br>
+factors, so you either want to use them as &quot;1&quot; or else play a careful<br>
+dance hopping between adjacent primes to avoid big deltas, so the<br>
+locations of the primes seem far more important than the others.<br>
+<br>
+But that&#x27;s another thing, how much is really added by doing all this on<br>
+a square grid and constraining which squares can be chosen during the<br>
+second stage?  It affects the game for a while, but eventually more and<br>
+more squares are adjacent to the expanding used region.  Maybe that&#x27;s<br>
+the idea, and the players jockey for good moves in the early stage and<br>
+then mostly alternate between 2 and 1 in the latter part of the game.<br>
+But it feels like extra complexity for not a lot of gain.  And the whole<br>
+first part, filling in the grid, is a lot of effort for little return,<br>
+since only a small part of the grid will be used during the early part<br>
+of the game -- and that part is chosen by the first player -- with the<br>
+rest mostly being available all at once.<br>
+<br>
+How about this as a more streamlined approach:<br>
+<br>
+Write the numbers from 1 to N, where N is a multiple of the number of<br>
+players.  Pick a starting player, then players take turns choosing numbers<br>
+by marking them (with initials or a color), one player per number, until<br>
+all the numbers have been chosen.  The player who chose &quot;1&quot; then begins<br>
+the second phase by crossing off the &quot;1&quot;, announcing &quot;1&quot;, and scoring 1<br>
+point.  Play then proceeds *clockwise* (i.e., NOT based on who chose &quot;2&quot;),<br>
+with each player in turn crossing off ANY one of his chosen numbers not<br>
+yet crossed off, announcing any positive integer divisor of that number<br>
+that is NOT equal to the one announced by the previous player, and scoring<br>
+the absolute difference between that divisor and the previous one.  When<br>
+all numbers have been crossed off, low score wins.<br>
+<br>
+Note that this avoids the problem of the &quot;1&quot; being last by requiring it<br>
+to be first.<br>
+<br>
+	-- Don.<br>
+<br>
+qqquet@mindspring.com writes:<br>
+&gt; Here is a game for any plural number of players. Start with an m-by-m<br>
+&gt; grid drawn on paper. (I suggest that m be about 8 to 10 for<br>
+&gt; beginners.) Draw the grid large enough so that two integers can be<br>
+&gt; written in each square.<br>
+&gt; <br>
+&gt; In the first phase of the game, players take turns writing the<br>
+&gt; positive integers 1 to m^2 in order into the squares of the grid. One<br>
+&gt; number is placed in any empty square of the grid on each move. (So, if<br>
+&gt; there are 2 players, one player writes in the odd numbers, and the<br>
+&gt; other player writes in the even numbers.)<br>
+&gt; <br>
+&gt; Let the variable d (d for &#x27;divisor&#x27;) start the second phase of the<br>
+&gt; game with a value of 1.<br>
+&gt; <br>
+&gt; At the start of the second phase of the game, player 1 then writes the<br>
+&gt; value of d, which is 1, alongside any number in the grid (in the same<br>
+&gt; square as the number).<br>
+&gt; <br>
+&gt; The players thereafter continue to take turns. On a move, a player<br>
+&gt; chooses any square of the grid that has not yet had a second number<br>
+&gt; written in it, but is adjacent to (in the direction of above, below,<br>
+&gt; right of, or left of) any square that has had a second number written<br>
+&gt; in it.<br>
+&gt; He/she then writes down in the square (with one number) any* positive<br>
+&gt; divisor of the number in that square.<br>
+&gt; The variable d then becomes that divisor.<br>
+&gt; * The value of d, however, must change each move. The same divisor<br>
+&gt; number cannot be written in two squares on two consecutive moves.<br>
+&gt; <br>
+&gt; The absolute value of the difference between the older recent value of<br>
+&gt; d (the divisor written by the previous player to move) and the new<br>
+&gt; value of d (the divisor written by the current player moving) is then<br>
+&gt; added to the currently moving player&#x27;s score.<br>
+&gt; Note: The goal of the game is to get the LOWEST score. So, it is<br>
+&gt; advantageous to change the value of d by as little as possible on a<br>
+&gt; move. (Changing the value of d by 1 is the best a player can hope for<br>
+&gt; on a move.)<br>
+&gt; <br>
+&gt; The game continues until each square has exactly two numbers in it.<br>
+&gt; (So, there are a total of m^2 moves in the first phase of the game,<br>
+&gt; and m^2 moves in the second phase of the game.)<br>
+&gt; <br>
+&gt; As I said before, the player with the lowest score wins.<br>
+&gt; <br>
+&gt; I would suggest that the divisor numbers (the values of d) be written<br>
+&gt; smaller than the numbers written during phase 1 of the game, or be<br>
+&gt; written in another color than the first numbers placed in the squares.<br>
+&gt; <br>
+&gt; PS: The only problem I can see with this game is if the last square to<br>
+&gt; get a second number has a 1 in it, and the previous (next to last)<br>
+&gt; player to move placed a 1 as the second (divisor) number in some<br>
+&gt; square. (This is a problem because d must change each move.)<br>
+&gt; Then, in that case, the second phase of the game ends after m^2 - 1<br>
+&gt; moves.<br>
+&gt; <br>
+&gt; Thanks,<br>
+&gt; Leroy Quet<br>
+<br>
+<br>
+</div>
+</body>
+</html>

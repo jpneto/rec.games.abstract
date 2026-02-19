@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: &quot;Justice&quot; and &quot;Injustice&quot; -- new games, created by wlod (wh)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: &quot;Justice&quot; and &quot;Injustice&quot; -- new games, created by wlod (wh)</h1>
+    <p><strong>From:</strong> Wlodzimierz Holsztynski &lt;sennajawa@gmail.com&gt;<br>
+    <strong>Date:</strong> Thu, 14 Jun 2007 02:44:05 -0000</p>
+    <hr>
+    <div>On Jun 13, 7:40 pm, quasi &lt;q...@null.set&gt; wrote:<br>
+&gt; On Thu, 14 Jun 2007 01:25:10 -0000, Wlodzimierz Holsztynski<br>
+&gt;<br>
+&gt; &lt;sennaj...@gmail.com&gt; wrote:<br>
+&gt; &gt;On Jun 13, 7:07 pm, quasi &lt;q...@null.set&gt; wrote:<br>
+&gt; &gt;&gt; On Thu, 14 Jun 2007 00:54:45 -0000, Wlodzimierz Holsztynski<br>
+&gt;<br>
+&gt; &gt;&gt; &lt;sennaj...@gmail.com&gt; wrote:<br>
+<br>
+&gt; &gt;&gt; &gt;My new invention, the games &quot;Justice&quot; and<br>
+&gt; &gt;&gt; &gt;&quot;Injustice&quot;, [...]<br>
+&gt;<br>
+&gt; &gt;&gt; &gt;You start the game with any number of plates<br>
+&gt; &gt;&gt; &gt;with (small :-) stones on them. A move consists<br>
+&gt; &gt;&gt; &gt;of removing any positive number of stones<br>
+&gt; &gt;&gt; &gt;from exactly one plate.<br>
+<br>
+Pedantry: there should be at least one<br>
+stone in the initial position.<br>
+<br>
+&gt; &gt;&gt; &gt;JUSTICE: if after your move there is the same<br>
+&gt; &gt;&gt; &gt;number of stones on each of the plates then<br>
+&gt; &gt;&gt; &gt;you ** WIN ** (and your opponent loses).<br>
+&gt;<br>
+&gt; &gt;&gt; &gt;INJUSTICE: if after your move there is the same<br>
+&gt; &gt;&gt; &gt;number of stones on each of the plates then<br>
+&gt; &gt;&gt; &gt;your opponent wins, you ** LOSE **.<br>
+&gt;<br>
+&gt; &gt;&gt; You can&#x27;t win for losing.<br>
+&gt;<br>
+&gt; &gt;&gt; quasi<br>
+&gt;<br>
+&gt; &gt;I have introduced not one, but TWO<br>
+&gt; &gt;similar but different games. The same<br>
+&gt; &gt;holds for Nim and anti-Nim:<br>
+&gt;<br>
+&gt; &gt;in Nim you win by taking the last stone;<br>
+&gt; &gt;in anti-Nim you lose by takieng the last stone<br>
+&gt; &gt; -- two similar but different games.<br>
+&gt;<br>
+&gt; &gt;In my games it&#x27;s not the last stone, which<br>
+&gt; &gt;is critical, but the stone, which removal<br>
+&gt; &gt;causes equality of all plates.<br>
+&gt;<br>
+&gt; [...]<br>
+&gt; I must be confused about the rules.<br>
+&gt;<br>
+&gt; Can you give an example of a small game, played out.<br>
+&gt; Don&#x27;t worry about optimal play -- I just need to<br>
+&gt; understand the rules.<br>
+&gt;<br>
+&gt; quasi<br>
+<br>
+When one of the plates is empty,<br>
+then in the case of &quot;justice&quot;<br>
+you really get Nim; and in the case<br>
+on &quot;injustice&quot; you get the anti-Nim game.<br>
+This gives you plenty of examples already.<br>
+<br>
+It seems that the most important<br>
+parameter of justice/injustice is<br>
+minPlate -- the minimal number of<br>
+stones on any of the plates at the initial<br>
+position. When minPlate=0 then you get<br>
+Nim/anti-Nim. The the winning strategy<br>
+is well known. Thus it is natural to consider<br>
+next the games with minPlate=1.<br>
+<br>
+BTW, a minor, trivial point about the positions<br>
+which have equal number of stones in the<br>
+initial 0-th position: I say &quot;don&#x27;t worry, just<br>
+play the game&quot;. Seriously, we look at question<br>
+of equality of the plates only AFTER a move.<br>
+Initially, there was no move and no issue.<br>
+<br>
+OK, now we may look at a specific instance,<br>
+when there are two plates, and the initial<br>
+distribution of stones is:<br>
+<br>
+(P0)    1  1<br>
+<br>
+after move 1 the position may be<br>
+<br>
+(P1)    1  0<br>
+<br>
+the game goes on, the next position must be:<br>
+<br>
+(P2)    0  0<br>
+n<br>
+If it was &quot;justice&quot; the the 2nd player won.<br>
+If they played &quot;injustice&quot; then the first<br>
+player won.<br>
+<br>
+In general, if in the initial position<br>
+there are n plates, each with 1 stone,<br>
+then:<br>
+<br>
+for &quot;justice&quot;, the position is won<br>
+for the 1st player when n were odd; and<br>
+for the 2nd player if n were even.<br>
+<br>
+for &quot;injustice&quot; the position is won for<br>
+the 1st player if n is even, and it&#x27;s<br>
+won for the 2nd player if n is even.<br>
+<br>
+***<br>
+<br>
+Consider the initial position with 2 plates:<br>
+<br>
+(P0)   a  b<br>
+<br>
+Consider &quot;justice&quot;. If a =/= b  then the first<br>
+player wins in one move by turning to:<br>
+<br>
+(P1)  min(a b)   min(a b)<br>
+<br>
+If a=b then any move by 1st player leads<br>
+to a one-move win for the 2nd player.<br>
+<br>
+***<br>
+<br>
+The 2-plate injustice is more complicated.<br>
+In the position:<br>
+<br>
+(P0)  a  0<br>
+<br>
+the first player is lost for a=1<br>
+and wins if a &gt; 1 (for a=0 there is<br>
+no game--there should be at least 1 stone<br>
+on one of the plates).<br>
+<br>
+In the position<br>
+<br>
+(P0)    a  1<br>
+<br>
+the first player is lost for a=0<br>
+and wins if a &gt; 0.<br>
+<br>
+***<br>
+<br>
+Continue with the 2-plate injustice.<br>
+<br>
+(P0)  a  b<br>
+<br>
+where, say,  a &gt;/ b &gt; 1. Neither player<br>
+wants to leave a configuration  A  B,<br>
+where min(A B) &lt; 2, except for the winning<br>
+configurations  1  0  and  0  1, or else<br>
+the opponent on the next move will be able<br>
+to reach  1  0  or  0  1, and win.<br>
+<br>
+We see that position:<br>
+<br>
+(P0)  2  2<br>
+<br>
+is lost for the first player.<br>
+<br>
+It follows that position<br>
+<br>
+(P0)  a  2<br>
+<br>
+is won for the first player, for any a &gt; 2.<br>
+<br>
+Etc., i.e., by induction, we get the<br>
+following modest theorem:<br>
+<br>
+THEOREM  The 2-plate injustice game, with the<br>
+=======  initial position:<br>
+<br>
+(P0)  a  b<br>
+<br>
+is won for the first player in each of the<br>
+following cases:<br>
+<br>
+(i) a =/= b, and min(a b) &gt; 1 -- then<br>
+passing to position  (P1) min(a b) min(a b)<br>
+is the winning move);<br>
+<br>
+(ii) min(a b) &lt; 2, while max(a b) &gt; 0 -- then<br>
+passing to  1  0  or  to  0  1  wins for<br>
+the first player.<br>
+<br>
+In all other cases of (P0) the 1st player<br>
+is lost, and the 2nd can win.<br>
+<br>
+Best regards,<br>
+<br>
+Wlod<br>
+<br>
+(Wlodzimierz Holsztynski)<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

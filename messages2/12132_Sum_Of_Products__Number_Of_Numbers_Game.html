@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sum Of Products, Number Of Numbers Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Sum Of Products, Number Of Numbers Game</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Wed, 3 Aug 2011 08:35:41 -0700 (PDT)</p>
+    <hr>
+    <div>Here is a game for 2 players played using an n-by-n grid drawn on<br>
+paper.<br>
+<br>
+Players take turns. On a turn a player writes any one integer, 1 to n,<br>
+into any empty square of the grid.<br>
+<br>
+After n^2 total turns, the game is over.<br>
+<br>
+Player 1 gets the sum of the scores for each row. The score for a row<br>
+is (the number of 1&#x27;s in the row) * (the number of 2&#x27;s in the row) *<br>
+(the number of 3&#x27;s in the row) *...(the number of m&#x27;s in the row),<br>
+where m is the largest integer such that all integers 1 through m<br>
+occur in that row.<br>
+<br>
+Player 2 gets the sum of the scores for each column. The score for a<br>
+column is (the number of 1&#x27;s in the column) * (the number of 2&#x27;s in<br>
+the column) * (the number of 3&#x27;s in the column) *...(the number of m&#x27;s<br>
+in the column), where m is the largest integer such that all integers<br>
+1 through m occur in that column.<br>
+<br>
+A player gets no points for a row/column if there are no 1&#x27;s in that<br>
+row/column.<br>
+<br>
+The player with the largest score wins.<br>
+<br>
+And example game:<br>
+<br>
+1 1 2 1 2 5<br>
+1 3 2 1 3 5<br>
+5 1 1 1 3 1<br>
+1 2 1 2 1 2<br>
+2 1 1 2 1 1<br>
+2 3 5 3 4 1<br>
+<br>
+Player 1 gets:<br>
+3*2 + 2*1*2 + 4 + 3*3 + 4*2 + 1*1*2*1*1<br>
+=<br>
+33 points.<br>
+<br>
+Player 2 gets:<br>
+3*2 + 3*1*2 + 3*2 + 3*2*1 + 2*1*2*1 + 3*1<br>
+=<br>
+31 points.<br>
+<br>
+Player 1 wins.<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+</div>
+</body>
+</html>

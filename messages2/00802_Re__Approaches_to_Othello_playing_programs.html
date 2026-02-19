@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Approaches to Othello playing programs</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Approaches to Othello playing programs</h1>
+    <p><strong>From:</strong> dvl@hpcupt1.cup.hp.com (Doug Larson)<br>
+    <strong>Date:</strong> Fri, 19 Feb 1993 22:35:22 GMT</p>
+    <hr>
+    <div>&gt; &gt;<br>
+&gt; &gt;Hmm.  Sorry but that&#x27;s wrong.  The average number of moves available to a<br>
+&gt; &gt;player at any stage of the game is roughly 13.  Therefore the branching<br>
+&gt; &gt;factor is about 3.46 = square root of 13.<br>
+&gt; &gt;<br>
+<br>
+&gt; Now you have me confused!  Why do you take the square root of the number<br>
+&gt; of moves available?  Isn&#x27;t the average branching factor just the average<br>
+&gt; number of moves available?  That&#x27;s how much the game tree &quot;branches&quot; from<br>
+&gt; a node to its children.<br>
+<br>
+&gt; 	David<br>
+<br>
+<br>
+Probably the reason was that the amount of computation necessary for<br>
+doing lookahead is roughly proportional to the square root of the<br>
+average branching factor.<br>
+<br>
+For more detailed analysis I suggest:<br>
+<br>
+&quot;An Analysis of Alpha-Beta Pruning&quot; by Donald E. Knuth and Ronald W. Moore<br>
+	in &#x27;Artificial Intelligence&#x27; 6(1975), pp 293-326<br>
+<br>
+<br>
+	 &quot;Put one pound of Alpha Beta Prunes<br>
+ 	   in a jar or dish that has a cover.<br>
+ Pour one quart of boiling water over prunes.<br>
+The longer prunes soak, the plumper they get.<br>
+	        Alpha Beta Acme Markets, Inc.<br>
+		         La Habra, California&quot;<br>
+<br>
+( The above quote is a lead-in to the article.  I&#x27;ve always liked<br>
+  Knuth&#x27;s lead-in quotes! ).<br>
+<br>
+	Doug Larson<br>
+<br>
+<br>
+</div>
+</body>
+</html>

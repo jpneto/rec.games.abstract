@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: gtkboard *and* pentominoes</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: gtkboard *and* pentominoes</h1>
+    <p><strong>From:</strong> arvindn1@yahoo.com (Arvind Narayanan)<br>
+    <strong>Date:</strong> 22 Aug 2003 23:57:47 -0700</p>
+    <hr>
+    <div>&quot;Arthur J. O&#x27;Dwyer&quot; &lt;ajo@andrew.cmu.edu&gt; wrote in message news:&lt;Pine.LNX.4.55L-032.0308141023000.1995@unix48.andrew.cmu.edu&gt;...<br>
+&gt; On Wed, 13 Aug 2003, Bob Harris wrote:<br>
+&gt; &gt;<br>
+&gt; [snip]<br>
+&gt; snprintf() is standard C99, and (all of my copies of) gcc support it<br>
+&gt; (even though gcc isn&#x27;t C99-compliant).  But it wasn&#x27;t in C89, the standard<br>
+&gt; that most everybody uses.  [It&#x27;s safer than plain sprintf(), which is why<br>
+&gt; they recommended it.]<br>
+That&#x27;s true. With sprintf() it is difficult to know before hand that you<br>
+won&#x27;t exceed the size of the string. If you resolve never to use string <br>
+functions without an &#x27;n&#x27; in them, you&#x27;ll solve most of your buffer overflow<br>
+bugs :)<br>
+&gt; <br>
+&gt; But yeah, gtkboard #includes something called &lt;glib.h&gt; and uses functions<br>
+&gt; like g_strdup(), which look to me like garbage-collection.  I sure hope<br>
+As another poster mentioned glib exists for windows also.<br>
+&gt; I&#x27;m right about that. ;-)  And the Gtk interface stuff is woven into<br>
+&gt; the getmove() functions pretty tightly.<br>
+Not so! How can that be when game.h doesn&#x27;t #include &lt;gtk.h&gt;?<br>
+Currently getmove_kb() requires gdkkeysyms.h, but adding a trivial<br>
+abstraction layer will remove that dependency, which I&#x27;m planning<br>
+to do soon.<br>
+<br>
+Arvind<br>
+<br>
+<br>
+</div>
+</body>
+</html>

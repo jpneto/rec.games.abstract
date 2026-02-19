@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Lines-From-Lines Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Lines-From-Lines Game</h1>
+    <p><strong>From:</strong> &quot;Man.&quot; &lt;marty.musatov@gmail.com&gt;<br>
+    <strong>Date:</strong> Mon, 5 Apr 2010 22:01:09 -0700 (PDT)</p>
+    <hr>
+    <div>On Apr 4, 11:02 am, Leroy Quet &lt;qqq...@mindspring.com&gt; wrote:<br>
+&gt; PS: I suggest that the lines be drawn by a straight-edge.<br>
+&gt;<br>
+&gt; Thanks,<br>
+&gt; Leroy Quet<br>
+&gt;<br>
+&gt; Leroy Quet wrote:<br>
+&gt; &gt; Sorry if this is unoriginal.<br>
+&gt;<br>
+&gt; &gt; Here is a game for two players. It is played on an n-by-n grid drawn<br>
+&gt; &gt; (practically perfectly) on paper. I suggest that n be at least 8.<br>
+&gt;<br>
+&gt; &gt; Note: (The lines of the grid do not come into play here. Only the<br>
+&gt; &gt; &quot;grid-vertices&quot; {where the lines of THE GRID intersect} are important<br>
+&gt; &gt; as far as the grid is concerned.)<br>
+&gt; &gt; By &quot;lines&quot; below, I am referring to straightline-segments drawn by<br>
+&gt; &gt; players during play.<br>
+&gt;<br>
+&gt; &gt; The first player to move draws alinefrom any grid-vertex to any<br>
+&gt; &gt; other grid-vertex.<br>
+&gt;<br>
+&gt; &gt; The players thereafter take turns drawing lines, onelineper move,<br>
+&gt; &gt; such that:<br>
+&gt; &gt; * eachlinestarts at a grid-vertex intersected by any previously<br>
+&gt; &gt; drawnline(drawn by either player).<br>
+&gt; &gt; * eachlineends at any grid-vertex not yet touched by aline.<br>
+&gt; &gt; * nolinecrosses anotherlineor coincides with anotherline.<br>
+&gt; &gt; * nolinestarts/ends at or crosses anotherline&#x27;send-point (whether<br>
+&gt; &gt; or not yet anotherlinepasses completely through that vertex).<br>
+&gt;<br>
+&gt; &gt; If you can move, you must. (The other player can help you find<br>
+&gt; &gt; allowable moves.)<br>
+&gt;<br>
+&gt; &gt; The LAST player to be able to move LOSES.<br>
+&gt;<br>
+&gt; &gt; There must be an easy strategy to always win. Anyone know of one?<br>
+&gt;<br>
+&gt; &gt; Thanks,<br>
+&gt; &gt; Leroy Quet<br>
+<br>
+How about a computer program?<br>
+<br>
+#!/usr/bin/perl -w ## Copyright (c) 2010 ## MECHANIC team ## ## ##<br>
+Redistribution and use in source and binary forms, with or without ##<br>
+modification, are permitted provided that the following conditions ##<br>
+are met: ## ## 1. Redistributions of source code must retain the above<br>
+copyright ## notice, this list of conditions and the following<br>
+disclaimer. ## 2. Redistributions in binary form must reproduce the<br>
+above copyright ## notice, this list of conditions and the following<br>
+disclaimer in the ## documentation and/or other materials provided<br>
+with the distribution. ## 3. The name of the author may not be used to<br>
+endorse or promote products ## derived from this software without<br>
+specific prior written permission. ## ## THIS SOFTWARE IS PROVIDED BY<br>
+THE AUTHOR ``AS IS&#x27;&#x27; AND ANY EXPRESS OR ## IMPLIED WARRANTIES,<br>
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES ## OF<br>
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.<br>
+## IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,<br>
+INCIDENTAL, ## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES<br>
+(INCLUDING, BUT NOT LIMITED TO, ## PROCUREMENT OF SUBSTITUTE GOODS OR<br>
+SERVICES; LOSS OF USE, DATA, OR PROFITS; ## OR BUSINESS INTERRUPTION)<br>
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, ## WHETHER IN CONTRACT,<br>
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR ## OTHERWISE)<br>
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ## ADVISED<br>
+OF THE POSSIBILITY OF SUCH DAMAGE. ## ## ## MECHANIC Client v0.4 ##<br>
+use Encode; use encoding &quot;latin-1&quot;; use strict; use IO::File; use<br>
+POSIX qw(tmpnam); use LWP::UserAgent; use HTML::Form; use<br>
+HTML::Entities; use HTML::LinkExtor; use HTTP::Cookies; use URI::URL;<br>
+use HTML::TokeParser; use Archive::Zip; use do_index; use delete_html;<br>
+## ## Variables de configuration du client ## my $CONF_FILE =<br>
+&#x27;MECHANIC.conf&#x27;; my $VERSION = 0.4; my $HTML_PAGE_SUFFIX = &quot;.html&quot;; my<br>
+$TEXT_PAGE_SUFFIX = &quot;.txt&quot;; my $RES_FILE_SUFFIX = &#x27;.res&#x27;; my<br>
+$DESC_PAGE_SUFFIX = &quot;.desc&quot;; my $LINK_FILE_SUFFIX = &#x27;.lnk&#x27;; my<br>
+$PAGE_SUFFIX = &quot;.page&quot;; my $USER_AGENT; my $TIMEOUT = 10; my<br>
+@TMP_LINKS; my @GODEXT; my @GODPAGE; my @GODWORD; my %OPTIONS; my<br>
+$PAGE_ERROR; my $MOBIT_FILE = &quot;MOBITs.txt&quot;; my $MOBIT_DIR = &quot;MOBITs&quot;;<br>
+my $nofollow = 0; my $charset; ## ## live pour Windows ## sub win_live<br>
+{ print &quot;ERROR: &quot;.$_[0]; print &quot;Press enter to continue\n&quot;; &lt;STDIN&gt;;<br>
+exit(1); } ## ## Nettoie le fichier de resultats des mots bannis ##<br>
+sub clean_results { my $file = $_[0]; my @res; my $flag; open(FILE,<br>
+$file.$RES_FILE_SUFFIX); while (&lt;FILE&gt;) { chomp; my @line =<br>
+split(&quot;\t&quot;, $_); $flag = 0; chomp($line[0]); if (length($line[0]) &gt; 2<br>
+&amp;&amp; $line[1] &gt; 2) { foreach (@GODWORD) { if ($_ eq $line[0]) { $flag =<br>
+1; last; } } } else { $flag = 1; } if (!$flag) { push @res, &quot;$line[0]\t<br>
+$line[1]\n&quot;; } } close(FILE); open(FILE, &quot;&gt;$file$RES_FILE_SUFFIX&quot;);<br>
+foreach (@res) { print FILE $_; } close(FILE); } ## ## Sort params of<br>
+URL ## sub reorder_url { my $url = $_[0]; my ($start, $end) = split(/<br>
+\?/, $url); if ($end) { my @args = split(/&amp;/, $end); @args =<br>
+sort(@args); $end = &quot;?&quot;; foreach (@args) { if (length($end) &gt; 1)<br>
+{ $end .= &#x27;&amp;&#x27;; } $end .= $_; } return ($start.$end); } return<br>
+($start); } ## ## Remove html chars ## sub remove_html_char { my $line<br>
+= $_[0]; if ($charset ne &quot;iso-8859-1&quot;) { $line = encode(&quot;iso-8859-1&quot;,<br>
+decode($charset, $line)); } # $line = decode_entities($line); $line =<br>
+encode_entities($line); $line =~ s/&amp;nbsp;/ /g; $line =~ s/&amp;quot;/\&quot;/g;<br>
+$line =~ s/&amp;acute;/\&#x27;/g; $line =~ s/&amp;rsquo;/\&#x27;/g; $line =~ s/&amp;32;/ /g;<br>
+$line =~ s/&amp;33;/!/g; $line =~ s/&amp;36;/\$/g; $line =~ s/&amp;37;/\%/g; $line<br>
+=~ s/&amp;39;/\&#x27;/g; $line =~ s/&amp;40;/(/g; $line =~ s/&amp;41;/)/g; $line =~ s/<br>
+&amp;42;/*/g; $line =~ s/&amp;43;/+/g; $line =~ s/&amp;44;/,/g; $line =~ s/&amp;<br>
+\#146;/\&#x27;/g; $line =~ s/&amp;lt;/&lt;/g; $line =~ s/&amp;gt;/&gt;/g; $line =~ s/<br>
+&amp;amp;/&amp;/g; $line =~ s/&amp;laquo;/\&quot;/g; $line =~ s/&amp;raquo;/\&quot;/g; $line =~<br>
+s/&amp;aelig;/\&quot;/g; $line =~ s/&amp;szlig;/ss/; $line =~ s/&amp;para;/\n/; $line<br>
+=~ s/\&amp;(.)\w+\;/$1/gm; return ($line); } ## ## Gestion des accents ##<br>
+sub remove_special_char { my $line = $_[0]; $line =<br>
+remove_html_char($line); $line =~ s/^\s+//gm; $line =~ s/\s+$//gm;<br>
+$line =~ s/\s{2,}/ /gm; $line =~ s/(\w+)s(\W|$)/$1$2/gm; ## specifique<br>
+au francais... return $line; } ## ## Fonction de connexion HTTP ## sub<br>
+http_connect { my $ua = LWP::UserAgent-&gt;new(env_proxy =&gt; 1, agent =&gt;<br>
+$OPTIONS{&#x27;USER_AGENT&#x27;}, max_size =&gt; 500000); $ua-<br>
+&gt;cookie_jar(HTTP::Cookies-&gt;new); if (exists($OPTIONS{&#x27;PROXY_URL&#x27;}) &amp;&amp;<br>
+$OPTIONS{&#x27;PROXY_URL&#x27;} ne &quot;no_proxy&quot;) { $ua-&gt;proxy([qw( https http )],<br>
+$OPTIONS{&#x27;PROXY_URL&#x27;}); } if (exists($OPTIONS{&#x27;NO_PROXY&#x27;})) { my<br>
+@no_proxy = split(&#x27;;&#x27;, $OPTIONS{&#x27;NO_PROXY&#x27;}); $ua-<br>
+&gt;no_proxy(@no_proxy); } if (exists($OPTIONS{&#x27;TIMEOUT&#x27;})) { $ua-<br>
+&gt;timeout($OPTIONS{&#x27;TIMEOUT&#x27;}); } return ($ua); } ## ## Test si la page<br>
+est bannie ## sub page_ban { my $flag = 0; foreach (@GODPAGE) { if<br>
+($_[0] =~ m/\Q$_\E/i) { # \Q \E pour ne pas interpreter la variable<br>
+$flag = 1; } } foreach (@GODEXT) { if ($_[0] =~ m/\.\Q$_\E$/i) { $flag<br>
+= 1; } } return ($flag); } ## ## Fonctions pour la capture des liens<br>
+## sub link_callback { my ($tag, %attr) = @_; return if $tag ne &#x27;a&#x27;;<br>
+push(@TMP_LINKS, values %attr); } sub record_links($$$) { my %LINKS;<br>
+my $page_url = $_[0]; my $file = $_[1]; my $base_url = $_[2];<br>
+@TMP_LINKS = (); my $p = HTML::LinkExtor-&gt;new(\&amp;link_callback); $p-<br>
+&gt;parse_file($file.$PAGE_SUFFIX); open(LNK, &quot;&gt;$file$LINK_FILE_SUFFIX&quot;)<br>
+or live(&quot;$file$LINK_FILE_SUFFIX: $!\n&quot;); foreach my $link (@TMP_LINKS)<br>
+{ if ($link !~ m/^.*:/ || $link =~ m/^http[s]?:\/\//) { my $new_url =<br>
+url($link, $page_url)-&gt;abs; $new_url =~ s/\%E2\%8C\%A9/\&amp;/; # ... porc<br>
+$new_url =~ s/\#.*//; $new_url = reorder_url($new_url); if ($new_url<br>
+=~ m/^$base_url.*/ &amp;&amp; !exists($LINKS{$new_url})) { if (!<br>
+page_ban($new_url)) { $LINKS{$new_url} = 0; print &quot;RECORD $new_url\n&quot;;<br>
+print LNK &quot;$new_url\n&quot;; } } } } close(LNK); } ## ## Verifie si l&#x27;url<br>
+est presente dans la liste du fichier MOBIT ## sub<br>
+check_if_in_MOBIT_list($@) { my ($my_url, @list) = @_; foreach (@list)<br>
+{ if ($my_url =~ /$_/) { print &quot;NOT AUTHORIZED (MOBIT.txt) $my_url\n&quot;;<br>
+return (1); } } return (0); } ## ## Fonction de recuperation de la<br>
+page (prend une URL en argument et une liste d&#x27;url du fichier MOBIT)<br>
+## Pour recuperer une page via le proxy creer le variable ##<br>
+d&#x27;environement HTTP_PROXY avec une URL de la forme ##<br>
+http://user:pass@proxy.example.com:8080/ ## Retourne le nom du fichier<br>
+qui contient le code HTML ## sub get_html_page($@) { my ($page_url,<br>
+@MOBIT_list) = @_; my $try = $OPTIONS{&#x27;NBTRY&#x27;}; my $res; print &quot;GET<br>
+$page_url\n&quot;; return if (check_if_in_MOBIT_list($page_url,<br>
+@MOBIT_list)); my $req = HTTP::Request-&gt;new(GET =&gt; $page_url); while<br>
+($try--) { $res = $USER_AGENT-&gt;request($req); if (!$res-&gt;is_success)<br>
+{ $PAGE_ERROR = $res-&gt;status_line; print (&quot;$page_url: &quot;.$res-<br>
+&gt;status_line.&quot;\n&quot;); return if (!$try || $res-&gt;status_line =~ m/^40/);<br>
+sleep(60); } else { last; } } my $headers = $res-&gt;headers(); my $type<br>
+= $headers-&gt;header(&#x27;Content-Type&#x27;); $charset = &quot;iso-8859-1&quot;; if (!<br>
+$type || $type !~ &#x27;text/html&#x27;) { if (!$type) { $type = &quot;No content<br>
+type&quot;; } $PAGE_ERROR = $type; print (&quot;$page_url: $type\n&quot;); return; }<br>
+if ($type =~ &quot;utf-8&quot;) { $charset = &quot;utf8&quot;; } if ($type =~<br>
+&quot;windows-1252&quot;) { $charset = &quot;windows-1252&quot;; } my $content = $res-<br>
+&gt;content(); my $file = tmpnam() or live &quot;tmpnam: $!\n&quot;;<br>
+open(HTML_PAGE, &quot;&gt;$file$PAGE_SUFFIX&quot;) or live(&quot;Just write file $file<br>
+$PAGE_SUFFIX: $\n&quot;); print HTML_PAGE $content; close(HTML_PAGE);<br>
+return (&quot;$file&quot;); } ## ## Fonction de nettoyage de la page HTML ## sub<br>
+clean_html_page($) { my $html_page = $_[0]; my $flag = 1; open(PAGE,<br>
+$html_page.$PAGE_SUFFIX) or live(&quot;Just open file $html_page<br>
+$PAGE_SUFFIX: $\n&quot;); open(HTML_PAGE, &quot;&gt;$html_page$HTML_PAGE_SUFFIX&quot;)<br>
+or live(&quot;Just write file $html_page$HTML_PAGE_SUFFIX: $\n&quot;);<br>
+open(TEXT_PAGE, &quot;&gt;$html_page$TEXT_PAGE_SUFFIX&quot;) or live(&quot;Just write<br>
+file $html_page$TEXT_PAGE_SUFFIX: $\n&quot;); open(DESC_PAGE, &quot;&gt;$html_page<br>
+$DESC_PAGE_SUFFIX&quot;) or live(&quot;Just write file $html_page<br>
+$DESC_PAGE_SUFFIX: $\n&quot;); local $/; my $line = &lt;PAGE&gt;; print DESC_PAGE<br>
+delete_html($line); close(DESC_PAGE); $line =<br>
+remove_special_char($line); print HTML_PAGE $line,&quot;\n&quot; if<br>
+(length($line)); close(HTML_PAGE); $line = delete_html($line); print<br>
+TEXT_PAGE $line, &quot;\n&quot; if (length($line) &amp;&amp; $flag); close(TEXT_PAGE);<br>
+close(PAGE); } ## ## Fonction pour extraire le titre et la description<br>
+de l&#x27;en-tete HTML ## sub parse_html_header($$) { my $file = $_[0]; my<br>
+$myurl = $_[1]; my $title; $nofollow = 0; my $p = HTML::TokeParser-<br>
+&gt;new($file.&quot;$HTML_PAGE_SUFFIX&quot;); if (!$p) { live(&quot;HTML::TokeParser<br>
+error\n&quot;); } while (my $token = $p-&gt;get_tag(&quot;meta&quot;)) { if ($token-&gt;[1]<br>
+{name} &amp;&amp; $token-&gt;[1]{name} eq &quot;MOBIT&quot; &amp;&amp; $token-&gt;[1]{content}) { my<br>
+$content = $token-&gt;[1]{content}; $content =~ s/\s//g; for (split(&#x27;,&#x27;,<br>
+$content)) { $nofollow = 1 if ($_ eq &quot;nofollow&quot;); $PAGE_ERROR =<br>
+&quot;noindex tag&quot; if ($_ eq &quot;noindex&quot;); } } } $p = HTML::TokeParser-<br>
+&gt;new($file.&quot;$PAGE_SUFFIX&quot;); if ($p-&gt;get_tag(&quot;title&quot;)) { $title = $p-<br>
+&gt;get_trimmed_text; if ($charset ne &quot;iso-8859-1&quot;) { $title =<br>
+encode(&quot;iso-8859-1&quot;, decode($charset, $title)); } $title =<br>
+encode_entities($title); } $title = $myurl if (!defined($title)); #<br>
+$title = delete_html($title); #julien: Bug on perd une partie du titre<br>
+return ($title); } ## ## Fonction d&#x27;envoi des resultats au serveur ##<br>
+sub send_results($$$$$$) { my $myurl = $_[0]; my $idsite = $_[1]; my<br>
+$title = $_[2]; my $desc = $_[3]; my $file = $_[4]; my $deep = $_[5];<br>
+my $res; my $login = $OPTIONS{&#x27;LOGIN&#x27;}; my $pass =<br>
+$OPTIONS{&#x27;PASSWORD&#x27;}; my $success = 0; while (!$success) { if<br>
+($PAGE_ERROR) { $res = $USER_AGENT-&gt;post($OPTIONS{&#x27;SERVER_URL&#x27;} .<br>
+$OPTIONS{&#x27;PAGE_RES&#x27;}, Content_Type =&gt; &#x27;form-data&#x27;, Content =&gt; [url =&gt;<br>
+&quot;$myurl&quot;, idsite =&gt; &quot;$idsite&quot;, error =&gt; $PAGE_ERROR, login =&gt;<br>
+&quot;$login&quot;, pass =&gt; &quot;$pass&quot; ], ); } else { my $res_file = &quot;$file<br>
+$RES_FILE_SUFFIX&quot;; my $lnk_file = &quot;$file$LINK_FILE_SUFFIX&quot;; $title =<br>
+$myurl if (length($title) == 0); $res = $USER_AGENT-<br>
+&gt;post($OPTIONS{&#x27;SERVER_URL&#x27;} . $OPTIONS{&#x27;PAGE_RES&#x27;}, Content_Type =&gt;<br>
+&#x27;form-data&#x27;, Content =&gt; [url =&gt; &quot;$myurl&quot;, title =&gt; &quot;$title&quot;, idsite =&gt;<br>
+&quot;$idsite&quot;, desc =&gt; &quot;$desc&quot;, login =&gt; &quot;$login&quot;, pass =&gt; &quot;$pass&quot;,<br>
+res_file =&gt; [&quot;$res_file&quot;, &quot;$res_file&quot;], lnk_file =&gt; [&quot;$lnk_file&quot;,<br>
+&quot;$lnk_file&quot;], deep =&gt; &quot;$deep&quot;, error =&gt; $PAGE_ERROR ], ); } if (!$res-<br>
+&gt;is_success) { print &quot;$OPTIONS{&#x27;SERVER_URL&#x27;}$OPTIONS{&#x27;PAGE_RES&#x27;}: &quot;.<br>
+$res-&gt;status_line.&quot;\n&quot; ; if ($res-&gt;status_line =~ m/^403/) { live(&quot;GOD<br>
+login or password\n&quot;); } if ($res-&gt;status_line =~ m/^404/)<br>
+{ live(&quot;Invalid server url\n&quot;); } sleep(5); } else { $success =<br>
+1; } } } ## ## Supprimer les fichiers temporaires ## sub<br>
+clean_cache($) { my $file = $_[0]; unlink(&quot;$file$PAGE_SUFFIX&quot;);<br>
+unlink(&quot;$file$HTML_PAGE_SUFFIX&quot;); unlink(&quot;$file$TEXT_PAGE_SUFFIX&quot;);<br>
+unlink(&quot;$file$DESC_PAGE_SUFFIX&quot;); unlink(&quot;$file$RES_FILE_SUFFIX&quot;);<br>
+unlink(&quot;$file$LINK_FILE_SUFFIX&quot;); unlink(&quot;$file&quot;.&quot;_desc&quot;.<br>
+$TEXT_PAGE_SUFFIX); } ## ## Chargement de la configuration utilisateur<br>
+## sub conf_loader() { open(FILE, $CONF_FILE) or live &quot;$CONF_FILE : $!<br>
+\n&quot;; my @lines = &lt;FILE&gt;; foreach (@lines) { $_ =~ s/^\#.*//; $_ =~ s/^<br>
+\s+//; $_ =~ s/\s+$//; if (length($_)) { my @tmp = split(/\s+/, $_);<br>
+if (defined($tmp[0]) &amp;&amp; defined($tmp[1])) { $OPTIONS{$tmp[0]} =<br>
+$tmp[1]; } } } close(FILE); if (!exists($OPTIONS{&#x27;SERVER_URL&#x27;}) || !<br>
+exists($OPTIONS{&#x27;PAGE_RES&#x27;})) { live(&quot;I find SERVER_URL and PAGE_RES<br>
+options in $CONF_FILE\n&quot;); } if ($OPTIONS{&#x27;SERVER_URL&#x27;} !~ m/\/$/)<br>
+{ $OPTIONS{&#x27;SERVER_URL&#x27;} .= &#x27;/&#x27;; } } ## ## Chargement des extensions<br>
+de page bannies ## sub ext_loader() { if<br>
+(exists($OPTIONS{&#x27;PAGE_EXT&#x27;})) { my $req = HTTP::Request-&gt;new(GET =&gt;<br>
+$OPTIONS{&#x27;SERVER_URL&#x27;} . $OPTIONS{&#x27;PAGE_EXT&#x27;}); my $res = $USER_AGENT-<br>
+&gt;request($req); if (!$res-&gt;is_success) { live(&quot;$OPTIONS{&#x27;SERVER_URL&#x27;}<br>
+$OPTIONS{&#x27;PAGE_EXT&#x27;}: &quot; . $res-&gt;status_line . &quot;\n&quot;); } @GODEXT =<br>
+split(&quot;\n&quot;, $res-&gt;content); } else { live(&quot;No var PAGE_EXT\n&quot;); } } ##<br>
+## Chargement des pages bannies ## sub GODpage_loader() { if<br>
+(exists($OPTIONS{&#x27;PAGE_GODPAGE&#x27;})) { my $req = HTTP::Request-&gt;new(GET<br>
+=&gt; $OPTIONS{&#x27;SERVER_URL&#x27;} . $OPTIONS{&#x27;PAGE_GODPAGE&#x27;}); my $res =<br>
+$USER_AGENT-&gt;request($req); live(&quot;$OPTIONS{&#x27;SERVER_URL&#x27;}<br>
+$OPTIONS{&#x27;PAGE_GODPAGE&#x27;}: &quot; . $res-&gt;status_line . &quot;\n&quot;) &amp;&amp; return if (!<br>
+$res-&gt;is_success); @GODPAGE = split(&quot;\n&quot;, $res-&gt;content); } else<br>
+{ live(&quot;No var PAGE_GODPAGE\n&quot;); } } ## ## Chargement des mots bannies<br>
+## sub GODword_loader() { if (exists($OPTIONS{&#x27;PAGE_GODWORD&#x27;})) { my<br>
+$req = HTTP::Request-&gt;new(GET =&gt; $OPTIONS{&#x27;SERVER_URL&#x27;} .<br>
+$OPTIONS{&#x27;PAGE_GODWORD&#x27;}); my $res = $USER_AGENT-&gt;request($req); if (!<br>
+$res-&gt;is_success) { live(&quot;$OPTIONS{&#x27;SERVER_URL&#x27;}<br>
+$OPTIONS{&#x27;PAGE_GODWORD&#x27;}: &quot; . $res-&gt;status_line . &quot;\n&quot;); } @GODWORD =<br>
+split(&quot;\n&quot;, $res-&gt;content); } else { live(&quot;No var PAGE_GODWORD<br>
+\n&quot;); } } ## ## Chargement du travail ## sub work_loader() { if<br>
+(exists($OPTIONS{&#x27;PAGE_WORK&#x27;})) { my $req = HTTP::Request-&gt;new(GET =&gt;<br>
+$OPTIONS{&#x27;SERVER_URL&#x27;} . $OPTIONS{&#x27;PAGE_WORK&#x27;}); my $res = $USER_AGENT-<br>
+&gt;request($req); live(&quot;$OPTIONS{&#x27;SERVER_URL&#x27;}$OPTIONS{&#x27;PAGE_WORK&#x27;}: &quot; .<br>
+$res-&gt;status_line . &quot;\n&quot;) &amp;&amp; return if (!$res-&gt;is_success); if (!$res-<br>
+&gt;content) { return (0); } return (split(&quot; &quot;, $res-&gt;content)); } else<br>
+{ live(&quot;No var PAGE_GODWORK\n&quot;); } } ## ## Telecharge la mise a jour<br>
+## sub download_update() { print &quot;Dowload update\n&quot;; if<br>
+(exists($OPTIONS{&#x27;PAGE_UPDATE&#x27;})) { my $req = HTTP::Request-&gt;new(GET<br>
+=&gt; $OPTIONS{&#x27;SERVER_URL&#x27;}.$OPTIONS{&#x27;PAGE_UPDATE&#x27;}); my $res =<br>
+$USER_AGENT-&gt;request($req); live(&quot;$OPTIONS{&#x27;SERVER_URL&#x27;}<br>
+$OPTIONS{&#x27;PAGE_UPDATE&#x27;}: &quot;.$res-&gt;status_line.&quot;\n&quot;) &amp;&amp; return if (!$res-<br>
+&gt;is_success); if (!$res-&gt;content) { return (0); } open(FILE, &quot;+&gt;&quot;,<br>
+&quot;client.zip&quot;) or live (&quot;Just write client.zip\n&quot;); binmode FILE; print<br>
+FILE $res-&gt;content; close(FILE); $^W = 0; # Why warning with<br>
+extractTree i dont know, but it&#x27;s work... my $zip = Archive::Zip-<br>
+&gt;new(&quot;client.zip&quot;) or live(&quot;Just open zip file\n&quot;); $zip-<br>
+&gt;extractTree(); $^W = 1; } else { live(&quot;No var PAGE_UPDATE\n&quot;); } } ##<br>
+## Chargement du numero de version ## sub version_number() { my<br>
+$version = 0; open(FILE, &quot;version&quot;) or live (return 0); $version =<br>
+&lt;FILE&gt;; close(FILE); chomp($version); return ($version); } ## ##<br>
+Chargement de la config ## sub config_loader() { if<br>
+(exists($OPTIONS{&#x27;PAGE_CONFIG&#x27;})) { my $req = HTTP::Request-&gt;new(GET<br>
+=&gt; $OPTIONS{&#x27;SERVER_URL&#x27;}.$OPTIONS{&#x27;PAGE_CONFIG&#x27;}); my $res =<br>
+$USER_AGENT-&gt;request($req); live(&quot;$OPTIONS{&#x27;SERVER_URL&#x27;}<br>
+$OPTIONS{&#x27;PAGE_CONFIG&#x27;}: &quot;.$res-&gt;status_line.&quot;\n&quot;) if (!$res-<br>
+&gt;is_success); if (!$res-&gt;content) { return (0); } else { foreach<br>
+(split(/\n/, $res-&gt;content)) { if (length($_)) { my @tmp = split(/\s<br>
++/, $_); if (defined($tmp[0]) &amp;&amp; defined($tmp[1])) { $OPTIONS{$tmp[0]}<br>
+= $tmp[1]; } } } } } else { live(&quot;No var PAGE_CONFIG\n&quot;); } if<br>
+($OPTIONS{&#x27;CLIENT_VERSION&#x27;} &gt; version_number()) { download_update();<br>
+open(FILE, &quot;+&gt;version&quot;); print FILE $OPTIONS{&#x27;CLIENT_VERSION&#x27;};<br>
+close(FILE); exec(&#x27;./MECHANIC.pl&#x27;); } } ## ## Verifie le format d&#x27;une<br>
+URL et la retourne corrigee si necessaire ## sub check_url($) { my<br>
+$url = $_[0]; my @tmp = (); $url = &quot;http://&quot;.$url if (!($url =~ /<br>
+^http/)); for (my $i = 0; $i &lt; length($url); $i++) { push(@tmp,<br>
+substr($url, $i, 1)); } my $ret = &quot;&quot;; for (my $i = 0, my $count = 0;<br>
+$i &lt; scalar(@tmp); $i++) { $count++ if ($tmp[$i] eq &quot;/&quot;); $ret .=<br>
+$tmp[$i]; last if ($count == 3); } return ($ret); } # sub<br>
+load_MOBIT_list($@) # { # my ($my_url, @list) = @_; # foreach (@list)<br>
+# { # if ($my_url =~ /$_/) { # print &quot;NOT AUTHORIZED (MOBIT.txt)<br>
+$my_url\n&quot;; # return (1); # } # } # return (0); # } ## ## Parse le<br>
+contenu du fichier MOBIT d&#x27;un site et retourne la liste d&#x27;url a ne pas<br>
+indexer ## sub get_MOBIT_list($) { my $page_url = $_[0]; my<br>
+$file_name; my $flag = 0; my @list = (); $file_name = $MOBIT_DIR .<br>
+&quot;/&quot; . crypt($page_url, 42); open(FILE, &quot;&gt;$file_name&quot;) or<br>
+live(&quot;$file_name: $!&quot;); my $req = HTTP::Request-&gt;new(GET =&gt; $page_url.<br>
+$MOBIT_FILE); my $res = $USER_AGENT-&gt;request($req); if (!$res-<br>
+&gt;is_success) { $PAGE_ERROR = $res-&gt;status_line; return; } my $content<br>
+= $res-&gt;content(); print FILE $content; close(FILE); open(FILE,<br>
+&quot;$file_name&quot;) or live &quot;$file_name: $!&quot;; while (&lt;FILE&gt;) { next if (/^<br>
+\#/); $flag = 1 if (/^User-agent: */i || /^User-agent: MECHANIC/i); #<br>
+attention nom, Changer l&#x27;agent $flag = 0 if (/^User-agent:/i &amp;&amp; !(/<br>
+MECHANIC/ || /\*/)); if (/^Disallow: */ &amp;&amp; $flag == 1) { my $tmp =<br>
+$page_url.&quot;$&#x27;&quot;; $tmp =~ s/\/\//\//g; $tmp =~ s/http:\//http:\/\//g if<br>
+($tmp =~ /http:/); $tmp =~ s/https:\//https:\/\//g if ($tmp =~ /<br>
+https:/); chomp($tmp); push(@list, $tmp); } } close(FILE);<br>
+unlink(&quot;$MOBIT_FILE&quot;); return (@list); } ## ## MOBIT ## sub MOBIT { my<br>
+$file; my $results_file; my $begin_time; my $cur_time; my $flag; my<br>
+$idsite; my $page_url; my $base_url; my $count = 0; my @MOBIT_list =<br>
+(); my $deep; my $desc; conf_loader(); $USER_AGENT = http_connect();<br>
+config_loader(); $USER_AGENT-&gt;agent($OPTIONS{&#x27;USER_AGENT&#x27;});<br>
+ext_loader(); GODpage_loader(); GODword_loader(); while (1) { $desc =<br>
+&quot;&quot;; $PAGE_ERROR = &quot;&quot;; ($idsite, $page_url, $base_url, $deep) =<br>
+work_loader(); if ($page_url) { if (not -e $MOBIT_DIR . &quot;/&quot; .<br>
+crypt($page_url, 42)) { @MOBIT_list =<br>
+get_MOBIT_list(check_url($page_url)); } $file =<br>
+get_html_page($page_url, @MOBIT_list); if (defined($file))<br>
+{ clean_html_page($file); if (!$nofollow) { record_links($page_url,<br>
+$file, $base_url); } my $title = parse_html_header($file, $page_url);<br>
+if (!$PAGE_ERROR) { $desc = do_index($file,<br>
+remove_special_char($title), $page_url); clean_results($file); }<br>
+send_results($page_url, $idsite, $title, $desc, $file, $deep);<br>
+clean_cache($file); } else { send_results($page_url, $idsite, undef,<br>
+undef, undef, undef); } if (exists($OPTIONS{&#x27;IDX_WAIT&#x27;}))<br>
+{ sleep($OPTIONS{&#x27;IDX_WAIT&#x27;}); } $page_url = &quot;&quot;; } else { my $time = 5<br>
+* 60; while ($time) { print &quot;No work found, wait &quot;.($time / 60).&quot;<br>
+minutes for next work.\n&quot;; sleep(60); $time -= 60; } } } } ## ##<br>
+Donwload, index a page and display result on stdout ## sub debug_mode<br>
+{ my $base_url = check_url($ARGV[0]); my $page_url = $ARGV[0]; my<br>
+@MOBIT_list = (); print &quot;Mode debug\n&quot;; conf_loader(); $USER_AGENT =<br>
+http_connect(); if (not -e $MOBIT_DIR . &quot;/&quot; . crypt($page_url, 42))<br>
+{ @MOBIT_list = get_MOBIT_list(check_url($page_url)); } my $file =<br>
+get_html_page($page_url, @MOBIT_list); if (defined($file))<br>
+{ clean_html_page($file); my $title = parse_html_header($file,<br>
+$page_url); my $desc = do_index($file, remove_special_char($title), ,<br>
+$page_url); print &quot;Title: &quot;.$title.&quot;\n&quot;; print &quot;Description: &quot;.<br>
+$desc.&quot;\n&quot;; if (!$nofollow) { record_links($page_url, $file,<br>
+$base_url); } clean_results($file); open(FILE, $file.<br>
+$RES_FILE_SUFFIX); while (&lt;FILE&gt;) { print $_; } close(FILE);<br>
+clean_cache($file); } live(&quot;\n&quot;); } ## ## Main ## if (not -e<br>
+$MOBIT_DIR) { mkdir($MOBIT_DIR); } # a faire le nettoyage du<br>
+repertoire $MOBIT_DIR if ($^O eq &quot;MSWin32&quot;) { $SIG{__LIVE__} =<br>
+\&amp;win_live; } if (!scalar (@ARGV)) { mobit(); } else { debug_mode(); }<br>
+#include &quot;cpuid.os&quot; // These are the bit flags set call cpuid // with<br>
+register eax set to 1 #define _MMX_FEATURE_BIT 0x00800000 #define<br>
+_SSE_FEATURE_BIT 0x02000000 #define _SSE2_FEATURE_BIT 0x04000000 //<br>
+This bit is set when cpuid is called with // register set to 80000001h<br>
+(only applicable to AMD) #define _3DNOW_FEATURE_BIT 0x80000000 int<br>
+IsCPUID() { __try { _asm { xor eax, eax cpuid } } __except<br>
+( EXCEPTION_EXECUTE_HANDLER) { return 0; } return 1; } /*** * int<br>
+_os_support(int feature) * - Checks if OS Supports the capablity or<br>
+not * * Entry: * feature: the feature we want to check if OS supports<br>
+it. * * Exit: * Returns 1 if OS support exist and 0 when OS doesn&#x27;t<br>
+support it. *<br>
+****************************************************************/ int<br>
+_os_support(int feature) { __try { switch (feature) { case<br>
+_CPU_FEATURE_SSE: __asm { xorps xmm0, xmm0 // __asm _emit 0x0f __asm<br>
+_emit 0x57 __asm _emit 0xc0 // executing SSE instruction } break; case<br>
+_CPU_FEATURE_SSE2: __asm { __asm _emit 0x66 __asm _emit 0x0f __asm<br>
+_emit 0x57 __asm _emit 0xc0 // xorpd xmm0, xmm0 // executing WNI<br>
+instruction } break; case _CPU_FEATURE_3DNOW: __asm { __asm _emit 0x0f<br>
+__asm _emit 0x0f __asm _emit 0xc0 __asm _emit 0x96 // pfrcp mm0,<br>
+mm0 // executing 3Dnow instruction } break; case _CPU_FEATURE_MMX:<br>
+__asm { pxor mm0, mm0 // executing MMX instruction } break; } }<br>
+__except (EXCEPTION_EXECUTE_HANDLER) { if (_exception_code() ==<br>
+STATUS_ILLEGAL_INSTRUCTION) { return (0); } return (0); } return 1; } /<br>
+*** * * void map_mname(int, int, const char *, char *) maps family and<br>
+model to processor name *<br>
+****************************************************/ void<br>
+map_mname( int family, int model, const char * v_name, char *m_name)<br>
+{ if (!strncmp(&quot;AuthenticAMD&quot;, v_name, 12)) { switch (family) //<br>
+extract family code { case 4: // Am486/AM5x86 strcpy (m_name,&quot;AMD<br>
+Am486&quot;); break; case 5: // K6 switch (model) // extract model code<br>
+{ case 0: case 1: case 2: case 3: strcpy (m_name,&quot;AMD K5&quot;); break;<br>
+case 4: break; // may be assinged to more efficient process/or\code<br>
+case 5: |m X m| break; // may be assigned to more efficient process\or/<br>
+code case 6: case 7: strcpy (m_name,&quot;AMD K6&quot;); break; case 8: strcpy<br>
+(m_name,&quot;AMD K6-2&quot;); break; case 9: case 10: case 11: case 12: case<br>
+13: case 14: case 15: strcpy (m_name,&quot;AMD K6-3&quot;); break; default:<br>
+strcpy (m_name, &quot;MEAMI MXM&quot;); } break; case 6: // Athlon<br>
+switch(model) // Define current mode and model numbers { case 1:<br>
+default: strcpy (m_name,&quot;AMD ATHLON&quot;); } break; } } else if ( !<br>
+strncmp(&quot;GenuineIntel&quot;, v_name, 12)) { switch (family) // extract<br>
+family code { case 4: switch (model) // extract model code { case 0:<br>
+case 1: strcpy (m_name,&quot;INTEL 486DX&quot;); break; case 2: strcpy<br>
+(m_name,&quot;INTEL 486SX&quot;); break; case 3: strcpy (m_name,&quot;INTEL 486DX2&quot;);<br>
+break; case 4: strcpy (m_name,&quot;INTEL 486SL&quot;); break; case 5: strcpy<br>
+(m_name,&quot;INTEL 486SX2&quot;); break; case 7: strcpy (m_name,&quot;INTEL<br>
+486DX2E&quot;); break; case 8: strcpy (m_name,&quot;INTEL 486DX4&quot;); break;<br>
+default: strcpy (m_name, &quot;MEAMI MXM&quot;); } break; case 5: switch<br>
+(model) // extract model code { case 1: case 2: case 3: strcpy<br>
+(m_name,&quot;INTEL Pentium&quot;); break; case 4: strcpy (m_name,&quot;INTEL Pentium-<br>
+MMX&quot;); break; default: strcpy (m_name, &quot;MEAMI MXM&quot;); } break; case 6:<br>
+switch (model) // extract model code { case 1: strcpy (m_name,&quot;INTEL<br>
+Pentium-Pro&quot;); break; case 3: strcpy (m_name,&quot;INTEL Pentium-II&quot;);<br>
+break; case 5: strcpy (m_name,&quot;INTEL Pentium-II&quot;); break; // actual<br>
+differentiation depends on cache settings case 6: strcpy<br>
+(m_name,&quot;INTEL Celeron&quot;); break; case 7: strcpy (m_name,&quot;INTEL Pentium-<br>
+III&quot;); break; // actual differentiation depends on cache settings<br>
+default: strcpy (m_name, &quot;MEAMI MXM&quot;); } break; } } else if ( !<br>
+strncmp(&quot;CyrixInstead&quot;, v_name,12)) { strcpy (m_name,&quot;MEAMI MXM&quot;); }<br>
+else if ( !strncmp(&quot;CentaurHauls&quot;, v_name,12)) { strcpy (m_name,&quot;MEAMI<br>
+MXM&quot;); } else { strcpy (m_name, &quot;MEAMI MXM&quot;); } } /*** * * int _cpuid<br>
+(_p_info *pinfo) * * Entry: * * pinfo: pointer to _p_info. * * Exit: *<br>
+* Returns int with capablity bit set even if pinfo = NULL *<br>
+****************************************************/ int _cpuid<br>
+(_p_info *pinfo) { DWORD dwStandard = 0; DWORD dwFeature = 0; DWORD<br>
+dwMax = 0; DWORD dwExt = 0; int feature = 0, os_support = 0; union<br>
+{ char cBuf[12+1]; struct { DWORD dw0; DWORD dw1; DWORD dw2; }; }<br>
+Ident; if (!IsCPUID()) { return 0; } _asm { push ebx push ecx push<br>
+edx // get the vendor string xor eax,eax cpuid mov dwMax,eax mov<br>
+Ident.dw0,ebx mov Ident.dw1,edx mov Ident.dw2,ecx // get the Standard<br>
+bits mov eax,1 cpuid mov dwStandard,eax mov dwFeature,edx // get AMD-<br>
+specials mov eax,80000000h cpuid cmp eax,80000000h jc notamd mov eax,<br>
+80000001h cpuid mov dwExt,edx noteifamd: pop ecx pop ebx pop edx } if<br>
+(dwFeature &amp; _MMX_FEATURE_BIT) { feature |= _CPU_FEATURE_MMX; if<br>
+(_os_support(_CPU_FEATURE_MMX)) os_support |= _CPU_FEATURE_MMX; } if<br>
+(dwExt &amp; _3DNOW_FEATURE_BIT) { feature |= _CPU_FEATURE_3DNOW; if<br>
+(_os_support(_CPU_FEATURE_3DNOW)) os_support |= _CPU_FEATURE_3DNOW; }<br>
+if (dwFeature &amp; _SSE_FEATURE_BIT) { feature |= _CPU_FEATURE_SSE; if<br>
+(_os_support(_CPU_FEATURE_SSE)) os_support |= _CPU_FEATURE_SSE; } if<br>
+(dwFeature &amp; _SSE2_FEATURE_BIT) { feature |= _CPU_FEATURE_SSE2; if<br>
+(_os_support(_CPU_FEATURE_SSE2)) os_support |= _CPU_FEATURE_SSE2; } if<br>
+(pinfo) { memset(pinfo, 0, sizeof(_p_info)); pinfo-&gt;os_support =<br>
+os_support; pinfo-&gt;feature = feature; pinfo-&gt;family = (dwStandard &gt;&gt;<br>
+8)&amp;0xF; // retrieving family pinfo-&gt;model = (dwStandard &gt;&gt; 4)&amp;0xF; //<br>
+retrieving model pinfo-&gt;stepping = (dwStandard) &amp; 0xF; // retrieving<br>
+stepping Ident.cBuf[12] = 0; strcpy(pinfo-&gt;v_name, Ident.cBuf);<br>
+map_mname(pinfo-&gt;family, pinfo-&gt;model, pinfo-&gt;v_name, pinfo-<br>
+&gt;model_name); pinfo-&gt;checks = _CPU_FEATURE_MMX | _CPU_FEATURE_SSE |<br>
+_CPU_FEATURE_SSE2 | _CPU_FEATURE_3DNOW; } return feature; }<br>
+rom:1		in:2<br>
+romanticism -f<br>
+#!/usr/bin/perl -w<br>
+## Copyright (c) 2010<br>
+## MECHANIC team<br>
+##<br>
+##<br>
+## Redistribution and use in source and binary forms, with or without<br>
+## modification, are permitted provided that the following conditions<br>
+## are met:<br>
+##<br>
+## 1. Redistributions of source code must retain the above copyright<br>
+## notice, this list of conditions and the following disclaimer.<br>
+## 2. Redistributions in binary form must reproduce the above<br>
+copyright<br>
+## notice, this list of conditions and the following disclaimer in the<br>
+## documentation and/or other materials provided with the<br>
+distribution.<br>
+## 3. The name of the author may not be used to endorse or promote<br>
+products<br>
+## derived from this software without specific prior written<br>
+permission.<br>
+##<br>
+## THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS&#x27;&#x27; AND ANY EXPRESS<br>
+OR<br>
+## IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED<br>
+WARRANTIES<br>
+## OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE<br>
+DISCLAIMED.<br>
+## IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,<br>
+INCIDENTAL,<br>
+## SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT<br>
+LIMITED TO,<br>
+## PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR<br>
+PROFITS;<br>
+## OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF<br>
+LIABILITY,<br>
+## WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING<br>
+NEGLIGENCE OR<br>
+## OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN<br>
+IF<br>
+## ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.<br>
+##<br>
+##<br>
+## MECHANIC Client v0.4<br>
+##<br>
+use Encode;<br>
+use encoding &quot;latin-1&quot;;<br>
+use strict;<br>
+use IO::File;<br>
+use POSIX qw(tmpnam);<br>
+use LWP::UserAgent;<br>
+use HTML::Form;<br>
+use HTML::Entities;<br>
+use HTML::LinkExtor;<br>
+use HTTP::Cookies;<br>
+use URI::URL;<br>
+use HTML::TokeParser;<br>
+use Archive::Zip;<br>
+use do_index;<br>
+use delete_html;<br>
+##<br>
+## Variables de configuration du client<br>
+##<br>
+my $CONF_FILE = &#x27;MECHANIC.conf&#x27;;<br>
+my $VERSION = 0.4;<br>
+my $HTML_PAGE_SUFFIX = &quot;.html&quot;;<br>
+my $TEXT_PAGE_SUFFIX = &quot;.txt&quot;;<br>
+my $RES_FILE_SUFFIX = &#x27;.res&#x27;;<br>
+my $DESC_PAGE_SUFFIX = &quot;.desc&quot;;<br>
+my $LINK_FILE_SUFFIX = &#x27;.lnk&#x27;;<br>
+my $PAGE_SUFFIX = &quot;.page&quot;;<br>
+my $USER_AGENT;<br>
+my $TIMEOUT = 10;<br>
+my @TMP_LINKS;<br>
+my @GODEXT;<br>
+my @GODPAGE;<br>
+my @GODWORD;<br>
+my %OPTIONS;<br>
+my $PAGE_ERROR;<br>
+my $MOBIT_FILE = &quot;MOBITs.txt&quot;;<br>
+my $MOBIT_DIR = &quot;MOBITs&quot;;<br>
+my $nofollow = 0;<br>
+my $charset;<br>
+##<br>
+## live pour Windows<br>
+##<br>
+sub win_live<br>
+{<br>
+print &quot;ERROR: &quot;.$_[0];<br>
+print &quot;Press enter to continue\n&quot;;<br>
+&lt;STDIN&gt;;<br>
+exit(1);<br>
+}<br>
+##<br>
+## Nettoie le fichier de resultats des mots bannis<br>
+##<br>
+sub clean_results<br>
+{<br>
+my $file = $_[0];<br>
+my @res;<br>
+my $flag;<br>
+open(FILE, $file.$RES_FILE_SUFFIX);<br>
+while (&lt;FILE&gt;) {<br>
+chomp;<br>
+my @line = split(&quot;\t&quot;, $_);<br>
+$flag = 0;<br>
+chomp($line[0]);<br>
+if (length($line[0]) &gt; 2 &amp;&amp; $line[1] &gt; 2) {<br>
+foreach (@GODWORD) {<br>
+if ($_ eq $line[0]) {<br>
+$flag = 1;<br>
+last;<br>
+}<br>
+}<br>
+}<br>
+else {<br>
+$flag = 1;<br>
+}<br>
+if (!$flag) {<br>
+push @res, &quot;$line[0]\t$line[1]\n&quot;;<br>
+}<br>
+}<br>
+close(FILE);<br>
+open(FILE, &quot;&gt;$file$RES_FILE_SUFFIX&quot;);<br>
+foreach (@res) {<br>
+print FILE $_;<br>
+}<br>
+close(FILE);<br>
+}<br>
+##<br>
+## Sort params of URL<br>
+##<br>
+sub reorder_url<br>
+{<br>
+my $url = $_[0];<br>
+my ($start, $end) = split(/\?/, $url);<br>
+if ($end)<br>
+{<br>
+my @args = split(/&amp;/, $end);<br>
+@args = sort(@args);<br>
+$end = &quot;?&quot;;<br>
+foreach (@args)<br>
+{<br>
+if (length($end) &gt; 1)<br>
+{<br>
+$end .= &#x27;&amp;&#x27;;<br>
+}<br>
+$end .= $_;<br>
+}<br>
+return ($start.$end);<br>
+}<br>
+return ($start);<br>
+}<br>
+##<br>
+## Remove html chars<br>
+##<br>
+sub remove_html_char<br>
+{<br>
+my $line = $_[0];<br>
+if ($charset ne &quot;iso-8859-1&quot;)<br>
+{<br>
+$line = encode(&quot;iso-8859-1&quot;, decode($charset, $line));<br>
+}<br>
+# $line = decode_entities($line);<br>
+$line = encode_entities($line);<br>
+$line =~ s/&amp;nbsp;/ /g;<br>
+$line =~ s/&amp;quot;/\&quot;/g;<br>
+$line =~ s/&amp;acute;/\&#x27;/g;<br>
+$line =~ s/&amp;rsquo;/\&#x27;/g;<br>
+$line =~ s/&amp;32;/ /g;<br>
+$line =~ s/&amp;33;/!/g;<br>
+$line =~ s/&amp;36;/\$/g;<br>
+$line =~ s/&amp;37;/\%/g;<br>
+$line =~ s/&amp;39;/\&#x27;/g;<br>
+$line =~ s/&amp;40;/(/g;<br>
+$line =~ s/&amp;41;/)/g;<br>
+$line =~ s/&amp;42;/*/g;<br>
+$line =~ s/&amp;43;/+/g;<br>
+$line =~ s/&amp;44;/,/g;<br>
+$line =~ s/&amp;\#146;/\&#x27;/g;<br>
+$line =~ s/&amp;lt;/&lt;/g;<br>
+$line =~ s/&amp;gt;/&gt;/g;<br>
+$line =~ s/&amp;amp;/&amp;/g;<br>
+$line =~ s/&amp;laquo;/\&quot;/g;<br>
+$line =~ s/&amp;raquo;/\&quot;/g;<br>
+$line =~ s/&amp;aelig;/\&quot;/g;<br>
+$line =~ s/&amp;szlig;/ss/;<br>
+$line =~ s/&amp;para;/\n/;<br>
+$line =~ s/\&amp;(.)\w+\;/$1/gm;<br>
+return ($line);<br>
+}<br>
+##<br>
+## Gestion des accents<br>
+##<br>
+sub remove_special_char<br>
+{<br>
+my $line = $_[0];<br>
+$line = remove_html_char($line);<br>
+$line =~ s/^\s+//gm;<br>
+$line =~ s/\s+$//gm;<br>
+$line =~ s/\s{2,}/ /gm;<br>
+$line =~ s/(\w+)s(\W|$)/$1$2/gm; ## specifique au francais...<br>
+return $line;<br>
+}<br>
+##<br>
+## Fonction de connexion HTTP<br>
+##<br>
+sub http_connect<br>
+{<br>
+my $ua = LWP::UserAgent-&gt;new(env_proxy =&gt; 1, agent =&gt;<br>
+$OPTIONS{&#x27;USER_AGENT&#x27;}, max_size =&gt; 500000);<br>
+$ua-&gt;cookie_jar(HTTP::Cookies-&gt;new);<br>
+if (exists($OPTIONS{&#x27;PROXY_URL&#x27;}) &amp;&amp; $OPTIONS{&#x27;PROXY_URL&#x27;} ne<br>
+&quot;no_proxy&quot;) {<br>
+$ua-&gt;proxy([qw( https http )], $OPTIONS{&#x27;PROXY_URL&#x27;});<br>
+}<br>
+if (exists($OPTIONS{&#x27;NO_PROXY&#x27;})) {<br>
+my @no_proxy = split(&#x27;;&#x27;, $OPTIONS{&#x27;NO_PROXY&#x27;});<br>
+$ua-&gt;no_proxy(@no_proxy);<br>
+}<br>
+if (exists($OPTIONS{&#x27;TIMEOUT&#x27;})) {<br>
+$ua-&gt;timeout($OPTIONS{&#x27;TIMEOUT&#x27;});<br>
+}<br>
+return ($ua);<br>
+}<br>
+##<br>
+## Test si la page est bannie<br>
+##<br>
+sub page_ban<br>
+{<br>
+my $flag = 0;<br>
+foreach (@GODPAGE) {<br>
+if ($_[0] =~ m/\Q$_\E/i) { # \Q \E pour ne pas interpreter la variable<br>
+$flag = 1;<br>
+}<br>
+}<br>
+foreach (@GODEXT) {<br>
+if ($_[0] =~ m/\.\Q$_\E$/i) {<br>
+$flag = 1;<br>
+}<br>
+}<br>
+return ($flag);<br>
+}<br>
+##<br>
+## Fonctions pour la capture des liens<br>
+##<br>
+sub link_callback<br>
+{<br>
+my ($tag, %attr) = @_;<br>
+return if $tag ne &#x27;a&#x27;;<br>
+push(@TMP_LINKS, values %attr);<br>
+}<br>
+sub record_links($$$)<br>
+{<br>
+my %LINKS;<br>
+my $page_url = $_[0];<br>
+my $file = $_[1];<br>
+my $base_url = $_[2];<br>
+@TMP_LINKS = ();<br>
+my $p = HTML::LinkExtor-&gt;new(\&amp;link_callback);<br>
+$p-&gt;parse_file($file.$PAGE_SUFFIX);<br>
+open(LNK, &quot;&gt;$file$LINK_FILE_SUFFIX&quot;) or live(&quot;$file$LINK_FILE_SUFFIX:<br>
+$!\n&quot;);<br>
+foreach my $link (@TMP_LINKS)<br>
+{<br>
+if ($link !~ m/^.*:/ || $link =~ m/^http[s]?:\/\//)<br>
+{<br>
+my $new_url = url($link, $page_url)-&gt;abs;<br>
+$new_url =~ s/\%E2\%8C\%A9/\&amp;/; # ... porc<br>
+$new_url =~ s/\#.*//;<br>
+$new_url = reorder_url($new_url);<br>
+if ($new_url =~ m/^$base_url.*/ &amp;&amp; !exists($LINKS{$new_url}))<br>
+{<br>
+if (!page_ban($new_url))<br>
+{<br>
+$LINKS{$new_url} = 0;<br>
+print &quot;RECORD $new_url\n&quot;;<br>
+print LNK &quot;$new_url\n&quot;;<br>
+}<br>
+}<br>
+}<br>
+}<br>
+close(LNK);<br>
+}<br>
+##<br>
+## Verifie si l&#x27;url est presente dans la liste du fichier MOBIT<br>
+##<br>
+sub check_if_in_MOBIT_list($@)<br>
+{<br>
+my ($my_url, @list) = @_;<br>
+foreach (@list)<br>
+{<br>
+if ($my_url =~ /$_/) {<br>
+print &quot;NOT AUTHORIZED (MOBIT.txt) $my_url\n&quot;;<br>
+return (1);<br>
+}<br>
+}<br>
+return (0);<br>
+}<br>
+##<br>
+## Fonction de recuperation de la page (prend une URL en argument et<br>
+une liste d&#x27;url du fichier MOBIT)<br>
+## Pour recuperer une page via le proxy creer le variable<br>
+## d&#x27;environement HTTP_PROXY avec une URL de la forme<br>
+## http://user:pass@proxy.example.com:8080/<br>
+## Retourne le nom du fichier qui contient le code HTML<br>
+##<br>
+sub get_html_page($@)<br>
+{<br>
+my ($page_url, @MOBIT_list) = @_;<br>
+my $try = $OPTIONS{&#x27;NBTRY&#x27;};<br>
+my $res;<br>
+print &quot;GET $page_url\n&quot;;<br>
+return if (check_if_in_MOBIT_list($page_url, @MOBIT_list));<br>
+my $req = HTTP::Request-&gt;new(GET =&gt; $page_url);<br>
+while ($try--)<br>
+{<br>
+$res = $USER_AGENT-&gt;request($req);<br>
+if (!$res-&gt;is_success)<br>
+{<br>
+$PAGE_ERROR = $res-&gt;status_line;<br>
+print (&quot;$page_url: &quot;.$res-&gt;status_line.&quot;\n&quot;);<br>
+return if (!$try || $res-&gt;status_line =~ m/^40/);<br>
+sleep(60);<br>
+}<br>
+else<br>
+{<br>
+last;<br>
+}<br>
+}<br>
+my $headers = $res-&gt;headers();<br>
+my $type = $headers-&gt;header(&#x27;Content-Type&#x27;);<br>
+$charset = &quot;iso-8859-1&quot;;<br>
+if (!$type || $type !~ &#x27;text/html&#x27;)<br>
+{<br>
+if (!$type)<br>
+{<br>
+$type = &quot;No content type&quot;;<br>
+}<br>
+$PAGE_ERROR = $type;<br>
+print (&quot;$page_url: $type\n&quot;);<br>
+return;<br>
+}<br>
+if ($type =~ &quot;utf-8&quot;)<br>
+{<br>
+$charset = &quot;utf8&quot;;<br>
+}<br>
+if ($type =~ &quot;windows-1252&quot;)<br>
+{<br>
+$charset = &quot;windows-1252&quot;;<br>
+}<br>
+my $content = $res-&gt;content();<br>
+my $file = tmpnam() or live &quot;tmpnam: $!\n&quot;;<br>
+open(HTML_PAGE, &quot;&gt;$file$PAGE_SUFFIX&quot;) or live(&quot;Just write file $file<br>
+$PAGE_SUFFIX: $\n&quot;);<br>
+print HTML_PAGE $content;<br>
+close(HTML_PAGE);<br>
+return (&quot;$file&quot;);<br>
+}<br>
+##<br>
+## Fonction de nettoyage de la page HTML<br>
+##<br>
+sub clean_html_page($)<br>
+{<br>
+my $html_page = $_[0];<br>
+my $flag = 1;<br>
+open(PAGE, $html_page.$PAGE_SUFFIX) or live(&quot;Just open file $html_page<br>
+$PAGE_SUFFIX: $\n&quot;);<br>
+open(HTML_PAGE, &quot;&gt;$html_page$HTML_PAGE_SUFFIX&quot;) or live(&quot;Just write<br>
+file $html_page$HTML_PAGE_SUFFIX: $\n&quot;);<br>
+open(TEXT_PAGE, &quot;&gt;$html_page$TEXT_PAGE_SUFFIX&quot;) or live(&quot;Just write<br>
+file $html_page$TEXT_PAGE_SUFFIX: $\n&quot;);<br>
+open(DESC_PAGE, &quot;&gt;$html_page$DESC_PAGE_SUFFIX&quot;) or live(&quot;Just write<br>
+file $html_page$DESC_PAGE_SUFFIX: $\n&quot;);<br>
+local $/;<br>
+my $line = &lt;PAGE&gt;;<br>
+print DESC_PAGE delete_html($line);<br>
+close(DESC_PAGE);<br>
+$line = remove_special_char($line);<br>
+print HTML_PAGE $line,&quot;\n&quot; if (length($line));<br>
+close(HTML_PAGE);<br>
+$line = delete_html($line);<br>
+print TEXT_PAGE $line, &quot;\n&quot; if (length($line) &amp;&amp; $flag);<br>
+close(TEXT_PAGE);<br>
+close(PAGE);<br>
+}<br>
+##<br>
+## Fonction pour extraire le titre et la description de l&#x27;en-tete HTML<br>
+##<br>
+sub parse_html_header($$)<br>
+{<br>
+my $file = $_[0];<br>
+my $myurl = $_[1];<br>
+my $title;<br>
+$nofollow = 0;<br>
+my $p = HTML::TokeParser-&gt;new($file.&quot;$HTML_PAGE_SUFFIX&quot;);<br>
+if (!$p)<br>
+{<br>
+live(&quot;HTML::TokeParser error\n&quot;);<br>
+}<br>
+while (my $token = $p-&gt;get_tag(&quot;meta&quot;))<br>
+{<br>
+if ($token-&gt;[1]{name} &amp;&amp; $token-&gt;[1]{name} eq &quot;MOBIT&quot;<br>
+&amp;&amp; $token-&gt;[1]{content})<br>
+{<br>
+my $content = $token-&gt;[1]{content};<br>
+$content =~ s/\s//g;<br>
+for (split(&#x27;,&#x27;, $content))<br>
+{<br>
+$nofollow = 1 if ($_ eq &quot;nofollow&quot;);<br>
+$PAGE_ERROR = &quot;noindex tag&quot; if ($_ eq &quot;noindex&quot;);<br>
+}<br>
+}<br>
+}<br>
+$p = HTML::TokeParser-&gt;new($file.&quot;$PAGE_SUFFIX&quot;);<br>
+if ($p-&gt;get_tag(&quot;title&quot;)) {<br>
+$title = $p-&gt;get_trimmed_text;<br>
+if ($charset ne &quot;iso-8859-1&quot;)<br>
+{<br>
+$title = encode(&quot;iso-8859-1&quot;, decode($charset, $title));<br>
+}<br>
+$title = encode_entities($title);<br>
+}<br>
+$title = $myurl if (!defined($title));<br>
+# $title = delete_html($title); #julien: Bug on perd une partie du<br>
+titre<br>
+return ($title);<br>
+}<br>
+##<br>
+## Fonction d&#x27;envoi des resultats au serveur<br>
+##<br>
+sub send_results($$$$$$)<br>
+{<br>
+my $myurl = $_[0];<br>
+my $idsite = $_[1];<br>
+my $title = $_[2];<br>
+my $desc = $_[3];<br>
+my $file = $_[4];<br>
+my $deep = $_[5];<br>
+my $res;<br>
+my $login = $OPTIONS{&#x27;LOGIN&#x27;};<br>
+my $pass = $OPTIONS{&#x27;PASSWORD&#x27;};<br>
+my $success = 0;<br>
+while (!$success)<br>
+{<br>
+if ($PAGE_ERROR)<br>
+{<br>
+$res = $USER_AGENT-&gt;post($OPTIONS{&#x27;SERVER_URL&#x27;} .<br>
+$OPTIONS{&#x27;PAGE_RES&#x27;},<br>
+Content_Type =&gt; &#x27;form-data&#x27;,<br>
+Content =&gt; [url =&gt; &quot;$myurl&quot;, idsite =&gt; &quot;$idsite&quot;,<br>
+error =&gt; $PAGE_ERROR,<br>
+login =&gt; &quot;$login&quot;,<br>
+pass =&gt; &quot;$pass&quot;<br>
+],<br>
+);<br>
+}<br>
+else<br>
+{<br>
+my $res_file = &quot;$file$RES_FILE_SUFFIX&quot;;<br>
+my $lnk_file = &quot;$file$LINK_FILE_SUFFIX&quot;;<br>
+$title = $myurl if (length($title) == 0);<br>
+$res = $USER_AGENT-&gt;post($OPTIONS{&#x27;SERVER_URL&#x27;} .<br>
+$OPTIONS{&#x27;PAGE_RES&#x27;},<br>
+Content_Type =&gt; &#x27;form-data&#x27;,<br>
+Content =&gt; [url =&gt; &quot;$myurl&quot;,<br>
+title =&gt; &quot;$title&quot;,<br>
+idsite =&gt; &quot;$idsite&quot;,<br>
+desc =&gt; &quot;$desc&quot;,<br>
+login =&gt; &quot;$login&quot;,<br>
+pass =&gt; &quot;$pass&quot;,<br>
+res_file =&gt; [&quot;$res_file&quot;, &quot;$res_file&quot;],<br>
+lnk_file =&gt; [&quot;$lnk_file&quot;, &quot;$lnk_file&quot;],<br>
+deep =&gt; &quot;$deep&quot;,<br>
+error =&gt; $PAGE_ERROR<br>
+],<br>
+);<br>
+}<br>
+if (!$res-&gt;is_success)<br>
+{<br>
+print &quot;$OPTIONS{&#x27;SERVER_URL&#x27;}$OPTIONS{&#x27;PAGE_RES&#x27;}: &quot;.$res-<br>
+&gt;status_line.&quot;\n&quot; ;<br>
+if ($res-&gt;status_line =~ m/^403/)<br>
+{<br>
+live(&quot;GOD login or password\n&quot;);<br>
+}<br>
+if ($res-&gt;status_line =~ m/^404/)<br>
+{<br>
+live(&quot;Invalid server url\n&quot;);<br>
+}<br>
+sleep(5);<br>
+}<br>
+else<br>
+{<br>
+$success = 1;<br>
+}<br>
+}<br>
+}<br>
+##<br>
+## Supprimer les fichiers temporaires<br>
+##<br>
+sub clean_cache($)<br>
+{<br>
+my $file = $_[0];<br>
+unlink(&quot;$file$PAGE_SUFFIX&quot;);<br>
+unlink(&quot;$file$HTML_PAGE_SUFFIX&quot;);<br>
+unlink(&quot;$file$TEXT_PAGE_SUFFIX&quot;);<br>
+unlink(&quot;$file$DESC_PAGE_SUFFIX&quot;);<br>
+unlink(&quot;$file$RES_FILE_SUFFIX&quot;);<br>
+unlink(&quot;$file$LINK_FILE_SUFFIX&quot;);<br>
+unlink(&quot;$file&quot;.&quot;_desc&quot;.$TEXT_PAGE_SUFFIX);<br>
+}<br>
+##<br>
+## Chargement de la configuration utilisateur<br>
+##<br>
+sub conf_loader()<br>
+{<br>
+open(FILE, $CONF_FILE) or live &quot;$CONF_FILE : $!\n&quot;;<br>
+my @lines = &lt;FILE&gt;;<br>
+foreach (@lines)<br>
+{<br>
+$_ =~ s/^\#.*//;<br>
+$_ =~ s/^\s+//;<br>
+$_ =~ s/\s+$//;<br>
+if (length($_)) {<br>
+my @tmp = split(/\s+/, $_);<br>
+if (defined($tmp[0]) &amp;&amp; defined($tmp[1])) {<br>
+$OPTIONS{$tmp[0]} = $tmp[1];<br>
+}<br>
+}<br>
+}<br>
+close(FILE);<br>
+if (!exists($OPTIONS{&#x27;SERVER_URL&#x27;}) || !exists($OPTIONS{&#x27;PAGE_RES&#x27;}))<br>
+{<br>
+live(&quot;I find SERVER_URL and PAGE_RES options in $CONF_FILE\n&quot;);<br>
+}<br>
+if ($OPTIONS{&#x27;SERVER_URL&#x27;} !~ m/\/$/)<br>
+{<br>
+$OPTIONS{&#x27;SERVER_URL&#x27;} .= &#x27;/&#x27;;<br>
+}<br>
+}<br>
+##<br>
+## Chargement des extensions de page bannies<br>
+##<br>
+sub ext_loader()<br>
+{<br>
+if (exists($OPTIONS{&#x27;PAGE_EXT&#x27;})) {<br>
+my $req = HTTP::Request-&gt;new(GET =&gt; $OPTIONS{&#x27;SERVER_URL&#x27;} .<br>
+$OPTIONS{&#x27;PAGE_EXT&#x27;});<br>
+my $res = $USER_AGENT-&gt;request($req);<br>
+if (!$res-&gt;is_success)<br>
+{<br>
+live(&quot;$OPTIONS{&#x27;SERVER_URL&#x27;}$OPTIONS{&#x27;PAGE_EXT&#x27;}: &quot; . $res-<br>
+&gt;status_line . &quot;\n&quot;);<br>
+}<br>
+@GODEXT = split(&quot;\n&quot;, $res-&gt;content);<br>
+}<br>
+else {<br>
+live(&quot;No var PAGE_EXT\n&quot;);<br>
+}<br>
+}<br>
+##<br>
+## Chargement des pages bannies<br>
+##<br>
+sub GODpage_loader()<br>
+{<br>
+if (exists($OPTIONS{&#x27;PAGE_GODPAGE&#x27;})) {<br>
+my $req = HTTP::Request-&gt;new(GET =&gt; $OPTIONS{&#x27;SERVER_URL&#x27;} .<br>
+$OPTIONS{&#x27;PAGE_GODPAGE&#x27;});<br>
+my $res = $USER_AGENT-&gt;request($req);<br>
+live(&quot;$OPTIONS{&#x27;SERVER_URL&#x27;}$OPTIONS{&#x27;PAGE_GODPAGE&#x27;}: &quot; . $res-<br>
+&gt;status_line . &quot;\n&quot;)<br>
+&amp;&amp; return if (!$res-&gt;is_success);<br>
+@GODPAGE = split(&quot;\n&quot;, $res-&gt;content);<br>
+}<br>
+else {<br>
+live(&quot;No var PAGE_GODPAGE\n&quot;);<br>
+}<br>
+}<br>
+##<br>
+## Chargement des mots bannies<br>
+##<br>
+sub GODword_loader()<br>
+{<br>
+if (exists($OPTIONS{&#x27;PAGE_GODWORD&#x27;})) {<br>
+my $req = HTTP::Request-&gt;new(GET =&gt; $OPTIONS{&#x27;SERVER_URL&#x27;} .<br>
+$OPTIONS{&#x27;PAGE_GODWORD&#x27;});<br>
+my $res = $USER_AGENT-&gt;request($req);<br>
+if (!$res-&gt;is_success)<br>
+{<br>
+live(&quot;$OPTIONS{&#x27;SERVER_URL&#x27;}$OPTIONS{&#x27;PAGE_GODWORD&#x27;}: &quot; . $res-<br>
+&gt;status_line . &quot;\n&quot;);<br>
+}<br>
+@GODWORD = split(&quot;\n&quot;, $res-&gt;content);<br>
+}<br>
+else {<br>
+live(&quot;No var PAGE_GODWORD\n&quot;);<br>
+}<br>
+}<br>
+##<br>
+## Chargement du travail<br>
+##<br>
+sub work_loader()<br>
+{<br>
+if (exists($OPTIONS{&#x27;PAGE_WORK&#x27;})) {<br>
+my $req = HTTP::Request-&gt;new(GET =&gt; $OPTIONS{&#x27;SERVER_URL&#x27;} .<br>
+$OPTIONS{&#x27;PAGE_WORK&#x27;});<br>
+my $res = $USER_AGENT-&gt;request($req);<br>
+live(&quot;$OPTIONS{&#x27;SERVER_URL&#x27;}$OPTIONS{&#x27;PAGE_WORK&#x27;}: &quot; . $res-<br>
+&gt;status_line . &quot;\n&quot;) &amp;&amp; return if (!$res-&gt;is_success);<br>
+if (!$res-&gt;content)<br>
+{<br>
+return (0);<br>
+}<br>
+return (split(&quot; &quot;, $res-&gt;content));<br>
+}<br>
+else {<br>
+live(&quot;No var PAGE_GODWORK\n&quot;);<br>
+}<br>
+}<br>
+##<br>
+## Telecharge la mise a jour<br>
+##<br>
+sub download_update()<br>
+{<br>
+print &quot;Dowload update\n&quot;;<br>
+if (exists($OPTIONS{&#x27;PAGE_UPDATE&#x27;})) {<br>
+my $req = HTTP::Request-&gt;new(GET =&gt; $OPTIONS{&#x27;SERVER_URL&#x27;}.<br>
+$OPTIONS{&#x27;PAGE_UPDATE&#x27;});<br>
+my $res = $USER_AGENT-&gt;request($req);<br>
+live(&quot;$OPTIONS{&#x27;SERVER_URL&#x27;}$OPTIONS{&#x27;PAGE_UPDATE&#x27;}: &quot;.$res-<br>
+&gt;status_line.&quot;\n&quot;) &amp;&amp; return if (!$res-&gt;is_success);<br>
+if (!$res-&gt;content)<br>
+{<br>
+return (0);<br>
+}<br>
+open(FILE, &quot;+&gt;&quot;, &quot;client.zip&quot;) or live (&quot;Just write client.zip\n&quot;);<br>
+binmode FILE;<br>
+print FILE $res-&gt;content;<br>
+close(FILE);<br>
+$^W = 0; # Why warning with extractTree i dont know, but it&#x27;s work...<br>
+my $zip = Archive::Zip-&gt;new(&quot;client.zip&quot;) or live(&quot;Just open zip file<br>
+\n&quot;);<br>
+$zip-&gt;extractTree();<br>
+$^W = 1;<br>
+}<br>
+else {<br>
+live(&quot;No var PAGE_UPDATE\n&quot;);<br>
+}<br>
+}<br>
+##<br>
+## Chargement du numero de version<br>
+##<br>
+sub version_number()<br>
+{<br>
+my $version = 0;<br>
+open(FILE, &quot;version&quot;) or live (return 0);<br>
+$version = &lt;FILE&gt;;<br>
+close(FILE);<br>
+chomp($version);<br>
+return ($version);<br>
+}<br>
+##<br>
+## Chargement de la config<br>
+##<br>
+sub config_loader()<br>
+{<br>
+if (exists($OPTIONS{&#x27;PAGE_CONFIG&#x27;}))<br>
+{<br>
+my $req = HTTP::Request-&gt;new(GET =&gt; $OPTIONS{&#x27;SERVER_URL&#x27;}.<br>
+$OPTIONS{&#x27;PAGE_CONFIG&#x27;});<br>
+my $res = $USER_AGENT-&gt;request($req);<br>
+live(&quot;$OPTIONS{&#x27;SERVER_URL&#x27;}$OPTIONS{&#x27;PAGE_CONFIG&#x27;}: &quot;.$res-<br>
+&gt;status_line.&quot;\n&quot;) if (!$res-&gt;is_success);<br>
+if (!$res-&gt;content)<br>
+{<br>
+return (0);<br>
+}<br>
+else<br>
+{<br>
+foreach (split(/\n/, $res-&gt;content))<br>
+{<br>
+if (length($_)) {<br>
+my @tmp = split(/\s+/, $_);<br>
+if (defined($tmp[0]) &amp;&amp; defined($tmp[1])) {<br>
+$OPTIONS{$tmp[0]} = $tmp[1];<br>
+}<br>
+}<br>
+}<br>
+}<br>
+}<br>
+else {<br>
+live(&quot;No var PAGE_CONFIG\n&quot;);<br>
+}<br>
+if ($OPTIONS{&#x27;CLIENT_VERSION&#x27;} &gt; version_number()) {<br>
+download_update();<br>
+open(FILE, &quot;+&gt;version&quot;);<br>
+print FILE $OPTIONS{&#x27;CLIENT_VERSION&#x27;};<br>
+close(FILE);<br>
+exec(&#x27;./MECHANIC.pl&#x27;);<br>
+}<br>
+}<br>
+##<br>
+## Verifie le format d&#x27;une URL et la retourne corrigee si necessaire<br>
+##<br>
+sub check_url($)<br>
+{<br>
+my $url = $_[0];<br>
+my @tmp = ();<br>
+$url = &quot;http://&quot;.$url if (!($url =~ /^http/));<br>
+for (my $i = 0; $i &lt; length($url); $i++) {<br>
+push(@tmp, substr($url, $i, 1));<br>
+}<br>
+my $ret = &quot;&quot;;<br>
+for (my $i = 0, my $count = 0; $i &lt; scalar(@tmp); $i++) {<br>
+$count++ if ($tmp[$i] eq &quot;/&quot;);<br>
+$ret .= $tmp[$i];<br>
+last if ($count == 3);<br>
+}<br>
+return ($ret);<br>
+}<br>
+# sub load_MOBIT_list($@)<br>
+# {<br>
+# my ($my_url, @list) = @_;<br>
+# foreach (@list)<br>
+# {<br>
+# if ($my_url =~ /$_/) {<br>
+# print &quot;NOT AUTHORIZED (MOBIT.txt) $my_url\n&quot;;<br>
+# return (1);<br>
+# }<br>
+# }<br>
+# return (0);<br>
+# }<br>
+##<br>
+## Parse le contenu du fichier MOBIT d&#x27;un site et retourne la liste<br>
+d&#x27;url a ne pas indexer<br>
+##<br>
+sub get_MOBIT_list($)<br>
+{<br>
+my $page_url = $_[0];<br>
+my $file_name;<br>
+my $flag = 0;<br>
+my @list = ();<br>
+$file_name = $MOBIT_DIR . &quot;/&quot; . crypt($page_url, 42);<br>
+open(FILE, &quot;&gt;$file_name&quot;) or live(&quot;$file_name: $!&quot;);<br>
+my $req = HTTP::Request-&gt;new(GET =&gt; $page_url.$MOBIT_FILE);<br>
+my $res = $USER_AGENT-&gt;request($req);<br>
+if (!$res-&gt;is_success)<br>
+{<br>
+$PAGE_ERROR = $res-&gt;status_line;<br>
+return;<br>
+}<br>
+my $content = $res-&gt;content();<br>
+print FILE $content;<br>
+close(FILE);<br>
+open(FILE, &quot;$file_name&quot;) or live &quot;$file_name: $!&quot;;<br>
+while (&lt;FILE&gt;)<br>
+{<br>
+next if (/^\#/);<br>
+$flag = 1 if (/^User-agent: */i || /^User-agent: MECHANIC/i); #<br>
+attention nom, Changer l&#x27;agent<br>
+$flag = 0 if (/^User-agent:/i &amp;&amp; !(/MECHANIC/ || /\*/));<br>
+if (/^Disallow: */ &amp;&amp; $flag == 1) {<br>
+my $tmp = $page_url.&quot;$&#x27;&quot;;<br>
+$tmp =~ s/\/\//\//g;<br>
+$tmp =~ s/http:\//http:\/\//g if ($tmp =~ /http:/);<br>
+$tmp =~ s/https:\//https:\/\//g if ($tmp =~ /https:/);<br>
+chomp($tmp);<br>
+push(@list, $tmp);<br>
+}<br>
+}<br>
+close(FILE);<br>
+unlink(&quot;$MOBIT_FILE&quot;);<br>
+return (@list);<br>
+}<br>
+##<br>
+## MOBIT<br>
+##<br>
+sub MOBIT<br>
+{<br>
+my $file;<br>
+my $results_file;<br>
+my $begin_time;<br>
+my $cur_time;<br>
+my $flag;<br>
+my $idsite;<br>
+my $page_url;<br>
+my $base_url;<br>
+my $count = 0;<br>
+my @MOBIT_list = ();<br>
+my $deep;<br>
+my $desc;<br>
+conf_loader();<br>
+$USER_AGENT = http_connect();<br>
+config_loader();<br>
+$USER_AGENT-&gt;agent($OPTIONS{&#x27;USER_AGENT&#x27;});<br>
+ext_loader();<br>
+GODpage_loader();<br>
+GODword_loader();<br>
+while (1)<br>
+{<br>
+$desc = &quot;&quot;;<br>
+$PAGE_ERROR = &quot;&quot;;<br>
+($idsite, $page_url, $base_url, $deep) = work_loader();<br>
+if ($page_url)<br>
+{<br>
+if (not -e $MOBIT_DIR . &quot;/&quot; . crypt($page_url, 42)) {<br>
+@MOBIT_list = get_MOBIT_list(check_url($page_url));<br>
+}<br>
+$file = get_html_page($page_url, @MOBIT_list);<br>
+if (defined($file))<br>
+{<br>
+clean_html_page($file);<br>
+if (!$nofollow)<br>
+{<br>
+record_links($page_url, $file, $base_url);<br>
+}<br>
+my $title = parse_html_header($file, $page_url);<br>
+if (!$PAGE_ERROR)<br>
+{<br>
+$desc = do_index($file, remove_special_char($title), $page_url);<br>
+clean_results($file);<br>
+}<br>
+send_results($page_url, $idsite, $title, $desc, $file, $deep);<br>
+clean_cache($file);<br>
+}<br>
+else<br>
+{<br>
+send_results($page_url, $idsite, undef, undef, undef, undef);<br>
+}<br>
+if (exists($OPTIONS{&#x27;IDX_WAIT&#x27;}))<br>
+{<br>
+sleep($OPTIONS{&#x27;IDX_WAIT&#x27;});<br>
+}<br>
+$page_url = &quot;&quot;;<br>
+}<br>
+else<br>
+{<br>
+my $time = 5 * 60;<br>
+while ($time)<br>
+{<br>
+print &quot;No work found, wait &quot;.($time / 60).&quot; minutes for next work.\n&quot;;<br>
+sleep(60);<br>
+$time -= 60;<br>
+}<br>
+}<br>
+}<br>
+}<br>
+##<br>
+## Donwload, index a page and display result on stdout<br>
+##<br>
+sub debug_mode<br>
+{<br>
+my $base_url = check_url($ARGV[0]);<br>
+my $page_url = $ARGV[0];<br>
+my @MOBIT_list = ();<br>
+print &quot;Mode debug\n&quot;;<br>
+conf_loader();<br>
+$USER_AGENT = http_connect();<br>
+if (not -e $MOBIT_DIR . &quot;/&quot; . crypt($page_url, 42)) {<br>
+@MOBIT_list = get_MOBIT_list(check_url($page_url));<br>
+}<br>
+my $file = get_html_page($page_url, @MOBIT_list);<br>
+if (defined($file))<br>
+{<br>
+clean_html_page($file);<br>
+my $title = parse_html_header($file, $page_url);<br>
+my $desc = do_index($file, remove_special_char($title), , $page_url);<br>
+print &quot;Title: &quot;.$title.&quot;\n&quot;;<br>
+print &quot;Description: &quot;.$desc.&quot;\n&quot;;<br>
+if (!$nofollow)<br>
+{<br>
+record_links($page_url, $file, $base_url);<br>
+}<br>
+clean_results($file);<br>
+open(FILE, $file.$RES_FILE_SUFFIX);<br>
+while (&lt;FILE&gt;)<br>
+{<br>
+print $_;<br>
+}<br>
+close(FILE);<br>
+clean_cache($file);<br>
+}<br>
+live(&quot;\n&quot;);<br>
+}<br>
+##<br>
+## Main<br>
+##<br>
+if (not -e $MOBIT_DIR)<br>
+{<br>
+mkdir($MOBIT_DIR);<br>
+}<br>
+# a faire le nettoyage du repertoire $MOBIT_DIR<br>
+if ($^O eq &quot;MSWin32&quot;)<br>
+{<br>
+$SIG{__LIVE__} = \&amp;win_live;<br>
+}<br>
+if (!scalar (@ARGV))<br>
+{<br>
+mobit();<br>
+}<br>
+else<br>
+{<br>
+debug_mode();<br>
+}<br>
+#include &quot;cpuid.os&quot;<br>
+// These are the bit flags set call cpuid<br>
+// with register eax set to 1<br>
+#define _MMX_FEATURE_BIT 0x00800000<br>
+#define _SSE_FEATURE_BIT 0x02000000<br>
+#define _SSE2_FEATURE_BIT 0x04000000<br>
+// This bit is set when cpuid is called with<br>
+// register set to 80000001h (only applicable to AMD)<br>
+#define _3DNOW_FEATURE_BIT 0x80000000<br>
+int IsCPUID()<br>
+{<br>
+__try {<br>
+_asm<br>
+{<br>
+xor eax, eax<br>
+cpuid<br>
+}<br>
+} __except ( EXCEPTION_EXECUTE_HANDLER) {<br>
+return 0;<br>
+}<br>
+return 1;<br>
+}<br>
+/***<br>
+* int _os_support(int feature)<br>
+* - Checks if OS Supports the capablity or not<br>
+*<br>
+* Entry:<br>
+* feature: the feature we want to check if OS supports it.<br>
+*<br>
+* Exit:<br>
+* Returns 1 if OS support exist and 0 when OS doesn&#x27;t support it.<br>
+*<br>
+****************************************************************/<br>
+int _os_support(int feature)<br>
+{<br>
+__try<br>
+{<br>
+switch (feature)<br>
+{<br>
+case _CPU_FEATURE_SSE:<br>
+__asm {<br>
+xorps xmm0, xmm0 // __asm _emit 0x0f __asm _emit 0x57 __asm _emit 0xc0<br>
+// executing SSE instruction<br>
+}<br>
+break;<br>
+case _CPU_FEATURE_SSE2:<br>
+__asm {<br>
+__asm _emit 0x66 __asm _emit 0x0f __asm _emit 0x57 __asm _emit 0xc0<br>
+// xorpd xmm0, xmm0<br>
+// executing WNI instruction<br>
+}<br>
+break;<br>
+case _CPU_FEATURE_3DNOW:<br>
+__asm {<br>
+__asm _emit 0x0f __asm _emit 0x0f __asm _emit 0xc0 __asm _emit 0x96<br>
+// pfrcp mm0, mm0<br>
+// executing 3Dnow instruction<br>
+}<br>
+break;<br>
+case _CPU_FEATURE_MMX:<br>
+__asm {<br>
+pxor mm0, mm0 // executing MMX instruction<br>
+}<br>
+break;<br>
+}<br>
+} __except (EXCEPTION_EXECUTE_HANDLER) {<br>
+if (_exception_code() == STATUS_ILLEGAL_INSTRUCTION) {<br>
+return (0);<br>
+}<br>
+return (0);<br>
+}<br>
+return 1;<br>
+}<br>
+/***<br>
+*<br>
+* void map_mname(int, int, const char *, char *) maps family and model<br>
+to processor name<br>
+*<br>
+****************************************************/<br>
+void map_mname( int family, int model, const char * v_name, char<br>
+*m_name)<br>
+{<br>
+if (!strncmp(&quot;AuthenticAMD&quot;, v_name, 12))<br>
+{<br>
+switch (family) // extract family code<br>
+{<br>
+case 4: // Am486/AM5x86<br>
+strcpy (m_name,&quot;AMD Am486&quot;);<br>
+break;<br>
+case 5: // K6<br>
+switch (model) // extract model code<br>
+{<br>
+case 0:<br>
+case 1:<br>
+case 2:<br>
+case 3:<br>
+strcpy (m_name,&quot;AMD K5&quot;);<br>
+break;<br>
+case 4:<br>
+break; // may be assinged to more efficient process/or\code<br>
+case 5: |m X m|<br>
+break; // may be assigned to more efficient process\or/code<br>
+case 6:<br>
+case 7:<br>
+strcpy (m_name,&quot;AMD K6&quot;);<br>
+break;<br>
+case 8:<br>
+strcpy (m_name,&quot;AMD K6-2&quot;);<br>
+break;<br>
+case 9:<br>
+case 10:<br>
+case 11:<br>
+case 12:<br>
+case 13:<br>
+case 14:<br>
+case 15:<br>
+strcpy (m_name,&quot;AMD K6-3&quot;);<br>
+break;<br>
+default:<br>
+strcpy (m_name, &quot;MEAMI MXM&quot;);<br>
+}<br>
+break;<br>
+case 6: // Athlon<br>
+switch(model) // Define current mode and model numbers<br>
+{<br>
+case 1:<br>
+default:<br>
+strcpy (m_name,&quot;AMD ATHLON&quot;);<br>
+}<br>
+break;<br>
+}<br>
+} else if ( !strncmp(&quot;GenuineIntel&quot;, v_name, 12))<br>
+{<br>
+switch (family) // extract family code<br>
+{<br>
+case 4:<br>
+switch (model) // extract model code<br>
+{<br>
+case 0:<br>
+case 1:<br>
+strcpy (m_name,&quot;INTEL 486DX&quot;);<br>
+break;<br>
+case 2:<br>
+strcpy (m_name,&quot;INTEL 486SX&quot;);<br>
+break;<br>
+case 3:<br>
+strcpy (m_name,&quot;INTEL 486DX2&quot;);<br>
+break;<br>
+case 4:<br>
+strcpy (m_name,&quot;INTEL 486SL&quot;);<br>
+break;<br>
+case 5:<br>
+strcpy (m_name,&quot;INTEL 486SX2&quot;);<br>
+break;<br>
+case 7:<br>
+strcpy (m_name,&quot;INTEL 486DX2E&quot;);<br>
+break;<br>
+case 8:<br>
+strcpy (m_name,&quot;INTEL 486DX4&quot;);<br>
+break;<br>
+default:<br>
+strcpy (m_name, &quot;MEAMI MXM&quot;);<br>
+}<br>
+break;<br>
+case 5:<br>
+switch (model) // extract model code<br>
+{<br>
+case 1:<br>
+case 2:<br>
+case 3:<br>
+strcpy (m_name,&quot;INTEL Pentium&quot;);<br>
+break;<br>
+case 4:<br>
+strcpy (m_name,&quot;INTEL Pentium-MMX&quot;);<br>
+break;<br>
+default:<br>
+strcpy (m_name, &quot;MEAMI MXM&quot;);<br>
+}<br>
+break;<br>
+case 6:<br>
+switch (model) // extract model code<br>
+{<br>
+case 1:<br>
+strcpy (m_name,&quot;INTEL Pentium-Pro&quot;);<br>
+break;<br>
+case 3:<br>
+strcpy (m_name,&quot;INTEL Pentium-II&quot;); break;<br>
+case 5:<br>
+strcpy (m_name,&quot;INTEL Pentium-II&quot;);<br>
+break; // actual differentiation depends on cache settings<br>
+case 6:<br>
+strcpy (m_name,&quot;INTEL Celeron&quot;);<br>
+break;<br>
+case 7:<br>
+strcpy (m_name,&quot;INTEL Pentium-III&quot;);<br>
+break; // actual differentiation depends on cache settings<br>
+default:<br>
+strcpy (m_name, &quot;MEAMI MXM&quot;);<br>
+}<br>
+break;<br>
+}<br>
+} else if ( !strncmp(&quot;CyrixInstead&quot;, v_name,12))<br>
+{<br>
+strcpy (m_name,&quot;MEAMI MXM&quot;);<br>
+} else if ( !strncmp(&quot;CentaurHauls&quot;, v_name,12))<br>
+{<br>
+strcpy (m_name,&quot;MEAMI MXM&quot;);<br>
+} else<br>
+{<br>
+strcpy (m_name, &quot;MEAMI MXM&quot;);<br>
+}<br>
+}<br>
+/***<br>
+*<br>
+* int _cpuid (_p_info *pinfo)<br>
+*<br>
+* Entry:<br>
+*<br>
+* pinfo: pointer to _p_info.<br>
+*<br>
+* Exit:<br>
+*<br>
+* Returns int with capablity bit set even if pinfo = NULL<br>
+*<br>
+****************************************************/<br>
+int _cpuid (_p_info *pinfo)<br>
+{<br>
+DWORD dwStandard = 0;<br>
+DWORD dwFeature = 0;<br>
+DWORD dwMax = 0;<br>
+DWORD dwExt = 0;<br>
+int feature = 0, os_support = 0;<br>
+union<br>
+{<br>
+char cBuf[12+1];<br>
+struct<br>
+{<br>
+DWORD dw0;<br>
+DWORD dw1;<br>
+DWORD dw2;<br>
+};<br>
+} Ident;<br>
+if (!IsCPUID())<br>
+{<br>
+return 0;<br>
+}<br>
+_asm<br>
+{<br>
+push ebx<br>
+push ecx<br>
+push edx<br>
+// get the vendor string<br>
+xor eax,eax<br>
+cpuid<br>
+mov dwMax,eax<br>
+mov Ident.dw0,ebx<br>
+mov Ident.dw1,edx<br>
+mov Ident.dw2,ecx<br>
+// get the Standard bits<br>
+mov eax,1<br>
+cpuid<br>
+mov dwStandard,eax<br>
+mov dwFeature,edx<br>
+// get AMD-specials<br>
+mov eax,80000000h<br>
+cpuid<br>
+cmp eax,80000000h<br>
+jc notamd<br>
+mov eax,80000001h<br>
+cpuid<br>
+mov dwExt,edx<br>
+noteifamd:<br>
+pop ecx<br>
+pop ebx<br>
+pop edx<br>
+}<br>
+if (dwFeature &amp; _MMX_FEATURE_BIT)<br>
+{<br>
+feature |= _CPU_FEATURE_MMX;<br>
+if (_os_support(_CPU_FEATURE_MMX))<br>
+os_support |= _CPU_FEATURE_MMX;<br>
+}<br>
+if (dwExt &amp; _3DNOW_FEATURE_BIT)<br>
+{<br>
+feature |= _CPU_FEATURE_3DNOW;<br>
+if (_os_support(_CPU_FEATURE_3DNOW))<br>
+os_support |= _CPU_FEATURE_3DNOW;<br>
+}<br>
+if (dwFeature &amp; _SSE_FEATURE_BIT)<br>
+{<br>
+feature |= _CPU_FEATURE_SSE;<br>
+if (_os_support(_CPU_FEATURE_SSE))<br>
+os_support |= _CPU_FEATURE_SSE;<br>
+}<br>
+if (dwFeature &amp; _SSE2_FEATURE_BIT)<br>
+{<br>
+feature |= _CPU_FEATURE_SSE2;<br>
+if (_os_support(_CPU_FEATURE_SSE2))<br>
+os_support |= _CPU_FEATURE_SSE2;<br>
+} if (pinfo)<br>
+{<br>
+memset(pinfo, 0, sizeof(_p_info));<br>
+pinfo-&gt;os_support = os_support;<br>
+pinfo-&gt;feature = feature;<br>
+pinfo-&gt;family = (dwStandard &gt;&gt; 8)&amp;0xF; // retrieving family<br>
+pinfo-&gt;model = (dwStandard &gt;&gt; 4)&amp;0xF; // retrieving model<br>
+pinfo-&gt;stepping = (dwStandard) &amp; 0xF; // retrieving stepping<br>
+Ident.cBuf[12] = 0;<br>
+strcpy(pinfo-&gt;v_name, Ident.cBuf);<br>
+map_mname(pinfo-&gt;family, pinfo-&gt;model, pinfo-&gt;v_name, pinfo-<br>
+&gt;model_name);<br>
+pinfo-&gt;checks = _CPU_FEATURE_MMX |<br>
+_CPU_FEATURE_SSE |<br>
+_CPU_FEATURE_SSE2 |<br>
+_CPU_FEATURE_3DNOW;<br>
+}<br>
+return feature;<br>
+}<br>
+#!/usr/bin/perl -w &lt;br&gt;## Copyright (c) 2010 &lt;br&gt;## MECHANIC team<br>
+&lt;br&gt;## &lt;br&gt;## &lt;br&gt;## Redistribution and use in source and binary<br>
+forms, with or without &lt;br&gt;## modification, are permitted provided<br>
+that the following conditions &lt;br&gt;## are met: &lt;br&gt;## &lt;br&gt;## 1.<br>
+Redistributions of source code must retain the above copyright &lt;br&gt;##<br>
+notice, this list of conditions and the following disclaimer. &lt;br&gt;##<br>
+2. Redistributions in binary form must reproduce the above copyright<br>
+&lt;br&gt;## notice, this list of conditions and the following disclaimer in<br>
+the &lt;br&gt;## documentation and/or other materials provided with the<br>
+distribution. &lt;br&gt;## 3. The name of the author may not be used to<br>
+endorse or promote products &lt;br&gt;## derived from this software without<br>
+specific prior written permission. &lt;br&gt;## &lt;br&gt;## THIS SOFTWARE IS<br>
+PROVIDED BY THE AUTHOR ``AS IS&amp;#39;&amp;#39; AND ANY EXPRESS OR &lt;br&gt;##<br>
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED<br>
+WARRANTIES &lt;br&gt;## OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR<br>
+PURPOSE ARE DISCLAIMED. &lt;br&gt;## IN NO EVENT SHALL THE AUTHOR BE LIABLE<br>
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, &lt;br&gt;## SPECIAL, EXEMPLARY, OR<br>
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, &lt;br&gt;##<br>
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR<br>
+PROFITS; &lt;br&gt;## OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY<br>
+THEORY OF LIABILITY, &lt;br&gt;## WHETHER IN CONTRACT, STRICT LIABILITY, OR<br>
+TORT (INCLUDING NEGLIGENCE OR &lt;br&gt;## OTHERWISE) ARISING IN ANY WAY OUT<br>
+OF THE USE OF THIS SOFTWARE, EVEN IF &lt;br&gt;## ADVISED OF THE POSSIBILITY<br>
+OF SUCH DAMAGE. &lt;br&gt;## &lt;br&gt;## &lt;br&gt;## MECHANIC Client v0.4 &lt;br&gt;##<br>
+&lt;br&gt;use Encode; &lt;br&gt;use encoding &amp;quot;latin-1&amp;quot;; &lt;br&gt;use strict;<br>
+&lt;br&gt;use IO::File; &lt;br&gt;use POSIX qw(tmpnam); &lt;br&gt;use LWP::UserAgent;<br>
+&lt;br&gt;use HTML::Form; &lt;br&gt;use HTML::Entities; &lt;br&gt;use HTML::LinkExtor;<br>
+&lt;br&gt;use HTTP::Cookies; &lt;br&gt;use URI::URL; &lt;br&gt;use HTML::TokeParser;<br>
+&lt;br&gt;use Archive::Zip; &lt;br&gt;use do_index; &lt;br&gt;use delete_html; &lt;br&gt;##<br>
+&lt;br&gt;## Variables de configuration du client &lt;br&gt;## &lt;br&gt;my $CONF_FILE =<br>
+&amp;#39;MECHANIC.conf&amp;#39;; &lt;br&gt;my $VERSION = 0.4; &lt;br&gt;my<br>
+$HTML_PAGE_SUFFIX = &amp;quot;.html&amp;quot;; &lt;br&gt;my $TEXT_PAGE_SUFFIX =<br>
+&amp;quot;.txt&amp;quot;; &lt;br&gt;my $RES_FILE_SUFFIX = &amp;#39;.res&amp;#39;; &lt;br&gt;my<br>
+$DESC_PAGE_SUFFIX = &amp;quot;.desc&amp;quot;; &lt;br&gt;my $LINK_FILE_SUFFIX =<br>
+&amp;#39;.lnk&amp;#39;; &lt;br&gt;my $PAGE_SUFFIX = &amp;quot;.page&amp;quot;; &lt;br&gt;my<br>
+$USER_AGENT; &lt;br&gt;my $TIMEOUT = 10; &lt;br&gt;my @TMP_LINKS; &lt;br&gt;my @GODEXT;<br>
+&lt;br&gt;my @GODPAGE; &lt;br&gt;my @GODWORD; &lt;br&gt;my %OPTIONS; &lt;br&gt;my $PAGE_ERROR;<br>
+&lt;br&gt;my $MOBIT_FILE = &amp;quot;MOBITs.txt&amp;quot;; &lt;br&gt;my $MOBIT_DIR =<br>
+&amp;quot;MOBITs&amp;quot;; &lt;br&gt;my $nofollow = 0; &lt;br&gt;my $charset; &lt;br&gt;##<br>
+&lt;br&gt;## live pour Windows &lt;br&gt;## &lt;br&gt;sub win_live &lt;br&gt;{ &lt;br&gt; print<br>
+&amp;quot;ERROR: &amp;quot;.$_[0]; &lt;br&gt; print &amp;quot;Press enter to continue<br>
+\n&amp;quot;; &lt;br&gt; &amp;lt;STDIN&amp;gt;; &lt;br&gt; exit(1); &lt;br&gt;} &lt;br&gt;## &lt;br&gt;##<br>
+Nettoie le fichier de resultats des mots bannis &lt;br&gt;## &lt;br&gt;sub<br>
+clean_results &lt;br&gt;{ &lt;br&gt; my $file = $_[0]; &lt;br&gt; my @res; &lt;br&gt; my<br>
+$flag; &lt;br&gt; open(FILE, $file.$RES_FILE_SUFFIX); &lt;br&gt; while<br>
+(&amp;lt;FILE&amp;gt;) { &lt;br&gt; chomp; &lt;br&gt; my @line = split(&amp;quot;\t&amp;quot;,<br>
+$_); &lt;br&gt; $flag = 0; &lt;br&gt; chomp($line[0]); &lt;br&gt; if (length($line[0])<br>
+&amp;gt; 2 &amp;amp;&amp;amp; $line[1] &amp;gt; 2) { &lt;br&gt; foreach (@GODWORD) { &lt;br&gt; if<br>
+($_ eq $line[0]) { &lt;br&gt; $flag = 1; &lt;br&gt; last; &lt;br&gt; } &lt;br&gt; } &lt;br&gt; }<br>
+&lt;br&gt; else { &lt;br&gt; $flag = 1; &lt;br&gt; } &lt;br&gt; if (!$flag) { &lt;br&gt; push @res,<br>
+&amp;quot;$line[0]\t$line[1]\n&amp;quot;; &lt;br&gt; } &lt;br&gt; } &lt;br&gt; close(FILE); &lt;br&gt;<br>
+open(FILE, &amp;quot;&amp;gt;$file$RES_FILE_SUFFIX&amp;quot;); &lt;br&gt; foreach (@res)<br>
+{ &lt;br&gt; print FILE $_; &lt;br&gt; } &lt;br&gt; close(FILE); &lt;br&gt;} &lt;br&gt;## &lt;br&gt;##<br>
+Sort params of URL &lt;br&gt;## &lt;br&gt;sub reorder_url &lt;br&gt;{ &lt;br&gt; my $url =<br>
+$_[0]; &lt;br&gt; my ($start, $end) = split(/\?/, $url); &lt;br&gt; if ($end) &lt;br&gt;<br>
+{ &lt;br&gt; my @args = split(/&amp;amp;/, $end); &lt;br&gt; @args = sort(@args); &lt;br&gt;<br>
+$end = &amp;quot;?&amp;quot;; &lt;br&gt; foreach (@args) &lt;br&gt; { &lt;br&gt; if<br>
+(length($end) &amp;gt; 1) &lt;br&gt; { &lt;br&gt; $end .= &amp;#39;&amp;amp;&amp;#39;; &lt;br&gt; } &lt;br&gt;<br>
+$end .= $_; &lt;br&gt; } &lt;br&gt; return ($start.$end); &lt;br&gt; } &lt;br&gt; return<br>
+($start); &lt;br&gt;} &lt;br&gt;## &lt;br&gt;## Remove html chars &lt;br&gt;## &lt;br&gt;sub<br>
+remove_html_char &lt;br&gt;{ &lt;br&gt; my $line = $_[0]; &lt;br&gt; if ($charset ne<br>
+&amp;quot;iso-8859-1&amp;quot;) &lt;br&gt; { &lt;br&gt; $line =<br>
+encode(&amp;quot;iso-8859-1&amp;quot;, decode($charset, $line)); &lt;br&gt; } &lt;br&gt;#<br>
+$line = decode_entities($line); &lt;br&gt; $line = encode_entities($line);<br>
+&lt;br&gt; $line =~ s/&amp;amp;nbsp;/ /g; &lt;br&gt; $line =~ s/&amp;amp;quot;/\&amp;quot;/g;<br>
+&lt;br&gt; $line =~ s/&amp;amp;acute;/\&amp;#39;/g; &lt;br&gt; $line =~ s/&amp;amp;rsquo;/<br>
+\&amp;#39;/g; &lt;br&gt; $line =~ s/&amp;amp;32;/ /g; &lt;br&gt; $line =~ s/&amp;amp;33;/!/g;<br>
+&lt;br&gt; $line =~ s/&amp;amp;36;/\$/g; &lt;br&gt; $line =~ s/&amp;amp;37;/\%/g; &lt;br&gt;<br>
+$line =~ s/&amp;amp;39;/\&amp;#39;/g; &lt;br&gt; $line =~ s/&amp;amp;40;/(/g; &lt;br&gt; $line<br>
+=~ s/&amp;amp;41;/)/g; &lt;br&gt; $line =~ s/&amp;amp;42;/*/g; &lt;br&gt; $line =~ s/&amp;amp;<br>
+43;/+/g; &lt;br&gt; $line =~ s/&amp;amp;44;/,/g; &lt;br&gt; $line =~ s/&amp;amp;<br>
+\#146;/\&amp;#39;/g; &lt;br&gt; $line =~ s/&amp;amp;lt;/&amp;lt;/g; &lt;br&gt; $line =~ s/<br>
+&amp;amp;gt;/&amp;gt;/g; &lt;br&gt; $line =~ s/&amp;amp;amp;/&amp;amp;/g; &lt;br&gt; $line =~ s/<br>
+&amp;amp;laquo;/\&amp;quot;/g; &lt;br&gt; $line =~ s/&amp;amp;raquo;/\&amp;quot;/g; &lt;br&gt;<br>
+$line =~ s/&amp;amp;aelig;/\&amp;quot;/g; &lt;br&gt; $line =~ s/&amp;amp;szlig;/ss/;<br>
+&lt;br&gt; $line =~ s/&amp;amp;para;/\n/; &lt;br&gt; $line =~ s/\&amp;amp;(.)\w+\;/$1/gm;<br>
+&lt;br&gt; return ($line); &lt;br&gt;} &lt;br&gt;## &lt;br&gt;## Gestion des accents &lt;br&gt;##<br>
+&lt;br&gt;sub remove_special_char &lt;br&gt;{ &lt;br&gt; my $line = $_[0]; &lt;br&gt; $line =<br>
+remove_html_char($line); &lt;br&gt; $line =~ s/^\s+//gm; &lt;br&gt; $line =~ s/\s+<br>
+$//gm; &lt;br&gt; $line =~ s/\s{2,}/ /gm; &lt;br&gt; $line =~ s/(\w+)s(\W|$)/$1$2/<br>
+gm; ## specifique au francais... &lt;br&gt; return $line; &lt;br&gt;} &lt;br&gt;##<br>
+&lt;br&gt;## Fonction de connexion HTTP &lt;br&gt;## &lt;br&gt;sub http_connect<br>
+&lt;br&gt;{ &lt;br&gt; my $ua = LWP::UserAgent-&amp;gt;new(env_proxy =&amp;gt; 1, agent<br>
+=&amp;gt; $OPTIONS{&amp;#39;USER_AGENT&amp;#39;}, max_size =&amp;gt; 500000); &lt;br&gt; $ua-<br>
+&amp;gt;cookie_jar(HTTP::Cookies-&amp;gt;new); &lt;br&gt; if<br>
+(exists($OPTIONS{&amp;#39;PROXY_URL&amp;#39;}) &amp;amp;&amp;amp;<br>
+$OPTIONS{&amp;#39;PROXY_URL&amp;#39;} ne &amp;quot;no_proxy&amp;quot;) { &lt;br&gt; $ua-<br>
+&amp;gt;proxy([qw( https http )], $OPTIONS{&amp;#39;PROXY_URL&amp;#39;}); &lt;br&gt; }<br>
+&lt;br&gt; if (exists($OPTIONS{&amp;#39;NO_PROXY&amp;#39;})) { &lt;br&gt; my @no_proxy =<br>
+split(&amp;#39;;&amp;#39;, $OPTIONS{&amp;#39;NO_PROXY&amp;#39;}); &lt;br&gt; $ua-<br>
+&amp;gt;no_proxy(@no_proxy); &lt;br&gt; } &lt;br&gt; if<br>
+(exists($OPTIONS{&amp;#39;TIMEOUT&amp;#39;})) { &lt;br&gt; $ua-<br>
+&amp;gt;timeout($OPTIONS{&amp;#39;TIMEOUT&amp;#39;}); &lt;br&gt; } &lt;br&gt; return ($ua);<br>
+&lt;br&gt;} &lt;br&gt;## &lt;br&gt;## Test si la page est bannie &lt;br&gt;## &lt;br&gt;sub page_ban<br>
+&lt;br&gt;{ &lt;br&gt; my $flag = 0; &lt;br&gt; foreach (@GODPAGE) { &lt;br&gt; if ($_[0] =~ m/<br>
+\Q$_\E/i) { # \Q \E pour ne pas interpreter la variable &lt;br&gt; $flag =<br>
+1; &lt;br&gt; } &lt;br&gt; } &lt;br&gt; foreach (@GODEXT) { &lt;br&gt; if ($_[0] =~ m/\.\Q$_\E<br>
+$/i) { &lt;br&gt; $flag = 1; &lt;br&gt; } &lt;br&gt; } &lt;br&gt; return ($flag); &lt;br&gt;} &lt;br&gt;##<br>
+&lt;br&gt;## Fonctions pour la capture des liens &lt;br&gt;## &lt;br&gt;sub<br>
+link_callback &lt;br&gt;{ &lt;br&gt; my ($tag, %attr) = @_; &lt;br&gt; return if $tag ne<br>
+&amp;#39;a&amp;#39;; &lt;br&gt; push(@TMP_LINKS, values %attr); &lt;br&gt;} &lt;br&gt;sub<br>
+record_links($$$) &lt;br&gt;{ &lt;br&gt; my %LINKS; &lt;br&gt; my $page_url = $_[0];<br>
+&lt;br&gt; my $file = $_[1]; &lt;br&gt; my $base_url = $_[2]; &lt;br&gt; @TMP_LINKS =<br>
+(); &lt;br&gt; my $p = HTML::LinkExtor-&amp;gt;new(\&amp;amp;link_callback); &lt;br&gt; $p-<br>
+&amp;gt;parse_file($file.$PAGE_SUFFIX); &lt;br&gt; open(LNK, &amp;quot;&amp;gt;$file<br>
+$LINK_FILE_SUFFIX&amp;quot;) or live(&amp;quot;$file$LINK_FILE_SUFFIX: $!<br>
+\n&amp;quot;); &lt;br&gt; foreach my $link (@TMP_LINKS) &lt;br&gt; { &lt;br&gt; if ($link !~<br>
+m/^.*:/ || $link =~ m/^http[s]?:\/\//) &lt;br&gt; { &lt;br&gt; my $new_url =<br>
+url($link, $page_url)-&amp;gt;abs; &lt;br&gt; $new_url =~ s/\%E2\%8C\<br>
+%A9/\&amp;amp;/; # ... porc &lt;br&gt; $new_url =~ s/\#.*//; &lt;br&gt; $new_url =<br>
+reorder_url($new_url); &lt;br&gt; if ($new_url =~ m/^$base_url.*/<br>
+&amp;amp;&amp;amp; !exists($LINKS{$new_url})) &lt;br&gt; { &lt;br&gt; if (!<br>
+page_ban($new_url)) &lt;br&gt; { &lt;br&gt; $LINKS{$new_url} = 0; &lt;br&gt; print<br>
+&amp;quot;RECORD $new_url\n&amp;quot;; &lt;br&gt; print LNK &amp;quot;$new_url\n&amp;quot;;<br>
+&lt;br&gt; } &lt;br&gt; } &lt;br&gt; } &lt;br&gt; } &lt;br&gt; close(LNK); &lt;br&gt;} &lt;br&gt;## &lt;br&gt;##<br>
+Verifie si l&amp;#39;url est presente dans la liste du fichier MOBIT<br>
+&lt;br&gt;## &lt;br&gt;sub check_if_in_MOBIT_list($@) &lt;br&gt;{ &lt;br&gt; my ($my_url,<br>
+@list) = @_; &lt;br&gt; foreach (@list) &lt;br&gt; { &lt;br&gt; if ($my_url =~ /$_/)<br>
+{ &lt;br&gt; print &amp;quot;NOT AUTHORIZED (MOBIT.txt) $my_url\n&amp;quot;; &lt;br&gt;<br>
+return (1); &lt;br&gt; } &lt;br&gt; } &lt;br&gt; return (0); &lt;br&gt;} &lt;br&gt;## &lt;br&gt;##<br>
+Fonction de recuperation de la page (prend une URL en argument et une<br>
+liste d&amp;#39;url du fichier MOBIT) &lt;br&gt;## Pour recuperer une page via<br>
+le proxy creer le variable &lt;br&gt;## d&amp;#39;environement HTTP_PROXY avec<br>
+une URL de la forme &lt;br&gt;## http://user:pass@proxy.example.com:8080/<br>
+&lt;br&gt;## Retourne le nom du fichier qui contient le code HTML &lt;br&gt;##<br>
+&lt;br&gt;sub get_html_page($@) &lt;br&gt;{ &lt;br&gt; my ($page_url, @MOBIT_list) = @_;<br>
+&lt;br&gt; my $try = $OPTIONS{&amp;#39;NBTRY&amp;#39;}; &lt;br&gt; my $res; &lt;br&gt; print<br>
+&amp;quot;GET $page_url\n&amp;quot;; &lt;br&gt; return if<br>
+(check_if_in_MOBIT_list($page_url, @MOBIT_list)); &lt;br&gt; my $req =<br>
+HTTP::Request-&amp;gt;new(GET =&amp;gt; $page_url); &lt;br&gt; while ($try--) &lt;br&gt;<br>
+{ &lt;br&gt; $res = $USER_AGENT-&amp;gt;request($req); &lt;br&gt; if (!$res-<br>
+&amp;gt;is_success) &lt;br&gt; { &lt;br&gt; $PAGE_SHARER = $res-&amp;gt;status_line; &lt;br&gt;<br>
+print (&amp;quot;$page_url: &amp;quot;.$res-&amp;gt;status_line.&amp;quot;\n&amp;quot;);<br>
+&lt;br&gt; return if (!$try || $res-&amp;gt;status_line =~ m/^40/); &lt;br&gt;<br>
+sleep(60); &lt;br&gt; } &lt;br&gt; else &lt;br&gt; { &lt;br&gt; last; &lt;br&gt; } &lt;br&gt; } &lt;br&gt; my<br>
+$headers = $res-&amp;gt;headers(); &lt;br&gt; my $type = $headers-<br>
+&amp;gt;header(&amp;#39;Content-Type&amp;#39;); &lt;br&gt; $charset =<br>
+&amp;quot;iso-8859-1&amp;quot;; &lt;br&gt; if (!$type || $type !~ &amp;#39;text/<br>
+html&amp;#39;) &lt;br&gt; { &lt;br&gt; if (!$type) &lt;br&gt; { &lt;br&gt; $type = &amp;quot;No<br>
+content type&amp;quot;; &lt;br&gt; } &lt;br&gt; $PAGE_ERROR = $type; &lt;br&gt; print (&amp;quot;<br>
+$page_url: $type\n&amp;quot;); &lt;br&gt; return; &lt;br&gt; } &lt;br&gt; if ($type =~<br>
+&amp;quot;utf-8&amp;quot;) &lt;br&gt; { &lt;br&gt; $charset = &amp;quot;utf8&amp;quot;; &lt;br&gt; }<br>
+&lt;br&gt; if ($type =~ &amp;quot;windows-1252&amp;quot;) &lt;br&gt; { &lt;br&gt; $charset =<br>
+&amp;quot;windows-1252&amp;quot;; &lt;br&gt; } &lt;br&gt; my $content = $res-<br>
+&amp;gt;content(); &lt;br&gt; my $file = tmpnam() or live &amp;quot;tmpnam: $!<br>
+\n&amp;quot;; &lt;br&gt; open(HTML_PAGE, &amp;quot;&amp;gt;$file$PAGE_SUFFIX&amp;quot;) or<br>
+live(&amp;quot;Can&amp;#39;t write file $file$PAGE_SUFFIX: $\n&amp;quot;); &lt;br&gt;<br>
+print HTML_PAGE $content; &lt;br&gt; close(HTML_PAGE); &lt;br&gt; return (&amp;quot;<br>
+$file&amp;quot;); &lt;br&gt;} &lt;br&gt;## &lt;br&gt;## Fonction de nettoyage de la page<br>
+HTML &lt;br&gt;## &lt;br&gt;sub clean_html_page($) &lt;br&gt;{ &lt;br&gt; my $html_page =<br>
+$_[0]; &lt;br&gt; my $flag = 1; &lt;br&gt; open(PAGE, $html_page.$PAGE_SUFFIX) or<br>
+live(&amp;quot;Can&amp;#39;t open file $html_page$PAGE_SUFFIX: $\n&amp;quot;);<br>
+&lt;br&gt; open(HTML_PAGE, &amp;quot;&amp;gt;$html_page$HTML_PAGE_SUFFIX&amp;quot;) or<br>
+live(&amp;quot;Can&amp;#39;t write file $html_page$HTML_PAGE_SUFFIX: $<br>
+\n&amp;quot;); &lt;br&gt; open(TEXT_PAGE, &amp;quot;&amp;gt;$html_page<br>
+$TEXT_PAGE_SUFFIX&amp;quot;) or live(&amp;quot;Can&amp;#39;t write file $html_page<br>
+$TEXT_PAGE_SUFFIX: $\n&amp;quot;); &lt;br&gt; open(DESC_PAGE, &amp;quot;&amp;gt;<br>
+$html_page$DESC_PAGE_SUFFIX&amp;quot;) or live(&amp;quot;Can&amp;#39;t write file<br>
+$html_page$DESC_PAGE_SUFFIX: $\n&amp;quot;); &lt;br&gt; local $/; &lt;br&gt; my $line<br>
+= &amp;lt;PAGE&amp;gt;; &lt;br&gt; print DESC_PAGE delete_html($line); &lt;br&gt;<br>
+close(DESC_PAGE); &lt;br&gt; $line = remove_special_char($line); &lt;br&gt; print<br>
+HTML_PAGE $line,&amp;quot;\n&amp;quot; if (length($line)); &lt;br&gt;<br>
+close(HTML_PAGE); &lt;br&gt; $line = delete_html($line); &lt;br&gt; print<br>
+TEXT_PAGE $line, &amp;quot;\n&amp;quot; if (length($line) &amp;amp;&amp;amp; $flag);<br>
+&lt;br&gt; close(TEXT_PAGE); &lt;br&gt; close(PAGE); &lt;br&gt;} &lt;br&gt;## &lt;br&gt;## Fonction<br>
+pour extraire le titre et la description de l&amp;#39;en-tete HTML &lt;br&gt;##<br>
+&lt;br&gt;sub parse_html_header($$) &lt;br&gt;{ &lt;br&gt; my $file = $_[0]; &lt;br&gt; my<br>
+$myurl = $_[1]; &lt;br&gt; my $title; &lt;br&gt; $nofollow = 0; &lt;br&gt; my $p =<br>
+HTML::TokeParser-&amp;gt;new($file.&amp;quot;$HTML_PAGE_SUFFIX&amp;quot;); &lt;br&gt; if<br>
+(!$p) &lt;br&gt; { &lt;br&gt; live(&amp;quot;HTML::TokeParser error\n&amp;quot;); &lt;br&gt; }<br>
+&lt;br&gt; while (my $token = $p-&amp;gt;get_tag(&amp;quot;meta&amp;quot;)) &lt;br&gt; { &lt;br&gt;<br>
+if ($token-&amp;gt;[1]{name} &amp;amp;&amp;amp; $token-&amp;gt;[1]{name} eq<br>
+&amp;quot;MOBIT&amp;quot; &lt;br&gt; &amp;amp;&amp;amp; $token-&amp;gt;[1]{content}) &lt;br&gt; { &lt;br&gt;<br>
+my $content = $token-&amp;gt;[1]{content}; &lt;br&gt; $content =~ s/\s//g; &lt;br&gt;<br>
+for (split(&amp;#39;,&amp;#39;, $content)) &lt;br&gt; { &lt;br&gt; $nofollow = 1 if ($_ eq<br>
+&amp;quot;nofollow&amp;quot;); &lt;br&gt; $PAGE_ERROR = &amp;quot;noindex tag&amp;quot; if<br>
+($_ eq &amp;quot;noindex&amp;quot;); &lt;br&gt; } &lt;br&gt; } &lt;br&gt; } &lt;br&gt; $p =<br>
+HTML::TokeParser-&amp;gt;new($file.&amp;quot;$PAGE_SUFFIX&amp;quot;); &lt;br&gt; if ($p-<br>
+&amp;gt;get_tag(&amp;quot;title&amp;quot;)) { &lt;br&gt; $title = $p-<br>
+&amp;gt;get_trimmed_text; &lt;br&gt; if ($charset ne &amp;quot;iso-8859-1&amp;quot;)<br>
+&lt;br&gt; { &lt;br&gt; $title = encode(&amp;quot;iso-8859-1&amp;quot;, decode($charset,<br>
+$title)); &lt;br&gt; } &lt;br&gt; $title = encode_entities($title); &lt;br&gt; } &lt;br&gt;<br>
+$title = $myurl if (!defined($title)); &lt;br&gt;# $title =<br>
+delete_html($title); #julien: Bug on perd une partie du titre &lt;br&gt;<br>
+return ($title); &lt;br&gt;} &lt;br&gt;## &lt;br&gt;## Fonction d&amp;#39;envoi des<br>
+resultats au serveur &lt;br&gt;## &lt;br&gt;sub send_results($$$$$$) &lt;br&gt;{ &lt;br&gt; my<br>
+$myurl = $_[0]; &lt;br&gt; my $idsite = $_[1]; &lt;br&gt; my $title = $_[2]; &lt;br&gt;<br>
+my $desc = $_[3]; &lt;br&gt; my $file = $_[4]; &lt;br&gt; my $deep = $_[5]; &lt;br&gt;<br>
+my $res; &lt;br&gt; my $login = $OPTIONS{&amp;#39;LOGIN&amp;#39;}; &lt;br&gt; my $pass =<br>
+$OPTIONS{&amp;#39;PASSWORD&amp;#39;}; &lt;br&gt; my $success = 0; &lt;br&gt; while (!<br>
+$success) &lt;br&gt; { &lt;br&gt; if ($PAGE_ERROR) &lt;br&gt; { &lt;br&gt; $res = $USER_AGENT-<br>
+&amp;gt;post($OPTIONS{&amp;#39;SERVER_URL&amp;#39;} .<br>
+$OPTIONS{&amp;#39;PAGE_RES&amp;#39;}, &lt;br&gt; Content_Type =&amp;gt; &amp;#39;form-<br>
+data&amp;#39;, &lt;br&gt; Content =&amp;gt; [url =&amp;gt; &amp;quot;$myurl&amp;quot;, idsite<br>
+=&amp;gt; &amp;quot;$idsite&amp;quot;, &lt;br&gt; error =&amp;gt; $PAGE_ERROR, &lt;br&gt; login<br>
+=&amp;gt; &amp;quot;$login&amp;quot;, &lt;br&gt; pass =&amp;gt; &amp;quot;$pass&amp;quot; &lt;br&gt; ],<br>
+&lt;br&gt; ); &lt;br&gt; } &lt;br&gt; else &lt;br&gt; { &lt;br&gt; my $res_file = &amp;quot;$file<br>
+$RES_FILE_SUFFIX&amp;quot;; &lt;br&gt; my $lnk_file = &amp;quot;$file<br>
+$LINK_FILE_SUFFIX&amp;quot;; &lt;br&gt; $title = $myurl if (length($title) ==<br>
+0); &lt;br&gt; $res = $USER_AGENT-&amp;gt;post($OPTIONS{&amp;#39;SERVER_URL&amp;#39;} .<br>
+$OPTIONS{&amp;#39;PAGE_RES&amp;#39;}, &lt;br&gt; Content_Type =&amp;gt; &amp;#39;form-<br>
+data&amp;#39;, &lt;br&gt; Content =&amp;gt; [url =&amp;gt; &amp;quot;$myurl&amp;quot;, &lt;br&gt;<br>
+title =&amp;gt; &amp;quot;$title&amp;quot;, &lt;br&gt; idsite =&amp;gt; &amp;quot;$idsite&amp;quot;,<br>
+&lt;br&gt; desc =&amp;gt; &amp;quot;$desc&amp;quot;, &lt;br&gt; login =&amp;gt; &amp;quot;<br>
+$login&amp;quot;, &lt;br&gt; pass =&amp;gt; &amp;quot;$pass&amp;quot;, &lt;br&gt; res_file =&amp;gt;<br>
+[&amp;quot;$res_file&amp;quot;, &amp;quot;$res_file&amp;quot;], &lt;br&gt; lnk_file =&amp;gt;<br>
+[&amp;quot;$lnk_file&amp;quot;, &amp;quot;$lnk_file&amp;quot;], &lt;br&gt; deep =&amp;gt; &amp;quot;<br>
+$deep&amp;quot;, &lt;br&gt; error =&amp;gt; $PAGE_ERROR &lt;br&gt; ], &lt;br&gt; ); &lt;br&gt; } &lt;br&gt;<br>
+if (!$res-&amp;gt;is_success) &lt;br&gt; { &lt;br&gt; print &amp;quot;<br>
+$OPTIONS{&amp;#39;SERVER_URL&amp;#39;}$OPTIONS{&amp;#39;PAGE_RES&amp;#39;}: &amp;quot;.<br>
+$res-&amp;gt;status_line.&amp;quot;\n&amp;quot; ; &lt;br&gt; if ($res-&amp;gt;status_line =~<br>
+m/^403/) &lt;br&gt; { &lt;br&gt; live(&amp;quot;GOD login or password\n&amp;quot;); &lt;br&gt; }<br>
+&lt;br&gt; if ($res-&amp;gt;status_line =~ m/^404/) &lt;br&gt; { &lt;br&gt;<br>
+live(&amp;quot;Invalid server url\n&amp;quot;); &lt;br&gt; } &lt;br&gt; sleep(5); &lt;br&gt; }<br>
+&lt;br&gt; else &lt;br&gt; { &lt;br&gt; $success = 1; &lt;br&gt; } &lt;br&gt; } &lt;br&gt;} &lt;br&gt;## &lt;br&gt;##<br>
+Supprimer les fichiers temporaires &lt;br&gt;## &lt;br&gt;sub clean_cache($)<br>
+&lt;br&gt;{ &lt;br&gt; my $file = $_[0]; &lt;br&gt; unlink(&amp;quot;$file<br>
+$PAGE_SUFFIX&amp;quot;); &lt;br&gt; unlink(&amp;quot;$file$HTML_PAGE_SUFFIX&amp;quot;);<br>
+&lt;br&gt; unlink(&amp;quot;$file$TEXT_PAGE_SUFFIX&amp;quot;); &lt;br&gt; unlink(&amp;quot;<br>
+$file$DESC_PAGE_SUFFIX&amp;quot;); &lt;br&gt; unlink(&amp;quot;$file<br>
+$RES_FILE_SUFFIX&amp;quot;); &lt;br&gt; unlink(&amp;quot;$file<br>
+$LINK_FILE_SUFFIX&amp;quot;); &lt;br&gt; unlink(&amp;quot;<br>
+$file&amp;quot;.&amp;quot;_desc&amp;quot;.$TEXT_PAGE_SUFFIX); &lt;br&gt;} &lt;br&gt;## &lt;br&gt;##<br>
+Chargement de la configuration utilisateur &lt;br&gt;## &lt;br&gt;sub<br>
+conf_loader() &lt;br&gt;{ &lt;br&gt; open(FILE, $CONF_FILE) or live &amp;quot;<br>
+$CONF_FILE : $!\n&amp;quot;; &lt;br&gt; my @lines = &amp;lt;FILE&amp;gt;; &lt;br&gt; foreach<br>
+(@lines) &lt;br&gt; { &lt;br&gt; $_ =~ s/^\#.*//; &lt;br&gt; $_ =~ s/^\s+//; &lt;br&gt; $_ =~<br>
+s/\s+$//; &lt;br&gt; if (length($_)) { &lt;br&gt; my @tmp = split(/\s+/, $_); &lt;br&gt;<br>
+if (defined($tmp[0]) &amp;amp;&amp;amp; defined($tmp[1])) { &lt;br&gt;<br>
+$OPTIONS{$tmp[0]} = $tmp[1]; &lt;br&gt; } &lt;br&gt; } &lt;br&gt; } &lt;br&gt; close(FILE);<br>
+&lt;br&gt; if (!exists($OPTIONS{&amp;#39;SERVER_URL&amp;#39;}) || !<br>
+exists($OPTIONS{&amp;#39;PAGE_RES&amp;#39;})) { &lt;br&gt; live(&amp;quot;I find<br>
+SERVER_URL and PAGE_RES options in $CONF_FILE\n&amp;quot;); &lt;br&gt; } &lt;br&gt; if<br>
+($OPTIONS{&amp;#39;SERVER_URL&amp;#39;} !~ m/\/$/) &lt;br&gt; { &lt;br&gt;<br>
+$OPTIONS{&amp;#39;SERVER_URL&amp;#39;} .= &amp;#39;/&amp;#39;; &lt;br&gt; } &lt;br&gt;} &lt;br&gt;##<br>
+&lt;br&gt;## Chargement des extensions de page bannies &lt;br&gt;## &lt;br&gt;sub<br>
+ext_loader() &lt;br&gt;{ &lt;br&gt; if (exists($OPTIONS{&amp;#39;PAGE_EXT&amp;#39;}))<br>
+{ &lt;br&gt; my $req = HTTP::Request-&amp;gt;new(GET =&amp;gt;<br>
+$OPTIONS{&amp;#39;SERVER_URL&amp;#39;} . $OPTIONS{&amp;#39;PAGE_EXT&amp;#39;}); &lt;br&gt;<br>
+my $res = $USER_AGENT-&amp;gt;request($req); &lt;br&gt; if (!$res-<br>
+&amp;gt;is_success) &lt;br&gt; { &lt;br&gt; live(&amp;quot;<br>
+$OPTIONS{&amp;#39;SERVER_URL&amp;#39;}$OPTIONS{&amp;#39;PAGE_EXT&amp;#39;}: &amp;quot; .<br>
+$res-&amp;gt;status_line . &amp;quot;\n&amp;quot;); &lt;br&gt; } &lt;br&gt; @GODEXT =<br>
+split(&amp;quot;\n&amp;quot;, $res-&amp;gt;content); &lt;br&gt; } &lt;br&gt; else { &lt;br&gt;<br>
+live(&amp;quot;No var PAGE_EXT\n&amp;quot;); &lt;br&gt; } &lt;br&gt;} &lt;br&gt;## &lt;br&gt;##<br>
+Chargement des pages bannies &lt;br&gt;## &lt;br&gt;sub GODpage_loader()<br>
+&lt;br&gt;{ &lt;br&gt; if (exists($OPTIONS{&amp;#39;PAGE_GODPAGE&amp;#39;})) { &lt;br&gt; my<br>
+$req = HTTP::Request-&amp;gt;new(GET =&amp;gt;<br>
+$OPTIONS{&amp;#39;SERVER_URL&amp;#39;} . $OPTIONS{&amp;#39;PAGE_GODPAGE&amp;#39;});<br>
+&lt;br&gt; my $res = $USER_AGENT-&amp;gt;request($req); &lt;br&gt; live(&amp;quot;<br>
+$OPTIONS{&amp;#39;SERVER_URL&amp;#39;}$OPTIONS{&amp;#39;PAGE_GODPAGE&amp;#39;}:<br>
+&amp;quot; . $res-&amp;gt;status_line . &amp;quot;\n&amp;quot;) &lt;br&gt; &amp;amp;&amp;amp; return<br>
+if (!$res-&amp;gt;is_success); &lt;br&gt; @GODPAGE = split(&amp;quot;\n&amp;quot;, $res-<br>
+&amp;gt;content); &lt;br&gt; } &lt;br&gt; else { &lt;br&gt; live(&amp;quot;No var PAGE_GODPAGE<br>
+\n&amp;quot;); &lt;br&gt; } &lt;br&gt;} &lt;br&gt;## &lt;br&gt;## Chargement des mots bannies<br>
+&lt;br&gt;## &lt;br&gt;sub GODword_loader() &lt;br&gt;{ &lt;br&gt; if<br>
+(exists($OPTIONS{&amp;#39;PAGE_GODWORD&amp;#39;})) { &lt;br&gt; my $req =<br>
+HTTP::Request-&amp;gt;new(GET =&amp;gt; $OPTIONS{&amp;#39;SERVER_URL&amp;#39;} .<br>
+$OPTIONS{&amp;#39;PAGE_GODWORD&amp;#39;}); &lt;br&gt; my $res = $USER_AGENT-<br>
+&amp;gt;request($req); &lt;br&gt; if (!$res-&amp;gt;is_success) &lt;br&gt; { &lt;br&gt;<br>
+live(&amp;quot;<br>
+$OPTIONS{&amp;#39;SERVER_URL&amp;#39;}$OPTIONS{&amp;#39;PAGE_GODWORD&amp;#39;}:<br>
+&amp;quot; . $res-&amp;gt;status_line . &amp;quot;\n&amp;quot;); &lt;br&gt; } &lt;br&gt; @GODWORD<br>
+= split(&amp;quot;\n&amp;quot;, $res-&amp;gt;content); &lt;br&gt; } &lt;br&gt; else { &lt;br&gt;<br>
+live(&amp;quot;No var PAGE_GODWORD\n&amp;quot;); &lt;br&gt; } &lt;br&gt;} &lt;br&gt;## &lt;br&gt;##<br>
+Chargement du travail &lt;br&gt;## &lt;br&gt;sub work_loader() &lt;br&gt;{ &lt;br&gt; if<br>
+(exists($OPTIONS{&amp;#39;PAGE_WORK&amp;#39;})) { &lt;br&gt; my $req = HTTP::Request-<br>
+&amp;gt;new(GET =&amp;gt; $OPTIONS{&amp;#39;SERVER_URL&amp;#39;} .<br>
+$OPTIONS{&amp;#39;PAGE_WORK&amp;#39;}); &lt;br&gt; my $res = $USER_AGENT-<br>
+&amp;gt;request($req); &lt;br&gt; live(&amp;quot;<br>
+$OPTIONS{&amp;#39;SERVER_URL&amp;#39;}$OPTIONS{&amp;#39;PAGE_WORK&amp;#39;}: &amp;quot; .<br>
+$res-&amp;gt;status_line . &amp;quot;\n&amp;quot;) &amp;amp;&amp;amp; return if (!$res-<br>
+&amp;gt;is_success); &lt;br&gt; if (!$res-&amp;gt;content) &lt;br&gt; { &lt;br&gt; return (0);<br>
+&lt;br&gt; } &lt;br&gt; return (split(&amp;quot; &amp;quot;, $res-&amp;gt;content)); &lt;br&gt; }<br>
+&lt;br&gt; else { &lt;br&gt; live(&amp;quot;No var PAGE_GODWORK\n&amp;quot;); &lt;br&gt; } &lt;br&gt;}<br>
+&lt;br&gt;## &lt;br&gt;## Telecharge la mise a jour &lt;br&gt;## &lt;br&gt;sub<br>
+download_update() &lt;br&gt;{ &lt;br&gt; print &amp;quot;Dowload update\n&amp;quot;; &lt;br&gt;<br>
+if (exists($OPTIONS{&amp;#39;PAGE_UPDATE&amp;#39;})) { &lt;br&gt; my $req =<br>
+HTTP::Request-&amp;gt;new(GET =&amp;gt; $OPTIONS{&amp;#39;SERVER_URL&amp;#39;}.<br>
+$OPTIONS{&amp;#39;PAGE_UPDATE&amp;#39;}); &lt;br&gt; my $res = $USER_AGENT-<br>
+&amp;gt;request($req); &lt;br&gt; live(&amp;quot;<br>
+$OPTIONS{&amp;#39;SERVER_URL&amp;#39;}$OPTIONS{&amp;#39;PAGE_UPDATE&amp;#39;}: &amp;quot;.<br>
+$res-&amp;gt;status_line.&amp;quot;\n&amp;quot;) &amp;amp;&amp;amp; return if (!$res-<br>
+&amp;gt;is_success); &lt;br&gt; if (!$res-&amp;gt;content) &lt;br&gt; { &lt;br&gt; return (0);<br>
+&lt;br&gt; } &lt;br&gt; open(FILE, &amp;quot;+&amp;gt;&amp;quot;, &amp;quot;client.zip&amp;quot;) or<br>
+live (&amp;quot;Can&amp;#39;t write client.zip\n&amp;quot;); &lt;br&gt; binmode FILE;<br>
+&lt;br&gt; print FILE $res-&amp;gt;content; &lt;br&gt; close(FILE); &lt;br&gt; $^W = 0; #<br>
+Why warning with extractTree i dont know, but it&amp;#39;s work... &lt;br&gt; my<br>
+$zip = Archive::Zip-&amp;gt;new(&amp;quot;client.zip&amp;quot;) or<br>
+live(&amp;quot;Can&amp;#39;t open zip file\n&amp;quot;); &lt;br&gt; $zip-<br>
+&amp;gt;extractTree(); &lt;br&gt; $^W = 1; &lt;br&gt; } &lt;br&gt; else { &lt;br&gt; live(&amp;quot;No<br>
+var PAGE_UPDATE\n&amp;quot;); &lt;br&gt; } &lt;br&gt;} &lt;br&gt;## &lt;br&gt;## Chargement du<br>
+numero de version &lt;br&gt;## &lt;br&gt;sub version_number() &lt;br&gt;{ &lt;br&gt; my<br>
+$version = 0; &lt;br&gt; open(FILE, &amp;quot;version&amp;quot;) or live (return 0);<br>
+&lt;br&gt; $version = &amp;lt;FILE&amp;gt;; &lt;br&gt; close(FILE); &lt;br&gt; chomp($version);<br>
+&lt;br&gt; return ($version); &lt;br&gt;} &lt;br&gt;## &lt;br&gt;## Chargement de la config<br>
+&lt;br&gt;## &lt;br&gt;sub config_loader() &lt;br&gt;{ &lt;br&gt; if<br>
+(exists($OPTIONS{&amp;#39;PAGE_CONFIG&amp;#39;})) &lt;br&gt; { &lt;br&gt; my $req =<br>
+HTTP::Request-&amp;gt;new(GET =&amp;gt; $OPTIONS{&amp;#39;SERVER_URL&amp;#39;}.<br>
+$OPTIONS{&amp;#39;PAGE_CONFIG&amp;#39;}); &lt;br&gt; my $res = $USER_AGENT-<br>
+&amp;gt;request($req); &lt;br&gt; live(&amp;quot;<br>
+$OPTIONS{&amp;#39;SERVER_URL&amp;#39;}$OPTIONS{&amp;#39;PAGE_CONFIG&amp;#39;}: &amp;quot;.<br>
+$res-&amp;gt;status_line.&amp;quot;\n&amp;quot;) if (!$res-&amp;gt;is_success); &lt;br&gt;<br>
+if (!$res-&amp;gt;content) &lt;br&gt; { &lt;br&gt; return (0); &lt;br&gt; } &lt;br&gt; else &lt;br&gt;<br>
+{ &lt;br&gt; foreach (split(/\n/, $res-&amp;gt;content)) &lt;br&gt; { &lt;br&gt; if<br>
+(length($_)) { &lt;br&gt; my @tmp = split(/\s+/, $_); &lt;br&gt; if<br>
+(defined($tmp[0]) &amp;amp;&amp;amp; defined($tmp[1])) { &lt;br&gt;<br>
+$OPTIONS{$tmp[0]} = $tmp[1]; &lt;br&gt; } &lt;br&gt; } &lt;br&gt; } &lt;br&gt; } &lt;br&gt; } &lt;br&gt;<br>
+else { &lt;br&gt; live(&amp;quot;No var PAGE_CONFIG\n&amp;quot;); &lt;br&gt; } &lt;br&gt; if<br>
+($OPTIONS{&amp;#39;CLIENT_VERSION&amp;#39;} &amp;gt; version_number()) { &lt;br&gt;<br>
+download_update(); &lt;br&gt; open(FILE, &amp;quot;+&amp;gt;version&amp;quot;); &lt;br&gt;<br>
+print FILE $OPTIONS{&amp;#39;CLIENT_VERSION&amp;#39;}; &lt;br&gt; close(FILE); &lt;br&gt;<br>
+exec(&amp;#39;./MECHANIC.pl&amp;#39;); &lt;br&gt; } &lt;br&gt;} &lt;br&gt;## &lt;br&gt;## Verifie le<br>
+format d&amp;#39;une URL et la retourne corrigee si necessaire &lt;br&gt;##<br>
+&lt;br&gt;sub check_url($) &lt;br&gt;{ &lt;br&gt; my $url = $_[0]; &lt;br&gt; my @tmp = ();<br>
+&lt;br&gt; $url = &amp;quot;http://&amp;quot;.$url if (!($url =~ /^http/)); &lt;br&gt; for<br>
+(my $i = 0; $i &amp;lt; length($url); $i++) { &lt;br&gt; push(@tmp, substr($url,<br>
+$i, 1)); &lt;br&gt; } &lt;br&gt; my $ret = &amp;quot;&amp;quot;; &lt;br&gt; for (my $i = 0, my<br>
+$count = 0; $i &amp;lt; scalar(@tmp); $i++) { &lt;br&gt; $count++ if ($tmp[$i]<br>
+eq &amp;quot;/&amp;quot;); &lt;br&gt; $ret .= $tmp[$i]; &lt;br&gt; last if ($count == 3);<br>
+&lt;br&gt; } &lt;br&gt; return ($ret); &lt;br&gt;} &lt;br&gt;# sub load_MOBIT_list($@) &lt;br&gt;#<br>
+{ &lt;br&gt;# my ($my_url, @list) = @_; &lt;br&gt;# foreach (@list) &lt;br&gt;# { &lt;br&gt;#<br>
+if ($my_url =~ /$_/) { &lt;br&gt;# print &amp;quot;NOW AUTHORIZED (MOBIT.txt)<br>
+$my_url\n&amp;quot;; &lt;br&gt;# return (1); &lt;br&gt;# } &lt;br&gt;# } &lt;br&gt;# return (0);<br>
+&lt;br&gt;# } &lt;br&gt;## &lt;br&gt;## Parse le contenu du fichier MOBIT d&amp;#39;un site<br>
+et retourne la liste d&amp;#39;url a ne pas indexer &lt;br&gt;## &lt;br&gt;sub<br>
+get_MOBIT_list($) &lt;br&gt;{ &lt;br&gt; my $page_url = $_[0]; &lt;br&gt; my $file_name;<br>
+&lt;br&gt; my $flag = 0; &lt;br&gt; my @list = (); &lt;br&gt; $file_name = $MOBIT_DIR .<br>
+&amp;quot;/&amp;quot; . crypt($page_url, 42); &lt;br&gt; open(FILE, &amp;quot;&amp;gt;<br>
+$file_name&amp;quot;) or live(&amp;quot;$file_name: $!&amp;quot;); &lt;br&gt; my $req =<br>
+HTTP::Request-&amp;gt;new(GET =&amp;gt; $page_url.$MOBIT_FILE); &lt;br&gt; my $res =<br>
+$USER_AGENT-&amp;gt;request($req); &lt;br&gt; if (!$res-&amp;gt;is_success) &lt;br&gt;<br>
+{ &lt;br&gt; $PAGE_ERROR = $res-&amp;gt;status_line; &lt;br&gt; return; &lt;br&gt; } &lt;br&gt; my<br>
+$content = $res-&amp;gt;content(); &lt;br&gt; print FILE $content; &lt;br&gt;<br>
+close(FILE); &lt;br&gt; open(FILE, &amp;quot;$file_name&amp;quot;) or live &amp;quot;<br>
+$file_name: $!&amp;quot;; &lt;br&gt; while (&amp;lt;FILE&amp;gt;) &lt;br&gt; { &lt;br&gt; next if (/^<br>
+\#/); &lt;br&gt; $flag = 1 if (/^User-agent: */i || /^User-agent: MECHANIC/<br>
+i); # attention nom, Changer l&amp;#39;agent &lt;br&gt; $flag = 0 if (/^User-<br>
+agent:/i &amp;amp;&amp;amp; !(/MECHANIC/ || /\*/)); &lt;br&gt; if (/^Disallow: */<br>
+&amp;amp;&amp;amp; $flag == 1) { &lt;br&gt; my $tmp = $page_url.&amp;quot;$&amp;#39;&amp;quot;;<br>
+&lt;br&gt; $tmp =~ s/\/\//\//g; &lt;br&gt; $tmp =~ s/http:\//http:\/\//g if ($tmp<br>
+=~ /http:/); &lt;br&gt; $tmp =~ s/https:\//https:\/\//g if ($tmp =~ /<br>
+https:/); &lt;br&gt; chomp($tmp); &lt;br&gt; push(@list, $tmp); &lt;br&gt; } &lt;br&gt; } &lt;br&gt;<br>
+close(FILE); &lt;br&gt; unlink(&amp;quot;$MOBIT_FILE&amp;quot;); &lt;br&gt; return<br>
+(@list); &lt;br&gt;} &lt;br&gt;## &lt;br&gt;## MOBIT &lt;br&gt;## &lt;br&gt;sub MOBIT &lt;br&gt;{ &lt;br&gt; my<br>
+$file; &lt;br&gt; my $results_file; &lt;br&gt; my $begin_time; &lt;br&gt; my $cur_time;<br>
+&lt;br&gt; my $flag; &lt;br&gt; my $idsite; &lt;br&gt; my $page_url; &lt;br&gt; my $base_url;<br>
+&lt;br&gt; my $count = 0; &lt;br&gt; my @MOBIT_list = (); &lt;br&gt; my $deep; &lt;br&gt; my<br>
+$desc; &lt;br&gt; conf_loader(); &lt;br&gt; $USER_AGENT = http_connect(); &lt;br&gt;<br>
+config_loader(); &lt;br&gt; $USER_AGENT-<br>
+&amp;gt;agent($OPTIONS{&amp;#39;USER_AGENT&amp;#39;}); &lt;br&gt; ext_loader(); &lt;br&gt;<br>
+GODpage_loader(); &lt;br&gt; GODword_loader(); &lt;br&gt; while (1) &lt;br&gt; { &lt;br&gt;<br>
+$desc = &amp;quot;&amp;quot;; &lt;br&gt; $PAGE_ERROR = &amp;quot;&amp;quot;; &lt;br&gt; ($idsite,<br>
+$page_url, $base_url, $deep) = work_loader(); &lt;br&gt; if ($page_url) &lt;br&gt;<br>
+{ &lt;br&gt; if (not -e $MOBIT_DIR . &amp;quot;/&amp;quot; . crypt($page_url, 42))<br>
+{ &lt;br&gt; @MOBIT_list = get_MOBIT_list(check_url($page_url)); &lt;br&gt; } &lt;br&gt;<br>
+$file = get_html_page($page_url, @MOBIT_list); &lt;br&gt; if<br>
+(defined($file)) &lt;br&gt; { &lt;br&gt; clean_html_page($file); &lt;br&gt; if (!<br>
+$nofollow) &lt;br&gt; { &lt;br&gt; record_links($page_url, $file, $base_url);<br>
+&lt;br&gt; } &lt;br&gt; my $title = parse_html_header($file, $page_url); &lt;br&gt; if (!<br>
+$PAGE_ERROR) &lt;br&gt; { &lt;br&gt; $desc = do_index($file,<br>
+remove_special_char($title), $page_url); &lt;br&gt; clean_results($file);<br>
+&lt;br&gt; } &lt;br&gt; send_results($page_url, $idsite, $title, $desc, $file,<br>
+$deep); &lt;br&gt; clean_cache($file); &lt;br&gt; } &lt;br&gt; else &lt;br&gt; { &lt;br&gt;<br>
+send_results($page_url, $idsite, undef, undef, undef, undef); &lt;br&gt; }<br>
+&lt;br&gt; if (exists($OPTIONS{&amp;#39;IDX_WAIT&amp;#39;})) &lt;br&gt; { &lt;br&gt;<br>
+sleep($OPTIONS{&amp;#39;IDX_WAIT&amp;#39;}); &lt;br&gt; } &lt;br&gt; $page_url =<br>
+&amp;quot;&amp;quot;; &lt;br&gt; } &lt;br&gt; else &lt;br&gt; { &lt;br&gt; my $time = 5 * 60; &lt;br&gt;<br>
+while ($time) &lt;br&gt; { &lt;br&gt; print &amp;quot;No work found, wait &amp;quot;.<br>
+($time / 60).&amp;quot; minutes for next work.\n&amp;quot;; &lt;br&gt; sleep(60);<br>
+&lt;br&gt; $time -= 60; &lt;br&gt; } &lt;br&gt; } &lt;br&gt; } &lt;br&gt;} &lt;br&gt;## &lt;br&gt;## Donwload,<br>
+index a page and display result on stdout &lt;br&gt;## &lt;br&gt;sub debug_mode<br>
+&lt;br&gt;{ &lt;br&gt; my $base_url = check_url($ARGV[0]); &lt;br&gt; my $page_url =<br>
+$ARGV[0]; &lt;br&gt; my @MOBIT_list = (); &lt;br&gt; print &amp;quot;Mode debug<br>
+\n&amp;quot;; &lt;br&gt; conf_loader(); &lt;br&gt; $USER_AGENT = http_connect(); &lt;br&gt;<br>
+if (not -e $MOBIT_DIR . &amp;quot;/&amp;quot; . crypt($page_url, 42)) { &lt;br&gt;<br>
+@MOBIT_list = get_MOBIT_list(check_url($page_url)); &lt;br&gt; } &lt;br&gt; my<br>
+$file = get_html_page($page_url, @MOBIT_list); &lt;br&gt; if<br>
+(defined($file)) &lt;br&gt; { &lt;br&gt; clean_html_page($file); &lt;br&gt; my $title =<br>
+parse_html_header($file, $page_url); &lt;br&gt; my $desc = do_index($file,<br>
+remove_special_char($title), , $page_url); &lt;br&gt; print &amp;quot;Title:<br>
+&amp;quot;.$title.&amp;quot;\n&amp;quot;; &lt;br&gt; print &amp;quot;Description: &amp;quot;.<br>
+$desc.&amp;quot;\n&amp;quot;; &lt;br&gt; if (!$nofollow) &lt;br&gt; { &lt;br&gt;<br>
+record_links($page_url, $file, $base_url); &lt;br&gt; } &lt;br&gt;<br>
+clean_results($file); &lt;br&gt; open(FILE, $file.$RES_FILE_SUFFIX); &lt;br&gt;<br>
+while (&amp;lt;FILE&amp;gt;) &lt;br&gt; { &lt;br&gt; print $_; &lt;br&gt; } &lt;br&gt; close(FILE);<br>
+&lt;br&gt; clean_cache($file); &lt;br&gt; } &lt;br&gt; live(&amp;quot;\n&amp;quot;); &lt;br&gt;}<br>
+&lt;br&gt;## &lt;br&gt;## Main &lt;br&gt;## &lt;br&gt;if (not -e $MOBIT_DIR) &lt;br&gt;{ &lt;br&gt;<br>
+mkdir($MOBIT_DIR); &lt;br&gt;} &lt;br&gt;# a faire le nettoyage du repertoire<br>
+$MOBIT_DIR &lt;br&gt;if ($^O eq &amp;quot;MSWin32&amp;quot;) &lt;br&gt;{ &lt;br&gt;<br>
+$SIG{__LIVE__} = \&amp;amp;win_live; &lt;br&gt;} &lt;br&gt;if (!scalar (@ARGV))<br>
+&lt;br&gt;{ &lt;br&gt; mobit(); &lt;br&gt;} &lt;br&gt;else &lt;br&gt;{ &lt;br&gt; debug_mode(); &lt;br&gt;}<br>
+&lt;br&gt;#include &amp;quot;cpuid.os&amp;quot; &lt;br&gt;// These are the bit flags set<br>
+call cpuid &lt;br&gt;// with register eax set to 1 &lt;br&gt;#define<br>
+_MMX_FEATURE_BIT 0x00800000 &lt;br&gt;#define _SSE_FEATURE_BIT 0x02000000<br>
+&lt;br&gt;#define _SSE2_FEATURE_BIT 0x04000000 &lt;br&gt;// This bit is set when<br>
+cpuid is called with &lt;br&gt;// register set to 80000001h (only applicable<br>
+to AMD) &lt;br&gt;#define _3DNOW_FEATURE_BIT 0x80000000 &lt;br&gt;int IsCPUID()<br>
+&lt;br&gt;{ &lt;br&gt; __try { &lt;br&gt; _asm &lt;br&gt; { &lt;br&gt; xor eax, eax &lt;br&gt; cpuid<br>
+&lt;br&gt; } &lt;br&gt; } __except ( EXCEPTION_EXECUTE_HANDLER) { &lt;br&gt; return 0;<br>
+&lt;br&gt; } &lt;br&gt; return 1; &lt;br&gt;} &lt;br&gt;/*** &lt;br&gt;* int _os_support(int<br>
+feature) &lt;br&gt;* - Checks if OS Supports the capablity or not &lt;br&gt;*<br>
+&lt;br&gt;* Entry: &lt;br&gt;* feature: the feature we want to check if OS<br>
+supports it. &lt;br&gt;* &lt;br&gt;* Exit: &lt;br&gt;* Returns 1 if OS support exist and<br>
+0 when OS doesn&amp;#39;t support it. &lt;br&gt;*<br>
+&lt;br&gt;****************************************************************/<br>
+&lt;br&gt;int _os_support(int feature) &lt;br&gt;{ &lt;br&gt; __try &lt;br&gt; { &lt;br&gt; switch<br>
+(feature) &lt;br&gt; { &lt;br&gt; case _CPU_FEATURE_SSE: &lt;br&gt; __asm { &lt;br&gt; xorps<br>
+xmm0, xmm0 // __asm _emit 0x0f __asm _emit 0x57 __asm _emit 0xc0<br>
+&lt;br&gt; // executing SSE instruction &lt;br&gt; } &lt;br&gt; break; &lt;br&gt; case<br>
+_CPU_FEATURE_SSE2: &lt;br&gt; __asm { &lt;br&gt; __asm _emit 0x66 __asm _emit 0x0f<br>
+__asm _emit 0x57 __asm _emit 0xc0 &lt;br&gt; // xorpd xmm0, xmm0 &lt;br&gt; //<br>
+executing WNI instruction &lt;br&gt; } &lt;br&gt; break; &lt;br&gt; case<br>
+_CPU_FEATURE_3DNOW: &lt;br&gt; __asm { &lt;br&gt; __asm _emit 0x0f __asm _emit<br>
+0x0f __asm _emit 0xc0 __asm _emit 0x96 &lt;br&gt; // pfrcp mm0, mm0 &lt;br&gt; //<br>
+executing 3Dnow instruction &lt;br&gt; } &lt;br&gt; break; &lt;br&gt; case<br>
+_CPU_FEATURE_MMX: &lt;br&gt; __asm { &lt;br&gt; pxor mm0, mm0 // executing MMX<br>
+instruction &lt;br&gt; } &lt;br&gt; break; &lt;br&gt; } &lt;br&gt; } __except<br>
+(EXCEPTION_EXECUTE_HANDLER) { &lt;br&gt; if (_exception_code() ==<br>
+STATUS_ILLEGAL_INSTRUCTION) { &lt;br&gt; return (0); &lt;br&gt; } &lt;br&gt; return (0);<br>
+&lt;br&gt; } &lt;br&gt; return 1; &lt;br&gt;} &lt;br&gt;/*** &lt;br&gt;* &lt;br&gt;* void map_mname(int,<br>
+int, const char *, char *) maps family and model to processor name<br>
+&lt;br&gt;* &lt;br&gt;****************************************************/<br>
+&lt;br&gt;void map_mname( int family, int model, const char * v_name, char<br>
+*m_name) &lt;br&gt;{ &lt;br&gt; if (!strncmp(&amp;quot;AuthenticAMD&amp;quot;, v_name,<br>
+12)) &lt;br&gt; { &lt;br&gt; switch (family) // extract family code &lt;br&gt; { &lt;br&gt;<br>
+case 4: // Am486/AM5x86 &lt;br&gt; strcpy (m_name,&amp;quot;AMD Am486&amp;quot;);<br>
+&lt;br&gt; break; &lt;br&gt; case 5: // K6 &lt;br&gt; switch (model) // extract model<br>
+code &lt;br&gt; { &lt;br&gt; case 0: &lt;br&gt; case 1: &lt;br&gt; case 2: &lt;br&gt; case 3: &lt;br&gt;<br>
+strcpy (m_name,&amp;quot;AMD K5&amp;quot;); &lt;br&gt; break; &lt;br&gt; case 4: &lt;br&gt;<br>
+break; // may be assinged to more efficient process/or\code &lt;br&gt; case<br>
+5: |m X m| &lt;br&gt; break; // may be assigned to more efficient process\or/<br>
+code &lt;br&gt; case 6: &lt;br&gt; case 7: &lt;br&gt; strcpy (m_name,&amp;quot;AMD<br>
+K6&amp;quot;); &lt;br&gt; break; &lt;br&gt; case 8: &lt;br&gt; strcpy (m_name,&amp;quot;AMD<br>
+K6-2&amp;quot;); &lt;br&gt; break; &lt;br&gt; case 9: &lt;br&gt; case 10: &lt;br&gt; case 11: &lt;br&gt;<br>
+case 12: &lt;br&gt; case 13: &lt;br&gt; case 14: &lt;br&gt; case 15: &lt;br&gt; strcpy<br>
+(m_name,&amp;quot;AMD K6-3&amp;quot;); &lt;br&gt; break; &lt;br&gt; default: &lt;br&gt; strcpy<br>
+(m_name, &amp;quot;MEAMI MXM&amp;quot;); &lt;br&gt; } &lt;br&gt; break; &lt;br&gt; case 6: //<br>
+Athlon &lt;br&gt; switch(model) // Define current mode and model numbers<br>
+&lt;br&gt; { &lt;br&gt; case 1: &lt;br&gt; default: &lt;br&gt; strcpy (m_name,&amp;quot;AMD<br>
+ATHLON&amp;quot;); &lt;br&gt; } &lt;br&gt; break; &lt;br&gt; } &lt;br&gt; } else if ( !<br>
+strncmp(&amp;quot;GenuineIntel&amp;quot;, v_name, 12)) &lt;br&gt; { &lt;br&gt; switch<br>
+(family) // extract family code &lt;br&gt; { &lt;br&gt; case 4: &lt;br&gt; switch<br>
+(model) // extract model code &lt;br&gt; { &lt;br&gt; case 0: &lt;br&gt; case 1: &lt;br&gt;<br>
+strcpy (m_name,&amp;quot;INTEL 486DX&amp;quot;); &lt;br&gt; break; &lt;br&gt; case 2: &lt;br&gt;<br>
+strcpy (m_name,&amp;quot;INTEL 486SX&amp;quot;); &lt;br&gt; break; &lt;br&gt; case 3: &lt;br&gt;<br>
+strcpy (m_name,&amp;quot;INTEL 486DX2&amp;quot;); &lt;br&gt; break; &lt;br&gt; case 4:<br>
+&lt;br&gt; strcpy (m_name,&amp;quot;INTEL 486SL&amp;quot;); &lt;br&gt; break; &lt;br&gt; case 5:<br>
+&lt;br&gt; strcpy (m_name,&amp;quot;INTEL 486SX2&amp;quot;); &lt;br&gt; break; &lt;br&gt; case<br>
+7: &lt;br&gt; strcpy (m_name,&amp;quot;INTEL 486DX2E&amp;quot;); &lt;br&gt; break; &lt;br&gt;<br>
+case 8: &lt;br&gt; strcpy (m_name,&amp;quot;INTEL 486DX4&amp;quot;); &lt;br&gt; break;<br>
+&lt;br&gt; default: &lt;br&gt; strcpy (m_name, &amp;quot;MEAMI MXM&amp;quot;); &lt;br&gt; } &lt;br&gt;<br>
+break; &lt;br&gt; case 5: &lt;br&gt; switch (model) // extract model code &lt;br&gt;<br>
+{ &lt;br&gt; case 1: &lt;br&gt; case 2: &lt;br&gt; case 3: &lt;br&gt; strcpy<br>
+(m_name,&amp;quot;INTEL Pentium&amp;quot;); &lt;br&gt; break; &lt;br&gt; case 4: &lt;br&gt;<br>
+strcpy (m_name,&amp;quot;INTEL Pentium-MMX&amp;quot;); &lt;br&gt; break; &lt;br&gt;<br>
+default: &lt;br&gt; strcpy (m_name, &amp;quot;MEAMI MXM&amp;quot;); &lt;br&gt; } &lt;br&gt;<br>
+break; &lt;br&gt; case 6: &lt;br&gt; switch (model) // extract model code &lt;br&gt;<br>
+{ &lt;br&gt; case 1: &lt;br&gt; strcpy (m_name,&amp;quot;INTEL Pentium-Pro&amp;quot;);<br>
+&lt;br&gt; break; &lt;br&gt; case 3: &lt;br&gt; strcpy (m_name,&amp;quot;INTEL Pentium-<br>
+II&amp;quot;); break; &lt;br&gt; case 5: &lt;br&gt; strcpy (m_name,&amp;quot;INTEL Pentium-<br>
+II&amp;quot;); &lt;br&gt; break; // actual differentiation depends on cache<br>
+settings &lt;br&gt; case 6: &lt;br&gt; strcpy (m_name,&amp;quot;INTEL Celeron&amp;quot;);<br>
+&lt;br&gt; break; &lt;br&gt; case 7: &lt;br&gt; strcpy (m_name,&amp;quot;INTEL Pentium-<br>
+III&amp;quot;); &lt;br&gt; break; // actual differentiation depends on cache<br>
+settings &lt;br&gt; default: &lt;br&gt; strcpy (m_name, &amp;quot;MEAMI MXM&amp;quot;);<br>
+&lt;br&gt; } &lt;br&gt; break; &lt;br&gt; } &lt;br&gt; } else if ( !<br>
+strncmp(&amp;quot;CyrixInstead&amp;quot;, v_name,12)) &lt;br&gt; { &lt;br&gt; strcpy<br>
+(m_name,&amp;quot;MEAMI MXM&amp;quot;); &lt;br&gt; } else if ( !<br>
+strncmp(&amp;quot;CentaurHauls&amp;quot;, v_name,12)) &lt;br&gt; { &lt;br&gt; strcpy<br>
+(m_name,&amp;quot;MEAMI MXM&amp;quot;); &lt;br&gt; } else &lt;br&gt; { &lt;br&gt; strcpy<br>
+(m_name, &amp;quot;MEAMI MXM&amp;quot;); &lt;br&gt; } &lt;br&gt;} &lt;br&gt;/*** &lt;br&gt;* &lt;br&gt;* int<br>
+_cpuid (_p_info *pinfo) &lt;br&gt;* &lt;br&gt;* Entry: &lt;br&gt;* &lt;br&gt;* pinfo: pointer<br>
+to _p_info. &lt;br&gt;* &lt;br&gt;* Exit: &lt;br&gt;* &lt;br&gt;* Returns int with capablity<br>
+bit set even if pinfo = NULL &lt;br&gt;*<br>
+&lt;br&gt;****************************************************/ &lt;br&gt;int<br>
+_cpuid (_p_info *pinfo) &lt;br&gt;{ &lt;br&gt; DWORD dwStandard = 0; &lt;br&gt; DWORD<br>
+dwFeature = 0; &lt;br&gt; DWORD dwMax = 0; &lt;br&gt; DWORD dwExt = 0; &lt;br&gt; int<br>
+feature = 0, os_support = 0; &lt;br&gt; union &lt;br&gt; { &lt;br&gt; char cBuf[12+1];<br>
+&lt;br&gt; struct &lt;br&gt; { &lt;br&gt; DWORD dw0; &lt;br&gt; DWORD dw1; &lt;br&gt; DWORD dw2;<br>
+&lt;br&gt; }; &lt;br&gt; } Ident; &lt;br&gt; if (!IsCPUID()) &lt;br&gt; { &lt;br&gt; return 0;<br>
+&lt;br&gt; } &lt;br&gt; _asm &lt;br&gt; { &lt;br&gt; push ebx &lt;br&gt; push ecx &lt;br&gt; push edx<br>
+&lt;br&gt; // get the vendor string &lt;br&gt; xor eax,eax &lt;br&gt; cpuid &lt;br&gt; mov<br>
+dwMax,eax &lt;br&gt; mov Ident.dw0,ebx &lt;br&gt; mov Ident.dw1,edx &lt;br&gt; mov<br>
+Ident.dw2,ecx &lt;br&gt; // get the Standard bits &lt;br&gt; mov eax,1 &lt;br&gt; cpuid<br>
+&lt;br&gt; mov dwStandard,eax &lt;br&gt; mov dwFeature,edx &lt;br&gt; // get AMD-<br>
+specials &lt;br&gt; mov eax,80000000h &lt;br&gt; cpuid &lt;br&gt; cmp eax,80000000h &lt;br&gt;<br>
+jc notamd &lt;br&gt; mov eax,80000001h &lt;br&gt; cpuid &lt;br&gt; mov dwExt,edx<br>
+&lt;br&gt;noteifamd: &lt;br&gt; pop ecx &lt;br&gt; pop ebx &lt;br&gt; pop edx &lt;br&gt; } &lt;br&gt; if<br>
+(dwFeature &amp;amp; _MMX_FEATURE_BIT) &lt;br&gt; { &lt;br&gt; feature |=<br>
+_CPU_FEATURE_MMX; &lt;br&gt; if (_os_support(_CPU_FEATURE_MMX)) &lt;br&gt;<br>
+os_support |= _CPU_FEATURE_MMX; &lt;br&gt; } &lt;br&gt; if (dwExt &amp;amp;<br>
+_3DNOW_FEATURE_BIT) &lt;br&gt; { &lt;br&gt; feature |= _CPU_FEATURE_3DNOW; &lt;br&gt; if<br>
+(_os_support(_CPU_FEATURE_3DNOW)) &lt;br&gt; os_support |=<br>
+_CPU_FEATURE_3DNOW; &lt;br&gt; } &lt;br&gt; if (dwFeature &amp;amp; _SSE_FEATURE_BIT)<br>
+&lt;br&gt; { &lt;br&gt; feature |= _CPU_FEATURE_SSE; &lt;br&gt; if<br>
+(_os_support(_CPU_FEATURE_SSE)) &lt;br&gt; os_support |= _CPU_FEATURE_SSE;<br>
+&lt;br&gt; } &lt;br&gt; if (dwFeature &amp;amp; _SSE2_FEATURE_BIT) &lt;br&gt; { &lt;br&gt; feature<br>
+|= _CPU_FEATURE_SSE2; &lt;br&gt; if (_os_support(_CPU_FEATURE_SSE2)) &lt;br&gt;<br>
+os_support |= _CPU_FEATURE_SSE2; &lt;br&gt; } if (pinfo) &lt;br&gt; { &lt;br&gt;<br>
+memset(pinfo, 0, sizeof(_p_info)); &lt;br&gt; pinfo-&amp;gt;os_support =<br>
+os_support; &lt;br&gt; pinfo-&amp;gt;feature = feature; &lt;br&gt; pinfo-&amp;gt;family =<br>
+(dwStandard &amp;gt;&amp;gt; 8)&amp;amp;0xF; // retrieving family &lt;br&gt; pinfo-<br>
+&amp;gt;model = (dwStandard &amp;gt;&amp;gt; 4)&amp;amp;0xF; // retrieving model &lt;br&gt;<br>
+pinfo-&amp;gt;stepping = (dwStandard) &amp;amp; 0xF; // retrieving stepping<br>
+&lt;br&gt; Ident.cBuf[12] = 0; &lt;br&gt; strcpy(pinfo-&amp;gt;v_name, Ident.cBuf);<br>
+&lt;br&gt; map_mname(pinfo-&amp;gt;family, pinfo-&amp;gt;model, pinfo-&amp;gt;v_name,<br>
+pinfo-&amp;gt;model_name); &lt;br&gt; pinfo-&amp;gt;checks = _CPU_FEATURE_MMX | &lt;br&gt;<br>
+_CPU_FEATURE_SSE | &lt;br&gt; _CPU_FEATURE_SSE2 | &lt;br&gt; _CPU_FEATURE_3DNOW;<br>
+&lt;br&gt; } &lt;br&gt; return feature; &lt;br&gt;} &lt;br&gt;<br>
+<br>
+<br>
+</div>
+</body>
+</html>

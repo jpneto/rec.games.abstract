@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Under-doubling dice?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Under-doubling dice?</h1>
+    <p><strong>From:</strong> David Ullrich &lt;ullrich@math.okstate.edu&gt;<br>
+    <strong>Date:</strong> 09 01 1998 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+Gary Wong wrote:<br>
+&gt; <br>
+&gt; David Ullrich &lt;ullrich@math.okstate.edu&gt; writes:[...]<br>
+&gt; &gt;<br>
+&gt; &gt;       In your definition of &quot;one strategy domainates another&quot; you say<br>
+&gt; &gt; something about a certain limit. The limit in question need not exist for<br>
+&gt; &gt; any pair of strategies.<br>
+&gt; <br>
+&gt; Hmmm.  I had hoped that it did (I take it the limit in question is on<br>
+&gt; P( X &gt;= 0 )), because the distribution of X_i for any two strategies is known<br>
+&gt; and well-defined (even if its mean and variance aren&#x27;t).  Offhand I can&#x27;t<br>
+&gt; prove or disprove it.  Do you have a counterexample?<br>
+&gt; <br>
+&gt; &gt;       Also you say something about the limit of the total winnings<br>
+&gt; &gt; being positive. Makes more sense to me if you said instead the limit<br>
+&gt; &gt; (or rather lim inf) of the _average_ winnings (X_1 + ... + X_n)/n<br>
+&gt; &gt; being positive.<br>
+&gt; <br>
+&gt; That&#x27;s not exactly what I want to measure -- it&#x27;s not the limit on the<br>
+&gt; winnings or average winnings I&#x27;m interested in, it&#x27;s a limit on a<br>
+&gt; _probability of the distribution_.  <br>
+<br>
+	I realized later that I was recalling your definition incorrectly.<br>
+Sorry.<br>
+<br>
+[...]<br>
+&gt; All I mean is that if you replaced &quot;$1&quot; in your sentence with &quot;$1000&quot;, or<br>
+&gt; &quot;$1000000&quot;, it would still hold.  The house needs no limit, _if the size of<br>
+&gt; the bet is independent of the result of previous games_.  I do agree that a<br>
+&gt; player can avoid S_n/n -&gt; -infinity by betting strategic amounts (ie.<br>
+&gt; dependent on previous games) and quitting while he&#x27;s ahead, but that&#x27;s only<br>
+&gt; because we can&#x27;t apply the law of large numbers for want of independence.<br>
+<br>
+	This lack of independence is a pain. It hadn&#x27;t ocurred to me until<br>
+you brought it up that a &quot;strategy&quot; could be based on more than the current<br>
+position and possibly a coin toss or two.<br>
+<br>
+	Otoh as I said the other day surely an &quot;optimal&quot; strategy ignores<br>
+the current balance.(???)<br>
+<br>
+[...]<br>
+&gt; &gt;       Hmm. A while ago I sort of decided that a &quot;strategy&quot; was the same<br>
+&gt; &gt; as a mapping from all positions where we have a decision to make to the<br>
+&gt; &gt; class of all positions, the point being that randomization was not needed<br>
+&gt; &gt; because of the perfect information. But in fact I suppose a &quot;strategy&quot; could<br>
+&gt; &gt; also include consideration of previous games, in which case you&#x27;re right,<br>
+&gt; &gt; the X_n are not independent.<br>
+&gt; &gt;       I don&#x27;t think an optimal strategy will take the previous games<br>
+&gt; &gt; into account, but I guess this raises a few questions...<br>
+&gt; <br>
+&gt; I don&#x27;t think it would either, but the fact remains that strategies that _do_<br>
+&gt; vary based on previous games can lead to sequences with interesting (annoying?)<br>
+&gt; properties.<br>
+&gt; <br>
+&gt; It&#x27;s a shame, really.  Cubeless backgammon is so lovely and well-behaved (a<br>
+&gt; Markov process over finite states).  Once you add a cube, the number of states<br>
+&gt; becomes countably infinite, which is a bit grotty, but people have coped in<br>
+&gt; the past.  Once you add history of past games, I don&#x27;t even have a clue how<br>
+&gt; to model a strategy any more, let alone derive a bean from it :-(<br>
+<br>
+	Yup.<br>
+<br>
+&gt; &gt; &gt; Not to mention that if I remember correctly,<br>
+&gt; &gt; &gt; Lindeberg-Feller applies to sums of X_kn that are uniformly asymptotically<br>
+&gt; &gt; &gt; negligible (which we haven&#x27;t shown),<br>
+&gt; &gt;<br>
+&gt; &gt;       I don&#x27;t remember what this means - guessing what it means from<br>
+&gt; &gt; what the words look like I _suspect_ that it&#x27;s exactly the bit that worries<br>
+&gt; &gt; me, or pretty close.<br>
+&gt; <br>
+&gt; I&#x27;m very hazy on all this stuff so don&#x27;t trust me on the face of it, but<br>
+&gt; informally I take it to mean that even the biggest things you&#x27;re adding<br>
+&gt; together have to be tiny compared to the sum.  Formally I wouldn&#x27;t trust<br>
+&gt; myself to have a clue, so here&#x27;s a definition stolen from the Encycopedia<br>
+&gt; of Mathematics:<br>
+&gt; <br>
+&gt;   X_nk are uniformly asymptotically negligible if for every epsilon &gt; 0,<br>
+&gt; max_{ 1 &lt;= k &lt;= n }  P( | X_nk | &gt; epsilon ) -&gt; 0 as n -&gt; inf, ie. X_nk<br>
+&gt; converges in probability to zero, uniformly in k.<br>
+<br>
+	Huh. Sorting out the notation a little, this is exactly what<br>
+Chung calls &quot;holospoudic&quot;. (You&#x27;re evidently talking about a double<br>
+array X_n,k defined for 1 &lt;= k &lt;= n while he talks about the array<br>
+being defined for 1 &lt;= k &lt;= M_n, but the difference is negligible.)<br>
+I&#x27;d always assumed he coined this silly term because there did not<br>
+exist a standard term for it...  &quot;uniformly asymptotically negligible&quot;,<br>
+lemme write that down.<br>
+<br>
+&gt; It goes on to say &quot;when the condition of asymptotic negligibility of the<br>
+&gt; variables in the triangular array considered above does not hold, the<br>
+&gt; situation becomes complicated&quot;.  I wonder if they intend &quot;complicated&quot; to<br>
+&gt; mean the same thing I usually do, ie. &quot;I think it&#x27;s intractable&quot; :-}<br>
+<br>
+	Heh-heh.<br>
+<br>
+&gt; &gt; &gt; and classifying S_n as a martingale or<br>
+&gt; &gt; &gt; sub/supermartingale requires not only independence, but E(S_n) to exist,<br>
+&gt; &gt; &gt; which we don&#x27;t have either.  Without this most basic background I&#x27;d have a<br>
+&gt; &gt; &gt; great deal of difficulty proving today is Wednesday :-)  I remember seeing<br>
+&gt; &gt; &gt; hints about generalisations of limit theorems to dependent random variables<br>
+&gt; &gt; &gt; existing, but I don&#x27;t know enough of the details to apply that myself.<br>
+&gt; &gt; &gt;<br>
+&gt; &gt; &gt; From another point of view, I&#x27;m claiming that there exist backgammon<br>
+&gt; &gt; &gt; strategies that lie outside the domain of the Ullrich-optimality function<br>
+&gt; &gt; &gt; U.  I intuitively suspect the domain of the Wong-optimality function W is a<br>
+&gt; &gt; &gt; superset of dom(U), and that all possible backgammon strategies are members,<br>
+&gt; &gt;<br>
+&gt; &gt;       Not sure what this means. (It appears to mean that you suspect that<br>
+&gt; &gt; every strategy is Wong-optimal, but surely you don&#x27;t suspect that. So I<br>
+&gt; &gt; must be misunderstanding something.)<br>
+&gt; <br>
+&gt; Sorry, I wasn&#x27;t precise about what I meant.  I meant I suspect every backgammon<br>
+&gt; strategy is a member of dom(W) (ie. every possible pair of strategies makes a<br>
+&gt; member of the domain of the domination function), not that every backgammon<br>
+&gt; position was optimal.  On the other hand, I think there are some strategies<br>
+&gt; that are not members of dom(U) (eg. any strategy that doubles and takes in a<br>
+&gt; troublesome position, because when you attempt to compare that strategy to<br>
+&gt; another one that behaves the same way, the limit is undefined).<br>
+<br>
+	I&#x27;d assumed that &quot;dom(W)&quot; was the set of all strategies that dominate<br>
+W - I guess not. OH: &quot;dom&quot; is an initial segment of the string &quot;domain&quot; as<br>
+well as of the string &quot;dominates&quot;.<br>
+<br>
+	I think I know what you mean now. There never was any &quot;domination function&quot;<br>
+defined. I might guess that the domination function is a Boolean-valued function <br>
+of two variables: W(S,O) is True or False depending on whether S dominates O.<br>
+If _that&#x27;s_ what it is then a _strategy_ per se cannot be an element of the<br>
+domain of the domination function, it&#x27;s an ordered pair of strategies that<br>
+might be an element of the domain. Not to complain, just trying to explain<br>
+my confusion about what you meant.<br>
+<br>
+-- <br>
+David Ullrich<br>
+<br>
+sig.txt not found<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

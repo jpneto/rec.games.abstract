@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Again Operators on Games or Mutators</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Again Operators on Games or Mutators</h1>
+    <p><strong>From:</strong> &quot;Joo Neto&quot; &lt;vascog@uol.com.br&gt;<br>
+    <strong>Date:</strong> 01 02 2000 00:00:00 GMT</p>
+    <hr>
+    <div>&gt;Inspired by some 2nd order functions:<br>
+&gt;<br>
+&gt; - Twice (apply the mutator twice).<br>
+&gt;<br>
+&gt; - Limit (apply mutator repeatedly until fixed-point (limit) is<br>
+&gt;   reached).<br>
+&gt;<br>
+&gt; - Compose (compose two mutators. Mostly useful in combination with<br>
+&gt;   other 2nd-order mutators).<br>
+<br>
+<br>
+Great!<br>
+<br>
+Here are some more:<br>
+<br>
+ - Remove(mutators) : the rules defined by mutators are removed from the<br>
+game.<br>
+<br>
+ - Inverse(mutator) : returns the inverse of mutator, if it exists.<br>
+<br>
+ - Complement(mutator) : the illegal moves turn legal, and vice versa.<br>
+<br>
+Examples:<br>
+<br>
+ - FIDE[Remove([En-Passant])], returns a CV just like FIDE but without the<br>
+en-passant rule.<br>
+<br>
+ - Inverse([Switch(3)]) : At each set of 3 turns, players do not switch<br>
+sides, switching otherwise.<br>
+<br>
+ - Complement([Swap]) : A piece may swap its position with some other not in<br>
+its capturing or moving range.<br>
+<br>
+Of course, if there are some problems defining what makes a mutator<br>
+reasonable, there is an extra problem with high order mutators and that is<br>
+an interpretation one (e.g., what is the inverse of mutator X?)<br>
+<br>
+Joao Neto<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

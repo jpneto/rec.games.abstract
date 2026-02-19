@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithm for possible positions</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Algorithm for possible positions</h1>
+    <p><strong>From:</strong> whuang@ugcs.caltech.edu (Wei-Hwa Huang)<br>
+    <strong>Date:</strong> 08 03 1999 00:00:00 GMT</p>
+    <hr>
+    <div>The most desirable algorithm in Chess computing has the following <br>
+requirements:<br>
+<br>
+ Given any legal position in chess, generate the best move.<br>
+<br>
+The &quot;best move&quot; has several definitions, of course, but in its<br>
+weakest form we might define it to be: if there is a winning strategy,<br>
+then the best move is one that is part of a winning strategy; else, any<br>
+move is the &quot;best move&quot;.<br>
+<br>
+We might call this &quot;God&#x27;s algorithm&quot; (GA).  I note the following<br>
+properties of GA:<br>
+ - If we could chart out the entire move tree of chess,<br>
+   we would have GA.<br>
+ - Existing algorithms can do a reasonable job of approximating GA<br>
+   via certain &quot;obvious&quot; heuristics (e.g., don&#x27;t leave attacked pieces <br>
+   undefended) that can be refined to get even closer to GA (e.g.,<br>
+   it&#x27;s okay to leave attacked pieces undefended if you can guarantee a<br>
+   checkmate in three moves).<br>
+ - For certain positions, GA is easy to computer (e.g., mates in 3).<br>
+ - No one has (provably) implemented GA yet.<br>
+<br>
+Recently, I have in mind another algorithm, with the following condition:<br>
+<br>
+ Given any position in chess, determine if the position is a legal<br>
+  position.<br>
+<br>
+A &quot;position&quot; here includes state information on what is on each of the 64<br>
+squares, which side is to move, whether or not each side can castle in <br>
+the future, whether or not en passant captures are possible and where they <br>
+are, and some sort of progress record of how close the game is to a <br>
+50-move draw or a repetition draw.  (Or, to simplify matters, we may consider<br>
+a simpler version of chess where there is no draw by repetition or 50-move<br>
+law.)  A &quot;legal position&quot; means a position which could potentially<br>
+occur in an actual game.<br>
+<br>
+Let&#x27;s call this one &quot;Hero&#x27;s Algorithm,&quot; named after Herodotus, the historian<br>
+who chronicled many wars and stories and apparently made some up too.<br>
+<br>
+Hero&#x27;s algorithm (HA) has properties that has many similarities to God&#x27;s <br>
+Algorithm:<br>
+ - If we could chart out the entire move tree of chess,<br>
+   we would have HA.<br>
+ - Existing algorithms can do a reasonable job of approximating HA<br>
+   via certain &quot;obvious&quot; heuristics (e.g., if a player is in check and<br>
+   he has made the last move, then the position is illegal) that can be <br>
+   refined to get even closer to HA (e.g., if both players are in check,<br>
+   the position is illegal).<br>
+ - For certain positions, HA is easy to compute.<br>
+<br>
+In a sense, HA is the opposite of GA: in GA, you are trying to find a <br>
+path down the move tree that leads to a winning position; in HA, you are<br>
+trying to find a path up the move tree that leads to the starting position.<br>
+<br>
+Now, the questions:<br>
+ 1.  Has any progress been made on HA?  Has HA ever been stated before?<br>
+ 2.  Is HA simpler, more complex, or about as difficult to solve as GA?<br>
+ 3.  If we made progress on computational methods for HA, would that<br>
+     help us approximate GA better?  Or would it be no help at all?<br>
+     How about vice versa?<br>
+<br>
+--<br>
+Wei-Hwa Huang, whuang@ugcs.caltech.edu, http://www.ugcs.caltech.edu/~whuang/<br>
+---------------------------------------------------------------------------<br>
+&quot;Pop&quot;, &quot;Soda&quot;, or &quot;Coke&quot;?  http://www.ugcs.caltech.edu/~almccon/pop_soda/<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

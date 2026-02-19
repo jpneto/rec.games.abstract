@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>solving Seahaven Towers</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>solving Seahaven Towers</h1>
+    <p><strong>From:</strong> woods@snap.Eng.Sun.COM (Don Woods)<br>
+    <strong>Date:</strong> 22 Dec 1993 23:07:20 GMT</p>
+    <hr>
+    <div>I&#x27;m about to post the source for my program that solves Seahaven Towers<br>
+positions.  It only solves opening positions, but it wouldn&#x27;t be hard to<br>
+extend it to handle midgame positions.  I&#x27;ve pounded on it a bit, in<br>
+particular comparing its results to those of the program in the Modula-3<br>
+distribution, and they agree as to the solubility of all positions tested<br>
+(except for a few where the Modula-3 program couldn&#x27;t decide).<br>
+<br>
+The program compiles on SunOS 5.1.  It should compile on other Unix<br>
+systems, and I hope I&#x27;ve got the code right for DOS as well.  (There&#x27;s<br>
+some use of the time functions to initialise a random number generator,<br>
+since one of the options lets you use the program to generate random<br>
+positions.)<br>
+<br>
+Note that the program does not let you interactively play the game; it<br>
+just tests for winnability.  On my SparcStation II it takes about 0.2 sec<br>
+per position.<br>
+<br>
+And for the curious: I had it generate a million random positions to see<br>
+how many were winnable.  The answer: 89.11%.<br>
+-- <br>
+--	-- Don Woods.				[*** Generic Disclaimer ***]<br>
+--				    ...!sun!woods.eng -or- Woods@Eng.Sun.com<br>
+<br>
+<br>
+</div>
+</body>
+</html>

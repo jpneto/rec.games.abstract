@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Question about retrograde analysis algorithm for endgame databases</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Question about retrograde analysis algorithm for endgame databases</h1>
+    <p><strong>From:</strong> mathpoly@yahoo.com (mathpolymath)<br>
+    <strong>Date:</strong> 24 Apr 2002 01:52:13 -0700</p>
+    <hr>
+    <div>(Thanks Bob for the answer concerning chess draw-by-repetition<br>
+algorithms!)<br>
+<br>
+<br>
+<br>
+Can someone help me with a question concerning the retrograde analysis<br>
+algorithm?<br>
+<br>
+As I understand it, the retrograde analysis algorithm works something<br>
+like:<br>
+<br>
+(1) Initialize each endgame positions with number of possible moves<br>
+from this position (children)<br>
+(2) Check each position in the database to see if the position score<br>
+is the best possible and then notify the parents.  Best possible moves<br>
+either have the maximum possible score or are ones where all the<br>
+children have been fully evaluated (in an alpha-beta sense).<br>
+(3) Iterate #2 a certain number of times depending on the maximum<br>
+range of scores which are possible for positions in the database<br>
+(4) All remaining unsettled positions get a score of 0<br>
+<br>
+Now I understand step #4 is based on the assumption that all repeating<br>
+positions have a certain score, which would be true in chess (where<br>
+repeats = draw so score = 0).  But what about a game whose score would<br>
+depend on the exact position of the first (or for that matter N&#x27;th)<br>
+repeat?  Imagine a game where the rules say the game ends whenever a<br>
+position is repeated twice (as in chess), but with the additional<br>
+caveat that the score might vary depending on the actual position when<br>
+this 2nd repeat occurs (in chess, the score of the 2nd repeat is<br>
+0=draw)?<br>
+<br>
+How could the retrograde analysis algorithm be changed to take this<br>
+variable score on a repeat into account?<br>
+<br>
+THANKS IN ADVANCE!<br>
+<br>
+<br>
+</div>
+</body>
+</html>

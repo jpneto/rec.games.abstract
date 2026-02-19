@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: &quot;Anti-computer&quot; abstract games/backgammmon</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: &quot;Anti-computer&quot; abstract games/backgammmon</h1>
+    <p><strong>From:</strong> Douglas Zare &lt;zare@math.columbia.edu&gt;<br>
+    <strong>Date:</strong> 29 08 2000 00:00:00 GMT</p>
+    <hr>
+    <div>camradood wrote:<br>
+<br>
+&gt; Plus the fact that backgammon relies on a very simple set of probability<br>
+&gt; rules ( 2 dice), and the number of positions is very small compared to Go,<br>
+&gt; so it is very easy for a program to use relatively simple algorithms to work<br>
+&gt; out best postion.<br>
+<br>
+The dice give you an additional branching factor of 21 per ply, so the<br>
+probability rules for go are simpler. There are about 2^64 positions in<br>
+backgammon (sans cube) compared to about 2^500 in go, I&#x27;m guessing, but I don&#x27;t<br>
+see what advantage that gives. Barring underpromotion in chess would not make<br>
+it a substantially simpler game, but it would decrease the number of legal<br>
+positions, I would guess by a square root. Incidentally, there are often<br>
+thousands of ways to play 1-1 or 2-2 in backgammon, and computers do not have<br>
+the speed to consider all of them.<br>
+<br>
+I get the feeling that computers could easily be trained to play decently on a<br>
+longer backgammon board (than the current 24), but that they would do miserably<br>
+on larger go boards.<br>
+<br>
+Danny Kleinman tried to use increasingly complicated rules for his backgammon<br>
+algorithm. That didn&#x27;t work nearly as well (even ignoring the cube), and I<br>
+think that the reason was more than that DK was not an expert backgammon<br>
+player. Some comments on this are made in his _Vision Laughs at Counting_ book.<br>
+Following relatively simple algorithms is not the strength of computers in<br>
+complicated games.<br>
+<br>
+&gt; &quot;Tim Hunt&quot; &lt;tjh1000@damtp.cam.ac.uk&gt; wrote in message<br>
+&gt; news:39A1369D.537617DB@damtp.cam.ac.uk...<br>
+&gt; &gt; I think that the other side of the coin is a game like Backgammon. I<br>
+&gt; &gt; would say that backgammon is a game consisting almost entirely of<br>
+&gt; &gt; positional judgement. You can play very well with no look-ahead at all.<br>
+&gt; &gt; And this is in fact how the best programs works. They have a superb<br>
+&gt; &gt; evaluation function.Of course, these days they also use 3-ply<br>
+&gt; &gt; look-ahead, but that is almost oer-kill. omputers were approaching the<br>
+&gt; &gt; best humans when they were  doing just 1-ply lookahead.<br>
+<br>
+Not really, despite the reports in Tesauro&#x27;s &quot;Temporal Difference Learning of<br>
+Backgammon Strategy,&quot; _Machine Learning_ 1992. With longer sessions I&#x27;m<br>
+confident that all three world-class players would have won at least 60-40<br>
+rather than the 18-13, 2-6, and 4-9 results. One difficulty with discussing<br>
+this is that both computer play and human play have improved, the latter as a<br>
+result of the former (and computer rollouts rather than evaluations), and the<br>
+former primarily through faster computers. Now humans play better than<br>
+computers in some positions, and computers play better than humans in some<br>
+positions, and 1-ply computers would be pounded by .2 ppg in money play or at<br>
+least 54-46 in 1-point matches (more if the humans adopted well-known anti-bot<br>
+tactics).<br>
+<br>
+&gt; &gt; So how do backgammon evaluation functions work. Well there were lots of<br>
+&gt; &gt; efforts to make them by hand. Then Gerald Tesauro had the idea of using<br>
+&gt; &gt; a nural net (and developen a good way of inputting the position and a<br>
+&gt; &gt; good training algorithm) and the standard of computer backgammon<br>
+&gt; &gt; suddenly jumped up. If positional judgement is so important in go, why<br>
+&gt; &gt; doesn&#x27;t the same idea work there? This is a good question. I think that<br>
+&gt; &gt; the answer is that tactics are so important in go. In Backgammon, the<br>
+&gt; &gt; random throws of the dice mean that it is virtually impossible to<br>
+&gt; &gt; predeict exactly what is going to happen. Instead one must play the<br>
+&gt; &gt; averages. Neural nets seem to be good at evaluating averages like this,<br>
+&gt; &gt; and making very fine judgements between positions.<br>
+<br>
+In my experience, computers do quite well with the short-run tactical side of<br>
+backgammon. Humans with fortitude can try to estimate chances 2 moves ahead in<br>
+simple positions, but computers can compute most variations 3 moves ahead.<br>
+That&#x27;s necessary for computers to approach world-class rather than just expert<br>
+play, since the 1-ply evaluations are not accurate enough, but make errors in<br>
+both directions.<br>
+<br>
+Computers are bad at technical plays (e.g., non-contact positions) and playing<br>
+and evaluating backgames. I believe they are bad at evaluating positions with<br>
+primes in general. They are still terrible at rolling a prime home and shaking<br>
+loose a second checker after hitting the first in a deep anchor game. They do<br>
+not have a sense of the &quot;timing&quot; of a game, which is usually opposite the race<br>
+but is much more complicated. Computers are good at making fine judgements<br>
+between similar positions in backgammon, but only gross judgements about<br>
+dissimilar positions. They are very good at blitzes, causing a major<br>
+reevaluation of that aspect of the game.<br>
+<br>
+Though it is not as easy to tabulate a material score as in chess, the hard<br>
+moves are often spaced out by a lot of easy moves during which the relative<br>
+strength of the position is easy to evaluate on a rough level.<br>
+<br>
+If one naively attempts to implement a neural net on go, there just won&#x27;t be<br>
+enough features it could find. Try to describe &quot;connected&quot; or &quot;2-eye&quot; in terms<br>
+of the locations of pieces; it just doesn&#x27;t work. Although a sufficiently large<br>
+net much larger than practicable would theoretically work, to spoonfeed a net<br>
+simplified ideas of go probably limits the depth of the net&#x27;s play. I wonder<br>
+how badly computers would play if they used no library of joseki whatsoever, as<br>
+a human 10-kyu might.<br>
+<br>
+Douglas Zare<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

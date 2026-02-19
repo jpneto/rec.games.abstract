@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>2D Nim</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>2D Nim</h1>
+    <p><strong>From:</strong> joc_kay@hotmail.com (Joe)<br>
+    <strong>Date:</strong> 22 Jul 2004 05:47:09 -0700</p>
+    <hr>
+    <div>Inspired by the discussions under the thread &quot;Nim game&quot; the following<br>
+game occurred to me:<br>
+<br>
+2D Nim<br>
+<br>
+Two players (A and B) compete. Player B puts down a number of square<br>
+pieces in a configuration such that all pieces touch one other along<br>
+at least one edge. Player A either accepts or rejects the start. In<br>
+the latter case player B has to start. In turns each player takes away<br>
+one or more pieces. More pieces can be taken only when they are<br>
+located in a (horizontal or vertical) row and all touch each other.<br>
+The player who makes the last move wins.<br>
+<br>
+<br>
+Example game:<br>
+<br>
+Alice and Bob compete. Bob puts down a configuration consisting of 15<br>
+pieces:<br>
+<br>
+  XXX<br>
+ X X <br>
+XXXXX<br>
+ X XX<br>
+   XX<br>
+<br>
+Alison accepts the start and removes one piece:<br>
+<br>
+  XXX<br>
+ X X <br>
+XXX X<br>
+ X XX<br>
+   XX<br>
+<br>
+Bob now removes the top row:<br>
+<br>
+ X X <br>
+XXX X<br>
+ X XX<br>
+   XX<br>
+<br>
+Alison responds by again moving one piece:<br>
+<br>
+ X X <br>
+X X X<br>
+ X XX<br>
+   XX<br>
+<br>
+Bob removes the bottom row:<br>
+<br>
+ X X <br>
+X X X<br>
+ X XX<br>
+<br>
+and Alison removes the rightmost column leaving an even number of<br>
+isolated pieces:<br>
+<br>
+ X X<br>
+X X <br>
+ X X<br>
+<br>
+Bob gives up.<br>
+<br>
+<br>
+Note that this game contains regular (1D) Nim as special case. For<br>
+example, a configuration like:<br>
+<br>
+ XXXXX<br>
+X<br>
+X    X<br>
+ XXXX<br>
+<br>
+is equivalent to a Nim game with four heaps of size 5, 4, 2 and 1.<br>
+<br>
+<br>
+Of course, the Sprague-Grundy theory applies to this impartial game.<br>
+Configurations can be given Grundy numbers that effectively map the<br>
+game onto regular Nim. A configuration consisting of N pieces can not<br>
+have a Grundy number larger than N. Some example configurations with<br>
+their Grundy numbers are:<br>
+<br>
+X 1     XX 2   XXX 3     XX 3<br>
+                         X<br>
+<br>
+XXXX 4   XXX 4   XXX 2    XX 1   XX 0<br>
+         X        X      XX      XX<br>
+<br>
+ X      XX      X      X<br>
+XXX 3   XXX 1  XXXX 5  XXXX 5  XXXXX 5<br>
+ X<br>
+<br>
+The Grundy number of a configuration that consists of several<br>
+independent subgroups is given by the Nim-sum of the Grundy numbers of<br>
+the subgroups.<br>
+For example, in the above example game Alison&#x27;s first move leaves a<br>
+configuration consisting of three subgroups of size 5, 5 and 4. These<br>
+subgroups have Grundy numbers 3, 2 and 1. Using Nim addition these<br>
+numbers add up to zero, demonstrating that Alison created a winning<br>
+position in the first move.<br>
+ <br>
+Joe<br>
+<br>
+<br>
+</div>
+</body>
+</html>

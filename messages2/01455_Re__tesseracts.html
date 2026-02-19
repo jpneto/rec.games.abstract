@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: tesseracts</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: tesseracts</h1>
+    <p><strong>From:</strong> dbd@martha.utcc.utk.edu (David DeLaney)<br>
+    <strong>Date:</strong> Mon, 6 Dec 1993 23:28:44 GMT</p>
+    <hr>
+    <div>In article &lt;Dec.6.01.33.00.1993.12557@remus.rutgers.edu&gt; ejg@remus.rutgers.edu<br>
+(the Count) writes:<br>
+&gt;ejg@remus.rutgers.edu (the Count) writes:<br>
+&gt;ok, i talked with one of my more mathematically inclined friends tonight and<br>
+&gt;we decided it was easier to consider each node of the hypercube as a room, <br>
+&gt;as opposed to my original idea of each edge of the hypercube being one wall<br>
+&gt;of a given room.<br>
+&gt;we came up with the following arrangement, presuming you number the nodes<br>
+&gt;arbitrarily from 1 to 16 and conside the edges between the nodes as the <br>
+&gt;passages between the nodes.  <br>
+&gt;  1 maps to 2,3,4,9<br>
+&gt;  2 maps to 1,6,7,10<br>
+&gt;  3 maps to 1,5,7,11<br>
+&gt;  4 maps to 1,5,6,12<br>
+&gt;  5 maps to 4,3,8,13<br>
+&gt;  6 maps to 4,2,8,14<br>
+&gt;  7 maps to 3,2,8,15<br>
+&gt;  8 maps to 5,6,7,16<br>
+&gt; and 9-16 are symmetric to 1-8<br>
+&gt;can anyone verify if this is correct?  <br>
+&gt;thanks,<br>
+&gt; -the count<br>
+<br>
+The standard hypercube w/cubes as rooms gives the following arrangement:<br>
+           ___<br>
+          |   |<br>
+          | 6 |<br>
+          |___|<br>
+          |   |<br>
+          | 5 |<br>
+ ___   ___|___|___   ___<br>
+|   | |   |   |   | |   |<br>
+| 7 | | 2 | 3 | 4 | | 8 |<br>
+|___| |___|___|___| |___|<br>
+ in       |   |      in<br>
+front     | 1 |     back<br>
+          |___|<br>
+<br>
+connections - (cube) to (t,l,r,f,back,bot), as they&#x27;re facing now (t for one<br>
+may be l for another, though):<br>
+             1 to 3,2,4,7,8,6<br>
+             2 to 5,6,3,7,8,1<br>
+             3 to 5,2,4,7,8,1<br>
+             4 to 5,3,6,7,8,1<br>
+             5 to 6,2,4,7,8,3<br>
+             6 to 1,2,4,7,8,5<br>
+             7 to 5,2,4,6,3,1<br>
+             8 to 5,2,4,3,6,1<br>
+<br>
+You &quot;fold&quot; the cubes around 3 so their tops all connect to 5, and their<br>
+bottoms all connect to 1, and their sides connect to each other (2-&gt;7-&gt;4-&gt;8);<br>
+this leaves one face on each cube but 3, each of which connects to 6, which<br>
+is forced to turn &quot;inside-out&quot; around them... Notice that orientation may suffer<br>
+if you make trips between two rooms on different paths - you may end up walking<br>
+on the &quot;wall&quot; or &quot;ceiling&quot;. You may want to slide cutouts around a cube for a<br>
+bit to see this.<br>
+<br>
+See Heinlein&#x27;s &quot;And He Built A Crooked House...&quot; for more details (except<br>
+that his central room&#x27;s windows should have looked into other rooms...)<br>
+<br>
+Your idea of using the nodes as rooms gives you the &quot;dual&quot; of the hypercube;<br>
+the analogue in three dimensions is a cube &lt;-&gt; an octohedron. I don&#x27;t think<br>
+much has been written in non-puzzle literature about this (you might try<br>
+parallel computing books), and I&#x27;m not gonna try verifying your notation :-).<br>
+<br>
+Dave &quot;only slightly confused&quot; DeLaney<br>
+-- <br>
+David DeLaney: dbd@(utkux.utcc | panacea.phys | enigma.phys).utk.edu - collect<br>
+them all! Disclaimers: AFAIK, *nobody* speaks for U.T.Knoxville (consistently);<br>
+Thinking about this disclaimer (or about high energy theoretical particle  __<br>
+physics) may cause headaches.  .sig virus: Vicki Robinson v2.24; Kibo #: 0 \/<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>World Championship Awari (Results)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>World Championship Awari (Results)</h1>
+    <p><strong>From:</strong> victor@cs.vu.nl (Victor Allis)<br>
+    <strong>Date:</strong> 01 10 1995 00:00:00 GMT</p>
+    <hr>
+    <div>The World Championship Computer Awari<br>
+<br>
+On September 30th, October 1 and October 2, the World Championship Computer<br>
+Awari is being held at the Vrije Universiteit Amsterdam in the Netherlands.<br>
+<br>
+Three programs, all previous competitors at the 2nd, 3rd and 4th Computer<br>
+Olympiads (1990-1993) have entered the competition:<br>
+<br>
+- Lithidion (Maarten van der Meulen and Victor Allis, Netherlands).<br>
+- MyProgram (Eric van Riet Paap, Netherlands)<br>
+- Marvin    (Thomas Lincke, Switzerland)<br>
+<br>
+The tournament arose from a challenge by Eric van Riet Paap, who thought it<br>
+was about time that Lithidion, three time gold medal winner at the Computer<br>
+Olympiads, would allow MyProgram a change to take over.<br>
+<br>
+All three programs have been built using the same concepts:<br>
+- A fast a-b search (between 20 and 30 ply per move)<br>
+- A large end-game database (between 17 and 22 stones)<br>
+- A large opening book (between thousands and close to a million opening lines).<br>
+Futhermore, Lithidion uses pn-search as a &#x27;secret weapon&#x27; to refute mistakes by<br>
+a-b search, or to find quick wins near the end of the game.<br>
+<br>
+Each of the programs has its own strong points: MyProgram is the fastest<br>
+searcher (normally 1 or 2 plies faster than Lithidion and Marvin). Marvin<br>
+has the largest opening database, while the opening databases of Lithidion and<br>
+MyProgram seem comparable. Marvin also has the largest end-game database <br>
+(22 stones), against 20 stones for Lithidion and 17 for MyProgram. Finally,<br>
+Lithidion has the best hardware: a SUN HyperSparc 125 MHz, with 288 Mb RAM,<br>
+provided by the Vrije Universiteit, while MyProgram runs on a Pentium 133 MHz<br>
+with 48 Mb, and Marvin runs on PowerPC 601, 80 MHz and 16 Mb Ram.<br>
+<br>
+Before the tournament, none of the competitors had a clue whose program would<br>
+be best, since they had not played any serious opponents for 3 years. Note that<br>
+except these three programs there seem to be no other Awari players (human or<br>
+machine) within their class: all human opponents the programs have had in<br>
+games against well-tested versions were defeated early in the game, with large<br>
+margins.<br>
+<br>
+-------<br>
+DAY ONE<br>
+-------<br>
+<br>
+So, on Saturday morning, 09.00 am, the tournament was started. The programs<br>
+meet each other 6 times, 3 times playing South and 3 times playing North, thus<br>
+12 games per program, and a total of 18 in the tournament. Each day, 6 of these<br>
+games are played.<br>
+<br>
+At first glance, just looking at the results of the Saturday games,<br>
+the outcome of the tournament almost seems determined: MyProgram won all of<br>
+its games, while Marving beat Lithidion twice. So, the old champion was doing<br>
+badly.<br>
+<br>
+If we look at the details of the games, things were less clear:<br>
+<br>
+MyProgram vs. Marvin.<br>
+<br>
+- In one of the games between Marving and MyProgram, Marvin sufferred from<br>
+  a time-control problem, leaving him to little time near the time control.<br>
+  The inferior moves computed with little time left, made him an easy target<br>
+  for MyProgram, at that stage searching on average TEN plies more than<br>
+  his opponent.<br>
+- In the other game MyProgram played the strong side (South), and shortly after<br>
+  Marvin left its book (move 12), MyProgram took the lead. At move 26 the win<br>
+  was secured.<br>
+<br>
+MyProgram vs. Lithidion<br>
+<br>
+- In the first game, MyProgram playing South, Lithidion was crushed. After 8<br>
+  moves in book, Lithidion lost on average 2 stones per move for the next<br>
+  5 moves. At move 16, Lithidion saw the loss. There was some confusion<br>
+  when the game was continued, since an initial 1 stone loss was enlarged by<br>
+  the seemingly mishandling of the position by a-b search, leading to <br>
+  a predicted 12 stone loss. Then, when playing from the end-game database,<br>
+  the loss was decreasing all the time, back to a 2 stone difference.<br>
+  MyProgram even seemed to be unsure of the win after all. Finally all the<br>
+  humans saw what they had missed: MyProgram had already captured 25 stones<br>
+  and thus the game had been over at 22. Playing on after the end, lead to<br>
+  the confusing messages from the programs.<br>
+- The second game has been played after the two games between MyProgram and<br>
+  Marvin which gave Lithidion&#x27;s authors a change to try to revive pn-search<br>
+  from the darkest part of the four-year old code. After quickly linking the<br>
+  seemingly untouched functions to the active code, and a short check of the<br>
+  vital signs of the program, they decided to give it a try. A-b search tried<br>
+  hard in the first part of the game, but could not help getting behind 6<br>
+  stones. Suddenly pn-search started to see past the horizons of a-b search <br>
+  and had favorable messages, indicating that Lithidion could hope for a <br>
+  draw or even more. While a-b search was unaware of this, MyPrograms +6<br>
+  lead dropped in his perspective to 0, confirming pn-searches claims.<br>
+  Unfortunately, only a few moves later pn-search, started talking rubbish:<br>
+  First it said that it would win the game, only 1 ply later, while checking<br>
+  the options for the opponent, saying the same for him. Needless to say, the<br>
+  buggy software helped securing a second victory for MyProgram.<br>
+<br>
+Marvin vs. Lithidion<br>
+<br>
+- In the first game, Marvins book played 19 moves for him, a tournament<br>
+  record. After these moves, Marvin had a one-stone lead. Somewhere in the<br>
+  next five moves, Lithidion must have erred, as quite suddenly, while being<br>
+  only 3 stones down, Lithidion found a loss, confirmed by Marvin.<br>
+- The second game against Marvin, the last of the day, left Lithidion&#x27;s<br>
+  authors in a dilemma. We had found a collection of bugs, and did not know<br>
+  what to do. One thing was sure: the 20-stone database contained some (small?)<br>
+  errors. At that stage we even suspected the database being responsible for<br>
+  the pn-search behavior. Also, while they distrusted pn-search, it had<br>
+  given them hope in the second game against Lithidion. So, it was decided<br>
+  to play using an old, perfect, 17-stone database. During play, one of the<br>
+  authors was checking the code and found that the blame was placed<br>
+  incorrectly. Not the database was to blame, but pn-search. At the time in<br>
+  the game we needed pn-search most (to prevent a blunder found by a-b search),<br>
+  it failed, and a quiet position turned into a disaster, followed by a<br>
+  quick loss.<br>
+<br>
+So, as all experienced game programmers will understand, our<br>
+saturday night fever did not lead to visits to Amsterdam&#x27;s night live.<br>
+Instead, Eric went home (nothing much too improve), and Thomas, Maarten en<br>
+Victor stayed to work on their programs, until 04.30 am.<br>
+<br>
+-------<br>
+DAY TWO<br>
+-------<br>
+<br>
+After a well-deserved 4 hour sleep, Thomas, Maarten en Victor were ready for<br>
+another day of battle. First, Marvin and Lithidion had to battle it out, with<br>
+Lithidion playing the South. The opening went as expected: Lithidion getting<br>
+out of book earlier then Marving (move 4 against move 10). Things seemed even<br>
+at move 10. From then on, Lithidion slowly but surely started to take the<br>
+lead. Things got exciting at move 23, when pn-search warned that Marvin should<br>
+better not play move C, as it would lose, while up to 20 ply Marvin thought<br>
+that C was the best move. Marvin had time to finish 21 ply, and switched to<br>
+move B, leaving the game as yet undecided. However, at move 27, there was<br>
+no escape: pn-search saw a win. At move 30, Marvin saw the same, and after<br>
+a few minutes of stress in which both programs played almost instant moves,<br>
+we found that pn-search this time had not betrayed Lithidion. Lithidion had<br>
+scored its first point.<br>
+<br>
+The second game proved to be the real test: playing against MyProgram, while<br>
+MyProgram played South. Things happened so fast, that the game was almost over<br>
+before we knew what had happened. In slow-motion it looked like this:<br>
+The first 11 ply were from book, with a small lead (between 1 and 2 stones)<br>
+for MyProgram. From move 7, where MyProgram searched 3 plies more<br>
+(26 against 23) than Lithidion, to move 11, where Lithidion had caught up<br>
+and searched 25 ply, Lithidion saw a zero-score, while MyProgram, using its<br>
+smaller database, still thought it was 2 stones ahead. In two more moves,<br>
+Lithidion started outrunning MyProgram in plies, not in stones: using a 51-ply<br>
+and 53-ply search, Lithidion&#x27;s a-b search showed that the position was a draw,<br>
+which was confirmed by pn-search. MyProgram suspected the same, and at move<br>
+16 it was all over: the first draw of the tournament, and the first time<br>
+MyProgram had to accept anything but a win.<br>
+<br>
+This is where we are at the moment, while the third game is under way, with<br>
+a small lead just after the opening for Marvin.<br>
+<br>
+We keep you posted.<br>
+<br>
+Victor Allis.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

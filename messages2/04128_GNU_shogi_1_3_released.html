@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>GNU shogi 1.3 released</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>GNU shogi 1.3 released</h1>
+    <p><strong>From:</strong> Michael Vanier &lt;mvanier@bbb.caltech.edu&gt;<br>
+    <strong>Date:</strong> 24 06 1999 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+[This message got lost on its first posting due to a problem with my<br>
+news server.  Sorry if you see it more than once.]<br>
+<br>
+I&#x27;m pleased to announce the release of GNU shogi, version 1.3, for<br>
+Unix-based systems (including Linux).  This is the first new release of GNU<br>
+shogi in several years.  <br>
+<br>
+For those who aren&#x27;t familiar with shogi, it is the Japanese version of<br>
+chess.  Many people believe that it is even more exciting and intricate<br>
+than international chess.  The main distinguishing feature of shogi is that<br>
+captured pieces become the property of the capturer, and can re-enter play<br>
+by being dropped onto (almost) any vacant square.  This makes endgame<br>
+play very exciting (endgames are typically a race to checkmate the opponent&#x27;s<br>
+king before being checkmated oneself), and draws are almost nonexistent.  I<br>
+encourage everyone, especially chess players looking for a new challenge, to<br>
+try GNU shogi -- you may get hooked :-)<br>
+<br>
+The release can be downloaded from:<br>
+<br>
+    http://www.bbb.caltech.edu/USERS/mvanier/gnushogi/gnushogi.html<br>
+<br>
+which is also the GNU shogi home page.  The release is in source code form,<br>
+with complete documentation and compilation instructions.  It will soon also<br>
+be available from ftp.gnu.org and its mirrors.<br>
+<br>
+Notable features of this release include:<br>
+<br>
+  * There is now only one gnushogi executable instead of three (which were<br>
+    specialized for three different interfaces: raw text, curses, and X).<br>
+    In the new system, the user selects the interface via a command-line <br>
+    option e.g. &quot;gnushogi -R&quot; (for raw input/output), &quot;gnushogi -X&quot; (for<br>
+    xshogi-based input/output) or &quot;gnushogi -C&quot; (for curses input/output).<br>
+<br>
+  * Much easier configuration and build process using a configure script.<br>
+<br>
+  * Cleaned up source code.<br>
+<br>
+  * Xshogi (the X-Windows interface to GNU shogi) has been integrated into<br>
+    the source tree and the build process.<br>
+<br>
+  * Documentation in GNU info format, HTML, PostScript as well as man<br>
+    pages.<br>
+<br>
+Features planned for the long term include:<br>
+<br>
+  * Improvements in the solution engine.<br>
+<br>
+  * Rewriting GNU shogi in C++. The code will be modularized to make<br>
+    extensions easier to implement.<br>
+<br>
+  * Replacing Xshogi with an interface using wxWindows, a cross-platform GUI<br>
+    class library.<br>
+<br>
+  * Much better bitmaps for the pieces!<br>
+<br>
+  * Support for shogi variants including (at least) Tori Shogi and Chu<br>
+    (Middle) Shogi.<br>
+<br>
+  * Scripting language interfaces to Guile and Python.<br>
+<br>
+Currently, GNU shogi is not too strong, so don&#x27;t get your hopes up if<br>
+you&#x27;re a strong player looking for a worthy computer opponent.  Matt<br>
+Casters and I will be working on improving the solution engine.  I welcome<br>
+all suggestions, bug reports, etc.  Also, if there are any hardcore hackers<br>
+out there who want to work with us, we&#x27;d be happy to have you aboard.<br>
+<br>
+I&#x27;d like to especially thank Matthias Mutz for letting me continue the fine<br>
+work he&#x27;s done on GNU shogi.  Thanks, Matthias!<br>
+<br>
+Mike<br>
+<br>
+<br>
+-------------------------------------------------------------------------<br>
+Mike Vanier	mvanier@bbb.caltech.edu<br>
+Department of Computation and Neural Systems, Caltech 216-76<br>
+Will optimize nonlinear functions with complex parameter spaces for food.<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

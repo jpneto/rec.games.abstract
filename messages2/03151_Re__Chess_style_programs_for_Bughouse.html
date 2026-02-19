@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Chess-style programs for Bughouse</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Chess-style programs for Bughouse</h1>
+    <p><strong>From:</strong> colley@qucis.queensu.ca (Paul Colley)<br>
+    <strong>Date:</strong> 19 12 1995 00:00:00 GMT</p>
+    <hr>
+    <div>In article &lt;4atat2$fak@news.microsoft.com&gt;, Bruce Moreland &lt;brucemo&gt; wrote:<br>
+<br>
+&gt;1)	You have one clock per team, rather than one per board.<br>
+&gt;<br>
+&gt;2)	When you make a move and hit your clock, it still runs until your <br>
+&gt;partner also makes a move and hits the clock.<br>
+&gt;<br>
+&gt;3)	Your opponent can&#x27;t make a move until your clock has stopped, meaning <br>
+&gt;that both members of a team must have moved before either opponent is allowed <br>
+&gt;to move.<br>
+&gt;<br>
+&gt;I would call this &quot;synchronous bughouse&quot;.  This removes all race conditions.<br>
+<br>
+No, it doesn&#x27;t:  Now a player has to wonder about what his partner is<br>
+going to do, and when.<br>
+<br>
+Works as a two-player version, but with four players there&#x27;s race<br>
+conditions, so it&#x27;s not an abstract game---but it&#x27;s closer than<br>
+traditional bughouse is, for sure.<br>
+<br>
+But since it&#x27;s about the same as my first proposal in terms of<br>
+synchronization, and adds race conditions, I&#x27;m not sure it&#x27;s an<br>
+improvement:  Why not just add &quot;both players on a team share one clock&quot;<br>
+to my proposal?<br>
+<br>
+------<br>
+<br>
+I&#x27;ve been thinking about quantifying the time aspect of traditional<br>
+bughouse:  start each player with a number of tokens, and a turn<br>
+consists of everybody who is on move specifying a move to make, and a<br>
+bid number of tokens (minimum zero).  This is written down and kept<br>
+secret until everybody is ready.<br>
+<br>
+Person(s) who bid lowest removes that number of tokens, and moves.<br>
+Everybody else removes the (low bid + 1) tokens.<br>
+<br>
+It&#x27;s not abstract (you don&#x27;t know what your opponent or partner will<br>
+bid) but it&#x27;s well quantified, and should be more easily attacked and<br>
+analyzed than traditional bughouse.<br>
+<br>
+This version at least retains some of the traditional &quot;fun&quot; parts of<br>
+bughouse:  the game on one board moving faster than on the other, with<br>
+time (stalling factor) being finite.<br>
+<br>
+I haven&#x27;t come up with a way to make the game purely abstract *and*<br>
+keep the possibility of the two games proceeding at disjoint rates.<br>
+<br>
+- Paul Colley<br>
+colley@qucis.queensu.ca           +1 613 545 3807<br>
+http://www.qucis.queensu.ca/home/colley/info.html<br>
+&quot;Even if you do learn to speak correct English, whom are you<br>
+going to speak it to?&quot;    --Clarence Darrow<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Games that stretch MCTS</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Games that stretch MCTS</h1>
+    <p><strong>From:</strong> christian &lt;christian@mindsports.nl&gt;<br>
+    <strong>Date:</strong> Wed, 23 Feb 2011 14:33:32 -0800 (PST)</p>
+    <hr>
+    <div>On Feb 23, 8:37 pm, Cameron Browne &lt;cambol...@googlemail.com&gt; wrote:<br>
+&gt; Hi,<br>
+&gt;<br>
+&gt; I&#x27;m doing a bit of work on Monte Carlo Tree Search (MCTS) which is a<br>
+&gt; new AI approach for move planning in games. The algorithm behaves<br>
+&gt; differently for games with different characteristics - some games are<br>
+&gt; well suited to it while some resist it - and I&#x27;m interested in finding<br>
+&gt; the outliers.<br>
+&gt;<br>
+&gt; Can anyone suggest games of reasonable complexity that exhibit the<br>
+&gt; following properties:<br>
+&gt;<br>
+&gt; 1. Unusually slow to calculte legal moves for a given position.<br>
+&gt; 2. Unusually slow to apply a move to a given board state.<br>
+&gt; 3. Fast to find Nth legal move (e.g. Gomoku).<br>
+&gt; 4. Slow to find Nth legal move (e.g. Triskelion?).<br>
+&gt; 5. Fast to perform short lookahead (e.g. 2 ply) on a given position<br>
+&gt; (e.g. Gomoku again).<br>
+&gt; 6. Slow to perform short lookahead on a given position.<br>
+&gt; 7. Unusually low branching factor.<br>
+&gt; 8. Unusually high branching factor.<br>
+&gt; 9. Long move sequences for either player (e.g. Chinese Checkers).<br>
+&gt; 10. Delayed reward, i.e. positional strength not clear until the end<br>
+&gt; of the game (e.g. Omega, maybe Othello?).<br>
+&gt; 11. Immediate reward, i.e. immediate positional evaluation is a good<br>
+&gt; indication of who will win.<br>
+&gt; 12. Random playouts give good estimate of who will win.<br>
+&gt; 13. Random playouts give poor estimate of who will win.<br>
+&gt; 14. Games in which a win or loss is never far away, i.e. high ratio of<br>
+&gt; leaf nodes in the search tree (Palago?).<br>
+&gt; 15. Games in which a win or loss is very remote at the beginning but<br>
+&gt; gets closer as the game progresses (Hex?).<br>
+&gt;<br>
+&gt; Basically any game that will affect the performance of MCTS/UCT by its<br>
+&gt; very nature.<br>
+&gt;<br>
+&gt; Thanks,<br>
+&gt; Cameron<br>
+<br>
+Hi Cameron,<br>
+<br>
+I&#x27;m not in the programming business, but because of the 2012 havannah<br>
+challenge I follow what&#x27;s going on as best I can. Havannah never<br>
+lended itself for the traditional evaluation function, but MC<br>
+programming has made remarkable progress - I just lost a base-9 game<br>
+against Castro_Bot by Timo Ewalds<br>
+http://www.littlegolem.net/jsp/info/player.jsp?plid=21870<br>
+<br>
+Wanderer by Richard Lorenz<br>
+http://www.littlegolem.net/jsp/info/player.jsp?plid=21160<br>
+and Deep Fork by Thomas Reinhardt<br>
+http://www.littlegolem.net/jsp/info/player.jsp?plid=20779<br>
+are also quite good.<br>
+<br>
+Of course these bots excell on smaller boards. Base-8 to -10 they have<br>
+serious flaws, but choosing the wrong strategy can be quite lethal,<br>
+because they&#x27;re very strong at exploiting forced tactical play. I just<br>
+got that rubbed in once more.<br>
+<br>
+The general discussion and the participants (of whom I also shoud<br>
+mention Johannes Waldmann and Ingo Althofer) takes place at several<br>
+threads in the hex/havannah forum at Little Golem:<br>
+http://www.littlegolem.net/jsp/forum/forum2.jsp?forum=50<br>
+<br>
+That&#x27;s about all I can contribute to your comparative investigation at<br>
+the moment. Keep us posted on its progress please :)<br>
+<br>
+<br>
+</div>
+</body>
+</html>

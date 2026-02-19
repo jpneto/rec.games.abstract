@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Game server?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Game server?</h1>
+    <p><strong>From:</strong> &quot;Jonathan R. Ferro&quot; &lt;jf41+@andrew.cmu.edu&gt;<br>
+    <strong>Date:</strong> Thu, 11 Mar 1993 14:14:17 -0500 </p>
+    <hr>
+    <div>positron@quip.eecs.umich.edu (Jonathan Haas) writes:<br>
+&gt; ... I&#x27;d like to see a bridge or Scrabble server...<br>
+<br>
+There is a bridge server, of sorts.  Actually what happens is that there<br>
+is a global server which is just a database of running table servers.<br>
+Each player contacts the Global Player Service (GPS) to see if there is<br>
+a table to join.  If not, the player may spectate at another table or<br>
+become a new table server.  &quot;Serving&quot; registers the new table with the<br>
+GPS so that new players may join.  More information may be obtained by<br>
+rooting around the following FTP sites or asking on rec.games.bridge.<br>
+<br>
+--------------------<br>
+<br>
+Frequently Asked Questions about OkBridge<br>
+---------- ----- --------- ----- --------<br>
+<br>
+1. What is OKbridge?<br>
+<br>
+   OKbridge is a Unix program which allows four people at different<br>
+   locations on the Internet to play the game of bridge together.<br>
+   It has Rubber, Duplicate, Match Point and IMP scoring modes.<br>
+   It allows kibitzers to join a table and watch play, it provides<br>
+   a practice mode whereby a partnership can practice bidding,<br>
+   and it provides support for duplicate play.<br>
+<br>
+2. How can I get OKbridge?<br>
+<br>
+   You can obtain OKbridge for your system by typing the command:<br>
+<br>
+     telnet 132.239.51.7 4441 | csh            (for Sun and NeXT users)<br>
+     telnet 132.239.51.7 4441 | csh -sb -aix   (for AIX users)<br>
+     telnet 132.239.51.7 4441 | csh -sb -hpux  (for HPUX users)<br>
+<br>
+   Also, OKbridge can be obtained using anonymous ftp.  It is currently<br>
+   available at the following locations:<br>
+<br>
+                     North America             Europe<br>
+                     ----- -------             ------<br>
+   Machine Name      suned.cs.yale.edu         nic.funet.fi<br>
+   IP Number         128.36.21.1               128.214.6.100<br>
+   Directory         pub/okbridge              pub/unix/games<br>
+   Filename          okbridge.tar.Z            okbridge-1.7H.tar.Z<br>
+<br>
+   For information about how to use anonymous ftp, ask any local guru or<br>
+   send email to me.<br>
+<br>
+[ FAQ continues...  Further information available from the FTP sites.<br>
+  Note that this is an old copy--the latest version is 1.8B, not 1.7H. ]<br>
+<br>
+-- Jon Ferro               Einsprachigkeit ist heilbar<br>
+<br>
+<br>
+</div>
+</body>
+</html>

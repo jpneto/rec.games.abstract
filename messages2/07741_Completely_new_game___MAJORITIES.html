@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Completely new game:  MAJORITIES</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Completely new game:  MAJORITIES</h1>
+    <p><strong>From:</strong> Bill Taylor &lt;w.taylor@math.canterbury.ac.nz&gt;<br>
+    <strong>Date:</strong> Fri, 20 Jul 2007 22:55:06 -0700</p>
+    <hr>
+    <div>TO ALL ABSTRACT GAMERS<br>
+======================<br>
+Here is, I believe, a rare chance to be in on the ground floor,<br>
+not only of a new game, but of a whole new FAMILY of games!<br>
+<br>
+<br>
+MAJORITIES is a new type of game, with exceptionally simple rules,<br>
+and bearing little relation to other games as yet.  Many variants<br>
+(including a very natural 3-dimensional version) are possible.<br>
+<br>
+It is based on the fact that in politics, or committees with<br>
+sub-committees, a minority of people, in critical places,<br>
+may nonetheless carry a voting motion.  I have long felt that<br>
+this is a weird situation, though a moderately common one<br>
+in close elections, where the winner can often have obtained<br>
+less than half the total vote.<br>
+<br>
+I have devised this family of games to illustrate this phenomenon,<br>
+and have tested it to a considerable extent with other players.<br>
+The basic 2-dimensional game is described below, and is now<br>
+implemented on Richard Rognlie&#x27;s pbem server, courtesy of<br>
+the indefatigable Cameron Browne, one of the server&#x27;s<br>
+chief implementers.<br>
+<br>
+It seems to be a game of considerable depth, where one must try to<br>
+identify the &quot;most urgent&quot; points to play, and seize those first.<br>
+<br>
+RULES<br>
+=====<br>
+  The board is initially empty. Player-1 places a stone on any cell<br>
+  of the board, then player-2 places 2 stones; and they continue<br>
+  in turn placing 2 stones at a time, until someone has won<br>
+  a majority of directions.<br>
+<br>
+  Getting a majority (e.g. 4 of 7; 3 of 5) of stones in a line<br>
+  wins that line; winning a majority of parallel lines in some<br>
+  direction wins that direction; winning a majority of directions<br>
+  (i.e. 2 or 3) wins the game.<br>
+====<br>
+<br>
+Apart from settling the shape of the board, that is all there is to<br>
+it!<br>
+<br>
+Please note that the 1-2-2-2-... number of moves per turn is<br>
+quite vital, otherwise it would be an enormous advantage to start,<br>
+far more so than in most other games, and no simple &quot;swap&quot;<br>
+equalization is possible.<br>
+<br>
+A very simple and natural 3-dimensional variant is to have a 3x3x3<br>
+cube,<br>
+with the initial goal being to win 5 or more points in a plane,<br>
+then 2 or 3 planes in one direction, then 2 or 3 directions.<br>
+<br>
+                / |<br>
+              /   |           three directions:<br>
+            /     |<br>
+ ______|   ._|_____     1 horizontal,<br>
+|           |   |           |    2 vertical away from us,<br>
+|      ___|   |___      |    3 vertical across view.<br>
+|     /   |/        /       |<br>
+|__/    &#x27;        /_____|<br>
+  /________/  |<br>
+           |        !<br>
+           |      /<br>
+           |    /<br>
+           |  /<br>
+           |/<br>
+<br>
+In two dimensions, we play on a hexagonal board, where<br>
+there are three very obvious directions in the plane -<br>
+horizontal (zero slope), sloping upwards (positive),<br>
+sloping downwards (negative).<br>
+<br>
+Note that one must win not MORE lines than the opponent,<br>
+but merely more lines in any two directions.<br>
+<br>
+The size of the board refers to the number of cells along the edge.<br>
+The server only supports three sizes of board, size 3, 5 and 7.<br>
+At first I thought that the board size would *have* to be odd,<br>
+to ensure the vital matter that there must be an odd number of<br>
+items in every category, to allow clear majoroities and<br>
+prevent ties.  However, as some cells have to be removed<br>
+from the board anyway, it has been observed (by someone on<br>
+the server - forgot who - apologies to that man!), that<br>
+even-sided boards are also possible, as long as some corner<br>
+or edge cells are among those removed.<br>
+<br>
+But anyway, here are the basic boards:-<br>
+<br>
+The default size board is 5, shown here...<br>
+<br>
+      .  .  .  . .<br>
+     . # .  .  .  .     The cells marked # are NOT on the board;<br>
+   .  .  .  .  .  .  .    they are effectively holes in the board;<br>
+ .  .  .  # .  .  .  .   they cannot be played in and do not<br>
+.  .  .  .  .  # .  #  .  count towards the final scoring.<br>
+  .  .  . #  .  .  .  .<br>
+    .  .  .  .  .  .  .<br>
+      . #  .  .  .  .<br>
+       .  .  .  .  .<br>
+<br>
+   Here is a board of size 3...<br>
+       . . .         This very tiny board is probably susceptible<br>
+      . # . .        to a complete analysis, (but possibly not).<br>
+     . . # # .<br>
+      . # . .        It would make an excellent starting size<br>
+       . . .         for two beginners to get the hang of the game.<br>
+<br>
+The same pattern of blank cells follows all sizes; here is size 7...<br>
+<br>
+      . . . . . . .<br>
+     . # . . . . . .       Note that IN ALL CASES<br>
+    . . . . . . . . .      there is an odd number of rows,<br>
+   . . . # . . . . . .     and every row has an odd number of cells.<br>
+  . . . . . . . . . . .<br>
+ . . . . . # . . . . . .   This is vital, so that every line<br>
+. . . . . . # # . # . # .  can have a clear-cut &quot;majority&quot; winner.<br>
+ . . . . . # . . . . . .<br>
+  . . . . . . . . . . .    The lines are in three possible directions;<br>
+   . . . # . . . . . .     NE/SW, NW/SE, horizontal.<br>
+    . . . . . . . . .<br>
+     . # . . . . . .<br>
+      . . . . . . .<br>
+<br>
+Finally, here is a completed game on the size-3 board:<br>
+<br>
+b   b   a   a   b  &lt;--- Winner of the NW/SE lines<br>
+ \   \    \     \     \<br>
+<br>
+              A    B    A        line won by a<br>
+<br>
+            A    #   A    B     line won by a<br>
+<br>
+         B    B   #    #    B   line won by b<br>
+<br>
+            B   #   A    A      line won by a<br>
+<br>
+              B   B   A          line won by b<br>
+<br>
+ /   /   /   /   /<br>
+a   b   a   b   a  &lt;--- Winner of the NE/SW lines<br>
+<br>
+So we see that A has won the horizontal direction;<br>
+                and B has won the downwards direction;<br>
+                and A has won the upwards direction;<br>
+<br>
+So A wins the game, 2 directions to 1;<br>
+even though B has played more stones.<br>
+_________<br>
+<br>
+Have fun with the new game!   Good luck to all.<br>
+<br>
+                  _________________<br>
+                 / ________________ \<br>
+                / /                            \ \<br>
+               / /                              \ \<br>
+              / /    ============       \ \<br>
+             / /         Bill  Taylor          \ \<br>
+            / /      ============         \ \<br>
+           / /                                      \ \<br>
+          / /   (fan of 7-a-side rugby!)    \ \<br>
+         / /                                           \ \<br>
+        / / W.Taylor@math.canterbury.ac.nz \ \<br>
+       : :  ~~~~~~~~~~~~~~~~~~~~~~~   : :<br>
+       `.`.                   ,                       .&#x27;.&#x27;<br>
+        : :                  /|                      : :<br>
+        `.`.                / |                     .&#x27;.&#x27;<br>
+         : :               /  |                   : :<br>
+         `.`.       ______| ._|____      .&#x27;.&#x27;<br>
+          : :      |             | |      |     : :<br>
+          `.`.     |    __| !___      |    .&#x27;.&#x27;<br>
+           : :     |   /  |/   /   |         : :<br>
+           `.`.    |__/   &#x27;   /____|   .&#x27;.&#x27;<br>
+            : :      /_______/|     : :<br>
+             `.`.         |   !        ,&#x27;,&#x27;<br>
+               `.`.       |  /       ,&#x27;,&#x27;<br>
+                 `.`.     | /      ,&#x27;,&#x27;<br>
+                   `.`.   |/     ,&#x27;,&#x27;<br>
+                     `.`. &#x27;    ,&#x27;,&#x27;<br>
+                       `.`. ,&#x27;,&#x27;<br>
+                         `.,&#x27;<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

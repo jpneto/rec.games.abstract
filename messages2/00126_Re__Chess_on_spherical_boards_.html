@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Chess on spherical boards.</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Chess on spherical boards.</h1>
+    <p><strong>From:</strong> mjd@saul.cis.upenn.edu (&quot;[*] The Power in the Streets&quot;)<br>
+    <strong>Date:</strong> 11 Nov 92 22:45:39 GMT</p>
+    <hr>
+    <div>In article &lt;1992Nov11.191304.19055@math.utexas.edu&gt; akessler@bernard.ma.utexas.edu (Adam Kessler) writes:<br>
+&gt;   Spherical Chess: You would declare every boundry tile to be adjacent.<br>
+&gt;   Alternately [I think preferably, but who am I?] you could have <br>
+&gt;   an &quot;extra&quot; square off of the chess board that was adjacent to every <br>
+&gt;   square on the border of the board.<br>
+<br>
+    That&#x27;s not enough, because chess is a geometric game, not a<br>
+topologic one.  You need to define what happens when a piece such as a<br>
+bishop moves through this square and out the other side without<br>
+stopping. <br>
+<br>
+    I question whether this is what you want anyway, because in standard<br>
+(plane-segment) chess a square is adjacent to three, five, or eight<br>
+others, but in your spherical chess, the special square is adjacent to<br>
+thirty (!) others.  (It might be an interesting variation; perhaps<br>
+strategy would center around control of the special square.)<br>
+<br>
+    A good version of spherical chess would have all the squares be the<br>
+same, each adjacent to exactly eight others, or so it seems to me.<br>
+Perhaps you could accomplish it this way:<br>
+<br>
++--+--+--+--+--+--+--+--+<br>
+|A8|B8|C8|D8|E8|F8|G8|H8|<br>
++--+--+--+--+--+--+--+--+<br>
+|A7|B7|C7|D7|E7|F7|G7|H7|<br>
++--+--+--+--+--+--+--+--+<br>
+|A6|B6|C6|D6|E6|F6|G6|H6|<br>
++--+--+--+--+--+--+--+--+<br>
+|A5|B5|C5|D5|E5|F5|G5|H5|<br>
++--+--+--+--+--+--+--+--+<br>
+|A4|B4|C4|D4|E4|F4|G4|H4|<br>
++--+--+--+--+--+--+--+--+<br>
+|A3|B3|C3|D3|E3|F3|G3|H3|<br>
++--+--+--+--+--+--+--+--+<br>
+|A2|B2|C2|D2|E2|F2|G2|H2|<br>
++--+--+--+--+--+--+--+--+<br>
+|A1|B1|C1|D1|E1|F1|G1|H1|<br>
++--+--+--+--+--+--+--+--+<br>
+<br>
+    First make file A adjacent to file H; square A,i (for some number i)<br>
+is orthogonally adjacent to H,i and diagonally adjacent to H,(i+1) and<br>
+H,(i-1) when these exist.  You now have a cylinder.<br>
+<br>
+    Now pinch the ends together: x,g8 (for some letter x) is orthogonally<br>
+adjacent to (x+4 mod 8),8 and diagonally to (x+3 mod 8),8 and (x+5 mod<br>
+8),8.<br>
+<br>
+    I think you&#x27;d at least want to tinker the castling rule, because the<br>
+rooks are not where you think: The queen&#x27;s rook on A1 is already<br>
+adjacent to the king on E1 and the king&#x27;s rook on H1, for example.<br>
+<br>
+--<br>
+<br>
+                And for to se, and eek for to be seye<br>
+Mark-Jason Dominus 	  			    mjd@central.cis.upenn.edu <br>
+<br>
+<br>
+</div>
+</body>
+</html>

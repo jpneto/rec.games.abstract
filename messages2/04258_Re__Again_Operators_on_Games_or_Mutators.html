@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Again Operators on Games or Mutators</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Again Operators on Games or Mutators</h1>
+    <p><strong>From:</strong> &quot;Joo Neto&quot; &lt;vascog@uol.com.br&gt;<br>
+    <strong>Date:</strong> 02 02 2000 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+Torben AEgidius Mogensen escreveu na mensagem &lt;879crt$6sb@grimer.diku.dk&gt;...<br>
+&gt;&quot;Joo Neto&quot; &lt;vascog@uol.com.br&gt; writes:<br>
+&gt;<br>
+&gt;&gt;Of course, if there are some problems defining what makes a mutator<br>
+&gt;&gt;reasonable, there is an extra problem with high order mutators and that is<br>
+&gt;&gt;an interpretation one (e.g., what is the inverse of mutator X?)<br>
+&gt;<br>
+&gt;You could use types. A move can be seen as a function from state to<br>
+&gt;state (where &quot;state&quot; is the position on the board, who is in move<br>
+&gt;etc.). We write this as move = state -&gt; state. A game is the a function<br>
+&gt;from a state to a list of moves, plus a truth-value (win/lose). We<br>
+&gt;write this as<br>
+&gt;<br>
+&gt; game = state -&gt; ([move],bool)<br>
+&gt;<br>
+&gt;where [move] means &quot;list of moves&quot; and &quot;bool&quot; is a truth-value (a<br>
+&gt;boolean value).<br>
+<br>
+<br>
+there should also be a &#x27;not-ended&#x27; status, so it would not be boolean<br>
+but at least a tri-logic one.<br>
+<br>
+&gt;Now, some mutators apply to a single move, and others apply to sets of<br>
+&gt;moves or to the entire game. So a mutator might be of either of these<br>
+&gt;types (and possibly more):<br>
+&gt;<br>
+&gt; move -&gt; move<br>
+&gt; [move] -&gt; [move]<br>
+&gt; game -&gt; game<br>
+<br>
+<br>
+You could also think about heuristics and players (ie, strategies: minmax,<br>
+alfabeta, ...),<br>
+as entities where mutators may be applied:<br>
+<br>
+heuristic = (game, state, move) -&gt; eval<br>
+player = (game, state, heuristic) -&gt; move<br>
+<br>
+but I wonder if it is necessary to think at others, except game -&gt; game<br>
+<br>
+&gt;a 2nd-order mutator &quot;all&quot; can be of the type<br>
+&gt;<br>
+&gt; all: ([move] -&gt; [move]) -&gt; (game -&gt; game)<br>
+&gt;<br>
+&gt;and be defined by<br>
+&gt;<br>
+&gt; all mut gam stat = let (movs,end) = gam stat<br>
+&gt;    in (mut movs, end)<br>
+&gt;<br>
+&gt;If all is applied to a mutator (mut) and a game (gam) the result is a<br>
+&gt;function that takes a state (stat), applies the original game to it<br>
+&gt;but then modifies the list of moves (movs) by applying mut to it. The<br>
+&gt;end indicator is unchanged.<br>
+<br>
+I understand the concept but I didn&#x27;t quite follow the notation...<br>
+<br>
+btw, do you have any idea for a move -&gt; move mutator?<br>
+<br>
+Joao<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: gtkboard *and* pentominoes</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: gtkboard *and* pentominoes</h1>
+    <p><strong>From:</strong> &quot;Arthur J. O&#x27;Dwyer&quot; &lt;ajo@andrew.cmu.edu&gt;<br>
+    <strong>Date:</strong> Wed, 13 Aug 2003 12:48:12 -0400 (EDT)</p>
+    <hr>
+    <div><br>
+On Wed, 13 Aug 2003, Nate Smith wrote:<br>
+&gt;<br>
+&gt; Bob Harris wrote:<br>
+&gt; &gt; From: &quot;Arthur J. O&#x27;Dwyer&quot;<br>
+&gt; &gt;<br>
+&gt; &gt;&gt;Thanks!  That looks very nice (except the only-runs-on-Linux part,<br>
+&gt; &gt;&gt;but I suppose that can hardly be helped, for such a graphics-intensive<br>
+&gt; &gt;&gt;application as board games).  I will definitely check it out.<br>
+&gt; &gt;<br>
+&gt; &gt; I wouldn&#x27;t consider board games &quot;graphics-intensive&quot;; certainly not in<br>
+&gt; &gt; the sense that the video game industry uses the term.<br>
+<br>
+No; but the graphic and UI design is most of the raison d&#x27;etre for the<br>
+game, and it&#x27;s what the programmer spends most of his time on [especially<br>
+if the search tree code is already supplied :) ].  Contrast to<br>
+I/O-intensive apps or algorithm-intensive apps.<br>
+<br>
+[then Nate Smith wrote:]<br>
+&gt;   pentominoes in java seems like an much easier project<br>
+&gt;   than the hexagons &amp; 120 degree stick figures i had to<br>
+&gt;   make for the java version of Xong.  i may take a look<br>
+&gt;   at that someday....<br>
+<br>
+gtkboard only intuitively supports rectangular boards.  You&#x27;d have<br>
+to do something like splitting the square cells into triangles and<br>
+conceptualizing the game that way.  OTOH, if you *did* do that, I<br>
+bet you&#x27;d get a lot of props from the gtkboard devteam! :-)<br>
+<br>
+I have downloaded the current build, and I&#x27;m currently working on<br>
+the gtkboard interface for Capture Pentominoes.  At the moment,<br>
+my idea is to store the state of the board internally as an<br>
+array of characters in the format I posted in the first message:<br>
+<br>
+   .......<br>
+   ....N..<br>
+   ..wNN..<br>
+   .wwNL..<br>
+   ww.NL..<br>
+   ....L..<br>
+   ....LL.<br>
+<br>
+where the lowercase letters represent the most recent move.  Then<br>
+checking for captures merely entails making a list of all the<br>
+84 edges on the board, and looking at the cells on either side of<br>
+each edge.<br>
+<br>
+The hardest thing about gtkboard, I think, is that as far as I<br>
+can tell its interface is limited to &quot;capture a click somewhere on<br>
+the board&quot;, which means it&#x27;ll be a pain to select and place<br>
+irregular figures like pentominoes.  Maybe it needs a full<br>
+user interface, something like the following very bad ascii-art:<br>
+<br>
+            --------------<br>
+  FILNPT   |              |<br>
+  UVWXYZ   |              |<br>
+  ------   |  the game    |<br>
+-|   =  |- |   board      |<br>
+&lt;| I=I  |&gt;||              |  ----<br>
+-| =    |- |              | | rm |<br>
+  ------   |              |  ----<br>
+            --------------<br>
+<br>
+   To remove a piece:<br>
+     Click the piece to select it.<br>
+     Click &quot;remove&quot;.<br>
+   To place a new piece:<br>
+     Click the letter corresponding to the piece.<br>
+     The piece will appear in the left-hand window.<br>
+     Click the left and right arrows to rotate the piece.<br>
+     Click one of the squares on the piece.<br>
+     Click an empty square on the board.<br>
+     The piece will be placed with the two squares coinciding.<br>
+<br>
+<br>
+That&#x27;s a rather involved interface, and even *more* involved<br>
+for the programmer!  I&#x27;m not sure how to get around this.<br>
+Ideas welcome.<br>
+<br>
+-Arthur<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>How to solve it?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>How to solve it?</h1>
+    <p><strong>From:</strong> Eugene V. Laikov &lt;laikov@iias.spb.su&gt;<br>
+    <strong>Date:</strong> 5 Dec 1994 09:56:49 +0300</p>
+    <hr>
+    <div>                (I am sorry for my bad English)<br>
+   If you want to think about something different then &quot;Hex&quot;,<br>
+I am going to propose you to find the strategy for my own game for one<br>
+player mode for the arbitrary game field. (I call it &quot;Web&quot;).<br>
+Is is the right news-group to do it?<br>
+<br>
+   A) It is the rules for one player mode:<br>
+   The game field is the set of nodes connected with arcs.<br>
+All nodes have the blue or red color.(In the initial position all nodes<br>
+are blue). In the first node is the checker.<br>
+The player can move the checker to any connectedg node, then this<br>
+node will ALWAYS change its color (from blue to red, or from red to blue)<br>
+The restriction for one player mode: the move from node B to node A<br>
+is impossible if the previous move was from node A to node B.<br>
+   The task of game is to set all nodes in the red color.<br>
+   (Mail me if you want more examples or the MS-Windows program for this game)<br>
+  For example:<br>
+    &lt;1&gt;     &lt;2&gt;     &lt;3&gt;<br>
+   /   \   /   \   /   \<br>
+&lt;4&gt;     &lt;5&gt;     &lt;6&gt;     &lt;7&gt;<br>
+   \   /   \   /   \   /<br>
+    &lt;8&gt;     &lt;9&gt;     &lt;10&gt;<br>
+  Here the solution is 1-5-2-6-3-7-10-6-2-5-9-6-2-5-8-4.<br>
+  For the training:<br>
+&lt;1&gt;   &lt;2&gt;   &lt;3&gt;   &lt;4&gt;<br>
+ | \ /   \ /   \ / |   (Here node 1 is connected with node 6,<br>
+ | / \   / \   / \ |    but is not connected with node 2, etc.)<br>
+&lt;5&gt;   &lt;6&gt;   &lt;7&gt;   &lt;8&gt;<br>
+ | \ /   \ /   \ / |<br>
+ | / \   / \   / \ |<br>
+&lt;9&gt;   &lt;10&gt;  &lt;11&gt;  &lt;12&gt;<br>
+  Find the solution yourself.<br>
+<br>
+   B) The rules for two players:<br>
+   Is is impossible to move two checkers in one node.<br>
+Each player has his own checker and his own set of nodes:<br>
+A-B-A-B<br>
+| | | |<br>
+B-A-B-A<br>
+| | | |<br>
+A-B-A-B<br>
+( A - the nodes of the player A,<br>
+  B - the nodes of the player B)<br>
+   Each player change colors of his nodes and<br>
+must set in the red color these nodes before other player set<br>
+his nodes in the red color.<br>
+<br>
+Eugene Laikov<br>
+<br>
+<br>
+</div>
+</body>
+</html>

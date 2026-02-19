@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>src: pentomino (LONG!)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>src: pentomino (LONG!)</h1>
+    <p><strong>From:</strong> breuker@cs.rulimburg.nl (Dennis Breuker)<br>
+    <strong>Date:</strong> Fri, 12 Nov 1993 10:48:00 GMT</p>
+    <hr>
+    <div>Hi,<br>
+<br>
+Below is the source of my (simple) program to solve some<br>
+pentomino-puzzles. Unfortunately, the source is in Dutch.<br>
+If you have any questions, please ask me.<br>
+<br>
+Dennis.<br>
+_____________________________________________________________________________<br>
+ Dennis Breuker                                    | breuker@cs.rulimburg.nl<br>
+ Dept. of computer science, University of Limburg  | Voice: +31 43 883379<br>
+ P.O. Box 616, 6200 MD Maastricht, The Netherlands | Fax  : +31 43 252392<br>
+<br>
+_________________________________ makefile ____________________________________<br>
+CFLAGS = -O<br>
+CC=cc<br>
+<br>
+SOURCES = \<br>
+	diskio.c \<br>
+	init.c \<br>
+	io.c \<br>
+	main.c \<br>
+	var.c \<br>
+	zoek.c <br>
+<br>
+OBJECTS= $(SOURCES:.c=.o)<br>
+<br>
+.o: .c<br>
+	$(CC) $(CFLAGS) -c $&lt; -o $@<br>
+<br>
+solve : $(OBJECTS)<br>
+	$(CC) $(CFLAGS) -o $@ $(OBJECTS)<br>
+<br>
+lint:<br>
+	lint $(SOURCES) &gt;lint.out<br>
+<br>
+clean:<br>
+	rm *.o<br>
+__________________________________ diskio.c ___________________________________<br>
+#include &quot;var.h&quot;<br>
+<br>
+<br>
+void LeesPentominos( void )<br>
+{<br>
+  FILE		*fp;<br>
+  int		i;<br>
+  Boolean	eof;<br>
+  char		s[ 100 ];<br>
+  Stukje	**ptr;<br>
+<br>
+  if ((fp = fopen( PentominoFile, &quot;r&quot; )) == NULL) {<br>
+    printf( &quot;ERROR: kan file &#x27;%s&#x27; niet openen\n&quot;, PentominoFile );<br>
+    printf( &quot;Program halted\n&quot; );<br>
+    exit( 1 );<br>
+  }<br>
+  eof = 0;<br>
+  for (i=0; !eof &amp;&amp; i&lt;NrPentominos; i++) {<br>
+    fgets( s, 80, fp ); /* commentaar-regel */<br>
+    eof = 1;<br>
+    ptr = &amp;(pentomino[ i ]);<br>
+    while (fgets( s, 80, fp ) != NULL) {<br>
+      s[ strlen( s )-1 ] = &#x27;\0&#x27;; /* Verwijder &#x27;\n&#x27; aan het eind */<br>
+      if (s[ 0 ] == &#x27;\0&#x27;) {<br>
+	eof = 0;<br>
+	break;<br>
+      }<br>
+      Malloc( *ptr, Stukje, 1 );<br>
+      InitPentomino( (*ptr)-&gt;deel, s );<br>
+      ptr = &amp;((*ptr)-&gt;next);<br>
+    } /* while */<br>
+    *ptr = NULL;<br>
+  } /* for i */<br>
+  fclose( fp );<br>
+  if (i != NrPentominos) {<br>
+    printf( &quot;ERROR: te weinig pentominos (%d) in file &#x27;%s&#x27;\n&quot;,<br>
+	    i, PentominoFile );<br>
+    printf( &quot;Program halted\n&quot; );<br>
+    exit( 1 );<br>
+  }<br>
+} /* LeesPentominos */<br>
+______________________________________ init.c _________________________________<br>
+#include &quot;var.h&quot;<br>
+<br>
+<br>
+static void LeesLengteEnBreedte( int argc, char *argv[] );<br>
+static Byte BerekenIndex( char *s );<br>
+<br>
+<br>
+void Init( int argc, char *argv[] )<br>
+{<br>
+  int	i, x, y;<br>
+<br>
+  LeesLengteEnBreedte( argc, argv );<br>
+  LeesPentominos();<br>
+<br>
+  for (x=0; x&lt;X; x++) {<br>
+    for (y=0; y&lt;Y; y++) {<br>
+      bord[ Plaats( x, y ) ] = Rand;<br>
+    }<br>
+  }<br>
+  for (x=0; x&lt;lengte; x++) {<br>
+    for (y=0; y&lt;breedte; y++) {<br>
+      bord[ Plaats( x+1, y+1 ) ] = Leeg;<br>
+    }<br>
+  }<br>
+  for (i=0; i&lt;NrPentominos; i++) {<br>
+    over[ i ] = 1;<br>
+  }<br>
+  nrOplossingen = 0;<br>
+} /* Init */<br>
+<br>
+<br>
+static void LeesLengteEnBreedte( int argc, char *argv[] )<br>
+{<br>
+  char	*p, s[ 100 ];<br>
+<br>
+  if (argc != 2) {<br>
+    printf( &quot;Aanroep is: &#x27;%s &lt;lxb&gt;&#x27; met 8&lt;=l&lt;=20 en 3&lt;=b&lt;=8 en lxb &gt;= 60&quot;,<br>
+	    argv[ 0 ] );<br>
+    printf( &quot; (bv. &#x27;%s 10x6&#x27;)\n&quot;, argv[ 0 ] );<br>
+    printf( &quot;Program halted\n&quot; );<br>
+    exit( 1 );<br>
+  }<br>
+  p = strchr( argv[ 1 ], &#x27;x&#x27; );<br>
+  if (p == NULL) {<br>
+    printf( &quot;Aanroep is: &#x27;%s &lt;lxb&gt;&#x27; met 8&lt;=l&lt;=20 en 3&lt;=b&lt;=8 en lxb &gt;= 60&quot;,<br>
+	    argv[ 0 ] );<br>
+    printf( &quot; (bv. &#x27;%s 10x6&#x27;)\n&quot;, argv[ 0 ] );<br>
+    printf( &quot;Program halted\n&quot; );<br>
+    exit( 1 );<br>
+  }<br>
+  strncpy( s, argv[ 1 ], p-argv[ 1 ] );<br>
+  s[ p-argv[ 1 ] ] = &#x27;\0&#x27;;<br>
+  lengte = atoi( s );<br>
+  strcpy( s, p+1 );<br>
+  breedte = atoi( s );<br>
+  if (lengte&lt;8 || lengte&gt;20 || breedte&lt;3 || breedte&gt;8 || lengte*breedte&lt;60) {<br>
+    printf( &quot;Aanroep is: &#x27;%s &lt;lxb&gt;&#x27; met 8&lt;=l&lt;=20 en 3&lt;=b&lt;=8 en lxb &gt;= 60&quot;,<br>
+	    argv[ 0 ] );<br>
+    printf( &quot; (bv. &#x27;%s 10x6&#x27;)\n&quot;, argv[ 0 ] );<br>
+    printf( &quot;Program halted\n&quot; );<br>
+    exit( 1 );<br>
+  }<br>
+} /* LeesLengteEnBreedte */<br>
+<br>
+<br>
+void InitPentomino( Byte deel[ 4 ], char *s )<br>
+{<br>
+  char	*p, *q, deelString[ 100 ];<br>
+  int	i;<br>
+<br>
+  q = s;<br>
+  for (i=0; i&lt;4; i++) {<br>
+    p = strchr( q, &#x27;\t&#x27; );<br>
+    if (p == NULL) {<br>
+      if (i != 3) {<br>
+	printf( &quot;ERROR in pentomino &#x27;%s&#x27;\n&quot;, s );<br>
+	printf( &quot;Program halted\n&quot; );<br>
+	exit ( 1 );<br>
+      }<br>
+      strcpy( deelString, q );<br>
+    } else {<br>
+      strncpy( deelString, q, p-q );<br>
+      deelString[ p-q ] = &#x27;\0&#x27;;<br>
+    }<br>
+    deel[ i ] = BerekenIndex( deelString );<br>
+    q = p+1;<br>
+  } /* for i */<br>
+  if (p != NULL) {<br>
+    printf( &quot;ERROR: pentomino &#x27;%s&#x27; te lang\n&quot;, s );<br>
+    printf( &quot;Program halted\n&quot; );<br>
+    exit( 1 );<br>
+  }<br>
+} /* InitPentomino */<br>
+<br>
+<br>
+static Byte BerekenIndex( char *s )<br>
+{<br>
+  Byte	index;<br>
+  char	*p;<br>
+<br>
+  index = 0;<br>
+  for (p=s; *p!=&#x27;\0&#x27;; p++) {<br>
+    switch( *p ) {<br>
+      case &#x27;r&#x27;: index++; break;<br>
+      case &#x27;l&#x27;: index--; break;<br>
+      case &#x27;d&#x27;: index+=X; break;<br>
+      default:<br>
+	printf( &quot;ERROR: onbekend teken &#x27;%c&#x27; in deelstring &#x27;%s&#x27;\n&quot;, *p, s );<br>
+	printf( &quot;Program halted\n&quot; );<br>
+	exit( 1 );<br>
+    } /* switch */<br>
+  } /* for */<br>
+  return( index );<br>
+} /* BerekenIndex */<br>
+___________________________________________ io.c ______________________________<br>
+#include &quot;var.h&quot;<br>
+<br>
+<br>
+void DrukBordAf( void )<br>
+{<br>
+  int	x, y, stukje, index, geprint;<br>
+  <br>
+  for (y=0; y&lt;Y-1; y++) {<br>
+    geprint = 0;<br>
+    for (x=0; x&lt;X-1; x++) {<br>
+      index = 0;<br>
+      stukje = bord[ Plaats( x, y ) ];<br>
+      if (stukje == Rand) {<br>
+	index |= RandBit;<br>
+      }<br>
+      if (bord[ Plaats( x+1, y ) ] != stukje) {<br>
+	index |= RightBit;<br>
+      }<br>
+      if (bord[ Plaats( x, y+1 ) ] != stukje) {<br>
+	index |= DownBit;<br>
+      }<br>
+      if (bord[ Plaats( x+1, y+1 ) ] != stukje) {<br>
+	index |= DownRightBit;<br>
+      }<br>
+      printf( &quot;%s&quot;, tekens[ index ] );<br>
+      if (index != 8) {<br>
+	geprint = 1;<br>
+      }<br>
+    } /* for x */<br>
+    if (geprint) {<br>
+      printf( &quot;\n&quot; );<br>
+    }<br>
+  } /* for y */<br>
+} /* DrukBordAf */<br>
+__________________________________________ main.c _____________________________ <br>
+#include &quot;var.h&quot;<br>
+<br>
+<br>
+/*-------------------------------------------------------------------<br>
+ |<br>
+ | Dit programma vindt alle oplossingen van het pentomino-probleem<br>
+ | op de volgende borden: 3x20, 4x15, 5x12, 6x10, 8x8.<br>
+ | Bij het laatste bord moet worden aangegeven welke velden leeg<br>
+ | zijn.<br>
+ |<br>
+ | Dennis Breuker (breuker@cs.rulimburg.nl)<br>
+ |<br>
+ +-----------------------------------------------------------------*/<br>
+<br>
+<br>
+void main( int argc, char *argv[] )<br>
+{<br>
+  int	index;<br>
+<br>
+  Init( argc, argv );<br>
+  index = 0;<br>
+  Zoek( index );<br>
+} /* main */<br>
+___________________________________ var.c _____________________________________<br>
+#include &quot;var.h&quot;<br>
+<br>
+<br>
+/* -1, D, R, DR,                                                   */<br>
+/*  bijvoorbeeld index 5 == 0101 == niet -1, en alleen R hetzelfde */<br>
+<br>
+char	*tekens[ 16 ] =<br>
+  { { &quot;  &quot; }, { &quot;  &quot; }, { &quot; |&quot; }, { &quot; |&quot; },<br>
+    { &quot;_ &quot; }, { &quot;__&quot; }, { &quot;_|&quot; }, { &quot;_|&quot; },<br>
+    { &quot;&quot;   }, { &quot; &quot;  }, { &quot;|&quot;  }, { &quot;|&quot;  },<br>
+    { &quot;_ &quot; }, { &quot;__&quot; }, { &quot;??&quot; }, { &quot;??&quot; } };<br>
+<br>
+int	bord[ X*Y ];<br>
+int	lengte, breedte;<br>
+int	nrOplossingen;<br>
+Stukje	*pentomino[ NrPentominos ];<br>
+Boolean	over[ NrPentominos ];<br>
+_______________________________ zoek.c ________________________________________<br>
+#include &quot;var.h&quot;<br>
+<br>
+<br>
+static Boolean GebiedenOK( int index );<br>
+static int FloodFill( int bord[], int index );<br>
+static void HerstelBord( void );<br>
+<br>
+<br>
+void PlaatsPentomino( int nr, Stukje *pentomino, int index )<br>
+{<br>
+  int	i;<br>
+<br>
+  bord[ index ] = nr+1;<br>
+  for (i=0; i&lt;4; i++) {<br>
+    bord[ index+pentomino-&gt;deel[ i ] ] = nr+1;<br>
+  }<br>
+} /* PlaatsPentomino */<br>
+<br>
+<br>
+void HaalPentominoWeg( int nr, Stukje *pentomino, int index )<br>
+{<br>
+  int	i;<br>
+<br>
+  bord[ index ] = Leeg;<br>
+  for (i=0; i&lt;4; i++) {<br>
+    bord[ index+pentomino-&gt;deel[ i ] ] = Leeg;<br>
+  }<br>
+} /* HaalPentominoWeg */<br>
+<br>
+<br>
+Boolean PentominoPast( Stukje *pentomino, int index )<br>
+{<br>
+  int i;<br>
+<br>
+  /* Ik ga er vanuit dat bord[ index ] Leeg is */<br>
+  for (i=0; i&lt;4; i++) {<br>
+    if (bord[ index+pentomino-&gt;deel[ i ] ] != Leeg) {<br>
+      return( 0 );<br>
+    }<br>
+  }<br>
+  return( 1 );<br>
+} /* PentominoPast */<br>
+<br>
+<br>
+void Zoek( int index )<br>
+{<br>
+  int		i;<br>
+  Stukje	*p;<br>
+<br>
+  NextLege( bord, index );<br>
+  if (index == X*Y) {<br>
+    DrukBordAf();<br>
+    printf( &quot;Oplossing %d\n&quot;, ++nrOplossingen );<br>
+    fflush( stdout );<br>
+    return;<br>
+  }<br>
+  for (i=0; i&lt;NrPentominos; i++) {<br>
+    if (over[ i ]) {<br>
+      for (p=pentomino[ i ]; p!=NULL; p=p-&gt;next) {<br>
+	if (PentominoPast( p, index )) {<br>
+	  PlaatsPentomino( i, p, index );<br>
+	  if (GebiedenOK( index )) {<br>
+	    over[ i ] = 0;<br>
+	    Zoek( index );<br>
+	  }<br>
+	  HaalPentominoWeg( i, p, index );<br>
+	  over[ i ] = 1;<br>
+	} /* if past */<br>
+      } /* for p */<br>
+    } /* if over */<br>
+  } /* for i */<br>
+} /* Zoek */<br>
+<br>
+<br>
+static Boolean GebiedenOK( int index )<br>
+{<br>
+  int	kopieBord[ X*Y ];<br>
+<br>
+  memcpy( kopieBord, bord, X*Y*sizeof( int ) );<br>
+  for (Ever) {<br>
+    NextLege( kopieBord, index );<br>
+    if (index == X*Y) {<br>
+      return( 1 );<br>
+    }<br>
+    if (FloodFill( kopieBord, index ) % 5 != 0) {<br>
+      return( 0 );<br>
+    }<br>
+  } /* forever */<br>
+} /* GebiedenOK */<br>
+<br>
+<br>
+static int FloodFill( int bord[], int index )<br>
+{<br>
+  int	nr;<br>
+<br>
+  bord[ index ] = Gevuld;<br>
+  nr = 1;<br>
+  if (bord[ index-X ] == Leeg) {<br>
+    nr += FloodFill( bord, index-X );<br>
+  }<br>
+  if (bord[ index+X ] == Leeg) {<br>
+    nr += FloodFill( bord, index+X );<br>
+  }<br>
+  if (bord[ index-1 ] == Leeg) {<br>
+    nr += FloodFill( bord, index-1 );<br>
+  }<br>
+  if (bord[ index+1 ] == Leeg) {<br>
+    nr += FloodFill( bord, index+1 );<br>
+  }<br>
+  return( nr );<br>
+} /* FloodFill */<br>
+<br>
+<br>
+static void HerstelBord( void )<br>
+{<br>
+  int	i;<br>
+<br>
+  for (i=Plaats( 1, 1 ); i&lt;=Plaats( lengte+1, breedte+1 ); i++) {<br>
+    if (bord[ i ] == Gevuld) {<br>
+      bord[ i ] = Leeg;<br>
+    }<br>
+  }<br>
+} /* HerstelBord */<br>
+________________________________ const.h ______________________________________<br>
+#include &lt;stdio.h&gt;<br>
+<br>
+<br>
+#define Rand		-1<br>
+#define Leeg		0<br>
+#define Gevuld		-2<br>
+#define RandBit		8<br>
+#define DownBit		4<br>
+#define RightBit	2<br>
+#define DownRightBit	1<br>
+#define	X		25  /* 1 + 20 + 4 */<br>
+#define Y		13  /* 1 +  8 + 4 */<br>
+#define NrPentominos	12<br>
+#define Ever		;;<br>
+<br>
+#define PentominoFile	&quot;pentominos.dat&quot;<br>
+_______________________________ macro.h _______________________________________<br>
+#include &quot;type.h&quot;<br>
+<br>
+<br>
+#define Plaats( x, y )	((y) * X + (x))<br>
+#define NextLege( bord, index )\<br>
+  while (bord[ ++(index) ]!=Leeg &amp;&amp; (index)&lt;X*Y)<br>
+<br>
+#define Malloc( ptr, type, nrElem )\<br>
+  if (nrElem &gt; 0) {\<br>
+    (ptr) = (type *) malloc( (size_t) ((nrElem)*sizeof( type )) );\<br>
+    if ((ptr) == (type *) NULL) {\<br>
+      (void) printf( &quot;ERROR: malloc van ptr mislukt\n&quot; );\<br>
+      exit( 0 );\<br>
+    }\<br>
+  }<br>
+______________________________________ type.h _________________________________<br>
+#include &quot;const.h&quot;<br>
+<br>
+<br>
+typedef unsigned char	Boolean;<br>
+typedef unsigned char	Byte;<br>
+<br>
+typedef struct Stukje {<br>
+  Byte		deel[ 4 ];<br>
+  struct Stukje	*next;<br>
+} Stukje;<br>
+______________________________________ var.h __________________________________<br>
+#include &quot;macro.h&quot;<br>
+<br>
+<br>
+extern char	*tekens[ 16 ];<br>
+extern int	bord[ X*Y ];<br>
+extern int	lengte, breedte;<br>
+extern int	nrOplossingen;<br>
+extern Stukje	*pentomino[ NrPentominos ];<br>
+extern Boolean	over[ NrPentominos ];<br>
+<br>
+<br>
+/* diskio.c */<br>
+extern void LeesPentominos( void );<br>
+<br>
+/* init.c */<br>
+extern void Init( int argc, char *argv[] );<br>
+extern void InitPentomino( Byte deel[ 4 ], char *s );<br>
+<br>
+/* io.c */<br>
+extern void DrukBordAf( void );<br>
+<br>
+/* zoek.c */<br>
+extern void PlaatsPentomino( int nr, Stukje *pentomino, int index );<br>
+extern void HaalPentominoWeg( int nr, Stukje *pentomino, int index );<br>
+extern void Zoek( int index );<br>
+______________________________ pentominos.dat _________________________________<br>
+/* I */<br>
+r	rr	rrr	rrrr<br>
+d	dd	ddd	dddd<br>
+<br>
+/* L */<br>
+r	rr	rrr	rrrd<br>
+<br>
+/* Y */<br>
+r	rr	rrr	rd<br>
+d	dd	ddd	dl<br>
+d	dr	dl	dll<br>
+d	dd	ddd	ddr<br>
+r	rr	rrr	rrd<br>
+d	dd	ddd	ddl<br>
+d	dl	dr	drr<br>
+d	dd	ddd	dr<br>
+<br>
+/* 4 */<br>
+r	rr	rrd	rrdr<br>
+d	dd	ddl	ddld<br>
+r	rd	rdr	rdrr<br>
+d	dl	dld	dldd<br>
+r	d	dl	dll<br>
+d	dd	ddr	ddrd<br>
+r	rr	d	dl<br>
+d	dr	drd	drdd<br>
+<br>
+/* V */<br>
+d	dd	ddr	ddrr<br>
+r	rr	d	dd<br>
+r	rr	rrd	rrdd<br>
+d	dd	ddl	ddll<br>
+<br>
+/* T */<br>
+r	rr	rd	rdd<br>
+d	dd	dl	dll<br>
+d	dd	ddr	ddl<br>
+d	dd	dr	drr<br>
+<br>
+/* C */<br>
+r	d	dd	ddr<br>
+r	rr	d	rrd<br>
+r	rd	rdd	dd<br>
+rr	d	dr	drr<br>
+<br>
+/* K */<br>
+d	dl	dll	dld<br>
+d	dd	ddr	dl<br>
+d	dr	dl	dld<br>
+r	rd	rdd	rdr<br>
+d	dr	drr	drd<br>
+r	d	dd	dl<br>
+d	dl	dr	drd<br>
+d	dr	dd	ddl<br>
+<br>
+/* Q */<br>
+d	dd	dr	ddr<br>
+r	rr	d	dr<br>
+r	d	dr	drd<br>
+r	d	dr	dl<br>
+d	dd	dl	ddl<br>
+r	d	dr	drr<br>
+d	dd	dr	r<br>
+r	rr	rd	rrd<br>
+<br>
+/* Z */<br>
+r	rd	rdd	rddr<br>
+d	dl	dll	dlld<br>
+r	d	dd	ddl<br>
+d	dr	drr	drrd<br>
+<br>
+/* X */<br>
+d	dr	dl	dd<br>
+<br>
+/* W */<br>
+r	d	dl	dld<br>
+r	rd	rdr	rdrd<br>
+d	dl	dld	dldl<br>
+d	dr	drd	drdr<br>
+<br>
+<br>
+</div>
+</body>
+</html>

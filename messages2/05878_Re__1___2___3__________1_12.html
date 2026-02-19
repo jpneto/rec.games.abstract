@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: 1 + 2 + 3 + ... = -1/12</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: 1 + 2 + 3 + ... = -1/12</h1>
+    <p><strong>From:</strong> mathwft@math.canterbury.ac.nz (Bill Taylor)<br>
+    <strong>Date:</strong> Sat, 14 Sep 2002 06:47:35 +0000 (UTC)</p>
+    <hr>
+    <div>(Daryl McCullough) writes:<br>
+|&gt; Once upon a time, Bill Taylor bizarrely asked for a proof<br>
+<br>
+Indeed!  And this has seeingly been festering in the back of your mind<br>
+for some time!  Or perhaps you&#x27;ve just been editing through some old files?<br>
+<br>
+Anyway, it seems that this grain of irritation has produced a little pearl!  :)<br>
+<br>
+|&gt; that the infinite series 1+2+3+4+... summed to -1/12. <br>
+<br>
+Yes; the Zeeman&#x27;s Rita approach was what prompted my enquiry, which came<br>
+in a thread on how   1 + 2 + 4 + 8 +...  summed to 1.  My BS observation<br>
+was that if you added 1 to the LHE of the series, then it &quot;obviously&quot;<br>
+accumulated up and swept away all the terms to 0 by telescoping cancellation.<br>
+<br>
+And I wondered if the same could be done with the above.<br>
+<br>
+I liked whatsiname&#x27;s reply that the Abel and Cesaro sums of 1 - 2 + 3 - 4...<br>
+both came to 1/4.  He gave the Abel derivation; very simple it is.  I checked<br>
+the Cesaro sum on paper, and grubbed out the same answer.   (Cesaro is always<br>
+a mess!)  It&#x27;s fun to see they&#x27;re the same.  No doubt various other divergent<br>
+summabilkity methods give the same as well.  I have a colleague who specializes<br>
+in this, I&#x27;ll have to ask him.<br>
+<br>
+Anyway, given that  1 - 2 + 3 - 4 + 5 -...  sums to  1/4, we can get the above<br>
+result very simply without the further reference to zetas that were made before...<br>
+<br>
+S = 1 + 2 + 3 + 4 + 5 + 6 +...<br>
+<br>
+  = 1 - 2 + 3 - 4 + 5 - 6 +...   + 2 (2 + 4 + 6 +...)<br>
+<br>
+  = - 1/4  +  4 (1 + 2 + 3 +...)   = - 1/4 + 4 S<br>
+<br>
+therefore   S = - 1/12.      Ta-Dah!(BS)          Not half bad eh?<br>
+<br>
+<br>
+|&gt; Now, let&#x27;s add up S + 2S + S -4S -8S -4S = -12S, but<br>
+|&gt; choosing a very special formatting:<br>
+<br>
+That&#x27;s very nice Daryl!   Thanks.   <br>
+Now we already know from above that  S = - H/3    where<br>
+<br>
+S = 1 + 2 + 3 + 4 +...   and<br>
+H = 1 - 2 + 3 - 4 +...   ;     so now we can get H by your methods, viz<br>
+<br>
+4 H = 1 - 2 + 3 - 4 + 5 - 6 + 7 - 8 +...<br>
+        + 1 - 2 + 3 - 4 + 5 - 6 + 7 -...<br>
+        + 1 - 2 + 3 - 4 + 5 - 6 + 7 -...<br>
+            + 1 - 2 + 3 - 4 + 5 - 6 +...<br>
+    = 1   with all this other junk miraculaously telescoping away!<br>
+<br>
+So we get all of the above, by the most beautiful BS.<br>
+<br>
+But a BS that can be justified by various divergent-summability methods OC.<br>
+<br>
+--------<br>
+<br>
+There is a very slight application to all this!<br>
+<br>
+It is a triviality that the usual method of playing games where there<br>
+is an obvious first-move advantage, is unfair to the second player. &quot;First&quot;<br>
+is clearly an average of half a move ahead of &quot;Second&quot;, e.g. at random times.<br>
+A typical attempted rectification of this, in abstract-game-playing circles,<br>
+is the 1 2 2 2 2 ...  move transformer, whereby after the first move, each<br>
+player plays two moves consecutively.  Though inappropriate for most games<br>
+if used directly, it may have its uses if some further restrictions are added.<br>
+<br>
+It has the Cesaro-propery of &quot;evening-out&quot; the starting advantage, (though <br>
+for VERY short games a further integration to 1 3 4 4 4 4 may be suitable),<br>
+and it is nice to see the sum of 1-2+2-... coming to 0 by almost every method.<br>
+<br>
+<br>
+Now, another move transformer often used is the &quot;Progressive&quot; transformer,<br>
+whereby the moves are taken in series of 1, 2, 3, 4, 5 etc.  It makes for<br>
+fun games, if hardly very serious ones; and e.g. Progressive Chess already<br>
+has quite a long history.<br>
+<br>
+But it often struck me that even so, there was a very slight advantage to First.<br>
+(e.g. His number of moves ahead is successively 1 -1 2 -2 3 -3... so that First <br>
+is always first to get to a new number of moves ahead, rather than Second.)<br>
+And so it now appears this advantage is real!  There is an advantage to 1/4<br>
+of a move to First!!!   Horrors!   This must not be!!<br>
+<br>
+So one way I have considered for some while of rectifying the Progressive<br>
+transformer was to make it an &quot;Odd-Progressive&quot; transformer.  This has move<br>
+series of 1, 3, 5, 7... , which gives the number of moves First is ahead<br>
+each time as being  1 -2 3 -4... , which is clearly fairer than the above.<br>
+<br>
+And what do we see?   The above methods give that<br>
+ <br>
+       1 - 3 + 5 - 7 + 9 -   = 0    EXACTLY!<br>
+<br>
+What a triumph!   <br>
+<br>
+The Odd Progressive transformer is the answer to young Sagme Trabsact&#x27;s prayer!!<br>
+<br>
+(P.S.  exercise for the reader to verify the vanishing of the last series)<br>
+<br>
+-------------------------------------------------------------------------------<br>
+          Bill Taylor                  W.Taylor@math.canterbury.ac.nz<br>
+-------------------------------------------------------------------------------<br>
+          The perfect Go player must be a Zen Buddhist in the opening,<br>
+          a Taoist in the middle-game, and a Confucian in the endgame!<br>
+-------------------------------------------------------------------------------<br>
+<br>
+<br>
+</div>
+</body>
+</html>

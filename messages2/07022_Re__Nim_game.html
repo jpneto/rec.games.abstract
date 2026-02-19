@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Nim game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Nim game</h1>
+    <p><strong>From:</strong> jferro@fuchsia.ece.cmu.edu (Jonathan R. Ferro)<br>
+    <strong>Date:</strong> 20 Jul 2004 16:37:04 -0400</p>
+    <hr>
+    <div>gnalle@ruc.dk (Niels L. Ellegaard) writes:<br>
+&gt; I am not a master of combinatorical game theory, so perhaps someone<br>
+&gt; could enlighten me. How is the third pile equivalent to 3? I cannot<br>
+&gt; grab all three stones in one turn. I would expect something similar<br>
+&gt; to:<br>
+&gt; <br>
+&gt; (.) -&gt; 0<br>
+&gt; <br>
+&gt; (X) -&gt; 1<br>
+&gt; <br>
+&gt; (X X) -&gt; 2<br>
+&gt; <br>
+&gt; (X X X) -&gt; 3<br>
+&gt; <br>
+&gt; (X X)  <br>
+&gt; (X .) -&gt;  &lt;1,2|1,2&gt;<br>
+&gt; <br>
+&gt; Here the number &lt;1,2|1,2&gt; is surreal. It means that if left player<br>
+&gt; moves first he can leave a simple nim pile of size 1 or a simple nim<br>
+&gt; pile of size 2. The same goes for the right player.<br>
+&gt; http://en.wikipedia.org/wiki/Surreal_number<br>
+<br>
+All of the numbers are surreal, you just happen to only be seeing the<br>
+surreality in the case you are confused about.  :)<br>
+<br>
+The general rules of manipulating the surreal representations of<br>
+nonpartisan games are:<br>
+1. Both players always have the same options. (definition of nonpartisan)<br>
+2. The value of the position is the smallest value that is NOT available<br>
+as an option. (the Minimal EXcluded, or MEX rule)<br>
+3. Options higher than the MEX are superfluous to determining the<br>
+position&#x27;s value. (the Sprague-Grundy Theorem)<br>
+<br>
+Here are the surreal representations of the first three cases:<br>
+<br>
+0 = &lt; | &gt;<br>
+1 = &lt;0|0&gt;<br>
+2 = &lt;0,1|0,1&gt;<br>
+3 = &lt;0,1,2|0,1,2&gt;<br>
+<br>
+Now, decompose the final case:<br>
+<br>
+(X X)    &lt; (X .)  (X X)  (X .)  (. X) | (X .)  (X X)  (X .)  (. X) &gt;<br>
+(X .) -&gt; &lt; (X .), (. .), (. .), (X .) | (X .), (. .), (. .), (X .) &gt;<br>
+<br>
+      =  &lt;   2  ,   2  ,   1  , 1(+)1 |   2  ,   2  ,   2  , 1(+)1 &gt;<br>
+<br>
+      = &lt;2,1,0|2,1,0&gt;<br>
+<br>
+      = 3<br>
+<br>
+where &quot;1(+)1&quot; is the nim-sum of the two independent moves from that<br>
+position.<br>
+<br>
+-- Jon<br>
+<br>
+<br>
+</div>
+</body>
+</html>

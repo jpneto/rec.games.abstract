@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Cascades and BigBasin -- a few thoughts</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Cascades and BigBasin -- a few thoughts</h1>
+    <p><strong>From:</strong> &quot;William Chang&quot; &lt;williamichang@hotmail.com&gt;<br>
+    <strong>Date:</strong> Wed, 18 Apr 2001 04:55:22 GMT</p>
+    <hr>
+    <div>&quot;Ralf Gering&quot; &lt;zxmge08@mail.uni-tuebingen.de&gt; wrote in message<br>
+news:Pine.LNX.4.30.0104172138200.15389-100000@linux40.zdv.uni-tuebingen.de..<br>
+.<br>
+&gt; &gt;        o x o x o x         (1) Double-move -- x places one stone, then<br>
+&gt; &gt;       . . . . . . .            players alternate placing up to two<br>
+stones.<br>
+&gt; &gt;      . . . . . . . .       (2) Each stone is placed next to and below a<br>
+&gt; &gt;     . . . . . . . . .          stone of the same color.<br>
+&gt; &gt;    . . . . . . . . . .     (3) Player who occupies more of the<br>
+bottom-most<br>
+&gt; &gt;   . . . . . . . . . . .        row wins.<br>
+&gt; &gt; The game couldn&#x27;t be simpler or quicker to play, but I haven&#x27;t &quot;figured<br>
+&gt; &gt; it out&quot; after several games.<br>
+&gt;<br>
+&gt; The game appears to be interesting. However, I would like to see a<br>
+&gt; much bigger board or do you intend to create another children&#x27;s game?<br>
+<br>
+High praise from you!  Especially for a game with such obvious rules.<br>
+<br>
+The game generalizes to any MxN board.  Without more experience<br>
+playing and &quot;figuring it out&quot; I don&#x27;t know how M and N affect playability.<br>
+My intuition suggests 8x8 (really 8x15 if you measured it at the bottom)<br>
+is already nontrivial and 10x10 might be &quot;tournament&quot;.  Of course, this<br>
+assumes the game isn&#x27;t &quot;solved&quot; in short order...<br>
+<br>
+(By the way, in my experience a motivated &quot;child&quot; can beat almost all<br>
+adults who after all have to worry about living.)<br>
+<br>
+&gt; &gt; The next variant would allow a stone to be<br>
+&gt; &gt; placed at the same level as a friendly stone (2A).<br>
+&gt;<br>
+&gt; I think i just solved this variant for any board size.<br>
+&gt; Both players try to reach the central square(s) of the bottom-most row as<br>
+&gt; fast as possible. This results in a straight race of one flow by each<br>
+&gt; player. As soon the bottom is reached the players spread their stones to<br>
+&gt; one side of the board.<br>
+&gt; If the bottom-most row numbers an even number of squares the game is a<br>
+&gt; draw, otherwise it is a win for the second player because he is ahead in<br>
+&gt; the race.<br>
+<br>
+Very good, thank you.  I will work on a fix.<br>
+<br>
+&gt; &gt; A more chaotic variant<br>
+&gt; &gt; requires only adjacency to a stone of either color (2B), but a stone cut<br>
+&gt; &gt; off from receiving (downward or sideways) &quot;flow&quot; is immediately removed<br>
+&gt; &gt; (similar idea as Greg&#x27;s).<br>
+&gt;<br>
+&gt; The pieces cannot move, right? This means that a stone cannot be cut off<br>
+&gt; from the &quot;flow&quot; except it is placed on a square where it is not connected<br>
+&gt; to the flow right from the beginning. However, it doesn&#x27;t make sense in<br>
+&gt; this game to place a  stone on the board which is removed immediately.<br>
+<br>
+I meant and should have written &quot;potential&quot; flow.  Hope this clarifies.<br>
+<br>
+A black stone can be placed below white stones so that in theory it can<br>
+receive flow later -- but if white fenced it in (by playing above and to<br>
+both<br>
+sides of it for example) it may become a &quot;dead&quot; stone.  One can legitimately<br>
+ask whether it becomes dead as soon as it&#x27;s fenced in, or only when there<br>
+is no possible further play (namely the elimination of stones above and to<br>
+the side of it) that can give it &quot;life&quot;.  Let&#x27;s take the simpler rule for<br>
+now --<br>
+capture is defined without consideration of future capture.  (There are<br>
+two different games here; let&#x27;s call the other 2D.)  Example:<br>
+<br>
+      x x x _ x    say black can capture three white stones by filling in _<br>
+    x o o o x<br>
+      o x o &lt;- does this white stone capture the black stone next to it?<br>
+<br>
+&gt; &gt; Finally, stones can be placed anywhere (2C).<br>
+&gt;<br>
+&gt; This makes no sense to me either. Could you please explain your idea?<br>
+&gt; What would be the goal of this game, etc. ???<br>
+<br>
+Let&#x27;s say black placed stones in the bottom row while white filled in the<br>
+topmost playable row.  The black stones are eliminated and white wins<br>
+a shutout.  The game is actually Hex-like but with life and death defined<br>
+by possible connection to the row of origin.  It is quite possible that one<br>
+could prove mathematically that playing &quot;higher&quot; is always better -- then<br>
+the game is flawed and the rules should be rewritten.  (A simple rule<br>
+change would be to score all territory instead of just the bottom row.)<br>
+<br>
+&gt; &gt; I call this series of games Cascades.<br>
+&gt;<br>
+&gt; Except the first one, these are not games. These are just ideas of games.<br>
+&gt;<br>
+&gt; Panther<br>
+<br>
+These are prototypes that need playtesting, as was requested.<br>
+At least the first one is clear :-)  At the conclusion of each of these<br>
+games, the following is true:  Each stone in the bottom row is connected<br>
+to the row of origin by a possibly meandering flow of friendly stones.<br>
+How many essentially different final configurations are possible?<br>
+<br>
+Looking forward to further comments,<br>
+<br>
+-- William<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Combining And Dividing Integers Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Combining And Dividing Integers Game</h1>
+    <p><strong>From:</strong> pacman@kosh.dhis.org (Alan Curry)<br>
+    <strong>Date:</strong> Thu, 7 Jul 2011 21:05:54 +0000 (UTC)</p>
+    <hr>
+    <div>In article &lt;beb83ed2-d192-4de1-b4e2-23cca7ca2c45@q15g2000yqk.googlegroups.com&gt;,<br>
+Pubkeybreaker  &lt;pubkeybreaker@aol.com&gt; wrote:<br>
+&gt;On Jul 7, 12:52am, pac...@kosh.dhis.org (Alan Curry) wrote:<br>
+&gt;&gt;<br>
+&gt;&gt; Mostly, the game progresses toward termination in every step,<br>
+&gt;<br>
+&gt;I don&#x27;t see it.  How does replacing two numbers by their sum<br>
+&gt;&#x27;reduce&#x27; the problem?  The sum potentially has more prime<br>
+&gt;factors;<br>
+<br>
+The game obviously can&#x27;t proceed forever using only addition steps, since the<br>
+list of numbers keeps getting shorter, and when it&#x27;s down to a single number<br>
+you have to factor it (or it&#x27;s prime and the game is over).<br>
+<br>
+In a factorization step, the game replaces a number with a list of at<br>
+least 2 factors greater than 1 whose product is the original number.<br>
+When you have a list of at least 2 integers, all of which are greater<br>
+than 1, their sum is always less than their product except for the<br>
+special case 2*2 = 2+2.<br>
+<br>
+So look at the game as a series of factorization steps, which reduce the<br>
+sum of the whole list, and addition steps, which preserve the sum of the<br>
+whole list but are limited to a finite sequence after each factorization<br>
+step. The sum of the whole list proceeds steadily downward, and can&#x27;t do<br>
+so forever since it&#x27;s always an integer and can&#x27;t become negative.<br>
+<br>
+That damn 4=2*2 is the only thing getting in the way of a clean no-draw<br>
+game. No fixed length needs to be imposed, just a draw by repetition.<br>
+And even that seems to be rare. After studying a few positions I haven&#x27;t<br>
+found one yet where the best move leads to a draw.<br>
+<br>
+-- <br>
+Alan Curry<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Hex</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Hex</h1>
+    <p><strong>From:</strong> torbenm@diku.dk (Torben AEgidius Mogensen)<br>
+    <strong>Date:</strong> Tue, 29 Jun 1993 09:07:05 GMT</p>
+    <hr>
+    <div>hde+@cs.cmu.edu (Herbert Enderton) writes:<br>
+<br>
+&gt;In article &lt;C9CqF9.LrH@rice.edu&gt; almehj@owlnet.rice.edu (Henry John Alme) writes:<br>
+&gt;&gt;Hello:<br>
+&gt;&gt;<br>
+&gt;&gt;	I was recently introduced to a simple game called Hex,<br>
+<br>
+&gt;&gt;  I am interested in teaching my computer<br>
+&gt;&gt;to play this game.  I was wondering what sort of thoughts people had on<br>
+&gt;&gt;algorithms/strategies for this game.  I have not been able to play very <br>
+&gt;&gt;effectively yet, but I am working on it 8^).  <br>
+<br>
+&gt;As it happens, I am working on a program to play Hex as part of my<br>
+&gt;dissertation work.  It seems to be very difficult to make a computer<br>
+&gt;play Hex well.  The standard methods used for chess programs are pretty<br>
+&gt;feeble for Hex, compared to the reasoning power of us human players.<br>
+<br>
+&gt;Does anybody know about any other Hex programs, or articles about<br>
+&gt;Hex algorithms?  If so, please mail me about them.<br>
+<br>
+This will probably not be of much help for the general case, but with<br>
+the modification that the board is of size Nx(N-1) and the second<br>
+player has to connect the shortest distance, the game is a sure win<br>
+for player two.<br>
+<br>
+The strategy works as follows: divide the board into two equal-sized<br>
+parts along the short diagonal. Every time player one places a stone<br>
+in one half of the board, player two places a stone in the other half<br>
+at the position 180 degrees opposite (imagine rotating one board half<br>
+on top of the other). It is relatively easy to show that this will<br>
+eventually end in a win for player two.<br>
+<br>
+I do have a small suggestion for the normal game: calculate for each<br>
+hex the distance to the nearest black minus the distance to the<br>
+nearest white stone. This difference counts towards blacks score. A<br>
+stone is then played to maximize the score.<br>
+<br>
+This is probably not enough in itself to make a good play, but other<br>
+factors can be used to calculate the score.<br>
+<br>
+	Torben Mogensen (torbenm@diku.dk)<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

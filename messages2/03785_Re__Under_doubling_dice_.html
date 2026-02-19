@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Under-doubling dice?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Under-doubling dice?</h1>
+    <p><strong>From:</strong> mathwft@math.canterbury.ac.nz (Bill Taylor)<br>
+    <strong>Date:</strong> 18 12 1997 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+OK then, having started it, it&#x27;s my turn to contribute to this thread.<br>
+<br>
+<br>
+About the matter of using a doubling cube with other games, I&#x27;m sure<br>
+it&#x27;s a goer, for money games or long-match games.  The arguments against,<br>
+for complete-info games of no chance, (chess etc), struck me as very weak.<br>
+Incidentally, I agree that for CI-NC games that are actually *played*,<br>
+i.e. for which perfect strategies are as yet unknown, there IS luck in<br>
+them, in any reasonable sense of the term.  A chess master pal of mine<br>
+from long ago, summed it up well, even profoundly - &quot;In chess there is no<br>
+such thing as BAD luck, but there IS good luck&quot;.   Rather neat, I thought.<br>
+<br>
+I was particularly struck by the suggestion that a doubling cube be used<br>
+for snooker matches, especially on telly - that it would reduce those long<br>
+boring near-certain results, and also keep the likely outcome secret<br>
+from the program-time-aware viewer.  :)    Also, snooker is quite a high<br>
+volatility game, which would make it a natural for a doubling cube.<br>
+<br>
+-----------<br>
+<br>
+However, all that aside, what I really want to talk about here is the<br>
+UNDER-doubling part of the thread, for backgammon-style games.<br>
+Underdoubling OR OVER-doubling, of course!  A tripling cube might<br>
+well be an amusement, especially for the keen gambler.<br>
+<br>
+There&#x27;s not much in here except a pretty picture, (pretty crumby picture?),<br>
+except that I look at the general M-multiplying cube.  So standardly, M=2.<br>
+<br>
+Like others, I *only* look at the very sub-backgammon-like situation<br>
+where there is ZERO VOLATILITY.  This is like the tug-o-dice game, only<br>
+more so.  We model the game as a diffusion, with a variable moving between<br>
+0 and 1, this being the cubeless P(WIN) for one player.  This variable<br>
+starts at 0.5, and drifts continuously to and fro on the [0,1] interval,<br>
+with equal chances of drifting left or right, until an end-point is hit,<br>
+or a cube is dropped.  So in effect, moves are infinitesimally small<br>
+increments in a 2-way race.  This continuous movement, or zero volatility,<br>
+is a very poor model indeed of real backgammon, as it removes most of the<br>
+key everyday cubely problems.    But we have to start somewhere.<br>
+<br>
+With a doubling cube, it is well-known that one should double, and also<br>
+either-take-or-drop, when your P(WIN) gets to 0.8<br>
+<br>
+Now we look at the M-cube situation.<br>
+<br>
+<br>
+Here are two graphs of the player&#x27;s game equity, as a function of that<br>
+cubeless win-probability variable; WITH the cube, (above, graph &quot;f&quot;),<br>
+                            and AGAINST the cube, (below, graph &quot;e&quot;).<br>
+<br>
+It is 180-symmetric about the (.5 , 0) point, of course.<br>
+<br>
+     |                 :<br>
+     |                 :<br>
+  1  |- - - - - - -:- -*- -<br>
+     |            /.  /:<br>
+     |         f / . / :<br>
+     |          /  ./  :<br>
+     |         /   /   :<br>
+     |        /   /.   :<br>
+     |     b /   / .   :<br>
+  0 -+------/-+-/--:---:---  x = P(player wins)    [cubeless]<br>
+     |     /   /   K   :<br>
+     |    /   /        :<br>
+     |   /   /         :<br>
+     |  /   /          :<br>
+     | /   / e         :<br>
+     |/   /            :<br>
+ -1  *.../....:........:...<br>
+     |        :        :<br>
+     |                 :<br>
+<br>
+     0       0.5       1<br>
+<br>
+K is the precise cubing point - and by non-volatility, the take point also.<br>
+<br>
+If the cuber waits just a tad longer, it&#x27;s a drop;<br>
+if he cubes just a tad sooner, it&#x27;s a take.<br>
+<br>
+&quot;b&quot; is the beaver point, incidentally - the moment you get positive<br>
+equity, with the cube.   Note one might always beaver soundly even (!) with<br>
+P(cubeless win) &lt; .5 .<br>
+<br>
+It is a standard result following from the linearity of expectation,<br>
+that the graphs are straight lines; by symmetry between players they<br>
+must be 180-symmetric as stated; and the (0,-1) point is obvious.<br>
+That just leaves the slope (and/or intercepts) to calculate.<br>
+<br>
+<br>
+Clearly we have     f(x) = 2x/K - 1 ;   and   e(x) = - f(1-x).<br>
+<br>
+For  K  to be the cubing point we must have    M.e(K) = 1 .<br>
+<br>
+Thus   1/M = e(K) = - f(1-K) = 1 - 2(1-K)/K = 3 - 2/K .    Therefore...<br>
+<br>
+         K = 2M/(3M - 1) .<br>
+         ~~~~~~~~~~~~~~~<br>
+<br>
+Thus for the usual cube where  M = 2,  we get  K = 0.8 , as stated.<br>
+<br>
+For an under-doubling cube like a sesqui-cube, M = 1.5 , we get K = 6/7.<br>
+<br>
+I found this somewhat counter-intuitive; I would have expected a cheaper<br>
+cube to give rise to a lot *more* cubing, not less!   But the key is,<br>
+that *taking* is a lot cheaper, so more cubes will be taken, and thus<br>
+there is no need to make early cubes, as no &quot;market losing&quot; will apply<br>
+until much later.  Strictly, the continuous game doesn&#x27;t have market<br>
+losers, of course, but similar reasoning applies.<br>
+<br>
+On the other hand, with an OVER-doubling cube, drops come much earlier,<br>
+so market losing is a real issue, and cubing must thus be done earlier.<br>
+<br>
+For a tripling cube,  M = 3,  K = 0.75 ;  not so very big a difference.<br>
+<br>
+<br>
+<br>
+There is an even more intriguing matter though.  Without analysing the<br>
+exact discrete probability process for a game of many tiny increments,<br>
+let us assume that both players play a tactic of cubing just BEFORE the<br>
+point K, rather than just after.  [Just after, would be very boring - it<br>
+means there will only ever be one cube turn, always dropped, no game never<br>
+gets fully played out!  Bunny stuff!  ;-) ]    But with market-loss<br>
+anxiety, as it were, the cube will always be turned just before the K<br>
+point, and thus always taken.<br>
+     <br>
+What now?  The game is more interesting - it flows to and fro between<br>
+the K and (1-K) points, being recubed (and taken) at each swing, till<br>
+it eventualy goes well on past one, and ends the game at 0 or 1.<br>
+<br>
+What is the expected number of cubings till the game finishes?<br>
+<br>
+     P(hit on cube point | hit at other)<br>
+<br>
+   = P(reach K before 0 | a diffusion on [0,K] starting at (1-K) )<br>
+<br>
+   = (1-K)/K      (a standard result from Markov chain theory, easily<br>
+                     proved using constant expectation from zero drift)<br>
+   = (M-1)/(2M)<br>
+<br>
+   = p       say.<br>
+<br>
+<br>
+Then the number of cubings is a geometric random variable with<br>
+<br>
+p_1 = (1-p)    (p_0 = 0 as it must get to one of the K-points first),<br>
+p_2 = (1-p)p<br>
+p_3 = (1-p)p^2   etc.   So the expected number of cubings is  1/(1-p).<br>
+<br>
+For the standard  M = 2;  K = 0.8 ,  p = 1/4,  E[#] = 4/3.<br>
+<br>
+Even with a tripling cube we get  E[#] = 1.5 .  Not very exciting?<br>
+<br>
+<br>
+HOWEVER!    There is a BIIIIIIG surprise!<br>
+<br>
+The key thing is, not the expected number of cubings, but the expected<br>
+size of the final stake.  For this we get...<br>
+<br>
+# cubings:      1       2        3         4   ... . .<br>
+probability:  (1-p)  (1-p)p  (1-p)p^2  (1-p)p^3 ... . .<br>
+final stake:    M      M^2      M^3       M^4  ... . .<br>
+<br>
+So    E[final_stake] = sum[0:inf] {M(1-p)(Mp)^k}<br>
+<br>
+                     = M(1-p)/(1-Mp)<br>
+<br>
+                     = (M+1)/(3-M)<br>
+<br>
+For the usual  M = 2,   E[f_s] = 3;  moderate.<br>
+<br>
+For the tame  M = 1.5   E[f_s] = 1.67, tame indeed, (as 1.5 = min payout!)<br>
+<br>
+<br>
+But for the mild-seeming TRIPLING cube,  E[f_s] = infinite !!<br>
+                                         ~~~~~~~~~~~~~~~~~<br>
+With a tripling cube, you are already, unbeknownst, playing a StPetersburg<br>
+style game of infinite expectation, (though &quot;only just&quot;).<br>
+<br>
+And with a QUADRUPLING cube, (&quot;automatic compulsory beavers&quot;),<br>
+you&#x27;re completely in outer space!!<br>
+<br>
+Food for thought!<br>
+<br>
+-------------------------------------------------------------------------------<br>
+              Bill Taylor        W.Taylor@math.canterbury.ac.nz<br>
+-------------------------------------------------------------------------------<br>
+                         LOSE MONEY FAST !<br>
+                         ===============<br>
+     Buy our sub-annuity.               Send $1000 to the above address,<br>
+     and for a little while you will receive $10 every week in the post!<br>
+-------------------------------------------------------------------------------<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

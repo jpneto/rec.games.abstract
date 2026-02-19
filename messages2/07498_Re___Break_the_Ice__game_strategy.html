@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: &quot;Break the Ice&quot; game strategy</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: &quot;Break the Ice&quot; game strategy</h1>
+    <p><strong>From:</strong> jdallen2000@yahoo.com<br>
+    <strong>Date:</strong> 4 Aug 2006 02:44:36 -0700</p>
+    <hr>
+    <div><br>
+Arthur J. O&#x27;Dwyer wrote:<br>
+&gt; On Thu, 3 Aug 2006, Rob Thorpe wrote:<br>
+&gt; &gt; James Dow Allen wrote:<br>
+&gt; &gt;&gt; It sounds like you&#x27;re missing the &quot;transposition cache&quot;<br>
+&gt; &gt;&gt; (memory, e.g. hash table, of previously solved positions).<br>
+&gt; &gt;<br>
+&gt; &gt; I&#x27;d agree with that.  It seems best to evaluate a large chunk of the<br>
+&gt; &gt; game offline and store it in a table.<br>
+<br>
+I would tend to view the &quot;table of solutions from recent several weeks&quot;<br>
+and &quot;cache of solutions from recent several seconds&quot; as<br>
+separate objectives with separate heuristics that may or may not<br>
+use same data format.<br>
+<br>
+&gt;    But the bottom line is still that the program has to, at some point,<br>
+&gt; look at 9! things ...<br>
+<br>
+By &quot; 9! &quot; I think you&#x27;re referring to the permutations of<br>
+{A,B,C,...,H,I}.<br>
+But the opening A-B-C leads to the same position as C-B-A<br>
+(they *transpose* into each other: that&#x27;s why we speak of<br>
+&quot;transposition cache&quot;) and only one of these openings need be<br>
+considered.  Stated differently, the number of positions reached<br>
+in your example is 2^9 not 9!, right?  Do I misunderstand?<br>
+<br>
+&gt;<br>
+&gt;    As for James&#x27; point about breadth-first search: Yeah, I actually<br>
+&gt; wanted to do that ... but I couldn&#x27;t figure out how to make it work, in the<br>
+&gt; few hours I spent halfheartedly thinking about it....<br>
+<br>
+It&#x27;s not really my field, but I think a good starting point would<br>
+be &quot;Conspiracy Numbers&quot; or Victor Allis&#x27; related algorithm.<br>
+I did a Google search just now and clicked to get<br>
+&quot;Solving the Game of Checkers&quot;<br>
+http://www.msri.org/publications/books/Book29/files/schaeffer.pdf<br>
+which seems very interesting article, though wide-ranging rather<br>
+than much about Allis&#x27; algorithm.  (I was delighted to see the<br>
+first item in &quot;References&quot; for this article I picked almost at<br>
+random.  :-)<br>
+<br>
+I think game-tree exploration and related work is far more<br>
+interesting than most programming problems.<br>
+Have fun!!<br>
+<br>
+James Dow Allen<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

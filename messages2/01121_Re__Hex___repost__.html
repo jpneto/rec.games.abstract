@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Hex [ repost ]</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Hex [ repost ]</h1>
+    <p><strong>From:</strong> hoey@AIC.NRL.Navy.Mil (Dan Hoey)<br>
+    <strong>Date:</strong> Fri, 2 Jul 1993 15:24:52 GMT</p>
+    <hr>
+    <div>[ This is a copy of an article I sent last night, which seems<br>
+  to have been dropped.  If you read the other one, don&#x27;t bother with<br>
+  this one, it&#x27;s the same. ]<br>
+<br>
+torbenm@diku.dk (Torben AEgidius Mogensen) writes:<br>
+<br>
+&gt;&gt;&gt;...with the modification that the board is of size Nx(N-1) and the<br>
+&gt;&gt;&gt;second player has to connect the shortest distance, the game is a<br>
+&gt;&gt;&gt;sure win for player two.<br>
+<br>
+&gt;&gt;&gt;The strategy works as follows: divide the board into two equal-sized<br>
+&gt;&gt;&gt;parts along the short diagonal.<br>
+<br>
+Since the board is a non-rhombic parallelogram, this terminology is a<br>
+little vague.  The diagonals of the parallelogram touch only two hex<br>
+centers each, their endpoints at opposite corners of the<br>
+parallelogram.  I suspect you are talking about lines that cut the<br>
+board in half parallel to the sides.  The line parallel to the odd<br>
+side touches no hex centers, the line parallel to the even side<br>
+touches a row of hex centers.<br>
+<br>
+&gt;&gt;&gt;Every time player one places a stone in one half of the board,<br>
+&gt;&gt;&gt;player two places a stone in the other half at the position 180<br>
+&gt;&gt;&gt;degrees opposite (imagine rotating one board half on top of the<br>
+&gt;&gt;&gt;other).<br>
+<br>
+Thus ``at the centrally symmetric point.&#x27;&#x27;  It doesn&#x27;t matter how you<br>
+cut the board in half, this is about reflection through the *center*<br>
+of the parallelogram.  But dbush@csugrad.cs.vt.edu (David Bush) showed<br>
+the strategy doesn&#x27;t work.<br>
+<br>
+torbenm@diku.dk (Torben AEgidius Mogensen) responds:<br>
+<br>
+&gt;My mistake. My recollection was a bit vague: you shouldn&#x27;t *rotate*<br>
+&gt;the other half of the board, you should *mirror* it across the<br>
+&gt;dividing line.<br>
+<br>
+Well, the non-rhombic parallelogram isn&#x27;t mirror-symmetric.  If we<br>
+allow a sort of distorted mirror-symmetry by pretending it&#x27;s a<br>
+rectangle, we can reflect through a line parallel to a pair of sides.<br>
+If this is what you mean, then there is an obvious problem if the<br>
+shorter side is even, because then the shorter line of symmetry goes<br>
+through hex centers, and what is the response to a move on this line?<br>
+Perhaps mirror-symmetrically through the center of that line?  It<br>
+doesn&#x27;t matter, as we see below.<br>
+<br>
+Well, even then it doesn&#x27;t work, whether the short side is even or odd.<br>
+Look at these two partial games, in which each move by X has been<br>
+answered by O (distorted) mirror-symmetrically through the marked line.<br>
+<br>
+         \                   \<br>
+     - - - - - -        - - - - - - -<br>
+      - O O X X -        - - - - - - -<br>
+       - X X O O -        - O O - X X -<br>
+        - - - - - -        - X X - O O -<br>
+         - - - - - -        - - - - - - -<br>
+               \             - - - - - - -<br>
+                                    \<br>
+<br>
+In either case it is now X to move and win even if O abandons this<br>
+strategy, even if X passes (and this is a game without zugzwang).<br>
+Both games generalize to larger boards.<br>
+<br>
+There may be a winning strategy for the second player on the Nx(N-1)<br>
+board, but I would be quite surprised if it&#x27;s a simple one.<br>
+<br>
+Dan Hoey<br>
+Hoey@AIC.NRL.Navy.Mil<br>
+<br>
+<br>
+</div>
+</body>
+</html>

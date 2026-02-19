@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: New game: Orcoon</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: New game: Orcoon</h1>
+    <p><strong>From:</strong> =?ISO-8859-1?Q?Luis_Bola=F1os_Mures?= &lt;luis.9.8.87@gmail.com&gt;<br>
+    <strong>Date:</strong> Sun, 29 Apr 2012 12:45:56 -0700 (PDT)</p>
+    <hr>
+    <div>El viernes, 27 de abril de 2012 21:47:34 UTC+2, Luis Bolaños Mures  escribió:<br>
+&gt; Over the past few days, I&#x27;ve been trying to find more such deadlock patterns by trial and error and have found none yet. This is getting intriguing.<br>
+&gt; <br>
+&gt; I still think there must be more of them, but if I managed to prove the opposite I might be tempted to ban those two and make Orcoon a pure connection game.<br>
+<br>
+Good news!<br>
+<br>
+After a little more research, I&#x27;ve finally come to the conclusion that there aren&#x27;t any other deadlock patterns in Orcoon than the four ones (including diagonal connections) that I mentioned in my original post, so I&#x27;ll probably change the rules to make it a pure, drawless connection game, without races. To be honest, all I have for the moment is a partial proof, but it might be enough to my purposes. Here it goes:<br>
+<br>
+It&#x27;s an obvious fact that every new deadlock pattern, except for the initial one regarding diagonal connections, is based on the previous ones, i.e. it&#x27;s a deadlock because trying to connect the stones in it by adding a single stone necessarily results in the formation of a different (and simpler) deadlock. For instance:<br>
+<br>
+3  x x o<br>
+2  x . .<br>
+1  o . x<br>
+<br>
+   a b c<br>
+<br>
+Here, if White plays b2 or Black plays b1, b2 or c2, an illegal diagonal connection will be made. If White plays b1 or c2, instead, the following deadlock is formed:<br>
+<br>
+x . o<br>
+o . x<br>
+<br>
+What I have found out is that there can be no deadlock patterns based on the 5x5 one:<br>
+<br>
+5      o x<br>
+4  x . . .<br>
+3  o . x . o<br>
+2    . . . x<br>
+1    x o<br>
+<br>
+   a b c d e<br>
+<br>
+This pattern has a unique property: all the empty points in it form a closed circuit, and all the relevant points around are occupied by stones belonging to the pattern itself. As a result, it&#x27;s immune to the influence of any other blocking patterns on the outside. The crucial implication is that, if we remove one stone from this deadlock pattern to try and construct a different one based on it, at least one placement in the inner circuit will be enabled in all cases, thus preventing any blockade:<br>
+<br>
+- Removing the central Black stone enables White c2 and Black b2.<br>
+- Removing the white stone on c1 enables White b3.<br>
+- Removing the black stone on b1 enables White b3.<br>
+- [Rotated points omitted.]<br>
+<br>
+The only thing still to be proved is the impossibility of other deadlock patterns based on the 2x3 and 3x3 ones, but the more I think of it the more confident I am that they are indeed impossible. It seems like the combination of all the patterns up to a certain point always produces at most one new pattern, which suggests that, if there were just one more of them, it would have to contain the 5x5 one, a possibility I have just disproved.<br>
+<br>
+I&#x27;m excited about this game now. I loved its gameplay from the beginning, maybe even more so than that of Quentin, but I did have some little reservations about race positions. Now that it&#x27;s about to turn into a pure connection game, I think it could the best one from this streak of square board static connection games that I have released in the last weeks. I&#x27;m aware that the prohibition of several specific formations is still an aesthetic issue, but they are really easy to spot from the first play, and the 5x5 one is extremely rare anyway.<br>
+<br>
+I&#x27;d like to read other people&#x27;s opinions of all this.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

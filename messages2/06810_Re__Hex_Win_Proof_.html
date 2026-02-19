@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Hex Win Proof?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Hex Win Proof?</h1>
+    <p><strong>From:</strong> Tim Smith &lt;reply_in_group@mouse-potato.com&gt;<br>
+    <strong>Date:</strong> Sat, 20 Mar 2004 07:33:48 GMT</p>
+    <hr>
+    <div>In article &lt;716e06f5.0403181938.72a82f90@posting.google.com&gt;, Bill Taylor<br>
+wrote:<br>
+&gt; Now, I can prove this easily enough mathematically, but I&#x27;m wondering if<br>
+&gt; there is a simple proof, or proof outline, that would be understandable<br>
+&gt; and reasonably convincing to the intelligent layman.<br>
+<br>
+The following has a bunch of cases, but I think the intelligent layman can<br>
+follow them.<br>
+<br>
+Let&#x27;s assume Red has top/bottom, and Blue has the sides.  We want to show<br>
+that if Blue does not have a win when the board is full, the Red must have<br>
+one.<br>
+<br>
+There must be at least one Red hex on the top, and at least one on the<br>
+bottom, or else Blue would have a win along the top or bottom.  Pick a Red<br>
+hex on top, U, and a Red hex on the bottom, D, and consider any path between<br>
+them.  Go along that path from bottom to top.<br>
+<br>
+If Red doesn&#x27;t have a win, that path must run into a Blue hex.  Let S be the<br>
+set of all Blue hexes connected to that Blue hex.  Call the Red hex that ran<br>
+into S A.  As you continue along the path, you must eventually reach a Red<br>
+hex that is not surrounded by S.  Call that Red hex B.<br>
+<br>
+If S does not touch any edge, then there is an all Red path from A to B.<br>
+Just go around the edge of S in either direction from A to B.  If S touches<br>
+one edge, there is still a Red path from A to B.<br>
+<br>
+Thus, we cannot reroute around S only if S connects to two or more edges.<br>
+Let&#x27;s consider the cases:<br>
+<br>
+1. S connects to the top and bottom.  Then the Red hexes adjacent to at<br>
+least one of its sides form a win for Red, unless S connects is connected to<br>
+opposite corners, in which case S would be a win for Blue.<br>
+<br>
+2. S connects to left and right.  S is a win for Blue.<br>
+<br>
+3. S connects to the bottom and a side.  WLOG we can assume S is connected<br>
+to the left side.  If the connection to the bottom is to the left of D, then<br>
+there is a path from A to B around the boundary of S.  If the connection to<br>
+the bottom is to the right of D, then there is a connection from B to the<br>
+bottom along the boundary of S (unless S connects to the bottom at the<br>
+corner, in which case S is a win for Blue).<br>
+<br>
+4. S connects to the top and a side.  Similar to case #3.  If the top<br>
+connection is on the same side of U as the side connection, then there is a<br>
+connection from A to B.  Otherwise, there is a connection from A to the top.<br>
+<br>
+In all these cases, we are able to reroute the path such that it is still<br>
+connected to the top and the bottom, but avoids S.  Hence, if Blue does not<br>
+have a win, there is a win for Red, and this procedure will even find such a<br>
+win.<br>
+<br>
+-- <br>
+--Tim Smith<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quad-connections; repost.</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Quad-connections; repost.</h1>
+    <p><strong>From:</strong> Bill Taylor &lt;w.taylor@math.canterbury.ac.nz&gt;<br>
+    <strong>Date:</strong> Tue, 4 Nov 2008 20:49:27 -0800 (PST)</p>
+    <hr>
+    <div>As expected, it DID stuff up my pix.<br>
+Why, oh why, did Google have to stuff up the perfectly<br>
+good old Usenet with its fixed-font ascii feature!<br>
+&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;<br>
+<br>
+Yet aNOTHER boring article on the quad-connection games.  :)<br>
+<br>
+Quad connection games have (up to now) 4 recognised   . o x .<br>
+ways of dealing with the problem of local stymies.             . x o .<br>
+<br>
+There are...<br>
+<br>
+Quax style - diagonal connections may be played, as a whole move;<br>
+Quadrex style - the 4th point of a stymie is automatically filled;<br>
+Crossway style - the 4th point may never be filled, diagonals count;<br>
+Swapway style - stymies may be resolved by swapping 2 pieces<br>
+                               in them, using up a whole move.<br>
+<br>
+A fifth occurs to me, suggested by the close similarity of Quax<br>
+and Crossway styles.<br>
+<br>
+Auto-quax - when two diagonal stones are played, the diagonal<br>
+                     connection between them automatically appears if<br>
+poss.<br>
+<br>
+(OC, in all cases diagonal connections are not allowed to cross.)<br>
+<br>
+At first, I thought that autoquax would be isomorphic to Crossway,<br>
+but then I managed to construct this counter-example...<br>
+<br>
+| .  .  . x  .  .  .  .   At Crossway, X has already won this battle.<br>
+| .  .  . x  .  .  .  .<br>
+| .  .  . x o  .  .  .   At auto-Quax, the player with the move<br>
+| o o o . x  .  .  .   wins it - O can play in a central cell.<br>
+| .  .  x . o o o o<br>
+| .  .  o x .  .  .  .<br>
+| .  .  . x  .  .  .  .<br>
+| .  .  . x  .  .  .  .<br>
+<br>
+This is also an example of a tiny glitch in the Crossway rule.<br>
+........<br>
+<br>
+All of the 5 styles of stymie-resolution have tiny (or large)<br>
+glitches in them, at least from the PoV of &quot;game purity&quot;.<br>
+[They are all equally acceptable &quot;socially&quot;, I would say.]<br>
+<br>
+Quax and auto-Quax have the problem that they need a new sort<br>
+of piece, to play the game on a physical board.  This problem<br>
+is not insuperable, however, and can easily be resolved for<br>
+physical-board play, (though not ascii-email play), by making<br>
+the stones a little smaller than usual.  Then regular stones<br>
+can be used to put in the diagonal positions.<br>
+<br>
+|___|___|___|___|___|___|_   This would be good for many checker<br>
+|      |      |      |      |      |      |    boards and pieces,<br>
+though not so<br>
+|___|___|___|___|___|___|_   good with Go stones, as these are<br>
+|      |  o  |  x  |  x  |      |      |    already a little<br>
+oversized.<br>
+|___|___O__|__.X___|___|_<br>
+|      |      |  o  |  o. |  x  |      |<br>
+|___|___|___|___|___|___|_<br>
+|      |      |      |      |      |      |<br>
+<br>
+Quadrex suffers from the slight impurity that there are<br>
+certain constructible positions, (which would never be seen<br>
+in a real game), whereby the placement of a piece triggers<br>
+a chain of automatic placements, leading to a cell requiring<br>
+a placement of BOTH sorts simultaneously.  It can easily<br>
+be dealt with by a special rule (mover decides), and would<br>
+never happen, but it is still an impurity.  (It is an exercise<br>
+for the reader to construct such positions - not too hard.)<br>
+<br>
+Swapway suffers from the glitch that certain &quot;KO&quot; positions<br>
+can arise, perhaps not so rarely.<br>
+<br>
+| .  .  .  . .  .  .  .  Here, with O to move, he can swap the two<br>
+| .  . x  . .  .  .  .  central pieces, hoping to swap the two<br>
+| .  . x x o o o .  right-hand ones, (e3 e4), next time,<br>
+| .  . x x o o  . .  to make an unbreakable connection.<br>
+| . o o o x .  .  .<br>
+| .  .  . x x .  .  .  Similarly, as it is, X is hoping to swap<br>
+| .  .  .  .  . .  .  .  d5 and e5 for an unbreakable connection.<br>
+|            e<br>
+<br>
+So the game might procede with the two players continually<br>
+re-swapping the same two pieces!<br>
+<br>
+Obviously a &quot;ko&quot; rule is needed to resolve this; and it may well<br>
+provide a charming addition for those Go players and others who<br>
+like the ko aspect of the game; but it remains a glitch.<br>
+<br>
+Finally, we come to the tiny glitch in Crossway; which I had<br>
+previously thought to be irreproachable.  Here is the 1st<br>
+example again...<br>
+<br>
+| .  .  .  x  .  .  .  .   At Crossway, X has already won this battle.<br>
+| .  .  .  x  .  .  .  .<br>
+| .  .  .  x O .  .  .   Neither player may play in the centre,<br>
+| o o o  . x  .  .  .   according to the rules as currently<br>
+| .  .  x  . o o o o   strictly worded.  However, they can easily<br>
+| .  .  o x  .  .  .  .   be reworded to allow X to play there later<br>
+| .  .  .  x  .  .  .  .   and win, at his leisure.<br>
+| .  .  .  x  .  .  .  .<br>
+<br>
+BUT!    Imagine the capital letter O stone was not there!   Now,<br>
+O to move could win this battle by playing in the upper space,<br>
+as the Crossway prohibition no longer applies!<br>
+<br>
+So for O to play, now, at the O cell, is actually a NEGATIVE MOVE.<br>
+<br>
+He is worse off after the play than he was before it!<br>
+<br>
+One of the great features of connection games in general is<br>
+that there can never be &quot;negative moves&quot; - moves may be worthless,<br>
+but can never actually harm you.  This is indeed the basis<br>
+of many strategy-stealing theorems, and is in any event a nice<br>
+idea for a player to keep in the bacl of his mind.<br>
+<br>
+The appearance of negative moves, unlikely though they may be,<br>
+in Crossway, is perhaps a serious glitch against its &quot;purity&quot;<br>
+as a connection game.<br>
+......<br>
+<br>
+But in any event, all 4 or 5 games are great to play, similar,<br>
+but each has its own particular flavour.  If anyone can think<br>
+of any other stymie-resolution plan, we would love to hear of it!<br>
+<br>
+-- Boardly Bill<br>
+<br>
+<br>
+</div>
+</body>
+</html>

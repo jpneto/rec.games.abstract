@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Lengths Of Lengths Of Lengths Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Lengths Of Lengths Of Lengths Game</h1>
+    <p><strong>From:</strong> James Waldby &lt;no@no.no&gt;<br>
+    <strong>Date:</strong> Tue, 21 Sep 2010 18:06:33 +0000 (UTC)</p>
+    <hr>
+    <div>On Thu, 16 Sep 2010 09:50:03 -0700, Leroy Quet wrote:<br>
+<br>
+&gt; [...] A list is made of 0&#x27;s and 1&#x27;s [...]<br>
+[then repeatedly produce a new list of the numbers of equal <br>
+consecutive elements in just-previous list, until an all-1&#x27;s list occurs]<br>
+...<br>
+&gt; Sample round: n = 25:<br>
+&gt; 1010110011101000111001011<br>
+&gt; 1,1,1,1,2,2,3,1,1,3,3,2,1,1,2<br>
+&gt; 4, 2,1,2,2,1,2,1<br>
+&gt; 1,1,1,2,1,1,1<br>
+&gt; 3,1,3<br>
+&gt; 1,1,1<br>
+&gt; [offense player] gets 3 points.<br>
+<br>
+This might be an interesting game -- I can&#x27;t quite tell if it is, although<br>
+2-player strategies spring readily to mind.   For large n and many <br>
+players, I don&#x27;t see any obvious ways to use skill to improve one&#x27;s<br>
+score, and imagine that most players will get a score of 2 or 3 per<br>
+offense round, and the winner will be that one person in 10 or 20<br>
+who randomly happens to score 4, 5, or more.<br>
+<br>
+Following are frequencies of scores from 1 to 10 when the initial list of <br>
+1&#x27;s and 0&#x27;s is a random number with n bits, based on trials with 100 <br>
+million random numbers per trial.  (Repeated trials give results that vary, <br>
+typically,  in the third or fourth significant digit.)  For example, when <br>
+n=30, about one-half percent of the random binary numbers gave a score <br>
+of 1, about 50.4% gave a score of 2, 24.45% a score of 3, and so forth.<br>
+<br>
+Score...    1       2         3         4       5        6        7      8       9       10   ...<br>
+n=24:  0.6575 51.60 25.78 10.83 4.595 1.724 1.285 1.130 0.958 0.738 ...<br>
+n=25:  0.6121 51.30 25.75 11.13 4.990 1.725 1.110 0.990 0.862 0.709 ... <br>
+n=27:  0.5666 50.79 25.42 11.59 5.821 1.930 0.866 0.744 0.670 0.593 ...<br>
+n=30:  0.5091 50.40 24.45 11.96 6.881 2.589 0.823 0.477 0.438 0.401 ...<br>
+n=31:  0.4894 50.38 24.05 12.00 7.156 2.846 0.891 0.419 0.377 0.347 ...<br>
+<br>
+Note, as the only time for strategy is when writing down the initial<br>
+string S of 1&#x27;s and 0&#x27;s, if effective strategies exist the game&#x27;s outcome<br>
+depends on how S is written down.  There are dozens of ways that <br>
+can be done,  depending on when new and/or previously appended bits <br>
+are revealed and on number of bits appended at once.   Here&#x27;s an <br>
+interesting possibility:  Suppose there are p players.   Let the p-1 <br>
+non-offense players each contribute a bit; then reveal the result; <br>
+and then the offense player gets to append p-1 bits at once.  <br>
+Repeat until S has n=2*k*(p-1) bits in it, for some small k.<br>
+<br>
+-- <br>
+jiw<br>
+<br>
+<br>
+</div>
+</body>
+</html>

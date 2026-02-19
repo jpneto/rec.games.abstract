@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Nim game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Nim game</h1>
+    <p><strong>From:</strong> joc_kay@hotmail.com (Joe)<br>
+    <strong>Date:</strong> 20 Jul 2004 11:30:30 -0700</p>
+    <hr>
+    <div>torbenm@diku.dk (Torben gidius Mogensen) wrote in message news:&lt;7zk6wyzrgj.fsf@pc-032.diku.dk&gt;...<br>
+<br>
+&gt; How do you find these Groundy numbers?  Is it just the number of X&#x27;s?<br>
+<br>
+No, it&#x27;s not simply the number of X&#x27;s. For instance, the Grundy value<br>
+for<br>
+<br>
+(X X)<br>
+(X X)<br>
+<br>
+is 0. For non-trivial impartial games, computing Grundy values<br>
+constitutes a tedious task (per definition: if this computation would<br>
+be easy, the game would be trivial!), and the game under discussion is<br>
+no exception.<br>
+<br>
+The Grundy number for any position is a non-negative integer defined<br>
+recursively as:<br>
+<br>
+1) the end-position (empty board) has a Grundy value of 0.<br>
+<br>
+2) a position with a non-zero Grundy value has some follower with any<br>
+smaller Grundy value<br>
+ <br>
+&gt; Can you prove [that Grundy values of non-interacting block positions <br>
+&gt; can be added together using Nim-addition], or is it just a hypothesis?<br>
+<br>
+Non-interacting blocks constitute &#x27;parallel games&#x27; the same way as<br>
+individual Nim-heaps in the standard game of Nim constitute &#x27;parallel<br>
+games&#x27;. The only difference between standard Nim and the game A)<br>
+described above, is that an individual Nim-heap constitutes a trivial<br>
+game (with Grundy value equal to the heap size), whilst an individual<br>
+block position in game A) is all but trivial.<br>
+<br>
+Joe<br>
+<br>
+<br>
+</div>
+</body>
+</html>

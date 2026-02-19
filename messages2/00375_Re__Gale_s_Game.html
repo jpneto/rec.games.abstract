@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Gale&#x27;s Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Gale&#x27;s Game</h1>
+    <p><strong>From:</strong> mjd@saul.cis.upenn.edu (&quot;[*] Jasper Titus&quot;)<br>
+    <strong>Date:</strong> 20 Nov 92 23:18:55 GMT</p>
+    <hr>
+    <div>In article &lt;SUMMERS.92Nov20133840@sanctum.cs.utah.edu&gt; summers%sanctum.cs.utah.edu@cs.utah.edu (Jim Summers) writes:<br>
+&gt;   I&#x27;m confused here.  On any MxN board, doesn&#x27;t player 1 just have to play<br>
+&gt;   at (2, 1) to win? i.e.<br>
+<br>
+    No.  The rules of the game are exactly as follows:  (I changed your<br>
+numbering because it was bizarre)<br>
+<br>
+	1.  Choose integers M and N to be the size of your board.<br>
+<br>
+	2.  A legal move is a choice of integers (p, q), with 1&lt;=p&lt;=M<br>
+	    and 1&lt;=q&lt;=N, and such that there&#x27;s no previous move (x, y)<br>
+	    with (x&lt;=p and y&lt;=q).<br>
+<br>
+	3.  If you play (1, 1), you lose.<br>
+<br>
+So on an MxN board,<br>
+<br>
+<br>
+        1   2   3        M<br>
+	--- --- --- ...  ---<br>
+        |                    | N<br>
+<br>
+        |                    | N-1<br>
+<br>
+        |....................|<br>
+<br>
+        |                    | 2<br>
+<br>
+        |___ ___ ___ ___ ___ | 1<br>
+<br>
+<br>
+after an opening move at (2, 1),<br>
+<br>
+        1   2   3        M<br>
+	--- --- --- ...  ---<br>
+        |*** *** *** *** *** | N<br>
+<br>
+        |*** *** *** *** *** | N-1<br>
+<br>
+        |....................|<br>
+<br>
+        |111 *** *** *** *** | 2<br>
+<br>
+        |___ ___ ___ ___ ___ | 1<br>
+<br>
+<br>
+the second player can follow with (1, 2) (Since 2&gt;1)<br>
+<br>
+        1   2   3        M<br>
+	--- --- --- ...  ---<br>
+        |*** *** *** *** *** | N<br>
+<br>
+        |*** *** *** *** *** | N-1<br>
+<br>
+        |....................|<br>
+<br>
+        |111 *** *** *** *** | 2<br>
+<br>
+        |___ 222 *** *** *** | 1<br>
+<br>
+which wins.<br>
+<br>
+--<br>
+<br>
+                And for to se, and eek for to be seye<br>
+Mark-Jason Dominus 	  			    mjd@central.cis.upenn.edu <br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

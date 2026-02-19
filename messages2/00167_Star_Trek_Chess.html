@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Star Trek Chess</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Star Trek Chess</h1>
+    <p><strong>From:</strong> hansb@cs.ruu.nl (Hans Bodlaender)<br>
+    <strong>Date:</strong> Thu, 12 Nov 1992 15:59:25 GMT</p>
+    <hr>
+    <div>Here are the rules of 3D-chess. This is a repost of something already very<br>
+long ago posted on the newsnet. Have fun. This is the variant where captain<br>
+Kirk always wins from Spock. (Or did he ever lose in an episode of Star Trek?)<br>
+Enjoy!<br>
+			     Hans Bodlaender, Utrecht, the Netherlands<br>
+<br>
+==============================================================================<br>
+<br>
+    3D chess is a very interesting game. I have recently constructed a *board*  <br>
+from the details given in the _Starfleet_Technical_Reference_Manual_ (the last <br>
+appedix, I can&#x27;t remember the letter). It is a very simple game to learn. The <br>
+movement of the pieces follows the same rules as in 2D chess only with 3D <br>
+freedom of movement.<br>
+<br>
+<br>
+    The chessboard consist of three 4x4 square *levels* and four 2x2 square <br>
+*movable* levels (yes, movable). The fixed levels are arranges in a staircase <br>
+fashion with the last two rows of one level positioned directly under the <br>
+first two rows of the next. Here is a rough diagram showing the setup:<br>
+<br>
+<br>
+<br>
+                     side view                __ __  &lt;- movable<br>
+                                                |          level<br>
+                                     __ __ __ __|   <br>
+                                                <br>
+                                                  <br>
+                               __ __ __ __     &lt;- fixed<br>
+       movable   -&gt;   __ __                         levels<br>
+         levels         |                   <br>
+                        |__ __ __ __     <br>
+        top view      __ __                   __ __<br>
+                     |b_|w_|__ __ __ __ __ __|b_|w_|    &lt;-movable<br>
+   b-black square    |w_|b_|w_|b_|w_|b_|w_|b_|w_|b_|        level<br>
+   w-white square       |w_|b_|w_|b_|w_|b_|w_|b_|<br>
+                      __|b_|w_|b_|w_|b_|w_|b_|w_|__<br>
+                     |b_|w_|b_|w_|b_|w_|b_|w_|b_|w_|<br>
+                     |w_|b_|                 |w_|b_|<br>
+<br>
+<br>
+    As one can see the four movable levels are positioned at the far corners <br>
+of the first and third fixed levels. This is the starting position for the <br>
+levels. The pieces one the board are initially arranged as follows:<br>
+ (the mv-lvls are detacted for clarity)<br>
+<br>
+K - W king                                                 k - B king<br>
+Q - W queen      __ __                             __ __   q - B queen<br>
+R - W rook      |R_|P_|  __ __ __ __ __ __ __ __  |p_|r_|  r - B rook<br>
+N - W knight    |N_|P_| |B_|P_|__|__|__|__|p_|b_| |p_|n_|  n - B knight<br>
+B - W bishop            |Q_|P_|__|__|__|__|p_|q_|          b - B bishop<br>
+P - W pawn       __ __  |K_|P_|__|__|__|__|p_|k_|  __ __   p - B pawn<br>
+                |N_|P_| |B_|P_|__|__|__|__|p_|b_| |p_|n_|<br>
+                |R_|P_|                           |p_|r_|<br>
+-MOVABLE LEVELS -<br>
+    Each of the movable levels can occupy any corner of one of the three fixed<br>
+levels and oriented either up or down:<br>
+<br>
+                                     __ __ <br>
+                                       |<br>
+                            __ __ __ __|<br>
+                                       |<br>
+                                     __|__ <br>
+     <br>
+    This distinction allows for two mv-lvls to occupy the same corner as long <br>
+as one is oriented up and the other down. <br>
+    The alternating b/w color pattern is consistant through each fixed and <br>
+movable level, i. e., a black square is always directly under a blcak square <br>
+and a white square is always directly under a white square.<br>
+    <br>
+    The rules governing the movement of mv-lvls are as follows: <br>
+  <br>
+    A mv-lvl may be moved by either player only if the mv-lvl is not occupied <br>
+      by any pieces.<br>
+<br>
+    A mv-lvl may only be moved if it is empty *or* if it holds only *one* pawn <br>
+      of the *same* color as the player who wishes to move it.<br>
+<br>
+    A mv-lvl may only be made to orient down (or up) if it is not occupied and <br>
+      if the down (or up) position is not already occupied by another mv-lvl.<br>
+    <br>
+    A mv-lvl may only be moved to an ajacent(sp?) corner of the same fx-lvl or <br>
+      inverted and moved to an ajacent(sp?) corner of the next high or next <br>
+      lower fx-lvl:<br>
+                                                      mv - mv-lvl <br>
+            n                                          n - possible new<br>
+             __ __ __ __  mv   n            mv               position<br>
+            |__|__|__|__|        __ __ __ __ <br>
+            |__|__|__|__|                   n        Movement<br>
+            |__|__|__|__|                            will work either<br>
+            |__|__|__|__|                            direction<br>
+                          n                            (mv -&gt; n or n -&gt; mv)<br>
+<br>
+<br>
+                                 n<br>
+                                  __ __ __ __ <br>
+                                mv           n<br>
+                                       n<br>
+                            __ __ __ __ <br>
+                                    <br>
+    The movement, inversion, or inversion and change mv-vl all count as a <br>
+      single move just as the movement of a piece counts as a single move, <br>
+      i.e., you can move a mv-lvl(if can) or you can move a piece(if can).<br>
+<br>
+    Notice the changing of a fx-lvl requires an inversion which requires <br>
+      that the mv-lvl be unoccupied!<br>
+<br>
+<br>
+-MOVEMENT OF PIECES-<br>
+    The movement of pieces follow the same patterns as they do in standard <br>
+chess. To determine whether or not a piece may move to a given square in 3D <br>
+chess depends on two factors(other than- Is the square occupied?).<br>
+    <br>
+    First one must look at the position of the piece on the board from the <br>
+&quot;bird&#x27;s eye&quot; point of perspective. If one were to treat this view as flat, the <br>
+piece in question could move to any valid square within the limits of its <br>
+2D chess movement constraints.(diagonally only, forward only, etc.)<br>
+    Second, since this is a 3D board the movement must meet a second <br>
+condition. The piece may only move to the square in question if a 3d path can <br>
+be found such that each square the piece passes through is both unoccupied <br>
+(except of course when moving a knight) and exist, i. e. there is an <br>
+intervening(sp?) mv-lvl or the square is on a fx-lvl.<br>
+    Notice the word intervening(besides sp). This means that a piece may only <br>
+moved to a new fx-lvl if and only if the is a mv-lvl in its path.<br>
+Observe the diagram:<br>
+<br>
+  r- B rook                  x_ r_ x_ x_   &lt;=fx-lvl<br>
+  x- possible               |                 __ __ __ __ __ __ <br>
+      positions           x_ x_  &lt;=mv-lvl    |__|__|__|x_|__|__|<br>
+                                             |__|__|__|x_|__|__|<br>
+           fx-lvl=&gt;    x_ x_ x_ __           |__|__|__|x_|__|__|<br>
+                                             |x_|x_|x_|r_|x_|x_|<br>
+                                                |__|__|<br>
+<br>
+  This can lead to some interesting moves: <br>
+<br>
+  r- B rook                   __ __ __ __     __ __ __ __ __ __ <br>
+  x- new                     |               |__|__|__|__|__|__|<br>
+      position             __|g_             |__|__|__|__|__|__|<br>
+  t- path                                    |__|__|__|__|__|__|<br>
+  P- W pawn             __ x_ P_ r_          |__|x_|Pg|r_|__|__|<br>
+                                                |__|__|<br>
+<br>
+ The rook &quot;jumped over&quot; the pawn.<br>
+<br>
+<br>
+    General notes-<br>
+    <br>
+    One will notice that when playing 3D chess it will take a considerable <br>
+amount of time just to move to the neutral level(the fx-lvls are referred to <br>
+as the white, neutral, and black levels -- the lower, middle, and upper <br>
+respectivly), in fact longer for black(can the reader guess why?). But after <br>
+that phase of the game is reached the game can become very complex, very <br>
+quickly. After a few games one can see how 3D chess can improve starship <br>
+tactics and inspire three-dimensional thinking (Khan&#x27;s deficiency and <br>
+undoing).<br>
+<br>
+    Though of course the hardest thing about 3D chess I have found (next to <br>
+finding a board- I build mine) is finding players. That is why I am posting <br>
+this in both rec.arts.startrek and rec.games.chess. <br>
+<br>
+    I would welcome any takers not to mention suggustions for a standardized <br>
+notation for 3d chess- for record purposes and/or 3dchess by mail.<br>
+<br>
+    Most of this I had to deduce out of what was inferred in the _Tech_Man_. <br>
+They didn&#x27;t mention specifics on some movement possiblities and left alot up <br>
+to interpretation. If any one else has read the _Tech_Man_ section I would <br>
+welcome comments in rec.games.chess.<br>
+<br>
+==============================================================================<br>
+&quot;A towel is the most     |               |  James Dixson  <br>
+   useful thing a        |   &quot;He&#x27;s dead  |    undgrad n Astronomy<br>
+ Hitchhiker can have.&quot;   |        Jim&quot;   |  University of Texas at Austin<br>
+         -Hitchhiker&#x27;s   |               |  Astronomy Dept<br>
+             Guide       |               |<br>
+==============================================================================<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

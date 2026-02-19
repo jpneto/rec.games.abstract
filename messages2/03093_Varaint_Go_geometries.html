@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Varaint Go geometries</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Varaint Go geometries</h1>
+    <p><strong>From:</strong> jte@primenet.com (Edward Jackman)<br>
+    <strong>Date:</strong> 22 09 1995 00:00:00 GMT</p>
+    <hr>
+    <div>Does anyone have any information about GO played on a hexagonal,<br>
+triangular, <br>
+pentagonal or other non-orthogonal boards?  <br>
+ <br>
+I recently started playing some GO variants on a hexagonal board.<br>
+Stones <br>
+are placed on spaces rather than points. A single stone on a non-edge,<br>
+<br>
+non-corner space has 6 liberties rather than 4. Games can be played <br>
+on the vertices instead -- then there are 3 liberties per point. Has  <br>
+anyone played GO on boards like this or other non-standard geometries?<br>
+<br>
+Do the games work as well as standard Go or are there some problems? <br>
+ <br>
+ <br>
+Below is a comparison of the different board geometries as far as  <br>
+number of liberties and number of stones needed to form live groups. <br>
+(If you can reduce any of these numbers I&#x27;d like to know.) <br>
+ <br>
+ <br>
+ <br>
+STANDARD GO on a square lattice <br>
+ <br>
+Number of liberties:            Number of stones to form 2 eyed group:<br>
+<br>
+...in the center-- 4            ...in the center--10 <br>
+...on the edge  -- 3            ...on the edge  -- 8 <br>
+...in the corner-- 2            ...in the corner-- 6 <br>
+ <br>
+- - - - - - - - -               - x - x - - - - - <br>
+- - - - - - - - -               x x x x - - - x x <br>
+- - - - - o - - -               - - - - - - - x - <br>
+o - - - o x o - -               - - - - - - - x x <br>
+x o - - - o - - -               - - - x x - - x - <br>
+o - - - - - - - -               - x x - x - - x x <br>
+- - - - - - - - -               - x - x x - - - - <br>
+o - - - - - - - -               - x x - - - - - - <br>
+x o - - - - - - -               - - - - - - - - - <br>
+ <br>
+ <br>
+HEXAGONAL GO (played on the SPACES of an array of regular HEXAGONS) <br>
+ <br>
+Number of liberties:            Number of stones to form 2 eyed group:<br>
+<br>
+...in the center-- 6            ...in the center--10 <br>
+...on the edge  -- 4            ...on the edge  -- 7 <br>
+...in the corner-- 3            ...in the corner-- 6 <br>
+                                                    <br>
+      - - o x o - -                   - x - x - - - <br>
+     - - - o o - - -                 x x x x - - - -  <br>
+    - - - - - - - - -               - - - - - - - - - <br>
+   - - - - - - - - - -             - - - - - - - - - - <br>
+  - - - - - - - - - - -           - - - - x x - - - - - <br>
+ o - - - - o o - - - - -         - - - - x - x x - - - - <br>
+x o - - - o x o - - - - -       - - - - - x x - x - - - - <br>
+ o - - - - o o - - - - -         x x - - - - x x - - - - <br>
+  - - - - - - - - - - -           - x - - - - - - - - - <br>
+   - - - - - - - - - -             x x - - - - - - - -  <br>
+    - - - - - - - - -               - x - - - - - - - <br>
+     - - - - - - - -                 x - - - - - - -  <br>
+      - - - - - - -                   - - - - - - - <br>
+     <br>
+ <br>
+TRIANGULAR GO (played on the VERTICES of an array of regular HEXAGONS <br>
+               or the SPACES of an array of EQUILATERAL TRIANGLES --  <br>
+               topologically equivalent.) <br>
+ <br>
+Number of liberties:           |  Number of stones to form 2 eyed<br>
+group: <br>
+...in the center-- 3           |  ...in the center--10 (3 eyes) <br>
+...on the edge  -- 2           |  ...on the edge  -- 7 (3 eyes) <br>
+...in the corner-- 2           |  ...in the corner-- 7 (3 eyes) <br>
+                               | <br>
+             x  o              |               -  x  <br>
+         -  o    -  -          |           -  x    x  -              <br>
+     -  -    -  -    -  -      |       -  x    -  x    -  - <br>
+ -  -    -  -    -  -    -  -  |   -  -    x  x    -  -    -  -<br>
+<br>
+-    -  -    -  -    -  -    - |  -    -  -    -  -    -  -    -<br>
+<br>
+ -  -    -  -    -  -    -  -  |   x  x    -  -    x  x    -  - <br>
+-    -  -    -  o    -  -    - |  -    x  -    -  x    -  x    - <br>
+ o  -    -  -    x  o    -  -  |   x  -    -  -    -  x    x  - <br>
+x    -  -    -  o    -  -    - |  -    x  -    -  x    -  x    - <br>
+ o  -    -  -    -  -    -  -  |   x  x    -  -    x  x    -  - <br>
+-    -  -    -  -    -  -    - |  -    -  -    -  -    -  -    - <br>
+ -  -    -  -    -  -    -  -  |   -  -    -  -    -  -    -  - <br>
+     -  -    -  -    -  -      |       -  -    -  -    -  -  <br>
+         -  -    -  -          |           -  -    -  -  <br>
+             -  -              |               -  -   <br>
+                               |  <br>
+ <br>
+(Another way to make the grids for HexGo             +---+---+---+ <br>
+or TriGo is to use squares with each row            |   |   |   | <br>
+shifted by half a square. Play on spaces           +-+-+-+-+-+-+-+-+ <br>
+for Hex Go and on the vertices                     |   |   |   |   | <br>
+(the plusses) for TriGo:                        +-+-+-+-+-+-+-+-+-+-+ <br>
+                                                 |   |   |   |   |   |<br>
+<br>
+                                                 +-+-+-+-+-+-+-+-+-+-+<br>
+<br>
+                                                   |   |   |   |   | <br>
+                                                   +-+-+-+-+-+-+-+-+<br>
+<br>
+                                                     |   |   |   | <br>
+                                                     +-+-+-+-+-+-+  )<br>
+<br>
+   <br>
+Besides the three uniform arrays of regular polygons, there are <br>
+many other arrays suitable for GO and GO-like games. <br>
+ <br>
+There are many arrays of irregular pentagons in which each space is <br>
+adjacent to 5 others. For example, these three board are equivalent: <br>
+ <br>
+ <br>
+  +---+---+---+---+---+                        <br>
+  |   |   |   |   |   |    Play is on spaces. <br>
+  +   +   +   +   +   +                           <br>
+ / \ / \ / \ / \ / \ / \   Each non-edge space shares an edge  <br>
++   +   +   +   +   +   +  with 5 others.<br>
+<br>
+|   |   |   |   |   |   |   <br>
++---+---+---+---+---+---+  Each non-edge vertex is connected to  <br>
+|   |   |   |   |   |   |  3 or 4 others. <br>
++   +   +   +   +   +   + <br>
+ \ / \ / \ / \ / \ / \ / <br>
+  +   +   +   +   +   + <br>
+  |   |   |   |   |   | <br>
+  +---+---+---+---+---+ <br>
+    <br>
+   +-----+-----+-----+-----+ <br>
+  / \   / \   / \   / \   / \   Play on VERTICES.<br>
+<br>
+ /   \ /   \ /   \ /   \ /   \                      <br>
++-----+-----+-----+-----+-----+  <br>
+|     |     |     |     |     | Each non-edge vertex is connected   <br>
+|     |     |     |     |     | to 5 others. <br>
++-----+-----+-----+-----+-----+  <br>
+ \   / \   / \   / \   / \   /  Each non-edge space shares and edge<br>
+with <br>
+  \ /   \ /   \ /   \ /   \ /   3 or 4 others. <br>
+   +-----+-----+-----+-----+ <br>
+   <br>
+  +---+---+---+---+---+ <br>
+  |   |   |   |   |   |    Play is on spaces. <br>
++-+-+-+-+-+-+-+-+-+-+-+-+ <br>
+|   |   |   |   |   |   | <br>
++-+-+---+---+---+---+---+ <br>
+|   |   |   |   |   |   | <br>
++-+-+-+-+-+-+-+-+-+-+-+-+ <br>
+  |   |   |   |   |   | <br>
+  +-- +---+---+---+---+  <br>
+ <br>
+ <br>
+PENTAGONAL GO I <br>
+ <br>
+Number of liberties: <br>
+...in the center-- 5 <br>
+...on the edge  -- 3 or 4  <br>
+...in the corner-- 3 <br>
+ <br>
+  +---+---+---+---+---+---+---+---+ <br>
+  |   | o | x | o |   |   |   |   | <br>
++---+---+---+---+---+---+---+---+---+ <br>
+|   |   | o | o |   |   |   |   |   | <br>
++---+---+---+---+---+---+---+---+---+ <br>
+|   |   |   |   |   | o | o |   |   | <br>
++---+---+---+---+---+---+---+---+---+ <br>
+  |   |   |   |   | o | x | o |   | <br>
+  +---+---+---+---+---+---+---+---+ <br>
+  | o |   |   |   |   | o |   |   | <br>
++---+---+---+---+---+---+---+---+---+ <br>
+|x  | o |   |   |   |   |   |   |   | <br>
++---+---+---+---+---+---+---+---+---+ <br>
+| o |   |   |   |   |   |   | o | o | <br>
++---+---+---+---+---+---+---+---+---+ <br>
+  |   |   |   |   |   |   | o | x | <br>
+  +---+---+---+---+---+---+---+---+ <br>
+ <br>
+ <br>
+ Number of stones to form 2 eyed group: <br>
+...in the center-- 8 <br>
+...on the edge  -- 6 <br>
+...in the corner-- 5 <br>
+ <br>
+  +---+---+---+---+---+---+---+---+ <br>
+  |   |   |   | x | x |   |   |   | <br>
++---+---+---+---+---+---+---+---+---+ <br>
+|   |   |   | x |   | x |   |   |   | <br>
++---+---+---+---+---+---+---+---+---+ <br>
+|   |   | x |   | x |   |   |   |   | <br>
++---+---+---+---+---+---+---+---+---+ <br>
+  |   |   | x | x |   |   | x | x | <br>
+  +---+---+---+---+---+---+---+---+ <br>
+  | x |   |   |   |   |   | x |   | <br>
++---+---+---+---+---+---+---+---+---+ <br>
+|   | x |   |   |   |   |   | x | x | <br>
++---+---+---+---+---+---+---+---+---+ <br>
+| x | x |   |   |   |   |   | x |   | <br>
++---+---+---+---+---+---+---+---+---+ <br>
+  |   | x |   |   |   |   |   | x | <br>
+  +---+---+---+---+---+---+---+---+ <br>
+ <br>
+ <br>
+Here&#x27;s a board based on a completely different pentagonal array that <br>
+has a different topology: <br>
+ <br>
+PENTAGONAL GO II <br>
+ <br>
+                              . + .       <br>
+                          . +       + .   <br>
+                        +    \     /    + <br>
+                        |     +---+     | <br>
+                      . + .  /     \  . + .  <br>
+                  . +       + .   . +       + .   <br>
+                +    \     /    +    \     /    +  <br>
+                |     +---+     |     +---+     |  <br>
+              . + .  /     \  . + .  /     \  . + .  <br>
+          . +       + .   . +       + .   . +       + .   <br>
+        +    \     /    +    \     /    +    \     /    + <br>
+        |     +---+     |     +---+     |     +---+     | <br>
+      . + .  /     \  . + .  /     \  . + .  /     \  . + .  <br>
+  . +       + .   . +       + .   . +       + .   . +       + . <br>
++    \     /    +    \     /    +    \     /    +    \     /    +<br>
+<br>
+|     +---+     |     +---+     |     +---+     |     +---+     | <br>
++ .  /     \  . + .  /     \  . + .  /     \  . + .  /     \  . + <br>
+    + .   . +       + .   . +       + .   . +       + .  .  + <br>
+        +    \     /    +    \     /    +    \     /    + <br>
+        |     +---+     |     +---+     |     +---+     | <br>
+        + .  /     \  . + .  /     \  . + .  /     \  . + <br>
+            + .   . +       + .   . +       + .   . + <br>
+                +    \     /    +    \     /    +      <br>
+                |     +---+     |     +---+     | <br>
+                + .  /     \  . + .  /     \  . +   <br>
+                    + .   . +       + .   . +               <br>
+                        +    \     /    +                   <br>
+                        |     +---+     |                   <br>
+                        + .  /     \  . +                    <br>
+                            + .   . +                      <br>
+                                +    <br>
+ <br>
+All of the pentagons are congruent and EQUILATERAL. The array below <br>
+is easier to make but has the same connectivity: <br>
+ <br>
+                        +---+---+---+---+                     <br>
+                        |   |       |   |                      <br>
+                        |   +-------+   |                        <br>
+                        |   |       |   |                     <br>
+                +---+---+---+---+---+---+---+---+             <br>
+                |   |       |   |   |       |   |               <br>
+                |   +-------+   |   +-------+   |              <br>
+                |   |       |   |   |       |   |               <br>
+        +---+---+---+---+---+---+---+---+---+---+---+---+     <br>
+        |   |       |   |   |       |   |   |       |   |      <br>
+        |   +-------+   |   +-------+   |   +-------+   |     <br>
+        |   |       |   |   |       |   |   |       |   |     <br>
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+ <br>
+|   |       |   |   |       |   |   |       |   |   |       |   | <br>
+|   +-------|   |   +-------+   |   +-------+   |   +-------+   | <br>
+|   |       |   |   |       |   |   |       |   |   |       |   | <br>
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+ <br>
+        |   |       |   |   |       |   |   |       |   |     <br>
+        |   +-------+   |   +-------+   |   +-------+   |     <br>
+        |   |       |   |   |       |   |   |       |   |     <br>
+        +---+---+---+---+---+---+---+---+---+---+---+---+     <br>
+                |   |       |   |   |       |   |               <br>
+                |   +-------+   |   +-------+   |              <br>
+                |   |       |   |   |       |   |               <br>
+                +---+---+---+---+---+---+---+---+             <br>
+                        |   |       |   |                      <br>
+                        |   +-------+   |                        <br>
+                        |   |       |   |                     <br>
+                        +---+---+---+---+                     <br>
+ <br>
+An even simpler board can be used which could <br>
+be called DOMINO GO: <br>
+ <br>
++---+---+-------+---+---+-------+---+---+-------+ <br>
+|   |   |       |   |   |       |   |   |       | <br>
+|   |   +-------+   |   +-------+   |   +-------+ <br>
+|   |   |       |   |   |       |   |   |       | <br>
++---+---+-------+---+---+-------+---+---+-------+ <br>
+|       |   |   |       |   |   |       |   |   | <br>
++-------+   |   +-------+   |   +-------+   |   | <br>
+|       |   |   |       |   |   |       |   |   | <br>
++---+---+-------+---+---+-------+---+---+-------+ <br>
+|   |   |       |   |   |       |   |   |       | <br>
+|   |   +-------+   |   +-------+   |   +-------+ <br>
+|   |   |       |   |   |       |   |   |       | <br>
++---+---+-------+---+---+-------+---+---+-------+ <br>
+|       |   |   |       |   |   |       |   |   | <br>
++-------+   |   +-------+   |   +-------+   |   | <br>
+|       |   |   |       |   |   |       |   |   | <br>
++---+---+-------+---+---+-------+---+---+-------+ <br>
+ <br>
+ <br>
+I&#x27;ve pointed out the connectivity difference between PentaGO I and II <br>
+below:    <br>
+   <br>
+  +---+---+---+---+---+ <br>
+  |   | 1 | 1 |   |   |   <br>
++-+-+-+-+-+-+-+-+-+-+-+-+ <br>
+|   | 1 | x | 1 |   |   | <br>
++-+-+---+---+---+---+---+     &lt;--Four of x&#x27;s liberties are adjacent <br>
+|   |   | 2 |   |   |   |        to each other. This is always the case <br>
++-+-+-+-+-+-+-+-+-+-+-+-+        in this array. <br>
+  |   |   |   |   |   | <br>
+  +-- +---+---+---+---+  <br>
+ <br>
++---+---+-------+---+---+ <br>
+|   |   |   1   |   |   | <br>
+|   | 1 +-------+ 1 |   +     &lt;--Only three of x&#x27;s liberties are <br>
+|   |   |   x   |   |   |        adjacent to each other; the other two <br>
++---+---+-------+---+---+        are paired off by themselves. This is<br>
+<br>
+|       |   |   |       |        always the case in this array. <br>
++-------+ 2 | 2 +-------+ <br>
+|       |   |   |       | <br>
++---+---+-------+---+---+ <br>
+ <br>
+ <br>
+ <br>
+There are dozens of other nice hexagonal, triangular, quadrilateral <br>
+and pentagonal arrays on which GO and GO variants can be played. <br>
+Example:        <br>
+ <br>
+RHOMBOIDAL GO (Played on the spaces of an array of rhombus&#x27; <br>
+              with 120 and 60 degree angles.) <br>
+    <br>
+Each non-edge space is adjacent to 4 others. Each <br>
+non-edge vertex is connected either 3 or 6 others. <br>
+ <br>
+ <br>
+                         +-----+ <br>
+                        / \     \ <br>
+                       /   \     \ <br>
+                +-----+     +-----+-----+             <br>
+               / \     \   /     / \     \                        <br>
+              /   \     \ /     /   \     \                        <br>
+       +-----+     +-----+-----+     +-----+-----+               <br>
+      / \     \   /     / \     \   /     / \     \                  <br>
+     /   \     \ /     /   \     \ /     /   \     \               <br>
+    +     +-----+-----+     +-----+-----+     +-----+                <br>
+     \   /     / \     \   /     / \     \   /     /               <br>
+      \ /     /   \     \ /     /   \     \ /     /                 <br>
+       +-----+     +-----+-----+     +-----+-----+              <br>
+      / \     \   /     / \     \   /     / \     \                  <br>
+     /   \     \ /     /   \     \ /     /   \     \               <br>
+    +     +-----+-----+     +-----+-----+     +-----+                <br>
+     \   /     / \     \   /     / \     \   /     /               <br>
+      \ /     /   \     \ /     /   \     \ /     /                 <br>
+       +-----+     +-----+-----+     +-----+-----+<br>
+<br>
+      / \     \   /     / \     \   /     / \     \                <br>
+     /   \     \ /     /   \     \ /     /   \     \             <br>
+    +     +-----+-----+     +-----+-----+     +-----+                <br>
+     \   /     / \     \   /     / \     \   /     /               <br>
+      \ /     /   \     \ /     /   \     \ /     /                 <br>
+       +-----+     +-----+-----+     +-----+-----+              <br>
+              \   /     / \     \   /     /                          <br>
+               \ /     /   \     \ /     /                         <br>
+                +-----+     +-----+-----+                            <br>
+                       \   /     /                                 <br>
+                        \ /     /                                   <br>
+                         +-----+<br>
+<br>
+ <br>
+================================================================= <br>
+ <br>
+Summary: <br>
+ <br>
+Board:      Square   Hex  Triangle  Pent I   Pent II  Domino  Rhombus <br>
+ <br>
+Liberties <br>
+ Center       4       6     3        5         5        5      4 <br>
+ Edge         3       4     2        3, 4      3, 4     3, 4   3 <br>
+ Corner       2       3     2        3         2, 3     2      2 <br>
+ <br>
+Live Group                    <br>
+ Center      10      10    10        8         8        8      8 <br>
+ Edge         8       7     7        7         7        6      4, 8 <br>
+ Corner       6       6     7        5         5, 6     4      4 <br>
+ <br>
+(Values for edges and corners vary depending on the shape of the<br>
+board. <br>
+These are the values for the board shapes I&#x27;ve given.) <br>
+ <br>
+Edward Jackman<br>
+ <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

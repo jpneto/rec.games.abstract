@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>No Subject</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>No Subject</h1>
+    <p><strong>From:</strong> Unknown Sender<br>
+    <strong>Date:</strong> 29 11 1997 00:00:00 GMT</p>
+    <hr>
+    <div>papers or even books on the topic.  I saw one formula posted that<br>
+included a variable for &quot;cube liveness&quot;, ranging from 0 to 1, but I<br>
+haven&#x27;t really seen a way of evaluating that factor from a position.<br>
+(Well, other than computing the double/take points and using the<br>
+formula to backwards evaluate to obtain the cube-life factor!)<br>
+<br>
+Incidentally, you might be able to generate results more efficiently<br>
+if you do it in closed form rather than running millions of trial<br>
+games.  E.g., 21-position cubeless tug-o-dice solves exactly to the<br>
+following winning chances for the lefthand player when he is on roll:<br>
+<br>
+1.00000000000000<br>
+0.982589078078851<br>
+0.958273788065857<br>
+0.92637604048044<br>
+0.886410327324467<br>
+0.838111010122393<br>
+0.781446566766625<br>
+0.734031826772428<br>
+0.68530531545864<br>
+0.635929279940424<br>
+0.586400581664826<br>
+0.536966468589429<br>
+0.487642698621792<br>
+0.438250807960698<br>
+0.388953971492077<br>
+0.339986660134605<br>
+0.289795903212444<br>
+0.239794278935837<br>
+0.191386485512501<br>
+0.145891740077965<br>
+0.104465531526895<br>
+<br>
+These were obtained by generating equations giving the chance of winning<br>
+as a function of the position resulting after each possible roll.  E.g.,<br>
+from position 8 you can reach positions 2-7 with probability 1/6 each,<br>
+and the left player&#x27;s chances from those positions are 1 minus the right<br>
+player&#x27;s chances from 15-20.  Set up 21 equations in 21 unknowns and<br>
+solve!<br>
+<br>
+Adding double/redouble/take strategies would up the number of variables<br>
+by adding the state of the cube, but it&#x27;s still tractible.  Plus there&#x27;s<br>
+enough structure to the problem that I&#x27;m sure it can be analysed by more<br>
+sophisticated means, too.<br>
+<br>
+	-- Don.<br>
+<br>
+-------------------------------------------------------------------------------<br>
+-- <br>
+-- Don Woods (don@clari.net)		        ClariNet provides on-line news.<br>
+-- http://www.clari.net/~don		        I provide personal opinions.<br>
+--<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

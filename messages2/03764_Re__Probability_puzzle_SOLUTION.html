@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Probability puzzle SOLUTION</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Probability puzzle SOLUTION</h1>
+    <p><strong>From:</strong> &quot;Kjell Hasthi&quot; &lt;hasthi@online.no&gt;<br>
+    <strong>Date:</strong> 23 11 1997 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+Is close combat a special case?<br>
+<br>
+Should the answer be 80 % at very close distant (I have indicated myself).<br>
+It isn&#x27;t that easy either because the 80 % was stated distance-independent.<br>
+<br>
+I changed my simulation program to handle close combat situations, and I<br>
+have chosen some reasonable values for HitChance and KillChance.<br>
+<br>
+---------------------<br>
+Testing the close combat case where the american always have the first turn<br>
+and 2 shots, these values were used:<br>
+<br>
+     AmericanHitChance = 0.90;<br>
+     AmericanKillChance = 0.30;<br>
+     AmericanFirerate  = 2.0;      <br>
+     NaziHitChance     = 0.90;<br>
+     NaziKillChance    = 0.243;<br>
+     NaziFirerate      = 1.0;<br>
+<br>
+Firesequence used: am, nazi, am, nazi .... This is the initial case, giving<br>
+80 %. When you changed american firerate to 4 the winning chance becomes 92<br>
+%. See programcode A.<br>
+<br>
+---------------------<br>
+Testing the close combat case where the nazi always have the first turn and<br>
+1 shot, these values were used:<br>
+<br>
+     AmericanHitChance = 0.90;<br>
+     AmericanKillChance = 0.30;<br>
+     AmericanFirerate  = 2.0;      <br>
+     NaziHitChance     = 0.90;<br>
+     NaziKillChance    = 0.127;<br>
+     NaziFirerate      = 1.0;<br>
+<br>
+Firesequence used: nazi, am, nazi, am .... This is the initial case, giving<br>
+80 %. When you changed american firerate to 4 the winning chance becomes 86<br>
+%. See programcode B.<br>
+<br>
+<br>
+A simple average of these cases gives 89 %. This simulation gives as result<br>
+89 % also at close distance, indicating a direct relation between winning<br>
+chance and firepower at close distance too (which surprices me a bit).<br>
+<br>
+<br>
+Kuo wrote:<br>
+&gt; You are a perfect shot--you hit _all_ the time.<br>
+<br>
+I cannot test his hitchance values because I cannot translate 100 % into<br>
+odds.<br>
+<br>
+The problem about using 100 % or 0 % (something that is very rare in<br>
+practical statistics - in this case you could say that if you know for sure<br>
+that an atomic bomb exploded just above the nazi, then it is 100 % sure<br>
+that he was killed. If I didn&#x27;t know for sure that the bomb actually<br>
+exploded, I would not bet my head on him being dead). I think this question<br>
+should be of general interest so I will a general answer to that (not<br>
+here).<br>
+<br>
+The simulation program is hardly more than a mathematic formula. Here you<br>
+can check every assumptions and details.<br>
+<br>
+<br>
+Kjell / Norway<br>
+<br>
+<br>
+<br>
+Simulation A.<br>
+Simulation of turn by turn. Firesequence is: am, nazi, am, nazi ....<br>
+<br>
+procedure TForm1.Button1Click(Sender: TObject);<br>
+const<br>
+     AmericanHitChance = 0.90;<br>
+     AmericanKillChance = 0.30;<br>
+     AmericanFirerate  = 4.0;       give 92 %<br>
+     NaziHitChance     = 0.90;<br>
+     NaziKillChance    = 0.243;<br>
+     NaziFirerate      = 1.0;<br>
+var<br>
+   turn, shot: Integer;<br>
+   AmericansAlive, AmericansKilled: Single;<br>
+   NazisAlive, NazisKilled: Single;<br>
+   RemainingDuels: Single;<br>
+begin<br>
+     AmericansAlive := 1000.0;<br>
+     NazisAlive := 1000.0;<br>
+     RemainingDuels := 1000.0;<br>
+     for turn := 1 to 6 do<br>
+     begin<br>
+          for shot := 1 to Round(AmericanFirerate) do<br>
+          begin<br>
+               NazisKilled := RemainingDuels * AmericanHitChance *<br>
+                          AmericanKillChance;<br>
+               NazisAlive := NazisAlive - NazisKilled;<br>
+               if NazisAlive &lt; AmericansAlive then<br>
+                        RemainingDuels := NazisAlive<br>
+               else RemainingDuels := AmericansAlive;<br>
+          end;<br>
+          AmericansKilled := RemainingDuels * NaziHitChance *<br>
+                          NaziKillChance * NaziFirerate;<br>
+          AmericansAlive := AmericansAlive - AmericansKilled;<br>
+          if NazisAlive &lt; AmericansAlive then<br>
+                        RemainingDuels := NazisAlive<br>
+          else RemainingDuels := AmericansAlive;<br>
+     end;<br>
+     Label1.Caption := FloatToStr( AmericansAlive) + &#x27;    &#x27; +<br>
+                    FloatToStr( NazisAlive);<br>
+<br>
+     Label2.Caption := &#x27;Winning chance = &#x27; + FloatToStr( 100.0 * (1000 -<br>
+NazisAlive) /<br>
+                    ((1000.0 - NazisAlive) + (1000.0 -  AmericansAlive))) +<br>
+&#x27; %&#x27;;<br>
+     { Winning chance = 100 * NazisKilled/(NazisKilled + AmericansKilled }<br>
+     Label3.Caption := &#x27;Odds = &#x27; + FloatToStr( (1000.0 - NazisAlive) /<br>
+(1000.0 -  AmericansAlive));<br>
+      {  Winning odds = NazisKilled : AmericansKilled   }<br>
+end;<br>
+<br>
+<br>
+Simulation B.<br>
+Simulation of turn by turn. Firesequence is: nazi, am, nazi, am ....<br>
+<br>
+procedure TForm1.Button1Click(Sender: TObject);<br>
+const<br>
+     AmericanHitChance = 0.90;<br>
+     AmericanKillChance = 0.30;<br>
+     AmericanFirerate  = 4.0;        gives 86 %<br>
+     NaziHitChance     = 0.90;<br>
+     NaziKillChance    = 0.127;<br>
+     NaziFirerate      = 1.0;<br>
+var<br>
+   turn, shot: Integer;<br>
+   AmericansAlive, AmericansKilled: Single;<br>
+   NazisAlive, NazisKilled: Single;<br>
+   RemainingDuels: Single;<br>
+begin<br>
+     AmericansAlive := 1000.0;<br>
+     NazisAlive := 1000.0;<br>
+     RemainingDuels := 1000.0;<br>
+     for turn := 1 to 6 do<br>
+     begin<br>
+          AmericansKilled := RemainingDuels * NaziHitChance *<br>
+                          NaziKillChance * NaziFirerate;<br>
+<br>
+          AmericansAlive := AmericansAlive - AmericansKilled;<br>
+          if NazisAlive &lt; AmericansAlive then<br>
+                        RemainingDuels := NazisAlive<br>
+          else RemainingDuels := AmericansAlive;<br>
+<br>
+          for shot := 1 to Round(AmericanFirerate) do<br>
+          begin<br>
+               NazisKilled := RemainingDuels * AmericanHitChance *<br>
+                          AmericanKillChance;<br>
+               NazisAlive := NazisAlive - NazisKilled;<br>
+               if NazisAlive &lt; AmericansAlive then<br>
+                        RemainingDuels := NazisAlive<br>
+               else RemainingDuels := AmericansAlive;<br>
+          end;<br>
+     end;<br>
+     Label1.Caption := FloatToStr( AmericansAlive) + &#x27;    &#x27; +<br>
+                    FloatToStr( NazisAlive);<br>
+<br>
+     Label2.Caption := &#x27;Winning chance = &#x27; + FloatToStr( 100.0 * (1000 -<br>
+NazisAlive) /<br>
+                    ((1000.0 - NazisAlive) + (1000.0 -  AmericansAlive))) +<br>
+&#x27; %&#x27;;<br>
+     { Winning chance = 100 * NazisKilled/(NazisKilled + AmericansKilled }<br>
+     Label3.Caption := &#x27;Odds = &#x27; + FloatToStr( (1000.0 - NazisAlive) /<br>
+(1000.0 -  AmericansAlive));<br>
+      {  Winning odds = NazisKilled : AmericansKilled   }<br>
+end;<br>
+<br>
+<br>
+Isaac Kuo  wrote:<br>
+&gt; This &quot;solution&quot; is dead wrong.<br>
+<br>
+Isaac Kuo  wrote (in earlier message):<br>
+&gt; Consider this concrete example:<br>
+<br>
+&gt; Both sides take turns shooting, but it&#x27;s 50-50 who shoots first.<br>
+&gt; The Nazi is a bad shot--he only hits 40% of the time with his burst.<br>
+&gt; You are a perfect shot--you hit _all_ the time.<br>
+<br>
+&gt; The chances of victory with 2 shot bursts?  80%.  (The Nazi has a<br>
+&gt; 50% chance of shooting first, and thus a 20% chance of hitting<br>
+&gt; you with the first burst.  Any other result is a dead Nazi.)<br>
+<br>
+&gt; The chances of victory with 4 shot bursts?  80%.  Same thing as before.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

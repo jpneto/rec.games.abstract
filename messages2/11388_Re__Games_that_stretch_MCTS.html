@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Games that stretch MCTS</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Games that stretch MCTS</h1>
+    <p><strong>From:</strong> Greg &lt;dreamwafer@yahoo.com&gt;<br>
+    <strong>Date:</strong> Thu, 24 Feb 2011 11:59:33 -0800 (PST)</p>
+    <hr>
+    <div>On Feb 24, 12:26 pm, Greg &lt;dreamwa...@yahoo.com&gt; wrote:<br>
+&gt; On Feb 24, 3:25 am, Cameron Browne &lt;cambol...@googlemail.com&gt; wrote:<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt; &gt; Thanks guys!<br>
+&gt;<br>
+&gt; &gt; Mark: Flume does indeed look applicable on a number of counts;<br>
+&gt; &gt; composite moves, large branching factor and the immediate reward of<br>
+&gt; &gt; each move is not obvious. Would you say that the complexity of the<br>
+&gt; &gt; moves gives it low in clarity?<br>
+&gt;<br>
+&gt; &gt; Christian: Yes MCTS is revolutionising AI for a lot of games, we might<br>
+&gt; &gt; be seeing a paradigm shift away from alpha-beta search.<br>
+&gt;<br>
+&gt; &gt; Greg: Thanks I&#x27;ll check out Cluster. UCT tends to play poorly in most<br>
+&gt; &gt; cases unless tweaked or enhanced with domain knowledge - do you think<br>
+&gt; &gt; this was more pronounced than usual with Cluster?<br>
+&gt;<br>
+&gt; &gt; I&#x27;ve also wondered why there have been no publications on UCT for<br>
+&gt; &gt; Chess - that&#x27;s usually the first game that AI researchers attack!<br>
+&gt; &gt; Presumably the results are not good, and the Chess AIs these days are<br>
+&gt; &gt; so good that there&#x27;d be no comparison. I guess the more subgoals or<br>
+&gt; &gt; strategies that a game requires to be played well, then the more<br>
+&gt; &gt; domain knowledge has to be incorporated if UCT is to work; perhaps I<br>
+&gt; &gt; should be looking at the distinction between tactical and strategic<br>
+&gt; &gt; games.<br>
+&gt;<br>
+&gt; &gt; Cameron<br>
+&gt; Cameron wrote:<br>
+&gt;<br>
+&gt; [Greg: Thanks I&#x27;ll check out Cluster. UCT tends to play poorly in<br>
+&gt; most<br>
+&gt; cases unless tweaked or enhanced with domain knowledge - do you think<br>
+&gt; this was more pronounced than usual with Cluster? ]<br>
+&gt;<br>
+&gt; Without adding significant domain knowledge, yes.<br>
+&gt;<br>
+&gt; Games which UCT excel at seem to be reduction games where the moves<br>
+&gt; tend to diminish and/or there is some &quot;force&quot; driving the game to an<br>
+&gt; end.<br>
+&gt; As an observation, many (if not most) of Mark Steere&#x27;s games seem to<br>
+&gt; have that property so perhaps Mark has created fertile territory for<br>
+&gt; UCT :).<br>
+&gt;<br>
+&gt; Contrast that with positional games which can stalemate.  I&#x27;ll make an<br>
+&gt; arguable and brash statement that, in general, if a game can end in a<br>
+&gt; draw (typically with pieces cycling around the board to no end), then<br>
+&gt; it&#x27;s likely not a good fit for UCT since I believe UCT will have a<br>
+&gt; hard time finding the narrow line(s) of play which leads to a win.<br>
+&gt; UCT &quot;wants&quot; the search space to be cone shaped tapering at the end, it<br>
+&gt; doesn&#x27;t like &quot;needle in the haystack&quot; end games where the ratio of<br>
+&gt; wins &amp; losses to the remaining search space is small.<br>
+&gt;<br>
+&gt; Here&#x27;s another thought.  Positional games like Chess can be<br>
+&gt; problematic due to the heavy demand on move generation during<br>
+&gt; playouts.  One could randomly select a piece and select from the<br>
+&gt; potential moves for the single piece.  However, that leads to biases<br>
+&gt; since not all pieces have the same number of moves available to them<br>
+&gt; so pieces which have many moves will tend to be under represented in<br>
+&gt; the playouts.  This applies to other games as well.  An unbiased and<br>
+&gt; fast playout method is a huge bonus.  As you well know, connection<br>
+&gt; games lend themselves to quick playout methods, but that advantage<br>
+&gt; doesn&#x27;t appear to generalize to the broader class of games.<br>
+&gt; (e.g. a &quot;random fillout&quot; of pieces in Chess would probably not make<br>
+&gt; much sense)<br>
+&gt;<br>
+&gt; -- Greg- Hide quoted text -<br>
+&gt;<br>
+&gt; - Show quoted text -<br>
+<br>
+I forgot to mention that there&#x27;s an Axiom Cluster game available for<br>
+download at the board game geek site.<br>
+<br>
+-- Greg<br>
+<br>
+<br>
+</div>
+</body>
+</html>

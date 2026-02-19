@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Othello - move ordering question</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Othello - move ordering question</h1>
+    <p><strong>From:</strong> anw@maths.nott.ac.uk (Dr A. N. Walker)<br>
+    <strong>Date:</strong> Thu, 22 Dec 94 14:20:50 GMT</p>
+    <hr>
+    <div>[Disclaimer:  I&#x27;m *not* a strong player, but Joel Feinstein, frequent<br>
+British champion and author of a strong program, is;  and I have done<br>
+some work with Joel on developing his program.  Joel is currently away,<br>
+but requests for further info should probably go to &quot;jff@maths.nott.ac.uk&quot;<br>
+rather than to me. -- ANW]<br>
+<br>
+In article &lt;3d9s8s$4a9@mycroft.rand.org&gt; jim@acm.org writes:<br>
+&gt;I&#x27;ve been poking around with optimal play on reduced Othello boards, and<br>
+&gt;trying to make my tree search efficient enough to get up to interesting<br>
+&gt;sizes.<br>
+<br>
+	What do you call &quot;interesting&quot;?  6x6 is completely solved, and<br>
+anything much larger might as well be the complete game!<br>
+<br>
+&gt;	 After incorporating alpha-beta and large transposition tables,<br>
+&gt;it&#x27;s usual to add the killer heuristic<br>
+<br>
+	Joel&#x27;s program doesn&#x27;t use transposition tables.  *I* think they<br>
+would help, but Joel isn&#x27;t convinced.  Certainly they are much less use<br>
+than in chess or go, where it is common for any permutation of a move<br>
+sequence to lead to the same position.  It &quot;sort-of&quot; uses killers, but<br>
+in a rather convoluted way [they affect move ordering].<br>
+<br>
+&gt;if there&#x27;s a corner move, take it; otherwise try all the moves in<br>
+&gt;numerical order (like a TV scan across the board).<br>
+<br>
+	Joel&#x27;s program has a rather devious permutation method;  the &quot;raw&quot;<br>
+numerical order is not just left-to-right, top-to-bottom, but involves<br>
+a pre-determined sequence that visits interesting squares first.  This<br>
+sequence evolves as some moves become killers and others are &quot;used up&quot;.<br>
+<br>
+&gt;Oddly, this degraded the tree-searching performance dramatically from<br>
+&gt;just leaving the moves in numerical order, although it of course ends up<br>
+&gt;with the same result.<br>
+<br>
+	I found the same when fiddling with Joel&#x27;s program!  Even when<br>
+he and I were both agreed that something should be an improvement, it<br>
+actually always made things worse.  I conclude that his program is<br>
+evolutionarily stable against small changes.  This applies both to<br>
+move ordering and to positional evaluations.<br>
+<br>
+&gt;Could a human Othello player comment on this?  I thought perhaps retaining<br>
+&gt;the threat of moving into a corner might be more effective than grabbing<br>
+&gt;it immediately; does this correspond to a known human strategy?<br>
+<br>
+	I can&#x27;t comment usefully in the case of Othello, but the equivalent<br>
+is well-known in chess:  &quot;The threat is stronger than the execution!&quot;.<br>
+<br>
+-- <br>
+Andy Walker, Maths Dept., Nott&#x27;m Univ., UK.<br>
+anw@maths.nott.ac.uk<br>
+<br>
+<br>
+</div>
+</body>
+</html>

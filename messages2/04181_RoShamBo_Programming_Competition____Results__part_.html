@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>RoShamBo Programming Competition -- Results (part 2)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>RoShamBo Programming Competition -- Results (part 2)</h1>
+    <p><strong>From:</strong> darse@cs.UAlberta.CA (Darse Billings)<br>
+    <strong>Date:</strong> 04 10 1999 00:00:00 GMT</p>
+    <hr>
+    <div>NEWSFLASH:<br>
+<br>
+  Dan Egnor has released the code to Iocaine Powder!  You can have a look<br>
+  at the Rock-Paper-Scissors World Champion, and read Dan&#x27;s explanation<br>
+  of how it works at:<br>
+<br>
+  http://ofb.net/~egnor/iocaine.html<br>
+<br>
+<br>
+  Jason Hutchens has released the code to MegaHAL.  You can have a look<br>
+  at the strongest pattern recognizer in the contest, and read Jason&#x27;s<br>
+  explanation of how it works at:<br>
+<br>
+  http://ciips.ee.uwa.edu.au/~hutch/puzzles/roshambo/<br>
+<br>
+Jason has also provided a shell routine, so humans can play against any<br>
+of the programs more conveniently.  Thanks Jason!<br>
+<br>
+<br>
+All entrants are encouraged to release their programs.  I will be<br>
+providing a new sample program that has many of the top algorithms,<br>
+including most of the U of A submissions, plus all of the dummy bots.<br>
+This will provide a good test suite for everyone to use in developing<br>
+the second generation of programs to compete in the next competition.<br>
+<br>
+However, I will not add any program without the author&#x27;s expressed<br>
+consent, so please send me an e-mail if you are willing to contribute<br>
+your algorithm to the collection.  It doesn&#x27;t have to be a champion,<br>
+either -- we want lots of different *ideas*, not just programs that<br>
+performed well in the first contest.<br>
+<br>
+The Second International RoShamBo Programming Competition will be held<br>
+in a few months, perhaps as early as January, but no later than next<br>
+summer.  Stay tuned for an announcement, or send me e-mail if you want<br>
+your name added to the mailing list.<br>
+<br>
+				   ...<br>
+<br>
+Algorithms and Ideas<br>
+--------------------<br>
+<br>
+There were many different approaches used to write a RoShamBo player,<br>
+and I know for a fact that the authors of all top ten programs went<br>
+through several levels of thought and re-design as they discovered<br>
+the richness of this &quot;trivial&quot; problem.  I won&#x27;t address any of these<br>
+concepts in great detail, but I do hope to touch on some of them, at<br>
+least in passing.<br>
+<br>
+ Dummy bots:<br>
+<br>
+As explained in the contest announcement, some of the programs competing<br>
+in the tournament were intentionally weak.  This ensures that programs<br>
+try to win matches and maximize their winning margin, since it is not<br>
+enough to simply avoid losing (as with the Random (Optimal) strategy).<br>
+<br>
+Most of the dummy bots use a strategy that is oblivious to the opponent,<br>
+and don&#x27;t even try to win the match.  In general, they will be more<br>
+exploitable by stronger algorithms, and may achieve a draw or even win<br>
+against weaker opposition.<br>
+<br>
+The results against the dummy bots show that there is still room (and<br>
+will always be room) for better pattern detection in RoShamBo players.<br>
+<br>
+Please note that none of these algorithms (except Random (Optimal)) will<br>
+be competing in the second programming competition, so there is no point<br>
+in trying to detect any of these specific patterns in the future.<br>
+<br>
+The dummy bots were designed to be fairly elusive, without being so hard<br>
+to trace as to be effectively random.  In some cases, they were tuned by<br>
+introducing some amount of random noise to lessen the obviousness of the<br>
+pattern, so that none of the dummy programs lost by massive scores.  The<br>
+objective was to have a wide range of exploitation among the entries, to<br>
+identify the strengths and weaknesses of each program.  However, when<br>
+the entire set of dummy bots is removed, the results of the competition<br>
+are not significantly different.<br>
+<br>
+<br>
+ Dummy Bot:  Random (Optimal)<br>
+<br>
+  Length (in C semi-colons):   1<br>
+  Type of history analysis:    none<br>
+  Level of meta-reasoning:     zero (or &quot;all levels&quot;)<br>
+  theoretical exploitability:  0<br>
+<br>
+In this competition, Random (Optimal) was called Meta-Meta-Random.<br>
+I allowed Mark Bassett to keep this entry since he submitted it on the<br>
+same day the competition was announced (before I ruled it ineligible),<br>
+and he was certain it would finish in first place.  Well, not exactly.<br>
+It finished in the middle of the pack (27th), drawing every match, as<br>
+expected.<br>
+<br>
+In the &quot;Best of the Best&quot; competition, which cuts away half of the<br>
+field each round, it dropped out after the round of 32.  Naturally,<br>
+it always has a 50% chance of making it to the next round.  A slower<br>
+progression would allow it to always stay alive, but it would still<br>
+be uninteresting. :)<br>
+<br>
+If time permits, I plan to run a true &quot;evolutionary&quot; scheme, where the<br>
+number of copies of a program depends on its success in the previous<br>
+iteration.  In this format, Random (Optimal) will always keep its 1/n<br>
+share of the population, and neither grow nor diminish over time.<br>
+Again, that will not be enough to win a tournament.<br>
+<br>
+<br>
+ Dummy Bot:  Pi<br>
+<br>
+  Length (in C semi-colons):   5<br>
+  Type of history analysis:    none (fixed string)<br>
+  Level of meta-reasoning:     zero<br>
+  theoretical exploitability:  1000 out of 1000<br>
+<br>
+One of several pre-determined sequences in the contest was based on the<br>
+digits of pi.  Each digit was returned mod 3, unless the digit was 0,<br>
+in which case it was skipped.  Assuming the opponent has knowledge of<br>
+common physical constants, it was possible to guess this algorithm, and<br>
+thereby score close to 100% against it.  Of course, it would be both<br>
+uninteresting and futile to try to guess all such silly algorithms, so<br>
+no one was expected to detect the pattern.<br>
+<br>
+Pi performed better than Random (Optimal), suggesting that the digits of<br>
+pi may be more regular than a truly random sequence, in a manner similar<br>
+to the De Bruijn sequence.  This is interesting, because the digits of pi<br>
+have passed all known tests of pseudo-randomness (although those tests<br>
+are not normally performed on the earlier digits of pi).<br>
+<br>
+<br>
+ Dummy Bot:  De Bruijn<br>
+<br>
+  Length (in C semi-colons):   5<br>
+  Type of history analysis:    none (fixed string)<br>
+  Level of meta-reasoning:     zero<br>
+  theoretical exploitability:  500 out of 1000<br>
+<br>
+A De Bruijn sequence is a cyclic string which contains all possible<br>
+substrings of a given length exactly once.  An example of a ternary<br>
+De Bruijn string of length nine, containing all substrings of length<br>
+two, would be &quot;rrpspprss&quot;.  I was looking for a sequence to repeat<br>
+in a simple cycle, and tried this type of string because it would be<br>
+&quot;statistically well-balanced&quot;.  Much to my surprise, a fixed string<br>
+of length 27 finished second in one test tournament, and had better<br>
+results against the *stronger* programs!  This oblivious algorithm was<br>
+particularly successful with match lengths of 100, when full-history<br>
+programs had less opportunity to lock onto the cyclic repetition.<br>
+A little bit of thought reveals why this fixed sequence is successful.<br>
+<br>
+Every string will appear to contain patterns, even if it is random.<br>
+The De Bruijn sequence naturally gives the appearance of certain<br>
+tendencies, and then automatically switches away from repeating those<br>
+same patterns.  If the opponent is over-zealous in its exploitation of<br>
+any perceived weakness, it will be continuously deceived and punished!<br>
+The stronger the opponent is at detecting subtle patterns (that don&#x27;t<br>
+actually exist) the more susceptible it is to the decoy strategy that<br>
+the De Bruijn string implicitly employs.  Other programs attempted to<br>
+use a &quot;bait and switch&quot; idea, but without much success.  To borrow<br>
+Perry Friedman&#x27;s term, the De Bruijn string is a &quot;master baiter&quot;.  :)<br>
+<br>
+A simple repetition of the same De Bruijn string was too vulnerable to<br>
+the stronger programs, for two reasons.  First, many programs will have<br>
+a large context length, and will simply see the repetition.  Secondly,<br>
+the sequence will have a detectable deviance from random, because many<br>
+of the longer substrings never occur.  Consider a De Bruijn string of<br>
+length nine: it never plays the same move three times in a row (in fact,<br>
+only one-third of the substrings of length three are ever used).  This<br>
+type of weakness is at least partially exploitable by even the most basic <br>
+predictors.  The same flaws exist for a cyclic string of length 27, but<br>
+they are considerably harder to find, in a statistical sense.<br>
+<br>
+For the official competition, the De Bruijn bot used a concatenation<br>
+of 13 different sequences of length 81 (containing all substrings of<br>
+length four).  In a triumph of ignorance over intelligence, De Bruijn<br>
+finished third in the &quot;Best of the Best&quot; series, losing only to Iocaine<br>
+Powder and Phasenbott.  Its performance improved significantly in the<br>
+later rounds, because it only drew (or lost) to the weakest entrants!<br>
+<br>
+Is the De Bruijn sequence a &quot;magic bullet&quot; for RoShamBo, in the same<br>
+way that the ultra-simple Tit-for-Tat strategy was so successful for<br>
+Prisoner&#x27;s Dilemma?  I don&#x27;t think so.  I suspect that its success<br>
+may be due to a flaw in the way most programs handle statistics.  If<br>
+they only look for over-represented patterns, rather than the equally<br>
+important under-represented occurrences, then De Bruijn will be the<br>
+perfect counter-strategy (at least, as far as zero-history constant<br>
+strings are concerned:).<br>
+<br>
+<br>
+ Dummy Bot:  Text<br>
+<br>
+  Length (in C semi-colons):   5<br>
+  Type of history analysis:    none (fixed string)<br>
+  Level of meta-reasoning:     zero<br>
+  theoretical exploitability:  unknown (empirical: ~200 out of 1000)<br>
+<br>
+The Text bot was based on a suggestion by Perry Friedman.  It is simply<br>
+a block of English text whose ascii characters have been converted to<br>
+actions by taking their value mod 3.  The text used was the original<br>
+announcement of the RoShamBo competition (including whitespace).  Since<br>
+natural language contains recurring patterns and non-random frequencies,<br>
+about half of the contestants were able to beat this string by a score<br>
+in the range of 100-200.<br>
+<br>
+<br>
+ Dummy Bot:  Switch A Lot<br>
+<br>
+  Length (in C semi-colons):   3<br>
+  Type of history analysis:    its own last move<br>
+  Level of meta-reasoning:     zero<br>
+  theoretical exploitability:  320 out of 1000<br>
+<br>
+Of all the dumb algorithms included in the original sample program, the<br>
+one that seemed to give decent predictors the most trouble was &quot;Always<br>
+Switchin&#x27;&quot;.  This is a bit of a surprise, since it takes very little<br>
+analysis to discover that the opponent never repeats a move, and the<br>
+simple counter-strategy would net +500 points per 1000.  Even some of<br>
+the strongest programs did no better than +350.  This may be another<br>
+indication that they are looking for patterns directly, rather than for<br>
+the _absence_ of patterns that should be present.<br>
+<br>
+Switch A Lot had a 12% chance of repeating the previous move.  This<br>
+made it very susceptible to the pairwise frequency based predictors,<br>
+including many programs that did not finish very high in the standings.<br>
+The best exploiter was the simple Anti-rotn bot, which scored close to<br>
+the maximum.  In contrast, five of the strongest head-to-head players,<br>
+including Iocaine Powder and Phasenbott, scored less than +100 points<br>
+on average.<br>
+<br>
+<br>
+ Dummy Bot:  Foxtrot<br>
+<br>
+  Length (in C semi-colons):   4<br>
+  Type of history analysis:    its own last move<br>
+  Level of meta-reasoning:     zero<br>
+  theoretical exploitability:  500 out of 1000<br>
+<br>
+The Foxtrot sequence has a pattern that is easy to generate, but is not<br>
+easy to detect.  It has the form: [ rand prev+2 rand prev+1 rand prev+0 ]<br>
+repeating, where rand is a random move, and prev is the previous move.<br>
+So if rand was always 1, the sequence would be &quot;prpspp&quot; repeating.  All<br>
+of the odd numbered moves are random but the even moves are completely<br>
+deterministic (albeit not in an obvious way).<br>
+<br>
+It turned out to be more susceptible to the direct-history algorithms<br>
+like Iocaine Powder and Biopic, rather than the strong pattern detectors<br>
+like MegaHAL.  It lost to four programs by more than 300 points, but by<br>
+only a small margin to most. <br>
+<br>
+<br>
+ Dummy Bot:  Flat<br>
+<br>
+  Length (in C semi-colons):   16<br>
+  Type of history analysis:    its own r/p/s frequencies<br>
+  Level of meta-reasoning:     zero<br>
+  theoretical exploitability:  420 out of 1000<br>
+<br>
+The Flat bot generates a distribution of moves that are more uniform<br>
+than expected for a random sequence.  This is a common weakness in<br>
+human generated sequences.  For example, if you ask someone to write<br>
+down a &quot;random&quot; series of 20 heads or tails, they will normally avoid<br>
+having many more of one than the other.  If you then ask them to write<br>
+down the outcomes of 20 actual coin tosses, you can usually identify<br>
+the truly random sequence just by guessing that it is the one with the<br>
+longest run of heads or tails.<br>
+<br>
+If the frequency of one particular action was strictly less than the<br>
+other two, the Flat bot had an 80% chance of choosing that action.  If<br>
+one was strictly greater than the other two, it had only a 10% chance<br>
+of being selected.  Naturally this distortion causes other statistical<br>
+anomalies that predictive algorithms can exploit, so most programs did<br>
+reasonably well against the Flat bot.  However, no one approached the<br>
+maximum exploitability of -420 points, which was measured by playing it<br>
+against the Anti-Flat algorithm.<br>
+<br>
+<br>
+ Dummy Bot:  Copy-drift<br>
+<br>
+  Length (in C semi-colons):   9<br>
+  Type of history analysis:    opponent&#x27;s last move<br>
+  Level of meta-reasoning:     zero<br>
+  theoretical exploitability:  500 out of 1000<br>
+<br>
+This program biases its decision toward the opponent&#x27;s previous move,<br>
+but &quot;changes gears&quot; over time.  If a player always goes rock, then it<br>
+copies that move two-thirds of the time to start, shift gears to favour<br>
+scissors, then shifts to paper, continuing to rotate its preference<br>
+every 111 turns.  The intention was to have a strategy that was fairly<br>
+easy to deduce, but that gradually changed over time.<br>
+<br>
+<br>
+ Dummy Bot:  Add-drift<br>
+<br>
+  Length (in C semi-colons):   9<br>
+  Type of history analysis:    both player&#x27;s last move<br>
+  Level of meta-reasoning:     zero<br>
+  theoretical exploitability:  500 out of 1000<br>
+<br>
+This program bases its decision on the sum of both player&#x27;s previous<br>
+moves, and shifts gears over time.  As with Copy-drift, it played a<br>
+random move with 50% probability.  This pattern was less detectable<br>
+to the majority of programs, since they did not consider trends based<br>
+on the moves of both players.<br>
+<br>
+Don Beal&#x27;s Simple Predictor and Simple Modeller, which use a simple<br>
+history decay function to favour recent observations over older ones,<br>
+had a definite advantage against both of the &quot;drift bots&quot;.<br>
+<br>
+<br>
+ Dummy Bot:  Add-react<br>
+<br>
+  Length (in C semi-colons):   9<br>
+  Type of history analysis:    recent success (wins, losses, draws)<br>
+  Level of meta-reasoning:     zero<br>
+  theoretical exploitability:  800 out of 1000<br>
+<br>
+This dummy bot also based its decisions on the sum of the previous<br>
+moves by both players, but had a different mechanism for changing<br>
+gears.  If the current strategy incurred a net loss of three or more<br>
+points in the last 20 turns, or more than a 10% loss over more than<br>
+20 turns, it would then change gears.  This behavior gives a more<br>
+chaotic image, and the noise level had to be reduced considerably<br>
+before any of the programs could defeat it by a significant margin.<br>
+<br>
+<br>
+ Dummy Bot:  Anti-rotn<br>
+<br>
+  Length (in C semi-colons):   40<br>
+  Type of history analysis:    consecutive pairs of opponent actions<br>
+  Level of meta-reasoning:     one<br>
+  theoretical exploitability:  40 out of 1000<br>
+<br>
+The Anti-rotn bot is the only dummy bot that actually analyzed the<br>
+opponent&#x27;s moves and tried to win.  It has a minimal use of history,<br>
+counting only the &quot;rotations&quot; in the opponent&#x27;s move sequence.  If<br>
+the opponent repeated an action, went up by one, or up by two, it was<br>
+counted as a 0, +1, or -1 rotation, respectively.  This means that it<br>
+treats the actual choice of rock, paper, or scissors as irrelevant,<br>
+and considers only the difference between each pair of moves.  This<br>
+enables it to pick up a particular pattern faster than if it &quot;split<br>
+the signal&quot; into three different categories (for example by treating<br>
+&quot;rp&quot;, &quot;ps&quot;, and &quot;sr&quot; as three distinct patterns).<br>
+<br>
+The &quot;Anti-rotten-bot&quot; looks for both maximum and minimum occurrences in<br>
+the distribution, which many of the entries failed to do.  For example,<br>
+if a prediction algorithm believes the probability distribution for the<br>
+opponent&#x27;s next action is 20-39-41 (20% rock, 39% paper, 41% scissors),<br>
+several programs counter only the maximum likelyhood, and would play<br>
+rock to beat the expected scissors.  However, there is a much stronger<br>
+opponent tendency toward &quot;not rock&quot;, and playing scissors would have a<br>
+much higher expectation.<br>
+<br>
+In general, the expected value of each action &quot;x&quot; is simply:<br>
+<br>
+  EV[x] = Pr[x+2] - Pr[x+1]<br>
+<br>
+where &quot;+&quot; is understood to be modulo 3.  So in the 20-39-41 example,<br>
+EV[rock] = +2%, EV[paper] = -21%, and EV[scissors] = +19%.<br>
+<br>
+The other feature built into the Anti-rotn bot is a simple fail-safe,<br>
+set at 4% of the total match length.  This single line of code:<br>
+<br>
+    if ( score &lt; -trials/25 ) { return(random() % 3); }<br>
+<br>
+would have saved many entries thousands of points against stronger<br>
+opposition.  The same approach would not prevent a match loss, however.<br>
+Even though a -40 result is less than the noise level for a single<br>
+match (+/- 50.6), many independent tournaments can be run to reduce<br>
+the variance to a small amount, making the -40 expectation decisive.<br>
+<br>
+Some programs, such as Biopic, Robertot, and Boom, only deviate from<br>
+random when there appears to be a statistically significant weakness<br>
+to exploit.  This enables them to draw against very strong opposition,<br>
+who do not exhibit such patterns.  Interestingly, Iocaine Powder and<br>
+Phasenbott are still able to defeat these programs by a small margin,<br>
+presumably by behaving predictably enough to induce a pattern in their<br>
+opponent&#x27;s replies, which they can then exploit for a net profit!<br>
+<br>
+<br>
+One final note about generality.  Several programs were based on the<br>
+idea of using several different strategies, and choosing the one that<br>
+would have been most successful in the past.  One of the smoothest<br>
+systems for adaptation was that of Mixed Strategy by Thad Frogley.<br>
+<br>
+The weakness of this approach is that it is only as good as the best<br>
+substrategy it considers.  Combining different specific techniques is<br>
+doomed to yield only an incremental improvement in overall performance.<br>
+<br>
+In contrast, Iocaine Powder uses a much more general (and elegant)<br>
+method for analyzing different strategies, based on six levels of<br>
+meta-reasoning, each applied to its own strongest prediction method.<br>
+MegaHAL also takes a generalized approach to the task of recognizing<br>
+patterns.  The lesson is clear: general techniques are stronger than<br>
+specific algorithms for RoShamBo.<br>
+				   ...<br>
+<br>
+Unofficial Super-Modified Class<br>
+-------------------------------<br>
+<br>
+There was no shortage of players in the &quot;anything goes&quot; category.  In<br>
+fact, there seemed to be almost as much interest in how to cheat the<br>
+tournament system as there was in writing a good player!  I would like<br>
+to thank Mark James and Denis Papp for their suggestions on other ways<br>
+a program might breech security.  They are both in the computer game<br>
+industry, so writing AI that cheats outrageously is part of their job<br>
+description. :)<br>
+<br>
+There were originally ten players in this category, but the &quot;John Galt&quot;<br>
+algorithm withdrew, taking three other excellent programs with him.<br>
+<br>
+    Player Name                  1     2     3     4     5     6  total<br>
+							        <br>
+  1 The Matrix                   0  1000  1000  1000  1000  1000   5000<br>
+  2 Psychic Friends Network  -1000     0   998F  998   998   998   2992<br>
+  3 Fork Bot                 -1000  -998F    0  1000  1000  1000   1002<br>
+  4 Nostradamus              -1000  -998 -1000     0     5  1000  -1993<br>
+  5 Iocaine Powder           -1000  -998 -1000    -5     0    10  -2993<br>
+  6 Random (Optimal)         -1000  -998 -1000 -1000   -10     0  -4008<br>
+<br>
+<br>
+Random (Optimal) and Iocaine Powder you already know.  They got stomped.<br>
+<br>
+Nostradamus was written by Tim Dierks, a VP of Engineering at Certicom,<br>
+who has a lot of expertise in cryptography.  The program defeats the<br>
+optimal player by reverse-engineering the internal state of the random()<br>
+generator, which he states &quot;was both easier and harder than I thought it<br>
+would be&quot;.  To be sporting, it then plays optimally against all other<br>
+opponents.<br>
+<br>
+Fork Bot was based on an idea that Dan Egnor came up with a few minutes<br>
+after hearing about the contest.  Since &quot;library routines are allowed&quot;,<br>
+his elegant solution was to spawn three processes with fork(), have each<br>
+one make a different move, and then kill off the two that did not win.<br>
+This was implemented by Andreas Junghanns in about 10 lines of code.<br>
+Unfortunately, since all three moves lost to the Psychic Friends Network<br>
+after the first turn, the program exited and the remainder of that match<br>
+was declared forfeited.<br>
+<br>
+The Psychic Friends Network is a truly hilarious piece of obfuscated C,<br>
+written by Michael Schatz and company at RST Corporation.  Among other<br>
+things, it uses an auxiliary function to find good karma, consults<br>
+horoscopes, cooks spaghetti and (mystic) pizza to go with various kinds<br>
+of fruit, #defines democrats as communists, and undefines god.  We&#x27;re<br>
+still trying to figure out exactly what it is doing with the stack<br>
+frame, but we do know that it never scores less than +998 in a match,<br>
+unless it is playing against a meta-meta-cheater.<br>
+<br>
+The Matrix was written by Darse Billings, who holds the prestigious<br>
+title of &quot;Student for Life&quot;, and recently started the PhD programme at<br>
+the University of Alberta.  The RoShamBo program defeated every opponent<br>
+with a perfect score, based on the simple principle &quot;There is no spoon&quot;.<br>
+<br>
+Since The Matrix is also the tournament program, it has complete access<br>
+to all other algorithms, data structures, and output routines, and is<br>
+therefore unlikely to ever be overtaken.  As a result, this category is<br>
+hereby declared to be solved, and thus retired from future competitions.<br>
+<br>
+				   ...<br>
+<br>
+This report was hastily prepared, in order to provide the results as<br>
+soon as possible.  The contest and other experiments will eventually<br>
+be written up for publication, so please inform me of any errors or<br>
+omissions.  I also welcome more feedback from the participants, both<br>
+on your ideas and on your personal background.  Continue to check the<br>
+web page for links to revised reports and new results (such as the<br>
+evolutionary tournament format).  www.cs.ualberta.ca/~darse/rsbpc.html<br>
+<br>
+							    - Darse.<br>
+--<br>
+<br>
+&quot;There&#x27;s no sense in searching for perfection <br>
+   when you&#x27;re making successful mistakes&quot;	-The Tragically Hip.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

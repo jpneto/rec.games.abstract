@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Sums Equal 1,2,3,...m In Small Grid</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Sums Equal 1,2,3,...m In Small Grid</h1>
+    <p><strong>From:</strong> swp &lt;stephen.w.perry@gmail.com&gt;<br>
+    <strong>Date:</strong> Fri, 8 Apr 2011 13:40:36 -0700 (PDT)</p>
+    <hr>
+    <div>On Apr 8, 2:30 pm, Leroy Quet &lt;qqq...@mindspring.com&gt; wrote:<br>
+&gt; This can be considered both a puzzle and a solitaire game.<br>
+&gt;<br>
+&gt; Make an n-by-n grid on paper. (I suggest that n = 3 for beginners.)<br>
+&gt;<br>
+&gt; Fill the grid with UNIQUE positive integers, one integer per square of<br>
+&gt; the grid. The numbers need not be consecutively valued necessarily.<br>
+&gt;<br>
+&gt; Your score is the largest integer m such that integers 1 through m all<br>
+&gt; occur as sums within the grid (without missing any positive integers<br>
+&gt; &lt;=m).<br>
+&gt;<br>
+&gt; A &quot;sum&quot; is of any number of addends (possibly just 1) that are all<br>
+&gt; consecutively placed within a row of the grid or a column of the grid.<br>
+&gt; (No diagonals in this variation.)<br>
+&gt;<br>
+&gt; So, for example, if we have the following 3-by-3 grid:<br>
+&gt;<br>
+&gt; 2 9 8<br>
+&gt; 3 1 10<br>
+&gt; 7 6 15<br>
+&gt;<br>
+&gt; ...the sums 1 through 19 all occur in this grid. So, I get a score of<br>
+&gt; 19.<br>
+&gt; (Notice that some values of sums occur more than once.)<br>
+&gt;<br>
+&gt; I bet it is easy to do better than I did with a 3-by-3 grid, since my<br>
+&gt; grid is inefficient, and I didn&#x27;t try too hard to find it.<br>
+&gt;<br>
+&gt; (Note: There are 27 possible sums in a 3-by-3 grid of 1, 2, or 3<br>
+&gt; addends. I don&#x27;t know what the largest possible score is for a 3-by-3<br>
+&gt; grid, though.)<br>
+&gt;<br>
+&gt; You can &quot;play&quot; someone else by both of you trying to score as well as<br>
+&gt; you can on the same-sized grid. Just try to outscore your opponent.<br>
+&gt;<br>
+&gt; Thanks,<br>
+&gt; Leroy Quet<br>
+<br>
+interesting.  for 3x3 the best I can get is 20 (I think) using this:<br>
+13 6 12<br>
+7  2 14<br>
+10 3  1<br>
+<br>
+I am loathe to write a program to compute the best score, but perhaps<br>
+some other enterprising person could make the attempt.  bonus points<br>
+for not using c or perl, of course.  demerits for using recursion,<br>
+blowing the stack, or causing a core fault in the math subprocessor.<br>
+documentation will count for 15% of your final grade, and keep future<br>
+programmers from cursing your name for the clever and obscure ways you<br>
+found to save 11 bytes worth of typing that cost them more than an<br>
+hour of their life which they won&#x27;t get back.<br>
+<br>
+it seems obvious that the best grids of size n+1 are not supersets of<br>
+the best grid of size n.  that makes this game more fun as you<br>
+progress.<br>
+<br>
+swp<br>
+<br>
+<br>
+</div>
+</body>
+</html>

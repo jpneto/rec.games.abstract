@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>No Subject</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>No Subject</h1>
+    <p><strong>From:</strong> Unknown Sender<br>
+    <strong>Date:</strong> 16 10 1996 00:00:00 GMT</p>
+    <hr>
+    <div>Now I am going to name states more fully. Each state in the game will<br>
+be identified by a 2 digit number. The first digit is the number of<br>
+rolls remaining and the second digit is the largest number of matching<br>
+dice (the numbering used in the state transitions calculated above).<br>
+So that 30 is the initial state and 01, 02, 03, 04 and 05 are the terminal<br>
+states.<br>
+The value of states will be denoted as [xx].<br>
+<br>
+Now we give values to the terminal states:<br>
+[05] (a yahtzee) = 1.<br>
+[01], [02], [03] and [04] (not yahtzees) 0.<br>
+<br>
+Now we start back tracking.<br>
+[15] = [05] = 1.<br>
+[14] = [04]*5/6 + [05]*1/6 = 1/6.<br>
+[13] = [03]*25/6^2 + [04]*10/6^2 + [05]*1/6^2 = 1/6^2.<br>
+[12] = [02]*20/6^2 + [03]*80/6^3 + [04]*15/6^3 + [05]*1/6^3 = 1/6^3.<br>
+[11] = [01]*20/6^3 + [02]*25/6^2 + [03]*250/6^4 + [04]*25/6^4 + [05]*1/6^4<br>
+     = 1/6^4.<br>
+[25] = [15] = 1.<br>
+[24] = [14]*5/6 + [15]*1/6<br>
+     = 5/6^2 + 1/6 = 11/6^2.<br>
+[23] = [13]*25/6^2 + [14]*10/6^2 + [15]*1/6^2<br>
+     = 25/6^4 + 10/6^3 + 1/6^2 = 121/6^4.<br>
+[22] = [12]*20/6^2 + [13]*80/6^3 + [14]*15/6^3 + [15]*1/6^3<br>
+     = 20/6^5 + 80/6^5 + 15/6^4 + 1/6^3 = 226/6^5.<br>
+[21] = [11]*20/6^3 + [12]*25/6^2 + [13]*250/6^4 + [14]*25/6^4 + [15]*1/6^4<br>
+     = 20/6^7 + 25/6^5 + 250/6^6 + 25/6^5 + 1/6^4 = 3536/6^7.<br>
+[30] = [21]*20/6^3 + [22]*25/6^2 + [23]*250/6^4 + [24]*25/6^4 + [25]*1/6^4<br>
+     = 70720/6^10 + 5650/6^7 + 30250/6^8 + 275/6^6 + 1/6^4<br>
+     = 2783176/6^10 = 2783176/60466176 = 347897/7558272<br>
+<br>
+So, barring any mistakes in my math, there is a 347897/7558272 chance of<br>
+getting a yahtzee using up to three rolls with best play.<br>
+<br>
+The above calculation is a pain to do by hand, but is hardly complicated<br>
+to do by computer. Note to actually figure out what strategy you should<br>
+use, the back tracking is a little more complicated. At any decision point<br>
+you have to evaluate the value of each possible decision and then pick the<br>
+best one.<br>
+<br>
+The hard part of game analysis is trying to do something when a brute force<br>
+solution isn&#x27;t feasible. This may involve trying to reduce the number of<br>
+states somehow or trying to get approximate solutions.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

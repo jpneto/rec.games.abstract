@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Kayles</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Kayles</h1>
+    <p><strong>From:</strong> tromp@math.uwaterloo.ca (John Tromp)<br>
+    <strong>Date:</strong> Tue, 15 Feb 1994 03:57:47 GMT</p>
+    <hr>
+    <div>dbush@csugrad.cs.vt.edu (David Bush) wrote:<br>
+<br>
+&gt;&gt;&gt;Does someone have the rules for the game called Kayles?<br>
+&gt;<br>
+&gt;&gt;I believe I know a game by that name.  You have n tokens in a line, and each<br>
+&gt;&gt;player alternately removes either a single token or a pair of touching tokens;<br>
+&gt;&gt;whoever takes the last token wins.  Is that the one you&#x27;re thinking of?<br>
+&gt;<br>
+&gt;It sounds like the first player could always win by dividing the line into<br>
+&gt;2 identical regions on the first move. If n is odd, remove the middle token.<br>
+&gt;If n is even, remove the 2 middle tokens. Now any move the 2nd player makes<br>
+&gt;is answered by the corresponding move in the other region. The 1st player<br>
+&gt;must always win with this procedure, n&#x27;est-ce pas?<br>
+<br>
+<br>
+That&#x27;s correct. Positions with consecutive pins are all first-player wins.<br>
+<br>
+But the game gets interesting with more varied initial positions.<br>
+For instance, consider the position with two rows of consecutive pins,<br>
+of length 4 and 995. What is a good move now?<br>
+<br>
+Those familiar with Winning Ways should be able to solve this one<br>
+(having a computer handy doesn&#x27;t hurt:-).<br>
+<br>
+regards,<br>
+<br>
+%!PS			     %  -John Tromp (tromp@math.uwaterloo.ca)<br>
+42 42 scale 7 9 translate .07 setlinewidth .5 setgray/c{arc clip fill<br>
+setgray}def 1 0 0 42 1 0 c 0 1 1{0 3 3 90 270 arc 0 0 6 0 -3 3 90 270<br>
+arcn 270 90 c -2 2 4{-6 moveto 0 12 rlineto}for -5 2 5{-3 exch moveto<br>
+9 0 rlineto}for stroke 0 0 3 1 1 0 c 180 rotate initclip}for showpage<br>
+<br>
+<br>
+</div>
+</body>
+</html>

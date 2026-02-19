@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Paddachee, new abstract game, interactive play</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Paddachee, new abstract game, interactive play</h1>
+    <p><strong>From:</strong> Bob Harris &lt;plasticnitlion@wrappermindspring.com&gt;<br>
+    <strong>Date:</strong> Wed, 14 Jan 2004 14:49:31 GMT</p>
+    <hr>
+    <div>I posted:<br>
+&gt;&gt; I&#x27;ve added a new abstract game to my web site, at<br>
+&gt;&gt; http://nitlion.home.mindspring.com/paddachee/index.html<br>
+&gt;&gt; <br>
+&gt;&gt; The game is &quot;paddachee&quot;, a pattern achievement game.  Players alternate<br>
+&gt;&gt; marking cells with their color.  If you complete a scoring pattern (for<br>
+&gt;&gt; example, a 2x2 square) you get some points.  Most points wins.<br>
+&gt;&gt; <br>
+&gt;&gt; The applet allows interactive play human-vs-human or human-vs-computer.<br>
+&gt;&gt; Computer player&#x27;s ability can be adjusted.  Note that the computer player is<br>
+&gt;&gt; fairly simple, has no lookahead, but plays a strong game none-the-less.  I<br>
+&gt;&gt; will probably tweak some settings in the computer player to make it stronger.<br>
+<br>
+Gerry Quinn replied:<br>
+&gt; Quite an interesting game - although the fact that the computer plays well<br>
+&gt; with no lookahead suggests it may be a bit too tactical and free-flowing.  Are<br>
+&gt; there rule versions that the computer plays poorly on - these may be the very<br>
+&gt; ones that make the best game?<br>
+<br>
+I haven&#x27;t found a set of patterns that the computer plays poorly on.  At<br>
+least, not compared to *my* playing ability.  The simplest patterns are<br>
+squares and lines, for which a human can keep the scoring fairly low.<br>
+Patterns with a little twist in them (like an L-tetromino for example) are<br>
+so easy to achieve that the game quickly becomes a blood bath.  The computer<br>
+player is much better at seeing all the ways the patterns overlap.<br>
+<br>
+So, at least playing against this program, simple patterns are better.<br>
+Four-in-a-row on the hex grid plays pretty well, with (I think) a good mix<br>
+of threat and block.  Ditto for four-in-a-row and two-by-two square on the<br>
+square grid.  The &quot;mickey-and-minnie&quot; variant also has some interesting<br>
+play, but it takes longer for new players to &#x27;see&#x27; the patterns.<br>
+<br>
+The computer player does have deficiencies though.  Because it plays based<br>
+on a simple weighted count of patterns, it doesn&#x27;t make a distinction<br>
+between a move that creates a single threat of 2 points and a move that<br>
+creates two threats of 1 point each.  The former is easily blocked by the<br>
+opponent, while the latter produces a point that can be claimed.<br>
+<br>
+It also will often leave points on the table.  That is, after making a<br>
+threat where it could claim a point, it chooses to move elsewhere rather<br>
+than claiming that point, trying to build bigger threats.  I can easily<br>
+adjust the weightings to prevent this, but I&#x27;m not convinced it&#x27;s an error<br>
+in play. <br>
+<br>
+Another deficiency is that, without lookahead, it creates threats for which<br>
+the blocking move is also a strong offensive move for the opponent.<br>
+<br>
+It also will not play far from the blob of previously played pieces.  It&#x27;s<br>
+not clear to me whether it is better to play a weak offensive or defensive<br>
+move, near the blob, or to start new blobs in different parts of the board.<br>
+<br>
+Thanks for your thoughts,<br>
+Bob H<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Approaches to Othello playing programs</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Approaches to Othello playing programs</h1>
+    <p><strong>From:</strong> hsieh@math.toronto.edu (Paul Hsieh)<br>
+    <strong>Date:</strong> 15 Feb 93 07:11:07 GMT</p>
+    <hr>
+    <div>In article &lt;TOMF.93Feb14171440@ai.gte.com&gt; tomf@gte.com writes:<br>
+&gt;oauld@ponder.csci.unt.edu (Orion Auld) writes:<br>
+&gt;&gt; I&#x27;d heard someone mention in passing that there were some static evaluation<br>
+&gt;&gt; problems.  What is the math on the branching factor?<br>
+&gt;I&#x27;d be interested to hear what the static evaluation problems are.  <br>
+<br>
+Although there are well defined important features in the game it can be<br>
+hard to tell exactly how to assess these features.  In Checkers or Chess<br>
+you can simply count up the material and end up with an evaluator which is<br>
+not too shabby.  Put in a few more things about passed pawns or loose<br>
+checkers and there you go.  With Othello one uses mobility, potential<br>
+mobility and edge configurations.  However, some moves are better than<br>
+others and sometimes certain bad edge configurations end up not mattering<br>
+at all.  The history of Othello is much shorter than Chess, Go, checkers<br>
+or other such games.  So the strategy is not quite as well studied as<br>
+other games.  For example, last year&#x27;s world champion used a disc extracting<br>
+strategy in the finals.  And another important feature is parity ... though<br>
+results from the program Peer Gynt seem to indicated that it may not be<br>
+important, while most strong human players are aware and use parity.<br>
+<br>
+&gt;Branching factor:  I think this was hashed out a few months ago and I don&#x27;t<br>
+&gt;have the messages any more.  I calculated about 7.5 or 8 by averaging<br>
+&gt;the data from a graph in Rosenbloom&#x27;s AI Journal paper.  <br>
+<br>
+Hmm.  Sorry but that&#x27;s wrong.  The average number of moves available to a<br>
+player at any stage of the game is roughly 13.  Therefore the branching<br>
+factor is about 3.46 = square root of 13.<br>
+<br>
+&gt;&gt; What computer program competitions are held for Othello programs in the US?<br>
+<br>
+There is a man-machine tournament held in the summer, though I don&#x27;t have<br>
+details about it.  I refer you to: The U.S. Othello Association, 920 North-<br>
+gate Ave., Waynesboro, VA 22980 USA.<br>
+<br>
+&gt;I don&#x27;t know of any in the US, but the Waterloo Computer Othello Open is in<br>
+&gt;Canada.<br>
+<br>
+Yes, the Waterloo Tournament is quite a big event.  Last years tournament<br>
+saw what had to be the strongest computer Othello tournament ever held.<br>
+For more information please contact:  csc@watmath.uwaterloo.ca<br>
+<br>
+Paul Hsieh<br>
+<br>
+<br>
+</div>
+</body>
+</html>

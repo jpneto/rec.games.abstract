@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Nim game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Nim game</h1>
+    <p><strong>From:</strong> joc_kay@hotmail.com (Joe)<br>
+    <strong>Date:</strong> 20 Jul 2004 05:14:14 -0700</p>
+    <hr>
+    <div>torbenm@diku.dk (Torben gidius Mogensen) wrote in message news:&lt;7zbrisxle8.fsf@pc-032.diku.dk&gt;...<br>
+&gt; &lt;..&gt; we can, however, make an observation that may or<br>
+&gt; may not help finding a strategy: You can permute the rows and columns<br>
+&gt; as much as you like without changing the win/lose property of a<br>
+&gt; position.  This isn&#x27;t hard to verify: You first realise that a single<br>
+&gt; swap of two columns or rows doesn&#x27;t change the property, and then by<br>
+&gt; induction you show that this applies to any number of swaps.<br>
+&gt; <br>
+&gt; We can, however, not just sort the rows and columns by size and then<br>
+&gt; look at the number of stones in the rows and columns.  For example:<br>
+&gt; <br>
+&gt;    XX           XX<br>
+&gt;      X   and   X<br>
+&gt;    X           X<br>
+&gt; <br>
+&gt; Both have the sequences 2,1,1 both vertically and horisontally, but<br>
+&gt; the first pattern is a first-player win (by removing the top row) and<br>
+&gt; the second pattern is a 2nd player win (as the 2nd player can mirror<br>
+&gt; the first player&#x27;s moves over the diagonal).<br>
+<br>
+<br>
+One can generate &#x27;irreducible&#x27; representations by:<br>
+1) removing empty rows and columns,<br>
+2) swap columns and rows such that a &#x27;block-diagonal&#x27; configuration is<br>
+reached with the rows and columns in each block ordered by size, and<br>
+3) splitting the resulting configuration into &#x27;non-interacting blocks&#x27;<br>
+<br>
+So, starting from these two configurations:<br>
+<br>
+X . X . .    and   . X . . .<br>
+. . . . X          . . . . .<br>
+. . . . .          . . X . X<br>
+X . . . .          . X . . .<br>
+. . . . .          . . . . .<br>
+<br>
+we eliminate the empty rows and columns to reach:<br>
+<br>
+X X .        X . .<br>
+. . X        . X X<br>
+X . .        X . .<br>
+<br>
+(i.e. the two configurations given by Thorben), and swap rows and<br>
+columns resulting in:<br>
+<br>
+X X .        . X X<br>
+X . .        X . .<br>
+. . X        X . .<br>
+<br>
+and represent both in the form of &#x27;non-interacting positions&#x27;:<br>
+<br>
+(X X) + (X)     and      (X) + (X X)<br>
+(X .)                    (X)<br>
+<br>
+Of course, standard theory applies and each non-interacting position<br>
+can be represented by a Groundy number:<br>
+<br>
+  (.) -&gt; 0<br>
+<br>
+  (X) -&gt; 1<br>
+<br>
+(X) = (X X) -&gt; 2<br>
+(X)<br>
+<br>
+(X X)  <br>
+(X .) -&gt; 3<br>
+<br>
+and Groundy numbers of non-interacting positions can be added using<br>
+Nim-addition. Positions that have a composite Groundy number (=<br>
+Nim-sum of the Groundy numbers of the irreducible configurations)<br>
+equal to 0 are &#x27;cold&#x27; positions (last players win), all other<br>
+positions are &#x27;hot (next players win).<br>
+<br>
+<br>
+Joe<br>
+<br>
+<br>
+</div>
+</body>
+</html>

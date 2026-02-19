@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: How many bits are needed; (with promotions): 244b/212b/195b</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: How many bits are needed; (with promotions): 244b/212b/195b</h1>
+    <p><strong>From:</strong> David Norman &lt;David@ellought.demon.co.uk&gt;<br>
+    <strong>Date:</strong> 26 06 1997 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+David Norman &lt;David@ellought.demon.co.uk&gt; [Thats me :-)] writes:<br>
+&gt; Next: How many white Queens on the board (0-9), Rooks (0-10), Bishops <br>
+&gt; (0-10), Knights (0-10), Pawns (0-8), giving 10*11*11*11*9, for 119790 <br>
+&gt; possibilities, which needs 17 bits.<br>
+<br>
+Infact, I have just written a bit of C code to check this out. Infact, <br>
+there are only 8694 ways to arrange the number of Queens, Knights, <br>
+Bishops, Rooks and Pawns, so that can be reduced to 13.5 bits, or 27 bits <br>
+for the two sides.<br>
+<br>
+However, I can improve that further. The huffman encoding will be more <br>
+efficient by at least 2 bits per piece not on the board, so if I can make <br>
+the header smaller for 16 pieces on the board, and larger for smaller <br>
+numbers it will all cancel out. A little more code gives the following <br>
+table of number of non-king pieces against possibilities :<br>
+<br>
+0 = 1     (0 bits)<br>
+1 = 5     (3)<br>
+2 = 15    (4)<br>
+3 = 35    (6)<br>
+4 = 70    (7)<br>
+5 = 126   (7)<br>
+6 = 210   (8)<br>
+7 = 330   (9)<br>
+8 = 495   (9)<br>
+9 = 714   (10)<br>
+10 = 987  (10)<br>
+11 = 1287 (11)<br>
+12 = 1479 (11)<br>
+13 = 1455 (11)<br>
+14 = 990  (10)<br>
+15 = 495  (9)<br>
+<br>
+So if you first code the number of pieces as follows :<br>
+<br>
+15=1, 14=01, 13=001, 12=00011, 0-11 = the 7 bit binary number for 0 to 11 <br>
+(e.g. 0000000 to 0001011), and then add on to the end, the number of the <br>
+position, then you get 10 bits for 15 pieces, 12 for 14, 14 for 13, 16 for <br>
+12, and 18 or less for 11 or less.<br>
+<br>
+&gt; So how many bits does it give ? I think it is 36 for the header section, <br>
+&gt; and definately not more than 144 for the body (proving this is left to<br>
+&gt; the reader !!!) giving 180. However, I am not sure that it is possible<br>
+&gt; to find a position that needs 144 for the body, and I also think that a<br>
+&gt; bit of thought could seriously shorten the header.<br>
+<br>
+So with the shortening, we are now down to a worst case of 22 bits for the <br>
+header plus 144 for the body to make 166, and if the header is more than <br>
+22, then the body should be less.<br>
+<br>
+This worries me. Someone previously said that it was known that there are <br>
+less than 2^170 possible positions, which I have reduced by a factor of 16 <br>
+! Can someone independantly try to follow my algorithm through, and see <br>
+what you think the max body size is for a given header size ? My <br>
+calculations were approximate, but I thought I would be out by at most the <br>
+odd bit, and that if anything I was over rather than under.<br>
+<br>
+David.<br>
+<br>
+p.s. Incase you are interested, here is the C Code.<br>
+<br>
+#include &lt;stdio.h&gt;<br>
+<br>
+void main()<br>
+{<br>
+	int queens,knights,bishops,rooks,pawns;<br>
+	int pro_queens,pro_knights,pro_bishops,pro_rooks;<br>
+	int count[16];<br>
+	int total = 0;<br>
+	int counter;<br>
+	<br>
+	for (counter = 0; counter &lt; 16; counter++ )<br>
+	{<br>
+		count[ counter ] = 0;<br>
+	}<br>
+	<br>
+	for ( queens = 0; queens &lt;= 9; queens++ )<br>
+	{<br>
+		for ( knights = 0; knights &lt;=10; knights++ )<br>
+		{<br>
+			for ( bishops = 0; bishops &lt;=10; bishops++ )<br>
+			{<br>
+				for ( rooks = 0; rooks &lt;=10; rooks++ )<br>
+				{<br>
+					for ( pawns = 0; pawns &lt;= 10; <br>
+pawns++ )<br>
+					{<br>
+						pro_queens = queens - 1;<br>
+						pro_knights = knights - 2;<br>
+						pro_bishops = bishops - 2;<br>
+						pro_rooks = rooks - 2;<br>
+						<br>
+						if ( pro_queens &lt; 0 )<br>
+						{<br>
+							pro_queens = 0;<br>
+						}<br>
+<br>
+						if ( pro_knights &lt; 0 )<br>
+						{<br>
+							pro_knights = 0;<br>
+						}<br>
+<br>
+						if ( pro_bishops &lt; 0 )<br>
+						{<br>
+							pro_bishops = 0;<br>
+						}<br>
+<br>
+						if ( pro_rooks &lt; 0 )<br>
+						{<br>
+							pro_rooks = 0;<br>
+						}<br>
+						<br>
+						if ( pro_queens + <br>
+pro_knights + pro_bishops + pro_rooks + pawns &lt;= 8 )<br>
+						{<br>
+							count[ queens + <br>
+knights + bishops + rooks + pawns ]++;<br>
+							total++;<br>
+						}<br>
+					}<br>
+				}<br>
+			}<br>
+		}<br>
+	}<br>
+	<br>
+	for (counter = 0; counter &lt; 16; counter++ )<br>
+	{<br>
+		printf(&quot;%d = %d\n&quot;, counter, count[ counter ] );<br>
+	}<br>
+	<br>
+	printf(&quot;Total = %d\n&quot;, total );<br>
+	<br>
+	getchar();<br>
+}<br>
+<br>
+-- <br>
+I know I can&#x27;t spell. Thats why I became a Computer Programmer. Compilers<br>
+don&#x27;t mind bad spelling, as long as you make the same mistakes every time.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

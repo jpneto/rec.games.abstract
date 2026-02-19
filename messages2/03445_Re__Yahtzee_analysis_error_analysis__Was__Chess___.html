@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Yahtzee analysis error analysis (Was: Chess ...)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Yahtzee analysis error analysis (Was: Chess ...)</h1>
+    <p><strong>From:</strong> Graham Wills &lt;gwills@research.att.com&gt;<br>
+    <strong>Date:</strong> 04 11 1996 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+David desJardins wrote:<br>
+&gt; <br>
+&gt; Graham Wills &lt;gwills@research.att.com&gt; writes:<br>
+&gt; &gt; Since there are roughly 700K states and I believe the error for each<br>
+&gt; &gt; state has an absolute maximum of 0.000001 (and in most cases will be<br>
+&gt; &gt; much smaller), then if the errors are random, and the values roughly<br>
+&gt; &gt; in a range of about 100-300 an upper bound on the probability of two<br>
+&gt; &gt; being within 0.000001 of each other is 0.7 / 100 or about 0.007.<br>
+&gt; <br>
+&gt; Graham is completely wrong.  If you have 700000 scores randomly<br>
+&gt; distributed over the interval [100,300], then the probability that there<br>
+&gt; will be some two scores within 0.000001 of each other is 1.0, to about<br>
+&gt; five hundred decimal places.  More, if the distribution is not uniform.<br>
+<br>
+Yep. I don&#x27;t know what my brain was on. David&#x27;s quite right. Then I<br>
+realized that actually you don&#x27;t need to look at 700K different numbers<br>
+because at any stage you&#x27;re only comparing a maximum of 32 strategies.<br>
+Now you&#x27;re doing this a lot of times so it&#x27;ll probably still lead to<br>
+confusion. So far the program I&#x27;ve been running has is slogging through<br>
+the very topmost branches of the tree, and hasn&#x27;t had a problem yet, but<br>
+it would be deeper that it is more likely to be a problem.<br>
+<br>
+	-Graham<br>
+<br>
+-- <br>
+Graham Wills                    Data Visualization group, Lucent<br>
+Technologies<br>
+gwills@research.bell-labs.com   Bell Laboratories, Indian Hill,<br>
+Naperville IL<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

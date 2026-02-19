@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Approaches to Othello playing programs</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Approaches to Othello playing programs</h1>
+    <p><strong>From:</strong> desnogue@aurora.unice.fr (DESNOGUES)<br>
+    <strong>Date:</strong> 17 Feb 1993 13:34:14 +0100</p>
+    <hr>
+    <div><br>
+&gt; Hmm.  Sorry but that&#x27;s wrong.  The average number of moves available to a<br>
+&gt; player at any stage of the game is roughly 13.  Therefore the branching<br>
+&gt; factor is about 3.46 = square root of 13.<br>
+<br>
+Are you sure Paul? I read the branching factor was 10 on the average.<br>
+Anyway when the branching factor is b and the depth is d with alpha-beta<br>
+algo you can reduce the number of nodes from b^d down to about 2*b^(d/2).<br>
+That&#x27;s the optimal case (when you always explore the best move first, that<br>
+is never...).<br>
+So the new branching factor depends on the depth of the exploration...<br>
+<br>
+Laurent Desnogues<br>
+<br>
+<br>
+</div>
+</body>
+</html>

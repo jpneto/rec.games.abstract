@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Games that stretch MCTS</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Games that stretch MCTS</h1>
+    <p><strong>From:</strong> marksteere@gmail.com<br>
+    <strong>Date:</strong> Thu, 24 Feb 2011 23:05:59 GMT</p>
+    <hr>
+    <div><br>
+On 24-Feb-2011, Greg &lt;dreamwafer@yahoo.com&gt; wrote:<br>
+<br>
+&gt; As an observation, many (if not most) of Mark Steere&#x27;s<br>
+&gt; games seem to have that property so perhaps Mark has<br>
+&gt; created fertile territory for UCT :).<br>
+<br>
+Random search techniques are not suitable for most games because of the<br>
+enormous computer power required to generate enough random, complete plays<br>
+that meaningful patterns start to emerge in the data.  Having an infinite<br>
+tree certainly doesn&#x27;t help to this end.  Even my finite games are mostly<br>
+unsuitable for random search, like Oust for example.  Oust would be<br>
+resistant to all forms of AI, especially random search.<br>
+<br>
+&gt; UCT &quot;wants&quot; the search space to be cone shaped<br>
+&gt; tapering at the end, it doesn&#x27;t like &quot;needle in the haystack&quot;<br>
+&gt; end games where the ratio of wins &amp; losses to the<br>
+&gt; remaining search space is small.<br>
+<br>
+Random search isn&#x27;t inherently afraid of haystack needles.  All of the bad<br>
+strategies random play engenders cancel each other out, leaving intelligent<br>
+play outstanding.  Again, it&#x27;s just the raw computer power needed to<br>
+generate all that data.  One essential requirement for random search is a<br>
+virtual nothing of a heuristic.  In Flume, for example, you need to know<br>
+whether an even or an odd number of turns were required to fill in a given<br>
+area, on average.  More specifically, there will be a distribution.  If it&#x27;s<br>
+a spike on one number, then it&#x27;s settled.  There are n turns available in<br>
+that region.  If the spikes are divided between two numbers, then there&#x27;s a<br>
+&quot;switch&quot; in the region - a formation which can require an even or an odd<br>
+number of turns to fill out, depending on how the fill-in is initiated.  The<br>
+data might also indicate two switches in the region, etc.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

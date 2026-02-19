@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Chess variant problem - a bug in Zillions?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Chess variant problem - a bug in Zillions?</h1>
+    <p><strong>From:</strong> Alfred Pfeiffer &lt;apf@informatik.tu-chemnitz.de&gt;<br>
+    <strong>Date:</strong> Fri, 21 Nov 2003 15:24:38 +0100</p>
+    <hr>
+    <div>John Rowland wrote:<br>
+&gt; ...<br>
+&gt; When Zillions plays my game against itself, white wins nearly all <br>
+&gt; of the time in various symmetrical starting positions. The obvious<br>
+&gt; conclusions were that my game was flawed or that my rule file was<br>
+&gt; flawed, but the test described below suggests otherwise.<br>
+&gt; ...<br>
+&gt; All of the pieces have symmetrical move possibilities, including <br>
+&gt; my &quot;pawns&quot; which can move (or capture) backwards as well as <br>
+&gt; forwards, so I have not needed the Zillions &quot;symmetry&quot; command <br>
+&gt; to make black&#x27;s pawns move in the reverse direction.<br>
+<br>
+Maybe the absence of symmetry commands is the reason for the<br>
+differences in the play of white and black.  <br>
+<br>
+I assume that the move generation will be done in the order <br>
+of the statements that you have coded in your zrf. <br>
+<br>
+If (for example) you write in your zrf for the &quot;pawns&quot;<br>
+<br>
+  (moves<br>
+     (pawn-move n)<br>
+     (pawn-move s)<br>
+  )<br>
+<br>
+then Zillions will generate with the white pawns:<br>
+<br>
+  first the forwards (offensive) moves, and<br>
+  second the backwards (defensive) moves - <br>
+<br>
+but for the black pawns this order is the contrary: <br>
+  defensive moves will be generated before the offensive moves.<br>
+<br>
+Similarily this should happen with the other pieces too.<br>
+<br>
+<br>
+Friendly greetings,<br>
+Alfred Pfeiffer<br>
+<br>
+P.S. It would be nice we  could seem your new game.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

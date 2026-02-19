@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Rock-Paper-Scissors Tournament</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Rock-Paper-Scissors Tournament</h1>
+    <p><strong>From:</strong> darse@cs.UAlberta.CA (Darse Billings)<br>
+    <strong>Date:</strong> 10 09 1999 00:00:00 GMT</p>
+    <hr>
+    <div>   The First International RoShamBo Programming Competition<br>
+<br>
+Summary:  Write a program to play Rock-Paper-Scissors, and enter<br>
+          it to play in an open competition against other programs.<br>
+<br>
+Purpose:  To have fun, and maybe learn something.<br>
+<br>
+<br>
+RoShamBo (also known as Rock-Paper-Scissors) is a simple game, but<br>
+the best strategy can become quite complicated when playing against<br>
+fallible opponents (such as humans:).<br>
+<br>
+The game is played between two players.  On each turn, the players<br>
+simultaneously choose one of &quot;rock&quot;, &quot;paper&quot;, or &quot;scissors&quot;.  If they<br>
+choose the same item, the result is a tie; otherwise paper covers rock,<br>
+scissors cuts paper, or rock crushes scissors.  A match consists of a<br>
+series of turns between the two players.<br>
+<br>
+The game is trivial from a game-theoretic point of view.  The optimal<br>
+mixed strategy is to choose an action uniformly at random (one-third <br>
+probability of each).  This will ensure a break-even result in the<br>
+long run, regardless of how strong (or how weak!) the opponent is.<br>
+<br>
+However, against predictable opponents, a player can attempt to detect<br>
+patterns in the opponent&#x27;s play, and exploit those weaknesses with an<br>
+appropriate counter-strategy.<br>
+<br>
+The RoShamBo Programming Competition is a tournament between computer<br>
+programs that play Rock-Paper-Scissors.  Some of the programs in the<br>
+tournament will use sub-optimal strategies, and will be vulnerable to<br>
+a perceptive and adaptive opponent.  Of course, there is always a risk<br>
+associated with such a prediction, as that player may be attempting<br>
+to trap its opponent by anticipating the reaction to previous plays.<br>
+<br>
+The most successful programs will recognize a variety of patterns and<br>
+relationships, and use that information to gain an advantage over each<br>
+opponent, without being susceptible to similar attacks.<br>
+<br>
+This competition is modeled on the &quot;Prisoner&#x27;s Dilemma&quot; tournaments held<br>
+by Axelrod in the early 1980s.  An excellent account of those events can<br>
+be found in Douglas Hofstadter&#x27;s Scientific American articles, which are<br>
+reprinted in his book &quot;Metamagical Themas&quot;.<br>
+<br>
+<br>
+To enter the competition, participants will write a C procedure to<br>
+play Rock-Paper-Scissors, given only the complete history of the match<br>
+against the current opponent.  A sample program for conducting RoShamBo<br>
+tournaments is given below (this may not be the exact version used in<br>
+the official competition, but the protocol for computer players will be<br>
+the same).<br>
+<br>
+Please note that the computer players used in the sample program will<br>
+not be playing in the official competition (except Random (Optimal)).<br>
+The identifiable characteristics of the intentionally weak programs in<br>
+the actual tournament will be more subtle, and may change over time.<br>
+<br>
+<br>
+   Rules of the First International RoShamBo Programming Competition:<br>
+<br>
+1. All programs must be written in standard C, using common libraries.<br>
+All code must compile cleanly, using &quot;gcc -Wall -lm&quot;.  No attempt will<br>
+be made to fix programming errors of any kind.  Any program that does<br>
+not function properly on the organizer&#x27;s machine, for any reason, will<br>
+be rejected.<br>
+<br>
+2. Each player will be a single C function with no parameters, returning<br>
+a single integer value: 0 = rock, 1 = paper, or 2 = scissors.<br>
+<br>
+3. Computer players must be fast!  Each player must be able to finish a<br>
+1000 turn match in one second on the tournament machine.  This should<br>
+allow several passes through a full history array, but may preclude some<br>
+compute-intensive algorithms.  (Hint: using static variables may allow<br>
+you to avoid some unnecessary re-computation).  Slower programs will be<br>
+relegated to a side competition or rejected.  Programs may be short, or<br>
+several hundred lines long (more than that is probably excessive).<br>
+<br>
+4. The length of each match will normally be at least 100 turns, and not<br>
+more than 10000 turns.  The numerical result of each match is used in<br>
+the overall standings.  For example, 30 wins, 40 losses, and 30 ties<br>
+over 100 turns would net -10 points for that match.<br>
+<br>
+5. Players may access the full history arrays for the match, as global<br>
+variables.  These arrays will be called my_history[] and opp_history[].<br>
+Players may also use any provided routines, such as flip_biased_coin(),<br>
+and biased_roshambo().  Players must not access any memory or procedures<br>
+not intended for their use, and must not use srandom() to set the random<br>
+number seed.  Any attempt to thwart the tournament system in any way, or<br>
+any behavior that is not in the spirit of the competition, will result<br>
+in disqualification.<br>
+<br>
+6. There is no rule 6.<br>
+<br>
+7. All submissions become public domain.  However, appropriate credit<br>
+will be given to the original author(s) for any ideas or source code<br>
+that are used or published in the future.<br>
+<br>
+8. The decisions of the organizer are final, and supercede all other<br>
+rules.  No further discussion will be entertained.<br>
+<br>
+<br>
+   To Enter:<br>
+<br>
+1. Give your program a name (maximum of 18 characters), to appear on<br>
+the tournament crosstable.  Suggest a short name for the C function.<br>
+(*) The names &quot;RoShamBot&quot; and &quot;Deep Rock&quot; have been taken.<br>
+<br>
+2. Submit your program by e-mail to darse@cs.ualberta.ca (please put<br>
+&quot;RoShamBo&quot; in the subject).  The e-mail must include the source code<br>
+in PLAIN TEXT only: no HTML, no attachments.<br>
+<br>
+   Deadline:  Monday, September 27, 1999.<br>
+<br>
+Good luck!<br>
+<br>
+<br>
+(*) You can play Perry Friedman&#x27;s original RoShamBot at:<br>
+    http://chappie.stanford.edu/cgi-bin/roshambot <br>
+    Or play the new RoShamBot at Pick&#x27;em Sports:<br>
+    http://contest1.pickem.com/cgi-bin/roshambo/roshambot.cgi<br>
+<br>
+(*) Patti Beadle&#x27;s Deep Rock was the first program to compete<br>
+    in the RoShamBo World Championship (in Las Vegas, 1997).<br>
+<br>
+-=-=-  file:  roshambo.c  -=-=-<br>
+<br>
+/*  RoShamBo Tournament Program           Darse Billings,  Sept 1999  */<br>
+<br>
+#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+#include &lt;string.h&gt;<br>
+#include &lt;math.h&gt;<br>
+#include &lt;time.h&gt;<br>
+<br>
+#define rock      0<br>
+#define paper     1<br>
+#define scissors  2<br>
+<br>
+#define players   7          /* number of players in the tournament */<br>
+#define tourneys  1          /* number of round-robin tournaments */<br>
+#define trials    1000       /* number of turns per match */<br>
+<br>
+#define fw        5          /* field width for printed numbers */<br>
+#define verbose1  0          /* print result of each trial */<br>
+#define verbose2  0          /* print match histories */<br>
+#define verbose3  1          /* print result of each match */<br>
+<br>
+/*  Full History Structure (global variables, accessible to the<br>
+                            current player during each match)<br>
+<br>
+      - element 0 is the number of trials played so far<br>
+      - element i is the action taken on turn i (1 &lt;= i &lt;= trials ) */<br>
+<br>
+int my_history[trials+1], opp_history[trials+1];<br>
+<br>
+/*  Tournament Crosstable Structure  */<br>
+<br>
+#define nameleng  18<br>
+typedef struct {<br>
+    char name[nameleng+1];   /* descriptive name (max 18 chars) */<br>
+    int(*pname)();           /* function name for computer player */<br>
+    int result[players+1];   /* list of player&#x27;s match results */<br>
+} Player_Table;<br>
+<br>
+<br>
+#define maxrandom 2147483648.0   /* 2^31, ratio range is 0 &lt;= r &lt; 1 */<br>
+<br>
+int flip_biased_coin (double prob)<br>
+{<br>
+    /* flip an unfair coin (bit) with given probability of getting a 1 */<br>
+<br>
+    if ( (random() / maxrandom) &gt;= prob )<br>
+         return(0);<br>
+    else return(1);<br>
+}<br>
+<br>
+int biased_roshambo (double prob_rock, double prob_paper)<br>
+{<br>
+    /* roshambo with given probabilities of rock, paper, or scissors */<br>
+    double throw;<br>
+<br>
+    throw = random() / maxrandom;<br>
+<br>
+    if ( throw &lt; prob_rock )                   { return(rock); }<br>
+    else if ( throw &lt; prob_rock + prob_paper ) { return(paper); }<br>
+    else /* throw &gt;= prob_rock + prob_paper */ { return(scissors); }<br>
+}<br>
+<br>
+/*  RoShamBo Player Algorithms  */<br>
+<br>
+int randbot ()<br>
+{<br>
+    /* generate action uniformly at random (optimal strategy) */<br>
+    return( random() % 3);<br>
+}<br>
+<br>
+int rockbot ()<br>
+{<br>
+    /* &quot;Good ole rock.  Nuthin&#x27; beats rock.&quot; */<br>
+    return(rock);<br>
+}<br>
+<br>
+int r226bot ()<br>
+{<br>
+    /* play 20% rock, 20% paper, 60% scissors */<br>
+    return( biased_roshambo(0.2, 0.2));<br>
+}<br>
+<br>
+int rotatebot ()<br>
+{<br>
+    /* rotate choice each turn */<br>
+    return( my_history[0] % 3);<br>
+}<br>
+<br>
+int copybot ()<br>
+{<br>
+    /* do whatever would have beat the opponent last turn */<br>
+    return( (opp_history[opp_history[0]] + 1) % 3);<br>
+}<br>
+<br>
+int switchbot ()<br>
+{<br>
+    /* never repeat the previous pick */<br>
+    if ( my_history[my_history[0]] == rock ) {<br>
+        return( biased_roshambo(0.0, 0.5) ); }<br>
+    else if ( my_history[my_history[0]] == paper ) {<br>
+        return( biased_roshambo(0.5, 0.0) ); }<br>
+    else return( biased_roshambo(0.5, 0.5) );<br>
+}<br>
+<br>
+int freqbot ()<br>
+{<br>
+    /* play whatever will beat the opponent&#x27;s most frequent choice */<br>
+<br>
+    int i, rcount, pcount, scount;<br>
+<br>
+    rcount = 0;  pcount = 0;  scount = 0;<br>
+    for (i = 1; i &lt;= opp_history[0]; i++) {<br>
+        if (opp_history[i] == rock)            { rcount++; }<br>
+        else if (opp_history[i] == paper)      { pcount++; }<br>
+        else /* opp_history[i] == scissors */  { scount++; }<br>
+    }<br>
+    if ( (rcount &gt; pcount) &amp;&amp; (rcount &gt; scount) ) { return(paper); }<br>
+    else if ( pcount &gt; scount ) { return(scissors); }<br>
+    else { return(rock); }<br>
+}<br>
+    /*  End of RoShamBo Player Algorithms  */<br>
+<br>
+void Init_Player_Table (Player_Table crosstable[players+1])<br>
+{<br>
+    int i, j;<br>
+<br>
+    strcpy(crosstable[0].name, &quot;Player Name&quot;);<br>
+<br>
+    strcpy(crosstable[1].name, &quot;Random (Optimal)&quot;);<br>
+    crosstable[1].pname = randbot;<br>
+<br>
+    strcpy(crosstable[2].name, &quot;Good Ole Rock&quot;);<br>
+    crosstable[2].pname = rockbot;<br>
+<br>
+    strcpy(crosstable[3].name, &quot;R-P-S 20-20-60&quot;);<br>
+    crosstable[3].pname = r226bot;<br>
+<br>
+    strcpy(crosstable[4].name, &quot;Rotate R-P-S&quot;);<br>
+    crosstable[4].pname = rotatebot;<br>
+<br>
+    strcpy(crosstable[5].name, &quot;Beat The Last Move&quot;);<br>
+    crosstable[5].pname = copybot;<br>
+<br>
+    strcpy(crosstable[6].name, &quot;Always Switchin&#x27;&quot;);<br>
+    crosstable[6].pname = switchbot;<br>
+<br>
+    strcpy(crosstable[7].name, &quot;Beat Frequent Pick&quot;);<br>
+    crosstable[7].pname = freqbot;<br>
+<br>
+    for (i = 0; i &lt;= players; i++) {<br>
+        for (j = 0; j &lt;= players; j++) {<br>
+            crosstable[i].result[j] = 0;<br>
+        }<br>
+    }<br>
+}<br>
+<br>
+int Play_Match ( int(*player1)(), int(*player2)() )<br>
+{<br>
+    /* play a match between two RoShamBo players */<br>
+<br>
+    int i, j, p1, p2, p1total, p2total, ties;<br>
+    int p1hist[trials+1], p2hist[trials+1];<br>
+<br>
+    p1total = 0; p2total = 0; ties = 0;<br>
+<br>
+    for (i = 0; i &lt;= trials; i++) {<br>
+        p1hist[i] = 0; p2hist[i] = 0;<br>
+        my_history[i] = 0; opp_history[i] = 0;<br>
+    }<br>
+<br>
+    for (i = 1; i &lt;= trials; i++) {<br>
+<br>
+        /* provide copies of history arrays for each player */<br>
+        memcpy(my_history, p1hist, sizeof(int)*(trials+1));<br>
+        memcpy(opp_history, p2hist, sizeof(int)*(trials+1));<br>
+<br>
+        p1 = player1 ();              /* get player1 action */<br>
+        if ( (p1 &lt; 0) || (p1 &gt; 2) ) {<br>
+            printf(&quot;Error: return value out of range.\n&quot;);<br>
+            p1 = (p1 % 3 + 3) % 3;    /* note: -5 % 3 = -2, not 1 */<br>
+        }<br>
+<br>
+        memcpy(opp_history, p1hist, sizeof(int)*(trials+1));<br>
+        memcpy(my_history, p2hist, sizeof(int)*(trials+1));<br>
+<br>
+        p2 = player2 ();             /* get player2 action */<br>
+        if ( (p2 &lt; 0) || (p2 &gt; 2) ) {<br>
+            printf(&quot;Error: return value out of range.\n&quot;);<br>
+            p2 = (p2 % 3 + 3) % 3;<br>
+        }<br>
+<br>
+        p1hist[0]++; p1hist[p1hist[0]] = p1;<br>
+        p2hist[0]++; p2hist[p2hist[0]] = p2;<br>
+<br>
+        if (verbose1) { printf(&quot; p1 = %d, p2 = %d&quot;, p1, p2); }<br>
+        if (p1 == p2) {<br>
+            ties++;<br>
+            if (verbose1) { printf(&quot; tie!\n&quot;); } }<br>
+        else if ( (p1-p2 == 1) || (p1-p2 == -2) ) {<br>
+            p1total++;<br>
+            if (verbose1) { printf(&quot; p1 wins!\n&quot;); } }<br>
+        else if ( (p2-p1 == 1) || (p2-p1 == -2) ) {<br>
+            p2total++;<br>
+            if (verbose1) { printf(&quot; p2 wins!\n&quot;); } }<br>
+        else printf(&quot;Error: should not be reached.\n&quot;);<br>
+    }<br>
+    if (verbose2) {<br>
+        printf(&quot; Full history of p1 (%d trials):\n&quot;, p1hist[0]);<br>
+        for (j = 1; j &lt;= trials; j++) {<br>
+            printf(&quot; %d&quot;, p1hist[j]); }<br>
+        printf(&quot;\n&quot;);<br>
+        printf(&quot; Full history of p2 (%d trials):\n&quot;, p1hist[0]);<br>
+        for (j = 1; j &lt;= trials; j++) {<br>
+            printf(&quot; %d&quot;, p2hist[j]); }<br>
+        printf(&quot;\n&quot;);<br>
+    }<br>
+    if (verbose3) {<br>
+        printf(&quot; Match: %*d (%*d+ %*d- %*d=)\n&quot;, fw, p1total-p2total,<br>
+                            fw-1, p1total, fw-1, p2total, fw-1, ties);<br>
+    }<br>
+<br>
+    return (p1total - p2total);<br>
+}<br>
+<br>
+void Print_T_Results (Player_Table crosstable[players+1])<br>
+{<br>
+    int i, j;<br>
+<br>
+    printf(&quot;\n Tournament results: \n\n&quot;);<br>
+    printf(&quot;    &quot;);<br>
+    printf(&quot;%-*s &quot;, nameleng, crosstable[0].name);<br>
+    for (j = 1; j &lt;= players; j++) {<br>
+        printf(&quot; %*d&quot;, fw, j);<br>
+    }<br>
+    printf(&quot;  total\n\n&quot;);<br>
+    for (i = 1; i &lt;= players; i++) {<br>
+        printf(&quot; %2d &quot;, i);<br>
+        printf(&quot;%-*s &quot;, nameleng, crosstable[i].name);<br>
+        for (j = 1; j &lt;= players; j++) {<br>
+            printf(&quot; %*d&quot;, fw, crosstable[i].result[j]);<br>
+        }<br>
+        printf(&quot; %*d \n&quot;, fw+1, crosstable[i].result[0]);<br>
+    }<br>
+    printf(&quot;\n&quot;);<br>
+}<br>
+<br>
+void Print_Sorted_Results (Player_Table crosstable[players+1])<br>
+{<br>
+    int i, j, max, swap;<br>
+    char nameswap[nameleng+1];<br>
+<br>
+    Player_Table sorted[players+1];<br>
+<br>
+    for (i = 0; i &lt;= players; i++) {<br>
+        strcpy(sorted[i].name, crosstable[i].name);<br>
+        for (j = 0; j &lt;= players; j++) {<br>
+            sorted[i].result[j] = crosstable[i].result[j];<br>
+        }<br>
+    }<br>
+<br>
+    for (i = 1; i &lt;= players; i++) {<br>
+        max = i;<br>
+        for (j = i; j &lt;= players; j++) {<br>
+            if ( (sorted[j].result[0] &gt; sorted[max].result[0]) ) {<br>
+                max = j;<br>
+            }<br>
+        }<br>
+        strcpy(nameswap, sorted[i].name);<br>
+        strcpy(sorted[i].name, sorted[max].name);<br>
+        strcpy(sorted[max].name, nameswap);<br>
+        for (j = 0; j &lt;= players; j++) {<br>
+            swap = sorted[i].result[j];<br>
+            sorted[i].result[j] = sorted[max].result[j];<br>
+            sorted[max].result[j] = swap;<br>
+        }<br>
+        for (j = 1; j &lt;= players; j++) {<br>
+            swap = sorted[j].result[i];<br>
+            sorted[j].result[i] = sorted[j].result[max];<br>
+            sorted[j].result[max] = swap;<br>
+        }<br>
+    }<br>
+    Print_T_Results (sorted);<br>
+}<br>
+<br>
+void Play_Tournament (Player_Table crosstable[players+1])<br>
+{<br>
+    int i, j, score;<br>
+<br>
+    for (i = 1; i &lt;= players; i++) {<br>
+        for (j = i+1; j &lt;= players; j++) {<br>
+            if (verbose3) { printf(&quot; %-*s vs %-*s &quot;, nameleng,<br>
+                crosstable[i].name, nameleng, crosstable[j].name); }<br>
+            score = Play_Match (crosstable[i].pname, crosstable[j].pname);<br>
+            crosstable[i].result[j] += score;<br>
+            crosstable[j].result[i] -= score;<br>
+        }<br>
+    }<br>
+<br>
+    for (i = 1; i &lt;= players; i++) {<br>
+        crosstable[i].result[0] = 0;<br>
+        for (j = 1; j &lt;= players; j++) {<br>
+            crosstable[i].result[0] += crosstable[i].result[j];<br>
+        }<br>
+    }<br>
+    if (verbose2) { Print_T_Results (crosstable); }<br>
+}<br>
+<br>
+int main() {<br>
+<br>
+    int i;<br>
+    Player_Table crosstable[players+1];<br>
+<br>
+    /* fixed or variable seed to the random() function */<br>
+    /* srandom(0); */<br>
+    srandom(time(0));<br>
+<br>
+    Init_Player_Table (crosstable);<br>
+<br>
+    printf(&quot; Playing %d tournaments with %d trials per match...\n\n&quot;,<br>
+             tourneys, trials);<br>
+<br>
+    for (i = 1; i &lt;= tourneys; i++) {<br>
+        Play_Tournament (crosstable);<br>
+    }<br>
+    Print_Sorted_Results (crosstable);<br>
+    return(0);<br>
+}<br>
+--<br>
+<br>
+&quot;There&#x27;s no sense in searching for perfection <br>
+   when you&#x27;re making successful mistakes&quot;	-The Tragically Hip.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

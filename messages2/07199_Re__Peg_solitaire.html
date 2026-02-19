@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Peg solitaire</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Peg solitaire</h1>
+    <p><strong>From:</strong> Ed Murphy &lt;emurphy42@socal.rr.com&gt;<br>
+    <strong>Date:</strong> Wed, 24 Nov 2004 00:04:34 GMT</p>
+    <hr>
+    <div>On Tue, 23 Nov 2004 09:27:32 -0800, lucas wrote:<br>
+<br>
+&gt; The problem is that deciding if a configuration c is reducible to a<br>
+&gt; configuration c&#x27; is NP-complete. So, it&#x27;s difficult to have that final<br>
+&gt; single final configuration.<br>
+<br>
+A pagoda function does not completely solve this problem; it simply<br>
+identifies some cases in which c is *not* reducible to c&#x27;.<br>
+<br>
+&gt; I could use the rule of three to decide if a game is not playable, but<br>
+&gt; the rule of three did not give me a method to enumarate all really<br>
+&gt; possible final configuration (the rule of three is only a necessary<br>
+&gt; condition).<br>
+<br>
+I believe the standard peg-solitaire problem has exactly one desired<br>
+final configuration:  only one peg remains, and it is in the exact<br>
+center of the board.  If you have something different in mind, then<br>
+please tell us what it is.<br>
+<br>
+&gt; I want to write a program that can solve an arbitrary initial<br>
+&gt; configuration,<br>
+&gt; created by the user. So i don&#x27;t know the final configuration.<br>
+&gt; <br>
+&gt; So, which pagoda function should i use???<br>
+<br>
+As many as you can find.  Finding them is difficult, but applying them<br>
+is easy.<br>
+<br>
+Let S be the set of all valid final configurations.<br>
+Let pf() be a pagoda function.<br>
+Let PFC be the minimum value of pf(x) where x is an element of S.<br>
+<br>
+If pf(N) &lt; PFC, then N is not reducible to *any* element of S, and so<br>
+you can immediately stop considering N.  If pf(N) &gt;= PFC, then N might<br>
+be reducible to one or more elements of S.<br>
+<br>
+If N passes all the pagoda functions that you can find, then you can<br>
+perform more complex types of analysis.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

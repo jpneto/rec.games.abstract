@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Hex Win Proof?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Hex Win Proof?</h1>
+    <p><strong>From:</strong> &quot;Larry Hammick&quot; &lt;larryhammick@telus.net&gt;<br>
+    <strong>Date:</strong> Sat, 20 Mar 2004 08:06:48 GMT</p>
+    <hr>
+    <div>&quot;Steven Meyers&quot; &lt;swmeyers@fuse.net&gt; wrote in message<br>
+news:b1d340a7.0403191753.4511693e@posting.google.com...<br>
+&gt; w.taylor@math.canterbury.ac.nz (Bill Taylor) wrote in message<br>
+news:&lt;716e06f5.0403181938.72a82f90@posting.google.com&gt;...<br>
+&gt; &gt; It is an old theorem that in Hex, once the board has been completely<br>
+&gt; &gt; filled in with two colours, there *must* be a winning path for one<br>
+&gt; &gt; or other of them.<br>
+&gt; &gt;<br>
+&gt; &gt; Now, I can prove this easily enough mathematically, but I&#x27;m wondering if<br>
+&gt; &gt; there is a simple proof, or proof outline, that would be understandable<br>
+&gt; &gt; and reasonably convincing to the intelligent layman.<br>
+&gt; Check http://web.cs.ualberta.ca/~javhar/hex/hex-yproof.html for a<br>
+&gt; simple proof using the game of Y.<br>
+Nice proof and a nice page.<br>
+Another way is to consider not the cells, but just the boundary<br>
+between red and blue when the board is full. A component of<br>
+the boundary must be either a closed curve (in which case we<br>
+can contract it to a point, losing nothing) or a path from an edge<br>
+to the same edge (contract again) or a path from one edge to<br>
+another. In the last case, consider an enpoint of a boundary<br>
+component which is closer than any other to an obtuse corner<br>
+of board. According to where the other endpoint of that<br>
+component is, we can determine who has won the game.<br>
+<br>
+Here&#x27;s a related result in topology. Let T be the Euclidean<br>
+triangle with vertices (1,0,0) (0,1,0) (0,0,1) in homogeneous<br>
+coordinates. Let  f be any continuous mapping T to T, and write<br>
+f(x,y,z) = (A(x,y,z), B(x,y,z), C(x,y,z))<br>
+Let S be the (closed) subset of T consisting of the points (x,y,z)<br>
+such that _at least two_ of these inequalities hold:<br>
+A(x,y,z) &gt;= x<br>
+B(x,y,z) &gt;= y<br>
+C(x,y,z) &gt;= z.<br>
+Then S has a connected component which meets all three<br>
+sides of T.<br>
+LH<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

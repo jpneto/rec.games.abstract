@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: NIM algorithm, anyone ?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: NIM algorithm, anyone ?</h1>
+    <p><strong>From:</strong> kleber@hanalei.berkeley.edu (Michael Kleber)<br>
+    <strong>Date:</strong> 24 May 1994 18:43:22 GMT</p>
+    <hr>
+    <div>Neil Gall asked:<br>
+&gt;  Does anyone have an algorithm for the game Nim ?  I think it<br>
+&gt;  goes by other names sometimes, so I&#x27;ll describe it.<br>
+&gt;  <br>
+&gt;  You lay out matches or stones or something like this:<br>
+&gt;  <br>
+&gt;  <br>
+&gt;              * * *<br>
+&gt;            * * * * *<br>
+&gt;          * * * * * * *<br>
+&gt;          <br>
+&gt;  Two players take it in turns to remove any number of stones<br>
+&gt;  from a single row.  The player to remove the last stone loses.<br>
+<br>
+As Bruno Wolff said, you should definitely look at _Winning Ways_<br>
+(by Berlecamp, Conway and Guy).  But here&#x27;s a capsule summary<br>
+of the (really easy) nim algorithm.<br>
+<br>
+The general form of the game has n piles, with sizes s_1, s_2,...,<br>
+s_n, and you&#x27;re allowed in your turn to decrease any one pile by any<br>
+amount.  The goal is to make it the other player&#x27;s turn when all of<br>
+the piles have size 0.<br>
+<br>
+Think of the numbers s_1 to s_n as being written down in binary.  Then<br>
+the &quot;sum&quot; of all the piles is what you get by taking s_1 to s_n and<br>
+xor&#x27;ing them together.  (ie, bitwise addition without carry.  In your<br>
+example, n=3, s_1=3, s_2=5, s_3=7, so in binary that&#x27;s 11, 101, 111,<br>
+and xor&#x27;ing them gives you 001.)<br>
+<br>
+The reason you care about the &quot;sum&quot; is that, in a single move, you<br>
+can do the following (trust me for now):<br>
+<br>
+1. If the sum is not 0, in a single move it is always possible to make<br>
+   a move so that the sum becomes 0.<br>
+<br>
+2. If the sum is 0, then any move makes the sum non-0.<br>
+<br>
+So to insure a win, you can just make sure that the &quot;sum&quot; is always 0<br>
+at the *end* of your turn.  (You always can-- that&#x27;s rule 1 above.)<br>
+Then at the *beginning* of your turn, the sum can never be 0 (by rule<br>
+2 above), so you can never lose.  And in this game, if you never lose,<br>
+you win.  Poof.  So in the above case, the &quot;winning moves&quot; are to take<br>
+one match from any pile, so the xor becomes 000.  If you play most of<br>
+the &quot;commercailly available&quot; variations on this game, things often<br>
+start out &quot;just right&quot; so that the xor at the beginning of the game is<br>
+0, so it&#x27;s a second-player-win.<br>
+<br>
+Property 2 is pretty clear, since changing just one number *has* to<br>
+change the xor.  To show property 1, just find a pile whose size is<br>
+*larger* than that same size xor&#x27;ed with the &quot;sum&quot;.  Showing that such<br>
+a pile always exists is left as an exercise to the interested reader.<br>
+<br>
+--Michael Kleber                 I don&#x27;t have an overactive imagination...<br>
+  kleber@math.berkeley.edu       I have an underactive reality...   --EG<br>
+<br>
+<br>
+</div>
+</body>
+</html>

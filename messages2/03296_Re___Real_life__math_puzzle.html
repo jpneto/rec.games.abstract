@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: &quot;Real life&quot; math puzzle</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: &quot;Real life&quot; math puzzle</h1>
+    <p><strong>From:</strong> fleck@dirk (Pat Fleckenstein (x23595))<br>
+    <strong>Date:</strong> 30 05 1996 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+&gt;A) The artwork should go to everyone once, before somebody can have it for <br>
+&gt;the second time.<br>
+<br>
+&gt;B) There should not be too many discrepancies between the number of artworks <br>
+&gt;curently own by the members. It&#x27;s OK that somebody has 1 and somebody else has <br>
+&gt;none (it&#x27;s always the case if there are less than 8 artworks) but it is not <br>
+&gt;allowed that somebody has 2 and someone else none.<br>
+<br>
+&gt;C) The artworks should not travel always the same way. In other words, there <br>
+&gt;should not be a guy who always gets the newly acquired artwork, whereas <br>
+&gt;another guy must always wait 7 months before he can have it.<br>
+<br>
+   I&#x27;d suggest this method.  Pick a number k between 1 and the number<br>
+   of people you have (inclusive).  Every time a new painting becomes<br>
+   available, decrement k (if k ends up as 0 then return it to n).<br>
+   Give the new painting to the person numbered closest to k (without<br>
+   going over) who is in the group of people with the fewest paintings.<br>
+<br>
+   So... starting with three people and zero paintings and k==2<br>
+      (gwfp == group with fewest paintings)<br>
+<br>
+	 k=2  1 2 3    gwfp=1 2 3<br>
+<br>
+      add painting a<br>
+	 k=1  1a 2 3   gwfp=2 3<br>
+<br>
+      pass paintings along<br>
+	 k=1  1 2a 3   gwfp=1 3<br>
+<br>
+      pass paintings along<br>
+	 k=1  1 2 3a   gwfp=1 2<br>
+      <br>
+      add new painting b<br>
+	 k=3  1 2b 3a   gwfp=1<br>
+   <br>
+   Of course, your criteria C isn&#x27;t quite satisfied if always passing<br>
+   person m&#x27;s paintings on to person m+1 is &#x27;traveling the same way&#x27;.<br>
+   But, this satisfies B and distributes the starting point of paintings<br>
+   which is the latter half of C&#x27;s requirement.  And it easily satisfies A.<br>
+<br>
+   The major disadvantage to always passing left is that once painting<br>
+   &#x27;d&#x27; enters the picture, it&#x27;s always going be shipped around with<br>
+   the same other set of paintings.  This is nice from a logistics<br>
+   viewpoint (I only have to deliver all of the paintings I have<br>
+   to Joe at the end of each month.... never one to Mary in Wisconsin,<br>
+   one to Joe, and three to Louis in Salt Lake City).  But, permutation<br>
+   would give the gallery life.<br>
+<br>
+   So, here&#x27;s another suggestion.  At then end of each month, randomly<br>
+   reassign the paintings.  Preserving B.  I&#x27;d suggest this (being<br>
+   the geek that I am):<br>
+<br>
+      Assign each painting a sequence number and a Fibonacci number<br>
+	 (should probably give it two Fibonacci numbers so that each<br>
+	  maintains its state).<br>
+<br>
+      Now, at the end of each month, assume no one has any paintings.<br>
+	 With each painting (in sequence order), calculate its<br>
+	    next Fibonacci number.  Mod this number with the number<br>
+	    of people in the gfwp.  Assign this painting to that<br>
+	    person.<br>
+<br>
+   Any uniform random number generation technique would work, but<br>
+   Fibonacci has the appeal for me from a simplicity standpoint.<br>
+<br>
+   This doesn&#x27;t satisfy A completely, but it doesn&#x27;t do too badly at<br>
+   it.  It does satisfy B completely, and it does a kickin&#x27; job on C.<br>
+<br>
+   As odd as this may seem, I think another good newsgroup for this<br>
+   question would be rec.games.juggling.  I think there may be a<br>
+   nifty parallel to site-swap theory.<br>
+<br>
+   alter,<br>
+   pat<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: alpha beta... gamma</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: alpha beta... gamma</h1>
+    <p><strong>From:</strong> Sean Lorber &lt;htank@erols.com&gt;<br>
+    <strong>Date:</strong> 14 12 1998 00:00:00 GMT</p>
+    <hr>
+    <div>What&#x27;s interesting to me is that post about Overflow, above, was<br>
+originally a 2 player game.  However you may add as many players as you<br>
+wish and the game tree does not get any more complex (I think).<br>
+<br>
+Sean<br>
+<br>
+Claude Chaunier wrote:<br>
+<br>
+&gt; Hi, does anybody know about min-max and alpha-beta search extended to<br>
+&gt; three or more players?<br>
+&gt;<br>
+&gt; I&#x27;m often reading it&#x27;s far less simple because of psychological<br>
+&gt; matters, like temporary cooperations and sensibility to others&#x27;<br>
+&gt; blunders. But psychology was already a part of the game with two<br>
+&gt; player games like chess, for which you could heavily rely on<br>
+&gt; assumptions about the opponent&#x27;s psychology, and AI and nice human<br>
+&gt; players often choose to assume 1) the others are as good and fair<br>
+&gt; as they are - with the same meaning for those adjectives - and 2) the<br>
+&gt; others are assuming the same about them and no more. I bet you the<br>
+&gt; same choice can be made with more players, resulting in a smart,<br>
+&gt; solid, and still sensitive play style. I&#x27;ve played like that multi-<br>
+&gt; player versions for Pente and Hexbo and am very happy with it.<br>
+&gt;<br>
+&gt; A natural way to extend the min-max search then - classically used by<br>
+&gt; computer players in two player games - to three (or more) players is<br>
+&gt; to go on evaluating the board with a kind of additive measure from the<br>
+&gt; point of view of each player. Let&#x27;s say a position gets the triplet<br>
+&gt; (x,y,z) where x measures how strong the first player is in some way<br>
+&gt; we would like to be as absolute as possible, y how strong the second<br>
+&gt; is, z how strong the third is. Then a better measure triplet for the<br>
+&gt; position compares each value with the strongest of the two others,<br>
+&gt; giving<br>
+&gt;<br>
+&gt;   ( x - max(y,z) , y - max(x,z) , z - max(x,y) )<br>
+&gt;<br>
+&gt;   = ( min(x-y,x-z) , min(y-x,y-z) , min(z-x,z-y) )<br>
+&gt;<br>
+&gt; and the first player for example must strive to maximize min(x-y,x-z).<br>
+&gt; Well, she must if she doesn&#x27;t look further to her first move and<br>
+&gt; doesn&#x27;t consider the other players&#x27; similar objective - and this can<br>
+&gt; be obviously criticized as it may well appear that ignoring the<br>
+&gt; weakest player choices would be fatal. But it&#x27;s only how things look<br>
+&gt; like at one ply deep in the search. With a deeper min-max search in<br>
+&gt; the game tree, things get far more interesting, and the weakest<br>
+&gt; player&#x27;s moves are automatically taken into account, resulting into<br>
+&gt; tight and subtle temporary implicit cooperations among the players.<br>
+&gt;<br>
+&gt; Sorry if this is well-known. I tend to think programmers are blind to<br>
+&gt; it when I see how badly the computer plays so far at classic multi-<br>
+&gt; player games as Worms, Hearts, Chinese Checkers, Starcraft, while<br>
+&gt; it&#x27;s so good at Chess and others.<br>
+&gt;<br>
+&gt; Now we can even extend the alpha-beta pruning technics to save time<br>
+&gt; and not explore useless branches. Here is the evaluation function. See<br>
+&gt; how close it is to the classical alpha-beta two-player case. You can<br>
+&gt; bet it goes on like that with four or more players.<br>
+&gt;<br>
+&gt; function FABC( Position, a,b,c, Depth ) returns a triplet of reals;<br>
+&gt; {  if Depth=0 or game over then<br>
+&gt;    {  (x,y,z) := some static additive evalution of Position,<br>
+&gt;       x measuring how good is Position for the Player to move<br>
+&gt;       y measuring how good is Position for the next Player<br>
+&gt;       z measuring how good is Position for the further next Player;<br>
+&gt;<br>
+&gt;       return (min(x-y,x-z), min(y-x,y-z), min(z-x,z-y));<br>
+&gt;    }<br>
+&gt;    Bestu := -infinite;<br>
+&gt;    for every valid move M on Position do<br>
+&gt;    {  (v,w,u) := FABC( M(Position), -c,-a,b, Depth-1 );<br>
+&gt;       if u &gt; Bestu then<br>
+&gt;       {  BestValue := (Bestu, Best1, Best2) := (u,v,w);<br>
+&gt;          if u &gt;= b or u &gt;= c then return(BestValue);<br>
+&gt;          if u &gt; a then a := u;<br>
+&gt;       }<br>
+&gt;    }<br>
+&gt;    return(BestValue);<br>
+&gt; }<br>
+&gt;<br>
+&gt; The parameters in the first call must get initial values as follows:<br>
+&gt;<br>
+&gt;  FABC( PositionToAnalyze, -infinite,+infinite,+infinite, WantedDepth);<br>
+&gt;<br>
+&gt; Now here are some typical situations to show how pruning works with 3<br>
+&gt; players. It&#x27;s a good start to show that FABC() above is sound and<br>
+&gt; optimal in general.<br>
+&gt;<br>
+&gt; Let&#x27;s imagine Player 0 found a first move valued (r,s,t). Player 0 now<br>
+&gt; tries a second move and Player 1 finds a first answer valued (u,v,w).<br>
+&gt; Under which conditions doesn&#x27;t Player 1 need to look for better<br>
+&gt; answers because Player 0 is already sure to prefer his first move,<br>
+&gt; seeing this first answer from Player 1? Under the following equivalent<br>
+&gt; conditions:<br>
+&gt;<br>
+&gt;  for all x,y,z, whenever (x,y,z) is a better value for Player 1 than<br>
+&gt;  (u,v,w), then (x,y,z) is worse for Player 0 than (r,s,t)<br>
+&gt;<br>
+&gt;  for all x,y,z, whenever min(y-x,y-z) &gt; min(v-u,v-w) then<br>
+&gt;  min(x-y,x-z) &lt; min(r-s,r-t)<br>
+&gt;<br>
+&gt;  for all a,b, whenever min(a,b) &gt; min(v-u,v-w) then<br>
+&gt;  min(-a,b-a) &lt; min(r-s,r-t)<br>
+&gt;<br>
+&gt;  for all a,b, whenever a and b &gt; min(v-u,v-w) then<br>
+&gt;  -a or b-a &lt; min(r-s,r-t)<br>
+&gt;<br>
+&gt;  -min(v-u,v-w) &lt;= min(r-s,r-t)                                  (1)<br>
+&gt;<br>
+&gt; Now, let&#x27;s go one player further in the search tree. First, let&#x27;s<br>
+&gt; consider that Player 2 hasn&#x27;t fully evaluated Player 1 first answer to<br>
+&gt; Player 0 second move. Player 2 first considered an answer valued<br>
+&gt; (i,j,k) and is now looking for others. Under which conditions doesn&#x27;t<br>
+&gt; Player 2 need to search further because any better answer would only<br>
+&gt; result in a value (u,v,w) for Player 1 first answer satisfying the<br>
+&gt; conditions above? Under the following equivalent conditions:<br>
+&gt;<br>
+&gt;  for any (u,v,w) better than (i,j,k) for Player 2, (1) holds<br>
+&gt;<br>
+&gt;  for all u,v,w, whenever min(w-u,w-v) &gt; min(k-i,k-j) then<br>
+&gt;  -min(v-u,v-w) &lt;= min(r-s,r-t)<br>
+&gt;<br>
+&gt;  for all a,b, whenever min(a,b) &gt; min(k-i,k-j) then<br>
+&gt;  -min(a-b,-b) &lt;= min(r-s,r-t)<br>
+&gt;<br>
+&gt;  for all a,b, whenever a and b &gt; min(k-i,k-j) then<br>
+&gt;  b-a and b &lt;= min(r-s,r-t)<br>
+&gt;<br>
+&gt; which isn&#x27;t a condition ever possible to satisfy. So there is no<br>
+&gt; general way to save time in this situation. Then let&#x27;s consider again<br>
+&gt; that Player 1 first answer to Player 0 second move has been fully<br>
+&gt; evaluated, but with a value (u,v,w) not satisfying (1). So Player 1<br>
+&gt; tries another answer and Player 2 is going to evaluate it. Player 2<br>
+&gt; finds a first answer to it valued (i,j,k). Let&#x27;s assume that the<br>
+&gt; condition (1) transposed to Player 1 and 2 moves doesn&#x27;t hold, i.e.<br>
+&gt; -min(k-i,k-j) &gt; min(v-u,v-w). Under which conditions doesn&#x27;t Player 2<br>
+&gt; need to search any further because any better answer for him would<br>
+&gt; either gets a value worse than (u,v,w) for Player 1 or worse than<br>
+&gt; (r,s,t) for Player 0? Under the following equivalent conditions:<br>
+&gt;<br>
+&gt;  for all x,y,z, whenever min(z-x,z-y) &gt; min(k-i,k-j) and<br>
+&gt;  min(y-x,y-z) &gt; min(v-u,v-w) then min(x-y,x-z) &lt; min(r-s,r-t)<br>
+&gt;<br>
+&gt;  for all a,b, whenever (a and b &gt; min(k-i,k-j)) and<br>
+&gt;  (b-a and b &lt; -min(v-u,v-w)) then b-a or -a &lt; min(r-s,r-t)<br>
+&gt;<br>
+&gt; which, after some graphical reasoning for example, turns out to mean<br>
+&gt; exactly<br>
+&gt;<br>
+&gt;  -min(k-i,k-j) &lt;= min(r-s,r-t) .                                (2)<br>
+&gt;<br>
+&gt; That&#x27;s all for now. Does it rings a bell somewhere?<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Could someone please post the rules of Zertz?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Could someone please post the rules of Zertz?</h1>
+    <p><strong>From:</strong> Richard Rognlie &lt;richard@sendmail.com&gt;<br>
+    <strong>Date:</strong> Tue, 03 Apr 2001 23:23:47 -0400</p>
+    <hr>
+    <div>This is all I have...<br>
+<br>
+Details are apparently at www.gipf.com<br>
+<br>
+Richard<br>
+<br>
+<br>
+Introduction to playing Zrtz on Richards PBeM-server.<br>
+<br>
+   REMARK: this is a testversion of Zrtz, you shouldn&#x27;t try it if you<br>
+   don&#x27;t know the game yet.<br>
+<br>
+   This is not an introduction to Zrtz. If you don&#x27;t know the game yet<br>
+   but want to learn then you can go and buy it or check the<br>
+gipf-website<br>
+   (www.gipf.com) for the rules. In any case, you should check the<br>
+   gipf-website to know how the moves of a game are written down.<br>
+<br>
+CHALLENGE          <br>
+<br>
+   The challenge-command for Zrtz is the same as for most games, just<br>
+   give the userid of both players and the fun can start.<br>
+<br>
+   Example:<br>
+          zertz challenge useridplayer1 useridplayer2<br>
+<br>
+   options:<br>
+<br>
+     * If you use the previous command you will play Zrtz according to<br>
+       the tournament rules. If you want to play with the standard rules<br>
+       then you have to use the &#x27;-standard&#x27; option.<br>
+<br>
+        Example:<br>
+                zertz challenge -standard useridplayer1 useridplayer2<br>
+<br>
+     * If a player has only one possible capture-move, then the server<br>
+       will automatically make this move without user-intervention. If<br>
+       you you want to make these moves yourself then you have to use<br>
+the<br>
+       &#x27;-noforcedmoves&#x27; option when starting the game.<br>
+<br>
+        Example:<br>
+                zertz challenge -noforcedmoves useridplayer1<br>
+                useridplayer2<br>
+<br>
+    MOVE The move-command for Zrtz is a little more complicated than<br>
+       most games.<br>
+<br>
+        The basic command is of the form:<br>
+                zertz move gamenr userid password zertzmove<br>
+<br>
+       When playing a game of Zrtz, there are 2 possible actions.<br>
+       Depending on the situation on the board, the implementation will<br>
+       indicate what must be done to go on with the game.<br>
+   <br>
+    1. Normal move, bring a new marble into play and remove a tile<br>
+     ex.<br>
+         gc3,a1<br>
+       The first character of your move indicates the color of the<br>
+marble<br>
+       (W for white, G for gray, B for black) you want to add to the<br>
+       board, followed by the position where you want to place it. Then<br>
+a<br>
+       &#x27;,&#x27; and the position of the tile you want to remove.<br>
+       There are situations where you can&#x27;t remove a free tile because<br>
+       there are none. In that case you should use &#x27;xx&#x27; for the position<br>
+       of the tile to be removed.<br>
+    2. Capture one or more marbles<br>
+     ex.<br>
+         e1-e3-c4<br>
+       The first position indicates the marble that will jump over other<br>
+       marbles to capture them. After this come separated by &#x27;-&#x27; the<br>
+       positions it is jumping to.<br>
+<br>
+   How to interpret the ASCII-representation of a zrtz-game<br>
+     * Every hexagon represents one of the tiles that constitute a<br>
+       zrtz-board. If a tile is removed from the board then the hexagon<br>
+       is replaced by a dot.<br>
+     * White, gray and black marbles are shown on the board as the<br>
+       letters W, G and B in the middle of a hexagon.<br>
+     * The following drawing shows a typical game-situation:<br>
+                   A4 B5 C6 D7 E6 F5 G4<br>
+                            __<br>
+                         __/G \__<br>
+                      __/  \__/  \<br>
+                     /  \__/  \__/.  __<br>
+                   . \__/  \__/  \__/  \<br>
+                      . \__/  \__/  \__/<br>
+                   .  __/  \__/B \__/  \<br>
+                   __/  \__/  \__/  \__/<br>
+                  /W \__/B \__/  \__/  \<br>
+                  \__/  \__/  \__/  \__/<br>
+                  /B \__/  \__/. \__/  \<br>
+                  \__/  \__/  \   . \__/<br>
+                     \__/  \__/.<br>
+                        \__/  \<br>
+                           \__/<br>
+<br>
+                   A1 B1 C1 D1 E1 F1 G1<br>
+     * Coordinates on a zrtz-board consist of a letter (A-G) and a<br>
+       number (1-7).<br>
+       The letter indicates the column, the number is the position<br>
+within<br>
+       the column when you start counting from the bottom. The following<br>
+       drawing should make things clear:<br>
+                   A4 B5 C6 D7 E6 F5 G4<br>
+                            __<br>
+                         __/7 \__<br>
+                      __/6 \__/6 \__<br>
+                   __/5 \__/6 \__/5 \__<br>
+                  /4 \__/5 \__/5 \__/4 \<br>
+                  \__/4 \__/5 \__/4 \__/<br>
+                  /3 \__/4 \__/4 \__/3 \<br>
+                  \__/3 \__/4 \__/3 \__/<br>
+                  /2 \__/3 \__/3 \__/2 \<br>
+                  \__/2 \__/3 \__/2 \__/<br>
+                  /1 \__/2 \__/2 \__/1 \<br>
+                  \__/1 \__/2 \__/1 \__/<br>
+                     \__/1 \__/1 \__/<br>
+                        \__/1 \__/<br>
+                           \__/<br>
+<br>
+                   A1 B1 C1 D1 E1 F1 G1<br>
+       The extension to the PBeM-server for playing Zrtz was written by<br>
+       Kurt Van den Branden (kurtvdb@pandora.be). If you find a problem<br>
+       or a bug, let him know.<br>
+       o Zrtz, (C) and (R) Don &amp; Co nv, 1999. All rights reserved.<br>
+<br>
+<br>
+-- <br>
+ /  \__  | <br>
+ \__/  \ | Richard Rognlie / Sr. Technical Consultant / Sendmail, Inc.<br>
+ /  \__/ | http://www.gamerz.net/rrognlie/    &lt;rrognlie@gamerz.net&gt;<br>
+ \__/    |<br>
+<br>
+<br>
+</div>
+</body>
+</html>

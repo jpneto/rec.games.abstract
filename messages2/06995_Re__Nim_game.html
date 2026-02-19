@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Nim game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Nim game</h1>
+    <p><strong>From:</strong> torbenm@diku.dk (Torben gidius Mogensen)<br>
+    <strong>Date:</strong> 07 Jul 2004 10:38:07 +0200</p>
+    <hr>
+    <div>jferro@fuchsia.ece.cmu.edu (Jonathan R. Ferro) writes:<br>
+<br>
+<br>
+&gt; A fundamental theorem of combinatorial game theory states that all<br>
+&gt; impartial or non-partisan games (i.e., games where there are no moves<br>
+&gt; which are reserved to a particular player) are equivalent to nim.  So,<br>
+&gt; for game A it certainly is the case that a general strategy exists.<br>
+&gt; Finding the strategy (i.e., computing the nim-values of each of the<br>
+&gt; states) might be a chore, since there are so many legal moves from each<br>
+&gt; position and there&#x27;s no simple chart-like way to tabulate all of the<br>
+&gt; positions, but it certainly exists.<br>
+<br>
+Indeed, but if finding the winning strategy (or, equivalently,<br>
+deciding if a position is winning or losing) is very computationally<br>
+intensive, then the game can be considered interesting (as opposed to<br>
+Nim, where the simple strategy makes the game uninteresting).  This is<br>
+not unlike, e.g., Chess, Reversi or Go, which are deterministic but<br>
+computationally hard, so it isn&#x27;t possible to formulate a simple<br>
+winning strategy.<br>
+<br>
+For game A it is, currently, not known if there is a simple strategy<br>
+(except in situations with even symmetry).<br>
+<br>
+For the general case we can, however, make an observation that may or<br>
+may not help finding a strategy: You can permute the rows and columns<br>
+as much as you like without changing the win/lose property of a<br>
+position.  This isn&#x27;t hard to verify: You first realise that a single<br>
+swap of two columns or rows doesn&#x27;t change the property, and then by<br>
+induction you show that this applies to any number of swaps.<br>
+<br>
+We can, however, not just sort the rows and columns by size and then<br>
+look at the number of stones in the rows and columns.  For example:<br>
+<br>
+   XX           XX<br>
+     X   and   X<br>
+   X           X<br>
+<br>
+Both have the sequences 2,1,1 both vertically and horisontally, but<br>
+the first pattern is a first-player win (by removing the top row) and<br>
+the second pattern is a 2nd player win (as the 2nd player can mirror<br>
+the first player&#x27;s moves over the diagonal).<br>
+<br>
+	Torben<br>
+<br>
+<br>
+</div>
+</body>
+</html>

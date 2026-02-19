@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Connect-4 solved on multiple board sizes</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Connect-4 solved on multiple board sizes</h1>
+    <p><strong>From:</strong> John Tromp &lt;tromp@cwi.nl&gt;<br>
+    <strong>Date:</strong> Fri, 18 Nov 2005 16:35:34 +0100</p>
+    <hr>
+    <div>I just completed solving connect-4 on all board sizes up to width+height=15.<br>
+ From the perspective of the first player, the perfect play outcomes are:<br>
+<br>
+height<br>
+<br>
+10 	= 	=<br>
+<br>
+9 	= 	= 	+<br>
+<br>
+8 	= 	= 	- 	+<br>
+<br>
+7 	= 	= 	+ 	= 	+<br>
+<br>
+6 	= 	= 	- 	+ 	- 	-<br>
+<br>
+5 	= 	= 	= 	= 	+ 	+ 	+<br>
+<br>
+4 	= 	= 	- 	= 	- 	- 	-<br>
+<br>
+	4 	5 	6 	7 	8 	9 	10 	width<br>
+<br>
+This table, source code, a perfect playing applet, and some connect-4 links<br>
+are available at http://www.cwi.nl/~tromp/c4/c4.html<br>
+<br>
+Next on the todo list is solving the 8x8 case, which may take a few years...<br>
+<br>
+regards,<br>
+<br>
+%!PS                       %  -John Tromp (http://www.cwi.nl/~tromp/)<br>
+42 42 scale 7 9 translate .07 setlinewidth .5 setgray/c{arc clip fill<br>
+setgray}def 1 0 0 42 1 0 c 0 1 1{0 3 3 90 270 arc 0 0 6 0 -3 3 90 270<br>
+arcn 270 90 c -2 2 4{-6 moveto 0 12 rlineto}for -5 2 5{-3 exch moveto<br>
+9 0 rlineto}for stroke 0 0 3 1 1 0 c 180 rotate initclip}for showpage<br>
+<br>
+<br>
+</div>
+</body>
+</html>

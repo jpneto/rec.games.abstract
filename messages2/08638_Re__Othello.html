@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Othello</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Othello</h1>
+    <p><strong>From:</strong> torbenm@pc-003.diku.dk (Torben =?iso-8859-1?Q?=C6gidius?= Mogensen)<br>
+    <strong>Date:</strong> Fri, 23 May 2008 16:40:39 +0200</p>
+    <hr>
+    <div>jm &lt;jm@alb.fr&gt; writes:<br>
+<br>
+&gt; I am a student and I have to do a strong Othello software.<br>
+&gt; I studied Michael Buro&#x27;s reports, I implemented his technics using<br>
+&gt; patterns and logistic regression but I have still a 25-30 % of<br>
+&gt; prediction error, I think is too much.<br>
+&gt;<br>
+&gt; Here are the vectors of my regression :<br>
+&gt;<br>
+&gt; pattern1_value, pattern2_value,  ... , pattern52_value,  class<br>
+&gt;<br>
+&gt; where<br>
+&gt; patternx_value is the Y+0.5/(N+1.0) - 0.5,  with Y=the number of<br>
+&gt; victories for this pattern, N the total number of positions where this<br>
+&gt; pattern appear<br>
+&gt;<br>
+&gt; class = 1 if this position has a majority of victories, 0 otherwise<br>
+&gt;<br>
+&gt; I use 13 differents pattern, and with 4 symmetries, I have a 52 vector<br>
+&gt; values.<br>
+&gt;<br>
+&gt; Is it the good way to proceed, or I made something wrong ?<br>
+<br>
+Othello is best played by a computer using brute force.  This implies:<br>
+<br>
+ - Make a fast move generator.<br>
+<br>
+ - Use tables for position evaluation.<br>
+<br>
+ - Do complete end-game search using only win/no-win as alpha/beta.<br>
+<br>
+The tables you can use are:<br>
+<br>
+ - A table assigning values to edge positions.  There are 3^8 = 6561<br>
+   possible edge positions in one row, so this table is not very<br>
+   large.  You can let a table assign values to two-deep edge<br>
+   positions (edge row + next row in), which has 3^16 = 43 million<br>
+   positions.  This easily fits in RAM on a modern computer.  Let a<br>
+   program analyse all possible positions offline to build the<br>
+   table. Use the following strategy to build the table:<br>
+<br>
+     1. Assign value to positions with no empty spaces as just the<br>
+        difference between white and black pieces.<br>
+<br>
+     2. For positions with N empty spaces (starting with N=1 and<br>
+        moving up), let value be determined by the values of positions<br>
+        reachable in one move (by placing a piece in one empty space).<br>
+<br>
+ - Use a table of exceptions.  Let the computer play a large number of<br>
+   games (against itself or other programs) using, say, four-deep<br>
+   search.  If the evaluation of a position using four-deep search is<br>
+   markedly different from the evaluation using no search (leaf-node<br>
+   evaluation), store the four-deep value in a table using a hash of<br>
+   the board position as index.  An exception table can make an<br>
+   opening library superfluous.<br>
+<br>
+So, in the end-game you do complete search and before this, you do an<br>
+N-deep alpha-beta search where you evaluate each leaf-node position in<br>
+the following way:<br>
+<br>
+  1. Hash the position and look in the exception table.  If the<br>
+     position is there, use the stored value.<br>
+<br>
+  2. Otherwise, look up all four edge positions in the edge table and<br>
+     adding up the results.  Do not attempt to be more intelligent<br>
+     than that.<br>
+<br>
+For the alpha-beta search, evaluate each possible next position using<br>
+leaf-node evaluation and sort the possible moves by this score.  Then<br>
+search the next positions in this order.  If the returned value is<br>
+markedly different from the leaf-node evaluation, add the current<br>
+position to the exception table.<br>
+<br>
+	Torben<br>
+<br>
+<br>
+</div>
+</body>
+</html>

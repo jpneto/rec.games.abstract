@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>A good solitaire game (was:CALCULATION)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>A good solitaire game (was:CALCULATION)</h1>
+    <p><strong>From:</strong> James Dow Allen &lt;jdallen2000@yahoo.com&gt;<br>
+    <strong>Date:</strong> Mon, 08 Jan 2001 08:37:12 GMT</p>
+    <hr>
+    <div> In the recent millenium in &lt;CFuKA4.Bu1@cantua.canterbury.ac.nz&gt;<br>
+Bill Taylor (wft@math.canterbury.ac.nz) described a solitaire game:<br>
+# CALCULATION<br>
+# ~~~~~~~~~~<br>
+# A shuffled pack is face-down before you,<br>
+# and cards turned over one by one.<br>
+#<br>
+# Each card, on being turned over, must be played onto either:<br>
+! one of H &quot;holding piles&quot;, or:  one of four &quot;goal piles&quot;.<br>
+!    We&#x27;ll call this game G(H).  Usually G(4) is played.<br>
+!    The top card of a holding pile can also be moved to an<br>
+!    appropriate goalpile at any time. [jda]<br>
+# The four goalpiles are built up regardless of suit, but in different ways.<br>
+# One must begin with an Ace, one with a 2, one with a 3, and one with a 4.<br>
+# Subsequent cards may be put on, if the number is exactly &quot;n&quot; above the last<br>
+# card placed, for pile with base &quot;n&quot;;  all done modulo 13;J=11,Q=12, K=13.<br>
+#<br>
+That is to say the four goalpiles are built up, without regard to<br>
+suit, as:<br>
+	A,2,3,4,5,6,7,8,9,T,J,Q,K.<br>
+	2,4,6,8,T,Q,A,3,5,7,9,J,K.<br>
+	3,6,9,Q,2,5,8,J,A,4,7,T,K.<br>
+	4,8,Q,3,7,J,2,6,T,A,5,9,K.<br>
+The game is won if you play all 52 cards to the goalpiles.<br>
+#<br>
+# [At first, G(4)] seemed so hard that I couldn&#x27;t believe it would<br>
+# ever come out, not beyond a lucky 1% at most, anyway.  But as I<br>
+# struggled more ... I almost thought I could win nearly every time,<br>
+# if I *really* concentrated on the calculations!)<br>
+#<br>
+# Give it a whirl !<br>
+<br>
+You can&#x27;t win G(4) *every time*.<br>
+If the first 20 cards are, in order,<br>
+2,2,2,2, 3,3,3,3, 4,4,4,4, 5,5,5,5, 6,6,6,6<br>
+then there will be no hope of making progress in the 1&#x27;s pile.<br>
+<br>
+Puzzle 1:<br>
+What&#x27;s the shortest starting sequence which ensures defeat of G(4)?<br>
+<br>
+Puzzle 2:<br>
+What is the smallest N_p such that Player can guarantee victory<br>
+in G(N_p) ?<br>
+<br>
+Puzzle 3:<br>
+Suppose the cards aren&#x27;t shuffled, but preset by an enemy.<br>
+What is the largest N_e such that Enemy can guarantee our defeat<br>
+in G(N_e) ?<br>
+<br>
+Puzzle 4:<br>
+Is it necessarily true that N_p = N_e + 1 ?<br>
+<br>
+----------------------<br>
+I&#x27;ve practiced the game off and on since Bill posted.  I<br>
+win G(4) about 90% of the time, and G(3) perhaps 35% but I use<br>
+a technique others may consider cheating:<br>
+<br>
+I stagger the cards in the holding piles so that all are visible,<br>
+and position them a few millimeters to the left or the right<br>
+according to whether I plan to put them into the 1st or the 4th<br>
+goalpile respectively.  This helps me untask my short-term memory<br>
+and makes the game more relaxing whether it helps me win or not.<br>
+Is this cheating?<br>
+<br>
+Best wishes, James<br>
+<br>
+<br>
+--<br>
+Disclaimer: I am not responsible for modifications made to this post<br>
+by the public Usenet provider: even the e-mail address is wrong.<br>
+My mail address is jamesdowallen at yahoo.com; my website is:<br>
+http://freepages.genealogy.rootsweb.com/~jamesdow<br>
+<br>
+<br>
+Sent via Deja.com<br>
+http://www.deja.com/<br>
+<br>
+<br>
+</div>
+</body>
+</html>

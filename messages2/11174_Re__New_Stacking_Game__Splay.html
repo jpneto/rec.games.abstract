@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: New Stacking Game: Splay</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: New Stacking Game: Splay</h1>
+    <p><strong>From:</strong> Greg &lt;dreamwafer@yahoo.com&gt;<br>
+    <strong>Date:</strong> Tue, 1 Feb 2011 09:54:45 -0800 (PST)</p>
+    <hr>
+    <div>On Feb 1, 9:59 am, christian &lt;christ...@mindsports.nl&gt; wrote:<br>
+&gt; On Feb 1, 2:33 pm, fizzy &lt;ewo...@aol.com&gt; wrote:<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt; &gt; On Feb 1, 8:14 am, christian &lt;christ...@mindsports.nl&gt; wrote:<br>
+&gt;<br>
+&gt; &gt; &gt; On Jan 31, 11:40 pm, Greg &lt;dreamwa...@yahoo.com&gt; wrote:<br>
+&gt;<br>
+&gt; &gt; &gt; &gt; Splay is now available at:<br>
+&gt;<br>
+&gt; &gt; &gt; &gt;http://splay.webstarts.com/<br>
+&gt;<br>
+&gt; &gt; &gt; &gt; I have posted the rules along with an Axiom PC game which allows both<br>
+&gt; &gt; &gt; &gt; human and computer play.<br>
+&gt;<br>
+&gt; &gt; &gt; Greg, let me be the first to congratulate you on a beauty of a game<br>
+&gt; &gt; &gt; and a new twist in the relation between the height of a stack and<br>
+&gt; &gt; &gt; specific surrounding cells. In most games that feature this<br>
+&gt; &gt; &gt; relationship, stack height is linked to the number of adjacent cells<br>
+&gt; &gt; &gt; only (Explosion, Explocus, Crossfire, Trounce).<br>
+&gt;<br>
+&gt; &gt; &gt; Your implementation is more organic and has a predecessor only in Mu.<br>
+&gt; &gt; &gt; Mu it is layered, explosions (&#x27;splaying&#x27; in your game) blow away the<br>
+&gt; &gt; &gt; top layer, then proceed on the bottom layer. A top-layer explosion<br>
+&gt; &gt; &gt; let&#x27;s the layer vanish from the exploding cell and thus lowers the<br>
+&gt; &gt; &gt; number of neighbors of adjacent top-layer cells, giving rise to chain<br>
+&gt; &gt; &gt; reactions.<br>
+&gt;<br>
+&gt; &gt; &gt; That mechanism, splaying affecting the number of vacant neighbours of<br>
+&gt; &gt; &gt; adjacent cells, works similarly and wonderfully in Splay. To keep the<br>
+&gt; &gt; &gt; reactions balanced, the rule of &#x27;collapsing&#x27; stacks that have become<br>
+&gt; &gt; &gt; to high to splay is as simple as effective.<br>
+&gt; &gt; &gt; A very elegant and solid game, congrats :)<br>
+&gt;<br>
+&gt; &gt; I played a few games of Splay and watched the computer play itself<br>
+&gt; &gt; once.  My criticism is that the game seems to lack dynamics.  Flags<br>
+&gt; &gt; are permanent, and so the game seems to be to be a lot of nibbling<br>
+&gt; &gt; around the edges of a locked-in structure and as the game goes on it<br>
+&gt; &gt; gets less interesting because more and more of the board becomes<br>
+&gt; &gt; inert.  I wonder if the game wouldn&#x27;t be better with some kind of<br>
+&gt; &gt; ongoing mechanism to challenge control all over the board.<br>
+&gt;<br>
+&gt; I haven&#x27;t played it yet, but I wouldn&#x27;t jump to conclusions on the<br>
+&gt; basis of what the computer makes of it. In tactical terms, causing<br>
+&gt; opponent&#x27;s stacks to collapse seems quite dramatic. But it requires<br>
+&gt; careful strategy to get to a position to be able to execute it.<br>
+&gt;<br>
+&gt; Flags may be permanent, but so are live groups in Go. Nevertheless I<br>
+&gt; see you may have a point, though I can&#x27;t really tell yet how serious<br>
+&gt; the &#x27;lack of dynamics&#x27; will turn out to be. It may well turn out to be<br>
+&gt; a matter of taste. All I said about Splay could have been said about<br>
+&gt; my own game Symple: elegant, intricate, solid, new. But Symple lacks<br>
+&gt; drama, possibly more so than Splay. It&#x27;s like a big ship heeling<br>
+&gt; slowly one way or the other, and by the time you get a clear picture<br>
+&gt; of which way, it&#x27;s too late to do much about it.<br>
+&gt;<br>
+&gt; Games like that require a strategist who likes to look deep into the<br>
+&gt; opening arrangements to harvest small advantages in the end. And small<br>
+&gt; advantages yet win the game, in the end.- Hide quoted text -<br>
+&gt;<br>
+&gt; - Show quoted text -<br>
+<br>
+First, thanks for all the comments/interest from everyone.<br>
+<br>
+Being a new player of Splay myself, I am trying to gain a deeper<br>
+understanding of the game dynamics as well.  There seems to be a<br>
+significant component whereby advantage is gained by strategically<br>
+utilizing the current territorial landscape.  But there is more.  For<br>
+example, I&#x27;m beginning to find that there are &quot;strategic building<br>
+blocks&quot; whereby a player constructs clusters of nearby towers in a<br>
+vacant landscape and simultaneously develops them in a cooperative<br>
+&quot;sum is greater than the parts&quot; style.  This leads to greater control<br>
+over the developing landscape.  I have been able to get an early lead<br>
+against the computer by playing a trio of adjacent towers (I will post<br>
+a saved game file demonstrating this to the web page later today).<br>
+<br>
+I wouldn&#x27;t rely on the computer game to find these deep strategies<br>
+since the lookahead is limited (the game &quot;ships&quot; with a default of<br>
+only 3 second thinking time - it&#x27;s user adjustable though).<br>
+Increasing the thinking time might help add more strategic variety,<br>
+but I haven&#x27;t had enough time to experiment with that to say for sure<br>
+and the search depth involved in discovering the effect of splay&#x27;ing 3<br>
+connected towers is too far out for my computer game to &quot;see&quot; the<br>
+conclusion (25 ply to reach full development in the example I will<br>
+post).  Therefor, I suggest not becoming jaded by what the computer is<br>
+doing.  I realize there are both benefits and risks of announcing the<br>
+game along with a computer implementation.  The computer game can be<br>
+setup for face to face play and I also suggest playing face to face if<br>
+at all possible (not over the net right now - unless one uses the<br>
+forthcoming Zillion&#x27;s version) .<br>
+<br>
+I do believe there is much more to explore with the game.<br>
+<br>
+-- Greg<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

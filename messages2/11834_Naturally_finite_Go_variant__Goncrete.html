@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Naturally finite Go variant: Goncrete</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Naturally finite Go variant: Goncrete</h1>
+    <p><strong>From:</strong> luigi &lt;luis.9.8.87@gmail.com&gt;<br>
+    <strong>Date:</strong> Wed, 6 Jul 2011 10:12:40 -0700 (PDT)</p>
+    <hr>
+    <div>I&#x27;ve long been trying to come up with an elegant, simple set of rules<br>
+which succeeded in making Go into a naturally finite game, without the<br>
+need for superko rules. That hypothetical game would no longer be Go,<br>
+of course, but it should feel as close to Go as possible and preserve<br>
+most of its virtues.<br>
+<br>
+Till now, my only (published) attempt at this particular task was<br>
+Paper and Pencil Go (http://senseis.xmp.net/?PaperAndPencilGo), which<br>
+was interesting but still far from ideal, as making life was too easy.<br>
+<br>
+Now I&#x27;m presenting Goncrete, which is a much more balanced game and,<br>
+hopefully, closer to Go in its play.<br>
+<br>
+<br>
+<br>
+GONCRETE<br>
+------------------<br>
+<br>
+The rules are those of Go, with the following exceptions:<br>
+<br>
+a) When one player makes a capture, all the surrounded enemy groups<br>
+are flipped (i.e. converted to the player&#x27;s color). Then, the player<br>
+must remove one stone from as many of the groups just flipped as<br>
+possible without splitting the newly formed group.<br>
+<br>
+b) The game ends when both players pass in succession or when one<br>
+player loses all his stones as a result of a capture.<br>
+<br>
+c) Suicide is illegal.<br>
+<br>
+d) Area scoring is used.<br>
+<br>
+<br>
+Sample positions:<br>
+-------------------------<br>
+<br>
+A Goncrete board should be much larger than the tiny ones shown here.<br>
+&#x27;A&#x27; represents White&#x27;s next move. You&#x27;ll probably have to paste this<br>
+section into Notepad to make the diagrams look right.<br>
+<br>
+. A . .        . o . .<br>
+o x o .   -&gt;   o o o .<br>
+. o . x        . o . x<br>
+<br>
+In this case, the single flipped stone can&#x27;t be removed, because that<br>
+would split the new White group into four groups.<br>
+<br>
+--<br>
+<br>
+. o o . o o . x        . o o . o o . x        . o o . o o . x<br>
+o x x A x x o .   -&gt;   o o o o o o o .   -&gt;   o . o o o o o .<br>
+o o o . o o . .        o o o . o o . .        o o o . o o . .<br>
+<br>
+In this case, the group on the left allows the removal of one stone<br>
+without splitting the newly formed group, but the one on the right<br>
+does not. Please note that such removals, when possible, are<br>
+mandatory.<br>
+<br>
+--<br>
+<br>
+. o A . x        . o o . x        . o o . x<br>
+o x x o .   -&gt;   o o o o .   -&gt;   o . o o .<br>
+o o x o .        o o o o .        o o o o .<br>
+. o o . .        . o o . .        . o o . .<br>
+<br>
+Here, any of the three flipped stones can be removed. In such cases,<br>
+the result will be exactly the same no matter which stone you choose.<br>
+<br>
+--<br>
+<br>
+x x x        o o o        o o o<br>
+x x x   -&gt;   o o o   -&gt;   o . o<br>
+x A o        o o o        o o o<br>
+<br>
+White&#x27;s last placement ends the game, as all the Black stones have<br>
+been captured. If the game were allowed to continue, an endless series<br>
+of captures and recaptures would take place. Allowing suicide would<br>
+cause a similar problem.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

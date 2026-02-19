@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Hex Win Proof?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Hex Win Proof?</h1>
+    <p><strong>From:</strong> gcrhoads@yahoo.com (Glenn C. Rhoads)<br>
+    <strong>Date:</strong> 21 Mar 2004 22:52:17 -0800</p>
+    <hr>
+    <div>swmeyers@fuse.net (Steven Meyers) wrote in message news:&lt;b1d340a7.0403210514.3fdb5469@posting.google.com&gt;...<br>
+&gt; gcrhoads@yahoo.com (Glenn C. Rhoads) wrote in message news:&lt;3396efc6.0403201232.221c2e9d@posting.google.com&gt;...<br>
+&gt; &gt; gcrhoads@yahoo.com (Glenn C. Rhoads) wrote in message news:&lt;3396efc6.0403200010.aab22a4@posting.google.com&gt;...<br>
+&gt; &gt; &gt; w.taylor@math.canterbury.ac.nz (Bill Taylor) wrote in message news:&lt;716e06f5.0403181938.72a82f90@posting.google.com&gt;...<br>
+&gt; &gt; &gt; &gt;<br>
+&gt; &gt; &gt; &gt; It is an old theorem that in Hex, once the board has been completely<br>
+&gt; &gt; &gt; &gt; filled in with two colours, there *must* be a winning path for one<br>
+&gt; &gt; &gt; &gt; or other of them.<br>
+&gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; Now, I can prove this easily enough mathematically, but I&#x27;m wondering if<br>
+&gt; &gt; &gt; &gt; there is a simple proof, or proof outline, that would be understandable<br>
+&gt; &gt; &gt; &gt; and reasonably convincing to the intelligent layman.<br>
+&gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; Can anyone help out please?<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; Here&#x27;s a pretty proof involving a closely related game called Y.<br>
+&gt; &gt; &gt; (Don&#x27;t hesitate about the length of this post; it consists mostly<br>
+&gt; &gt; &gt; of descriptions of Y, the relation to Hex, and the definition<br>
+&gt; &gt; &gt; of &quot;Y-reduction&quot;.  The final proof is very short.)<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; A Y board consists of a triangular configuration of hexagons. Play is<br>
+&gt; &gt; &gt; the same as Hex except that the goal is to build a chain that connects<br>
+&gt; &gt; &gt; all three sides (as in Hex, corner hexes belong to both sides).<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; Y is a generalization of Hex as illustrated in the following ascii diagram.<br>
+&gt; &gt; &gt; (view in a fixed font)<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt;               _<br>
+&gt; &gt; &gt;             _/*\<br>
+&gt; &gt; &gt;           _/*\_/<br>
+&gt; &gt; &gt;         _/*\_/*\<br>
+&gt; &gt; &gt;       _/ \_/*\_/<br>
+&gt; &gt; &gt;     _/ \_/ \_/*\<br>
+&gt; &gt; &gt;   _/ \_/ \_/ \_/<br>
+&gt; &gt; &gt;  / \_/ \_/ \_/ \<br>
+&gt; &gt; &gt;  \_/ \_/ \_/ \_/<br>
+&gt; &gt; &gt;    \_/ \_/ \_/+\<br>
+&gt; &gt; &gt;      \_/ \_/+\_/<br>
+&gt; &gt; &gt;        \_/+\_/+\<br>
+&gt; &gt; &gt;          \_/+\_/<br>
+&gt; &gt; &gt;            \_/+\<br>
+&gt; &gt; &gt;              \_/<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; * are pieces of one player and + are pieces of the other player.<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; Playing Y from the above legal position is equivalent to playing<br>
+&gt; &gt; &gt; Hex in the unoccupied hexes of this position because a chains wins<br>
+&gt; &gt; &gt; for Y if and only if the chain restricted to originally unoccupied<br>
+&gt; &gt; &gt; hexes wins for Hex (in the Hex version, player * is connecting the<br>
+&gt; &gt; &gt; southwest border up to the northeast).  Thus, to prove a completely<br>
+&gt; &gt; &gt; filled-in Hex board has a winning chain for one of the two players,<br>
+&gt; &gt; &gt; it suffices to prove that a filled-in Y board has a winning chain<br>
+&gt; &gt; &gt; for one of the two players.<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; The proof makes use of &quot;Y-reduction.&quot;<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; Y-reduction: From a completely filled-in order n Y-board,construct<br>
+&gt; &gt; &gt; a completely filled-in order n-1 Y-board as follows.  For each<br>
+&gt; &gt; &gt; triangle of three mutually adjacent hexes oriented the same way as<br>
+&gt; &gt; &gt; the board, replace it with a single hexagon whose piece color is<br>
+&gt; &gt; &gt; that of the majority of the colors in the triangle.<br>
+&gt; &gt; &gt; Ex.<br>
+&gt; &gt; &gt;          _<br>
+&gt; &gt; &gt;        _/4\           <br>
+&gt; &gt; &gt;      _/3\1/                  _/3\<br>
+&gt; &gt; &gt;    _/2\1/3\                _/2\1/<br>
+&gt; &gt; &gt;   /1\1/2\2/               /1\1/2\<br>
+&gt; &gt; &gt;   \1/1\2/2\               \1/1\2/<br>
+&gt; &gt; &gt;     \2/1\3/                 \2/1\<br>
+&gt; &gt; &gt;       \3/1\                   \3/<br>
+&gt; &gt; &gt;         \4/<br>
+&gt; &gt; &gt;          <br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; The triangle of hexes with coordinates<br>
+&gt; &gt; &gt; x  x+1   x<br>
+&gt; &gt; &gt; y   y   y+1       <br>
+&gt; &gt; &gt;  <br>
+&gt; &gt; &gt; on the order-n board corresponds to the hexagon<br>
+&gt; &gt; &gt;  x<br>
+&gt; &gt; &gt;  y  on the order n-1 board<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; Lemma: If a player has a winning chain on the reduced board, then<br>
+&gt; &gt; &gt; that player also has a winning chain on the original board.<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; It&#x27;s easy to verify (but ugly to write up rigorously) that if a player<br>
+&gt; &gt; &gt; has a winning chain on the reduced board, then he also has a winning<br>
+&gt; &gt; &gt; chain through the corresponding triangles on the original board.<br>
+&gt; &gt; <br>
+&gt; &gt; Consider two adjacent hexes along the winning chain on the reduced<br>
+&gt; &gt; board.  Each of corresponding adjacent/overlapping triangles must<br>
+&gt; &gt; have at least two pieces of the winning color.<br>
+&gt; &gt; <br>
+&gt; &gt; Case 1: The unique hex in the overlap is of the winning color.<br>
+&gt; &gt; Then both of the other disjoint &quot;truncated triangles&quot; has some<br>
+&gt; &gt; piece of the winning color.  Both pieces are adjacent to the<br>
+&gt; &gt; piece in the overlap and hence must form a chain connecting the<br>
+&gt; &gt; corresponding edges.<br>
+&gt; &gt; <br>
+&gt; &gt; Case 2: The unique hex in the overlap is not of the winning color.<br>
+&gt; &gt; Then all four of the remaining hexes are occupied by the winning<br>
+&gt; &gt; color.  Again these hexes form a chain connecting the corresponding<br>
+&gt; &gt; edges. (it helps to draw a diagram).<br>
+&gt; &gt; <br>
+&gt; &gt; A triangle corresponding to a reduced hex, contains at least two<br>
+&gt; &gt; pieces of the same color and thus, each edge of the triangle must<br>
+&gt; &gt; contain at least one piece (since each edge contains all but one<br>
+&gt; &gt; of the hexes in the triangle).  This observation completes the proof.<br>
+&gt; &gt; <br>
+&gt; &gt; (you need this fact to establish that for any piece connected to the<br>
+&gt; &gt; edge of the reduced board, that color must also be connected to the<br>
+&gt; &gt; corresponding edge in the original board.  This fact also acts as a<br>
+&gt; &gt; base case for induction.)<br>
+&gt; &gt; <br>
+&gt; &gt; <br>
+&gt; &gt; &gt; [note: the converse of the lemma is also true but we don&#x27;t need it.]<br>
+&gt;  <br>
+&gt; &gt; &gt; Thm. One of the player&#x27;s has a winning chain on a completely filled-in<br>
+&gt; &gt; &gt; Y board.<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; Proof:<br>
+&gt; &gt; &gt; From any completely filled-in Y board, perform a sequence of<br>
+&gt; &gt; &gt; Y-reductions to reduce the board to a filled-in order 1 board.<br>
+&gt; &gt; &gt; The filled-in order 1 board obviously has a winning chain and<br>
+&gt; &gt; &gt; hence by the lemma, each Y board in the sequence has a winning<br>
+&gt; &gt; &gt; chain.<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; I wish I could take credit for this proof but it is due to<br>
+&gt; &gt; &gt; Ea Ea (his former name was Craige Schensted).<br>
+&gt; &gt; <br>
+&gt; &gt; Steve Meyers posted a link to a web page containing essentially<br>
+&gt; &gt; this same argument.  However, this page claims *only* the converse<br>
+&gt; &gt; of the above lemma which is not sufficient for the proof; the<br>
+&gt; &gt; other direction is what is needed.<br>
+&gt; <br>
+&gt; Hi Glenn,<br>
+&gt; <br>
+&gt; I can well believe you&#x27;re right.  I&#x27;m not a math professional, so<br>
+&gt; sometimes the finer things escape me:(<br>
+<br>
+Well, I&#x27;m not right!  I double-checked and the site does mention<br>
+the correct direction (but it says essentially nothing about why<br>
+a winner on an order n-1 board must also win on the order n board).<br>
+<br>
+<br>
+&gt; I&#x27;m delighted to see that you and others have taken an interest in<br>
+&gt; this result, and that you seem to appreciate its beauty.  For a while<br>
+&gt; there I feared almost nobody cared about it.  But since there is<br>
+&gt; apparently some interest now, I&#x27;ll go ahead and post how this proof<br>
+&gt; came to surface.<br>
+&gt; <br>
+&gt; In 2000 I got very interested in the game of Hex.  I played against<br>
+&gt; the computer and against myself hundreds of times, and I began to<br>
+&gt; suspect there might be a &quot;pattern&quot; in the game.  In fact I thought<br>
+&gt; that I was going to be able to solve it.  At the time I didn&#x27;t know<br>
+&gt; that Hex was PSPACE-complete, or I probably would never have attempted<br>
+&gt; it.<br>
+&gt; <br>
+&gt; I got nowhere with Hex and in late 2001 switched to Y after realizing<br>
+&gt; that Y was more fundamental than Hex; I had always thought the<br>
+&gt; reverse.  It was already known to some people that Hex was a special<br>
+&gt; case of Y, but it came as a surprise to me!  In January 2002 I had a<br>
+&gt; much bigger surprise:  I discovered that with the game of Y, an n game<br>
+&gt; (where n is the number of points/cells per side of the board) consists<br>
+&gt; of three n-1 games, at least two of which are necessary and sufficient<br>
+&gt; to win in order to win the n game; each n-1 game, in turn, consists of<br>
+&gt; three n-2 games, at least two of which are necessary and sufficient to<br>
+&gt; win in order to win the n-1 game; and so on until n=1, where each<br>
+&gt; point/cell is itself a &quot;game.&quot;<br>
+&gt; <br>
+&gt; I immediately notified Mark Thompson of the discovery.  He replied the<br>
+&gt; same day, saying that the property was very interesting, and he<br>
+&gt; suggested that Ea Ea (who was one of Y&#x27;s co-inventors) be contacted<br>
+&gt; about it.<br>
+&gt; <br>
+&gt; Ea Ea subsequently sent an e-mail to me, in which he said that my<br>
+&gt; discovery was very closely related to a discovery he&#x27;d made some<br>
+&gt; thirty years before.  He then proceeded to describe that discovery,<br>
+&gt; which is what you called &quot;Y-reduction&quot; in your post.  The terminology<br>
+&gt; I use for it is &quot;micro-reduction,&quot; since it takes the small triangles<br>
+&gt; as its starting point.  (Unfortunately Ea Ea never published his<br>
+&gt; result, so I went ahead and named it.)  I called what I found<br>
+&gt; &quot;macro-reduction,&quot; since it starts at the big triangles.  These very<br>
+&gt; closely related processes together comprise what I called the &quot;n-1<br>
+&gt; property&quot; of the game of Y.<br>
+&gt; <br>
+&gt; Mark suspected that Y-reduction could not be used to solve a<br>
+&gt; moderately complicated Hex position because of the vast number of<br>
+&gt; steps required to perform the calculation.  I didn&#x27;t understand this<br>
+&gt; at first, but he was right.<br>
+&gt; <br>
+&gt; I sent the information along to Hex programmer Jack van Ryswyck, who<br>
+&gt; made the same observation as Mark.  (It was then that I learned about<br>
+&gt; Hex&#x27;s PSPACE-completeness.)  Jack came up with the idea to perform the<br>
+&gt; reduction probabilistically in order to get a rough but fast estimate<br>
+&gt; of which player had the advantage in a given position.  (That is, his<br>
+&gt; idea was to use Y-reduction not to solve a position but rather as the<br>
+&gt; basis of an evaluation function.)  Jack&#x27;s method made use of<br>
+&gt; micro-reduction rather than macro-reduction because the former avoids<br>
+&gt; unnecessary repetition of steps --- this is also why micro-reduction<br>
+&gt; makes for a cleaner no-draw proof than macro-reduction.  For more<br>
+&gt; information on Jack&#x27;s programming idea, check his paper &quot;Search and<br>
+&gt; Evaluation in Hex,&quot; available on his website.<br>
+&gt; <br>
+&gt; Sorry to be long-winded,<br>
+&gt; <br>
+&gt; Steve<br>
+<br>
+Thanks for the history.<br>
+<br>
+The term Y-reduction is not mine.  I got it from Ryan Hayward<br>
+and Jack van Rijswijck&#x27;s draft &quot;Notes on Hex&quot; which is available<br>
+on Ryan Hayward&#x27;s page (who along with Jack van Rijswijck, is<br>
+a member of the University of Alberta&#x27;s GAMES group).  The draft<br>
+seems to have been updated this January but curiously, he doesn&#x27;t<br>
+fix the diagram for puzzle 5; Berge&#x27;s puzzle has white pieces<br>
+M7 and N5 and without them his &quot;solution&quot; is invalid (I was a<br>
+reviewer for the original draft).  I guess I&#x27;ll have to email<br>
+him about it.<br>
+<br>
+Also, Ryan Hayward informed me by email that Jack&#x27;s idea of using<br>
+Y-reduction as an evaluation function for Hex didn&#x27;t work out<br>
+too well.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

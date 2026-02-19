@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>[P] Loaded dice problems</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>[P] Loaded dice problems</h1>
+    <p><strong>From:</strong> Yann DAVID &lt;100552.1400@CompuServe.COM&gt;<br>
+    <strong>Date:</strong> 15 11 1998 00:00:00 GMT</p>
+    <hr>
+    <div>Hello.<br>
+<br>
+Suppose you want to toss heads or tails, but all you have is a &quot;honest&quot;,<br>
+regular die (no coin in sight). Easy: just throw the die; 1, 2, 3 will<br>
+denote heads, 4, 5,6, tails. Since both sets are equally probable, it works<br>
+out just fine: you obtain exactly the bit of random information you want.<br>
+<br>
+Now consider the reverse situation: you need a die cast, but all you have<br>
+is a coin. You have to resourt to a somewhat more complex procedure, such as<br>
+  1) toss heads or tails three times;<br>
+  2) interpret the three bits you come up with as the binary encoding of an<br>
+     integer n in 1..8;<br>
+  3) if n actually belongs to 1..6, you&#x27;re done (you have your die cast);<br>
+     otherwise, go back to step 1) and &quot;play it again, Sam!&quot;.<br>
+The trouble with that method is that you can&#x27;t set an upper bound on the <br>
+number of tosses it will take to get a die cast (you may even, in principle,<br>
+never succeed!).<br>
+<br>
+So we have a first problem: given two &quot;generalized&quot; dice A and B (with nA<br>
+and nB equally likely sides respectively), can we use A to simulate B in a<br>
+certain way, thanks to a finite procedure?<br>
+The second problem deals with the efficiency of the simulation. The die<br>
+could theoretically yield log2(6) = 2.584962... tosses on average, in the<br>
+first example, and we got only 1!<br>
+How can we improve that ratio?<br>
+<br>
+In fact, those two problems are not that difficult for fair dice.<br>
+- Certainty: you can simulate B with A iff there is an integer p such that<br>
+  nA^p is divisible by nB (throw A p times and partition the result set in<br>
+  nB parts). This, in turn, is true iff all prime divisors of nB also divide<br>
+  nA.<br>
+- Efficiency: accumulate a (large) number n of casts of A, such that<br>
+  nA^n &gt; nB. In order to interpret the results, partition the output space<br>
+  in subsets of nB elements (there is, in general, a remainder; the leftover<br>
+  elements are to be ignored). Repeat the same procedure on the parts set,<br>
+  and then on the set of sets of parts, etc. until exhaustion. You come up<br>
+  with a decision tree that enables you to interpret the casts of A in terms<br>
+  of casts of B (of which number depends on the branch of the tree you land <br>
+  on). Note that the decision tree must be established a priori,<br>
+  irrespective of the particular set of A casts you have at hand (otherwise<br>
+  the B casts won&#x27;t be equally distributed). [Phew!]<br>
+<br>
+Example:<br>
+<br>
+nA=2, nB=3, n=4<br>
+<br>
+                                                                       1111<br>
+0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110<br>
+  \   |    /     \   |    /     \   |    /     \   |    /     \   |    /<br>
+  1\ 2|  3/      1\ 2|  3/      1\ 2|  3/      1\ 2|  3/      1\ 2|  3/ <br>
+    \ |  /         \ |  /         \ |  /         \ |  /         \ |  /<br>
+     \| /           \| /           \| /           \| /           \| /<br>
+      A              B              C              D              E<br>
+       \             |             /<br>
+         \           |           /<br>
+           \         |         /<br>
+           1 \     2 |     3 /<br>
+               \     |     /<br>
+                 \   |   /<br>
+                   \ | /<br>
+                     F<br>
+<br>
+For instance, if the A casts have yielded 0101, you obtain two casts of B:<br>
+3 and 2.<br>
+It can be be shown that as n grows arbitrarily large, the efficiency of the<br>
+procedure (the ratio of the the average number of casts of B you obtain to <br>
+its theoretical optimal value, log nB (nA^n) = n log nA / log nB) converges<br>
+towards 1 (it becomes arbitrarily good).<br>
+<br>
+Now the picture gets a lot more blurred when it comes to loaded dice, of<br>
+which sides are not equally likely. I consider only rational distributions;<br>
+a die is then represented by an unordered finite collection of stricly<br>
+positive integers, with a common greatest divisor of 1. Those coefficients<br>
+represent the likelyhoods of the sides of the die (their sum is called the<br>
+weight of the die, their number, its length; the probability of appearance<br>
+of a side is worth its coefficient divided by the weight of the die).<br>
+The product of two dice is defined as follows:<br>
+- form their &quot;cartesian product&quot;,<br>
+- replace each pair of integers by the product of its two members.<br>
+That die is such that one cast thereof is equivalent to a cast of each of<br>
+the two original dice (the possible outputs are as numerous, and they<br>
+display the same probability distribution). [And yes, the greatest common<br>
+divisor of the coefficients of the new die IS 1.]<br>
+<br>
+With those definitions in mind...<br>
+<br>
+Are the following propositions decidable?<br>
+1) Given two dice loaded A and B, A **cannot** simulate B thanks to a finite<br>
+   procedure.<br>
+2) Given a loaded die A and a regular die B, A **cannot** simulate B thanks<br>
+   to a finite procedure (sub-case of 1)).<br>
+3) Given a loaded die A, A **cannot** simulate any regular die thanks to a<br>
+   finite procedure.<br>
+[A **can** simulate B iff there is an integer n such that A^n&#x27;s coefficients<br>
+ can be partitioned in subsets of which weights are proportional to B&#x27;s<br>
+ coefficients.]<br>
+<br>
+And what about the efficiency of the simulations? To which extent can the<br>
+information of the casts of a die be exploited for the simulation of<br>
+another die?<br>
+<br>
+All I have so far are very partial results (a bunch of examples, in fact).<br>
+For example: {1, 2} cannot simulate (certainly) any regular die... Can you<br>
+see why?<br>
+<br>
+I think there might be quite a few interesting problems in the field of<br>
+loaded dice. They could serve as illustrations for the information<br>
+theories... Also, the dice multiplication is worth a look: each dice can be<br>
+decomposed as a product of &quot;prime&quot; dice, but that decomposition, unlike for<br>
+integers, is in general not unique (I have discussed that question in a<br>
+couple of previous posts, which referred to &quot;bags&quot; instead of &quot;dice&quot;).<br>
+<br>
+Any comments, references, hints, solutions are most welcome!<br>
+<br>
+Best regards,<br>
+<br>
+	Yann David<br>
+	100552.1400@compuserve.com<br>
+	FRANCE<br>
+<br>
+	<br>
+NB: Since I am not a regular reader of this newsgroup, please post &amp; e-mail<br>
+your answers.<br>
+<br>
+&quot;Vous mariez pas, les filles!&quot; - Boris Vian<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

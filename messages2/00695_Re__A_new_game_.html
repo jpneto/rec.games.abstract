@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: A new game?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: A new game?</h1>
+    <p><strong>From:</strong> tomj@kibo.enet.dec.com (Tom Jaskiewicz)<br>
+    <strong>Date:</strong> 25 Jan 93 17:55:10 GMT</p>
+    <hr>
+    <div><br>
+boll@CS.ColoState.EDU (dave boll) describes a new game:<br>
+&gt;    The board: A MxN rectangle of dots.         <br>
+&gt;    The play : Players alternate making moves, last one able to move wins<br>
+&gt;    A move: A move in this game consists of drawing a straight line <br>
+&gt;       connecting two (previously untouched) dots. The line may not cross<br>
+&gt;       any previously drawn line, nor can it pass thru one dot on the way<br>
+&gt;       to another. Each dot can have at most one line touching it.<br>
+..<br>
+&gt;  Anyway, has anyone ever heard of a game like this? Thoughts?<br>
+<br>
+and wms@ssd.intel.com (William Shubert) writes:<br>
+]With this game<br>
+]it&#x27;s pretty clear immediately that player 1 can win on any MxN board if M<br>
+]or N is even:<br>
+]<br>
+]+   +   +   +<br>
+]       /<br>
+]+   + / +   +<br>
+]     /<br>
+]+   +   +   +<br>
+]<br>
+]From here, any move that player 2 makes can be &quot;mirrored&quot; by player 1; player<br>
+]2 MUST run out of moves first.<br>
+<br>
+On MxN boards with both M and N odd there is a 180 degree rotational symmetry<br>
+around the central point.  Player 2 wins by maintaining the symmetry:<br>
+<br>
++   +   +   +---+   +   +<br>
+       /<br>
++   + / +   +   +   +---+<br>
+     /  |<br>
++   +   +   #   +   +   +<br>
+                |  /<br>
++---+   +   +   + / +   +<br>
+                 /<br>
++   +   +---+   +   +   +<br>
+<br>
+<br>
+</div>
+</body>
+</html>

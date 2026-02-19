@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Mancala rules - multilap version with variations plus a Challeng</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Mancala rules - multilap version with variations plus a Challeng</h1>
+    <p><strong>From:</strong> Edward Jackman &lt;ejackman@delphi.com&gt;<br>
+    <strong>Date:</strong> Sun, 28 Aug 94 13:15:36 -0500</p>
+    <hr>
+    <div>Solution to Mancala Challenge, part 1:<br>
+<br>
+&gt;&gt;Here is a mancala game and a couple challenges.<br>
+&gt;&gt;<br>
+&gt;&gt;The board is 2x6 with a store on each end.<br>
+&gt;&gt;<br>
+&gt;&gt;                          North<br>
+&gt;&gt;                     f  e  d  c  b  a<br>
+&gt;&gt;North&#x27;s holes ----&gt;  4  4  4  4  4  4<br>
+&gt;&gt;North&#x27;s store --&gt; 0                    0 &lt;-- South&#x27;s store<br>
+&gt;&gt;                     4  4  4  4  4  4  &lt;---- South&#x27;s holes<br>
+&gt;&gt;                     A  B  C  D  E  F<br>
+&gt;&gt;                          South<br>
+&gt;&gt;<br>
+&gt;&gt;The player begins by lifting all the seeds from one of the<br>
+&gt;&gt;holes (A, B, C, D, E or F for South, and a, b, c, d, e, or f<br>
+&gt;&gt;for North) and then drops them one at a time counter-<br>
+&gt;&gt;clockwise in all the other holes, including the player&#x27;s own<br>
+&gt;&gt;store but excluding the opponent&#x27;s store. This lifting and<br>
+&gt;&gt;sowing of all the seeds in a hole is a *lap*.<br>
+&gt;&gt;<br>
+&gt;&gt;There are five possible outcomes to each lap. They are:<br>
+&gt;&gt;<br>
+&gt;&gt;1) If the last seed of a lap falls in the player&#x27;s store,<br>
+&gt;&gt;   the player gets another turn to start a lap from any of his<br>
+&gt;&gt;   or her own holes. There is no limit to the number of extra<br>
+&gt;&gt;   turns.<br>
+&gt;&gt;<br>
+&gt;&gt;2) If the last seed of a lap falls in any hole other that<br>
+&gt;&gt;   the store with at least one seed in it, the player lifts<br>
+&gt;&gt;   them all and continues sowing. There is no limit to the<br>
+&gt;&gt;   number of laps per turn.<br>
+&gt;&gt;<br>
+&gt;&gt;3) If the last seed of a lap falls in an empty hole on the<br>
+&gt;&gt;   *opponent&#x27;s* side of the board, the turn is over.<br>
+&gt;&gt;<br>
+&gt;&gt;4) If the last seed of a lap falls in an empty hole on the<br>
+&gt;&gt;   *player&#x27;s* side of the board, and the hole directly across<br>
+&gt;&gt;   from it on the opponent&#x27;s side is *empty*, the turn is over.<br>
+&gt;&gt;<br>
+&gt;&gt;5) If the last seed of a lap falls in an empty hole on the<br>
+&gt;&gt;   *player&#x27;* side of the board, and the hole directly across<br>
+&gt;&gt;   from it on the opponent&#x27;s side has at least one seed in it,<br>
+&gt;&gt;   all seeds in both holes are captured and placed in the<br>
+&gt;&gt;   player&#x27;s store, ending the turn.<br>
+&gt;&gt;<br>
+&gt;&gt;Also, if you start a lap from a hole with more 12 seeds, you<br>
+&gt;&gt;do *not* skip over the starting hole on your way around. In<br>
+&gt;&gt;other words, the 13th seed ends up back in the hole it<br>
+&gt;&gt;started in. (This is the opposite of the rule in Wari.)<br>
+&gt;&gt;<br>
+&gt;&gt;The game ends when all the seeds are captured. A player who<br>
+&gt;&gt;has no seeds passes. You are *not* compelled to give your<br>
+&gt;&gt;opponent a seed to move. The player with the most seeds is<br>
+&gt;&gt;the winner.<br>
+&gt;&gt;<br>
+&gt;&gt;<br>
+&gt;&gt;The trouble with this version is that the first player has<br>
+&gt;&gt;enough options to make it possible to win before the second<br>
+&gt;&gt;player even takes a turn! Of course, when we were kids, we<br>
+&gt;&gt;played a lot before I figured this out.<br>
+&gt;&gt;<br>
+&gt;&gt;Here is the challenge:<br>
+&gt;&gt;<br>
+&gt;&gt;   Find the maximum number of seeds the first player can<br>
+&gt;&gt;   capture without the second player getting a turn. Give<br>
+&gt;&gt;   the sequence of moves and the total captured.<br>
+&gt;&gt;<br>
+&gt;&gt;   What is the maximum number of seeds the first player<br>
+&gt;&gt;   can capture regardless of the moves the second player<br>
+&gt;&gt;   makes. Is it possible to force a 48 to nothing win?<br>
+<br>
+<br>
+Paul Colley wrote a program in C that found the ulitmate solution to<br>
+the first part of the challenge, finding the greatest number of seeds<br>
+the first player could capture before second player even gets a turn.<br>
+In his output, the board is &#x27;unfolded&#x27;, that is, the board is printed<br>
+as a line of 13 numbers: the 6 holes on first player&#x27;s side, the first <br>
+player&#x27;s store and the 6 holes on the second player&#x27;s side. The second <br>
+player&#x27;s store is not used. Then holes on the first player&#x27;s side are <br>
+labeled 0 to 5 from left to right.<br>
+<br>
+Here&#x27;s Paul:<br>
+<br>
+&gt;The result is:  You can score 45 (!) on your first move.  Numbering<br>
+&gt;your bins from 0 through 5 (with your store as comming after bin 6),<br>
+&gt;the choice of bins to use are:<br>
+&gt;<br>
+&gt;            5 2 1 4 0 0 4 4 5 0 2 3 5 1 5 5 4 1 5 0 5 2 5 4 5 3<br>
+&gt;<br>
+&gt;Position num.   0  1  2  3  4  5<br>
+&gt;                -----------------<br>
+&gt;       Board:   4  4  4  4  4  4   [Store  0]    4  4  4  4  4  4<br>
+&gt;<br>
+&gt;Move 5 Board:   5  0  5  5  5  1   [Store  2]    5  5  0  5  5  5<br>
+&gt;Move 2 Board:   0  1  1  7  7  3   [Store  4]    0  6  1  6  6  6<br>
+&gt;Move 1 Board:   1  1  1  9  1  5   [Store  6]    1  7  2  7  7  0<br>
+&gt;Move 4 Board:   2  2  2 10  1  1   [Store  8]    2  8  3  8  0  1<br>
+&gt;Move 0 Board:   1  4  1 12  3  1   [Store 10]    0  9  4  0  1  2<br>
+&gt;Move 0 Board:   0  0  2 13  4  2   [Store 11]    0  9  4  0  1  2<br>
+&gt;Move 4 Board:   2  2  0 15  2  1   [Store 14]    2  1  0  2  3  4<br>
+&gt;Move 4 Board:   2  2  0 15  0  2   [Store 15]    2  1  0  2  3  4<br>
+&gt;Move 5 Board:   1  4  2  1  2  2   [Store 18]    1  3  2  1  5  6<br>
+&gt;Move 0 Board:   0  0  3  2  3  3   [Store 19]    1  3  2  1  5  6<br>
+&gt;Move 2 Board:   1  1  1  4  5  1   [Store 21]    2  4  0  2  6  0<br>
+&gt;Move 3 Board:   1  3  1  2  1  4   [Store 24]    1  6  2  1  0  2<br>
+&gt;Move 5 Board:   2  4  0  3  0  1   [Store 26]    2  7  0  2  1  0<br>
+&gt;Move 1 Board:   2  3  0  2  1  3   [Store 30]    0  1  0  2  4  0<br>
+&gt;Move 5 Board:   0  4  1  0  2  1   [Store 32]    1  0  1  0  5  1<br>
+&gt;Move 5 Board:   0  4  1  0  2  0   [Store 33]    1  0  1  0  5  1<br>
+&gt;Move 4 Board:   0  4  1  0  0  1   [Store 34]    1  0  1  0  5  1<br>
+&gt;Move 1 Board:   1  1  3  2  0  1   [Store 36]    0  1  0  1  0  2<br>
+&gt;Move 5 Board:   1  1  3  2  0  0   [Store 37]    0  1  0  1  0  2<br>
+&gt;Move 0 Board:   0  0  4  0  1  1   [Store 38]    0  1  0  1  0  2<br>
+&gt;Move 5 Board:   0  0  4  0  1  0   [Store 39]    0  1  0  1  0  2<br>
+&gt;Move 2 Board:   0  0  0  1  2  1   [Store 40]    0  1  0  1  0  2<br>
+&gt;Move 5 Board:   0  0  0  1  2  0   [Store 41]    0  1  0  1  0  2<br>
+&gt;Move 4 Board:   0  0  0  1  0  1   [Store 42]    0  1  0  1  0  2<br>
+&gt;Move 5 Board:   0  0  0  1  0  0   [Store 43]    0  1  0  1  0  2<br>
+&gt;Move 3 Board:   0  0  0  0  0  0   [Store 45]    0  0  0  1  0  2<br>
+&gt;<br>
+&gt;<br>
+&gt;Two hours to write, debug, and verify by hand ... It&#x27;s in C ... <br>
+&gt;Compiled with gcc (no optimization), ran on some generic version <br>
+&gt;of a Sun.  Uses one half of one second of CPU.<br>
+<br>
+<br>
+I manually checked the result on my mancala board. Then I memorized the<br>
+sequence and played the game three times with the neighbor&#x27;s kid. I let<br>
+him go first the first two games. I couldn&#x27;t resist.<br>
+<br>
+<br>
+<br>
+Starting the game with 48 seeds on the board, the first player scores<br>
+45 in the first turn! The final score, however is 45 to 3. The question<br>
+of whether or not it is possible to force a 48 to nothing win is still <br>
+open.<br>
+<br>
+This game is still commonly played many places. Typically, the board is<br>
+2 rows of x holes, with x seeds per hole, 5 &lt; x &lt; 11. I believe regardless<br>
+of which of theses boards you use, the first player has a one turn landslide<br>
+win.<br>
+<br>
+Edward Jackman<br>
+ejackman@delphi.com<br>
+<br>
+<br>
+<br>
+    <br>
+    <br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

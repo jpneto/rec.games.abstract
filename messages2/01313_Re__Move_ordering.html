@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Move ordering</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Move ordering</h1>
+    <p><strong>From:</strong> hart@cs.utk.edu (Kevin Hart)<br>
+    <strong>Date:</strong> 24 Sep 1993 12:39:54 -0400</p>
+    <hr>
+    <div>In article &lt;1993Sep23.190431.22459@rational.com&gt; jdart@donner.Rational.COM (Jon Dart) writes:<br>
+&gt;In article &lt;CDtJyA.7uJ@knot.ccs.queensu.ca&gt; colley@qucis.queensu.ca (Paul Colley) writes:<br>
+&gt;&gt;It&#x27;s obvious that a trying good moves first improves alpha-beta<br>
+&gt;&gt;performance.  I&#x27;m somewhat baffled as to what a good move-ordering<br>
+&gt;&gt;might look like.  It seems like a chicken-and-egg proglem:  How do I<br>
+&gt;&gt;tell the good moves from the bad BEFORE I do the search?<br>
+&gt;&gt;<br>
+&gt;<br>
+&gt;Other heuristics involve keeping lists of moves that have proven to<br>
+&gt;generate good scores elsewhere in the search tree.  For example, moves<br>
+&gt;that caused beta cutoff may be kept in a list (sometimes these are<br>
+&gt;called &quot;killer&quot; moves).  If the same move is legal elsewhere in the<br>
+&gt;tree at the same depth, it will be moved up in the search order, on the<br>
+&gt;theory that a move that is good in another position may be good in this<br>
+&gt;one, too.  There are several variations of this scheme.<br>
+&gt;<br>
+&gt;-- Jon<br>
+&gt;<br>
+<br>
+Geez.  I keep hearing about things *after* I wrack my brain thinking them<br>
+up.  Hmph.  Anyway, I&#x27;ve been working on Alpha-Beta searching a 6x6 othello<br>
+game for the last few years.  (Please don&#x27;t tell me this has already been<br>
+done. ;-)  One of the simple Heuristics you  can use in that game is<br>
+&#x27;corner moves first&#x27;.  I implemented the &#x27;killer&#x27; moves a few weeks ago,<br>
+and it improved the performance pretty dramatically, by a factor of<br>
+3-4.  Really simple, 5 element queue of moves  for  each level, most<br>
+recent winning move at the head of the queue.<br>
+  Another one I&#x27;m thinking  of trying is minimizing the number of moves<br>
+for the other player.  Should work pretty well for othello, but it&#x27;s<br>
+expensive, so I&#x27;ll probably only  do it for the  top 10 moves or so.<br>
+  OK, now for the big question.  Parallel A-B searches.  I know there are<br>
+algorithms out there somewhere, but I can&#x27;t find any references.  (And<br>
+yes, I did slog through vast tracts of the ACM guide.  Probably the<br>
+wrong tracts though.)  My program&#x27;s performance  keeps improving, but<br>
+I doubt I&#x27;ll get  the factor-of-30 that  I could get  by distributing<br>
+it over 30 computers.<br>
+<br>
+&gt;<br>
+&gt;--<br>
+&gt;Jon Dart  | 3320 Scott Blvd.,          | jdart@rational.com|<br>
+&gt;Rational  | Santa Clara, CA 95054-3197 |                   |<br>
+&gt;          | 408-496-3656               |                   |<br>
+<br>
+  Kevin Hart (hart@cs.utk.edu)<br>
+<br>
+<br>
+</div>
+</body>
+</html>

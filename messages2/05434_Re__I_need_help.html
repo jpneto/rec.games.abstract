@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: I need help</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: I need help</h1>
+    <p><strong>From:</strong> Jan Kristian Haugland &lt;available@web.page&gt;<br>
+    <strong>Date:</strong> Mon, 15 Apr 2002 15:56:48 +0200</p>
+    <hr>
+    <div><br>
+Prem wrote:<br>
+<br>
+&gt;    I need the info reg. the following game. This is somewhat similar<br>
+&gt; to nim. Played between two players. There are two heaps of coins of<br>
+&gt; size m,n. Each player may take x coins from any of the heap or from<br>
+&gt; both the heaps such that x &gt; 0. Can you please give me the details<br>
+&gt; about this game? I have a solution for this game. But I donno the<br>
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^<br>
+&gt; complete details of this game.<br>
+<br>
+What solution do you have? It seems that we get the P-positions<br>
+by starting with P_0 = {0, 0} and adding recursively for k &gt;= 1<br>
+<br>
+   P_k = {smallest positive integer not used, same + k}<br>
+<br>
+This gives: {1, 2}, {3, 5}, {4, 7}, {6, 10}, {8, 13}, {9, 15},<br>
+{11, 18}, {12, 20}, {14, 23}, {16, 26}, {17, 28}, ...<br>
+<br>
+I guess it&#x27;s tricky to find a closed form expression for these.<br>
+<br>
+-- <br>
+<br>
+J K Haugland<br>
+http://hjem.sol.no/neutreeko<br>
+<br>
+<br>
+</div>
+</body>
+</html>

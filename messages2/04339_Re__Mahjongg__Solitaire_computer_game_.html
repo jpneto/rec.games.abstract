@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Mahjongg (Solitaire computer game)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Mahjongg (Solitaire computer game)</h1>
+    <p><strong>From:</strong> &quot;Glenn Kuntz&quot; &lt;crokinol@frontiernet.net&gt;<br>
+    <strong>Date:</strong> 31 05 2000 00:00:00 GMT</p>
+    <hr>
+    <div>Try searching Deja for &quot;Tai Pei&quot; (the name of one popular version).  I<br>
+played around with it for a while; seems I did better than 1 in 10, IIRC.<br>
+As with other solitaire puzzles, most deals are solvable; a few are not.<br>
+<br>
+Dave Rusin &lt;rusin@vesuvius.math.niu.edu&gt; wrote in message<br>
+news:8h3bhi$sl4$1@gannett.math.niu.edu...<br>
+&gt;<br>
+&gt; Yesterday I spent a few hours playing mahjongg for the first time in<br>
+&gt; my life. (A couple of versions were included in my Linux distribution.)<br>
+&gt; This is _not_ what (I gather from the internet) is the classic multiplayer<br>
+&gt; board game, but rather a solitaire game which I have seen on window$<br>
+&gt; machines too. (Just to fix the game I&#x27;m talking about, I attach a<br>
+&gt; synopsis of the game, as I understand it.)<br>
+&gt;<br>
+&gt; Has anyone got pointers to an analysis of the game? -- How likely is<br>
+&gt; it that a random deal is winnable? (I can&#x27;t imagine a closed-form<br>
+&gt; answer is known, but I think I can see how I would set up the data<br>
+&gt; types to allow the computer to play on its own.)<br>
+&gt; Has anyone tested rules of thumb for how to play and win?<br>
+&gt;<br>
+&gt; Playing strictly by the rules here (and not investing too much gray matter<br>
+&gt; in the play) I doubt I would win even one game in ten.<br>
+&gt;<br>
+&gt; dave<br>
+&gt;<br>
+&gt;<br>
+&gt;                             MAHJONGG<br>
+&gt;<br>
+&gt; A solitaire game played with 144 tiles, (essentially) 4 of each of 36<br>
+&gt; designs [*]. Tiles are randomly permuted and placed into an particular<br>
+&gt; tableau (the arrangement is described below) which leaves a subset of<br>
+&gt; tiles visible and a subset of those available for play. A player&#x27;s<br>
+&gt; turn consists of removing a pair of available tiles having matching<br>
+&gt; design; if this leaves no remaining tiles, the player wins, but<br>
+&gt; otherwise if no such pair exists, the player loses.<br>
+&gt;<br>
+&gt; The tableau begins with all tiles face-up in an irregular pyramid. There<br>
+are<br>
+&gt; 12 tiles in the top row. Centered under (next to) that are<br>
+&gt; 8 tiles in another row, with<br>
+&gt;   6 tiles in a row resting centered upon them. Similarly we next have<br>
+&gt; 10 tiles in a row, with<br>
+&gt;   6 tiles in a row resting on them and<br>
+&gt;     4 tiles in a row resting on those. The next row has four layers:<br>
+&gt; 12 tiles in a row, with<br>
+&gt;   6 tiles in a row resting on them,<br>
+&gt;     4 tiles in a row resting on those, and then<br>
+&gt;       2 tiles atop the middle of _those_.<br>
+&gt; Four more rows continue in this fashion, forming a mirror image of the<br>
+&gt; tiles already laid. This leaves just four remaining tiles: one dead center<br>
+&gt; at the top of the pyramid, the others off the sides of the two long middle<br>
+&gt; rows (one spare on the left, say, and the other two on the right).<br>
+&gt;<br>
+&gt; A tile is available for play if it is completely visible and is at an<br>
+&gt; end of its row. For example, the tiles available for play at the beginning<br>
+&gt; of the game are the one spare at the top, the two spares on the far sides,<br>
+and<br>
+&gt; 2+<br>
+&gt; 2+<br>
+&gt;   2+<br>
+&gt; 2+<br>
+&gt;   2+<br>
+&gt;     2+<br>
+&gt; 0+<br>
+&gt;   2+<br>
+&gt;     2+<br>
+&gt;       0<br>
+&gt; tiles available in the top 4 rows, respectively, with another 16 similarly<br>
+&gt; available in the bottom 4 rows (Total: 35). I hope I tallied that<br>
+correctly.<br>
+&gt;<br>
+&gt; Apart from the task of scanning the tableau to spot matching tiles, the<br>
+only<br>
+&gt; moment of player interaction is to decide which pair of matching tiles<br>
+&gt; to remove when there is more than one such pair available for play at<br>
+once;<br>
+&gt; this choice will affect which choices become available in future moves.<br>
+&gt;<br>
+&gt; One can show that, once the tiles are shuffled and arrayed, the total<br>
+&gt; human input amounts to a choice of how to partition each set of four tiles<br>
+&gt; into pairs. Thus there are 36 selections to be made, each time with<br>
+&gt; three possible outcomes: 3^36 (about 10^17) possible ways to play that<br>
+&gt; particular deal. However, since it is highly unlikely that all four tiles<br>
+&gt; of a given design will be showing at once, most of these decisions will<br>
+&gt; be more or less forced, so that the total number of possible ways to play<br>
+&gt; a particular deal will be much much smaller. (I don&#x27;t know how much<br>
+&gt; smaller but I&#x27;m confident the entire decision tree can be stored in<br>
+&gt; a machine in most deals.)<br>
+&gt;<br>
+&gt; For heuristics: it is clear that those four spare tiles block quite a few<br>
+&gt; others, so there is value to removing them quickly. The tiles which are<br>
+&gt; not on a bottom row are blocking view of others and so there is<br>
+information<br>
+&gt; value gained by removing them soon; on the other hand, there is the<br>
+&gt; value of having more options at any one time, gained by _not_ eliminating<br>
+&gt; any row (whether on the bottom or otherwise). When only _pairs_ of<br>
+matching<br>
+&gt; tiles remain, a configuration such as  A B A B  in one row will be<br>
+unwinnable;<br>
+&gt; to avoid this and similar pitfalls, it is desirable to keep rows short.<br>
+&gt; In practice I make great use of the ability to see tiles which are not<br>
+&gt; yet available for play; I&#x27;m not sure how to incorporate that information<br>
+&gt; into patterns for decision-making which would be of any real use.<br>
+&gt;<br>
+&gt;<br>
+&gt; [*] The designs seem to be in four suits of nine, but<br>
+&gt; that&#x27;s irrelevant for play. These designs seem to be nearly the same<br>
+&gt; in the various versions I have seen. There is a quirk with two of<br>
+&gt; the sets of four: in each set there is in fact not a single design but<br>
+&gt; rather a _theme_ (flowers, say); the four tiles with this theme are<br>
+&gt; declared to match. From some web pages I found, it seems there is<br>
+&gt; a lot more than this in the choice of designs -- some historical<br>
+tradition;<br>
+&gt; in any event, the play proceeds as if there were indeed 36 sets of<br>
+&gt; four matching designs.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

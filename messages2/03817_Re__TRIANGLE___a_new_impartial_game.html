@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: TRIANGLE - a new impartial game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: TRIANGLE - a new impartial game</h1>
+    <p><strong>From:</strong> jonathan@jwelton.demon.co.uk ()<br>
+    <strong>Date:</strong> 31 01 1998 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+torbenm@diku.dk (Torben AEgidius Mogensen) wrote:<br>
+<br>
+&gt;jonathan@jwelton.demon.co.uk () writes:<br>
+<br>
+&gt;&gt;A position in Triangle consists of three sticks of integral length<br>
+&gt;&gt;which can be arranged to form a triangle. Rather than use real sticks,<br>
+&gt;&gt;most people will find it easier to use a pencil and write down the<br>
+&gt;&gt;lengths on paper, but don&#x27;t forget the triangle inequality - the sum<br>
+&gt;&gt;of two sides must be greater than the third side.<br>
+<br>
+&gt;&gt;For instance suitable triangles are 3,4,5 or 7,7,7. Invalid as<br>
+&gt;&gt;positions are, for example, 3,5,8 or 6,6,19.<br>
+<br>
+&gt;&gt;A move in Triangle consists of taking one of the sticks and discarding<br>
+&gt;&gt;it, breaking one of the remaining sticks into two integral parts, and<br>
+&gt;&gt;arranging these with the remaining stick to form a new triangle.<br>
+<br>
+&gt;&gt;So, from 3,4,5 a valid move would be to discard the 4, and break the 5<br>
+&gt;&gt;into 2+3 to leave 2,3,3.<br>
+&gt;&gt;Or from 7,9,11 you might discard the 9, break the 11 into 4+7 and<br>
+&gt;&gt;leave 4,7,7.<br>
+<br>
+&gt;&gt;The winner is the player to make the last move.<br>
+<br>
+&gt;[...]<br>
+<br>
+&gt;&gt;3) And, of course, is there a formula for identifying winning<br>
+&gt;&gt;triangles?<br>
+<br>
+&gt;This is the tough one. One can, of course, make a recursive formula<br>
+&gt;which basically says that a position is winning if either no move is<br>
+&gt;possible or all moves go to losing positions and losing positions are<br>
+&gt;positions where at least one move to a winning position is possible.<br>
+&gt;This is basically what my program does. This is, however, not a very<br>
+&gt;fast way of determining win/lose of a given position. It takes<br>
+&gt;approximately O(n^2) time, where n is the sum of the edges, to<br>
+&gt;determine win/lose of a given position (and all those below). The<br>
+&gt;first 50 winning positions are given here: (1,1,1), (2,2,2), (1,3,3),<br>
+&gt;(2,2,3), (2,3,3), (1,4,4), (3,3,3), (1,5,5), (4,4,4), (4,4,6),<br>
+&gt;(1,7,7), (4,4,7), (5,5,5), (2,7,7), (4,6,6), (3,7,7), (4,6,7),<br>
+&gt;(5,5,7), (2,8,8), (4,7,7), (5,5,8), (6,6,6), (1,9,9), (2,8,9),<br>
+&gt;(3,8,8), (4,6,9), (5,5,9), (5,7,7), (6,6,7), (2,9,9), (3,8,9),<br>
+&gt;(6,7,7), (3,9,9), (5,8,8), (6,6,9), (7,7,7), (2,10,10), (4,9,9),<br>
+&gt;(5,8,9), (1,11,11), (2,10,11), (3,10,10), (5,9,9), (2,11,11),<br>
+&gt;(3,10,11), (6,9,9), (8,8,8), (1,12,12), (3,11,11), (8,8,9). The<br>
+&gt;sorting is first by sum of edges then lexicographically by edge<br>
+&gt;lengths.<br>
+<br>
+I&#x27;m sure these results are correct, since they agree with what I<br>
+determined by hand, although your program went much further than I<br>
+did. I suspect my algorithm is more efficient though. In fact, I<br>
+believe it to require not much more than constant time for each<br>
+triangle.<br>
+<br>
+I can send you details on request, but essentially, the method is to<br>
+construct a 2D table of pairs m,n labeling them &#x27;losing&#x27;, if one of<br>
+the pair can be broken to produce a winning triangle, or &#x27;safe&#x27;<br>
+otherwise. This can be done very rapidly if one has a list of winning<br>
+triangles of perimeter m+n (m,n is losing if the smaller of m and n<br>
+appears as a side in the list).<br>
+The table of pairs is built up a diagonal (where m+n=constant) at a<br>
+time. After each diagonal, we can read off winning triangles for each<br>
+safe pair m,n by looking for numbers p which are safe with both m and<br>
+n. The hardest part is checking for the triangle inequality!<br>
+<br>
+Of course, the disadvantage of working by hand is that it is prone to<br>
+error as I demonstrated, leaving the values I calculated above about<br>
+perimeter 25 suspect.<br>
+<br>
+The advantage of working by hand is that other trends become apparent.<br>
+For example: it appears that 3,m,n is a win precisely when 2,m,n is.<br>
+Likewise with 4,p,q and 6,p,q.<br>
+I think there should be a simple proof of this, but for the life of me<br>
+I can&#x27;t see it. It is most mysterious.<br>
+<br>
+&gt;Out of the smallest 100 triangles, 42 are winning. Out of the first<br>
+&gt;1000, 218 are winning and 369 out of the first 2000 are. So the<br>
+&gt;density of winning positions is (not surprisingly) declining.<br>
+<br>
+&gt;If we simplify the game by dropping the requirement of keeping the<br>
+&gt;triangle inequality, then it appears that if (a,b,c) is a winning<br>
+&gt;position then so is (n*a,n*b,n*c) for any integer n&gt;0.<br>
+<br>
+The simplified, unconstrained, game can be expressed as a game using<br>
+heaps of counters:<br>
+A position consists of 3 (non-zero) heaps of counters, and a move is<br>
+to discard one heap and break one of the other heaps into two smaller<br>
+heaps.<br>
+<br>
+I believe the P-positions (Previous player wins) to be those in which<br>
+the highest power of two dividing the number of counters in a heap is<br>
+the same for each heap.<br>
+<br>
+I&#x27;m not sure how the rule extends to 4 or more heaps.<br>
+<br>
+&gt;Anyway, you can try reposting your question in rec.puzzles, as that<br>
+&gt;group deals with similar questions.<br>
+Done<br>
+<br>
+&gt;	Torben Mogensen (torbenm@diku.dk)<br>
+<br>
+Jonathan Welton<br>
+-------------------------------------------------------------------------<br>
+-- Curiously, dividing ten into two means the same as dividing ten<br>
+into half. Or does it?<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

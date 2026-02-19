@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Atoll Fully Generalized</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Atoll Fully Generalized</h1>
+    <p><strong>From:</strong> torbenm@app-3.diku.dk (Torben =?iso-8859-1?Q?=C6gidius?= Mogensen)<br>
+    <strong>Date:</strong> Mon, 21 Jan 2008 17:29:11 +0100</p>
+    <hr>
+    <div>&quot;marksteere@gmail.com&quot; &lt;marksteere@gmail.com&gt; writes:<br>
+<br>
+&gt; On Jan 19, 9:27 pm, Bill Taylor &lt;w.tay...@math.canterbury.ac.nz&gt;<br>
+&gt; wrote:<br>
+&gt;&gt; This is a variant of Mark Steere&#x27;s new game &quot;Atoll&quot;.<br>
+&gt;&gt; . . .<br>
+&gt;&gt; The winning criterion is almost identical to that of &quot;Y&quot;,<br>
+&gt;&gt; except that the Y criterion is specifically adapted to<br>
+&gt;&gt; figures with an ODD number of sides, (Y has 3, but<br>
+&gt;&gt; variants with 5, 7 etc are simple).  Atoll, however,<br>
+&gt;&gt; is specifically adapted to boards with an EVEN number.<br>
+&gt;&gt;<br>
+&gt;&gt; Mark is to be strongly congratulated on discovering<br>
+&gt;&gt; the natural criterion for even-sided boards!<br>
+&gt;<br>
+&gt; Bill, you seem to have stopped short of fully generalizing Atoll&#x27;s<br>
+&gt; central, defining principle.  It&#x27;s not just a question of how many<br>
+&gt; sides a board has.  It&#x27;s also a question of how many segments a<br>
+&gt; board&#x27;s perimeter is divided into.<br>
+&gt;<br>
+&gt; In both Atoll and Hexatoll each side is divided into two segments, but<br>
+&gt; there&#x27;s no reason to stop there.  In both cases the sides could be<br>
+&gt; further divided into 4 segments or 6 segments, and so on.  Generally<br>
+&gt; speaking, Atoll can be played on any even sided board with any even<br>
+&gt; number of perimeter segments (8 or higher).<br>
+<br>
+Hex-grid connection games like Hex, Y and Atoll can be defined by the<br>
+following properties:<br>
+<br>
+ 0. Two players play.<br>
+<br>
+ 1. The board consists of a set of connected hexes, some of which may<br>
+    be pre-coloured to one of the player colours.<br>
+<br>
+ 2. A move consist of adding a piece of the player&#x27;s colour to a hex<br>
+    on the board.<br>
+<br>
+ 3. Winning is achieved by connecting a specified subset of hexes on<br>
+    the board by pieces of the player&#x27;s colour.<br>
+<br>
+ 4. A completely filled board will fulfill the criteria for _exactly_<br>
+    one side.<br>
+<br>
+Note that it is not possible for two paths of opposing colours to<br>
+cross.  This is true because only three hexes meet in a point, so<br>
+there is no way for two paths to cross at a point (and if two paths<br>
+cross, there must be such a point).<br>
+<br>
+On a filled board, consider two touching groups of opposite colours.<br>
+The border between these must either be a closed loop or it is open,<br>
+which means that both ends of the border touches the edge of be board<br>
+in a place where two colours meet.<br>
+<br>
+A border that is a closed loop means that the enclosed group doesn&#x27;t<br>
+touch the edge of the board.  It may, however, enclose one or more of<br>
+the precoloured groups.  If it doesn&#x27;t we can ignore the group (e.g.,<br>
+by replacing it with the enclosing colour), as it doesn&#x27;t contribute<br>
+to the winning criterion.<br>
+<br>
+A border that isn&#x27;t a closed loop will touch the edge in two places<br>
+where the edge changes colour.<br>
+<br>
+In Hex, only edges are pre-coloured, so we can ignore enclosed groups<br>
+(filling them with the enclosing colour).  The remaining borders must<br>
+end in the corners, as those are the only places where the edge<br>
+changes colour.  Hence, there are exactly two borders, so there must<br>
+be exactly three groups (the number of borders is one less than the<br>
+number of groups).  That can only happen if two same-coloured edges<br>
+are in one group and the two other edges are in diffrent groups.<br>
+<br>
+We can use this principle on boards of all shapes and sizes.<br>
+<br>
+Let us look at a singly connected set of hexes (i.e., a polygon<br>
+without holes) and divide its edge into sections.  We now assume that<br>
+the winning criterion is about connecting one of several specified<br>
+subsets of edge sections.<br>
+<br>
+We must now find a winning criterion that is achieved by exactly one<br>
+of the groups.<br>
+<br>
+The &quot;at most one&quot; part is achieved if we for any border between two<br>
+groups that divide the board into two parts have: If one part is<br>
+filled entirely by one colour and the other part by the other colour,<br>
+only one of these is a winning configuration.<br>
+<br>
+Proof: Let us assume we have a group fulfilling the winning criteria.<br>
+The part of the board on the other side of any one of its borders can<br>
+not contain a winning configuration of the other colour, so both sides<br>
+can&#x27;t have a winning configuration.<br>
+<br>
+This does not get us the &quot;at least one&quot; part.  To do this, we need: If<br>
+we have group in a winning configuration and replace part of this<br>
+group by a non-winning group of the opposite colour (that does not<br>
+touch existing groups of that colour), the group is still winning.<br>
+<br>
+Proof: Let us assume there a filled board has no winning group.<br>
+<br>
+We know that filling the whole board with one colour will make that<br>
+colour win, so we by the above property we can add in all the<br>
+non-winning groups of the opposing colour and still remain with a<br>
+winning configuration.  But by adding in all the opposite-coloured<br>
+groups. we have reconstructed the board which we assumed had no<br>
+winning configuration.  This is a contradiction, so our assumptiom<br>
+must be wrong.<br>
+<br>
+<br>
+Let us apply these principles to known games.<br>
+<br>
+In Y, any border will touch at most two edges, so the untouched edge<br>
+will be on one side of the border only.  So the other side can not<br>
+hold a winning configuration.  Let us assume that we have a group that<br>
+connects three edges.  If we from that group subtract a group that<br>
+touches at most two edges, we will still retain a group that connects<br>
+three edges.  Proof: The subtracted group is either completely<br>
+enclosed by the original group, which doesn&#x27;t change the connectivity<br>
+of the original group, or the border between the two group touches the<br>
+edges of the triangle at two edges.  These edges will be part of both<br>
+groups (as both sides of the border belong to the same edge), so it is<br>
+only the third edge that can be a problem.  But if this is taken away<br>
+from the original group, the taken-away group will connect all three<br>
+sides, which contradicts the assumption that the subtracted group is<br>
+not winning.<br>
+<br>
+Note that this depends on the corners being part of both edges.<br>
+<br>
+In generalised Atoll, there is 4N alternating black and white edge<br>
+sections (separated by at most one uncoloured hex, which would touch<br>
+both sections) and the purpose is to connect any two opposing sections<br>
+(i.e., at distance 2N) that have the same colour as the player.<br>
+<br>
+If we have a border that divides the board into two parts, then if one<br>
+side connects two opposing black segments, the other can not connect<br>
+two opposing white segments, and vice-versa.  This is fairly easy to<br>
+see.<br>
+<br>
+If we have a winning configuration for black, replacing part of this<br>
+by a white group that doesn&#x27;t touch existing groups means that the new<br>
+group is bordered only by the original group and the edge of the<br>
+board.  An enclosed group doesn&#x27;t change connectivity, so we can<br>
+ignore this.  If the new group touches the edge, we are fine as long<br>
+as it does not completely block one of the opposing black sections.<br>
+But to completely block a black section, the new white group must<br>
+touch something white, which we don&#x27;t allow.<br>
+<br>
+Note that we have not considered the shape of the board except that it<br>
+has no holes.  This makes it include Hex (if N=1).<br>
+<br>
+As can be seen, the criteria are fairly easy to use.<br>
+<br>
+	Torben<br>
+<br>
+<br>
+</div>
+</body>
+</html>

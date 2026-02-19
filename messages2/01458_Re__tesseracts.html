@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: tesseracts</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: tesseracts</h1>
+    <p><strong>From:</strong> matt@severian.chi.il.us (Matt Crawford)<br>
+    <strong>Date:</strong> 10 Dec 1993 03:15:21 GMT</p>
+    <hr>
+    <div><br>
+When I saw the original question I prepared this reply, but I was<br>
+waiting until I thought of an answer the the second half.  I haven&#x27;t<br>
+found an easy one yet, so here&#x27;s the part I do have.<br>
+<br>
+   ejg@remus.rutgers.edu<br>
+   &gt; i am trying to include a 4-dimesional &quot;room&quot; in a game i am designing,<br>
+   &gt;  but cant remember which rooms connect to which rooms by which doors <br>
+<br>
+<br>
+   Hmm ... the following simple scheme occurs to me now.  It seems to be<br>
+   both correct and useful.<br>
+<br>
+   Number the eight rooms in binary from 000 to 111.  Every room<br>
+   connects to six of the seven others, and the exception is the<br>
+   one whose binary designation is the complement.  So room 010,<br>
+   for example, connects to every room except 101.<br>
+<br>
+   Now as for which doorway leads where, that seems a little<br>
+   vaguer.  I presume you want to have your layout such that<br>
+   traveling through four doorways in the &quot;same direction&quot; brings<br>
+   you back to where you are.<br>
+<br>
+<br>
+If you start in room 000 assign the numbers 001, 010, and 100 to the<br>
+rooms to your east, north, and above you respectively, then you can<br>
+make the following circuits:<br>
+<br>
+northward:	000 -&gt; 001 -&gt; 111 -&gt; 110 -&gt; 000<br>
+eastward:	000 -&gt; 010 -&gt; 111 -&gt; 101 -&gt; 000<br>
+upward:		000 -&gt; 100 -&gt; 111 -&gt; 011 -&gt; 000<br>
+<br>
+I haven&#x27;t thought of a simple scheme that just gives you the general<br>
+case.<br>
+<br>
+These north, east, and up terms are somewhat bogus, because every<br>
+time you go through a door you must turn a corner that involves the<br>
+fourth dimension.  Let&#x27;s suppose that the same magic that got you a<br>
+four dimensional maze takes care of that quandary for you.<br>
+__________________________________________________________<br>
+Matt Crawford       matt@severian.chi.il.us       Java Man<br>
+<br>
+<br>
+</div>
+</body>
+</html>

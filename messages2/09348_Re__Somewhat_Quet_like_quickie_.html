@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Somewhat Quet-like quickie?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Somewhat Quet-like quickie?</h1>
+    <p><strong>From:</strong> Phil Carmody &lt;thefatphil_demunged@yahoo.co.uk&gt;<br>
+    <strong>Date:</strong> Fri, 05 Feb 2010 00:12:57 +0200</p>
+    <hr>
+    <div>Chip Eastham &lt;hardmath@gmail.com&gt; writes:<br>
+&gt; On Jan 23, 6:19 pm, Phil Carmody &lt;thefatphil_demun...@yahoo.co.uk&gt;<br>
+&gt; wrote in part:<br>
+&gt;<br>
+&gt;&gt; Here are some mins/maxes from a few thousand simulations of random<br>
+&gt;&gt; play on a square grid:<br>
+&gt;&gt; size 1  2  3  4  5  6  7  8  9 10 11 12 13 14<br>
+&gt;&gt; min  1  4  4  4  6  7  8  9 10 11 13 14 16 17<br>
+&gt;&gt; max  1  4  6  8 10 12 14 16 17 19 21 23 24 26<br>
+&gt;&gt; Greedy algorithms might be able to improve those bounds.<br>
+&gt;<br>
+&gt; There is a six-cell selection which fits on the<br>
+&gt; 5x5 board but actually &quot;covers&quot; the 6x6 board:<br>
+&gt;<br>
+&gt; +---+---+---+---+---+---+<br>
+&gt; | X |   | X |   |   |   |<br>
+&gt; +---+---+---+---+---+---+<br>
+&gt; |   |   |   |   |   |   |<br>
+&gt; +---+---+---+---+---+---+<br>
+&gt; | X |   |   |   | X |   |<br>
+&gt; +---+---+---+---+---+---+<br>
+&gt; |   |   |   |   |   |   |<br>
+&gt; +---+---+---+---+---+---+<br>
+&gt; |   |   | X |   | X |   |<br>
+&gt; +---+---+---+---+---+---+<br>
+&gt; |   |   |   |   |   |   |<br>
+&gt; +---+---+---+---+---+---+<br>
+&gt;<br>
+&gt; Thus the minimum for size 6 can be lowered<br>
+&gt; to 6.  I wrote a Prolog program to solve<br>
+&gt; such puzzles, and it finds the solution<br>
+&gt; above in about 10 minutes.  I&#x27;m making<br>
+&gt; some tweaks to how it intializes the<br>
+&gt; board for speed, because you have to<br>
+&gt; search in some fashion the entire space<br>
+&gt; to confirm no smaller solution exists.<br>
+<br>
+Nice! I did notice such N-fits-into-N+1-with-no-room-for-more <br>
+situations in smaller sizes, but by hand it was too much to look <br>
+at the many various 5&#x27;s.<br>
+<br>
+I can&#x27;t say I know enough about prolog to know how it would cope<br>
+with bigger board sizes. I presume that it scales roughly as<br>
+scarily as the N-queens problem.<br>
+<br>
+Thanks for your interest.<br>
+<br>
+Phil<br>
+-- <br>
+Any true emperor never needs to wear clothes. -- Devany on r.a.s.f1<br>
+<br>
+<br>
+</div>
+</body>
+</html>

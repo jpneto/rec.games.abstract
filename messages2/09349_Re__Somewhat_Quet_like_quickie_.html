@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Somewhat Quet-like quickie?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Somewhat Quet-like quickie?</h1>
+    <p><strong>From:</strong> Chip Eastham &lt;hardmath@gmail.com&gt;<br>
+    <strong>Date:</strong> Fri, 5 Feb 2010 06:48:07 -0800 (PST)</p>
+    <hr>
+    <div>On Feb 4, 5:12 pm, Phil Carmody &lt;thefatphil_demun...@yahoo.co.uk&gt;<br>
+wrote:<br>
+&gt; Chip Eastham &lt;hardm...@gmail.com&gt; writes:<br>
+&gt; &gt; On Jan 23, 6:19 pm, Phil Carmody &lt;thefatphil_demun...@yahoo.co.uk&gt;<br>
+&gt; &gt; wrote in part:<br>
+&gt;<br>
+&gt; &gt;&gt; Here are some mins/maxes from a few thousand simulations of random<br>
+&gt; &gt;&gt; play on a square grid:<br>
+&gt; &gt;&gt; size 1  2  3  4  5  6  7  8  9 10 11 12 13 14<br>
+&gt; &gt;&gt; min  1  4  4  4  6  7  8  9 10 11 13 14 16 17<br>
+&gt; &gt;&gt; max  1  4  6  8 10 12 14 16 17 19 21 23 24 26<br>
+&gt; &gt;&gt; Greedy algorithms might be able to improve those bounds.<br>
+&gt;<br>
+&gt; &gt; There is a six-cell selection which fits on the<br>
+&gt; &gt; 5x5 board but actually &quot;covers&quot; the 6x6 board:<br>
+&gt;<br>
+&gt; &gt; +---+---+---+---+---+---+<br>
+&gt; &gt; | X |   | X |   |   |   |<br>
+&gt; &gt; +---+---+---+---+---+---+<br>
+&gt; &gt; |   |   |   |   |   |   |<br>
+&gt; &gt; +---+---+---+---+---+---+<br>
+&gt; &gt; | X |   |   |   | X |   |<br>
+&gt; &gt; +---+---+---+---+---+---+<br>
+&gt; &gt; |   |   |   |   |   |   |<br>
+&gt; &gt; +---+---+---+---+---+---+<br>
+&gt; &gt; |   |   | X |   | X |   |<br>
+&gt; &gt; +---+---+---+---+---+---+<br>
+&gt; &gt; |   |   |   |   |   |   |<br>
+&gt; &gt; +---+---+---+---+---+---+<br>
+&gt;<br>
+&gt; &gt; Thus the minimum for size 6 can be lowered<br>
+&gt; &gt; to 6.  I wrote a Prolog program to solve<br>
+&gt; &gt; such puzzles, and it finds the solution<br>
+&gt; &gt; above in about 10 minutes.  I&#x27;m making<br>
+&gt; &gt; some tweaks to how it intializes the<br>
+&gt; &gt; board for speed, because you have to<br>
+&gt; &gt; search in some fashion the entire space<br>
+&gt; &gt; to confirm no smaller solution exists.<br>
+&gt;<br>
+&gt; Nice! I did notice such N-fits-into-N+1-with-no-room-for-more<br>
+&gt; situations in smaller sizes, but by hand it was too much to look<br>
+&gt; at the many various 5&#x27;s.<br>
+&gt;<br>
+&gt; I can&#x27;t say I know enough about prolog to know how it would cope<br>
+&gt; with bigger board sizes. I presume that it scales roughly as<br>
+&gt; scarily as the N-queens problem.<br>
+<br>
+Hi, Phil:<br>
+<br>
+I confirmed the minimum solutions for 7x7 and 8x8<br>
+boards both required 8 marked cells.  The program<br>
+finds solutions quickly, but exhaustively checking<br>
+nonexistence of 7 cell solutions takes 35 minutes<br>
+for the 7x7 board and 7 1/2 hours for the 8x8 board.<br>
+<br>
+There&#x27;s more efficiency I should implement, avoiding<br>
+checking symmetric configurations more than once.  I<br>
+place the &quot;first mark&quot; in roughly one-eighth of the<br>
+board, which exploits symmetry partially (as rotating<br>
+and reflecting the board can always thus position one<br>
+of the marked cells).  Fully exploiting the symmetry<br>
+of a square board is a topic that I remember kicking<br>
+around with someone (probably for N-queens) in another<br>
+forum.  Having a little absent-mindedness in recalling<br>
+details...<br>
+<br>
+regards, chip<br>
+<br>
+<br>
+</div>
+</body>
+</html>

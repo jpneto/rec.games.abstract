@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Othello: static board evaluation</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Othello: static board evaluation</h1>
+    <p><strong>From:</strong> torbenm@diku.dk (Torben AEgidius Mogensen)<br>
+    <strong>Date:</strong> 17 Nov 92 13:14:42 GMT</p>
+    <hr>
+    <div>c89mikho@IDA.LiU.SE (Mikael Hovmoller) writes:<br>
+<br>
+&gt;I plan to implement a minimax algorithm with alpha-beta cutoffs. This<br>
+&gt;works good enough, as this is a minor project for school, and not an<br>
+&gt;olympic winner-to-be. However, I find it hard to implement a good<br>
+&gt;static board evaluation. The one I&#x27;m currently using gives every<br>
+&gt;position on the board a specific value if the computer occupies<br>
+&gt;it, minus that same value if the player has it, and 0 if it&#x27;s<br>
+&gt;currently empty.<br>
+<br>
+&gt;This seems reasonable to me, but in reality doesn&#x27;t play very good.<br>
+<br>
+This is the method used by most &quot;beginners&quot; trying to make an<br>
+evaluation function, and as you said it isn&#x27;t very good. In my program<br>
+I use these factors:<br>
+<br>
+  1) How many legal moves does the opponent have. A small number is<br>
+     good.<br>
+<br>
+  2) I have built a table of all possible combinations of pieces on an<br>
+     edge (there are only about 6500) and assigned each of these a<br>
+     value. This is (of course) not done by hand, but by a program<br>
+     that makes an exhaustive search of all plays on the edge. A legal<br>
+     move is is of course one that flips pieces on the edge, but in<br>
+     addition to these I have considered three different lines of<br>
+     play: in the first, the opponent is able to move in any empty<br>
+     square except corners, but you only by flipping. In the second,<br>
+     it is opposite and in the third both are able to move anywhere<br>
+     except corners. At the point where no further moves are<br>
+     possible, the number of safe (unflippable) pieces are counted,<br>
+     with the corner counting extra. The values of the different lines<br>
+     of play are added using weights that reflect playing strategy. A<br>
+     high weight on the case where the opponent has the advantage<br>
+     gives a defensive play, where a high weight on your own advantage<br>
+     gives a more aggresive play. Once the table is made, it is fairly<br>
+     quick to look up any edge position in the table.<br>
+<br>
+  3) I look at the control of the diagonals. If the diagonal space<br>
+     next to a corner is occupied and the corner itself isn&#x27;t, the<br>
+     values of the neighbouring edges after a move by the opposite<br>
+     colour in the corner are used to modify the value of the<br>
+     position. If a move to the corner is immediately possible, the<br>
+     effect of it counts more than if not, especially near the end of<br>
+     the game.<br>
+<br>
+Note that I nowhere use a weighted sum of the occupied squares.<br>
+However, near the end of the game all remaining moves are explored<br>
+fully, and a simple sum is used as value. The program plays reasonably<br>
+well, though nowhere near as good as the program Colin Springer is<br>
+coauthor of.<br>
+<br>
+Other things you can consider is to make extra deep search of forced<br>
+moves and passes, counting safe pieces not on the corners, counting<br>
+the number of &quot;good&quot; moves rather than the total number of moves when<br>
+counting mobility. A good move could be defined as one that does not<br>
+move next to an empty corner.<br>
+<br>
+	Torben Mogensen (torbenm@diku.dk)<br>
+<br>
+<br>
+</div>
+</body>
+</html>

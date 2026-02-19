@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Drat -- Grid Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Drat -- Grid Game</h1>
+    <p><strong>From:</strong> torbenm@pc-003.diku.dk (Torben =?iso-8859-1?Q?=C6gidius?= Mogensen)<br>
+    <strong>Date:</strong> Wed, 13 May 2009 11:16:46 +0200</p>
+    <hr>
+    <div>Leroy Quet &lt;qqquet@mindspring.com&gt; writes:<br>
+<br>
+&gt; In the first phase of the game players take turns, each placing ANY<br>
+&gt; integer from 1 to n^2 into any empty square of the grid on a turn.<br>
+&gt; (The same integer may be used more than once in the grid.)<br>
+<br>
+&gt; Players thereafter take turns moving their markers from square to<br>
+&gt; orthogonally adjacent square.<br>
+&gt;<br>
+&gt; if it is possible, player B must move so that the<br>
+&gt; numbers of his/her consecutively-moved-on squares have either the same<br>
+&gt; greatest common divisor or same absolute difference as the last two<br>
+&gt; consecutively-moved-on squares of Player A -- where player A is the<br>
+&gt; player who moves just before player B (and where who exactly are<br>
+&gt; players A and B changes each move -- player B always being the player<br>
+&gt; currently moving).<br>
+&gt;<br>
+&gt; If there are no such adjacent squares that have the same GCD or<br>
+&gt; absolute difference, then player B may move to ANY orthogonally<br>
+&gt; adjacent square.<br>
+&gt;<br>
+&gt; If a player is forced to move onto a square already occupied by<br>
+&gt; another player&#x27;s marker, then the SECOND player to occupy the square<br>
+&gt; is removed from competition, and his/her marker is removed from the<br>
+&gt; grid. (A player landing on an already occupied square is a &#x27;drat&#x27;, as<br>
+&gt; in &quot;Drat!&quot;.)<br>
+&gt;<br>
+&gt;<br>
+&gt; Play continues until there is one remaining player, who is then the<br>
+&gt; winner.<br>
+<br>
+It seems fairly easy to force a draw: I expect there are often cases<br>
+where you by moving back and forth between two squares can force the<br>
+other player to move back and forth between two other squares.  But it<br>
+is probably possible to place the numbers in the first phase so this<br>
+can&#x27;t happen.<br>
+<br>
+It sounds intersting, though I have a feeling it will be a bit too<br>
+complicated for most players.<br>
+<br>
+A game with similar feel might be to have on each square one of N<br>
+symbols that can be in one of N colours and one of N sizes.  With N=4,<br>
+you get 64 different combinations, so you can fill an 8x8 board with<br>
+one of each.<br>
+<br>
+A move must preserve either shape, colour or size.  Additionally, if<br>
+the previous move preserved, say, colour, you must also preseve colour<br>
+(and similar for shape and size).  If the previous move preserved more<br>
+than one property, you must preserve as many as possible of those.<br>
+This includes that, if you can&#x27;t preserve any of the previous moves<br>
+preserved property, you can make any move, as long as it preserves<br>
+_some_ property.<br>
+<br>
+An 8x8 board may be too big for this, so you could have N=2 and<br>
+distribute two of each of the 8 combinations on a 4x4 board.<br>
+<br>
+You could even build a board out of tiles that have these markings.<br>
+<br>
+You could even use a Set deck: Take only the cards that have one<br>
+symbols (that&#x27;s 27 cards: three shapes, three colours and three<br>
+shadings), shuffle them and lay 25 of them in a 5x5 grid.<br>
+Alternatively, place them in a staggered grid like this:<br>
+<br>
+<br>
+        +---+<br>
+        |   |<br>
+      +-+-+-+-+<br>
+      |   |   |<br>
+    +-+-+-+-+-+-+<br>
+    |   |   |   |<br>
+  +-+-+-+-+-+-+-+-+<br>
+  |   |   |   |   |<br>
++-+-+-+-+-+-+-+-+-+-+<br>
+|   |   |   |   |   |<br>
++-+-+-+-+-+-+-+-+-+-+<br>
+  |   |   |   |   |<br>
+  +-+-+-+-+-+-+-+-+<br>
+    |   |   |   |<br>
+    +-+-+-+-+-+-+<br>
+      |   |   |<br>
+      +-+-+-+-+<br>
+        |   |<br>
+        +---+<br>
+<br>
+so each card has (up to) six neighbours.<br>
+<br>
+	Torben<br>
+<br>
+<br>
+</div>
+</body>
+</html>

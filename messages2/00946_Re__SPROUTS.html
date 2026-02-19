@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: SPROUTS</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: SPROUTS</h1>
+    <p><strong>From:</strong> mpf@theory.lcs.mit.edu (Michael P. Frank)<br>
+    <strong>Date:</strong> 1 Apr 93 13:27:47</p>
+    <hr>
+    <div>I first read about Sprouts in the Piers Anthony book _Macroscope_.<br>
+According to _Winning Ways_ (1), it was invented by M.S. Patterson and<br>
+J.H. Conway (who also invented &quot;life&quot;).<br>
+<br>
+For those who don&#x27;t know, the rules of sprouts are:<br>
+1. Start with some number n of dots on a sheet of paper.<br>
+2. Players take turns. On your turn, draw a line from one dot<br>
+   to another dot (or the same dot) without intersecting any lines<br>
+   (including itself), and put a new dot in the middle of the line.<br>
+3. There can be at most 3 lines coming out of a dot.  Initially<br>
+   there are 3n places to put lines, and each new line eliminates<br>
+   2 and adds 1 new place.  So the game can last at most 3n-1 turns.<br>
+   Usually less because there might be a place that you can&#x27;t get<br>
+   to without intersecting lines.<br>
+4. The first player who has no legal moves loses (or wins--that<br>
+   version is interesting too).  I forget which is Anthony&#x27;s version.<br>
+<br>
+_Winning Ways_ says a few things about strategies, but not much.  I<br>
+bet a computer player could beat most humans easily by doing a<br>
+brute-force search.  It would be fun to write an X program that could<br>
+play the game.<br>
+<br>
+For reference, here are the outcomes of some initial positions with<br>
+optimal play.  The numbers are how many moves it takes to win the<br>
+game, N means the first player wins, and P means the second player<br>
+wins.  According to _Winning Ways_, nobody knows who wins for any<br>
+n greater than 6.<br>
+<br>
+				Value of n (# spots)<br>
+<br>
+		0	1	2	3	4	5	6<br>
+		---	---	---	---	---	---	---<br>
+no moves=lose:	0P	2P	4P	7N	9N	11N	14P<br>
+no moves=win:	0N	2N	5P	7P	9P<br>
+<br>
+-Mike<br>
+<br>
+(1) _Winning Ways_, Elwyn R. Berlekamp, John H. Conway, and Richard<br>
+K. Guy, Academic Press, London, 1982.<br>
+<br>
+--<br>
+   , ,                       __               mpf@medg.lcs.mit.edu<br>
+  /|/| .  _ |_   _   _  |   |_  _  _  ,_  |,  Clinical Decision-Making Group<br>
+ / | | | (_ | | (_| (-&#x27; |   |  |  (_| | | |\  MIT Lab for Computer Science<br>
+<br>
+<br>
+</div>
+</body>
+</html>

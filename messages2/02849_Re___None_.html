@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: &lt;None&gt;</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: &lt;None&gt;</h1>
+    <p><strong>From:</strong> gillcp@vnet.ibm.com (Chris Gill)<br>
+    <strong>Date:</strong> 6 Mar 1995 13:18:33 GMT</p>
+    <hr>
+    <div>In &lt;1995Mar3.132856.38465@msuvx2.memphis.edu&gt; udhrussell@cc.memphis.edu writes:<br>
+&gt;     Okay, I&#x27;ve got a puzzle I need help with. Actually, it&#x27;s my brother&#x27;s<br>
+&gt;puzzle and it&#x27;s driving him crazy. So, if anyone knows the solution to this<br>
+&gt;problem let me know. The object is to draw a line through every line but only<br>
+&gt;once. I know it sounds easy, but it isn&#x27;t.<br>
+&gt;<br>
+&gt;                   -----------------------<br>
+&gt;                   [          [          [<br>
+&gt;                   [    a     [    b     [<br>
+&gt;                   [          [          [<br>
+&gt;                   -----------------------       f<br>
+&gt;                   [     [         [     [<br>
+&gt;                   [  c  [    d    [  e  [<br>
+&gt;                   [     [         [     [<br>
+&gt;                   -----------------------<br>
+&gt;<br>
+&gt;I know the drawing looks odd but it&#x27;s supposed to be two boxes on top of three<br>
+&gt;boxes. It&#x27;s an old puzzle, but I need to find out if there is a solution. Just<br>
+<br>
+If you don&#x27;t have to leave the frame (ie you don&#x27;t enter region f) then the<br>
+answer is easy: a-&gt;c-&gt;d-&gt;a-&gt;b-&gt;d-&gt;e.  However, you already knew that, so now<br>
+including region f.  Here&#x27;s a table of edges (lines to cross) for each region:<br>
+a    5<br>
+b    5<br>
+c    4<br>
+d    5<br>
+e    4<br>
+f    9<br>
+You don&#x27;t have to think for very long to realise that each time you enter a<br>
+region you leave it next move, so except for the start and finish regions,<br>
+each region needs to have an even number of edges.  Look again at the table<br>
+and you see that it&#x27;s not possible.<br>
+<br>
+It&#x27;s not too tricky to understand the above explanation once you&#x27;ve seen it<br>
+once.  What is surprising is that if the condition above is met, for whichever<br>
+compliant shape, then that shape will ALWAYS be traceable.  This is proved<br>
+using the Principal of Mathematical Induction.  I was shown it in the second<br>
+year of my BSc.<br>
+<br>
+Chris.<br>
+<br>
+Similar problem (note phrasing):  Can you trace along the lines of this<br>
+diagram without tracing along any line more than once or lifting your<br>
+finger from the screen?<br>
+ ___ ___<br>
+|  /|\  |<br>
+| / | \ |<br>
+|/__|__\|<br>
+|\  |  /|<br>
+| \ | / |<br>
+|__\|/__|<br>
+(the lines are supposed to meet wherever it looks like they are supposed to;<br>
+that&#x27;s ascii for you!)<br>
+_______________________________<br>
+Chris Gill<br>
+Xyratex, Havant, Hampshire, UK.                These are my opinions;<br>
+gillcp@vnet.ibm.com                       they may or may not be Xyratex&#x27;s.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

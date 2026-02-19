@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Move ordering</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Move ordering</h1>
+    <p><strong>From:</strong> jdart@donner.Rational.COM (Jon Dart)<br>
+    <strong>Date:</strong> Thu, 23 Sep 1993 19:04:31 GMT</p>
+    <hr>
+    <div>In article &lt;CDtJyA.7uJ@knot.ccs.queensu.ca&gt; colley@qucis.queensu.ca (Paul Colley) writes:<br>
+&gt;It&#x27;s obvious that a trying good moves first improves alpha-beta<br>
+&gt;performance.  I&#x27;m somewhat baffled as to what a good move-ordering<br>
+&gt;might look like.  It seems like a chicken-and-egg proglem:  How do I<br>
+&gt;tell the good moves from the bad BEFORE I do the search?<br>
+&gt;<br>
+&gt;The best thing I can think of is to make each proposed move, call your<br>
+&gt;evaluation function, and sort on this result to get the move-ordering<br>
+&gt;for the recursive search.<br>
+&gt;<br>
+<br>
+There are lots of possible heuristics.  One common one has to do with<br>
+piece safety - it is fairly cheap to do a quick analysis of pieces<br>
+attacking and defending a given square.  If it appears that an opponent&#x27;s<br>
+piece can be gainfully captured (e.g. it is undefended, or attacked by<br>
+a piece of lesser value), then such capture moves are tried early on.<br>
+Similarly, if the side to move has pieces that appear to be en prise<br>
+(subject to gainful capture), then moves that transfer them to apparently<br>
+safe squares are tried early.  (I say &quot;apparently&quot; here because a static<br>
+analysis of safety one square at a time is imperfect and there may be<br>
+situations where it is not accurate).<br>
+<br>
+Other heuristics involve keeping lists of moves that have proven to<br>
+generate good scores elsewhere in the search tree.  For example, moves<br>
+that caused beta cutoff may be kept in a list (sometimes these are<br>
+called &quot;killer&quot; moves).  If the same move is legal elsewhere in the<br>
+tree at the same depth, it will be moved up in the search order, on the<br>
+theory that a move that is good in another position may be good in this<br>
+one, too.  There are several variations of this scheme.<br>
+<br>
+-- Jon<br>
+<br>
+<br>
+--<br>
+Jon Dart  | 3320 Scott Blvd.,          | jdart@rational.com|<br>
+Rational  | Santa Clara, CA 95054-3197 |                   |<br>
+          | 408-496-3656               |                   |<br>
+<br>
+<br>
+</div>
+</body>
+</html>

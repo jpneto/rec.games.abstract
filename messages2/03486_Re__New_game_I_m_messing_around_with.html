@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: New game I&#x27;m messing around with</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: New game I&#x27;m messing around with</h1>
+    <p><strong>From:</strong> dboll@pacifier.com (Dave Boll)<br>
+    <strong>Date:</strong> 23 12 1996 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+<br>
+  Sorry to follow up my own post, but I made a couple errors in<br>
+  the sample semi-game, and I wanted to clear up any confusion.<br>
+  Especially mine! So, I finished up the game, starting from the<br>
+  point where I had a brain fart in the previous post.<br>
+<br>
+: <br>
+: Board: NxN, square, I&#x27;ll illustrate below for N=3<br>
+: Starting config:<br>
+: <br>
+:   B B B<br>
+:   - - -<br>
+:   W W W<br>
+: <br>
+: Movement: pieces can take one rookwise step to any unoccupied square<br>
+: <br>
+: Piece types: There are 3 types of pieces: (B)lack, (W)hite, and<br>
+: (N)eutral. Any move that results in 2 pieces of different types becoming<br>
+: adjacent flips both pieces to the third type. On any turn, a player may move<br>
+: their own piece or any of the Neutral ones.<br>
+: <br>
+: Goal: Win by wiping out your opponant - all pieces on the board are either<br>
+: yours or neutral.<br>
+: <br>
+: Sample game, with comments:<br>
+: <br>
+: B B B   Starting position<br>
+: - - -<br>
+: W W W<br>
+: <br>
+: N B B   W has only 2 unique moves, and the center one is a loser, since<br>
+: N - -   B could just push the N piece in the middle back down for an<br>
+: - W W   instant win<br>
+: <br>
+: N B B   Moving the N piece to the center doesn&#x27;t result in any flips, <br>
+: - N -   since it is now adjacent to more than one kind of piece.<br>
+: - W W<br>
+: <br>
+: N B B   Again, no flips, since the W piece toughes both a B and a N<br>
+: - N W<br>
+: - W -<br>
+: <br>
+: N B B<br>
+: N - W<br>
+: - W -<br>
+: <br>
+: N B B   Is W on the ropes? Hard to say!<br>
+: N W -<br>
+: - W -<br>
+: <br>
+: N B B   B takes the greedy move<br>
+: - W -<br>
+: B B -<br>
+: <br>
+: N B W   W gets some pieces back, and threatens from the upper left corner.<br>
+: - - W<br>
+: B B -<br>
+<br>
+Error: this should be<br>
+<br>
+  N B N   Since the W just moved to a square where it was touching only<br>
+  - - N   B, they both flip to N&#x27;s<br>
+  B B -<br>
+<br>
+So it would have been a pretty silly move by W, since W just got<br>
+cleaned out.<br>
+So, if we back up to before the move:<br>
+<br>
+N B B<br>
+- W -<br>
+B B -<br>
+<br>
+W only has 2 other choices here: moving the N piece down, and moving<br>
+the W piece to the left. Moving the N piece down loses on the next turn,<br>
+so we&#x27;ll move W left:<br>
+<br>
+N B B  No flip here.<br>
+W - -<br>
+B B -<br>
+<br>
+And now B can force a win like so:<br>
+<br>
+N B B  No flip, since B, the moved piece, touches both B and W<br>
+W B -<br>
+B - -<br>
+<br>
+Now W is moveless. I guess I hadn&#x27;t specified stalemate conditions, let&#x27;s<br>
+say in this game, if you have no moves, you just lose your turn.<br>
+<br>
+N B B   And now W is forced to suicide the next turn<br>
+W B -<br>
+- B -<br>
+<br>
+N B B   B wins.<br>
+- B -<br>
+N N -<br>
+<br>
+Hmmm - maybe there is some meat in this game after all! Hopefully<br>
+I didn&#x27;t make any more errors...<br>
+<br>
+If anyone wants to try out a 5x5 email game, let me know.<br>
+<br>
+-- <br>
+Dave Boll     dboll@pacifier.com<br>
+&quot;Never use an outhouse toilet while holding your car keys in your mouth.&quot;<br>
+Homepage: http://www.pacifier.com/~dboll/      Stop by for a visit! Lots<br>
+of stuff on amateur Astronomy, recreational mathematics, etc.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

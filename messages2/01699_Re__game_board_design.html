@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: game board design</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: game board design</h1>
+    <p><strong>From:</strong> damien@b63519.student.cwru.edu (Damien P. Neil)<br>
+    <strong>Date:</strong> 7 Apr 1994 18:38:16 -0400</p>
+    <hr>
+    <div>In article &lt;Cnw5A8.91q@and.nl&gt;, Jos Horsmeier &lt;jos@and.nl&gt; wrote:<br>
+<br>
+[Fascinating game deleted]<br>
+<br>
+Well, it seems that what you need is a method of easily representing two<br>
+different values on each piece, one ranging from 1 to 11, and the other<br>
+being in the set {1,2,3,5,8}.<br>
+<br>
+First, each piece must be identified as having a side. Checkers pieces are<br>
+a good size, and come already color-coded for two sides, so I&#x27;ll use one<br>
+of those as a starter.<br>
+<br>
+Next, each piece has a rank. Write a rank on the top of the checkers<br>
+piece. When a piece changes rank, change the piece to one with an<br>
+appropriate number on the top. I forget how many pieces existed in the<br>
+game, but this means that you will need 5 * (number of pieces) different<br>
+pieces to cover all possible situations.<br>
+<br>
+Finally, you need to indicate decay. Drill a hole in each piece, big enough<br>
+to fit a toothpick. Make a number of little flags out of toothpicks. Write<br>
+a letter from A to K on each flag. For starters, each piece has an A flag<br>
+put in it.<br>
+<br>
+Make a row of boxes along one side of the board, lettered from A to K.<br>
+Put a marker in the A box to start with. At the end of every round, move<br>
+the marker one letter forwards. When it passes K, it wraps around to A.<br>
+If, after moving the marker, a piece has the same letter on it&#x27;s flag as<br>
+the letter the marker now indicates, it has expired.<br>
+<br>
+Whenever you move a piece, update it&#x27;s flag to the letter the marker is<br>
+currently indicating.<br>
+<br>
+<br>
+I am certain that there is much room for improvement in this system, but<br>
+it should work.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

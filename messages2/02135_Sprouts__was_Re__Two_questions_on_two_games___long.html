@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sprouts (was Re: Two questions on two games) (long)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Sprouts (was Re: Two questions on two games) (long)</h1>
+    <p><strong>From:</strong> djoyce@black.clarku.edu (Dave Joyce)<br>
+    <strong>Date:</strong> 22 Aug 94 20:47:26 GMT</p>
+    <hr>
+    <div>In &lt;199408210201.WAA11189@cap.gwu.edu&gt; psaavedr@cap.gwu.edu (Pedro J.<br>
+Saavedra) asked about Sprouts:<br>
+<br>
+&gt;The other question regards Sprouts, which was very popular in<br>
+&gt;math departments in the sixties, and was featured in the <br>
+&gt;book Macroscope.  In those days it was known that the second player <br>
+&gt;won the six point straight game, but the seven point was unknown.<br>
+&gt;So were the misere (last player loses) six point games.  Does<br>
+&gt;anybody know if those are solved?  Also, has anybody deviced an<br>
+&gt;easy notation for e-mail play?  Since it required drawing curves<br>
+&gt;it is not easy to record other than by sending a sheet of paper<br>
+&gt;back and forth.<br>
+&gt;<br>
+&gt;I must sound like I&#x27;m Rip Van Winkle waking up.  When in the academic<br>
+&gt;world we used to discuss all these games, but I left it years ago, <br>
+&gt;and have not thought much about them since.<br>
+&gt;<br>
+&gt;--<br>
+&gt;****************************************************************<br>
+&gt;Pedro J. Saavedra                        P.O. Box 236<br>
+&gt;psaavedr@cap.gwu.edu                     Garrett Park, MD 20896<br>
+&gt;****************************************************************<br>
+<br>
+What follow are some discussions that took place a year or two ago about<br>
+Sprouts in various newsgroups. ---DEJ<br>
+<br>
+0------------------------------------------------------------------0<br>
+<br>
+Newsgroups: sci.math,comp.programming<br>
+From: djoyce@black.clarku.edu (David E. Joyce)<br>
+Subject: Sprouts<br>
+Message-ID: &lt;djoyce.700349381@black.clarku.edu&gt;<br>
+Organization: Clark University (Worcester, MA)<br>
+References: &lt;1992Mar7.025114.20667@midway.uchicago.edu&gt; &lt;ROCKWELL.92Mar7031236@socrates.umd.edu&gt; &lt;1992Mar07.160902.260001@cs.cmu.edu&gt; &lt;9kyhc4+pdh@netcom.com&gt; &lt;ROCKWELL.92Mar8173737@socrates.umd.edu&gt; &lt;ROCKWELL.92Mar9225534@socrates.umd.edu&gt;<br>
+Date: 11 Mar 92 21:29:41 GMT<br>
+<br>
+<br>
+There&#x27;s an interesting discussion of Sprouts going on in the newsgroup<br>
+comp.programming.  Conway &amp; Patterson&#x27;s game of Sprouts is explained in E.R.<br>
+Berlekamp, J.H. Conway and R.K.Guy&#x27;s _Winning Ways_, Academic Press, London,<br>
+1982.<br>
+<br>
+kwhyte@math.uchicago.edu (Kevin Whyte) began the discussion with this<br>
+description of the game<br>
+<br>
+	First, let me describe the game of sprouts.  It is a <br>
+	pencil and paper game.  The game starts with some # of dots<br>
+	on the board.  A legal move is to draw a line connecting 2<br>
+	dots, and to add a dot somewhere on the line (connecting<br>
+	a dot to itself is acceptable); subject to the following<br>
+	restrictions: 1&gt; No dot can lie on more than three lines<br>
+        (so , each dot starts w/ 3 &quot;lives&quot;.  Drawing<br>
+	a line uses one life of each of the dots - 2 if the dot<br>
+	is connected to itself.  The dot added on the line has only<br>
+	one life left.)<br>
+                      2&gt; No lines may cross.<br>
+<br>
+	If it is your turn to move, and you have no legal move, you<br>
+	lose.  My question is how to do this by computer.  First, how<br>
+	do you even write a program to allow people to play each other,<br>
+	with the program only keeping track of the board and the legality<br>
+	of the moves?  Secondly, if you wanted to make the computer actually<br>
+	play the game, can anyone think of a way to recognize equivalent<br>
+	moves (of which there usually are many), so as to have a search<br>
+	be reasonable?<br>
+<br>
+rockwell@socrates.umd.edu (Raul Deluth Miller-Rockwell) considered a data<br>
+structure to deal with the state of the game:<br>
+<br>
+	Ok, obviously you need a data structure for each dot which can<br>
+	record connections with up to three other dots.  So the trick<br>
+	is dealing with intersecting lines.<br>
+<br>
+and went on to discuss this topological problem and related questions as<br>
+the game is played.  He also speculated on how Sprouts is related to Nim.<br>
+<br>
+<br>
+pdh@netcom.com (Phil Howard KA9WGN / I am the NRA) continued this discussion<br>
+with rockwell@socrates.umd.edu (Raul Deluth Miller-Rockwell) in later articles<br>
+fleshing out the details.<br>
+<br>
+<br>
+sleator+@CS.CMU.EDU (Daniel Sleator) wrote<br>
+<br>
+	David Applegate, Guy Jacobson and I wrote a program to analyze<br>
+	sprouts, and we also wrote a tech report about it.  (CMU-CS-91-144,<br>
+	and It&#x27;s available via anonymous ftp.  See the end of this<br>
+	message for instructions on how to get it.)  We used a number<br>
+	of sophisticated techniques -- both mathematical and programming.<br>
+	It&#x27;s an interesting and fun problem.  I recommend this<br>
+	well-written paper to all.  (We haven&#x27;t found a good place to<br>
+	publish it.  Any suggestions?)<br>
+<br>
+	Last fall, several students in my algorithms class implemented a user<br>
+	interface that runs under X.  It worked quite well, but they never<br>
+	connected a program that plays the game with the interface.  It was<br>
+	just a substitute for pencil and paper.  Perhaps they&#x27;ll have<br>
+	something to say on the subject.<br>
+<br>
+	Here is a table that summarizes the results of our program.<br>
+<br>
+	Number of spots   1   2   3   4   5   6   7   8   9   10   11<br>
+	-------------------------------------------------------------<br>
+	normal play       L   L   W   W   W   L   L*  L*  W*  W*   W*   <br>
+	misere  play      W   L   L   L   W*  W*  L*  L*  L*<br>
+<br>
+	W denotes that the game is a win for the first player;  <br>
+	L denotes a loss for the first player.  <br>
+	A &quot;*&quot; indicates new results obtained by our program.<br>
+<br>
+	In misere play, the player who cannot move wins.  (In contrast to<br>
+	normal play, where the the player who cannot move loses.)<br>
+<br>
+	Sprouts Conjecture: The first player has a win in the initial<br>
+	configuration of normal sprouts iff the number of spots is 3,4,<br>
+	or 5  modulo 6.<br>
+<br>
+	An analogous conjecture can be made for misere play (0 or 1 modulo 5).<br>
+<br>
+	I believe these conjectures, Applegate does not.  He thinks that<br>
+	they&#x27;re just another manifestation of the &quot;strong law of small<br>
+	numbers&quot;, in other words, that the pattern is just random.  Yeah,<br>
+	right.<br>
+<br>
+	Anyway, we have a large bet riding on the outcome of the 10 spot<br>
+	misere game.  We haven&#x27;t been able to resolve it, because<br>
+	computational resources that seem to be required are beyone what is<br>
+	available to us.  (The Pittsburgh Supercomputer Center turned down<br>
+	our request for Cray time to run our program.  Sick.)<br>
+<br>
+	The internet host is spade.pc.cs.cmu.edu, 128.2.209.226, and the file<br>
+	you want is /usr/sleator/public/sprouts.ps.Z.  CMU&#x27;s ftp is a little<br>
+	strange, so here is a transcript.  (By the way, while you&#x27;re looking<br>
+	around here, you might check out the English parser I wrote.)<br>
+<br>
+   % ftp spade.pc.cs.cmu.edu<br>
+   Connected to SPADE.PC.CS.CMU.EDU.<br>
+   220 SPADE.PC.CS.CMU.EDU FTP server (Version 4.105 of 10-Jul-90 12:07) ready.<br>
+   Name (spade.pc.cs.cmu.edu:sleator): anonymous<br>
+   331 Guest login ok, send username@node as password.<br>
+   Password: <br>
+	<br>
+   230 Filenames can not have &#x27;/..&#x27; in them.<br>
+   ftp&gt; cd /usr/sleator/public<br>
+   250 Directory path set to /usr/sleator/public.<br>
+   ftp&gt; lcd &lt;The directory where you want to put the stuff goes here&gt;<br>
+   Local directory now /usr0/sleator/link-grammar<br>
+   ftp&gt; binary<br>
+   ..........<br>
+   ftp&gt; get sprouts.ps.Z<br>
+   ..........<br>
+   ftp&gt; quit<br>
+   221 Goodbye.<br>
+   %<br>
+<br>
+0--------------------------------------------------------------------0<br>
+<br>
+From: mpf@theory.lcs.mit.edu (Michael P. Frank)<br>
+Newsgroups: rec.games.abstract<br>
+Subject: Re: SPROUTS<br>
+Date: 1 Apr 93 13:27:47<br>
+Message-ID: &lt;MPF.93Apr1132747@luke.lcs.mit.edu&gt;<br>
+References: &lt;5yic2B7w165w@codewks.nacjack.gen.nz&gt;<br>
+In-reply-to: system@codewks.nacjack.gen.nz&#x27;s message of Thu, 01 Apr 93 09:02:39 NZST<br>
+<br>
+I first read about Sprouts in the Piers Anthony book _Macroscope_.<br>
+According to _Winning Ways_ (1), it was invented by M.S. Patterson and<br>
+J.H. Conway (who also invented &quot;life&quot;).<br>
+<br>
+For those who don&#x27;t know, the rules of sprouts are:<br>
+1. Start with some number n of dots on a sheet of paper.<br>
+2. Players take turns. On your turn, draw a line from one dot<br>
+   to another dot (or the same dot) without intersecting any lines<br>
+   (including itself), and put a new dot in the middle of the line.<br>
+3. There can be at most 3 lines coming out of a dot.  Initially<br>
+   there are 3n places to put lines, and each new line eliminates<br>
+   2 and adds 1 new place.  So the game can last at most 3n-1 turns.<br>
+   Usually less because there might be a place that you can&#x27;t get<br>
+   to without intersecting lines.<br>
+4. The first player who has no legal moves loses (or wins--that<br>
+   version is interesting too).  I forget which is Anthony&#x27;s version.<br>
+<br>
+_Winning Ways_ says a few things about strategies, but not much.  I<br>
+bet a computer player could beat most humans easily by doing a<br>
+brute-force search.  It would be fun to write an X program that could<br>
+play the game.<br>
+<br>
+For reference, here are the outcomes of some initial positions with<br>
+optimal play.  The numbers are how many moves it takes to win the<br>
+game, N means the first player wins, and P means the second player<br>
+wins.  According to _Winning Ways_, nobody knows who wins for any<br>
+n greater than 6.<br>
+<br>
+				Value of n (# spots)<br>
+<br>
+		0	1	2	3	4	5	6<br>
+		---	---	---	---	---	---	---<br>
+no moves=lose:	0P	2P	4P	7N	9N	11N	14P<br>
+no moves=win:	0N	2N	5P	7P	9P<br>
+<br>
+-Mike<br>
+<br>
+(1) _Winning Ways_, Elwyn R. Berlekamp, John H. Conway, and Richard<br>
+K. Guy, Academic Press, London, 1982.<br>
+<br>
+--<br>
+   , ,                       __               mpf@medg.lcs.mit.edu<br>
+  /|/| .  _ |_   _   _  |   |_  _  _  ,_  |,  Clinical Decision-Making Group<br>
+ / | | | (_ | | (_| (-&#x27; |   |  |  (_| | | |\  MIT Lab for Computer Science<br>
+<br>
+<br>
+0----------------------------------------------------------------------0<br>
+<br>
+Newsgroups: rec.games.abstract<br>
+From: purinton@leland.Stanford.EDU (Joshua Jordan Purinton)<br>
+Subject: Re: SPROUTS <br>
+Message-ID: &lt;1993Apr2.030834.11689@leland.Stanford.EDU&gt;<br>
+Organization: DSG, Stanford University, CA 94305, USA<br>
+References: &lt;5yic2B7w165w@codewks.nacjack.gen.nz&gt; &lt;MPF.93Apr1132747@luke.lcs.mit.edu&gt; &lt;Apr01.204043.72710@yuma.ACNS.ColoState.EDU&gt;<br>
+Date: Fri, 2 Apr 93 03:08:34 GMT<br>
+<br>
+	In _Computer Analysis of Sprouts_ (Tech. Report CMU-CS-91-144),<br>
+Applegate, Jacobson, and Sleator reveal the results found by their program<br>
+which analyzes sprouts.  It was able to find out which player had the win in<br>
+the normal game for up to 11 initial spots, and the misere game up to 9 initial<br>
+spots.<br>
+<br>
+#Initial Spots  	 1  2  3  4  5  6  7  8  9 10 11<br>
+--------------------------------------------------------<br>
+Player winning in Normal 2  2  1  1  1  2  2  2  1  1  <br>
+  &quot;      &quot;     &quot;  Misere 1  2  2  2  1  1  2  2  2  ?  ?<br>
+<br>
+According to the authors: &quot;Our calculation supports the _Sprouts Conjecture_:<br>
+The first player loses if _n_ [number of initial spots] is 0, 1, or 2 modulo<br>
+6 and wins otherwise.&quot;<br>
+<br>
+Unfortunately, their analysis did not uncover a general strategy for winning,<br>
+or even any good heuristics.<br>
+<br>
+-Josh<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+-- <br>
+No pattern, content or thing is the being who looks out from each pair of eyes.<br>
+And only that is important.  - E. T. Gendlin<br>
+<br>
+0-----------------------------------------------------------------------0<br>
+<br>
+Newsgroups: sci.math<br>
+From: sleator+@cs.cmu.edu (Daniel Sleator)<br>
+Subject: Re: Sprouts<br>
+Message-ID: &lt;CF9Hv7.8xD.1@cs.cmu.edu&gt;<br>
+Keywords: Sprouts, games<br>
+Organization: School of Computer Science, Carnegie Mellon<br>
+References: &lt;2a671c$4hv@hermes.fwi.uva.nl&gt; &lt;2a6cfo$6p@usenet.rpi.edu&gt; &lt;2a6e45$f30@math.mps.ohio-state.edu&gt;<br>
+Date: Thu, 21 Oct 1993 19:23:28 GMT<br>
+<br>
+<br>
+I&#x27;m glad you asked that question.  (At the end of this message is a<br>
+definition of the game, in case you&#x27;re not familiar with it).  I&#x27;m<br>
+only aware of one paper on the subject since the publication of<br>
+&quot;Winning Ways&quot;.  This paper is by David Applegate, Guy Jacobson, and<br>
+me, and it&#x27;s entitled &quot;computer analysis of sprouts&quot;.  (The paper has<br>
+not yet appeared in a journal, but it is technical report<br>
+CMU-CS-91-144 from the School of Computer Science at Carnegie Mellon<br>
+University.  The postscript form of the paper is available via<br>
+anonymous ftp from the host &quot;spade.pc.cs.cmu.edu&quot; in the directory<br>
+&quot;/usr/sleator/public&quot;.)<br>
+<br>
+Here is a summary of the results we obtained:<br>
+<br>
+  Number of spots:  1   2   3   4   5   6   7   8   9  10  11<br>
+  -----------------------------------------------------------<br>
+  normal play:      L   L   W   W   W   L   L*  L*  W*  W*  W*<br>
+  mise`re play:     W   L   L   L   W*  W*  L*  L*  L*<br>
+<br>
+  L indicates a win for the first player<br>
+  W indicates a win for the second player<br>
+  * indicates a new result obtained by our program<br>
+<br>
+In normal play, the first player who cannot make a move loses, in<br>
+mise`re play the first player who cannot make a move wins.  These<br>
+results support the following two unproven conjectures:<br>
+<br>
+  SPROUTS CONJECTURE: The first player has a winning strategy in n-spot<br>
+  sprouts if and only if n is 3, 4, or 5, modulo 6.<br>
+<br>
+  MISE`RE SPROUTS CONJECTURE: The first player has a winning strategy in<br>
+  n-spot mise`re sprouts if and only if n is 0 or 1 modulo 5.<br>
+<br>
+Are these patterns nothing more than an artifact of the &quot;strong law of<br>
+small numbers&quot; \cite{guy}, or are they real?  I think they are real.<br>
+Applegate thinks they are not real, and we have a bet riding on the<br>
+outcome of 10 spot mise`re.<br>
+<br>
+The following is taken from the introduction of our paper:<br>
+<br>
+Sprouts is a popular\footnote{at least in academic circles.} two-person<br>
+pencil-and player game.  It was invented in Cambridge in 1967 by Michael<br>
+Paterson, then a graduate student, and John Horton Conway, a professor of<br>
+Mathematics.<br>
+<br>
+Sprouts is perhaps the most well-known and widely played of the topological<br>
+pencil-and-paper games discussed by Berlekamp, Conway, and Guy in {\em<br>
+Winning Ways}~\cite{ww2}.  This popularity is largely due the exposure<br>
+provided by Martin Gardner in his {\em Mathematical Games\/} column in the<br>
+July 1967 issue of {\em Scientific American}.  The game is listed by David<br>
+Pritchard, editor of {\em The Gamer\/} magazine, in his compilation of the<br>
+world&#x27;s best games for two~\cite{bg}.  Sprouts also occupies a prominent<br>
+place in Piers Anthony&#x27;s science fiction novel {\em Macroscope}~\cite{ma},<br>
+where the hero&#x27;s dormant genius is awakened by his exceptional skill at the<br>
+game.<br>
+<br>
+The initial position of the game consists of a number of disconnected<br>
+points called spots.  Players alternate connecting the spots by<br>
+drawing curves between them, adding a new spot on each curve drawn.<br>
+Each curve must be drawn in the plane without touching itself or any<br>
+other curve or spot (except at the end points).  A single existing<br>
+spot may serve as both endpoints of a curve.  Furthermore, a spot may<br>
+have a maximum of three parts of curves connecting to it.  (Its degree<br>
+is bounded by three.)  A player who cannot make a legal move loses.<br>
+Figure \ref{sample-game} shows a sample game of two-spot Sprouts, with<br>
+the first player winning.  Since draws are not possible, either the<br>
+first player to move or the second player can always force a win,<br>
+regardless of the opponent&#x27;s strategy.  Which of the players has this<br>
+winning strategy depends on the number of initial spots.<br>
+<br>
+\bibitem{ma}<br>
+Piers Anthony.<br>
+\newblock {\em Macroscope}.<br>
+\newblock Avon, New York, 1969.<br>
+<br>
+\bibitem{tc}<br>
+Timothy Bell, John Cleary, and Ian Witten.<br>
+\newblock {\em Text Compression}.<br>
+\newblock Prentice Hall, Englewood Cliffs, NJ, 1990.<br>
+<br>
+\bibitem{ww2}<br>
+E.~R. Berlekamp, J.~H. Conway, and R.~K. Guy.<br>
+\newblock {\em Winning Ways}, volume 2: Games in Particular, chapter~17, pages<br>
+  564--568.<br>
+\newblock Academic Press, London, 1982.<br>
+<br>
+\bibitem{ng}<br>
+J.~H. Conway.<br>
+\newblock {\em On Numbers and Games}.<br>
+\newblock Academic Press, London, 1976.<br>
+<br>
+\bibitem{dhkr}<br>
+Joachim Draeger, Stefan Hahndel, Gerhard K\&quot;ostler, and Peter Rossmanith.<br>
+\newblock Sprouts: Formalisierung eines topologischen spiels.<br>
+\newblock Technical Report TUM-I9015, Technische Universit\&quot;at M\&quot;unchen,<br>
+  M\&quot;arz 1990.<br>
+<br>
+\bibitem{sa}<br>
+Martin Gardner.<br>
+\newblock Mathematical games: Of sprouts and brussels sprouts; games with a<br>
+  topological flavor.<br>
+\newblock {\em Scientific American}, 217(1):112--115, July 1967.<br>
+<br>
+\bibitem{mc}<br>
+Martin Gardner.<br>
+\newblock {\em Mathematical Carnival}, chapter~1, pages 3--11.<br>
+\newblock Alfred A. Knopf, New York, 1975.<br>
+<br>
+\bibitem{guy}<br>
+Richard~K. Guy.<br>
+\newblock The strong law of small numbers.<br>
+\newblock {\em The American Mathematical Monthly}, 95(8):697--712, October<br>
+  1988.<br>
+<br>
+\bibitem{he}<br>
+Judea Pearl.<br>
+\newblock {\em Heuristics}.<br>
+\newblock Addison-Wesley, Reading, 1974.<br>
+<br>
+\bibitem{bg}<br>
+David Pritchard.<br>
+\newblock {\em Brain Games}, pages 169--171.<br>
+\newblock Penguin Books, Harmondsworth, 1982.<br>
+<br>
+<br>
+-- <br>
+David E. Joyce                               Dept. Math. &amp; Comp. Sci.<br>
+djoyce@black.clarku.edu                      Clark University<br>
+http://aleph0.clarku.edu/~djoyce/home.html   Worcester, MA 01610-1477<br>
+<br>
+<br>
+</div>
+</body>
+</html>

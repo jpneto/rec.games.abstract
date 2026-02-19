@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: New five-level 3-D Tic-Tac-Toe needs solved</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: New five-level 3-D Tic-Tac-Toe needs solved</h1>
+    <p><strong>From:</strong> nospamfromyounospamforme2@yahoo.com (Edward)<br>
+    <strong>Date:</strong> Tue, 30 Jul 2002 14:30:57 GMT</p>
+    <hr>
+    <div>Whether or not a game is *theoretically* a first person win or a draw<br>
+has little bearing on how good the game is. <br>
+<br>
+<br>
+The rules of Pentagonal weren&#x27;t explicitly stated in the original post<br>
+-- I assume that they are:<br>
+<br>
+1) Players take turns placing pieces in the cells of a 5x5x5 cube.<br>
+2) The central cell is &#x27;free&#x27;, that is, it counts for *both* players.<br>
+3) 5 in a row wins.<br>
+<br>
+I believe that players capable looking one move ahead will always play<br>
+to a draw. Even if the first player is allowed to place THREE PIECES<br>
+on her first play, the second player should STILL have no trouble<br>
+drawing the game. 5x5x5 is too small for 5-in-a-row (unless there are<br>
+a few more &#x27;free&#x27; cells). <br>
+<br>
+Unlike 5-in-a-row games on 2 or 3D boards of larger width, forming a<br>
+&#x27;double-three&#x27; does not force a win. For example, let&#x27;s ingore the<br>
+free cell for now and give &#x27;X&#x27; an enormous head start:<br>
+<br>
+      I           II         III          VI          V<br>
+  a b c d e   a b c d e   a b c d e   a b c d e   a b c d e <br>
+1 . . . . .   . . . . .   . . . . .   . . . . .   . . . . .<br>
+2 . . . . .   . x . . .   . x x . .   . . . . .   . . . . .<br>
+3 . . . . .   . x x . .   . . x . .   . . x x .   . . . . .<br>
+4 . . . . .   . . . . .   . . x x .   . . . x .   . . . . .<br>
+5 . . . . .   . . . . .   . . . . .   . . . . .   . . . . .<br>
+<br>
+&#x27;X&#x27; now has a quintuple-three, intersecting at IIIc1. On slightly<br>
+larger board, a simple double-three would be a win. But here, &#x27;O&#x27;<br>
+doesn&#x27;t even have to respond -- she can let &#x27;X&#x27; move again and then<br>
+simply block each of the 4-in-a-rows, as they are all single threats:<br>
+<br>
+      I           II         III          VI          V<br>
+  a b c d e   a b c d e   a b c d e   a b c d e   a b c d e <br>
+1 x . . . .   . . . . .   x . x . .   . . . . .   . . . . .<br>
+2 . . . . .   . x . . .   . x x . .   . . . . .   . . . . .<br>
+3 x . x . .   . x x . .   . . x . .   . . x x .   . . o . o<br>
+4 . . . . .   . . . . .   . . x x .   . . . x .   . . . . .<br>
+5 . . . . .   . . . . .   . . o . o   . . . . .   . . . . o<br>
+<br>
+<br>
+For &#x27;X&#x27; to win, she has to form a double-FOUR:<br>
+<br>
+      I           II         III          VI          V<br>
+  a b c d e   a b c d e   a b c d e   a b c d e   a b c d e <br>
+1 . . . . .   . . . . .   . . . . .   . . . . x   . . . . .<br>
+2 . . . . .   . . . . .   . . . . .   . . . x .   . . . . .<br>
+3 . . x . .   . . x . .   . . x . .   . . . . .   . . . . .<br>
+4 . . . . .   . . . . .   . . . . .   . x . . .   . . . . .<br>
+5 . . . . .   . . . . .   . . . . .   . . . . .   . . . . .<br>
+<br>
+If &#x27;X&#x27; move&#x27;s VIc3, she forms a double-four and wins on the next move<br>
+-- but I don&#x27;t see how this can happen unless &#x27;O&#x27; goes out to the<br>
+kitchen for a snack.<br>
+<br>
+On then next size board, double-three&#x27;s win:<br>
+<br>
+&#x27;X&#x27; to move on a 6x6x6 board:<br>
+<br>
+       I<br>
+  a b c d e f<br>
+1 . . . . . .<br>
+2 . . . . . .<br>
+3 . . x . . .<br>
+4 . x x . . .<br>
+5 . . . . x .<br>
+6 . . . . . .<br>
+<br>
+1) d4   e4<br>
+2) b2   a1<br>
+3) f6 wins:<br>
+<br>
+       I<br>
+  a b c d e f<br>
+1 o . . . . .<br>
+2 . x . . . .<br>
+3 . . x . . .<br>
+4 . x x x o .<br>
+5 . . . . x .<br>
+6 . . . . . x<br>
+<br>
+<br>
+<br>
+The question is, what is the smallest NxNxN board, if any, on which<br>
+5-in-a-row is playable? I think 6x6x6 may still be an easy draw. Might<br>
+7x7x7 work?<br>
+<br>
+Edward<br>
+<br>
+<br>
+<br>
+<br>
+On Wed, 24 Jul 2002 19:57:04 -0700, &quot;James Robert Lundberg&quot;<br>
+&lt;jimlund@cts.com&gt; wrote:<br>
+<br>
+&gt;I have created a new version of 3-D Tic-Tac-Toe that I believe does not<br>
+&gt;have a first-move-win solution!  <br>
+<br>
+&lt;...snip...&gt;<br>
+<br>
+<br>
+</div>
+</body>
+</html>

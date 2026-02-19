@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Making Intersections -- Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Making Intersections -- Game</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Mon, 13 Apr 2009 08:24:01 -0700 (PDT)</p>
+    <hr>
+    <div>This is a game for any plural number of players.<br>
+<br>
+The game consists of a number of rounds, that number being a multiple<br>
+of the number of players.<br>
+Each player takes turns being the offense player.<br>
+<br>
+Before each round, draw an array of n-by-n dots (which correspond to<br>
+the vertices of a grid of (n-1)-by-(n-1) squares).<br>
+<br>
+On each round, all players take turns drawing straight vertical or<br>
+horizontal line-segments from any dot to any other in the same row or<br>
+column such that no line-segments cross any previously drawn segments.<br>
+(But any line-segment may connect with a previously-drawn segment at a<br>
+dot.)<br>
+<br>
+The round ends when the players have drawn m line-segments, where m is<br>
+a predetermined multiple of the number of players, and is picked by<br>
+agreement among the players -- and m is the same for every round.<br>
+Note: m should be &lt; n^2 - 2n + 4 = (n-1)^2 +3, which is the minimum<br>
+number of segments needed to connect every dot to each of its<br>
+orthogonal neighbors. (That this is the minimum number of segments is<br>
+simply proved; and proving this may be a fun exercise for your<br>
+amusement, if you don&#x27;t want too hard a puzzle.)<br>
+<br>
+After m line-segments are drawn, the offense player for the round<br>
+receives a point for every dot connected to by 3 or 4 line-segments.<br>
+(For the purpose of counting points, a single line-segment drawn by a<br>
+player on a move and passing through -- and not terminating at-- a dot<br>
+counts as 2 &quot;line-segments&quot; meeting at that dot.)<br>
+<br>
+Players add up the points they received on the rounds that each was<br>
+offense, and the highest total score wins.<br>
+<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+PS: If this game is played on a rectangular array of j by k dots, the<br>
+minimum number of straight horizontal and vertical line-segments (each<br>
+of any length) needed to connect every dot to its orthogonal<br>
+neighbors, without any line-segments crossing, is:<br>
+j*k - k - j + 4, or so I think.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

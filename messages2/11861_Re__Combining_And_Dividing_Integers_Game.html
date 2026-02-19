@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Combining And Dividing Integers Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Combining And Dividing Integers Game</h1>
+    <p><strong>From:</strong> pacman@kosh.dhis.org (Alan Curry)<br>
+    <strong>Date:</strong> Fri, 8 Jul 2011 08:43:50 +0000 (UTC)</p>
+    <hr>
+    <div>In article &lt;75bd8819-454c-4e50-ac7f-513c284bbcbf@c41g2000yqm.googlegroups.com&gt;,<br>
+Leroy Quet  &lt;qqquet@mindspring.com&gt; wrote:<br>
+&gt;<br>
+&gt;Players take turns, on each turn writing any positive integer to the<br>
+&gt;end of a growing list of integers. The players do this until there is<br>
+&gt;a predetermined number of integers in the list. (The number of<br>
+&gt;integers is a multiple of the number of players.)<br>
+<br>
+It seems like the person who adds the last number to the initial list has a<br>
+lot of control, and should probably be able to win. He gets to make the last<br>
+free choice, after which the moves are much more limited.<br>
+<br>
+But if you randomize who moves first in the second phase, that advantage<br>
+mostly disappears. The person who goes last in the first phase theoretically<br>
+still decides whether the initial position is winnable, but since he doesn&#x27;t<br>
+know who will go first, he might as well try to make it interesting.<br>
+<br>
+&gt;<br>
+&gt;Players then take turns; on each turn a player rewrites the list with<br>
+&gt;one of these changes:<br>
+&gt;Either:<br>
+&gt;The player changes one integer in the list to a product of any number<br>
+&gt;of PROPER divisors, each divisor greater than 1, that all multiply to<br>
+&gt;that integer. (The divisors must be placed between the same integers<br>
+&gt;in the list as the integer they replaced, but they can be in any order<br>
+&gt;amongst themselves between those integers.)<br>
+&gt;Or:<br>
+&gt;The player replaces two adjacent integers in the list with their sum.<br>
+&gt;(The sum goes in the same location within the list as the two integers<br>
+&gt;it replaces.)<br>
+&gt;<br>
+&gt;The first player to get a list completely of primes is the winner.<br>
+<br>
+In your example you have allowed a 1 in the initial list. It&#x27;s not clear<br>
+whether you&#x27;d consider 1 to be a prime for purposes of game termination. I<br>
+think you should... the idea that you can get a list of just primes and 1&#x27;s<br>
+and still make an addition move feels wrong. (Note: a 1 will never appear in<br>
+the list except if it was there from the beginning).<br>
+<br>
+&gt;<br>
+&gt;If a large predetermined number of moves have taken place, and no one<br>
+&gt;has yet won, then the game is a tie.<br>
+<br>
+Unnecessary; just make repetition a draw. (This was covered already elsewhere<br>
+in the thread.)<br>
+<br>
+&gt;<br>
+&gt;<br>
+&gt;Example:<br>
+&gt;<br>
+&gt;2 players:<br>
+<br>
+I wrote a program to determine optimal play in the second phase for 2<br>
+players, with my preferred interpretations (1 is prime for termination<br>
+purposes, and draws only occur by repeating a position). It turns out that<br>
+your example players made a lot of mistakes.<br>
+<br>
+&gt;<br>
+&gt;List to start:<br>
+&gt;2, 4, 10, 4, 1, 10<br>
+<br>
+The list construction was perfect, assuming that player 2 put the 10 on the<br>
+end. He gave player 1 a list that allows 11 legal moves, all of which lose.<br>
+<br>
+&gt;P1:<br>
+&gt;2, 4, 2, 5, 4, 1, 10<br>
+<br>
+Player 1 had no good moves available, so this was acceptable. If he&#x27;d gone to<br>
+&quot;6 10 4 1 10&quot; he would have put player 2 in a more challenging situation,<br>
+with 2 winning moves, 1 drawing move, and 8 losing moves. By doing<br>
+&quot;2 4 2 5 4 1 10&quot; he&#x27;s given player 2 an easier position, with 3 winning<br>
+moves, 1 drawing move, and 6 losing moves.<br>
+<br>
+&gt;P2:<br>
+&gt;2, 4, 2, 5, 5, 10<br>
+<br>
+Player 2 made a mistake here, which gives player 1 a chance to win. Correct<br>
+move was &quot;2 2 2 2 5 4 1 10&quot; or &quot;2 4 2 5 2 2 1 10&quot; or &quot;2 4 2 5 4 11&quot;<br>
+<br>
+&gt;P1:<br>
+&gt;2, 6, 5, 5, 10<br>
+<br>
+Player 1 is doing great! He picked the only winning move. The other 7 moves<br>
+all lose.<br>
+<br>
+&gt;P2:<br>
+&gt;2, 6, 5, 15<br>
+<br>
+Any move would lose, but player 2 did a good job here anyway, picking the<br>
+only move that left player 1 with just a single winning move (and no drawing<br>
+moves) in response.<br>
+<br>
+&gt;P1:<br>
+&gt;2, 6, 20<br>
+<br>
+And player 1 makes his first mistake. &quot;8 5 15&quot; would have forced a win. Now<br>
+he&#x27;s given player 2 another chance. But there are 11 moves and 10 of them<br>
+lose. Will player 2 find the correct response?<br>
+<br>
+&gt;P2:<br>
+&gt;8, 20<br>
+<br>
+No, that wasn&#x27;t it. Player 2 should have said &quot;2 6 2 10&quot;. But player 1 still<br>
+doesn&#x27;t have an easy job. There are 11 legal moves again, and again 10 of the<br>
+lose. (At this point the end is close enough that at least some of the losing<br>
+moves should be obvious.)<br>
+<br>
+&gt;P1:<br>
+&gt;8, 4, 5<br>
+<br>
+Player 1 missed the win again. &quot;8 10 2&quot; would have done it. Player 2 gets<br>
+another shot at winning. This time there are 6 legal moves, and 4 of them are<br>
+obvious losers. Of the other 2, only one will guarantee a win. (Figure it<br>
+out, it&#x27;s getting easy now.)<br>
+<br>
+&gt;P2:<br>
+&gt;12, 5<br>
+<br>
+That definitely wasn&#x27;t it.<br>
+<br>
+&gt;P1:<br>
+&gt;2, 3, 2, 5<br>
+&gt;<br>
+&gt;Player 1 wins.<br>
+<br>
+Finally.<br>
+<br>
+There might be real potential for strategy in this game, but first you&#x27;d have<br>
+to learn the endgame patterns.<br>
+<br>
+-- <br>
+Alan Curry<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Arimaa Qbservations</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Arimaa Qbservations</h1>
+    <p><strong>From:</strong> David Rush &lt;drush@aol.net&gt;<br>
+    <strong>Date:</strong> 24 Jan 2003 10:33:59 +0000</p>
+    <hr>
+    <div>&quot;Dan Amodeo&quot; &lt;NotMyAddress@example.com&gt; writes:<br>
+&gt; &quot;David Rush&quot; &lt;drush@aol.net&gt; wrote,<br>
+&gt; &gt; I can&#x27;t help myself, but Arimaa feels a *lot* like Go.<br>
+&gt; <br>
+&gt; I&#x27;ve been thinking about how to write an AI program to play Arimaa, and all<br>
+&gt; I could think of was writing it like a go program, so I was interested to<br>
+&gt; see David&#x27;s remarks. That doesn&#x27;t help me much though, because I don&#x27;t know<br>
+&gt; how to write a go program. I assume most go programs look for patterns, and<br>
+&gt; then generate candidate moves and evaluations based on the patterns, but I<br>
+&gt; have no idea how to do that.<br>
+<br>
+Well, 2d pattern matching is definitely a part of a Go program, but<br>
+it&#x27;s a fairly hard part. There is a fair amount of literature<br>
+available on the subject. Trawling around on researchindex.org might<br>
+get you to some useful papers.<br>
+<br>
+But the one time I tried to write a Go program, I used a cellular<br>
+automaton to do the strategic planning. It provided a very easy way to<br>
+propagate the influence of a single stone. I&#x27;m fairly sure that<br>
+working on the notion of influence is key for Arimaa, but you&#x27;ll need<br>
+to use a more pedantic means of calculating it.<br>
+<br>
+&gt; &gt; I have yet to actually finish a game, but the move system makes it into<br>
+&gt; &gt; a game of small increments. I find myself able to radically prune my<br>
+&gt; &gt; lookahead because of this fact, as well.<br>
+&gt; <br>
+&gt; I didn&#x27;t think most go programs used look ahead, though I can imagine how an<br>
+&gt; Arimaa program might.<br>
+<br>
+In Go, you have to use some. It&#x27;s actually my greatest weakness as a<br>
+Go player. Arimaa tempts you to think that look-ahead can provide a<br>
+solution, but I don&#x27;t think that is in range with current computing<br>
+technologies.<br>
+<br>
+&gt; &gt; Given a particular situation<br>
+&gt; &gt; in an area, it is fairy easy to determine the subset of pieces that<br>
+&gt; &gt; can influence the position over the next turn or two because you know<br>
+&gt; &gt; that there are no pieces with global influence. <br>
+<br>
+The maximum range of any piece (and that&#x27;s only in the ortho-normal<br>
+directions) is 4 squares. If a piece is more than 4 squares away it<br>
+cannot come into contact with another piece in one move.<br>
+<br>
+The push-pull rules also allow you to prune pieces which are providing<br>
+backup to the battle front from short-term analysis. They can&#x27;t affect<br>
+your move on the opponent&#x27;s next turn because they&#x27;re blocked by their<br>
+own pieces.<br>
+<br>
+&gt; &gt; The fact that you can<br>
+&gt; &gt; split your move among several pieces means that direct attacks are<br>
+&gt; &gt; fairly easy to foil, you have to play for a strategic position that<br>
+&gt; &gt; narrows your opponents options.<br>
+<br>
+If you want to think about it in Chess terms, you can take up to 4<br>
+moves in each turn. If your opponent should maneuver a piece into a<br>
+pushing position (one where he could push on his next turn), you are<br>
+under no obligation to move out of the way. You might very well be<br>
+able to move multiple backup pieces into place. Pulls are rather more<br>
+complicated to defend; I don&#x27;t really have any good ideas on that<br>
+topic, but it&#x27;s fairly difficult to arrange enough clear space for<br>
+a pull to be useful.<br>
+<br>
+So the big issue is maneuvering your pieces so that yous opponent is<br>
+encouraged and/or limited to playing the moves that you want from<br>
+him.<br>
+<br>
+&gt; Interesting. Could you give a little more detail on both of those points,<br>
+&gt; David? By the way, are you thinking of trying for the $10,000 prize?<br>
+<br>
+I hope I have given more detail. No, I&#x27;m not trying for the<br>
+prize. It&#x27;s just not big enough to be worth the effort. The bragging<br>
+rights would be cool, but all I&#x27;m really trying to do is understand<br>
+the game. I would only be writing code to see if I&#x27;ve developed good<br>
+ideas.<br>
+<br>
+david rush<br>
+-- <br>
+Next to the right of liberty, the right of property is the most<br>
+important individual right ... and ... has contributed more to the<br>
+growth of civilization than any other institution established by the<br>
+human race.<br>
+	-- Popular Government (William Howard Taft)<br>
+<br>
+<br>
+</div>
+</body>
+</html>

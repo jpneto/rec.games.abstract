@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Why chess is easy to program, Go hard (long)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Why chess is easy to program, Go hard (long)</h1>
+    <p><strong>From:</strong> cuffell@alumni.cs.colorado.edu (T. M. Cuffel)<br>
+    <strong>Date:</strong> 29 Sep 1994 01:45:53 GMT</p>
+    <hr>
+    <div>In article &lt;Cwv0o0.88zA@austin.ibm.com&gt;,<br>
+Bill Fischofer &lt;wtf@calrissian.bocaraton.ibm.com&gt; wrote:<br>
+&gt;I believe that go is harder to program than chess for three reasons:<br>
+&gt;<br>
+&gt;1. The mathematical state space of go is vastly larger than chess.  <br>
+<br>
+So?  Scrabble has a 15x15 board and 27 different playing pieces.  Quite<br>
+possibly it has a state space bigger than chess or go.  But I imagine it<br>
+would be almost trivial to write a Scrabble program that could beat<br>
+any human.<br>
+<br>
+&gt;   If strong go programs arise, it will be<br>
+&gt;   because they manage to play go in ways recognizably more similar to<br>
+&gt;   the way human masters play than is the case for chess programs.<br>
+<br>
+This is exactly the same thing they were saying about chess computers <br>
+twenty years ago.<br>
+<br>
+Computer chess is a bunch of trickery.  One trick is simply<br>
+representing a chess game using a computer.  Another is simulating<br>
+thinking with a minimax seach.  New tricks, like alpha-beta and <br>
+hash tables, were discovered that greatly enchance the old tricks.<br>
+ <br>
+These chess tricks have little to with how good players think.  Why<br>
+should the undiscovered go tricks be any different?<br>
+<br>
+&gt;2. Go is far more symmetric than chess.  The different pieces and their<br>
+&gt;   moves actually makes tactical analysis easier in chess than in go.<br>
+<br>
+Nonsense.  Go may very well be more difficult to tactically analyze<br>
+than chess, but this has nothing to do with symmetry or piece<br>
+variety.  In general, more piece variety means more complex<br>
+tactics.  Take away a few flavors of chess piece, you have a<br>
+tactically simpler game.  Or add an new kind of go piece, and<br>
+your tactics will probably go throught the roof.<br>
+<br>
+&gt;   In go the value of a stone is a function of its relationship to other<br>
+&gt;   stones rather than to anything intrinsic.  <br>
+<br>
+Context is important in just about every game.<br>
+<br>
+&gt;3. Go evaluation functions must be global to be meaninful whereas chess<br>
+&gt;   does quite well with local evaluation functions.  <br>
+<br>
+I have no idea what this is supposed to mean.  Most every chess evaluation<br>
+function I have seen looks at the whole position.  Sounds global to me.<br>
+<br>
+&gt;   This means that not<br>
+&gt;   only does a go program need to consider many more positions than a<br>
+&gt;   chess program, but it needs to spend much more time considering each<br>
+&gt;   position if it is to do anything meaningful with it.  <br>
+<br>
+So far, using techniques developed for chess, a computer has to look at <br>
+more positions longer in go.  But this probably has something to do<br>
+with fact that they are DIFFERENT GAMES.  A car works well on land,<br>
+but takes a serious performance hit crossing an ocean.  Does this<br>
+mean boats are harder to build?<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

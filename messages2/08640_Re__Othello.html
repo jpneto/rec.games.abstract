@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Othello</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Othello</h1>
+    <p><strong>From:</strong> torbenm@pc-003.diku.dk (Torben =?iso-8859-1?Q?=C6gidius?= Mogensen)<br>
+    <strong>Date:</strong> Mon, 26 May 2008 10:45:25 +0200</p>
+    <hr>
+    <div>jm &lt;jm@alb.fr&gt; writes:<br>
+<br>
+&gt; Dear sir,<br>
+&gt;<br>
+&gt; Thanks you very much for your answer, you gave me very interesting tricks.<br>
+&gt;<br>
+&gt; I have just a question about this part :<br>
+&gt;<br>
+&gt;&gt;      2. For positions with N empty spaces (starting with N=1 and<br>
+&gt;&gt;         moving up), let value be determined by the values of positions<br>
+&gt;&gt;         reachable in one move (by placing a piece in one empty space).<br>
+&gt;<br>
+&gt; When you say to place a piece in one empty space, you mean to try all<br>
+&gt; the possibilities with the current color and do an average of them ?<br>
+<br>
+More or less, but maybe the average is not the best possibility.<br>
+<br>
+Assume that, when you evaluate a position, it is the opponent&#x27;s turn<br>
+to move next.  So it makes sense to take the value of the opponents<br>
+best move as the value of the position.  So, for all empty squares<br>
+that the opponent can fill, find the resulting position after the move<br>
+and look up its value in the table, and then take the value that is<br>
+best for the opponent as the value of the position.<br>
+<br>
+There are a few complications:<br>
+<br>
+ 1. Since you don&#x27;t have the full board (but only two rows), you don&#x27;t<br>
+    know exactly which empty spaces the opponent can move in.<br>
+<br>
+ 2. For the same reason, you don&#x27;t know exactly which pieces to flip<br>
+    when a move is made.<br>
+<br>
+So you must approximate in both cases.<br>
+<br>
+A reasonable approximation for the first point is that the opponent<br>
+can place in an empty square in the edge row if you have a<br>
+neighbouring piece in the near-edge row and that the opponent can<br>
+always place in any empty near-edge space.<br>
+<br>
+For the second point, you can get exact results for lines parallel to<br>
+the edge (as you have full information for these), so it is only for<br>
+the three lines that go away from the edge that you need to<br>
+approximate. For near-edge spaces, these are entirely outside the area<br>
+you investigate, so you need no approximation.  For edge spaces, you<br>
+can make the approximation that, if there is one of your pieces on the<br>
+near-edge row on the line in question, then the opponent will flip<br>
+that.  Or you can try both possibilities (flip or no flip) and take<br>
+the average value of the resulting positions.<br>
+<br>
+	Torben<br>
+<br>
+<br>
+</div>
+</body>
+</html>

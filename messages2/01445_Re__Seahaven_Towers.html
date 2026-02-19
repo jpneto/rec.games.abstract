@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Seahaven Towers</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Seahaven Towers</h1>
+    <p><strong>From:</strong> ftww@cs.su.oz.au (Fred the Wonder Worm)<br>
+    <strong>Date:</strong> Sun, 28 Nov 1993 08:39:53 GMT</p>
+    <hr>
+    <div><br>
+In article &lt;2c47kq$dac@fnnews.fnal.gov&gt; matt@severian.chi.il.us (Matt Crawford) writes:<br>
+&gt;The game is not always winnable*.  I&#x27;ve played an X-windows version of<br>
+&gt;the game.  In that, if you click &quot;give up,&quot; the program checks to see<br>
+&gt;whether the game was winnable from the initial position.  If it<br>
+&gt;wasn&#x27;t, it credits you with a &quot;win&quot; for purposes of recording your<br>
+&gt;longest winning streak.<br>
+&gt;<br>
+&gt;(* Or, there&#x27;s a flaw in the program.  But it seems correct to me.)<br>
+<br>
+That it&#x27;s not always winnable is fairly easy to see.  Consider the following<br>
+cards in the initial deal:<br>
+<br>
+          6 5<br>
+  A<br>
+  T<br>
+  9<br>
+  8<br>
+  7<br>
+<br>
+Where they are all of the same suit.  To get the ace up requires moving the<br>
+ten.  Moving the ten requires putting the 9, 8 and 7 on empty piles.  But<br>
+this requires moving the 6 or 5.  The only place the 5 can go is on the 6,<br>
+and the only place the 6 can go is on the 7.  i.e. you can&#x27;t move the ten,<br>
+and hence the ace, so you can&#x27;t complete the game.<br>
+<br>
+Are you sure it checks the position?  A friend of mine wrote an (admittedly<br>
+simple) program to check a position for solubility using a backtracking<br>
+algorithm.  Possibly it wasn&#x27;t very good, but I&#x27;ve had it try to evaluate<br>
+over 58 million possible positions before someone killed it or the machine<br>
+crashed.  This took many many hours.  If he and I missed a simple method<br>
+of deciding it&#x27;s solubility, we&#x27;d both like to know.  Can you describe<br>
+what it&#x27;s doing?<br>
+<br>
+Cheers,<br>
+Geoff.<br>
+<br>
+-------------------------------------------------------------------------------<br>
+Geoff Bailey (Fred the Wonder Worm)   |   Programmer by trade --<br>
+ftww@cs.su.oz.au                      |       Gameplayer by vocation.<br>
+-------------------------------------------------------------------------------<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

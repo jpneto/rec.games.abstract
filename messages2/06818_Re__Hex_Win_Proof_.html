@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Hex Win Proof?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Hex Win Proof?</h1>
+    <p><strong>From:</strong> torbenm@diku.dk (Torben gidius Mogensen)<br>
+    <strong>Date:</strong> 22 Mar 2004 10:59:30 +0100</p>
+    <hr>
+    <div>w.taylor@math.canterbury.ac.nz (Bill Taylor) writes:<br>
+<br>
+&gt; It is an old theorem that in Hex, once the board has been completely<br>
+&gt; filled in with two colours, there *must* be a winning path for one<br>
+&gt; or other of them.<br>
+&gt; <br>
+&gt; Now, I can prove this easily enough mathematically, but I&#x27;m wondering if<br>
+&gt; there is a simple proof, or proof outline, that would be understandable<br>
+&gt; and reasonably convincing to the intelligent layman.<br>
+<br>
+The easy part is proving that both players can&#x27;t win at the same time:<br>
+<br>
+Assume that there is a white path connecting top and bottom and a<br>
+black path connecting left to right.  These must intersect, but on a<br>
+hex board two paths can only intersect if they share a hex.  Since<br>
+this can&#x27;t be both black and white, one of the paths must be broken.<br>
+This contradicts the assumption.<br>
+<br>
+It is a bit harder proving that one side must win.  But it isn&#x27;t too<br>
+bad.<br>
+<br>
+We consider connected areas of one colour.  It is easy to see that an<br>
+area that does not connect to the edge of the board must be completely<br>
+sorrounded by the other colour, so it makes no difference if we<br>
+replace these by the sorrounding colour (as it neither blocks nor<br>
+connects anything).  We are now left only with areas that connect to<br>
+the edge of the board.  Those that connect to only one edge of the<br>
+board (corners are counted as two edges) can also be replaced with the<br>
+other colour, so we are left with areas that connect two or more edges<br>
+of the board.  If an area is at a corner and only touches the two<br>
+sides that share that corner, it can also be replaced by the opposite<br>
+colour.  This can be repeated until the only remaining areas touch two<br>
+opposite edges (and possibly more).  If there is only one area left,<br>
+that colour obviously wins.  If there are more than one area left, the<br>
+pair of opposite edges they connect must be the same (otherwise the<br>
+areas would cross, which we showed above isn&#x27;t possible).  So one pair<br>
+of opposite edges are connected by both colours, and one of them must<br>
+be the colour that has this as a goal.<br>
+<br>
+QED.<br>
+<br>
+	Torben<br>
+<br>
+<br>
+</div>
+</body>
+</html>

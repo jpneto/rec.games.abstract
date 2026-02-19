@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chess variant problem - a bug in Zillions?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Chess variant problem - a bug in Zillions?</h1>
+    <p><strong>From:</strong> &quot;John Rowland&quot; &lt;johnr@journeyflow.spamspam.demon.co.uk&gt;<br>
+    <strong>Date:</strong> Tue, 18 Nov 2003 10:00:05 -0000</p>
+    <hr>
+    <div>Hi all,<br>
+<br>
+I&#x27;ve used Zillions Of Games to develop a new chess variant, but I have hit a<br>
+bizarre problem which suggests a bug in Zillions. When Zillions plays my<br>
+game against itself, white wins nearly all of the time in various<br>
+symmetrical starting positions. The obvious conclusions were that my game<br>
+was flawed or that my rule file was flawed, but the test described below<br>
+suggests otherwise.<br>
+<br>
+I have run the start of a game to see which move white picks as its first<br>
+move, and I have then stepped back to the start position and used the<br>
+richt-click menu to set up a starting position in which *black* has already<br>
+made the equivalent move before white gets to start the game. In effect, I&#x27;m<br>
+giving black the first move. You would expect black to now have the<br>
+advantage, but white still wins nearly every game.<br>
+<br>
+I have examined the code for my game and there is no obvious reason why<br>
+white should win regardless of who goes first. The board is 8*8 square. The<br>
+starting positions are symmetrical between players (like western Chess), and<br>
+each player&#x27;s starting position has left-right symmetry (unlike western<br>
+Chess). All of the pieces have symmetrical move possibilities, including my<br>
+&quot;pawns&quot; which can move (or capture) backwards as well as forwards, so I have<br>
+not needed the Zillions &quot;symmetry&quot; command to make black&#x27;s pawns move in the<br>
+reverse direction. The only significant mentions of white and black in the<br>
+Zillions file are to specify 1) the turn order 2) starting positions and 3)<br>
+the &quot;promotion&quot; squares (each player has two &quot;promotion&quot; squares in the far<br>
+corners).<br>
+<br>
+Other possibly pertinent details... I&#x27;m running Windows 98 on a very slow<br>
+PC, with WinMX usually running permanently. I have the players set to 3<br>
+minutes per move. The starting positions used are not those specified in the<br>
+ZRF file, but have been set up using the right-click menu and saved as a ZSG<br>
+file - this is very convenient when you are still experimenting with<br>
+starting positions.<br>
+<br>
+There is no checkmateable piece: there are two families of piece in the<br>
+game, and each player must retain at least one member of each family. Loss<br>
+occurs (in Zillions) after one player&#x27;s last member of one family has been<br>
+captured. (This strange-seeming condition makes a decisive game extremely<br>
+likely, and also effectively eliminates the need to resign, since the end is<br>
+not inevitable until it&#x27;s practically reached - there is no equivalent in my<br>
+game of KRvK taking a dozen moves to reach its inescapable conclusion. It<br>
+also adds massive variety to the end game undreamt of in western Chess.)<br>
+<br>
+Has anyone seen anything like this white-always-wins bug? Thanks.<br>
+<br>
+-- <br>
+John Rowland - Spamtrapped<br>
+Transport Plans for the London Area, updated 2001<br>
+http://www.geocities.com/Athens/Acropolis/7069/tpftla.html<br>
+A man&#x27;s vehicle is a symbol of his manhood.<br>
+That&#x27;s why my vehicle&#x27;s the Piccadilly Line -<br>
+It&#x27;s the size of a county and it comes every two and a half minutes<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

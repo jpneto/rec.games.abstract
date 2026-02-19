@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Box Hex</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Box Hex</h1>
+    <p><strong>From:</strong> David J Bush &lt;twixt@cstone.net&gt;<br>
+    <strong>Date:</strong> Mon, 27 Mar 2006 22:46:46 -0500</p>
+    <hr>
+    <div>||&gt; How do you come up with just one shortest winning path in Hex? It<br>
+||&gt; looks to me that an NxN grid would have N shortest winning paths for<br>
+||&gt; each player. Do you agree?<br>
+||<br>
+||Yes, you are correct.  However more shortest paths go through the<br>
+||center point on an odd x odd board than any other point.<br>
+|<br>
+|Ah, you&#x27;re right,...<br>
+<br>
+<br>
+Uh, actually, that&#x27;s not right. Consider a 3x3 grid.<br>
+<br>
+<br>
+  A *  *  *<br>
+<br>
+ B *  *  *<br>
+<br>
+C *  *  *<br>
+ 1  2  3<br>
+<br>
+Considering shortest distance paths only, there are two ways<br>
+for the center cell to connect to the top, times two ways to<br>
+connect to the bottom, which results in four shortest distance<br>
+paths which pass through the center.<br>
+<br>
+Now consider the obtuse corner cell A1. There are four shortest<br>
+distance paths which pass through there, as well:<br>
+<br>
+A1-B1-C1<br>
+A1-B1-C2<br>
+A1-B2-C2<br>
+A1-B2-C3<br>
+<br>
+<br>
+In fact, on any size grid, odd or even, all the cells along the<br>
+short diagonal (from one obtuse corner to the other) will have<br>
+2^(N-1) shortest distance paths passing through them. The central<br>
+cell is NOT a unique maximum in this respect.<br>
+<br>
+David<br>
+<br>
+<br>
+</div>
+</body>
+</html>

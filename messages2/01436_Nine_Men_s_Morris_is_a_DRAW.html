@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nine Men&#x27;s Morris is a DRAW</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Nine Men&#x27;s Morris is a DRAW</h1>
+    <p><strong>From:</strong> gasser@inf.ethz.ch (Ralph Gasser)<br>
+    <strong>Date:</strong> Tue, 23 Nov 1993 12:42:10 GMT</p>
+    <hr>
+    <div>The game of Nine Men&#x27;s Morris (NMM) has been solved. The game is a draw.<br>
+<br>
+As there are different variations of NMM being played, I will first specify<br>
+the rules I used, then give a short summary of how the solution was computed.<br>
+<br>
+<br>
+RULES<br>
+-----<br>
+<br>
+Nine Men&#x27;s Morris is played on a board with 24 points where stones may be<br>
+placed.<br>
+<br>
++--------+--------+<br>
+|        |        |<br>
+|  +-----+-----+  |<br>
+|  |     |     |  |<br>
+|  |  +--+--+  |  |<br>
+|  |  |     |  |  |<br>
++--+--+     +--+--+<br>
+|  |  |     |  |  |<br>
+|  |  +--+--+  |  |<br>
+|  |     |     |  |<br>
+|  +-----+-----+  |<br>
+|        |        |<br>
++--------+--------+<br>
+<br>
+Both players start with nine stones each.<br>
+<br>
+The game goes through three phases<br>
+        -  opening phase<br>
+           Players alternately place stones on an empty point.<br>
+        -  midgame phase<br>
+           After all stones are placed, players slide stones to<br>
+           any adjacent vacant point.<br>
+        -  endgame phase<br>
+           When a player has only three stones left, she may<br>
+           jump a stone to any vacant point.<br>
+<br>
+When closing a mill (three-in-a-row), any opponent&#x27;s stone<br>
+which is not part of a mill may be removed. If all the<br>
+opponent&#x27;s stones are part of mills, any stone may be removed.<br>
+<br>
+Closing two mills simultaneously (opening phase) only allows<br>
+one of the opponent&#x27;s stones to be removed.<br>
+<br>
+        -  The first player who has less than three stones loses.<br>
+        -  The first player who cannot make a legal move loses.<br>
+<br>
+<br>
+HOW IT WAS SOLVED<br>
+-----------------<br>
+<br>
+Retrograde Analysis (well known from Chess) was used to compute<br>
+databases for all mid- and endgame positions (about 10 billion<br>
+different positions). These positions were split into 28<br>
+separate databases characterized by the number of stones on the<br>
+board i.e. all the 3 White stone against 3 Black stone<br>
+positions, the 4-3, 4-4 ... up to 9-9 positions.<br>
+ <br>
+An 18 ply alpha-beta search for the opening phase then found<br>
+the value of the initial position (the empty board). Only the<br>
+9-9, 9-8 and 8-8 databases were needed to establish that the<br>
+game is a draw.<br>
+<br>
+Ralph Gasser (gasser@inf.ethz.ch)<br>
+Informatik, ETH<br>
+CH-8092 Zurich<br>
+Switzerland<br>
+<br>
+<br>
+</div>
+</body>
+</html>

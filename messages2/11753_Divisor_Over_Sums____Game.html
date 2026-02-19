@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Divisor Over Sums -- Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Divisor Over Sums -- Game</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Sat, 11 Jun 2011 11:19:26 -0700 (PDT)</p>
+    <hr>
+    <div>Here is another game that uses an n-by-n grid drawn on paper.<br>
+<br>
+This game is for 2 players.<br>
+<br>
+Players take turns placing 1,2,3,... n^2 into empty squares of the<br>
+grid, one number each turn.<br>
+(So, player 1 places the odd numbers into the grid, and player 2<br>
+places the evens.)<br>
+<br>
+<br>
+Let H represent the collection of variables h, where each h is the sum<br>
+of a HORIZONTALLY-adjacent pair of integers in the grid.<br>
+<br>
+Let V represent the collection of variables v, where each v is the sum<br>
+of a VERTICALLY-adjacent pair of integers in the grid.<br>
+<br>
+(So, H and V each consist of n*(n-1) variables.)<br>
+<br>
+Player 1 then chooses a variable d which divides at least one of the<br>
+h&#x27;s.<br>
+Player 1 gets as a score:<br>
+d*(number of h&#x27;s that are divisible by d)<br>
+<br>
+Player 2 then chooses a variable d&#x27; which divides at least one of the<br>
+v&#x27;s.<br>
+Player 2 gets as a score:<br>
+d&#x27;*(number of v&#x27;s that are divisible by d&#x27;)<br>
+<br>
+<br>
+The player with the largest score wins.<br>
+<br>
+<br>
+For example, let us say two poorly-playing players have this n=4 grid:<br>
+<br>
+08 09 01 10<br>
+03 11 16 07<br>
+02 14 15 05<br>
+04 12 06 13<br>
+<br>
+H =<br>
+(17,10,11, 14,27,23,<br>
+16,29,20, 16,18,19)<br>
+<br>
+Let us say that player 1 picks 4, then he gets 4*3 = 12 points.<br>
+(Because h&#x27;s = 16, 20, and 16 are divisible by 4.)<br>
+Had he picked 29, he could have gotten 29, however.<br>
+<br>
+<br>
+V =<br>
+(11,5,6, 20,25,26,<br>
+17,31,21, 17,12,18)<br>
+<br>
+Player 2 picks 3 and gets 3*4 = 12 points.<br>
+She should have picked 31.<br>
+<br>
+Yes, you can always score at least n*(n-1) by picking d or d&#x27; = 1.<br>
+<br>
+As implied in the example, a player is responsible for finding his/her<br>
+own score.<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+</div>
+</body>
+</html>

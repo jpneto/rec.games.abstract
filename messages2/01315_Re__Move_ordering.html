@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Move ordering</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Move ordering</h1>
+    <p><strong>From:</strong> jff@maths.nott.ac.uk (Joel F Feinstein)<br>
+    <strong>Date:</strong> Sun, 26 Sep 93 18:32:53 GMT</p>
+    <hr>
+    <div>In article &lt;1993Sep24.180218.8245@cis.uab.edu&gt; sloan@cis.uab.edu (Kenneth Sloan) writes:<br>
+&gt;In article &lt;27v7sqINN4tr@cetus4c.cs.utk.edu&gt; hart@cs.utk.edu (Kevin Hart) writes:<br>
+&gt;&gt;...<br>
+&gt;&gt;Geez.  I keep hearing about things *after* I wrack my brain thinking them<br>
+&gt;&gt;up.  Hmph.  Anyway, I&#x27;ve been working on Alpha-Beta searching a 6x6 othello<br>
+&gt;&gt;game for the last few years.  (Please don&#x27;t tell me this has already been<br>
+&gt;&gt;done. ;-)<br>
+&gt;<br>
+&gt;Not that I know of - most people do 8x8...<br>
+&gt;<br>
+.<br>
+.<br>
+.<br>
+&gt;<br>
+I announced a perfect play sequence for 6x6 Othello with the standard<br>
+starting position in this newsgroup earlier this year (the second player<br>
+wins 20-16). 8x8 Othello is another matter!<br>
+<br>
+Counting legal moves for both sides in Othello is certainly expensive<br>
+(unless you have special hardware), so I use one of the many crude <br>
+approximations available: counting the number of empty squares next to<br>
+the opponent&#x27;s pieces. The more such empty squares there are,<br>
+the more potential moves you have. Not only is this much faster to <br>
+calculate than the number of legal moves, but it also appears to be<br>
+a better evaluation function. But I think it is the balance between<br>
+positional features and corner evaluation which is most interesting.<br>
+Whether I have this approximately right will be revealed by my<br>
+(8x8) program&#x27;s performance in the Paderborn computer Othello tournament<br>
+in October.<br>
+<br>
+Joel Feinstein <br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Permudrome -- Grid Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Permudrome -- Grid Game</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Tue, 21 Dec 2010 03:48:24 -0800 (PST)</p>
+    <hr>
+    <div>Leroy Quet wrote:<br>
+&gt; Here is a game for 2 players.<br>
+&gt; The game&#x27;s name is a combination of the words &quot;permutation&quot; and<br>
+&gt; &quot;palindrome&quot;.<br>
+&gt;<br>
+&gt; Start with an n-by-n grid,<br>
+&gt; where n is a multiple of 4.<br>
+&gt; I suggest that n is &gt;= 8.<br>
+&gt;<br>
+&gt; The players take turns. On a turn a player draws two x&#x27;s into the<br>
+&gt; grid, each x into an empty square such that no column or row has more<br>
+&gt; than one x.<br>
+&gt;<br>
+&gt; After there is exactly one x in each row and in each column -- n x&#x27;s<br>
+&gt; total, n/4 moves for each player -- play is over.<br>
+&gt;<br>
+&gt; Write down the (n-1) absolute values in order, of the changes in the<br>
+&gt; vertical positions of adjacent x&#x27;s from column to column, along the<br>
+&gt; bottom of the grid.<br>
+&gt; Write down the (n-1) absolute values in order, of the changes in the<br>
+&gt; horizontal positions of adjacent x&#x27;s from row to row, along the left<br>
+&gt; side of the grid.<br>
+&gt;<br>
+&gt; Player 1 gets as a score the length of the largest palindromic<br>
+&gt; subsequence within the sequence of vertical changes written along the<br>
+&gt; bottom of the grid.<br>
+&gt;<br>
+&gt; Player 2 gets as a score the length of the largest palindromic<br>
+&gt; subsequence within the sequence of horizontal changes written along<br>
+&gt; the left side of the grid.<br>
+&gt;<br>
+&gt; Largest score wins. (Ties are possible.)<br>
+&gt;<br>
+&gt; Example: n=12:<br>
+&gt;<br>
+&gt; . . x . . . . . . . . .<br>
+&gt; . . . . x . . . . . . .<br>
+&gt; . . . . . . x . . . . .<br>
+&gt; x . . . . . . . . . . .<br>
+&gt; . . . . . x . . . . . .<br>
+&gt; . . . . . . . x . . . .<br>
+&gt; . x . . . . . . . . . .<br>
+&gt; . . . x . . . . . . . .<br>
+&gt; . . . . . . . . x . . .<br>
+&gt; . . . . . . . . . . . x<br>
+&gt; . . . . . . . . . . x .<br>
+&gt; . . . . . . . . . x . .<br>
+&gt;<br>
+&gt; Changes in vertical positions column to column:<br>
+&gt; 3,6,7,6,3,2,3,3,3,1,1<br>
+&gt; The largest palindromic subsequence is (3,6,7,6,3). Player 1 gets 5<br>
+&gt; points.<br>
+&gt;<br>
+&gt; Changes in horizontal positions row to row:<br>
+&gt; 2,2,6,5,2,6,2,5,3,1,1,<br>
+&gt; The largest palindromic subsequence is (5,2,6,2,5). Player 2 gets 5<br>
+&gt; points.<br>
+&gt;<br>
+&gt; It is a tie.<br>
+&gt;<br>
+&gt; What about strategies for this game?<br>
+<br>
+<br>
+Should I tell you why I have players draw 2 x&#x27;s at a time, instead of<br>
+just one x? Or should I leave the question why as a simple puzzle?<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

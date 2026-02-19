@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: [Q] Bags problem 2</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: [Q] Bags problem 2</h1>
+    <p><strong>From:</strong> dmoews@xraysgi.ims.uconn.edu (David Moews)<br>
+    <strong>Date:</strong> 12 11 1998 00:00:00 GMT</p>
+    <hr>
+    <div>(Posted and mailed.)<br>
+<br>
+In article &lt;#p9#QDXD#GA.311@ntdwwaaw.compuserve.com&gt;,<br>
+Yann DAVID  &lt;100552.1400@CompuServe.COM&gt; wrote:<br>
+|...<br>
+|A &quot;bag&quot; denotes here a finite collection of strictly positive integers.<br>
+|A bag is unordered and may contain several instances of a same integer. ...<br>
+|The bag product is defined as follows: given two bags A and B,<br>
+|- form their &quot;cartesian product&quot;,<br>
+|- replace each pair of integers by the product of its two members.<br>
+|The bag you come up with is the product of A and B. ...<br>
+<br>
+Let R be the polynomial ring Z[x1,x2,x3,...] of countably many independent<br>
+indeterminates over the integers, and let S be the subset of R, closed under<br>
+multiplication, consisting of polynomials with all coefficients nonnegative.<br>
+Then (as someone here pointed out earlier) multiplication of your bags<br>
+is isomorphic to multiplication in R, restricted to S; the isomorphism<br>
+is given by sending, for example, k x1^a x2^b x3^c into the size k bag <br>
+{2^a 3^b 5^c, 2^a 3^b 5^c, ..., 2^a 3^b 5^c}.<br>
+<br>
+|My first question was about the unicity of [decomposition into prime factors]..<br>
+|Dean Hickerson came up with a family of counter-examples, according to<br>
+|the following pattern:<br>
+|	{1,n} * {1,n^2,n^4} = {1,n^3} * {1,n,n^2} = {1,n,n^2,n^3,n^4,n^5}.<br>
+<br>
+R has unique factorization into primes (irreducibles) in R, so a bag&#x27;s <br>
+factorization into prime bags will come from lumping together elements of its <br>
+factorization in R.  For example, the above factorization comes from the <br>
+prime factorization in R of 1+xi+xi^2+xi^3+xi^4+xi^5, which is <br>
+(1+xi+xi^2)(1+xi)(1-xi+xi^2).  The last factor is not in S, but multiplying it <br>
+by either of the first two factors will put it in S, giving the factorizations<br>
+above.<br>
+<br>
+|Some bags can be divided by some other bags than {1} and themselves,<br>
+|whereas some can&#x27;t: they are &quot;prime bags&quot;.  ...<br>
+|A bag B is said to be &quot;avoidable&quot; if<br>
+|- B is prime,<br>
+|- there are two families of prime bags (Ci)i and (Dj)j such that B does<br>
+|  not belong to (Dj)j but<br>
+|	B.C1.C2... = D1.D2...<br>
+|The question whether a bag is avoidable is decidable (try all of the<br>
+|possible bags families until you stumble across a solution), so the next<br>
+|problem would be: is &quot;unavoidability&quot; decidable? What bags are in general<br>
+|avoidable?<br>
+<br>
+You mean `recursively enumerable&#x27;, not `decidable&#x27;.  Some prime bags<br>
+will also be prime in R; these will clearly be unavoidable.  My guess is that<br>
+a prime bag which is not prime in R is avoidable.  This would make both<br>
+avoidability and unavoidability decidable.<br>
+<br>
+|...<br>
+|2) are there two distinct prime bags A and B, two integers n and m such that<br>
+|		A^n = B^m   ?<br>
+<br>
+The polynomial f=3(1+x1+x1^3+x1^4)-x1^2 is prime in R, and A=f^2 and B=f^3 both<br>
+have all coefficients nonnegative; this gives an example of prime bags A and B<br>
+with A^3=B^2.<br>
+-- <br>
+David Moews                            dmoews@xraysgi.ims.uconn.edu<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

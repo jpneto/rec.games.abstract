@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Peg solitaire and branching factor</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Peg solitaire and branching factor</h1>
+    <p><strong>From:</strong> Dan Hoey &lt;Hoey@AIC.NRL.Navy.Mil&gt;<br>
+    <strong>Date:</strong> 11 Jan 2005 17:13:02 -0500</p>
+    <hr>
+    <div>torbenm@diku.dk writes:<br>
+<br>
+&gt; kingpin@freemail.it (lucas) writes:<br>
+&gt; <br>
+&gt; &gt; i need a (good) bound to the maximum branching factor in peg<br>
+&gt; &gt; solitaire game.<br>
+<br>
+Torben conjectured that a board with area  S  can have at most  (4/3)S<br>
+moves.  I supply a proof.<br>
+<br>
+This is a rough paraphrase of Torben&#x27;s argument.  Suppose the board<br>
+has area  S,  consisting of  P  pegs and  H  empty holes.  If there<br>
+are  M  possible moves, then the average number of ways any given peg<br>
+can move is  M/P,  and the average number of ways of moving into each<br>
+hole is  M/H.  If we can bound  M/P &lt;= a,  M/H &lt;= b,  then  M &lt;= a P,<br>
+M &lt;= b H, so  M(a+b) &lt;= a b (P+H) = a b S, so<br>
+<br>
+      M &lt;= (a b / (a+b)) S .<br>
+<br>
+For instance, each peg can jump at most four ways and each hole can be<br>
+filled at most four ways, so with  a=b=4,  M &lt;= 2 S.  Torben notes that<br>
+the average  M/P  cannot achieve  4,  and conjectures that the average<br>
+approaches  2.  This is the only part that needs proof:<br>
+<br>
+    Let  R_n  be the number of horizontal rows of  n  adjacent pegs,<br>
+    bounded on the sides by holes or the edge of the board.  We count<br>
+    the number of ways of horizontally:  Rows of one peg can&#x27;t jump,<br>
+    and every other row can jump at most two ways:  the second from<br>
+    the left jumping left and the second from the right jumping<br>
+    right.  So the number of possible horizontal jumps is at most<br>
+    2 R_2 + 2 R_3 + 2 R_4 + ... &lt;= P,  by averaging.  Similarly,<br>
+    the number of vertical jumps is at most  P.  Therefore  M &lt;= 2 P.<br>
+<br>
+This yields the inequalities  M &lt;= 2P,  M &lt;= 4H, whence  M &lt;= (4/3)S,<br>
+as Torben conjectured.  The inequalities can be made strict by noting<br>
+that there are holes or peg-rows at the edges of the board that cannot<br>
+achieve the bounds.<br>
+<br>
+Dan Hoey<br>
+<br>
+<br>
+</div>
+</body>
+</html>

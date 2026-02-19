@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: One x Twice -- Grid Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: One x Twice -- Grid Game</h1>
+    <p><strong>From:</strong> James Dow Allen &lt;jdallen2000@yahoo.com&gt;<br>
+    <strong>Date:</strong> Tue, 14 Dec 2010 12:34:22 -0800 (PST)</p>
+    <hr>
+    <div>On Dec 13, 7:38 pm, Leroy Quet &lt;qqq...@mindspring.com&gt; wrote:<br>
+&gt; What kind of strategies will help you win at this game (if you cannot<br>
+&gt; read the other player&#x27;s mind)?<br>
+<br>
+To be self-consistent I will continue, perhaps perversely,<br>
+to let Even choose the row and win when an even number<br>
+of cells is occupied at game&#x27;s end.<br>
+<br>
+Whenever Odd has as many columns to choose from<br>
+as Even has rows, Odd wins with a simple strategy.<br>
+For example, on the 7x7 board he plays<br>
+   1,1,2,1,3,1,4,1,5,1,6,1,7,1<br>
+     *   *   *   *   *   *   *<br>
+Odd will win, at one of the turns marked *.<br>
+<br>
+Whenever Even has more rows to choose from<br>
+than Odd has columns, he wins with a simple strategy.<br>
+For example, on the 6x7 board he plays<br>
+    1,2,1,3,1,4,1,5,1,6,1,7,1<br>
+        *   *   *   *   *   *<br>
+Even will win, at one of the turns marked *.<br>
+<br>
+Despite this simplicity, I did write a general<br>
+solver for the game.  The main driver is trivial<br>
+(at least if one doesn&#x27;t bother detecting<br>
+equivalence symmetries).  The real work is the<br>
+game matrix solver, but I just borrowed the one<br>
+recently linked to by Chip Eastham, translating<br>
+it to C.  (My Javascript knowledge was near zero,<br>
+but I persevered.   :-)  )<br>
+<br>
+Although they won&#x27;t arise when Even or Odd<br>
+adopts the optimal strategy mentioned above,<br>
+subpositions can arise with complex strategies.<br>
+For example, consider this position:<br>
+<br>
+     X X . .<br>
+     X . X X<br>
+     X . X X<br>
+     . . X .<br>
+     . X . X<br>
+<br>
+Here, Even&#x27;s optimal mixed strategy is<br>
+   0.255 / 0.093 / 0.093 / 0.303 / 0.255.<br>
+Odd&#x27;s optimal mixed strategy is<br>
+   0.076 / 0.409 / 0.440 / 0.076.<br>
+Even wins here with probability .4086.<br>
+<br>
+James Dow Allen<br>
+<br>
+<br>
+</div>
+</body>
+</html>

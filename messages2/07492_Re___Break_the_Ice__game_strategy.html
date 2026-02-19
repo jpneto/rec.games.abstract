@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: &quot;Break the Ice&quot; game strategy</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: &quot;Break the Ice&quot; game strategy</h1>
+    <p><strong>From:</strong> &quot;Chris Uppal&quot; &lt;chris.uppal@metagnostic.REMOVE-THIS.org&gt;<br>
+    <strong>Date:</strong> 01 Aug 2006 12:46:53 GMT</p>
+    <hr>
+    <div>Arthur J. O&#x27;Dwyer wrote:<br>
+<br>
+&gt;   My question for the comp.programming folks: I quickly determined<br>
+&gt; that the standard alpha-beta pruning technique doesn&#x27;t help with<br>
+&gt; this game, because I don&#x27;t know any way to evaluate the &quot;strength&quot;<br>
+&gt; of a position except as a win or loss. So most of the branches in<br>
+&gt; an alpha-beta tree of any reasonable depth (i.e., not deep enough<br>
+&gt; to see all possible endings) end up with a value of zero, which means<br>
+&gt; the computer is moving randomly most of the time.<br>
+<br>
+Perhaps you could borrow the concept of stress (or do I mean strain?)<br>
+from engineering.  The stress on any given blocks is the number of<br>
+blocks that would move (including itself) if it were knocked out.   You<br>
+could then try minimaxing on something like one of:<br>
+     minimise the total stress<br>
+     maximise the number of &quot;low&quot; stress blocks<br>
+     minimise the number of &quot;high&quot; stress blocks<br>
+subject to the constraint that there must be an even number of<br>
+unsaturated (stress &lt; number of remaining blocks) after each move.<br>
+<br>
+Just a thought -- I&#x27;ve no idea whether it&#x27;d work....<br>
+<br>
+    -- chris<br>
+<br>
+<br>
+</div>
+</body>
+</html>

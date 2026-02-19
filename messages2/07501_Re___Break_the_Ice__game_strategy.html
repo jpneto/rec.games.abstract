@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: &quot;Break the Ice&quot; game strategy</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: &quot;Break the Ice&quot; game strategy</h1>
+    <p><strong>From:</strong> Don Woods &lt;don-ns@iCynic.com&gt;<br>
+    <strong>Date:</strong> Wed, 09 Aug 2006 20:01:41 GMT</p>
+    <hr>
+    <div>&quot;Arthur J. O&#x27;Dwyer&quot; &lt;ajonospam@andrew.cmu.edu&gt; writes:<br>
+&gt;    One thing we humans can handle that the program can&#x27;t, also, is<br>
+&gt; seeing when there&#x27;s only one &quot;major&quot; arch left, and counting the number<br>
+&gt; of things that branch off of it. For example,<br>
+&gt; <br>
+&gt;      OO.......<br>
+&gt;      OO.......<br>
+&gt;      OO.......<br>
+&gt;      OO.......<br>
+&gt;      .O.......<br>
+&gt;      .OOOOOOOO<br>
+&gt;      .OOOOOOOO<br>
+&gt;      OO.......<br>
+&gt;      .OOOOOOOO<br>
+&gt; <br>
+&gt; That game board has one arch in the second column, and then eight <br>
+&gt; independent &quot;branches&quot; coming off of it. We immediately determine that<br>
+&gt; the game will last exactly nine more moves (since each move knocks out<br>
+&gt; exactly one branch), and so we know who will win. But the computer<br>
+&gt; would have to examine (on the order of) 9-factorial game trees to<br>
+&gt; come to the same conclusion via alpha-beta!<br>
+<br>
+There are a few steps involved in a human analysis of that position,<br>
+and I think you should be able to mimic most of the steps in a program.<br>
+Indeed, you seem to have implicitly assumed the program was doing the<br>
+first step, which is to recognise various classes of equivalent single<br>
+moves.  E.g., c1, d1, e1, etc., all lead to the same position, so it<br>
+doesn&#x27;t matter which of them is chosen.<br>
+<br>
+The next step would seem to be to recognise independent classes of moves.<br>
+That is, if one of the moves c1...i1 is chosen, and the move a6 is also<br>
+chosen, the resulting position is the same regardless of what order they<br>
+are chosen in.  As someone else has pointed out in this thread, that&#x27;s<br>
+why this position really leads to only 2^8 or so positions, reflecting<br>
+which of the 8 independent classes of moves have been taken so far.<br>
+<br>
+The final step would be to recognise that the classes themselves are<br>
+interchangeable and thus all that really matters is how many of the<br>
+moves have been made, not which ones.  That&#x27;s probably harder to write<br>
+define in a way that&#x27;s easy to analyse in general, but you might not<br>
+need that level of analysis to get acceptable performance.<br>
+<br>
+	-- Don.<br>
+<br>
+-------------------------------------------------------------------------------<br>
+-- Don Woods (don-ns@iCynic.com)     Note: If you reply by mail, I&#x27;ll get to<br>
+-- http://www.iCynic.com/~don	     it sooner if you remove the &quot;hyphen n s&quot;<br>
+<br>
+<br>
+</div>
+</body>
+</html>

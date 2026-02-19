@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Hex</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Hex</h1>
+    <p><strong>From:</strong> hoey@AIC.NRL.Navy.Mil (Dan Hoey)<br>
+    <strong>Date:</strong> Tue, 6 Jul 1993 08:50:36 GMT</p>
+    <hr>
+    <div>torbenm@diku.dk (Torben AEgidius Mogensen) writes of Hex<br>
+<br>
+&gt;&gt;&gt;...with the modification that the board is of size Nx(N-1) and the<br>
+&gt;&gt;&gt;second player has to connect the shortest distance, the game is a<br>
+&gt;&gt;&gt;sure win for player two.<br>
+<br>
+&gt;&gt;&gt;The strategy works as follows: divide the board into two<br>
+&gt;&gt;&gt;equal-sized parts along the short diagonal.  Every time player one<br>
+&gt;&gt;&gt;places a stone in one half of the board, player two places a stone<br>
+&gt;&gt;&gt;in the other half [at a point mirrored across the dividing line].<br>
+<br>
+Last week I took issue with his formulation, ending:<br>
+<br>
+&gt; There may be a winning strategy for the second player on the Nx(N-1)<br>
+&gt; board, but I would be quite surprised if it&#x27;s a simple one.<br>
+<br>
+At that point ag24@gen.cam.ac.uk (Aubrey de Grey) was kind enough to<br>
+surprise me with the news that I had misinterpreted Torben&#x27;s remarks<br>
+(which are approximately correct, though somewhat vague) and provided<br>
+a proof which I present in somewhat modified form below.<br>
+<br>
+Torben&#x27;s idea is to divide the board in half along (almost, but not<br>
+quite) the short diagonal of the board, and match up the halves as<br>
+(slightly offset) mirror images.  For example, the 7x6 board is<br>
+matched up as in the left diagram below:<br>
+<br>
+                    /<br>
+        a b c d e f/<br>
+         g h i j k F             a b c d e f<br>
+          l m n o K E             g h i j k<br>
+           p q r O J D             l m n o<br>
+            s t R N I C             p q r<br>
+             u T Q M H B             s t<br>
+             /U S P L G A             u<br>
+            /<br>
+<br>
+To prove that this is a second player win, let us identify the two<br>
+halves of the board and let the first player play solitaire on the<br>
+diagram at right.  He puts down a red marker whenever he would play on<br>
+the northwest (lower case) half of the original board, and a blue<br>
+marker whenever he would play on the southeast (upper case) half.  The<br>
+second player&#x27;s strategy ensures he cannot put both colors down on<br>
+the same point.<br>
+<br>
+Now to see if the first player has won, we connect any two adjacent<br>
+markers of the same color, and to model connections across the mirror,<br>
+we connect pairs along the southeast (utrokf) edge whenever a red<br>
+marker has a blue neighbor to its northeast.  (No connection is made<br>
+when the blue neightbor is to the southwest, because for example<br>
+positions &quot;o&quot; and &quot;R&quot; are not adjacent in the original diagram, while<br>
+positions &quot;r&quot; and &quot;O&quot; are adjacent.)<br>
+<br>
+The object is for the first player to make a path from a red marker on<br>
+the north (abcdef) edge to a blue marker on the southwest (aglpsu)<br>
+edge.  But the only place that the path can change color is on the SE<br>
+edge, and a red path from from the N edge to the SE edge blocks the<br>
+blue NE neighbor from continuing on to the SW edge.<br>
+<br>
+So the first player cannot win, and the impossibility of draws implies<br>
+that the second player wins.<br>
+<br>
+Dan Hoey<br>
+Hoey@AIC.NRL.Navy.Mil<br>
+<br>
+<br>
+</div>
+</body>
+</html>

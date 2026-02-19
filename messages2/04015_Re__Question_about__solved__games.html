@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Question about &quot;solved&quot; games</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Question about &quot;solved&quot; games</h1>
+    <p><strong>From:</strong> Gary Wong &lt;gary@cs.arizona.edu&gt;<br>
+    <strong>Date:</strong> 05 12 1998 00:00:00 GMT</p>
+    <hr>
+    <div>montereygo@aol.com (MONTEREYGO) writes:<br>
+&gt; What this thread has gotten me to wondering is:  how can you determine if a<br>
+&gt; game can&#x27;t be solved?<br>
+<br>
+By stealing somebody else&#x27;s theory :-)  John von Neumann proved (70<br>
+years ago!) that every finite, two-person, zero-sum game has a value<br>
+(which is equivalent to the definition of a &quot;solution&quot; posted here<br>
+earlier; it also implies there exists at least one optimal strategy<br>
+for each player, and a few other interesting properties).  Therefore,<br>
+for a game to have no solution, it is necessary (but not sufficient)<br>
+for it to either involve more than two players; not be strictly<br>
+competitive (zero-sum); or have an infinite number of pure strategies.<br>
+<br>
+Examples of games that have no solutions:<br>
+<br>
+ - Both players simultaneously announce an integer of their choice; the<br>
+   player choosing the larger integer wins.  (This violates the condition<br>
+   that a finite number of pure strategies must exist.  Interestingly, the<br>
+   cases where the strategies can be mapped onto a closed interval of real<br>
+   numbers, and the &quot;value functions&quot; of the games are continuous over these<br>
+   strategies, are examples of games which _do_ have solutions even though<br>
+   there are infinite strategies available.)<br>
+<br>
+ - &quot;The Prisoner&#x27;s Dilemna&quot; (this has been discussed extensively elsewhere;<br>
+   essentially two suspects have been accused of the same crime; they must<br>
+   each decide whether to confess or plead innocence -- the catch is that<br>
+   they must decide independently, with no knowledge of the other prisoner&#x27;s<br>
+   decision.  The sentences they will receive are such that there is some<br>
+   incentive to encourage each prisoner to betray the other by rewarding<br>
+   a prisoner if he is the only one of the pair that confesses.)  This<br>
+   violates the condition that the game be zero-sum; it&#x27;s not strictly<br>
+   competitive.  &quot;The Battle of the Sexes&quot; is another canonical example.<br>
+<br>
+ - Games for more than two players.  These are considerably more complex<br>
+   because of the possibility of collusion between players; one consequence<br>
+   is that games cannot be assumed to be strictly competitive.  This has<br>
+   some very interesting consequences: for instance the nature of the game<br>
+   may become quite different if communication is permitted before the game<br>
+   starts.  In fact it may be detrimental to you to even allow another player<br>
+   to communicate a message to you!  There has actually been a significant<br>
+   amount of work in this area, but there appear to be no simple conclusions<br>
+   in the same way that there were for finite, two-person, zero-sum games.<br>
+<br>
+Cheers,<br>
+Gary.<br>
+-- <br>
+        Gary Wong, Department of Computer Science, University of Arizona<br>
+            gary@cs.arizona.edu     http://www.cs.arizona.edu/~gary/<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

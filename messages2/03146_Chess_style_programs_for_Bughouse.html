@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chess-style programs for Bughouse</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Chess-style programs for Bughouse</h1>
+    <p><strong>From:</strong> colley@qucis.queensu.ca (Paul Colley)<br>
+    <strong>Date:</strong> 13 12 1995 00:00:00 GMT</p>
+    <hr>
+    <div>Bughouse chess is not strictly an abstract game; there is &quot;limited<br>
+information&quot;, namely, how fast is the game going to progress on each<br>
+board?  Or more accurately, how long will one of the opposing players<br>
+stall with his or her clock running to frustrate the plan on the other<br>
+board?<br>
+<br>
+&quot;Limited Information&quot; doesn&#x27;t seem to be quite the right phrase:  Every<br>
+player knows exactly how much time there is, and all the state<br>
+information, and there&#x27;s no random factor.  The problem is that it&#x27;s<br>
+not clear who is to move:  Either board could have the next move made.<br>
+If it involves players on opposing teams, then in the game-theoretic<br>
+sense it&#x27;s not clear which team will move first.<br>
+<br>
+You can have race conditions, where both sides would like to move<br>
+first, and the faster player wins, and also &quot;Chicken&quot; conditions, when<br>
+each team would like the other to go first, and which player is willing<br>
+to sit there with their clock running the longest?<br>
+<br>
+The traditional tools of computer chess work best only with two-player,<br>
+zero-sum, complete information games.<br>
+<br>
+Bughouse is not a traditional abstract game.  However, it can certainly<br>
+be viewed as a two-player game, since both members of the team have<br>
+identical information, they can be viewed as a single player (unlike,<br>
+e.g., Bridge).  And it&#x27;s zero sum.  And it&#x27;s very close to complete<br>
+information.<br>
+<br>
+So it&#x27;s *almost* an abstract game.  Why not modify it to make it<br>
+abstract?  I.e., remove the race conditions.<br>
+<br>
+If you modify bughouse to make it fit the pattern of an abstract game,<br>
+then it seems likely that a strong bughouse player could be made for<br>
+the game.<br>
+<br>
+However, doing so would probably remove much of the fun of bughouse<br>
+chess.  &lt;sigh&gt;  Anyways, here is an attempt:<br>
+<br>
+	(1) Normal set-up, but only two players.<br>
+	(2) Players alternate which board they move on.<br>
+<br>
+I.e., player 1 is white on board A, and black on board B.  Player 2 has<br>
+the opposite colours.<br>
+<br>
+Player 1 moves on board A.<br>
+Player 2 moves on board B.<br>
+Player 1 moves on board B.<br>
+Player 2 moves on board A.<br>
+.<br>
+.<br>
+.<br>
+etc.<br>
+<br>
+Captures may be dropped as usual.<br>
+<br>
+I&#x27;m not suggesting this is the most fun way to play bughouse, just that<br>
+it allows the typical chess machinery to be applied to the problem.<br>
+<br>
+If you want a four-player version, just have two entities for each<br>
+&quot;player&quot;, each of which makes the moves on a particular board.  From a<br>
+game-theoretic sense (and from a computer-programming sense) you still<br>
+decide your move as if you were playing both sides.<br>
+<br>
+If you want to write a program for traditional bughouse, with<br>
+race-conditions, I think you&#x27;re going to have to use somewhat<br>
+different techniques than in traditional chess.<br>
+<br>
+<br>
+Comments?<br>
+<br>
+<br>
+- Paul Colley<br>
+colley@qucis.queensu.ca           +1 613 545 3807<br>
+http://www.qucis.queensu.ca/home/colley/info.html<br>
+&quot;Even if you do learn to speak correct English, whom are you<br>
+going to speak it to?&quot;    --Clarence Darrow<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

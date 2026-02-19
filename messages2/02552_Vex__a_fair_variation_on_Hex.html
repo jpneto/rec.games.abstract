@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vex: a fair variation on Hex</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Vex: a fair variation on Hex</h1>
+    <p><strong>From:</strong> lace@cix.compulink.co.uk (&quot;Michael Leigh&quot;)<br>
+    <strong>Date:</strong> Tue, 6 Dec 1994 00:24:01 GMT</p>
+    <hr>
+    <div>I read with interest your article on the rules of hex, I have never <br>
+played the games (never having found anyone to play against) but have <br>
+messed around with small boards on paper.<br>
+<br>
+I would very much like to know if anyone has written a hex game for <br>
+computer play, or even better if someone would provide source code or an <br>
+algorithm as I would very much to write a travelling hex program for my <br>
+handheld pocket computer (which unfortunately is not IBM compatible).<br>
+<br>
+There is a very simple way to equalize the advantage to the first player. <br>
+First for any size board we can (in theory) divide up the board in to <br>
+those  hexes which are a winning move for the first player (on his first <br>
+move) and those which are losing positions (the center hex(es) are almost <br>
+certainly winning positions). By striking out one of these hexes the game <br>
+becomes a draw. To see this we argue as follows.<br>
+<br>
+For white playing first. He should play as if he had an extra peice on <br>
+the forbidden hex, since an extra peice can never be a disadvantage he <br>
+cannot be forced to lose, however we can no longer be sure that he has a <br>
+strategy to win since his winning line may be dependant on the forbidden <br>
+hex.<br>
+<br>
+For black playing second. He plays as if he were the first player having <br>
+made his first move on the forbidden square (which was by definition a <br>
+winning move) and hence cannot be forced to lose.<br>
+<br>
+Thus as neither player can be forced to lose the game is a draw, although <br>
+it is non trivial and I suspect from the &#x27;proof&#x27; given requires exactly <br>
+the same strategy to draw as hex requires to win !<br>
+<br>
+So to Vex. We add an additional neutral peice say red which is given to <br>
+the second player who has the option to place this peice on the board on <br>
+any empty hex of his choice either before the first player makes his <br>
+initial move or on any subsequent turn in addition to playing his black <br>
+peice.<br>
+<br>
+Vex is a draw because white can always pretend the neutral peice is an <br>
+extra white peice (which therefore cannot disadvantage him forcing him to <br>
+lose) and black may place the neutral peice before the start of the game <br>
+and then by assuming the peice to be black and playing the &#x27;hex&#x27; winning <br>
+strategy cannot be forced to lose either.<br>
+<br>
+By using a nuetral peice and giving the second player the option when to <br>
+play it we no longer need to &#x27;know&#x27; which hexes are winning hexes for the <br>
+first player in order to make the game fair.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

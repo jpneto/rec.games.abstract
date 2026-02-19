@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>QUADREX:  better graphics now?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>QUADREX:  better graphics now?</h1>
+    <p><strong>From:</strong> Bill Taylor &lt;w.taylor@math.canterbury.ac.nz&gt;<br>
+    <strong>Date:</strong> Wed, 20 Jun 2007 21:39:27 -0700</p>
+    <hr>
+    <div>I would like to announce the arrival of a new connection game.<br>
+It is recently implemented on Richard Rognlie&#x27;s pbem server,<br>
+where it has already attracted several fans.<br>
+<br>
+Quadrex is another attempt to construct a Hex-like game<br>
+played on a checkers-style board.  It is a close relative to Quax,<br>
+already on the server, but has a different method of resolving<br>
+potential impasses, which does not require Quax&#x27;s &quot;extra pieces&quot;,<br>
+that is, the diagonal connections of Quax.<br>
+<br>
+The strategy is in many ways similar to Quax, but it is<br>
+a faster-moving and wider-sweeping game, which,<br>
+as we have found by substantial testing, needs a much bigger<br>
+board to allow the full strategic potentiality to take effect.<br>
+In fact, it seems to turn out that the best board size is 19x19;<br>
+which means the game can be played with a standard Go set!<br>
+So we have made 19x19 the default size.  We wondered if this<br>
+figure, 19x19, is a higher constant, like G, c, h, pi and e !   :)<br>
+(Bahai&#x27;ists take note.)<br>
+____<br>
+<br>
+The key feature of the new game, QUADREX, is that whenever a potential<br>
+impasse forms, (that is, a smallest square       o x<br>
+with some reflection or rotation of this.....         x .<br>
+or its color-opposite), then the fourth cell<br>
+is IMMEDIATELY filled with the majority color,   o x<br>
+producing the following situation:-                     x x  &lt;--- fill-<br>
+in stone<br>
+<br>
+This filling-in is part of the move that created the 3/4 situation,<br>
+and is automatically filled in by the server.   If the filling-in<br>
+results in another small square of the same type, then that is<br>
+filled in too, and so on.  Note that a fill-in may result from<br>
+EITHER a move by the local majority player, OR by the other player,<br>
+though naturally the former is far more common.<br>
+<br>
+Please note that this type of 3/4-cells....      x x<br>
+does NOT result in any change or fill-in.     o .<br>
+With impasses automatically resolved by<br>
+this procedure, ties are impossible, as in Hex.    As always<br>
+in connection games, the first move is a considerable advantage,<br>
+so there is as usual a swap option after the first stone is placed.<br>
+____<br>
+<br>
+We earnestly enjoin all connection-game fans to try this new<br>
+and exciting variant.<br>
+<br>
+Thanks for reading!<br>
+<br>
+Bill Taylor<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

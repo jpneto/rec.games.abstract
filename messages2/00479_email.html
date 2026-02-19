@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>No Subject</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>No Subject</h1>
+    <p><strong>From:</strong> Unknown Sender<br>
+    <strong>Date:</strong> Thu, 3 Dec 1992 14:47:03 GMT</p>
+    <hr>
+    <div>Creative Computing Press, 1979 (ISBN: 0-916688-07-0), (without permission):<br>
+<br>
+P. 44:<br>
+<br>
+CHOMP<br>
+-----------------<br>
+<br>
+    This program is an adaption of a mathematical game originally described by <br>
+Martin Gardner in the January 1973 issue of ``Scientific Amierican&#x27;&#x27;.  Up to a<br>
+9x9 grid is set up for you with the upper left square a poison square.  This <br>
+grid is the cookie.  Players alternately chomp away at the cookie from the<br>
+lower right.  To take a chomp, input a row and column number of one of the<br>
+squares remaining on the cookie.  All of the squares below and to the <br>
+right of that square, including that square, disappear. <br>
+    Any number of people can play--the computer is only the moderator; it is<br>
+not a player. Two-person strategies are interesting to work out, but strategies<br>
+when there are three or more people are playing are a real challenge.<br>
+    The computer version of the game was written by Peter Sessions of the <br>
+People&#x27;s Computer Company.<br>
+<br>
+10 PRINT TAB(33);&quot;CHOMP&quot;<br>
+20 PRINT TAB(15);&quot;CREATIVE COMPUTING  MORRISTOWN, NEW JERSEY&quot;<br>
+30 PRINT:PRINT:PRINT<br>
+40 DIM A(10,10)<br>
+100 REM ** THE GAME OF CHOMP *** COPYRIGHT PCC 1973 ***<br>
+110 PRINT<br>
+120 PRINT &quot;THIS IS THE GAME OF CHOMP (SCIENTIFIC AMERICAN, JAN 1973)&quot;<br>
+130 PRINT &quot;WANT THE RULES (1=YES, 2=NO!)&quot;;<br>
+140 INPUT R<br>
+150 IF R=0 THEN 340<br>
+160 F=1<br>
+170 R=5<br>
+180 C=7<br>
+190 PRINT &quot;CHOMP IS FOR 1 OR MORE PLAYERS (HUMANS ONLY).&quot;<br>
+200 PRINT<br>
+210 PRINT &quot;HERE&#x27;S HOW A BOARD LOOKS (THIS ONE IS 5 BY 7):&quot;<br>
+220 GOSUB 540<br>
+230 PRINT &quot;THE BOARD IS A BIG COOKIE - R ROWS HIGH AND C COLUMNS&quot;<br>
+250 PRINT &quot;WIDE.  YOU INPUT R AND C AT THE START. IN THE UPPER LEFT&quot;<br>
+260 PRINT &quot;CORNER OF THE COOKIE IS A POISON SQUARE (P).  THE ON WHO&quot;<br>
+270 PRINT &quot;CHOPMPS THE POISON SQUARE LOSES. TO TAKE A CHOMP, TYPE THE&quot;<br>
+280 PRINT &quot;ROW AND COLUMN OF ONE OF THE SQUARES ON THE COOKIE.&quot;<br>
+290 PRINT &quot;ALL OF THE SQUARES BELOW AND TO THE RIGHT OF THAT SQUARE&quot;<br>
+300 PRINT &quot;(INCLUDING THAT SQUARE, TOO) DISAPPEAR -- CHOMP!!&quot;<br>
+310 PRINT &quot;NO FAIR CHOMPING SQUARES THAT HAVE ALREADY BEEN CHOMPED,&quot;<br>
+320 PRINT &quot;OR THAT ARE OUTSIDE THE ORIGINAL DIMENSIONS OF THE COOKIE.&quot;<br>
+330 PRINT<br>
+340 PRINT &quot;HERE WE GO...&quot;<br>
+350 REM<br>
+360 F=0<br>
+370 FOR I=1 TO 10<br>
+372 FOR J=1 TO 10<br>
+375 A(I,J)=0<br>
+377 NEXT J<br>
+379 NEXT I<br>
+380 PRINT<br>
+390 PRINT &quot;HOW MANY PLAYERS&quot;;<br>
+400 INPUT P<br>
+410 I1=0<br>
+420 PRINT &quot;HOW MANY ROWS&quot;;<br>
+430 INPUT R<br>
+440 IF R&lt;=9 THEN 470<br>
+450 PRINT &quot;TOO MANY ROWS (9 IS MAXIMUM). NOW, &quot;;<br>
+460 goto 420<br>
+470 PRINT &quot;HOW MANY COLUMNS&quot;;<br>
+480 INPUT C<br>
+490 IF C&lt;=9 THEN 530<br>
+500 PRINT &quot;TOO MANY COLUMNS. (9 IS MAXIMUM). NOW, &quot;;<br>
+510 GOTO 470<br>
+530 PRINT<br>
+540 FOR I=1 TO R<br>
+550 FOR J=1 TO C<br>
+560 A(I,J)=1<br>
+570 NEXT J<br>
+580 NEXT I<br>
+590 A(1,1) = -1<br>
+600 REM PRINT THE BOARD<br>
+610 PRINT<br>
+620 PRINT TAB(7);&quot;1 2 3 4 5 6 7 8 9&quot;<br>
+630 FOR I=1 TO R<br>
+640 PRINT I;TAB(7);<br>
+650 FOR J=1 TO C<br>
+660 IF A(I,J)=-1 THEN 700<br>
+670 IF A(I,J)=0 THEN 720<br>
+680 PRINT &quot;* &quot;;<br>
+690 GOTO 710<br>
+700 PRINT &quot;P &quot;;<br>
+710 NEXT J<br>
+720 PRINT<br>
+730 NEXT I<br>
+740 PRINT<br>
+750 IF F=0 THEN 770<br>
+760 RETURN<br>
+770 REM GET CHOMPS FOR EACH PLAYER IN TURN<br>
+780 LET I1=I1+1<br>
+790 LET P1=I1-INT(I1/P)*P<br>
+800 IF P1&lt;&gt;0 THEN 820<br>
+810 P1=P<br>
+820 PRINT &quot;PLAYER &quot;;P1<br>
+830 PRINT &quot;COORDINATES OF CHOMP (ROW,COLUMN)&quot;;<br>
+840 INPUT R1,C1<br>
+850 IF R1&lt;1 THEN 920<br>
+860 IR R1&gt;R THEN 920<br>
+870 IF C1&lt;1 THEN 920<br>
+880 IF C1&gt;C THEN 920<br>
+890 IF A(R1,C1)=0 THEN 920<br>
+900 IF A(R1,C1)=-1 THEN 1010<br>
+910 GOTO 940<br>
+920 PRINT &quot;NO FAIR. YOU&#x27;RE TRYING TO CHOMP ON EMPTY SPACE!&quot;<br>
+930 GOTO 820<br>
+940 FOR I=R1 TO R<br>
+950 FOR J=C1 TO C<br>
+960 A(I,J)=0<br>
+970 NEXT J<br>
+980 NEXT I<br>
+990 GOTO 610<br>
+1000 REM END OF GAME DETECTED IN LINE 900<br>
+1010 PRINT &quot;YOU LOSE, PLAYER &quot;;P1<br>
+1020 PRINT<br>
+1030 PRINT &quot;AGAIN (1=YES; 0=NO!)&quot;;<br>
+1040 INPUT R<br>
+1050 IF R=1 THEN 340<br>
+1060 END<br>
+<br>
+<br>
+--Mike Cuddy (mcuddy@rational.com, fensende!mcuddy@apple.com)<br>
+To Anachreon in Heav&#x27;n/Where he sat in full glee/A few sons of harmony sent a <br>
+petition/That he thier inspierer and patron would be/When this answer arrived/<br>
+from the jolly old Grecian/&quot;Voice, fiddle and flute,/no longer be mute,/<br>
+I&#x27;ll lend ye my name/And inspire ye ta&#x27; boot/And besides I&#x27;ll instruct ye/<br>
+like me, to entwine/the Myrtle of Venus with Bacchus&#x27; vine!<br>
+-- sing to the tune of the star spangled banner... (these are the orig words,<br>
+yes folks, our national anthem is a ``let&#x27;s get drunk and F*** song&#x27;&#x27;).<br>
+<br>
+<br>
+</div>
+</body>
+</html>

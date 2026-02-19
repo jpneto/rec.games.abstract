@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>othello opening library</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>othello opening library</h1>
+    <p><strong>From:</strong> &quot;George Ortiz (922005)&quot; &lt;froggy@blitzen.canberra.edu.au&gt;<br>
+    <strong>Date:</strong> 12 07 1995 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+I&#x27;m currently writing an Othello computer program and wish to include an<br>
+opening library in the code to improve its openings. I&#x27;ve noticed that<br>
+most programs these days tend to include that feature.<br>
+<br>
+I&#x27;ve sorted out how to write transformation functions to convert the <br>
+4     <br>
+possible &quot;similar&quot; positions according to the first black move (f5,e6,c3<br>
+or d4) and therefore can limit the library to only the standard openings<br>
+starting with f5.<br>
+<br>
+But now I&#x27;m trying to figure out what the quickest and most efficient<br>
+method is of searching through the library to match the current moves<br>
+with the ones in the library.<br>
+<br>
+I was thinking of creating  a tree structure with the 3 first white moves at<br>
+the top (or 2 if I decide to eliminate the &quot;parallel&quot;) with the following<br>
+black moves as children nodes and the following white moves as children and<br>
+so on...<br>
+<br>
+Matching the opening would then just be a matter of traversing the tree<br>
+and if a move isnt found among the current nodes then the program should<br>
+exit &quot;opening mode&quot; and start thinking.<br>
+<br>
+Can anyone tell me what they think of this method ? Maybe there are<br>
+drawbacks which I havent thought about.. Any advice from experience<br>
+Othello programmers would be appreciated.<br>
+<br>
+Thanx<br>
+<br>
+  __                                                                 /\*<br>
+ / _|_ _ ___  __ _ __ _ _  _   froggy@blitzen.canberra.edu.au        @@<br>
+|  _| &#x27;_/ _ \/ _` / _` | || |                                        (J)<br>
+|_| |_| \___/\__, \__, |\_, |  EXAMS ARE OVER!! and its winter... +-(   )-+<br>
+              |___/|___/ |__/  that means....  SKI TIME!!!!!!!!   |  //   |  <br>
+<br>
+       <br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

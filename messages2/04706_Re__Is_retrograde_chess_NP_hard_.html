@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Is retrograde chess NP-hard?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Is retrograde chess NP-hard?</h1>
+    <p><strong>From:</strong> hrubin@odds.stat.purdue.edu (Herman Rubin)<br>
+    <strong>Date:</strong> 15 Mar 2001 16:53:09 -0500</p>
+    <hr>
+    <div>In article &lt;98qs11$55k@severi.mit.edu&gt;,  &lt;tchow@lsa.umich.edu&gt; wrote:<br>
+&gt;Apparently no theorems are known about the computational complexity of<br>
+&gt;retrograde analysis in chess (or other well-known abstract games.  I have<br>
+&gt;raised this question before but have a couple of new thoughts that maybe<br>
+&gt;someone can build on.<br>
+<br>
+&gt;There are many ways to formalize the problem of retrograde analysis.  I am<br>
+&gt;taking the following as a working definition.<br>
+<br>
+&gt;INSTANCE: Two generalized chess positions, a &quot;start position&quot; and an &quot;end<br>
+&gt;position.&quot;<br>
+<br>
+&gt;QUESTION: Does there exist a legal sequence of moves taking us from the<br>
+&gt;start position to the end position?<br>
+<br>
+&gt;As a variation, we could also specify a bound on the number of moves.<br>
+&gt;It is not even immediately clear that this problem is in NP, because the<br>
+&gt;obvious &quot;certificate&quot; (i.e., the list of moves) could be exponential in<br>
+&gt;length.<br>
+<br>
+The question is definitely in P; in fact, finite.  One could<br>
+list all the K positions in chess (on a sufficiently large <br>
+computer).  Now take the KxK matrix, and start out by writing<br>
+0 in all the diagonal positions, 1 in the ij position if it<br>
+is possible to get from position i to position j in one move,<br>
+and K+1 otherwise.  Now proceed to produce a new array by<br>
+replacing the ij-th element by the minimum of the sum over<br>
+m of the im-th and the mj-th elements.  It is trivial to see<br>
+that this terminates (reduces no elements) in at less than<br>
+K^2 steps; the number is even less than K.  The element in<br>
+the ij-th position on termination is the number of moves<br>
+needed to get from position i to position j.<br>
+<br>
+-- <br>
+This address is for information only.  I do not claim that these views<br>
+are those of the Statistics Department or of Purdue University.<br>
+Herman Rubin, Dept. of Statistics, Purdue Univ., West Lafayette IN47907-1399<br>
+hrubin@stat.purdue.edu         Phone: (765)494-6054   FAX: (765)494-0558<br>
+<br>
+<br>
+</div>
+</body>
+</html>

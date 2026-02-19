@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Why chess is easy to program, Go hard (long)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Why chess is easy to program, Go hard (long)</h1>
+    <p><strong>From:</strong> shrier@protocol.zycad.com (George Shrier)<br>
+    <strong>Date:</strong> 23 Sep 1994 14:51:11 -0400</p>
+    <hr>
+    <div><br>
+1) The State of the Art<br>
+<br>
+	Chess computers have already reached grandmaster strength, whereas<br>
+Go programs are still quite weak. It is usually felt that this proves chess is<br>
+primarily a fluid tactical game of calculation after all, whereas Go is a more<br>
+strategic and structural game requiring the elusive qualities of judgement,<br>
+intuition etc. that are too vague to be programmed. In fact, this<br>
+may well be so, but the explanation has no real value; there are games<br>
+that are more tactical than chess but not so easy to program effectively,<br>
+as will be seen.<br>
+<br>
+	At the dawn of the AI era almost 40 years ago, chess was thought<br>
+to be a conceptual game in nature. There were claims that any program that<br>
+played well &quot;could be said to have penetrated to the core of human intellectual<br>
+endeavor&quot;. The reasoning was that the branching factor was so large that<br>
+straight minimax search could be dismissed as hopeless a priori for any<br>
+imaginable computer speed. Hence there could be no alternative to an<br>
+elaborately organized system that knew patterns, evaluated positions<br>
+at a high level of abstraction, constructed plans based on those results,<br>
+and generally mimicked the complexities of human reasoning.<br>
+<br>
+	High-IQ chess programs have not progressed far. Instead, the brute<br>
+force approach added small, clever tricks to brutality. Alpha-beta and hash<br>
+tables made the largest contributions. Various extension heuristics, and in<br>
+some cases, mild forward pruning techniques were incorporated, without<br>
+disturbing the &quot;completeness&quot; property of full-width search. Last but not<br>
+least, the speed of hardware has improved by many orders of magnitude.<br>
+<br>
+	Interestingly, evaluation functions have not developed to a<br>
+commensurate degree. This is a significant observation.<br>
+<br>
+<br>
+2) What is Strategy?<br>
+<br>
+	Beginners who play chess find frequent frustration. They know that<br>
+the queen is valuable, but when they sneak up to attack it, it moves away.<br>
+Wherever they look, the enemy is defended. The objective is to capture the<br>
+enemy King, but they see no means to advance toward the goal.<br>
+<br>
+	In truth, long term strategy can only be based on features that are<br>
+invariant, or nearly so. Material is such a feature. When someone is up a pawn,<br>
+he tends to remain a pawn ahead, other things being equal. However, material<br>
+is a coarse quantity and begs the question of how one PLANS to win material.<br>
+Certainly, the location of the enemy queen is too ephemeral to be the basis<br>
+of strategy.<br>
+<br>
+	The secret lies in a peculiarity of chess rules. Pawns capture<br>
+differently than they move, contrary to many chess variants. Therefore, as<br>
+enemy pawns approach other, they will frequently lock in chains, immobilizing<br>
+each other. This imparts a fixed, structural aspect to chess positions. Backward<br>
+and isolated pawns are bad because there is no way for them to change status<br>
+by ordinary means, only by heroic feats of accidental tactics. Because they<br>
+can&#x27;t move, they constitute fixed targets, so it is valid strategy to &quot;pile up&quot;<br>
+on them. The configuration of White pawns on e4, f5, g4, and h2 versus Black<br>
+pawns on e5, f6. g5, and h6 favors White, ignoring other factors. That is<br>
+because both before and after White gets around to advancing his pawn to h4,<br>
+Black has no nonmagical way to improve his structure, h5 probably being<br>
+unplayable. After White plays h2-h4, Black suffers from an isolated pawn<br>
+on an open file if he captures. If he refuses, White has the OPTION of<br>
+holding or capturing himself, in his own good time. This itself constitutes<br>
+possessing the initiative. A valid strategy would be to mass rooks on the h file<br>
+before capturing, and/or place a Knight on h5. It is safe to refer to this<br>
+as strategy, because the same plan holds valid semipermanently,<br>
+whatever distractions are in progress elsewhere. Fixed pawn structures also<br>
+affect mobility of pieces, hence bishops can be &quot;bad&quot; on a permanent basis,<br>
+knights may have &quot;outpost&quot; squares begging for their occupation, etc.<br>
+<br>
+	Occasionally, direct King hunts are an appropriate strategy, but<br>
+definitely not always.  In crowded middlegame positions, the general area<br>
+that the King calls home is constrained severely, because it is unsafe to<br>
+wander out in the open. In this way, the target can be considered fixed.<br>
+If the pawn structure is such that the attacker also has a permanent space<br>
+advantage on that side, it may be feasible to contemplate massing pieces for<br>
+a direct assault.<br>
+<br>
+	It is not hard to construct positions that require theorem proving<br>
+to understand, and that will cause the typical strong chess program great<br>
+heartburn. Such positions now seem exceptional. It suffices to measure a number<br>
+of (somewhat) invariant and independent properties and just add them up. Some<br>
+even vaguer tactical measures of &quot;activity&quot; are often added to the mix.<br>
+<br>
+	The details don&#x27;t matter greatly, and no program attempts to be<br>
+comprehensive. What the programs do is sift through the great mass of<br>
+meaningless moves and select those that appear to collect the handful of<br>
+(semi)permanent goodies they happen to know about. It works.<br>
+<br>
+3) Other Games<br>
+<br>
+	The situation is clearer if we look at other unsolved games. The<br>
+table below is a subjective estimate, on a 1-4 scale, of how much effort was<br>
+put into other games, and how successful the results were in comparison to<br>
+human play. <br>
+<br>
+Game		Effort	Success<br>
+---------------------------------<br>
+Chess		4	3<br>
+Go		3	1<br>
+Othello		3	4<br>
+Checkers	2	4<br>
+Int&#x27;l Checkers	3	2<br>
+Kalah		1	4<br>
+Chinese Chess	2	1<br>
+Shogi		1	1	(from the land of consumer electronics!)<br>
+<br>
+<br>
+	The game of Othello is particularly illuminating. The object of the<br>
+game is to end up with the most disks of your color. However, an evaluation<br>
+function that simply counts disks performs poorly. The problem is that when<br>
+a disk flips to your color, that is no achievement, since it can easily flip<br>
+again.  However, a corner square once gained can never be lost. When that<br>
+happens, the squares two away begin to loom as permanent prizes also. The<br>
+invariants in Othello sometimes really are invariant in an absolute sense.<br>
+The evaluations are hence less subject to error, and the programs are very<br>
+strong indeed.<br>
+<br>
+	In checkers, material advantage suggests victory more surely than in<br>
+chess. In actuality, strong programs consider a couple dozen other terms also.<br>
+For instance, control of the 14, 15, 18, and 19 squares is important and often<br>
+persistent. The greater reliability of the functions and their greater<br>
+coverage of what is important lead to greater success than in chess.<br>
+<br>
+	In chess, the features covered during evaluation are less complete,<br>
+and less reliable, in that they can not infrequently be overturned by tactical<br>
+noise. What the success of computer chess has shown is that the loss is<br>
+manageable, that sound, greedy play on average compensates for occasional<br>
+misunderstandings of deep positions. Of course, the amount of careful<br>
+engineering effort expended over the years has been substantial.<br>
+<br>
+	International Checkers presents a good contrast to the version<br>
+played in English-speaking countries. Material advantage is still important,<br>
+but not as insurmountable as in the 8x8 game. The powers of the King are so<br>
+vast that heavy sacrifices may be justified in order to get one early. This<br>
+is situation dependent, so humans need to exercise judgement. Also, it<br>
+may happen that 3 Kings vs 1 is a draw, so naive bean counting doesn&#x27;t<br>
+capture the essence of the position. In consequence, successful programming<br>
+require devoting relatively more effort to the design of evaluation functions<br>
+than to deep search. Comments from the better informed would be welcome.<br>
+<br>
+	Kalah is an extreme example of a purely tactical game. I suspect<br>
+that there ARE no long term mystical structural features that people can latch<br>
+on to. It is all calculation, and it is even unclear if one can improve on the<br>
+trivial evaluation function of counting the number of stones in each kalah.<br>
+Featureless games show the computer in a good light, but bore humans.<br>
+<br>
+	In contrast, the last two games above prove that tactical games do not<br>
+imply easy programmability. In Chinese Chess, there are only 5 out of 9<br>
+files occupied by pawns. When they meet, one is annihilated, so the<br>
+positions are always &quot;open&quot; in the chess sense. The board is bigger<br>
+than western chess, but the pieces are weaker. The King position is more<br>
+fixed, though. My impression is that strategy consists of keeping track<br>
+of tempo counts to wheel pieces from one theater to another, one theater<br>
+always being the King&#x27;s palace. A stronger player would have to comment.<br>
+In Shogi, pieces may be resurrected, so material advantage is less important<br>
+than in chess but more so than in Bughouse. I do not know what human strategy<br>
+consists of here either, although it is manifestly present. I am assuming<br>
+the two Oriental games are more tactical than western chess, yet less<br>
+programmable.<br>
+<br>
+	All things considered, Go seems nearly as well suited as Othello for<br>
+tracking progress, at least in later stages of play. The score is merely<br>
+the sum of the situations on each front.<br>
+<br>
+4) Tentative Conclusion<br>
+<br>
+	There are games that are highly tactical and suitable for machines<br>
+only, yet there are other games that are tactical and played best by people.<br>
+Chess is quite strategic, though with a high tactical component, yet amenable<br>
+to computer play. Go is more strategic still, yet far more refractory<br>
+to mechanization.<br>
+<br>
+	I think the tactics vs strategy dichotomy is simply an irrelevant<br>
+one, in determining programmability. A slightly better determinant is to<br>
+estimate how easily the human-relevant invariants can be formalized. It may<br>
+seem that Go is hard because there is no quick-and-dirty way to measure<br>
+&quot;shape&quot; or &quot;thickness&quot;, but then, comparably murky notions in chess either<br>
+proved unnecessary, or had adequate crude substitutes.<br>
+<br>
+	The distinctive feature of game programming for games other than Go,<br>
+is the encapsulation of evaluation knowledge in a simple function evaluated<br>
+at endpoints of the search. (There is some trivial knowledge in the search<br>
+too, such as &quot;look at captures first&quot;, and &quot;quiesce on captures&quot;. Adding much<br>
+more than this has proven even more difficult than finding ways to usefully<br>
+add knowledge to evaluation functions.) This separation of evaluation from<br>
+search is of course a very handy thing for developmental and theoretical<br>
+purposes. However, in Go, the security of a group and its territory may depend<br>
+on the outcome of a hypothetical ladder fight seen to end in victory for one<br>
+side.  If it so happens that the points crucial to the fight in other areas<br>
+intersect those in the implicit ladder, the status of the first group must be<br>
+reassessed. Here, local search is PART of evaluation. I believe THIS is the key<br>
+peculiarity of Go.<br>
+<br>
+	In all likelihood, the search and evaluation processes in strong Go<br>
+programs must be more tightly coupled. This does not necessarily imply<br>
+construction of high IQ planning modules of the sort that failed in chess.<br>
+The singular extensions and null move heuristics in chess point to a better way.<br>
+These are &quot;weak heuristics&quot; that dynamically (i.e. during search) determine<br>
+importance or unimportance of candidate moves without the need for incorporating<br>
+deep domain knowledge. It was a mistake in computer chess history to regard <br>
+forward pruning as an absolute. Some moves are profitably searched deeper,<br>
+and some are less worthy, but that is strictly a matter of degree. The<br>
+completeness of full width search is valuable, too valuable to give up.<br>
+Go programs will have to employ tricks like these, and more aggressively<br>
+than any chess programs have done to date.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

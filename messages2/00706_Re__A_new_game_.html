@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: A new game?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: A new game?</h1>
+    <p><strong>From:</strong> rmb@psg.npl.co.uk (Robin Barker)<br>
+    <strong>Date:</strong> 27 Jan 93 10:37:50 GMT</p>
+    <hr>
+    <div>&gt;In article &lt;C19spy.3q2@SSD.intel.com&gt;, wms@ssd.intel.com (William Shubert) writes:<br>
+&gt;&gt; boll@CS.ColoState.EDU (dave boll) describes a new game:<br>
+&gt;&gt;&gt;    The board: A MxN rectangle of dots.         <br>
+&gt;&gt;&gt;    The play : Players alternate making moves, last one able to move wins<br>
+&gt;&gt;&gt;    A move: A move in this game consists of drawing a straight line <br>
+&gt;&gt;&gt;       connecting two (previously untouched) dots. The line may not cross<br>
+&gt;&gt;&gt;       any previously drawn line, nor can it pass thru one dot on the way<br>
+&gt;&gt;&gt;       to another. Each dot can have at most one line touching it.<br>
+&gt;&gt; ...<br>
+&gt;&gt;&gt;  Anyway, has anyone ever heard of a game like this? Thoughts?<br>
+&gt;&gt; <br>
+&gt;&gt;    Someone descibed a similar game about a month or two ago.  With this game<br>
+&gt;&gt; it&#x27;s pretty clear immediately that player 1 can win on any MxN board if M<br>
+&gt;&gt; or N is even:<br>
+&gt;&gt; <br>
+&gt;&gt; +   +   +   +<br>
+&gt;&gt;        /<br>
+&gt;&gt; +   + / +   +<br>
+&gt;&gt;      /<br>
+&gt;&gt; +   +   +   +<br>
+&gt;&gt; <br>
+&gt;&gt; From here, any move that player 2 makes can be &quot;mirrored&quot; by player 1; player&gt;&gt; 2 MUST run out of moves first.  Is there a similar easy winning strategy on<br>
+&gt;&gt; oddxodd boards?<br>
+<br>
+&gt;On boards with odd sides with no common factor, you can connect a line between<br>
+&gt;two corners with the same effect.<br>
+<br>
+This is rubbish.  A line between two corners on a board with odd sides always<br>
+goes throught the central dot, so is not a legal move.  This move is legal<br>
+(and the first move of a winning &quot;mirror&quot; strategy, as described above) on<br>
+an MxN board if (M-1) and (N-1) have no common factor.  However, this <br>
+requires that one of (M-1) and (N-1) is odd, so one of M or N is even; so<br>
+this construction is less general than the construction above.  <br>
+<br>
+There can be no simple &quot;mirror&quot; strategy on an odd sided board: the first move<br>
+touches two dots, leaving an odd number of dots, which can not be divided into<br>
+two congruent disjoint sets.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

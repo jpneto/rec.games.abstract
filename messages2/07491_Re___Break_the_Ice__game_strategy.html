@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: &quot;Break the Ice&quot; game strategy</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: &quot;Break the Ice&quot; game strategy</h1>
+    <p><strong>From:</strong> Gerry Quinn &lt;gerryq@DELETETHISindigo.ie&gt;<br>
+    <strong>Date:</strong> Tue, 1 Aug 2006 13:36:32 +0100</p>
+    <hr>
+    <div>In article &lt;Pine.LNX.4.60-041.0607311921010.5855<br>
+@unix46.andrew.cmu.edu&gt;, ajonospam@andrew.cmu.edu says...<br>
+&gt; <br>
+&gt;    I&#x27;m trying, just for fun, to make a computer player for an abstract<br>
+&gt; game similar to Milton Bradley&#x27;s &quot;Dont Break the Ice&quot;<br>
+&gt; <br>
+&gt;    http://en.wikipedia.org/wiki/Don&#x27;t_Break_the_Ice<br>
+&gt; <br>
+&gt; minus the chance and physical-skill elements. Source code and a <br>
+&gt; DOS/Windows executable available here for anyone who wants them:<br>
+&gt; <br>
+&gt;    http://www.contrib.andrew.cmu.edu/~ajo/disseminate/ice.zip<br>
+&gt; <br>
+&gt; The game is played on a grid of cells, with each cell initially filled<br>
+&gt; with an &quot;ice block.&quot; Each player, on his turn, &quot;knocks out&quot; one of the<br>
+&gt; blocks; if this causes any other blocks to be unsupported, they also<br>
+&gt; fall. The player who causes the last block to fall is the loser.<br>
+&gt; <br>
+&gt;    Example game:<br>
+&gt; <br>
+&gt;      123<br>
+&gt; <br>
+&gt;    a OOO    Alice starts by knocking out B2, the central block.<br>
+&gt;    b OOO<br>
+&gt;    c OOO<br>
+&gt; <br>
+&gt;      OOO    Bob knocks out A3,<br>
+&gt;      O.O    causing A2 and B3 to fall, as they&#x27;re no longer<br>
+&gt;      OOO    supported by an &quot;arch&quot; of connected blocks.<br>
+&gt; <br>
+&gt;      O..    Alice knocks out C2, causing C3 to fall.<br>
+&gt;      O..<br>
+&gt;      OOO<br>
+&gt; <br>
+&gt;      O..    Bob is forced to knock out one of the blocks<br>
+&gt;      O..    in the remaining arch, causing all three to<br>
+&gt;      O..    fall; he loses the game.<br>
+&gt; <br>
+&gt;    My questions for the rec.games.abstract folks: Has this game been<br>
+&gt; analyzed before? Is there any known strategy that applies to many<br>
+&gt; different kinds of boards (&quot;go for the corners first,&quot; or something<br>
+&gt; like that?)<br>
+<br>
+Unlikely, since the win lose condition is determined by the last move.  <br>
+<br>
+It may be that there is some sort of symmetry-based winning solution, <br>
+but in this case the game is degenerate and should be modified to have <br>
+some random blocks removed at the start.<br>
+<br>
+&gt;    My question for the comp.programming folks: I quickly determined<br>
+&gt; that the standard alpha-beta pruning technique doesn&#x27;t help with<br>
+&gt; this game, because I don&#x27;t know any way to evaluate the &quot;strength&quot;<br>
+&gt; of a position except as a win or loss. So most of the branches in<br>
+&gt; an alpha-beta tree of any reasonable depth (i.e., not deep enough<br>
+&gt; to see all possible endings) end up with a value of zero, which means<br>
+&gt; the computer is moving randomly most of the time.<br>
+&gt; <br>
+&gt;    Yet there are some positions, such as (I think)<br>
+&gt; <br>
+&gt;    ....OO<br>
+&gt;    ....OO<br>
+&gt;    ....OO<br>
+&gt;    ....OO<br>
+&gt;    OOOOOO<br>
+&gt;    OOOOOO<br>
+&gt; <br>
+&gt; which a human player can tell are a win for the moving player, without<br>
+&gt; having to explicitly examine the whole tree --- we can collapse certain<br>
+&gt; &quot;families&quot; of moves into single cases, for example. How do we get the<br>
+&gt; computer to do the same thing?<br>
+&gt; <br>
+&gt;    Is there any way to get the computer to play smarter, other than<br>
+&gt; adding more and more special cases to the position-evaluation code?<br>
+<br>
+I don&#x27;t think so, other than making a general analysis.  Maybe there is <br>
+some set of numerical values that can be calculated from a given <br>
+system, and then the game reduces to Nim... that kind of thing.<br>
+<br>
+- Gerry Quinn<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: othello opening library</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: othello opening library</h1>
+    <p><strong>From:</strong> fuzzduster@aol.com (Fuzzduster)<br>
+    <strong>Date:</strong> 16 07 1995 00:00:00 GMT</p>
+    <hr>
+    <div>Hi,<br>
+I wrote an automated learning opening mechanism for eclipse, a program I<br>
+wrote<br>
+with  Colin Springer which is the #2 comouter player in the world<br>
+(according to <br>
+ios).  There is I think a problem with move sequence based opening<br>
+libraries: that is, there are LOTS of tranpositions which occur at various<br>
+stages of the game. <br>
+There are programs that fo it this way, but I believe they have fancy<br>
+mechanisms<br>
+to re-connect transpoing lines; IMO this is a pain in the arse.<br>
+<br>
+Eclipse uses a position based book; it stores all positions as 4 32<br>
+bit numbers along with a score for the position (the position is rotated<br>
+and flipped<br>
+each of 8 ways to get the lowest valued symmetry, which resolves the f5 d3<br>
+c4 e6<br>
+symmetry problem and other transpositions).  Then the book is minimaxed,<br>
+and<br>
+to chose a move from a given position we simply look for all it&#x27;s children<br>
+in the book, and chose the highest valued one (if found). This method also<br>
+suffers from<br>
+tranpositions sometimes (but is easier to deal with than the move sequence<br>
+approach IMO); for example your opponent may play a new move, and<br>
+you may have only one (bad) move in the book...  but a better move is<br>
+sitting there to be played.  These cases can be fixed by making sure the<br>
+book eval<br>
+never drops; if so you&#x27;ve hit this situation, and should leave book<br>
+instead of playing that move.<br>
+<br>
+This is a short and fast explanation of the eclipse book ... I can go into<br>
+more details if you like.  <br>
+<br>
+Mike Giles (Lemmy on IOS)  <br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

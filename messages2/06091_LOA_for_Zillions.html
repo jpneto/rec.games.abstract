@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>LOA for Zillions</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>LOA for Zillions</h1>
+    <p><strong>From:</strong> jankrihau@hotmail.com (Jan Kristian Haugland)<br>
+    <strong>Date:</strong> 20 Dec 2002 03:20:11 -0800</p>
+    <hr>
+    <div>The current LOA for Zillions doesn&#x27;t play quite correctly.<br>
+You win if and only if you make the last move and leave your<br>
+own pieces connected. If you leave your opponent&#x27;s pieces<br>
+connected (with a capture), you _should_ lose, or draw if<br>
+your own pieces get connected also. Does anyone know how to<br>
+fix that in the zrf code?<br>
+<br>
+I&#x27;ve included code for a few variants below (not hard to do,<br>
+of course). Just paste it in at the end of loa.zrf. Have fun!<br>
+<br>
+J K Haugland<br>
+http://www.neutreeko.com<br>
+<br>
+<br>
+; zrf code starts here<br>
+<br>
+(variant (title &quot;-&quot;))<br>
+<br>
+(variant<br>
+  (title &quot;Lines of Action Border&quot;)<br>
+<br>
+  (description &quot;Lines of Action with alternative starting position&quot;)<br>
+<br>
+  (board-setup<br>
+    (Black (Disk a1 c1 e1 g1 h2 h4 h6 h8 f8 d8 b8 a7 a5 a3))<br>
+    (White (Disk b1 d1 f1 h1 h3 h5 h7 g8 e8 c8 a8 a6 a4 a2))<br>
+    (Neutral (Goal indicator))<br>
+  )<br>
+)<br>
+<br>
+(variant<br>
+  (title &quot;Lines of Action Interlaced&quot;)<br>
+<br>
+  (description &quot;Lines of Action with alternative starting position&quot;)<br>
+<br>
+  (board-setup<br>
+    (Black (Disk b1 c1 d1 e1 f1 g1 b7 c7 d7 e7 f7 g7))<br>
+    (White (Disk b2 c2 d2 e2 f2 g2 b8 c8 d8 e8 f8 g8))<br>
+    (Neutral (Goal indicator))<br>
+  )<br>
+)<br>
+<br>
+(variant<br>
+  (title &quot;Lines of Action Corner&quot;)<br>
+<br>
+  (description &quot;Lines of Action with alternative starting position&quot;)<br>
+<br>
+  (board-setup<br>
+    (Black (Disk a1 b1 c1 a2 b2 a3 h6 h7 h8 g7 g8 f8))<br>
+    (White (Disk h1 g1 f1 h2 g2 h3 a8 a7 a6 b8 b7 c8))<br>
+    (Neutral (Goal indicator))<br>
+  )<br>
+)<br>
+<br>
+(variant (title &quot;-&quot;))<br>
+<br>
+(variant<br>
+  (title &quot;Lines of Action 6x6&quot;)<br>
+<br>
+  (description &quot;Lines of Action on a 6x6 board&quot;)<br>
+<br>
+  (board<br>
+    (image &quot;images\Solitaire\6x6bd.bmp&quot;)<br>
+<br>
+    (grid<br>
+      (start-rectangle 6 6 36 36)<br>
+      (dimensions<br>
+        (&quot;a/b/c/d/e/f&quot; (38 0))<br>
+        (&quot;1/2/3/4/5/6&quot; (0 38))<br>
+      )<br>
+      (directions<br>
+        (n 0 -1)   (e 1 0)     (s 0 1)   (w -1 0)<br>
+        (ne 1 -1)  (nw -1 -1)  (se 1 1)  (sw -1 1)<br>
+        (nc 0 -1)  (ec 1 0)    (sc 0 1)  (wc -1 0)<br>
+        (nec 1 -1) (nwc -1 -1) (sec 1 1) (swc -1 1)<br>
+      )<br>
+    )<br>
+<br>
+    (dummy end indicator)<br>
+<br>
+    (links nc (a1 a6) (b1 b6) (c1 c6) (d1 d6) (e1 e6) (f1 f6))<br>
+    (links ec (f1 a1) (f2 a2) (f3 a3) (f4 a4) (f5 a5) (f6 a6))<br>
+    (links sc (a6 a1) (b6 b1) (c6 c1) (d6 d1) (e6 e1) (f6 f1))<br>
+    (links wc (a1 f1) (a2 f2) (a3 f3) (a4 f4) (a5 f5) (a6 f6))<br>
+    (links nec (a1 a1) (b1 a2) (c1 a3) (d1 a4) (e1 a5) (f1 a6)<br>
+               (f2 b6) (f3 c6) (f4 d6) (f5 e6) (f6 f6))<br>
+    (links nwc (f1 f1) (e1 f2) (d1 f3) (c1 f4) (b1 f5) (a1 f6)<br>
+               (a2 e6) (a3 d6) (a4 c6) (a5 b6) (a6 a6))<br>
+    (links sec (a6 a6) (b6 a5) (c6 a4) (d6 a3) (e6 a2) (f6 a1)<br>
+               (f5 b1) (f4 c1) (f3 d1) (f2 e1) (f1 f1))<br>
+    (links swc (f6 f6) (e6 f5) (d6 f4) (c6 f3) (b6 f2) (a6 f1)<br>
+               (a5 e1) (a4 d1) (a3 c1) (a2 b1) (a1 a1))<br>
+<br>
+    (links next (a1 a2) (a2 a3) (a3 a4) (a4 a5) (a5 a6) (a6 b1)<br>
+                (b1 b2) (b2 b3) (b3 b4) (b4 b5) (b5 b6) (b6 c1)<br>
+                (c1 c2) (c2 c3) (c3 c4) (c4 c5) (c5 c6) (c6 d1)<br>
+                (d1 d2) (d2 d3) (d3 d4) (d4 d5) (d5 d6) (d6 e1)<br>
+                (e1 e2) (e2 e3) (e3 e4) (e4 e5) (e5 e6) (e6 f1)<br>
+                (f1 f2) (f2 f3) (f3 f4) (f4 f5) (f5 f6) (f6 end))<br>
+<br>
+  )<br>
+<br>
+  (board-setup<br>
+    (Black (Disk b1 c1 d1 e1 b6 c6 d6 e6))<br>
+    (White (Disk a2 a3 a4 a5 f2 f3 f4 f5))<br>
+    (Neutral (Goal indicator))<br>
+  )<br>
+<br>
+)<br>
+<br>
+(variant<br>
+  (title &quot;Lines of Action 5x5&quot;)<br>
+<br>
+  (description &quot;Lines of Action on a 5x5 board&quot;)<br>
+<br>
+  (board<br>
+    (image &quot;images\TicTacToe\TTT5x5.bmp&quot;)<br>
+<br>
+    (grid<br>
+      (start-rectangle -3 0 50 50)<br>
+      (dimensions<br>
+        (&quot;a/b/c/d/e&quot; (50 0))<br>
+        (&quot;1/2/3/4/5&quot; (0 50))<br>
+      )<br>
+      (directions<br>
+        (n 0 -1)   (e 1 0)     (s 0 1)   (w -1 0)<br>
+        (ne 1 -1)  (nw -1 -1)  (se 1 1)  (sw -1 1)<br>
+        (nc 0 -1)  (ec 1 0)    (sc 0 1)  (wc -1 0)<br>
+        (nec 1 -1) (nwc -1 -1) (sec 1 1) (swc -1 1)<br>
+      )<br>
+    )<br>
+<br>
+    (dummy end indicator)<br>
+<br>
+    (links nc (a1 a5) (b1 b5) (c1 c5) (d1 d5) (e1 e5))<br>
+    (links ec (e1 a1) (e2 a2) (e3 a3) (e4 a4) (e5 a5))<br>
+    (links sc (a5 a1) (b5 b1) (c5 c1) (d5 d1) (e5 e1))<br>
+    (links wc (a1 e1) (a2 e2) (a3 e3) (a4 e4) (a5 e5))<br>
+    (links nec (a1 a1) (b1 a2) (c1 a3) (d1 a4) (e1 a5)<br>
+               (e2 b5) (e3 c5) (e4 d5) (e5 e5))<br>
+    (links nwc (e1 e1) (d1 e2) (c1 e3) (b1 e4) (a1 e5)<br>
+               (a2 d5) (a3 c5) (a4 b5) (a5 a5))<br>
+    (links sec (a5 a5) (b5 a4) (c5 a3) (d5 a2) (e5 a1)<br>
+               (e4 b1) (e3 c1) (e2 d1) (e1 e1))<br>
+    (links swc (e5 e5) (d5 e4) (c5 e3) (b5 e2) (a5 e1)<br>
+               (a4 d1) (a3 c1) (a2 b1) (a1 a1))<br>
+<br>
+    (links next (a1 a2) (a2 a3) (a3 a4) (a4 a5) (a5 b1)<br>
+                (b1 b2) (b2 b3) (b3 b4) (b4 b5) (b5 c1)<br>
+                (c1 c2) (c2 c3) (c3 c4) (c4 c5) (c5 d1)<br>
+                (d1 d2) (d2 d3) (d3 d4) (d4 d5) (d5 e1)<br>
+                (e1 e2) (e2 e3) (e3 e4) (e4 e5) (e5 end))<br>
+<br>
+  )<br>
+<br>
+  (board-setup<br>
+    (Black (Disk b1 c1 d1 b5 c5 d5))<br>
+    (White (Disk a2 a3 a4 e2 e3 e4))<br>
+    (Neutral (Goal indicator))<br>
+  )<br>
+)<br>
+<br>
+<br>
+</div>
+</body>
+</html>

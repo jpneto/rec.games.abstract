@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Hex Win Proof?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Hex Win Proof?</h1>
+    <p><strong>From:</strong> torbenm@diku.dk (Torben gidius Mogensen)<br>
+    <strong>Date:</strong> 22 Mar 2004 16:35:02 +0100</p>
+    <hr>
+    <div>Chan-Ho Suh &lt;suh@math.ucdavis.nospam.edu&gt; writes:<br>
+<br>
+&gt; In article &lt;w565cxi4n1.fsf@pc-032.diku.dk&gt;, Torben gidius Mogensen<br>
+&gt; &lt;torbenm@diku.dk&gt; wrote:<br>
+&gt;<br>
+&gt; &gt; Assume that there is a white path connecting top and bottom and a<br>
+&gt; &gt; black path connecting left to right.  These must intersect, but on a<br>
+&gt; &gt; hex board two paths can only intersect if they share a hex. <br>
+&gt; [snipped]<br>
+&gt; <br>
+&gt; Why must they intersect?  That would seem to be the core of the proof.<br>
+<br>
+If you have a rectangle (skewed or not), a curve that connects top and<br>
+bottom must intersect a curve that connects left and right (though<br>
+this can be at the end-point of one or both curves).  This is true for<br>
+any two continuous curves, not just for paths through hexes.  I<br>
+suppose you can be deliberately obtuse and require a proof for this,<br>
+but I think an &quot;intelligent layman&quot; would accept this without proof.<br>
+After all, what was asked for was a proof that would be<br>
+&quot;understandable and reasonably convincing&quot;.<br>
+<br>
+I think going into a rigid mathematical proof from first principles<br>
+would be more confusing than not, same as requiring a formal proof<br>
+that a+b = b+a in an informal discussion about addition.<br>
+<br>
+Nevertheless, you can come through the proof without using the<br>
+intersection property:<br>
+<br>
+We add an extra line filled with white at the top and bottom and<br>
+filled with black left and right.  The new figure has no corner hexes<br>
+and a white path connects top and bottom of the old board if and only<br>
+if in the new board the two new white lines are parts of the same<br>
+connected area and similarly for the black left-to-right connection.<br>
+(If you need a proof for this, you are _really_ obtuse).<br>
+<br>
+We can now do the same reduction as before of eliminating completely<br>
+surrounded areas.  This eliminates all areas except those that contain<br>
+the four new edges, at most one area for each edge.  So, we have the<br>
+following possibilities:<br>
+<br>
+ 1) All four edges belong to distinct areas.<br>
+<br>
+ 2) The two white edges are in the same area, but the two black areas<br>
+    are distinct.<br>
+<br>
+ 3) The two black edges are in the same area, but the two white areas<br>
+    are distinct.<br>
+<br>
+ 4) There is only one black area and only one white area.<br>
+<br>
+If we can eliminate cases 1 and 4, we are done.<br>
+<br>
+We first make an observation (a lemma, to the mathematicians among<br>
+you): An area that contains only one edge has a border consisting of<br>
+this edge plus an unbroken path of hexes of the opposite colour.  This<br>
+means it neighbours exactly one area of the opposite colour.<br>
+<br>
+If all four edges belong to distinct areas, white area A must connect<br>
+to a black area B.  But since neither can connect to more than one<br>
+area, the combination of A and B must be disconnected from the other<br>
+two areas, which makes the board disconnected.  This eliminates case<br>
+1.<br>
+<br>
+Let us assume case 4 and look at the border between the two areas.<br>
+This border meets the edge of the board at the four corners (there is<br>
+a black/white switch at each corner), so we have four points to<br>
+connect by border lines.  This must be done by connecting the four<br>
+points pairwise by two curves (as the four border lines from the<br>
+corners can not all meet in a point).  If the two curves intersect,<br>
+they must have at least one hex-edge in common (they can not cross in<br>
+a point, as each point have only three ways in), so you get an H-like<br>
+connection.  At the place where two lines join into one, there are<br>
+three neighbouring hexes and two of those must be of the same colour.<br>
+Hence, one of the three lines can not be a border between two colours.<br>
+This means that the border lines can not intersect.  So we must have<br>
+connections like )(, that clearly separate the board into 3 areas.<br>
+Hence, the assumption that there were only two areas is wrong.<br>
+<br>
+Now, all that needs to be made more precise/convincing is that an area<br>
+not on the border is completely surrounded by another and can be<br>
+eliminated.  The first part is easy: The border of an area not<br>
+touching an edge must consist of hexes of the opposite colour, and<br>
+these are all connected, so they must belong to a single area.  Since<br>
+they are all connected already, we don&#x27;t get any new connections by<br>
+replacing the surrounded area by the surrounding colour, nor do we<br>
+break any connections to the edges, as the surrounded area is<br>
+disconnected from both edges.<br>
+<br>
+	Torben<br>
+<br>
+<br>
+</div>
+</body>
+</html>

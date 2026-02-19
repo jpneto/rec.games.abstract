@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Palindromes/Antipalindromes In Sequence -- Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Palindromes/Antipalindromes In Sequence -- Game</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Mon, 25 Apr 2011 06:35:10 -0700 (PDT)</p>
+    <hr>
+    <div>Game for 2 players.<br>
+<br>
+Make a row of m squares drawn on paper, where m is decided by both<br>
+players.<br>
+(I suggest that m be &gt;= 16 for beginners.)<br>
+<br>
+Players take turns. On a turn, a player places either a 0 or a 1 into<br>
+any empty square.<br>
+<br>
+After a total of m moves, and when each square has one digit in it,<br>
+play is over.<br>
+<br>
+Player 1 gets the sum of the lengths of all (not necessarily distinct<br>
+but possibly overlapping) palindromes<br>
+(a(1),a(2),a(3)...a(3),a(2),a(1))<br>
+of EVEN length (in the row of 0&#x27;s and 1&#x27;s) as her/his score.<br>
+Player 1&#x27;s score =<br>
+sum{k=1 to [m/2]} 2k*(# of palindromes of length 2k).<br>
+<br>
+Player 2 gets the sum of the lengths of all (not necessarily distinct<br>
+but possibly overlapping) antipalindromes<br>
+(a(1),a(2),a(3)...1-a(3),1-a(2),1-a(1))<br>
+(of even length) (in the row of 0&#x27;s and 1&#x27;s) as her/his score.<br>
+Player 2&#x27;s score =<br>
+sum{k=1 to [m/2]} 2k*(# of antipalindromes of length 2k).<br>
+<br>
+The player with the largest score is the winner.<br>
+<br>
+For example, let us say we have the following row (m=16):<br>
+1001001101000100<br>
+<br>
+We have the following palindromes of even length:<br>
+00, 00, 11, 00, 00, 00<br>
+1001, 1001, 0110<br>
+<br>
+So player 1 gets (2*6 + 4*3 =) 24 points.<br>
+<br>
+We have the following antipalindromes:<br>
+10, 01, 10, 01, 10, 01, 10, 01, 10<br>
+0011, 1010<br>
+100110, 110100<br>
+01001101<br>
+<br>
+So player 2 gets (2*9 + 4*2 + 6*2 + 1*8=) 46 points.<br>
+<br>
+Player 2 wins.<br>
+<br>
+(Did I make a mistake counting up the palindromes and antipalindromes<br>
+in my example?)<br>
+<br>
+I suggest, if this game isn&#x27;t played on a computer, that players count<br>
+their own (anti)palindromes, and confirm them with their opponent. (If<br>
+a player misses any that would contribute to his/her own score, it<br>
+would be his/her own fault.)<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

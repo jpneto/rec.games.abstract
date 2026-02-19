@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: new game: freap (paper &amp; pencil / combinatorial)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: new game: freap (paper &amp; pencil / combinatorial)</h1>
+    <p><strong>From:</strong> rozencrantz@gmail.com<br>
+    <strong>Date:</strong> Sat, 23 Jun 2012 22:55:23 -0700 (PDT)</p>
+    <hr>
+    <div>On Tuesday, June 19, 2012 12:16:16 PM UTC-7, Daniel S. wrote:<br>
+&gt; Hey all.  I haven&#x27;t made a game for a while.  I was inspired by Sprouts and Mark&#x27;s post to make a paper and pencil game so I went the combinatorial route. <br>
+&gt; <br>
+&gt; http://siteswapgeneration.com/games/freap/freap.pdf<br>
+&gt; <br>
+&gt; I tend to make drastic little mistakes so if you notice one let me know.<br>
+&gt; I think it&#x27;s a combinatorial game... is it?<br>
+<br>
+Ok, let me know if I&#x27;m making some huge error, but I think I&#x27;ve solved the 1 and 2-frog games generally:<br>
+A 1-frog game with a jump of 2 or more has Grundy value 2, because you can move the frog either an even number of spaces or an odd number, and then both players just remove empty spaces until you get back to the frog. So if you jumped an even number of spaces, your opponent loses and you win, which is the 0 position, and if you jumped an odd number of spaces, then your opponent&#x27;s no-op move will hand you the position 0, so jumping an odd number of spaces gives G=1.<br>
+<br>
+X___<br>
+._X__ = 0<br>
+.__X_ = 1<br>
+so X___ = 2, and likewise for all 1-frog games.<br>
+<br>
+The 2-frog game is slightly more complicated:<br>
+Your first move has to leave at least one blank space to the left of the frog (because jumping 2 on your first move is an instant loss) and one space to the right of the frog, because you always add a blank space at the end. Ignoring all the other spaces, player 2 can win by jumping to one of these two spaces, whichever one leaves an odd number of blanks before the pair of frogs, so that after all the no-ops are discarded player 1 will lose.<br>
+XX______<br>
+.X___X___p1<br>
+..___XX___p2<br>
+...__XX____p1<br>
+...._XX_____p2<br>
+And p1&#x27;s next no-op move re-creates the start position.<br>
+The 2-frog game is always a Zero game.<br>
+<br>
+I&#x27;m working on the 3-frog game now; 4-jumps and 5-jumps are both 1.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

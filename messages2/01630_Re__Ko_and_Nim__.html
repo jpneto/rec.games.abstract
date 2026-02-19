@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Ko and Nim  </title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Ko and Nim  </h1>
+    <p><strong>From:</strong> markb@bloom.iisc.demon.co.uk (markb)<br>
+    <strong>Date:</strong> Wed, 2 Mar 1994 10:27:20 +0000</p>
+    <hr>
+    <div>kwhyte@dent.uchicago.edu (Kevin Whyte) writes:<br>
+<br>
+&gt;here&#x27;s a game<br>
+&gt;for you.  The game is just nim with 2 extra rules.  The first is <br>
+&gt;that when a player removes counters from a pile they are placed in<br>
+&gt;a discard pile.  In addition to the normal nim moves a player may<br>
+&gt;return some or all of the discard pile to any one pile.  The second<br>
+&gt;rule is the super ko rule : a player may not make a move which <br>
+&gt;repeats a previous position. <br>
+<br>
+This game neatly points up an ambiguity in the definition of Nim, as it&#x27;s<br>
+usually described. Is the game decided by &quot;the winning player is the one<br>
+who takes the last counter&quot; or &quot;the first player who cannot move loses&quot; ?<br>
+In standard Nim, these rules are equivalent. But look what happens in the<br>
+above version, when we start with an initial pile of just two counters:<br>
+<br>
+Starting from the position &lt;2&gt;, I sweep both counters into the discard pile,<br>
+leaving &lt;0&gt;, an empty table. Using the &quot;last counter rule&quot; I have won. But<br>
+my opponent insists on playing until one of us has no legal move left, and<br>
+restores one counter from the discard to give position &lt;1&gt;. Now I&#x27;ve lost,<br>
+because any move I make repeats an earlier position!<br>
+<br>
+The original post was addressed to &quot; those of you familiar with Berlekamp theory&quot;<br>
+so I guess we have to go with the &quot;No legal move&quot; criterion for ending a game.<br>
+In which a case a single pile of &lt;n&gt; counters is a win for the first player exactly<br>
+when n is odd.<br>
+<br>
+Unfortunately you can&#x27;t combine the results for single piles to solve the<br>
+general game, the way you can with Nim, because the discard piles from<br>
+the &quot;sub-games&quot; get merged, so I haven&#x27;t got a full solution yet. As a<br>
+variant on the original posting, what happens if you allow the move of<br>
+taking counters from the discard to form a _new_ pile ( so a game that<br>
+started &lt;3,4,5&gt; could later become &lt;2, 3, 3, 4&gt; ) ?<br>
+<br>
+Mark Bassett<br>
+( Not sure if these posts are getting through, so any comments<br>
+on the above would be appreciated! )<br>
+<br>
+<br>
+</div>
+</body>
+</html>

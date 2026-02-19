@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Binary Primes Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Binary Primes Game</h1>
+    <p><strong>From:</strong> Ilmari Karonen &lt;usenet2@vyznev.invalid&gt;<br>
+    <strong>Date:</strong> Wed, 12 Jan 2011 19:26:29 +0000 (UTC)</p>
+    <hr>
+    <div>[&quot;Followup-To:&quot; header set to sci.math.]<br>
+On 2011-01-12, Leroy Quet &lt;qqquet@mindspring.com&gt; wrote:<br>
+&gt; This is a game for two players.<br>
+&gt;<br>
+&gt; Start by drawing an n-by-n grid on paper. (I don&#x27;t suggest that n be<br>
+&gt; too big, unless you are playing this game on a computer.)<br>
+&gt;<br>
+&gt; The players take turn filling in squares, each player filling in one<br>
+&gt; empty square per move.<br>
+&gt; Each player fills in floor(n^2/4) squares total.<br>
+&gt; (So, 2*floor(n^2/4) squares are filled in all together at the game&#x27;s<br>
+&gt; completion.)<br>
+&gt;<br>
+&gt; Now, interpret the filled-in (black) squares and the blank (white)<br>
+&gt; squares in each row and column as the digits of a binary number. In<br>
+&gt; any particular row or column, either all the black squares represent a<br>
+&gt; 0 or all of the black squares represent 1. And the white squares each<br>
+&gt; equal the opposite binary digit than the black squares represent in<br>
+&gt; that row/column. And the binary number can be read either top to<br>
+&gt; bottom, or bottom to top (for each column), or left to right, or right<br>
+&gt; to left (for each row).<br>
+&gt;<br>
+ [snip]<br>
+&gt;<br>
+&gt; Player 1 gets as a score the product of all of the primes in the<br>
+&gt; columns.<br>
+&gt; Player 2 gets as a score the product of all of the primes in the rows.<br>
+&gt;<br>
+&gt; The player with the largest score wins.<br>
+<br>
+If n is even, player 2 can force all the columns to be composite as<br>
+follows: whenever player 1 plays (i,j), play ((i + n/2) mod n, j).<br>
+So, at least for even n, optimal play must result in a tie or a win<br>
+for player 2.<br>
+<br>
+(If player 2 follows that specific strategy, it&#x27;s easy enough for<br>
+player 1 to force a tie.  My guess would be that this is also the<br>
+outcome of optimal play by both players, although I can&#x27;t quite prove<br>
+that just now.)<br>
+<br>
+-- <br>
+Ilmari Karonen<br>
+To reply by e-mail, please replace &quot;.invalid&quot; with &quot;.net&quot; in address.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

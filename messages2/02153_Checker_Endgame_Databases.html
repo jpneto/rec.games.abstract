@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Checker Endgame Databases</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Checker Endgame Databases</h1>
+    <p><strong>From:</strong> lake@cs.ualberta.ca (Robert Lake)<br>
+    <strong>Date:</strong> 23 Aug 1994 15:01:47 GMT</p>
+    <hr>
+    <div>I just wanted to clarify a misinterpretation of a previous posting<br>
+of mine regarding the computation of checker endgame databases.<br>
+<br>
+The total number of positions (both legal and illegal) in checkers<br>
+is 5 x 10**20.  This can be broken down as follows:<br>
+<br>
+	# PIECES               # POSITIONS<br>
+	 1                             120<br>
+	 2                           6,972<br>
+	 3                         261,224<br>
+	 4                       7,092,774<br>
+	 5                     148,688,232<br>
+	 6                   2,503,611,964<br>
+	 7                  34,779,531,480<br>
+	 8                 406,309,208,481<br>
+	 9               4,048,627,642,976<br>
+	10              34,778,882,769,216<br>
+	11             259,669,578,902,016<br>
+	12           1,695,618,078,654,976<br>
+	13           9,726,900,031,328,256<br>
+	14          49,134,911,067,979,776<br>
+	15         218,511,510,918,189,056<br>
+	16         852,888,183,557,922,816<br>
+	17       2,905,162,728,973,680,640<br>
+	18       8,568,043,414,939,516,928<br>
+	19      21,661,954,506,100,113,408<br>
+	20      46,352,957,062,510,379,000<br>
+	21      82,459,728,874,435,248,160<br>
+	22     118,435,747,136,817,856,688<br>
+	23     129,406,908,049,181,900,384<br>
+	24      90,072,726,844,888,186,150<br>
+<br>
+	Total: 500,995,484,682,338,671,693<br>
+<br>
+We have currently computed over 250 billion of these positions.<br>
+Specifically, all positions with 7 or fewer pieces on the board<br>
+are done as are all even 8 piece positions.  We are currenty<br>
+working on the 5 vs 3 piece positions in the hope that we can<br>
+solve the 5 vs 4 (and eventually 5 vs 5) piece positions.<br>
+<br>
+I really wish 250 billion was half of 500 billion billion, but<br>
+that extra billion really makes my life miserable :-).  It would<br>
+be interesting to know, however, how many of these positions are<br>
+impossible to reach in a game of checkers.<br>
+--<br>
+Rob Lake                           lake@cs.ualberta.ca<br>
+Department of Computing Science    http://web.cs.ualberta.ca/~lake<br>
+University of Alberta              Office: (403) 492-5817<br>
+Edmonton, Alberta, Canada          Fax:    (403) 492-1071<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Question about retrograde analysis algorithm for endgame databases</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Question about retrograde analysis algorithm for endgame databases</h1>
+    <p><strong>From:</strong> &quot;R Gibert&quot; &lt;gibert@cox.net&gt;<br>
+    <strong>Date:</strong> Thu, 25 Apr 2002 04:14:19 GMT</p>
+    <hr>
+    <div>The following is what I&#x27;ve worked out:<br>
+<br>
+Define the EGTB as an array of unsigned char. Each element has one of 3 types of meanings:<br>
+(1) 255: Unknown<br>
+(2) 254: Draw<br>
+(3) 0-254 : number of ply to mate<br>
+<br>
+Step 1: First pass mark all the stalemates as 254, all the mates as 0 and the remainder as 255 for now.<br>
+<br>
+Step 2: For the next pass over all the elements if the current element is 255 (unknown) make all the legal moves for the<br>
+corresponding position and look them up in the table. For all the ones that are mate, select the shortest mate of these. Add 1 to<br>
+the mate score and store in the table for the current element. If all of them are 254, mark the current element as 254.<br>
+<br>
+Step 3: Repeat step 2 until a pass is made without making any changes to the table.<br>
+<br>
+Now you have a complete EGTB for a particular type of ending. All the positions that remain with a value of 255 are draws or are<br>
+&quot;broken&quot;, but for purposes of interpreting 255 when looking up a position legally arrived at, the 255 is interpreted as a draw only.<br>
+All the positions with a value of 254 are draws. The remainder give the DTM (=Distance To Mate).<br>
+<br>
+A legal move can be a capture, so such positions must be looked up in another EGTB table.<br>
+<br>
+The reason why we bother with marking positions with 254 as draws is to speed things up. Otherwise, you can simplify further by<br>
+ignoring this.<br>
+<br>
+There are no complications with repetition of position and the 50 move rule is ignored.<br>
+<br>
+I&#x27;ve left out the important issue of how to index the table with a given position. i.e. the positions Gdel number. This is a<br>
+non-trivial topic, that becomes important for 5-man and 6-man endings.<br>
+<br>
+There is need to make &quot;retrograde&quot; moves.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

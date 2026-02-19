@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bidirectional Line Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Bidirectional Line Game</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Mon, 17 May 2010 13:41:38 -0700 (PDT)</p>
+    <hr>
+    <div>Here is a game for two players.<br>
+<br>
+Needed, an n-by n grid drawn lightly on a piece of paper. Two pens or<br>
+pencils of different colors.<br>
+(I suggest n be at least 6.)<br>
+<br>
+In this game, line segments are each drawn from some vertex of the<br>
+grid (along the lightly drawn grid line) to an adjacent (immediately<br>
+above, right of, below, left of) vertex.<br>
+<br>
+On the first move, the first player draws a line segment with one of<br>
+the pens from any vertex to any adjacent vertex.<br>
+Then the other player draws a line segment with the other pen from<br>
+where the first line segment started to any adjacent vertex, as long<br>
+as the two line segments aren&#x27;t drawn to (end at) the same vertex.<br>
+<br>
+Thereafter, both players on each of their moves may draw a line<br>
+segment of EITHER color from the vertex last drawn to by a line<br>
+segment of that color. The line segment is drawn to any vertex such<br>
+that no line-segments coincide (except perhaps at a single point). So,<br>
+players may choose which end of the growing &#x27;line&#x27; (a collection of<br>
+line segments placed end to end) to extend with a line segment on each<br>
+of their moves, provided that the color of any new segment matches the<br>
+segment it is attached to.<br>
+<br>
+The line may pass through itself (the colors of the segments at the<br>
+intersection not mattering). (Example: Two older consecutive vertical<br>
+segments are conjoined at a vertex. Then later on, a newer line<br>
+segment comes from the left and meets at that vertex, then the lastly<br>
+drawn of these four segments proceeds from the vertex rightward.)<br>
+<br>
+The line may also &quot;bounce&quot; off of a corner, making a new corner (again<br>
+the colors of the segments not mattering). (Example: An older segment<br>
+proceeds upwardly to a vertex, then the next older segment proceeds to<br>
+the right. Then later on, a newer segment comes from the left to meet<br>
+at that vertex, and finally the last segment is drawn upwardly from<br>
+that vertex.)<br>
+<br>
+Continue the game until one of the ends of the total line cannot be<br>
+drawn anymore. (This will be either at the edge of the grid or perhaps<br>
+if, not necessarily when, the two ends of the line meet.)<br>
+<br>
+The winner of the game has the most line segments of the color he drew<br>
+his first segment in.<br>
+<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

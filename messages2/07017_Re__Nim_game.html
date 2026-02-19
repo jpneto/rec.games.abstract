@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Nim game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Nim game</h1>
+    <p><strong>From:</strong> gnalle@ruc.dk (Niels L. Ellegaard)<br>
+    <strong>Date:</strong> 20 Jul 2004 17:09:09 +0200</p>
+    <hr>
+    <div>torbenm@diku.dk (Torben gidius Mogensen) writes:<br>
+&gt; joc_kay@hotmail.com (Joe) writes:<br>
+&gt; &gt;   (.) -&gt; 0<br>
+&gt; &gt; <br>
+&gt; &gt;   (X) -&gt; 1<br>
+&gt; &gt; <br>
+&gt; &gt; (X) = (X X) -&gt; 2<br>
+&gt; &gt; (X)<br>
+&gt; &gt; <br>
+&gt; &gt; (X X)  <br>
+&gt; &gt; (X .) -&gt; 3<br>
+&gt; <br>
+&gt; How do you find these Groundy numbers?  Is it just the number of X&#x27;s?<br>
+<br>
+I think that he means Grundy number. If a position has the number n<br>
+then it is equivalent to a simple nim pile of n matches.<br>
+http://encyclopedia.thefreedictionary.com/Sprague-Grundy%20theory<br>
+<br>
+I am not a master of combinatorical game theory, so perhaps someone<br>
+could enlighten me. How is the third pile equivalent to 3? I cannot<br>
+grab all three stones in one turn. I would expect something similar<br>
+to:<br>
+<br>
+(.) -&gt; 0<br>
+<br>
+(X) -&gt; 1<br>
+<br>
+(X X) -&gt; 2<br>
+<br>
+(X X X) -&gt; 3<br>
+<br>
+(X X)  <br>
+(X .) -&gt;  &lt;1,2|1,2&gt;<br>
+<br>
+Here the number &lt;1,2|1,2&gt; is surreal. It means that if left player<br>
+moves first he can leave a simple nim pile of size 1 or a simple nim<br>
+pile of size 2. The same goes for the right player.<br>
+http://en.wikipedia.org/wiki/Surreal_number<br>
+<br>
+-- <br>
+Niels L Ellegaard  http://dirac.ruc.dk/~gnalle/<br>
+<br>
+<br>
+</div>
+</body>
+</html>

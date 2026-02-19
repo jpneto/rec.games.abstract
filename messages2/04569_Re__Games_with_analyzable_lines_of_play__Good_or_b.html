@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Games with analyzable lines of play. Good or bad?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Games with analyzable lines of play. Good or bad?</h1>
+    <p><strong>From:</strong> Graham Wills &lt;gwills@research.bell-labs.com&gt;<br>
+    <strong>Date:</strong> Tue, 19 Dec 2000 12:01:14 -0600</p>
+    <hr>
+    <div>Bruno Wolff III wrote:<br>
+<br>
+&gt; &gt;Yes, computers advance quickly. No, digital computers will never solve<br>
+&gt; &gt;chess.<br>
+ <br>
+&gt; It depends on what you mean by solve.<br>
+&gt; It may be possible to prove Chess is a draw (or win for one side) with best<br>
+&gt; play, without having to look at every possible position.<br>
+ <br>
+&gt; For example consider Nim played with the one stack containing 10^100000000000<br>
+&gt; stones. There are more possible ways to play this game than can ever be<br>
+&gt; analysed explicitly. But I know that the right move is to take the whole stack<br>
+&gt; (under the normal win condition).<br>
+<br>
+&gt; Chess is a lot more complicated than Nim, but it is possible that something<br>
+&gt; similar might be doable.<br>
+<br>
+Let me echo Bruno&#x27;s comments. I&#x27;ve seen some posts suggesting that the<br>
+only way to solve chess is to store the best position for all possible<br>
+boards. That is not actually the usual definition of solving a game.<br>
+<br>
+I would suggest that if I could come up with an algorithm that would <br>
+guarantee at least a draw for white (we know that such an algorithm<br>
+exists) then chess would be solved. To do so, I do not need to store<br>
+as massively vast a set of games as previous posts have implied.<br>
+<br>
+One poster says that 6-piece endings can currently be stored in 32 G.<br>
+Adding another piece at worst will multiply that by 58 (spaces) x<br>
+5 (possible pieces at the new square) so we could store 8-piece<br>
+endings in 3 petabytes; knowing how combinatorics work, I&#x27;d expect<br>
+that the actual number would be less than a petabyte. Expensive, but<br>
+doable now. By 2020, would 10-piece storage be impossible?<br>
+<br>
+So now all the algorithm would have to do is to reduce the intial<br>
+set of 32 pieces to a subset of the 10-piece solutions that include<br>
+no losses. We don&#x27;t need a general purpose strategy -- which is what<br>
+is currently being attempted -- we just want to reduce the game to<br>
+a series of piece exchanges that will get us to our solution set.<br>
+<br>
+It is not inconceivable to me that a specific set of openings<br>
+(let&#x27;s store them in another 50 petabytes) could be found that <br>
+give a narrow set of positions from which any good player (i.e.<br>
+one at Deep Blue level) can guarantee getting to the 10-piece<br>
+solution set we need.<br>
+<br>
+The deeper question than &quot;is it possible?&quot; is &quot;will anyone bother?&quot;<br>
+<br>
+	- Graham<br>
+<br>
+<br>
+-- <br>
+Graham Wills                       Data Visualization, Bell Labs<br>
+gwills@research.bell-labs.com      +1 (630) 979 7338<br>
+http://www.bell-labs.com/~gwills   Silk for Calde!<br>
+<br>
+<br>
+</div>
+</body>
+</html>

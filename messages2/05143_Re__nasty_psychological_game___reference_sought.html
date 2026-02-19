@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: nasty psychological game - reference sought</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: nasty psychological game - reference sought</h1>
+    <p><strong>From:</strong> Jan Kristian Haugland &lt;jkhaug00@studNOSPAM.hia.no&gt;<br>
+    <strong>Date:</strong> Sat, 08 Dec 2001 21:09:07 +0100</p>
+    <hr>
+    <div><br>
+I wrote:<br>
+<br>
+&gt; Nasty indeed! I tried to analyze a version with only two lines,<br>
+&gt; and any real number between 0 and one&#x27;s score as a possible bid.<br>
+&gt; So what is B&#x27;s probability of winning in the following position<br>
+&gt; assuming perfect play?<br>
+&gt; <br>
+&gt;     |  |       Score<br>
+&gt;   A |  O B     A: 1<br>
+&gt;     |  |       B: x<br>
+&gt; <br>
+&gt; Let&#x27;s call it p(x).<br>
+(...)<br>
+<br>
+Here are my findings after thinking about this for a few<br>
+days. It&#x27;s not a lot, but I don&#x27;t think I will get much <br>
+further with this.<br>
+<br>
+If players are allowed to bid 0, or everything they have<br>
+(or anything in between, of course), and a position where<br>
+both players have score 0 is declared a win for the player<br>
+whose side the box is closest to, then p(x) is well-defined <br>
+for x = 1/2 and 1 with values 0 and 1 respectively. We then <br>
+have<br>
+<br>
+   p(x) = 1 - 1 / (2 - p(1/x - 1))<br>
+<br>
+for 1/2 &lt;= x &lt;= 2/3, subject to p(1/x - 1) being well-<br>
+defined, which gives<br>
+<br>
+   p(x) = 2 - 1/x<br>
+<br>
+whenever x is the ratio between two consecutive positive<br>
+Fibonacci numbers (1/1, 1/2, 2/3, 3/5, 5/8, ...), or the <br>
+limit case (-1 + sqrt(5))/2.<br>
+<br>
+I don&#x27;t have a proof that p(x) is well-defined for any<br>
+other x between 1/2 and 1, let alone a way to determine<br>
+its value, but it is not equal to 2 - 1/x in the whole <br>
+interval, because player A has a strategy that ensures <br>
+a win with probability &gt;= 2/5 for x = 3/4. So if p(3/4) <br>
+exists, it lies in [p(2/3), 3/5] = [1/2, 3/5], while<br>
+2 - 1 / (3/4) = 2/3.<br>
+<br>
+-- <br>
+<br>
+J K Haugland<br>
+http://home.hia.no/~jkhaug00<br>
+<br>
+<br>
+</div>
+</body>
+</html>

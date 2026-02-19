@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Declarative Gaming Principles</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Declarative Gaming Principles</h1>
+    <p><strong>From:</strong> labman@moises.ls.fi.upm.es (Julio Mari~no Carballo)<br>
+    <strong>Date:</strong> 22 Apr 93 17:28:52 +0200</p>
+    <hr>
+    <div>In article &lt;1q11cuINN20i@coli-gate.coli.uni-sb.de&gt;, ulim@coli.uni-sb.de (Ulrich Mayring) writes:<br>
+|&gt; Hi folks,<br>
+|&gt; <br>
+|&gt; has anyone ever thought of leaving the world of procedural gaming and maybe<br>
+|&gt; design a game, which is of a declarative nature?<br>
+<br>
+Last year we started playing some LP-based games in our Faculty. One of them<br>
+is about unification and one possible set of rules is the following:<br>
+<br>
+	- Two players share a finite set of free variables. <br>
+	- There is a finite number of functors of different arities (possibly 0)<br>
+	which can be used as long as you want to build terms using those variables.<br>
+	- Every move, each player adds some non-trivial equation X=t where X is a<br>
+	variable from the original set and t is a term built from the functors and<br>
+	the variables in the original set. The equation must not be redundant with<br>
+	the previous ones nor lead to an unsolvable system. Dont worry about<br>
+	occur-check, i.e. cycles are allowed.<br>
+	- The player who cannot make a legal move loses.<br>
+<br>
+As you can see, this is nothing else than some abstract version of nim-like<br>
+game. These are some sample games:<br>
+<br>
+Vars={X,Y,Z}	F={k/0,f/2}<br>
+1. X=k<br>
+2. Z=f(X,Y)<br>
+3. Y=k ++<br>
+<br>
+or:<br>
+1. X=f(Y,f(Z,X))<br>
+2. X=f(k,f(k,X)) ++<br>
+<br>
+<br>
+I dont know if this is the sort of stuff you thought about. My idea is<br>
+that in a declarative game players no longer act transforming some game-state<br>
+but play by adding constraints to a description. The previous one is rather<br>
+abstract but can be syntactic-sugared to give it some sense. <br>
+<br>
+A different game is to add simple formulae to a conjunction. You can use, for<br>
+instance, propositional logic. There is a finite set of propositional<br>
+variables p,q,r,s... Moves can be restricted to asserting the truth or falsity<br>
+of a variable or stating an implication, e.g. <br>
+	- p<br>
+	- ~q<br>
+	- p -&gt; q	etc.<br>
+Every move must not be tautological nor lead to contradiction. Again, this is<br>
+another variation of nim --think about the Disjunctive Normal Form of the<br>
+accumulated conjunction-- and even a graph game --see, for instance Martin<br>
+Gardner&#x27;s book on Logic Machines and Diagrams. It&#x27;s easy to see that the 2nd<br>
+player has a winning strategy with just 2 prop. vars., p and q. The game gets<br>
+more and more complicated as the number of vars grows --checking<br>
+satisfiability is NP-complete.<br>
+<br>
+Of course, if you use First Order Logic instead you can play any known game...<br>
+The question is, is there a new world of games when using higher-order logics?<br>
+<br>
+Julio<br>
+<br>
+-----------------------------------------------------------------------------<br>
+Julio Mari~no-Carballo					jmarino@fi.upm.es<br>
+LSIIS Dept./Technical University of Madrid<br>
+<br>
+<br>
+</div>
+</body>
+</html>

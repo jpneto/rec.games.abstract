@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Rankings and probability</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Rankings and probability</h1>
+    <p><strong>From:</strong> Don Woods &lt;don-ns@iCynic.com&gt;<br>
+    <strong>Date:</strong> Tue, 15 Jul 2003 21:51:08 GMT</p>
+    <hr>
+    <div>&quot;Dvd Avins&quot; &lt;dvdNOavinsSPAM@pobox.com&gt; writes:<br>
+&gt; I think you&#x27;re missing the original poster&#x27;s point. Even when there&#x27;s no<br>
+&gt; skill involved, you get so much spread due to luck. Though an individual<br>
+&gt; game may have no luck, even chess has &quot;luck&quot; in that a player may have a<br>
+&gt; good game or not. With a perfectly matched set of chess players, you would<br>
+&gt; get approximately as much spread as if you were flipping a coin. (You would<br>
+&gt; get a little less spread, due to the fact that White has an advantage,<br>
+&gt; pushing everybody toward an even score.)<br>
+&gt; <br>
+&gt; To conclude that there are differences in skill level, you need to show a<br>
+&gt; _greater_ spread in results than would be obtained from a game of pure<br>
+&gt; chance.<br>
+<br>
+Chess is also different in that draws are possible.  Indeed, between<br>
+players of exactly equal skill, even with the advantage to White, the<br>
+majority of games should end in draws.<br>
+<br>
+But in general the original poster&#x27;s (unstated) theory is correct:  Even<br>
+if a game does involve skill, the outcomes from a small set of matches<br>
+between equally skilled players will tend toward a bell curve.  If you<br>
+want to draw conclusions about relative skills, you need to recognise<br>
+that the disparity in results may be due to random effects (which can<br>
+arise from player decisions and errors even if the game itself has no<br>
+random element).<br>
+<br>
+The same sort of issue can arise in analysing choices in a game,<br>
+especially one with random elements.  E.g., at some point in a game<br>
+I&#x27;m faced with two promising moves.  I write a computer simulation<br>
+that plays out the game two million times: in half of them I make one<br>
+move; in the other half I make the alternative move.  The million<br>
+simulations for a given move don&#x27;t all give the same results, due to<br>
+random elements or due to choices made later in each simulated game.<br>
+Given the percentage of wins after each of the two possible moves,<br>
+I want to decide whether one move is significantly better than the<br>
+other.  To decide that, I have to figure out if the difference I got<br>
+is likely due to chance.<br>
+<br>
+Fortunately, if you do enough simulations, the accuracy of the outcome<br>
+does get better.  But it&#x27;s a square-root effect: if you do 100 times<br>
+as many simulations, your accuracy improves by a factor of 10.  I.e.,<br>
+if the outcome of N simulations is 95% likely to be within a range of<br>
+size R, then the outcome of N*100 simulations is 95% likely to be<br>
+within a range of size R/10.  (To a first approximation, at least.)<br>
+<br>
+In the original poster&#x27;s experiment, if he repeated the experiment he&#x27;d<br>
+probably get a similar bell curve, but each individual &quot;player&quot; would<br>
+end up in a very different (i.e. random) place on the curve compared to<br>
+the first time.  Whereas if the simulated players were NOT of equal<br>
+skill, there should be some tendency (a) to have the curve be more<br>
+spread out and (b) to have individual players end up in about the same<br>
+place if the experiment is repeated.  And these effects should be more<br>
+pronounced if each player plays 100 or 10000 games vs each other player.<br>
+<br>
+	-- Don.<br>
+<br>
+-------------------------------------------------------------------------------<br>
+-- Don Woods (don-ns@iCynic.com)     Note: If you reply by mail, I&#x27;ll get to<br>
+-- http://www.iCynic.com/~don	     it sooner if you remove the &quot;hyphen n s&quot;<br>
+<br>
+<br>
+</div>
+</body>
+</html>

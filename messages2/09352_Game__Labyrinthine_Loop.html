@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Game: Labyrinthine Loop</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Game: Labyrinthine Loop</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Mon, 8 Feb 2010 09:12:05 -0800 (PST)</p>
+    <hr>
+    <div>Here is an (unoriginal) game for any plural number of players.<br>
+<br>
+The game consists of rounds, where every player is the &quot;offense-<br>
+player&quot; the same predetermined number of rounds.<br>
+<br>
+At the beginning of each round, draw an array of dots (vertices of a<br>
+grid) on a piece of paper, n rows of dots by n columns. (n is a<br>
+predetermined integer, which is the same for all rounds. I suggest n<br>
+be &gt;= 6.)<br>
+There is a new array of dots for each round.<br>
+<br>
+At the beginning of the round, the offense-player moves first,<br>
+connecting any pair of adjacent dots with a straight line-segment. (By<br>
+&quot;adjacent&quot;, one dot must be one of the closest dots to the other dot,<br>
+and in the direction of E, SE, S, SW, W, NW, N, or NE.)<br>
+<br>
+Players thereafter continue to take turns. On a turn, a player<br>
+connects (with a straight line-segment) any dot that has AT LEAST ONE<br>
+line-segment connected to it already, to any ADJACENT dot that has NO<br>
+line-segments connected to it.<br>
+Again: By &quot;adjacent dots&quot;, it is meant that one dot is one of the<br>
+closest to a second dot, where the two dots are in the direction of<br>
+either E, SE, S, SW, W, NW, N, or NE to each other.<br>
+<br>
+Diagonal line-segments MAY cross each other.<br>
+<br>
+Players continue taking turns until all dots have line-segments<br>
+connecting to them.<br>
+(ie. Players continue taking turns until a total of n^2 -1 line<br>
+segments are drawn in a round.)<br>
+<br>
+Then, lastly in the round, the offense-player connects any pair of<br>
+unconnected adjacent dots with a line-segment.<br>
+<br>
+The offense-player&#x27;s score for that round is the number of dots in the<br>
+(single) closed loop of line-segments (including the line-segment the<br>
+offense-player just drew).<br>
+(The &quot;loop&quot; is the simple path from dot to dot that connects back to<br>
+its starting point. The loop does not including dead-ends, of course.)<br>
+<br>
+After each player has played offense the same predetermined number of<br>
+rounds, then each player adds up his/her scores from those rounds she/<br>
+he was offense to get her/his grand total. The player with the highest<br>
+grand total wins.<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Algorithm for possible positions</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Algorithm for possible positions</h1>
+    <p><strong>From:</strong> Jesper Antonsson &lt;jesper@ctrl-c.liu.se&gt;<br>
+    <strong>Date:</strong> 13 03 1999 00:00:00 GMT</p>
+    <hr>
+    <div>Henri H. Arsenault &lt;arseno@phy.ulaval.ca&gt; wrote in &lt;arseno-<br>
+1203991357100001@descartes.phy.ulaval.ca&gt;:<br>
+<br>
+&gt;In article &lt;n9bn21ivhc8.fsf@contents-vnder-pressvre.mit.edu&gt;, brian tivol<br>
+&gt;&lt;tivol@mit.edu&gt; wrote:<br>
+&gt;<br>
+&gt;&gt; Now this has got me thinking about a new, different problem: Out of<br>
+&gt;&gt; the number of possible ways to position some of the initial thirty-two<br>
+&gt;&gt; chess pieces on a board, what percentage of them are legal, derivable<br>
+&gt;&gt; positions?<br>
+&gt;&gt; <br>
+&gt;Since most legal positions can be reached by dozens if not thousands of<br>
+&gt;diffferent move series, I would guess that the ratio of illegal positions<br>
+&gt;divided by the total number is pretty close to zero.<br>
+<br>
+The logic of this escapes me, and you are wrong; it&#x27;s actually very close<br>
+to one.<br>
+<br>
+Consider a board with all 32 original pieces left. Since no captures has <br>
+been made, each pawn has to be on it&#x27;s &quot;own&quot; rank and have a different <br>
+coloured pawn &quot;in front&quot; of it. So, on each rank, there are 15 possible <br>
+ways to (legally) arrange the two pawns (count them!). So there are <br>
+15^8 ways of legally arranging all the pawns.<br>
+<br>
+In how many ways can we arrange the pawns if we ignore legality? Well,<br>
+first we place 8 white pawns on 64 squares without regarding order, and<br>
+that can be done in 64!/(56!8!) ways. Then we place the black pawns on<br>
+the remaining 56 squares, which can be done in 56!/(48!8!). In total<br>
+this yields about 6.29e18 ways to arrange the pawns!<br>
+<br>
+So, it&#x27;s safe to say that the ratio of legal to illegal positions with<br>
+the 32 original pieces left on the board is considerably less than<br>
+15^8/(6.29e18-15^8) which is about 1 to 2.5 billion! Your ratio,<br>
+illegal positions to total positions, is higher than .999999999592. <br>
+<br>
+Jesper<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

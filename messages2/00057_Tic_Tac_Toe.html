@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tic-Tac-Toe</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Tic-Tac-Toe</h1>
+    <p><strong>From:</strong> blom@husc15.harvard.edu<br>
+    <strong>Date:</strong> 10 Nov 92 21:28:26 GMT</p>
+    <hr>
+    <div>Tic-Tac-Toe has gotten somewhat trite, but some of its generaliza-<br>
+tions are very interesting.  The original Tic-Tac-Toe is a game in<br>
+2 dimensions on a square 3 units on a side in which 2 players take<br>
+turns filling empty squares until 3 squares in a row have been<br>
+filled by the same player, who is declared the winner.  There are<br>
+four variable parameters here: the dimension-space of the board,<br>
+the size of the board, the number of players, and the number of<br>
+squares which a player must line up to win.  A generalization of<br>
+Tic-Tac-Toe could be:<br>
+<br>
+     A game in d dimensions on an a hypercubic board board s units<br>
+     on a side, in which p players take turn claiming empty cells<br>
+     until l squares in a line all belong to the same player.<br>
+<br>
+For any game, let us call [p,d,s,l] the parameter vector.<br>
+Let us define some terms:<br>
+<br>
+     trivial:       Player 1 can always force a win.<br>
+     non-trivial:   Player 1 can not always force a win.<br>
+     solvable:      There exists an algorithm by which Player 1<br>
+                    will never lose.<br>
+     insoluble:     There does not exist a finite algorithm by<br>
+                    which Player 1 will never lose.<br>
+<br>
+Obviously:<br>
+<br>
+p &gt; 2<br>
+l &lt;= s<br>
+pl &lt; s^d<br>
+<br>
+Some interesting results that can be proven:<br>
+<br>
+[p,d,s,l] is always solvable if s and d are finite.<br>
+[2,2,3,3] (Traditional Tic-Tac-Toe) is non-trivial.<br>
+[2,3,3,3] (3x3x3 Tic-Tac-Toe) is trivial.<br>
+[2,3,4,4] is non-trivial, according to TicTactics, from the<br>
+     Microsoft Entertainment Pack for Windows (c) Microsoft Co.<br>
+[2,d,2,2] is trivial.<br>
+[2,d&gt;3,3,3] is trivial.<br>
+[2,2,infinity,0&lt;l&lt;5] is trivial.<br>
+<br>
+Some conjectures:<br>
+<br>
+[2,d,d,d] is trivial.<br>
+[2,d,d+1,d+1] is non-trivial.<br>
+[2,2,infinity,5+] is trivial.<br>
+<br>
+<br>
+Can anyone add to this list or examine these conjectures further?<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

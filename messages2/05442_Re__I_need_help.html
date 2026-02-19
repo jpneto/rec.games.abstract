@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: I need help</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: I need help</h1>
+    <p><strong>From:</strong> Bob Harris &lt;nitlion@mindspring.com&gt;<br>
+    <strong>Date:</strong> Wed, 17 Apr 2002 08:01:17 -0400</p>
+    <hr>
+    <div>Prem wrote:<br>
+&gt; I need the info reg. the following game. This is somewhat similar<br>
+&gt; to nim. Played between two players. There are two heaps of coins of<br>
+&gt; size m,n. Each player may take x coins from any of the heap or from<br>
+&gt; both the heaps such that x &gt; 0. Can you please give me the details<br>
+&gt; about this game? I have a solution for this game. But I donno the<br>
+&gt; complete details of this game.<br>
+<br>
+and Jan Kristian Haugland replied:<br>
+&gt; ... It seems that we get the P-positions by starting with P_0 = {0, 0} and<br>
+&gt; adding recursively for k &gt;= 1<br>
+&gt; <br>
+&gt; P_k = {smallest positive integer not used, same + k}<br>
+&gt; <br>
+&gt; This gives: {1, 2}, {3, 5}, {4, 7}, {6, 10}, {8, 13}, {9, 15},<br>
+&gt; {11, 18}, {12, 20}, {14, 23}, {16, 26}, {17, 28}, ...<br>
+&gt; <br>
+&gt; I guess it&#x27;s tricky to find a closed form expression for these.<br>
+<br>
+to which David desJardins remarked:<br>
+&gt; I think these are the pairs {floor(k*phi), floor(k*phi^2)} for<br>
+&gt; k=1,2,3,..., where phi=(1+sqrt(5))/2.  These have the well-known<br>
+&gt; property that the k-th pair has gap size k, and every natural number<br>
+&gt; occurs exactly once in the sequence.<br>
+<br>
+By pure twist of fate, I happened upon this game in &quot;Exploring Mathematics<br>
+With Your Computer&quot;, by Arthur Engel, page 169.  It is called &quot;Wythoff&#x27;s<br>
+Game&quot;.  An exercise on page 171 confirms David desJardins statement, and<br>
+suggests it can be proven using &quot;Beatty&#x27;s Theorem&quot; about complementary<br>
+sequences.<br>
+<br>
+Hope that helps,<br>
+Bob H<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

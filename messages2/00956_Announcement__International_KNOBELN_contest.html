@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Announcement: International KNOBELN contest</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Announcement: International KNOBELN contest</h1>
+    <p><strong>From:</strong> prechelt@ira.uka.de (Lutz Prechelt)<br>
+    <strong>Date:</strong> 5 Apr 1993 10:42:37 GMT</p>
+    <hr>
+    <div>       ===============================================<br>
+<br>
+         Second Announcement of the 1st International<br>
+<br>
+        KNOBELN --- Game-Strategy Programming Contest<br>
+<br>
+       ===============================================<br>
+<br>
+This is an announcement for the KNOBELN-contest, taking place via<br>
+e-mail on Saturday, May 8th, 1993 and on Sunday, May 16th, 1993.<br>
+<br>
+The contest is run at the University of Karlsruhe, Germany, by<br>
+Lutz Prechelt.<br>
+<br>
+Arbitrary teams can participate in the contest.<br>
+<br>
+PLEASE REDISTRIBUTE THIS ANNOUNCEMENT AS WIDELY AS YOU CAN.<br>
+<br>
+<br>
+<br>
+-----------------<br>
+Type of Contest:<br>
+-----------------<br>
+<br>
+To participate, you must program in C a strategy for a simple game <br>
+and send it to me by email. The game is quite interesting since there <br>
+clearly is no canonical best strategy (the success of a strategy depends<br>
+on the behavior of all other participants).<br>
+<br>
+<br>
+<br>
+--------------<br>
+Rules of Game:<br>
+--------------<br>
+<br>
+1. Both players (at the same time) chose an integer number in the interval <br>
+     a..b.<br>
+   This selection of two numbers is called a &quot;throw&quot;.<br>
+   The players can watch each throw as it is made (i.e. they can know<br>
+   all numbers they and their opponent have thrown up to the <br>
+   current throw)<br>
+   Assumption:  Player P choses p1 and player Q choses q1.<br>
+<br>
+2. If p1 equals q1, nobody wins a point.<br>
+<br>
+3. The player with the higher number wins, unless the number is more <br>
+   than twice as high as that of his opponent.<br>
+   Let&#x27;s assume that p1 &gt; q1, then<br>
+     P wins if 2*q1 &gt;= p1 and<br>
+     Q wins if 2*q1 &lt;  p1.<br>
+<br>
+4. A player who wins a throw with some number N gets<br>
+     floor(log2(N)) points<br>
+   in this throw.<br>
+   The other player gets 0 points in this throw.<br>
+   Example: if P wins, he/she gets floor(log2(p1)) points<br>
+            e.g. if p1 = 6800, player P gets 12 points.<br>
+<br>
+5. A game consists of L throws.<br>
+<br>
+6. Both players must throw series of non-decreasing throws.<br>
+   These series must (for each player individually) have a length<br>
+   of AT LEAST k throws.<br>
+   Example: If P1 throws (p1, p2, p3, .....) then<br>
+            p1 &lt;= p2 &lt;= p3 &lt;= ... &lt;= p(k) is required.<br>
+            After that, p(k) &gt; p(k+1) is allowed.<br>
+            If p(k) &gt; p(k+1) then<br>
+               p(k+1) &lt;= p(k+2) &lt;= ... &lt;= p(k+k) is required.<br>
+            else <br>
+               there exists some smallest number j, with j &gt; k for which<br>
+               p(j) &gt; p(j+1)<br>
+            and then <br>
+               p(j+1) &lt;= p(j+2) &lt;= ... &lt;= p(j+k) is required.<br>
+            and so on through the whole game.<br>
+      If for instance k = 3 then the sequence<br>
+        1, 2, 3, 1, 4, 5, 6, 8, 2    is allowed, while<br>
+        1, 2, 3, 4, 1, 2, 1          is not<br>
+                          ^ too early<br>
+<br>
+In this turnament the parameters are:<br>
+  a = 1,  b = 12288,  k = 8,  L = 1000<br>
+   <br>
+<br>
+<br>
+--------------------<br>
+Rules of Tournament:<br>
+--------------------<br>
+<br>
+The tournament is performed in successive rounds with randomly mixed <br>
+groups of 7 to 13 participants. Within each group, every strategy<br>
+plays one game against every other strategy in that group.<br>
+<br>
+Those half of the participants (rounded up), that have won most<br>
+points in their group (no matter how many their opponents got), proceed<br>
+to the next round, which is played with newly mixed groups.<br>
+The winners of the last round are the winners of the tournament;<br>
+the results of previous rounds are discarded.<br>
+<br>
+Any strategy is allowed to fail once per round. Failing means doing<br>
+anything that is disallowed according to the rules of the game.<br>
+The game in question is immediately stopped, its intermediate results<br>
+are discarded and it is rescheduled after all the other games currently <br>
+scheduled for that group.<br>
+If the strategy who failed had already failed before in the same round,<br>
+the game is not rescheduled but the strategy is disqualified from the <br>
+contest. <br>
+All its remaining games in that round will not be carried out and<br>
+all its previous games in that round will not be counted.<br>
+<br>
+This tournament is performed twice to find the winners of the contest:<br>
+After the first tournament is performed, there is an eight day pause,<br>
+during which the contestants can revise and change their strategy based<br>
+on the game protocols of their games in the first contest (see below).<br>
+Then the second tournament with identical rules and the same (or a<br>
+reduced) set of participants is carried out.<br>
+Those teams with the highest total rank in both tournaments will<br>
+be announced as winners of the contest.<br>
+<br>
+See section &#x27;requirements for programs&#x27; for additional rules.<br>
+<br>
+<br>
+<br>
+----------------------------<br>
+Characteristics of the Game:<br>
+----------------------------<br>
+<br>
+The method of counting within a game and the method of selecting the<br>
+winners of a group have an interesting impact on the goal of a<br>
+strategy: It must actually try to arrange a cooperation with its<br>
+&#x27;opponent&#x27;, because otherwise none of the two will usually be able to<br>
+win many points. <br>
+<br>
+It is NOT important to have more points than the opponent in any<br>
+single game. Instead it is important to have more points than the<br>
+other strategies on the average.<br>
+<br>
+The problem of programming a strategy could thus be formulated as<br>
+  &quot;How do I (quickly) arrange a cooperation with a machine partner, if<br>
+   there is no predefined protocol to do so and the only communication<br>
+   channel is mutual exchange of integers, one at a time ?&quot;<br>
+  <br>
+It is clear, that there exists no optimal strategy: It is impossible<br>
+to guarantee that a strategy A is able to arrange a cooperation with a<br>
+strategy B, even if both are perfectly willing to cooperate in<br>
+principle. This is true because both strategies have to &#x27;guess&#x27; what<br>
+might be suitable protocols to communicate. The two strategies of a game<br>
+should together form a self-organizing system that organizes for<br>
+cooperation.<br>
+<br>
+I think this makes the contest very interesting.<br>
+By the way: This game is probably interesting to play with human<br>
+            players, too.<br>
+<br>
+<br>
+<br>
+------------------------------<br>
+How to Announce Participation:<br>
+------------------------------<br>
+<br>
+If you want to participate in the contest, send email of the<br>
+following form:<br>
+<br>
+---<br>
+To: prechelt@ira.uka.de<br>
+Subject: registration for KNOBELN<br>
+<br>
+email-address:   ourname@machine.domain.alfdkj<br>
+mail-preference: LAP,LGP,DGP,GRR<br>
+team-name:       the_heavy_lords_of_knobeln <br>
+Organization:    University of Northeast Sacrodata, Intellect City, Eggland<br>
+team-members:<br>
+  Joe Cool,  45, professional systems programmer,<br>
+     20-year-experienced programmer<br>
+  Jane More, 20, graduate student of computer science,<br>
+     hackeress fluent in 34 programming languages<br>
+  Mona Morn, 35, Professor of CS,<br>
+     hobby game strategy programmer<br>
+  Bill Neat, 24, undergraduate student of psychology,<br>
+     advanced beginner (will be my first C program!)<br>
+---<br>
+<br>
+Please use this format exactly as shown.<br>
+<br>
+- &quot;email-address&quot; gives the email address that uniquely <br>
+  identifies the team, it should be an internet domain style address.<br>
+- &quot;mail-preference&quot; is a comma-separated list of some of the following<br>
+  declarators:<br>
+    LAP  send list of all participants (full registration format)<br>
+    LGP  send list of my groups&#x27; participants (team names only)<br>
+    DGP  send detailed game protocol for each of my games (every throw)<br>
+    GRP  send game result (points) for each of my games<br>
+    GRG  send group result (all games of all participants)<br>
+    GRR  send group result (ranking)<br>
+<br>
+- &quot;team-name&quot; can be any string that is a valid C identifier of at<br>
+  most 50 characters and should be a funny name for the team.<br>
+- &quot;Organization&quot; should be the name of the institution the team is at<br>
+  or something else sensible, if no such thing exists. Please also<br>
+  give city and country (or state for the US).<br>
+- &quot;team-members&quot; should contain a two-line informal description of each <br>
+  member of the team, giving his/her<br>
+     name, age in years, occupation,<br>
+        programming background, <br>
+  in this order.<br>
+  Team size should be anywhere between 1 and 10.<br>
+  Personnel should not be shared among teams.<br>
+<br>
+When I receive your registration, I will send an answer either<br>
+  (a) that your registration is not accepted, (e.g. because there are<br>
+      already too many participants registered), or<br>
+  (b) that your registration is accepted and your authentification <br>
+      string is &lt;somethingweird&gt;. I may also tell you that I have <br>
+      slightly modified your team name, if it conflicts with an already <br>
+      registered one.<br>
+Please allow some time (ca. 3 days) for the answer to arrive.<br>
+      <br>
+Notes:<br>
+- If you are unable to send email to me or if I am unable to send email <br>
+  to you, you can not participate in the contest.<br>
+  Please use only Internet domain style email addresses.  <br>
+- Notification of acceptance or rejection will usually be sent within <br>
+  72 hours.<br>
+  I reserve the right to limit participation of multiple teams from the <br>
+  same organization.<br>
+- You must keep the authentification string carefully.<br>
+  It will be used to check, whether a strategy that swears to come<br>
+  from your team really does (see below &quot;Sending Programs&quot;).<br>
+<br>
+<br>
+<br>
+-----------------<br>
+Sending Programs:<br>
+-----------------<br>
+<br>
+To send in the first version or a new version of your program,<br>
+send me email of the following form:<br>
+<br>
+----<br>
+To: prechelt@ira.uka.de<br>
+Subject: please compile<br>
+<br>
+/*<br>
+  &lt;&lt;FROM&gt;&gt; team_name  authentification_string<br>
+*/<br>
+/* your source code goes here */<br>
+----<br>
+<br>
+&lt;&lt;FROM&gt;&gt; has to be given exactly as shown. The same is true for the <br>
+&quot;Subject:&quot;.<br>
+For &lt;team_name&gt; insert the name of your team as given in the registration.<br>
+For &lt;authentification_string&gt; insert the string that I sent you with the<br>
+registration acknowledge.<br>
+<br>
+Your program will be compiled automatically a few minutes after your <br>
+email arrives and you will be sent a report about the results of the <br>
+compilation. A successfully compiled program is automatically stored <br>
+to be used in the contest. The latest version is used always.<br>
+<br>
+<br>
+<br>
+---------------------------<br>
+Requirements for programs:<br>
+---------------------------<br>
+<br>
+1. Pure C (Ansi or KR), i.e., no library routines called, except<br>
+     int init_random ()<br>
+     int log2 (int number)<br>
+     int next_random (int low, int high)<br>
+     int make_throw (int my_throw)<br>
+     int count_points (int throw1, int throw2, int *points1, int *points2);<br>
+   (You will receive a detailed description of these functions<br>
+    upon registration)<br>
+<br>
+2. Must be compilable with GNU C compiler (gcc).<br>
+<br>
+3. Must be in a single file, no #includes<br>
+<br>
+4. Must have at most 10000 lexical elements (after preprocessing)<br>
+   Lexical elements are: <br>
+      identifier, keyword, number, <br>
+      string denoter, char denoter, <br>
+      special character<br>
+   NO lexical elements (i.e. not counted) are: <br>
+      blank, Tab, newline, comment<br>
+   Information about how many lexical elements your program has is<br>
+   sent to you as a report from automatic compilation as described above.<br>
+<br>
+5. The size of the process that runs the program must not grow <br>
+   beyond 1024 kB on a SUN SparcStation 2 running SUN OS 4.1.<br>
+   The value used to test this is the one shown by &#x27;ps -u&#x27; in the column<br>
+   labeled &#x27;SZ&#x27; (SIZE).<br>
+<br>
+6. Must finish every game of 1000 throws in less than 60 seconds of cpu<br>
+   time on a SUN SparcStation 2 (which has about 20 SPECmarks).<br>
+<br>
+<br>
+<br>
+------------------------------<br>
+Recommendations for programs:<br>
+------------------------------<br>
+<br>
+1. Should not use floating point operations. (Or you do it on your own risk)<br>
+<br>
+2. Should be infinite loop (i.e. need not terminate after 1000 throws)<br>
+<br>
+<br>
+<br>
+-----------------------<br>
+Technical Environment:<br>
+-----------------------<br>
+<br>
+In order to write and hand-test a strategy, you need the definitions<br>
+of the library procedures mentioned above, called &#x27;knobellib.c&#x27;.<br>
+The source code for these functions is only 130 lines and will be <br>
+sent to you via email with the notification of acceptance of your<br>
+registration. Link your strategy with this module, but do not include<br>
+the source code of the module into your strategy or else it will<br>
+be rejected.<br>
+<br>
+If you want to run complete games between two strategies in the same<br>
+kind of environment that will be used in the actual contest, you need<br>
+the source code of the &#x27;knobeln&#x27; program. You will need an ANSI-C<br>
+compiler and a UNIX machine in order to compile and run it. <br>
+There are two ways to get this source code (about 22 kB):<br>
+<br>
+1. To get &#x27;knobeln.c&#x27; by anonymous ftp (prefered method), fetch it from<br>
+   Sanfrancisco.ira.uka.de [129.13.13.110]:  /pub/knobeln.c<br>
+<br>
+2. To get &#x27;knobeln.c&#x27; by mailserver, send email of the following form:<br>
+   ---<br>
+   To: prechelt@ira.uka.de<br>
+   Subject: SEND knobeln.c<br>
+   ---<br>
+<br>
+<br>
+<br>
+--------------------<br>
+The Actual Contest:<br>
+--------------------<br>
+<br>
+The actual tournaments will be run at the dates given below.<br>
+<br>
+At some time before, every team has to send its strategy as described<br>
+above. It will be compiled and linked automatically, and you will<br>
+receive a report about the success of this procedure or any problems<br>
+that occur.<br>
+This automatic compilation feature is disabled during the tournaments.<br>
+<br>
+During the contest, all participants will receive information about<br>
+what happens, if they have announced a corresponding mail-preference <br>
+upon registration: <br>
+<br>
+After every game, a detailed throw protocol or a short game result<br>
+file (giving only the points at the end) is sent to both participants<br>
+(if requested by their mail-preference, see in &#x27;Registration&#x27; above);<br>
+after every round the group summary is sent to all members of that<br>
+group (if requested by their mail-preference).<br>
+<br>
+<br>
+<br>
+-------------<br>
+Legal Issues:<br>
+-------------<br>
+<br>
+By applying for registrations all members of a team assert that they<br>
+understand and agree with the following points:<br>
+1. All participants of the last round of one of the tournaments<br>
+   will send a verbal description of how their strategy <br>
+   works (length 100 to 500 words) after the contest.<br>
+2. The team members allow the organizer of the contest to publish<br>
+   all or part of the information contained in the strategy program<br>
+   and in the strategy description. Such publication will mention <br>
+   the contest context and will give credit to the team by<br>
+   mentioning the team name or the team&#x27;s organization or the names <br>
+   of one or several team members.<br>
+<br>
+<br>
+----------------------<br>
+Status of the contest:<br>
+----------------------<br>
+<br>
+By now there are 29 participants registered. <br>
+I will allow at most 104.<br>
+<br>
+<br>
+----------------<br>
+Important Dates:<br>
+----------------<br>
+<br>
+93/03/28    beginning of registration<br>
+93/03/31    beginning of registration acknowledge<br>
+93/03/31    beginning of compilation service<br>
+93/05/07    registration deadline<br>
+93/05/08    first tournament of contest<br>
+93/05/16    second tournament of contest<br>
+93/05/20    Results posted to Usenet: rec.games.misc, misc.misc<br>
+<br>
+Relevant time of day is noon, Universal Time (UT, GMT), for all dates.<br>
+<br>
+<br>
+Good luck and have fun !<br>
+<br>
+  Lutz<br>
+  <br>
+-- <br>
+Lutz Prechelt   (email: prechelt@ira.uka.de)            | Whenever you <br>
+Institut fuer Programmstrukturen und Datenorganisation  | complicate things,<br>
+Universitaet Karlsruhe;  D-7500 Karlsruhe 1;  Germany   | they get<br>
+(Voice: ++49/721/608-4068, FAX: ++49/721/694092)        | less simple.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

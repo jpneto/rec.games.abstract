@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Lost in the berry patch!</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Lost in the berry patch!</h1>
+    <p><strong>From:</strong> dseal@armltd.co.uk (David Seal)<br>
+    <strong>Date:</strong> 1 Jun 94 09:55:09 GMT</p>
+    <hr>
+    <div>In article &lt;2scbsi$3bj@cantua.canterbury.ac.nz&gt; wft@math.canterbury.ac.nz<br>
+(Bill Taylor) writes:<br>
+<br>
+&gt;In article &lt;CqD79q.9HB@vcd.hp.com&gt;, dboll@vcd.hp.com (David Boll) writes:<br>
+&gt;|&gt; <br>
+&gt;|&gt;   The board is a hexagon with a center, and one of the edges removed,<br>
+&gt;|&gt;   like this:<br>
+&gt;|&gt; <br>
+&gt;|&gt;      0-----0<br>
+&gt;|&gt;     / \   / \<br>
+&gt;|&gt;    /   \ /   \<br>
+&gt;|&gt;   0-----0-----0<br>
+&gt;|&gt;    \   / \   /<br>
+&gt;|&gt;     \ /   \ /<br>
+&gt;|&gt;      0     0<br>
+&gt;|&gt; <br>
+&gt;|&gt;   There are 2 players, each player has 3 pieces on the board. The pieces<br>
+&gt;|&gt;   inhabit one of the &quot;0&quot;s above; the lines between the &quot;0&quot;s indicate<br>
+&gt;|&gt;   valid moves from that location. The goal of the game is to leave your<br>
+&gt;|&gt;   opponant without a move. The pieces are initially placed around the <br>
+&gt;|&gt;   perimeter of the board, alternating. i.e. the center is vacant, and<br>
+&gt;|&gt;   the order of the pieces is (white,black,white,black,white,black) around<br>
+&gt;|&gt;   the edge.<br>
+&gt;|&gt; <br>
+&gt;|&gt;   I haven&#x27;t analyzed the game, but it ought to be a piece of cake. <br>
+&gt;<br>
+&gt;Should be!  There&#x27;re only 30 essentialy different positions!  60 counting<br>
+&gt;player-to-move.  So it ought to be a lot simpler than e.g. tic-tac-toe.<br>
+<br>
+Yes, it is easy, though I believe you mean 35 essentially different<br>
+positions, or 70 counting player to move. It is a draw; a drawing strategy<br>
+from the initial position given is to avoid making any of the following four<br>
+moves or their mirror images:<br>
+<br>
+   . X         X X<br>
+  X O O  --&gt;  . O O<br>
+   O X         O X<br>
+<br>
+   . X         X X<br>
+  X O X  --&gt;  . O X<br>
+   O O         O O<br>
+<br>
+   X O         . O<br>
+  . O O  --&gt;  X O O<br>
+   X X         X X<br>
+<br>
+   X O         . O<br>
+  . O X  --&gt;  X O X<br>
+   X O         X O<br>
+<br>
+On the first 3, the opponent has a one move win; on the last, it is a two<br>
+move win.<br>
+<br>
+To be able to draw from any drawn position, there are another five moves to<br>
+avoid; three of them give your opponent a one move win and two give a two<br>
+move win.<br>
+<br>
+The maximum depth of any winning or losing position is 5 plies in the<br>
+following two positions - i.e. a 3 move win for the player (X) to move:<br>
+<br>
+   X X<br>
+  X O O<br>
+   . O<br>
+<br>
+   . X<br>
+  X O O<br>
+   X O<br>
+<br>
+In the first of these, the winning move is forced; in the second, the only<br>
+alternative leads to an immediate loss.<br>
+<br>
+Overall, this means that it is possible to play this game perfectly from any<br>
+starting position with 4 ply lookahead. Given the limited branching factor,<br>
+this is perfectly feasible for a human player. I&#x27;d guess this is probably<br>
+the easiest way for a human to remember the perfect strategy, though a<br>
+computer program would probably just be table-driven!<br>
+<br>
+David Seal<br>
+dseal@armltd.co.uk<br>
+<br>
+All opinions are mine only...<br>
+<br>
+<br>
+</div>
+</body>
+</html>

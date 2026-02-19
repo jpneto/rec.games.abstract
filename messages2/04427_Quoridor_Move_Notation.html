@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quoridor Move Notation</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Quoridor Move Notation</h1>
+    <p><strong>From:</strong> &quot;Mike Koss&quot; &lt;mikeko@microsoft.com&gt;<br>
+    <strong>Date:</strong> Sat, 02 Sep 2000 17:46:47 GMT</p>
+    <hr>
+    <div>Has anyone come up with a Quoridor move notation for transcribing game moves?<br>
+<br>
+My stab at it would go something like this.  Using an algebraic notation, similar to chess, the squares of the board are labeled a1 through i9 (that &quot;i&quot; is unfortunate because of the confusion with &quot;1&quot;).<br>
+<br>
+Moves of a &quot;pawn&quot; can be denoted by the square label being moved to.  For example, &quot;white&#x27;s&quot; first move from the home row to the next row would be:<br>
+<br>
+    1.    e2<br>
+<br>
+Wall placement is more problematic.  One has to denote orientation AND location.  The most concise notation I could come up with, is an indication of horizontal (h) vs. vertical (v) and then use the label of the square immediately above and to the right of the &quot;center&quot; of the wall.<br>
+<br>
+For example, if &quot;black&quot; places a wall in front of the white pawn in the second row we&#x27;d have:<br>
+<br>
+    1.    e2    h-e3<br>
+<br>
+It&#x27;s a bit cryptic.  A more verbose notation for wall placement, would allow for explicitly naming the squares that are &quot;blocked&quot; by the wall.<br>
+<br>
+    1.    e2    d2-e2 x d3-e3<br>
+<br>
+This notation makes it very clear that moves from the d2-e2 side of the wall are blocked from the d3-e3 side.  I think I like the latter notation a bit better.<br>
+<br>
+The last wrinkle is handling &quot;jumps&quot; over the opponents piece.  For brevity, one could just use the standard pawn move and list the destination square.  But I think it would be good to explicitly call out that a jump was taken.  I&#x27;d borrow from the en passant notation in chess - and add a &quot;pass&quot; annotation after the move.  If white jumps over the back pawn from g4 to g6 you could write:<br>
+<br>
+    7.    g6 p.<br>
+<br>
+- Mike Koss<br>
+<br>
+(p.s. if you want to take a peek at my in-progress Quoridor game online - check out http://mckoss.com/jscript/quoridor.htm)<br>
+<br>
+</div>
+</body>
+</html>

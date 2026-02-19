@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Simultaneous Risk Notation?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Simultaneous Risk Notation?</h1>
+    <p><strong>From:</strong> Richard Rognlie &lt;rrognlie@gamerz.net&gt;<br>
+    <strong>Date:</strong> 01 03 2000 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+I&#x27;m getting ready to start implementing a PBeM version of Schmittberger&#x27;s<br>
+Simultaneous Risk (in my mind this is a very diplomacy-esque version), <br>
+and am curious if there is a standard &quot;notation&quot; for the game of Risk.<br>
+<br>
+Do the various territories have &quot;standard&quot; designations?  e.g., Eastern<br>
+United States == EUS, etc?<br>
+<br>
+Army deployment?  &quot;3 -&gt; EUS&quot;   &quot;EUS 3&quot; ?<br>
+<br>
+Army movement?   &quot;3 EUS -&gt; WUS&quot;   &quot;EUS 3 -&gt; WUS&quot; ?<br>
+<br>
+I&#x27;m sure this is not virgin territory, but I can&#x27;t seem to find anything<br>
+at this time...<br>
+<br>
+Richard<br>
+<br>
+For the curious, the basic structure I&#x27;m working with is...<br>
+<br>
+Random territory distribution followed by all players &quot;deploying&quot; their<br>
+remaining armies as the first move.  (Remember this is simultaneous...)<br>
+<br>
+Then each player will submit their orders for the turn.  Once all moves<br>
+are received (or some move limit is reached and therefore a &quot;no op&quot; is<br>
+assumed for all non moving players) the turn is resolved.<br>
+<br>
+Any time armies meet at a border crossing (e.g. I move 3 EUS -&gt; WUS, and <br>
+my opponent is moving 4 WUS -&gt; EUS) there is a skirmish.  In this case,<br>
+1 of my opponent&#x27;s armies survives to continue the attack.<br>
+<br>
+It would then be his 1 army vs. the remaining armies (if any) in my <br>
+territory.<br>
+<br>
+The formula for determining who wins is pretty simple...  If a like number<br>
+of forces attack, it&#x27;s mutual destruction (with the exception of 1 &quot;defender&quot;)<br>
+If both forces are agressing, all armies die.<br>
+<br>
+Else, the lesser force is destroyed.  The greater force loses the same<br>
+number of pieces as the loser *minus* the difference between their forces.<br>
+<br>
+For example,<br>
+<br>
+	5 v 4	lose 3<br>
+	6 v 4	lose 2<br>
+	7 v 4	lose 1<br>
+	8+v 4	no loses<br>
+<br>
+The only &quot;issue&quot; is the case of a combined attack. And how to allocate losses<br>
+in that case... but I&#x27;m working on it.<br>
+<br>
+Every 4th move would be a &quot;build&quot; move (ala Displomacy) where you would get<br>
+reinforcements based on territories held and bonuses for continents.  You <br>
+could at this point trade in cards for bonus armies as well.<br>
+<br>
+-- <br>
+ /  \__  | Richard Rognlie / Sendmail Consultant / Sendmail, Inc.<br>
+ \__/  \ | URL:    http://www.gamerz.net/rrognlie/<br>
+ /  \__/ | Give a man a fish, and he&#x27;ll be hungry tomorrow.  Teach a<br>
+ \__/    | man to fish, and he&#x27;ll be at the river all day drinking beer.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

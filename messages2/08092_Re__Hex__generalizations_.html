@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Hex &quot;generalizations&quot;</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Hex &quot;generalizations&quot;</h1>
+    <p><strong>From:</strong> torbenm@app-5.diku.dk (Torben =?iso-8859-1?Q?=C6gidius?= Mogensen)<br>
+    <strong>Date:</strong> Fri, 01 Feb 2008 12:08:30 +0100</p>
+    <hr>
+    <div><br>
+Taking a step back, I&#x27;ll start by summarising Hex:<br>
+<br>
+ 1. The game is played by two players on a board which is an NxN<br>
+    rhombic hex grid.<br>
+<br>
+ 2. The object of one player (Black) is to create a connection between<br>
+    the top and bottom edges using black pieces.  The object of the<br>
+    other player (White) is to connect the left and right edges using<br>
+    white pieces.  The edges are usually precoloured to show which<br>
+    edges each player need to connect.<br>
+<br>
+ 3. Moves are taken in turn by the two players until one wins.  A move<br>
+    consists of placing a pice of your own colour in any empty hex.<br>
+<br>
+It can be shown that there is always a unique winner because any<br>
+filled board will obey the winning criteria of exactly one of the two<br>
+players.  We will call this the unique winner property.<br>
+<br>
+Atoll changes Hex by the following:<br>
+<br>
+ 1. Changing the shape of the board.<br>
+<br>
+ 2. Introducing 4N precoloured segments on the edge.<br>
+<br>
+ 3. Changing the winning criteria so a player must connect any pair of<br>
+    opposite segments of his colour by pieces of his colour.<br>
+<br>
+Y changes Hex by the following:<br>
+<br>
+ 1. Changing the shape of the board to a triangle.<br>
+<br>
+ 2. Changing the winning criteria so a player must connect all three<br>
+    sides of the triangle with pieces of his colour.<br>
+<br>
+Both games have the unique-winner property.<br>
+<br>
+You can generalise both by the following class of games:<br>
+<br>
+ 1. The board is a finite hex grid of any shape.<br>
+<br>
+ 2. Certain hexes can be numbered.<br>
+<br>
+ 3. Players take turn placing a piece of their colour in any empty,<br>
+    unnumbered hex.<br>
+<br>
+ 4. Each player has a finite pre-specified set of sets of numbers.<br>
+<br>
+ 5. Winning is done by having a connected group of pieces of the<br>
+    player&#x27;s colour such that the group touches hexes of all the<br>
+    numbers in any of the player&#x27;s set of numbers.<br>
+<br>
+ 6. The game has the unique-winner property.<br>
+<br>
+You can instantiate this to Hex by choosing a rhombic grid and<br>
+numbering the edge hexes by numbers that identify the edges, i.e.,<br>
+1,2,3,4 clockwise.  Black&#x27;s sets are {{1,3}} and White&#x27;s sets are<br>
+{{2,4}}.<br>
+<br>
+You can instantiate this to Atoll by choosing an allowed Atoll board<br>
+shape, numbering 2N segments of hexes by the numbers 1,2,...,4N<br>
+clockwise.  Black&#x27;s sets are {{1,2N+1},{3,2N+3},...{2N-1,4N-1}} and<br>
+White&#x27;s sets are {{2,2N+2},{4,2N+4},...{2N,4N}}.<br>
+<br>
+You can instantiate this to Y by numbering the edge hexes (excluding<br>
+the corners) with the numbers 1, 2 and 3.  Both players have the sets<br>
+{{1,2,3}}.<br>
+<br>
+So this class of games generalises both Hex, Atoll and Y.<br>
+<br>
+Note that I have put the unique-winner property as a requirement for<br>
+each game in the class, as you can easily define games with properties<br>
+1-5 that don&#x27;t have this property.<br>
+<br>
+To show that there exists games other than Atoll and Y in this set,<br>
+here is an example:<br>
+<br>
+ 1. The board is a hexagon.<br>
+<br>
+ 2. The center hex is numbered 1, and the edge hexes are all numbered<br>
+    2.<br>
+<br>
+ 3. All other hexes have their own unique number.<br>
+<br>
+ 4. Black has the sets {{1,2}}.  White has all sets that describe a<br>
+    closed loop around the center hex.  This is a large, but finite<br>
+    set of sets.<br>
+<br>
+This has the unique-winner property.  Proof:<br>
+<br>
+  At most one: A loop around the center and a path from the center to<br>
+  the edge will, obviously, cross.  (And, this time, there is no<br>
+  mistake in this reasoning).<br>
+<br>
+  At least one: Assume you have a black path from center to edge.<br>
+  Replacing part of this path by white pieces such that these do not<br>
+  touch white pieces already on the board will not cut the path in<br>
+  two.  Assume, conversely, that you have a closed white loop.<br>
+  Replacing parts of this by black pieces that do not tough black<br>
+  pieces already on the board will not break the loop.  Hence,<br>
+  according to the proof I made in an earlier posting, there will be<br>
+  at least one winner.<br>
+<br>
+You might not like that I changed the unique-winner property from a<br>
+consequence of the other rules to an explicit requirement, but that<br>
+doesn&#x27;t change that the above defines a class of games that generalise<br>
+Hex, Atoll, Y and other similar games.<br>
+<br>
+	Torben<br>
+<br>
+<br>
+</div>
+</body>
+</html>

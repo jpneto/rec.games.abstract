@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: heuristics for Awari? (a mancala variant)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: heuristics for Awari? (a mancala variant)</h1>
+    <p><strong>From:</strong> dave_gomboc@my-dejanews.com<br>
+    <strong>Date:</strong> 24 03 1999 00:00:00 GMT</p>
+    <hr>
+    <div>Actually, it was not clear to me what heuristic was being applied in the code.<br>
+There was no documentation, and it&#x27;s been a little too long since I&#x27;ve used<br>
+basic to want to dig through it. :-)<br>
+<br>
+I already have an alpha-beta search implemented.  Typically I search about<br>
+200000 positions each second on a PII-300.  But my heuristic for how good a<br>
+position is is simply the difference between the number of stones one guy has<br>
+captured and the number of stones the other guy has captured.  Well, also I<br>
+add a large bonus if the position is provably winning, e.g. there are not<br>
+enough stones left on the board for the other guy to catch up.<br>
+<br>
+So what I am looking for is some other, additional factors that are good to<br>
+take into account when assessing a particular position, and the relative<br>
+weight they should be assigned compared with the worth of a stone.<br>
+<br>
+Dave Gomboc<br>
+<br>
+In article &lt;01be743c$e3fe34a0$0831c018@mikes-pc.c2.telstra-mm.net.au&gt;,<br>
+  &quot;Michael Williams&quot; &lt;mwilliam@nsw.xspam.bigpond.net.au&gt; wrote:<br>
+&gt;<br>
+&gt; dave_gomboc@my-dejanews.com wrote in article<br>
+&gt; &lt;7cv7ff$h4o$1@nnrp1.dejanews.com&gt;...<br>
+&gt; &gt; I&#x27;ve searched on the web without success for search heuristics to put<br>
+&gt; into a<br>
+&gt; &gt; computer Awari program.  I&#x27;m talking about things like &quot;pits with many<br>
+&gt; stones<br>
+&gt; &gt; are good/bad&quot;, or &quot;keep as many waiting moves as possible&quot;, et cetera.<br>
+&gt; Does<br>
+&gt; &gt; anyone have any to offer?<br>
+&gt; &gt;<br>
+&gt; &gt; Dave Gomboc<br>
+&gt; &gt;<br>
+&gt; &gt; -----------== Posted via Deja News, The Discussion Network ==----------<br>
+&gt; &gt; http://www.dejanews.com/       Search, Read, Discuss, or Start Your Own<br>
+&gt;<br>
+&gt; &gt;<br>
+&gt; I don&#x27;t know if this exactly what you want but here is an Awari game in<br>
+&gt; Basic (very basic) with a heuristic for determining the next move (by the<br>
+&gt; computer).  It was written a long time after I read the book &quot;Zulu Dawn&quot;<br>
+&gt; which included in the afterwords a description of the game<br>
+&gt;<br>
+&gt; 1 PRINT &quot;AWARI  --  ANCIENT AFRICAN GAME OF SEVEN STICKS AND THIRTY-SIX&quot;<br>
+&gt; 2 PRINT &quot;           BEANS ARRANGED AS BELOW&quot;<br>
+&gt; 3 PRINT &quot;                  MY SIDE&quot;<br>
+&gt; 4 PRINT &quot;           6   5   4   3   2   1&quot;<br>
+&gt; 5 PRINT &quot;      MY  ... ... ... ... ... ... YOUR&quot;<br>
+&gt; 6 PRINT &quot;     HOME ... ... ... ... ... ... HOME&quot;<br>
+&gt; 7 PRINT &quot;           1   2   3   4   5   6&quot;<br>
+&gt; 8 PRINT &quot;                 YOUR SIDE&quot;<br>
+&gt; 9 PRINT<br>
+&gt; 10 PRINT &quot;THE OBJECT IS TO MOVE THE BEANS IN TURN UNTIL NONE REMAINS ON<br>
+&gt; ONE&quot;<br>
+&gt; 11 PRINT &quot;SIDE. THE WINNER IS THE ONE WITH THE MOST BEANS IN HIS HOME PIT.&quot;<br>
+&gt; 12 PRINT<br>
+&gt; 13 PRINT &quot;A MOVE IS MADE BY TAKING ALL OF THE BEANS FROM ANY NON-EMPTY PIT<br>
+&gt; ON&quot;<br>
+&gt; 14 PRINT &quot;YOUR SIDE AND SOWING THEM ONE AT A TIME IN THE ADJACENT PITS IN<br>
+&gt; AN&quot;<br>
+&gt; 15 PRINT &quot;ANTI-CLOCKWISE DIRECTION. IF THE LAST BEAN OF YOUR MOVE IS SOWN<br>
+&gt; IN&quot;<br>
+&gt; 16 PRINT &quot;YOUR HOME PIT YOU GET A SECOND MOVE. IF THE LAST BEAN SOWN FALLS<br>
+&gt; IN&quot;<br>
+&gt; 17 PRINT &quot;AN EMPTY PIT PROVIDED THE OPPOSITE PIT IS NOT EMPTY ALL THE<br>
+&gt; BEANS&quot;<br>
+&gt; 18 PRINT &quot;IN THE OPPOSITE PIT AND THE LAST BEAN SOWN ARE CAPTURED AND<br>
+&gt; MOVED&quot;<br>
+&gt; 19 PRINT &quot;TO THE PLAYER&#x27;S HOME PIT.&quot;<br>
+&gt; 20 PRINT<br>
+&gt; 21 PRINT &quot;TYPE &#x27;0&#x27; TO DECLINE FIRST MOVE,  TYPE &#x27;9&#x27; TO PRINT THE BOARD&quot;<br>
+&gt; 22 DIM B(13), G(13), F(50)<br>
+&gt; 23 N = 0<br>
+&gt; 24 PRINT<br>
+&gt; 25 PRINT<br>
+&gt; 26 E = 0<br>
+&gt; 27 FOR I = 0 TO 12<br>
+&gt; 28 B(I) = 3<br>
+&gt; 29 NEXT I<br>
+&gt; 30 C = 0<br>
+&gt; 31 F(N) = 0<br>
+&gt; 33 B(13) = 0<br>
+&gt; 34 B(6) = 0<br>
+&gt; 35 GOSUB 500<br>
+&gt; 40 PRINT &quot;YOUR MOVE&quot;;<br>
+&gt; 41 GOSUB 110<br>
+&gt; 45 IF E = 0 THEN 80<br>
+&gt; 50 IF M &lt;&gt; H THEN 55<br>
+&gt; 52 GOSUB 100<br>
+&gt; 55 IF E = 0 THEN 80<br>
+&gt; 60 PRINT &quot;MY MOVE IS &quot;;<br>
+&gt; 61 GOSUB 800<br>
+&gt; 65 IF E = 0 THEN 80<br>
+&gt; 70 IF M &lt;&gt; H THEN 75<br>
+&gt; 72 PRINT &quot;,&quot;;<br>
+&gt; 73 GOSUB 800<br>
+&gt; 75 IF E &gt; 0 THEN 35<br>
+&gt; 80 PRINT<br>
+&gt; 81 PRINT &quot;GAME OVER&quot;<br>
+&gt; 85 D = B(6) - B(13)<br>
+&gt; 86 IF D &gt;= 0 THEN 90<br>
+&gt; 88 PRINT &quot;I WIN BY&quot;, -D, &quot;POINTS&quot;<br>
+&gt; 89 GOTO 96<br>
+&gt; 90 N = N + 1<br>
+&gt; 91 IF D &lt;&gt; 0 THEN 95<br>
+&gt; 93 PRINT &quot;DRAWN GAME&quot;<br>
+&gt; 94 GOTO 96<br>
+&gt; 95 PRINT &quot;YOU WIN BY&quot;, D, &quot;POINTS&quot;<br>
+&gt; 96 PRINT &quot;ANOTHER GAME (0=NO,1=YES)&quot;;<br>
+&gt; 97 INPUT X<br>
+&gt; 98 IF X &lt;&gt; 0 GOTO 24<br>
+&gt; 99 STOP<br>
+&gt; 100 REM  ***** &#x27;YOUR MOVE&#x27; VERIFICATION -- THEN GOSUB&#x27;S 200<br>
+&gt; 101 REM                                             WHICH GOSUB&#x27;S 600<br>
+&gt; 102 REM                                       THEN GOES TO 500<br>
+&gt; 109 PRINT &quot;AGAIN&quot;;<br>
+&gt; 110 INPUT M<br>
+&gt; 111 IF M = 9 THEN 151<br>
+&gt; 112 IF M &gt; 6 THEN 120<br>
+&gt; 113 IF M &gt; 0 THEN 129<br>
+&gt; 114 IF M &lt;&gt; 0 THEN 120<br>
+&gt; 115 IF C &lt;&gt; 0 THEN 120<br>
+&gt; 116 PRINT &quot;WHAT! DECLINED FIRST MOVE!&quot;<br>
+&gt; 117 E = H = 1<br>
+&gt; 118 RETURN<br>
+&gt; 120 PRINT &quot;ILLEGAL MOVE&quot;<br>
+&gt; 121 GOTO 100<br>
+&gt; 129 M = M - 1<br>
+&gt; 130 IF B(M) = 0 THEN 120<br>
+&gt; 140 H = 6<br>
+&gt; 141 GOSUB 200<br>
+&gt; 150 GOTO 500<br>
+&gt; 151 GOSUB 500<br>
+&gt; 152 GOTO 100<br>
+&gt; 190 REM ****  GOSUB&#x27;ED FROM ROUTINE 100<br>
+&gt; 191 REM       GOTO&#x27;ED FROM ROUTINE 800<br>
+&gt; 200 K = M<br>
+&gt; 201 GOSUB 600<br>
+&gt; 205 E = 0<br>
+&gt; 206 IF K &lt; 7 THEN 210<br>
+&gt; 208 K = K - 7<br>
+&gt; 210 C = C + 1<br>
+&gt; 211 IF C &gt; 8 THEN 215<br>
+&gt; 213 F(N) = F(N) * 6 + K<br>
+&gt; 215 FOR I = 0 TO 5<br>
+&gt; 216 IF B(I) &lt;&gt; 0 THEN 230<br>
+&gt; 220 NEXT I<br>
+&gt; 225 RETURN<br>
+&gt; 230 FOR I = 7 TO 12<br>
+&gt; 231 IF B(I) &lt;&gt; 0 THEN 234<br>
+&gt; 232 NEXT I<br>
+&gt; 233 RETURN<br>
+&gt; 234 E = 1<br>
+&gt; 235 RETURN<br>
+&gt; 500 PRINT<br>
+&gt; 501 PRINT &quot;    &quot;;<br>
+&gt; 502 FOR X = 1 TO 6<br>
+&gt; 503 REM ** WAS FOR I=12 TO 7 STEP -1 **<br>
+&gt; 504 I = 13 - X<br>
+&gt; 505 GOSUB 580<br>
+&gt; 506 NEXT X<br>
+&gt; 515 PRINT<br>
+&gt; 516 I = 13<br>
+&gt; 517 GOSUB 580<br>
+&gt; 520 PRINT TAB(44); B(6)<br>
+&gt; 521 PRINT &quot;    &quot;;<br>
+&gt; 522 FOR X = 0 TO 5<br>
+&gt; 523 I = X<br>
+&gt; 525 REM ** WAS FOR I=0 TO 5    **<br>
+&gt; 526 GOSUB 580<br>
+&gt; 531 NEXT X<br>
+&gt; 535 PRINT<br>
+&gt; 536 PRINT<br>
+&gt; 537 RETURN<br>
+&gt; 580 IF B(I) &gt; 9 THEN 585<br>
+&gt; 582 PRINT &quot; &quot;;<br>
+&gt; 585 PRINT B(I);<br>
+&gt; 586 RETURN<br>
+&gt; 600 P = B(M)<br>
+&gt; 601 B(M) = 0<br>
+&gt; 605 FOR P = P TO 1 STEP -1<br>
+&gt; 606 M = M + 1<br>
+&gt; 607 IF M &lt; 14 THEN 610<br>
+&gt; 609 M = M - 14<br>
+&gt; 610 B(M) = B(M) + 1<br>
+&gt; 611 NEXT P<br>
+&gt; 616 IF B(M) &lt;&gt; 1 THEN 628<br>
+&gt; 617 IF M = 6 THEN 628<br>
+&gt; 618 IF M = 13 THEN 628<br>
+&gt; 619 IF B(12 - M) = 0 THEN 628<br>
+&gt; 625 B(H) = B(H) + B(12 - M) + 1<br>
+&gt; 626 B(M) = 0<br>
+&gt; 627 B(12 - M) = 0<br>
+&gt; 628 RETURN<br>
+&gt; 800 D = -99<br>
+&gt; 801 H = 13<br>
+&gt; 802 FOR X = 0 TO 13<br>
+&gt; 803 I = X<br>
+&gt; 805 REM ** WAS FOR I=0 TO 13   **<br>
+&gt; 806 G(I) = B(I)<br>
+&gt; 808 NEXT X<br>
+&gt; 810 FOR J = 7 TO 12<br>
+&gt; 811 IF B(J) = 0 THEN 885<br>
+&gt; 815 G = 0<br>
+&gt; 816 M = J<br>
+&gt; 817 GOSUB 600<br>
+&gt; 818 FOR X = 0 TO 5<br>
+&gt; 819 I = X<br>
+&gt; 820 REM ** WAS FOR I=0 TO 5    **<br>
+&gt; 821 IF B(I) = 0 THEN 845<br>
+&gt; 825 L = B(I) + I<br>
+&gt; 826 R = 0<br>
+&gt; 830 IF L &lt; 14 THEN 835<br>
+&gt; 831 R = 1<br>
+&gt; 832 L = L - 14<br>
+&gt; 835 REM<br>
+&gt; 836 IF B(L) &lt;&gt; 0 THEN 840<br>
+&gt; 837 IF L = 6 THEN 840<br>
+&gt; 838 IF L = 13 THEN 840<br>
+&gt; 839 R = B(12 - L) + R<br>
+&gt; 840 IF R &lt;= Q THEN 845<br>
+&gt; 842 Q = R<br>
+&gt; 845 REM ** WAS NEXT I  *** REQUIRED LINE NUMBER<br>
+&gt; 846 NEXT X<br>
+&gt; 850 Q = B(13) - B(6) - Q<br>
+&gt; 851 IF C &gt; 8 THEN 875<br>
+&gt; 855 K = J<br>
+&gt; 856 IF K &lt; 7 THEN 860<br>
+&gt; 858 K = K - 7<br>
+&gt; 860 REM ** WAS FOR I=0 TO N-1  **<br>
+&gt; 861 FOR X = 0 TO N - 1<br>
+&gt; 862 I = X<br>
+&gt; 863 IF F(N) * 6 + K &lt;&gt; INT(F(I) / 6 ^ (7 - C) + .1) THEN 870<br>
+&gt; 865 Q = Q - 2<br>
+&gt; 870 REM ** WAS NEXT I  *** REQUIRED LINE NUMBER<br>
+&gt; 871 NEXT X<br>
+&gt; 875 REM ** WAS FOR I=0 TO 13   **<br>
+&gt; 876 FOR X = 0 TO 13<br>
+&gt; 877 I = X<br>
+&gt; 878 B(I) = G(I)<br>
+&gt; 879 NEXT X<br>
+&gt; 880 IF Q &lt; D THEN 885<br>
+&gt; 882 A = J<br>
+&gt; 883 D = Q<br>
+&gt; 884 Z = M<br>
+&gt; 885 NEXT J<br>
+&gt; 890 M = A<br>
+&gt; 891 REM  ****PRINT CHR$(42+M);***** CONVERT ASCII VALUE TO CHARACTER STRING<br>
+&gt; 893 IF Z &lt;&gt; H THEN 896<br>
+&gt; 894 PRINT M - 6;<br>
+&gt; 895 GOTO 200<br>
+&gt; 896 PRINT M - 6<br>
+&gt; 897 GOTO 200<br>
+&gt; 900 REM ** WAS FOR I=0 TO N-1  **<br>
+&gt; 901 FOR X = 0 TO N - 1<br>
+&gt; 902 I = X<br>
+&gt; 903 PRINT B(I)<br>
+&gt; 905 NEXT X<br>
+&gt; 999 END<br>
+&gt; ---------------------------<br>
+&gt;<br>
+&gt;<br>
+<br>
+-----------== Posted via Deja News, The Discussion Network ==----------<br>
+http://www.dejanews.com/       Search, Read, Discuss, or Start Your Own    <br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

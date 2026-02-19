@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Why chess is easy to program, Go hard (long)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Why chess is easy to program, Go hard (long)</h1>
+    <p><strong>From:</strong> hde@cs.cmu.edu (Herbert Enderton)<br>
+    <strong>Date:</strong> 29 Sep 1994 03:53:22 GMT</p>
+    <hr>
+    <div>Why is go harder to program than chess?<br>
+<br>
+The usual answers I see are:<br>
+(1) The branching factor is significantly larger<br>
+(2) The state space as a whole is much larger<br>
+(3) The program must do deeper look-ahead in go (because humans do)<br>
+(4) There seems to be no good cheap evaluation function for go<br>
+<br>
+I think these answers are essentially bogus.  E.g. the large state<br>
+space makes the game harder for everyone, humans included.  When<br>
+one says go is hard to program that means relative to human play.<br>
+<br>
+Here&#x27;s what I think the real answer is:<br>
+<br>
+There are several non-trivial analysis techniques which work well<br>
+in Go, and which either don&#x27;t apply or work less well in chess.<br>
+Humans use these analysis techniques when playing Go, and it buys<br>
+them a LOT in comparison to brute-force search.  I have in mind<br>
+things like examining a cutting point to see if it is dangerous<br>
+(i.e. if White cut there, Black could capture the cutting stone),<br>
+and then using that knowledge to reason that some black stones<br>
+are tactically connectable (no matter where White plays), and<br>
+use that to reason that Black&#x27;s invasion is viable.  This all<br>
+requires look-ahead search, but it&#x27;s not simple brute-force search.<br>
+Brute-force search could conceivably arrive at the same answer<br>
+(e.g. Black should invade here), but that would require MUCH more<br>
+search.<br>
+<br>
+In some chess positions there are similar reasoning techniques<br>
+which apply.  E.g. A black bishop on a2 might be trapped behind<br>
+the white pawns on b3 and c2, and will eventually be captured<br>
+even though Black can make irrelevant threats elsewhere on the<br>
+board to delay the capture.  But chess pieces attack distant<br>
+squares,, so it is rare that a tactical fact like this can be<br>
+analysed independently.  I.e., often one of those seemingly<br>
+irrelevant threats saves the bishop.  So while fancy goal-directed<br>
+local search can help in analysing some positions (especially<br>
+some pawn endings), in typical positions it seems reasonable<br>
+to look at all the legal moves.  The fancy methods help, but not<br>
+as much as they do in go, where tactical facts like trapped stones<br>
+can be determined by local search and stay true over many moves.<br>
+<br>
+The best go programs do use cutting-point analysis and so on, but<br>
+they don&#x27;t have it all down yet.  When they do, look out.<br>
+<br>
+ -- Bert Enderton <br>
+<br>
+<br>
+</div>
+</body>
+</html>

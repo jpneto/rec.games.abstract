@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Blind Vigilantes</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Blind Vigilantes</h1>
+    <p><strong>From:</strong> Bret A Fausett &lt;bret@lexr9exwbs5.com&gt;<br>
+    <strong>Date:</strong> Tue, 17 Sep 2002 22:27:26 GMT</p>
+    <hr>
+    <div>Blackhole lists offer dark prospects<br>
+<br>
+By Bret A Fausett<br>
+<br>
+New Architect<br>
+August 2002<br>
+<br>
+Most of the email I receive these days is spam, yet I&#x27;ve never purchased<br>
+anything advertised in a piece of unsolicited commercial email. I&#x27;m not even sure<br>
+that I&#x27;ve ever clicked on a link sent to me in a piece of unsolicited commercial<br>
+email.<br>
+<br>
+I haven&#x27;t found any good method of blocking spam. Fortunately, I have a<br>
+broadband connection, so things aren&#x27;t as bad as they could be. But whenever<br>
+I travel and find myself connecting via modem, I&#x27;m constantly frustrated by the<br>
+significant amount of time I have to spend downloading junk mail, which is<br>
+sometimes billed at exorbitant hotel or foreign telephone rates. So you&#x27;d think<br>
+that I&#x27;d be somewhat sympathetic to the efforts of groups that create blackhole<br>
+lists.<br>
+<br>
+For those of you unfamiliar with a blackhole list, it&#x27;s a list that&#x27;s typically<br>
+maintained by volunteer antispam advocates. It contains the IP addresses and<br>
+domain names of certain mail servers allegedly used to send unsolicited email<br>
+messages en masse. When an Internet service provider subscribes to one or<br>
+more of the blackhole lists, any inbound email to its service originating from a<br>
+mail server on the lists is automatically rejected. The subscriber to a blackhole<br>
+list doesn&#x27;t filter based on the actual content of the email, just its place of<br>
+origin, which makes this practice a fairly crude tool. It blocks all messages from<br>
+specific locations regardless of content.<br>
+<br>
+Anyone who finds his or her mail server erroneously listed on a blackhole list<br>
+can usually get off the list by establishing that he or she has remedied<br>
+whatever server insecurity spammers exploited. At least that&#x27;s how it works in<br>
+theory.<br>
+<br>
+I don&#x27;t run an insecure mail server, but mine recently found its way onto a<br>
+blackhole list. I&#x27;ve tried to get off the list, but to no avail. I&#x27;ve become just<br>
+another victim of vigilante justice on the Internet.<br>
+<br>
+The Wrong Guy<br>
+<br>
+One day back in March, I tried to send a friend of mine an email. It bounced. The<br>
+mail server that rejected my message sent a polite note back explaining that<br>
+the address of my mail server was now listed on its ISP&#x27;s blackhole list.<br>
+<br>
+Over the next two weeks, the circle of people to whom I could send email<br>
+started to shrink. Soon, even my father&#x27;s email address was off-limits to me.<br>
+<br>
+The primary way to get on a blackhole list is to run an open relay. For various<br>
+reasons having to do with access to networks and efforts to conceal their<br>
+identities, senders of mass unsolicited email predominantly exploit such relays.<br>
+An open relay accepts mail from anyone in the world and relays it to whomever<br>
+is listed in the address. Most mail servers aren&#x27;t open relays. They accept mail<br>
+only from subscribers to that network&#x27;s services, or from a set of persons<br>
+specifically identified on the server. In spite of grass roots efforts to close the<br>
+open relays, there are still more than a few of them out there.<br>
+<br>
+Not Guilty<br>
+<br>
+My mail server, however, was not an open relay. I have no idea who first<br>
+submitted my name to a blackhole list operator in Denmark, but sometime in<br>
+March of this year the operator added my mail server to its list. The first time<br>
+the service was used to reject a piece of my mail, the rejection came<br>
+accompanied by an explanation of why I was on the list and what I could do to<br>
+be removed from it. The explanation was that I was running an open relay. How<br>
+could I get off the list? That was simple, the message said. Close the open<br>
+relay, and send a message to the operator&#x27;s server asking to be re-scanned.<br>
+<br>
+Of course, as I mentioned, my mail server was never an open relay in the first<br>
+place. So in response to the rejection message I received, I asked the blackhole<br>
+list service if it would kindly re-scan my mail server and make another<br>
+determination as to whether it was an open relay. I was sure that there had<br>
+been some mistake and that on a second try, it would realize the error in its<br>
+initial judgment. Shortly after I submitted my request, I sat down to monitor my<br>
+mail logs. This time I saw the service in Denmark address my mail server. I<br>
+watched my mail server accept the message and then pass the piece of email<br>
+back to the Danish mail server. The Danish server promptly sent a message<br>
+saying that my server was still operating as an open relay.<br>
+<br>
+How had it gained access to my mail server? Simple. It had forged the headers<br>
+on its email to convince my mail server that the email it sent was from a<br>
+permitted user. You see, my mail servers were set up to pass mail only from a<br>
+domain name of which I am the only user. It blocks everything else. That&#x27;s not<br>
+an open relay. Unless you&#x27;re a user in my domain, you can&#x27;t use it.<br>
+<br>
+Blocked<br>
+<br>
+The group based in Denmark had pretended to be me, forged an email as<br>
+though it had come from an address that only I am authorized to use, passed it<br>
+through the mail server in my house, and then placed me on a list of people<br>
+who should be blocked from sending mail. They circulated that list around the<br>
+world. ISPs used by my friends and family here the United States subscribed to<br>
+this list. Now, through no fault of my ownand in fact because of the trickery of<br>
+Danish email activistsI was no longer able to send email to many people in my<br>
+address book. <br>
+<br>
+It&#x27;s hard to describe how angry this made me. The Danish consortium had lied<br>
+about their identity, and I was paying for it.<br>
+<br>
+The worst thing about being blacklisted, however, wasn&#x27;t that I could no longer<br>
+send email, but that spammers began actively trying to use my mail server to<br>
+send their spam. You see, blackhole lists work both ways. ISPs use it to block<br>
+traffic, but as I&#x27;ve recently discovered, the spammers themselves use the lists<br>
+as a kind of directory of servers to use for sending their mail.<br>
+<br>
+If you look at my mail server logs, you&#x27;ll see that every few seconds or so,<br>
+someone, somewhere tries to access my mail server and use it to send mail.<br>
+Each time, without fail, my mail server declines the request and refuses to relay<br>
+the requested message. It isn&#x27;t an open relay. It&#x27;s just doing its job. But my<br>
+machine is bombarded with requests from all over the world from spammers<br>
+seeking to use its minimal capabilities to send their penis enlarging, breast<br>
+enhancing, get-rich-quick messages. <br>
+<br>
+My Rights<br>
+<br>
+But, hey, I&#x27;m a lawyer, right? I&#x27;m supposed to be able to solve this kind of<br>
+dilemma. And there are a few things I could do.<br>
+<br>
+For one, the Danish antispam organization falsified an email header to gain<br>
+access to my mail server. Illegal access to a computer system is, if not a criminal<br>
+violation, then a trespass on my private property. As I&#x27;ve discussed previously<br>
+in this space, one of the novel legal theories now catching on for these kinds of<br>
+unacceptable accesses to computer systems is a centuries-old tort called<br>
+&quot;trespass to chattels.&quot; At a minimum, I ought to be able to sue the Danish<br>
+company for the damage it caused me from its illegal access. <br>
+<br>
+Granted, the damage caused by my inability to send an email is likely not<br>
+terribly significant. You can always pick up the phone, print the message out,<br>
+and fax it or mail itor just use a different mail server. But in spite of all that, I<br>
+could probably get an injunction, or least a dollar or two to compensate me for<br>
+my injuries and establish that I have been wronged. <br>
+<br>
+The problem, of course, is that the loose organization of individuals who<br>
+compiled the blackhole list is based in Denmark. Who knows whether the<br>
+organization is a real legal entity or just some name cooked up by a group of<br>
+self righteous individuals. However, they do have a domain name, and an IP<br>
+address, and they circulate their work to ISPs around the world. In other words,<br>
+there is a group for me to sue. But taking legal action on foreign entities is<br>
+difficult. I would have to translate my legal documents into Danish. I would have<br>
+to hire someone in Denmark to personally deliver these translated documents<br>
+to the entity that I would be suing. That costs time and money.<br>
+<br>
+But I could sue them here in Los Angeles, California, that much I know. By<br>
+sending their forged email through my mail server, which is located in my den in<br>
+Los Angeles, they fulfilled certain California legal requirements that would let me<br>
+sue them here. The connection to Los Angeles is also bolstered by the fact that<br>
+I live here and my injury was suffered here. <br>
+<br>
+Of course, all of this is starting to sound like the kind of hypothetical legal<br>
+conundrum that you might find on a law school exam. Problems like mine often<br>
+remain hypothetical because the expense of bringing them to trial is so great,<br>
+and the ability to gain any monetary relief from lawsuits is minimal. That&#x27;s why<br>
+the black hole providers have been able to get away with their vigilante justice<br>
+for so long. For any individual user wronged by their effortsand from what I<br>
+understand, there are a lot of people in similar situationsthe costs of pursuing<br>
+these organizations, which are often located overseas, is too great. These<br>
+groups of volunteer organizations have no assets to speak ofthey are<br>
+volunteers after alland plaintiffs&#x27; lawyers are hesitant to take a case without<br>
+the prospect of a lucrative damages judgment. <br>
+<br>
+The Case<br>
+<br>
+Before you think that this is all just about me and the fact that my father no<br>
+longer receives any email from me, there are bigger policy implications for<br>
+private individuals and companies that take steps to block connectivity. Much<br>
+bigger.<br>
+<br>
+I&#x27;ve long championed the idea that the Internet should remain largely<br>
+unregulated by governments. But at the same time, any private operator at an<br>
+end point in the Internet&#x27;s architecture can restrict the flow of content to a user.<br>
+What&#x27;s wonderful about the Internet is that it enables end-to-end<br>
+communication from anywhere in the world to anywhere in the world. For all of<br>
+the problems caused by spam, email is still the most widely used application on<br>
+the Internet. So the idea that private parties could get ISPs to block some<br>
+people from talking to other people should be deeply troublesome.<br>
+<br>
+The Danish blackhole list operators want to block access to computers that<br>
+might be used for spam, but it&#x27;s easy to imagine blacklists used for less noble<br>
+purposes. For example, imagine that the RIAA compiled a list of IP addresses<br>
+which, it contended, had at some time used peer-to-peer file sharing programs.<br>
+Because these peer-to-peer systems could transmit copyrighted materials in a<br>
+way that infringes on the copyright owner&#x27;s rights, the RIAA could argue, those<br>
+IP addresses should be blocked. It isn&#x27;t difficult to imagine that the RIAA could<br>
+pressure a sufficient number of ISPs into subscribing to this copyright blackhole<br>
+list and blocking access to their users, or to any traffic emanating from them.<br>
+<br>
+Breaking end-to-end connectivity for any application, whether email or<br>
+peer-to-peer or the Web, threatens the very thing that makes the Internet<br>
+valuable. These are matters of principle. Which reminds me I have a lawsuit to<br>
+file. <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+Bret is an intellectual property and Internet attorney with Hancock, Rothert &amp;<br>
+Bunshoft. You can reach him at bret@lextext.com. <br>
+<br>
+<br>
+<br>
+--<br>
+Until Abu changes the tags virtually, Ron won&#x27;t laugh any young corners.<br>
+<br>
+<br>
+They are recollecting without sour, above weird, without abysmal coconuts.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

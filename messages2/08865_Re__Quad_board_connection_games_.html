@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Quad-board connection games.</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Quad-board connection games.</h1>
+    <p><strong>From:</strong> anony@nowhere.org<br>
+    <strong>Date:</strong> Sat, 13 Dec 2008 18:49:50 GMT</p>
+    <hr>
+    <div><br>
+On  4-Nov-2008, Bill Taylor &lt;w.taylor@math.canterbury.ac.nz&gt; wrote:<br>
+<br>
+&gt; A fifth occurs to me, suggested by the close similarity of Quax<br>
+&gt; and Crossway styles.<br>
+&gt;<br>
+&gt; Auto-quax - when two diagonal stones are played, the diagonal<br>
+&gt;             connection between them automatically appears if poss.<br>
+&gt;<br>
+&gt; (OC, in all cases diagonal connections are not allowed to cross.)<br>
+<br>
+<br>
+Actually, you posted here this last year (Nov 16, 2007) as &quot;Quickway&quot;:<br>
+<br>
+http://groups.google.com/group/rec.games.abstract/browse_thread/thread/c92768f325f99a6b<br>
+<br>
+<br>
+QUICKWAY<br>
+========<br>
+Played on a square quadrangular board of arbitrary size.<br>
+<br>
+<br>
+Players alternately place one of their stones (an unlimited supply) on any<br>
+free cell of the board.  Once placed, a stone is not moved.<br>
+<br>
+<br>
+The goal is for one player to connect the north and south edges by an<br>
+orthogonal path of stones (perhaps augmented by diagonal lines), and the<br>
+other is to connect east and west.<br>
+<br>
+<br>
+When stones of the same colour occur on diagonally adjacent cells, the<br>
+corresponding diagonal line is automatically filled, unless it would cross<br>
+over a previously marked diagonal.<br>
+<br>
+<br>
+<br>
+<br>
+&gt; If anyone can think<br>
+&gt; of any other stymie-resolution plan, we would love to hear of it!<br>
+<br>
+<br>
+Off the top of my head:<br>
+<br>
+<br>
+1) The game &quot;TRELLIS&quot; is played on a checkered board. BLACK connects<br>
+diagonally across only DARK squares, WHITE only across LIGHT squares.<br>
+<br>
+<br>
+2) BLACK connects on one diagonal direction, WHITE connects on the other.<br>
+<br>
+<br>
+3) The game &quot;ONYX&quot; suggests several methods that are *opposite* of first<br>
+come, first connect (aka Quickway aka Autoconnect, etc). Though it is played<br>
+on what amounts to a board of heptagons and squares, it&#x27;s ideas can be used<br>
+on a 488 and 4444 boards.<br>
+<br>
+<br>
+In Onyx, a player can take a square cell if and only if all four neighbor<br>
+cells are empty.<br>
+<br>
+<br>
+If a player completes a 2x2 checkerboard, she captures the opposing two<br>
+pieces.<br>
+<br>
+<br>
+For example (using a 488 rather than the Onyx board for ascii-simplicity):<br>
+<br>
+  ---   ---<br>
+ /   \ /   \<br>
+|  X  |  O  |<br>
+ \   / \   /<br>
+  ---   ---<br>
+ /   \ /   \<br>
+|  O  |     |<br>
+ \   / \   /<br>
+  ---   ---<br>
+<br>
+Neither player may play in the square, as only 1 of its 4 neighbors are<br>
+empty.<br>
+<br>
+<br>
+If X plays in the lower right, she will capture the two O&#x27;s, leaving this:<br>
+<br>
+<br>
+  ---   ---<br>
+ /   \ /   \<br>
+|  X  |     |<br>
+ \   / \   /<br>
+  ---   ---<br>
+ /   \ /   \<br>
+|     |  X  |<br>
+ \   / \   /<br>
+  ---   ---<br>
+<br>
+At this point, O can try to block, but X will still be able to connect:<br>
+<br>
+<br>
+  ---   ---<br>
+ /   \ /   \<br>
+|  X  |  X  |<br>
+ \   / \   /<br>
+  ---   ---<br>
+ /   \ /   \<br>
+|  O  |  X  |<br>
+ \   / \   /<br>
+  ---   ---<br>
+<br>
+<br>
+<br>
+This suggests to me several ways that might work on a 4444:<br>
+<br>
+<br>
+3a) Play only on cells. No captures. Player who completes a 2x2 checkerboard<br>
+wins the connection. Vertex is marked to show this.<br>
+<br>
+Before:<br>
++---+---+<br>
+| X | O |<br>
++---+---+<br>
+| O |   |<br>
++---+---+<br>
+<br>
+After:<br>
++---+---+<br>
+| X | O |<br>
++---X---+<br>
+| O | X |<br>
++---+---+<br>
+<br>
+<br>
+3b) As above, but diagonal connections are automatic, immediate and good<br>
+until overridden.<br>
+<br>
+Before:<br>
++---+---+<br>
+| X | O |<br>
++---+---+<br>
+|   |   |<br>
++---+---+<br>
+<br>
+O plays and is connected temporarily:<br>
++---+---+<br>
+| X | O |<br>
++---O---+<br>
+| O |   |<br>
++---+---+<br>
+<br>
+Finally X connection breaks O&#x27;s permanently:<br>
++---+---+<br>
+| X | O |<br>
++---X---+<br>
+| O | X |<br>
++---+---+<br>
+<br>
+<br>
+3c) As (3a) with captures. No play whatsoever on vertices. ALL connections<br>
+are orthogonal.<br>
+<br>
+<br>
+Before -- no connection:<br>
++---+---+<br>
+| X | O |<br>
++---+---+<br>
+| O |   |<br>
++---+---+<br>
+<br>
+Then X plays to bottom right, capturing both O&#x27;s -- still no connection:<br>
++---+---+<br>
+| X |   |<br>
++---+---+<br>
+|   | X |<br>
++---+---+<br>
+<br>
+O plays again in one of the two spaces just vacated:<br>
++---+---+<br>
+| X | O |<br>
++---+---+<br>
+|   | X |<br>
++---+---+<br>
+<br>
+But X takes the last space, finally making a connection:<br>
++---+---+<br>
+| X | O |<br>
++---+---+<br>
+| X | X |<br>
++---+---+<br>
+<br>
+<br>
+3d) As (3b)+(3c) Diagonal connections are immediate.<br>
+<br>
+At this point, O has the temporary connection:<br>
++---+---+<br>
+| X | O |<br>
++---O---+<br>
+| O |   |<br>
++---+---+<br>
+<br>
+Then X plays to bottom right, capturing both O&#x27;s, making her own temporary<br>
+connection:<br>
++---+---+<br>
+| X |   |<br>
++---X---+<br>
+|   | X |<br>
++---+---+<br>
+<br>
+<br>
+<br>
+3e) Full-on Onyx rules. The only way to get a vertex and connect diagonally<br>
+is to play a stone on a vertex. This may ONLY be done if all four squares<br>
+around it are empty. Completing a 2x2 checkerboard captures both enemy<br>
+stones.<br>
+<br>
+I suspect the &quot;vertex can only be played if isolated&quot; rule is not really<br>
+required (in the original game or) here. A player will always have the<br>
+option of playing a cell to better effect:<br>
+<br>
+<br>
+It&#x27;s O&#x27;s turn -- Onyx rules say that O cannot play at the central vertex:<br>
++---+---+<br>
+| X | O |<br>
++---+---+<br>
+| O |   |<br>
++---+---+<br>
+<br>
+<br>
+But he wouldn&#x27;t want to -- it&#x27;s ALWAYS better to just make the orthogonal<br>
+connection:<br>
+<br>
++---+---+<br>
+| X | O |<br>
++---+---+<br>
+| O | O |<br>
++---+---+<br>
+<br>
+<br>
+<br>
+Edward<br>
+<br>
+<br>
+</div>
+</body>
+</html>

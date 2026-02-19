@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Nim game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Nim game</h1>
+    <p><strong>From:</strong> torbenm@diku.dk (Torben gidius Mogensen)<br>
+    <strong>Date:</strong> 05 Jul 2004 17:06:31 +0200</p>
+    <hr>
+    <div>joc_kay@hotmail.com (Joe) writes:<br>
+<br>
+&gt; Martin Moller Pedersen &lt;tusk@daimi.au.dk&gt; wrote in message news:&lt;cc9l2a$r4n$1@news.net.uni-c.dk&gt;...<br>
+&gt; &gt; <br>
+&gt; &gt; If N and M is odd then it is a win for the first player else it is a<br>
+&gt; &gt; win for the second player.<br>
+&gt; &gt; <br>
+&gt; Only in case you start with a full board I presume?<br>
+&gt; <br>
+&gt; However, the idea was to start with random configurations (0 or 1<br>
+&gt; piece on each field). [One might think about starting with an empty<br>
+&gt; board and both players &#x27;building up&#x27; a configuration until one of the<br>
+&gt; players - when it is her turn - decides it is advantageous to start<br>
+&gt; removing pieces according to above rules.]<br>
+&gt; <br>
+&gt; Where can I find a derivation of the &#x27;a full board of odd sizes gives<br>
+&gt; a N-position&#x27; rule?<br>
+<br>
+Actually, on a full NxN board, it is a win for the second player<br>
+unless N=1 (in which case, it is obviously a first-player win).<br>
+<br>
+If the board is initially full, it doesn&#x27;t matter which row or column<br>
+you take, as they are all alike.  This is true even after a number of<br>
+rows or column are taken.  Hence, all that matters is whether you take<br>
+a row or a column.  So we may as well assume you always take the<br>
+leftmost column or topmost row.  If you start with a square, the<br>
+second player can (by taking row when the first player takes column<br>
+and vice-versa) always force it into a square with one less colunm and<br>
+row, i.e., from NxN to (N-1)x(N-1) etc.  So, if N&gt;1, the first player<br>
+is eventually faced with a 2x2 board.  If he removes a row or column,<br>
+the second player removes the other and thereby wins.<br>
+<br>
+	Torben<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

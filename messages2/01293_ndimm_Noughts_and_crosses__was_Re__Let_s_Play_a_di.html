@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ndimm Noughts and crosses (was Re: Let&#x27;s Play a different game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>ndimm Noughts and crosses (was Re: Let&#x27;s Play a different game</h1>
+    <p><strong>From:</strong> phillips@swanee.ee.uwa.edu.au (Christopher Phillips)<br>
+    <strong>Date:</strong> 21 Sep 93 09:07:50 GMT</p>
+    <hr>
+    <div>phillips@swanee.ee.uwa.edu.au (Christopher Phillips) writes:<br>
+<br>
+<br>
+&gt;Does anyone know if a draw is possible in 4^4 noughts and crosses?<br>
+&gt;I have not managed to fill the board in such a way as to have no 4-in-a-rows<br>
+&gt;for either player.<br>
+<br>
+Oops; I mustn&#x27;t have thought very hard (it&#x27;s been a while since I thought<br>
+about it), &#x27;cause I came up with the following today..<br>
+<br>
+<br>
+xxOO xxOO OOxx OOxx <br>
+xOxO xOxO OxOx OxOx <br>
+OxOx OxOx xOxO xOxO <br>
+OOxx OOxx xxOO xxOO <br>
+<br>
+xxOO xxOO OOxx OOxx <br>
+xOxO xOxO OxOx OxOx <br>
+OxOx OxOx xOxO xOxO <br>
+OOxx OOxx xxOO xxOO <br>
+<br>
+xxOO xxOO OOxx OOxx <br>
+xOxO xOxO OxOx OxOx <br>
+OxOx OxOx xOxO xOxO <br>
+OOxx OOxx xxOO xxOO <br>
+<br>
+OOxx OOxx xxOO xxOO <br>
+OxOx OxOx xOxO xOxO <br>
+xOxO xOxO OxOx OxOx <br>
+xxOO xxOO OOxx OOxx <br>
+<br>
+<br>
+So in more general terms, for what N and D can a draw be found,<br>
+and is it the same set as all values of (N,D) for which the<br>
+first player of an N^D noughts and crosses game cannot force a win?<br>
+<br>
+I beleive the answer to the second question is yes, and my knowlege<br>
+of the first is as following:<br>
+<br>
+(d indicates a draw possible,<br>
+ 1 indicates the first player can always win and no draw is known possible<br>
+ D indicates a draw is possibel and a drawing strategy for the second<br>
+ player is known.)<br>
+<br>
+<br>
+\ D 0 1 2 3 4 5 6 7 8<br>
+N\_____________________________<br>
+1 | 1 1 1 1 1 1 1 1 1  ...<br>
+2 | 1 D 1 1 1 1 1 1 1  ...<br>
+3 | 1 D D 1 1 1 1 1 1  ...<br>
+4 | 1 D D d d<br>
+5 | 1 D D<br>
+8 | 1 D D<br>
+9 | 1 D D<br>
+<br>
+    . . .<br>
+    . . .<br>
+    . . .<br>
+<br>
+<br>
+Is there a function F such that a draw can be found for<br>
+{(n,d) : 0&lt;n&lt;F(d) } ?<br>
+<br>
+I think a sufficient but not necessary (eg 3^2) condition for<br>
+a draw to be possible is that there be at least twice as<br>
+many &#x27;squares&#x27; (points in the game space) as winning runs,<br>
+ie<br>
+<br>
+n^d &gt;=2*(  ((n+2)^d-n^d)/2)  )<br>
+<br>
+<br>
+Christopher.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

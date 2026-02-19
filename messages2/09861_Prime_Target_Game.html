@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Prime Target Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Prime Target Game</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Thu, 28 Oct 2010 11:00:48 -0700 (PDT)</p>
+    <hr>
+    <div>A game for any plural number of players: (Number of players = m.)<br>
+<br>
+Draw m*k+1 incrementally larger concentric circles on a piece of<br>
+paper, where k is some positive integer &gt;= 2.<br>
+<br>
+Subdivide the circles by drawing n equally spaced rays from their<br>
+center, where n is at least 6, say.<br>
+<br>
+(So now you should have a target.)<br>
+<br>
+<br>
+The players start the game by taking turns, and each player on a turn<br>
+places an integer -- 1 to n and which has not been written down<br>
+earlier in the game -- in an empty pie-shaped wedge in the central<br>
+circle. After n moves, there should be a permutation of (1,2,3,...,n)<br>
+in the central circle, one integer per wedge.<br>
+<br>
+In the second part of the game, the players take turns, each player<br>
+&quot;completing a ring&quot; on a move. By completing a ring, the player fills<br>
+in the n sections of the innermost *empty* ring. The player fills in<br>
+each section of the ring either with the sum of (the integer<br>
+immediately adjacent to the section, but in the next ring inward) and<br>
+(the integer one position clockwise to the section, but in the next<br>
+ring inward), or with the absolute value of the difference between<br>
+these particular two integers (in the next ring inward).<br>
+<br>
+Example:<br>
+\...8..|....../<br>
+-\-----|-----/-<br>
+..\.2..|..6./<br>
+---\---|---/---<br>
+8 = 2+6.<br>
+(The 8 could have been a 4.)<br>
+<br>
+After the ring is completed, the player gets the number of primes in<br>
+his latest ring added to his score, OR, if there is exactly one prime<br>
+in his ring (no more, no fewer), he gets the value of that prime added<br>
+to his score.<br>
+<br>
+After all rings are completed, the game is over. Largest score wins.<br>
+<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

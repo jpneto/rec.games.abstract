@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Divisor Over Sums -- Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Divisor Over Sums -- Game</h1>
+    <p><strong>From:</strong> James Waldby &lt;not@valid.invalid&gt;<br>
+    <strong>Date:</strong> Sun, 12 Jun 2011 18:47:54 +0000 (UTC)</p>
+    <hr>
+    <div>On Sat, 11 Jun 2011 11:19:26 -0700, Leroy Quet wrote:<br>
+...<br>
+&gt; Players take turns placing 1,2,3,... n^2 into empty squares of the grid,<br>
+&gt; one number each turn.<br>
+...<br>
+&gt; Let H represent the collection of variables h, where each h is the sum<br>
+&gt; of a HORIZONTALLY-adjacent pair of integers in the grid.<br>
+...[similarly but vertically for V]<br>
+&gt; (So, H and V each consist of n*(n-1) variables.)<br>
+...<br>
+In the above and in snipped lines, you refer to a number of<br>
+computed values as &quot;variables&quot;.  The term &quot;values&quot; would be better.<br>
+<br>
+&gt; [H] score: d*(number of h&#x27;s that are divisible by d)<br>
+...<br>
+&gt; [V] score: d&#x27;*(number of v&#x27;s that are divisible by d&#x27;)<br>
+&gt; The player with the largest score wins.<br>
+<br>
+That score function seems (at least in your example game below) <br>
+to lead to somewhat mediocre play experience.  Perhaps something<br>
+like &quot;sum of numbers divisible by d, minus the largest number<br>
+divisible by d, with d=1 disallowed&quot; would make the game more <br>
+interesting.<br>
+<br>
+&gt; For example, let us say two poorly-playing players have this n=4 grid:<br>
+&gt; <br>
+&gt; 08 09 01 10<br>
+&gt; 03 11 16 07<br>
+&gt; 02 14 15 05<br>
+&gt; 04 12 06 13<br>
+&gt; <br>
+&gt; H = (17,10,11, 14,27,23, 16,29,20, 16,18,19)<br>
+&gt; <br>
+&gt; Let us say that player 1 picks 4, then he gets 4*3 = 12 points. (Because<br>
+&gt; h&#x27;s = 16, 20, and 16 are divisible by 4.) Had he picked 29, he could<br>
+&gt; have gotten 29, however.<br>
+&gt; <br>
+&gt; V = (11,5,6, 20,25,26, 17,31,21, 17,12,18)<br>
+&gt; <br>
+&gt; Player 2 picks 3 and gets 3*4 = 12 points. She should have picked 31.<br>
+<br>
+Presumably to allow the H player to feel less bad in defeat?<br>
+31 is enough to win, but 17 would score 3 points more.  <br>
+<br>
+With the alternate score function I mentioned above (sum of divisibles,<br>
+less largest divisible) scores like the following would result:<br>
+1: 178    2: 56    3: 36    4: 12    5: 25<br>
+6: 18     7-16: 0  17: 17   &gt;17: 0<br>
+which suggests that this function would tend to favor divisors like<br>
+2 or 3 (if 1 is disallowed), which apparently would give rather boring <br>
+play.  Probably there is no easy way to make this game playable in its<br>
+original form; to be &quot;interesting&quot;, a score functions probably should <br>
+give fairly uniform results across a wide range of divisors, which <br>
+then leads to a lot of tedium when comparing choices of divisors.<br>
+<br>
+In the above, much of the game time would consist of figuring out <br>
+what divisor to choose, after all the numbers have been recorded in<br>
+the grid.  However, if the players record their divisors in advance, <br>
+there would be more emphasis on number placement strategy, and <br>
+presumably more-interesting game play.  The recorded divisors could<br>
+be concealed until end, or, optionally, revealed at game beginning.<br>
+<br>
+A simple variant that might be easy and interesting:  After H and V <br>
+players take turns placing 1, 2, ... n^2 into an n x n grid, the score<br>
+of each is the largest horizontal-pair sum or vertical-pair sum, <br>
+respectively, that he or she finds, and the larger score wins.  This<br>
+should give a playable game.  Does a winning strategy exist?<br>
+<br>
+-- <br>
+jiw<br>
+<br>
+<br>
+</div>
+</body>
+</html>

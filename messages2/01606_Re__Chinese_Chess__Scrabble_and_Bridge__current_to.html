@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Chinese Chess, Scrabble and Bridge: current top ratings</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Chinese Chess, Scrabble and Bridge: current top ratings</h1>
+    <p><strong>From:</strong> amlogan@rogue.Princeton.EDU (Adam Meredith Logan)<br>
+    <strong>Date:</strong> Wed, 23 Feb 1994 02:21:00 GMT</p>
+    <hr>
+    <div>In article &lt;CLn30w.845@vcd.hp.com&gt;, David Boll &lt;dboll@vcd.hp.com&gt; wrote:<br>
+&gt;In article &lt;CLL6MA.KJo@cs.vu.nl&gt; victor@cs.vu.nl (Victor Allis) writes:<br>
+&gt;&gt;For my Ph.D thesis, I have investigated (the literature on) a large<br>
+&gt;&gt;number of strategic games. For most games I have been able to obtain<br>
+&gt;&gt;all the information I need, except for Chinese Chess, Scrabble and Bridge.<br>
+&gt;&gt;<br>
+&gt;&gt;I would appreciate any pointers to information regarding the following;<br>
+&gt;&gt;<br>
+&gt;&gt;2. The state-of-the-art in Scrabble. Here I have heard rumors both that<br>
+&gt;&gt;   the strongest programs outperform human players, as well as rumors that<br>
+&gt;&gt;   the strongest humans still have the edge.<br>
+&gt;&gt;   Which programs are currently considered to be the best.<br>
+&gt;<br>
+&gt;  From what I&#x27;ve heard, I think state-of-the-art in Scrabble focuses<br>
+&gt;  mostly on offense, not on defense. <br>
+<br>
+This was true until the release of Maven software last year.  (The program&#x27;s<br>
+author always seems to say &quot;Maven software&quot; rather than just &quot;Maven&quot;; I follow<br>
+his lead.)  In any event, it&#x27;s a lot easier to write programs that play good<br>
+offense than programs that play good defense.<br>
+<br>
+   I&#x27;ve heard claims to the effect of <br>
+&gt;  &quot;This program averages 375 points per game&quot; - well, it sure wouldn&#x27;t<br>
+&gt;  be able to get that total against me! <br>
+<br>
+I would guess (and consider myself very well qualified to guess) that Maven<br>
+software would average over 400 points against the world&#x27;s best player if<br>
+he used his normal style of play (in the Official Scrabble Players Dictionary.)<br>
+<br>
+   I&#x27;m not saying I&#x27;d beat it, I<br>
+&gt;  probably wouldn&#x27;t, but it is quite easy to hold the totals down.<br>
+<br>
+Not as easy as you think, if one uses a dictionary as permissive as the<br>
+Official Scrabble Players Dictionary (as in North America) or Chambers (as in<br>
+the UK).<br>
+<br>
+&gt;  My point is, it would be quite possible for a Scrabble program to be<br>
+&gt;  able to claim a higher average than is seen in human tournament play, and<br>
+&gt;  yet still lose to strong human players.<br>
+<br>
+This is certainly true.  More generally, an average score doesn&#x27;t mean much<br>
+of anything unless one specifies the competition.  Even then it&#x27;s not an<br>
+ideal indicator because of varying styles of play, not to mention the<br>
+question of which dictionary one uses.<br>
+<br>
+&gt;  I think the best Scrabble programs use a 1-move lookahead, with heuristics<br>
+&gt;  (like, Don&#x27;t leave an open triple score) for defense rather than a <br>
+&gt;  search. <br>
+<br>
+Again, this was true before the release of Maven software.  This software<br>
+has a special module to do late-game analysis (with fewer than 10 tiles in<br>
+the bag) and another for end-game analysis (no tiles in bag).  The former <br>
+finds all possible plays using the remaining tiles and tries to make moves<br>
+that block the opponent&#x27;s possible large plays, and the latter does<br>
+the sort of endgame analysis one is familiar with from, say, chess.<br>
+(Incidentally, in the latest issue of his newsletter _Rack Your Brain_,<br>
+the author of his program says that it took him a year to write the first<br>
+version of the endgame player.  This may explain why Scrabble programmers<br>
+have focused on offense.)<br>
+<br>
+Also, Maven software has the capacity to do Monte Carlo &quot;simulations&quot; of<br>
+Scrabble positions, though it does not use these simulations to decide its<br>
+moves in a game situation.<br>
+<br>
+In answer to the original question, I would say that about 3-5 humans in<br>
+the world can (over a long period) break even or better against Maven<br>
+when the dictionary of reference is the Official Scrabble Players Dictionary.<br>
+<br>
+Adam<br>
+<br>
+([dis]claimer: while I&#x27;m not one of the 3-5 humans in the world I mentioned,<br>
+my N[ational] S[crabble] A[ssociation] rating is not much lower than theirs.<br>
+I have no affiliation with the programmer of Maven software except as a <br>
+satisfied reader of his newsletter.  I have worked with middling-late <br>
+pre-release versions of Maven, but only minimally with the version <br>
+commercially released.  I&#x27;ll be happy to send the address from which Maven<br>
+<br>
+<br>
+</div>
+</body>
+</html>

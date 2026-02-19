@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Question about retrograde analysis algorithm for endgame databases</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Question about retrograde analysis algorithm for endgame databases</h1>
+    <p><strong>From:</strong> David Eppstein &lt;eppstein@ics.uci.edu&gt;<br>
+    <strong>Date:</strong> Wed, 24 Apr 2002 13:32:03 -0700</p>
+    <hr>
+    <div>In article &lt;98c3bc67.0204241134.2e2806af@posting.google.com&gt;,<br>
+ mathpoly@yahoo.com (mathpolymath) wrote:<br>
+<br>
+&gt; Imagine an abstract zero-sum game where among all of the millions of<br>
+&gt; possible endgame positions happen to exist 3 positions, X, Y, and Z<br>
+&gt; where X-&gt;Y, Z-&gt;Y and both Y-&gt;X or Y-&gt;Z<br>
+&gt; <br>
+&gt; If X has a score of 1, Y a score of 2, and Z a score of 3 if the game<br>
+&gt; draws by repetition on the respective position, then among possible<br>
+&gt; scenarios might be these two:<br>
+&gt; <br>
+&gt; ... X Y X Y Z Y (2nd repeat.  score = 2)<br>
+&gt; ... X Y X Y X (2nd repeat.  score = 1)<br>
+&gt; <br>
+&gt; In this type of game, how should the retrograde analysis algorithm be<br>
+&gt; set up to compute the endgame database for this type of game?<br>
+<br>
+Tricky repetition prevention rules like this tend to have something to <br>
+do in theory with the boundary between PSPACE-complete and <br>
+EXPTIME-complete problems.  I think the practical interpretation of this <br>
+is, you may not be able to solve the resulting problem with forward or <br>
+retrograde analysis, because the game states become too complicated -- <br>
+you have to know not just where the pieces are on the game board, but <br>
+also which positions you&#x27;ve already encountered.<br>
+<br>
+-- <br>
+David Eppstein       UC Irvine Dept. of Information &amp; Computer Science<br>
+eppstein@ics.uci.edu http://www.ics.uci.edu/~eppstein/<br>
+<br>
+<br>
+</div>
+</body>
+</html>

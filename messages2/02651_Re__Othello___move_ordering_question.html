@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Othello - move ordering question</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Othello - move ordering question</h1>
+    <p><strong>From:</strong> nancyl@universe.digex.net (Nancy Lebovitz)<br>
+    <strong>Date:</strong> 24 Dec 1994 10:33:28 -0500</p>
+    <hr>
+    <div>In article &lt;3d9s8s$4a9@mycroft.rand.org&gt;, Jim Gillogly  &lt;jim@acm.org&gt; wrote:<br>
+&gt;I&#x27;ve been poking around with optimal play on reduced Othello boards, and<br>
+&gt;trying to make my tree search efficient enough to get up to interesting<br>
+&gt;sizes.  After incorporating alpha-beta and large transposition tables,<br>
+&gt;it&#x27;s usual to add the killer heuristic (which I haven&#x27;t done yet) and<br>
+&gt;then try to get as close to perfect ordering on the move generations as<br>
+&gt;possible, to let alpha-beta do its thing with maximal efficiency.<br>
+&gt;<br>
+&gt;I thought before I went into the tricky stuff like reducing the opponent&#x27;s<br>
+&gt;mobility or trying for known good patterns, I&#x27;d try something dead simple:<br>
+&gt;if there&#x27;s a corner move, take it; otherwise try all the moves in<br>
+&gt;numerical order (like a TV scan across the board).<br>
+&gt;<br>
+&gt;Oddly, this degraded the tree-searching performance dramatically from<br>
+&gt;just leaving the moves in numerical order, although it of course ends up<br>
+&gt;with the same result.<br>
+&gt;<br>
+&gt;Could a human Othello player comment on this?  I thought perhaps retaining<br>
+&gt;the threat of moving into a corner might be more effective than grabbing<br>
+&gt;it immediately; does this correspond to a known human strategy?<br>
+<br>
+Here&#x27;s a strategy I invented--it seems to be fairly powerful, at least<br>
+against middling players.<br>
+<br>
+The best squares to play into are those which are an even number of<br>
+spaces from an edge (0 is even). The worst are those which are an<br>
+odd number of spaces from an edge. These effects are strongest closer<br>
+to the edges. I haven&#x27;t tried playing this purely mechanically--<br>
+I&#x27;d look a few moves ahead to get my pieces into the even squares<br>
+or force my opponents pieces into the odd ones.<br>
+<br>
+This strategy is incomplete--I told a friend about it, and he lost<br>
+a game by getting the edges and leaving me practically all the<br>
+pieces in the middle. <br>
+<br>
+On second reading, I haven&#x27;t answered your question, but this<br>
+strategy might be simple and numerical enough to be worth checking<br>
+out.<br>
+<br>
+Nancy Lebovitz<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

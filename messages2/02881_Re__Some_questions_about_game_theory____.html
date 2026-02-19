@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Some questions about game theory ...</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Some questions about game theory ...</h1>
+    <p><strong>From:</strong> colley@qucis.queensu.ca (Paul Colley)<br>
+    <strong>Date:</strong> 13 Mar 1995 23:52:36 GMT</p>
+    <hr>
+    <div>In article &lt;3k1gh9$51a@panoramix.fi.upm.es&gt;,<br>
+Carlos Linares Lopez &lt;p880060@asterix.fi.upm.es&gt; wrote:<br>
+<br>
+&gt;1. Please, help. I&#x27;m in trouble with iterative deepening. Do you know how<br>
+&gt;   to program it?<br>
+<br>
+First, the &quot;why&quot; of iterative deepening:<br>
+<br>
+    In alpha-beta, the size of the search tree (and thus the time<br>
+    required for the search) can be massively reduced if the best move<br>
+    is tried *first* at as many nodes as possible.<br>
+<br>
+    Anything which consistently gets the best move tried first will<br>
+    yield a big payoff in the search.<br>
+<br>
+    The *assumption* is that normally the best move from a position<br>
+    doesn&#x27;t change when the search goes one ply deeper.  But a<br>
+    shallower search will run much faster, because the tree grows<br>
+    exponentially with depth.<br>
+<br>
+    So it pays off to do a (d-1)-ply search at a node to determine the<br>
+    probable best move, before doing the full (d)-ply search to<br>
+    determine the real best move.<br>
+<br>
+    In turn, this (d-1)-ply search can be sped up by doing a (d-2) ply<br>
+    search to determine the best moves.  And so on.<br>
+<br>
+Note the paragraph marked *assumption*.  If you are programming a<br>
+pathological game or a very poor program, these assumptions may not be<br>
+true.<br>
+<br>
+To do iterative deepening, we need some data structure that allows the<br>
+operations &quot;Write(position, move)&quot; and &quot;move = Read(Position)&quot; which<br>
+store a move with a position, and which returns the stored move (if<br>
+any) for a given position, respectively.<br>
+<br>
+This is probably your real question---How do I write those two<br>
+functions?  Unfortunately, the answer depends on what game you are<br>
+programming.  And even for a fixed game, there is a wide variety of<br>
+choices in data structures.<br>
+<br>
+One big decision to be made is whether you are going to store the<br>
+position exactly, or discard some of the information and risk an error<br>
+in reading.  Errors are evil, of course---but storing an entire chess<br>
+or Go position requires a lot of memory!<br>
+<br>
+A popular choice is to use hashing.  For example, write a function that<br>
+takes a position and converts it to 64 bits (8 bytes); if this function<br>
+is well-chosen, the chance of accidently confusing two positions can be<br>
+as low as 1/(2^64).  For most game programs, this is an acceptable<br>
+error rate.<br>
+<br>
+So the &quot;what&quot; of iterative deepening:<br>
+<br>
+    for d = 1 up to depth-limit do<br>
+       alpha-beta-search to depth d<br>
+    end for<br>
+<br>
+Inside your search routine,<br>
+<br>
+   move = Read(Position)<br>
+   if move found then<br>
+	try move<br>
+   end if<br>
+<br>
+   try remaining moves<br>
+<br>
+   Write(Position, best move)<br>
+<br>
+   return best move<br>
+<br>
+Hope that helps.<br>
+<br>
+- Paul Colley<br>
+University:  colley@qucis.queensu.ca<br>
+Home:        pacolley@ember.uucp   watmath!ember!pacolley  +1 613 545 3807<br>
+&quot;Anyone who attempts to generate random numbers by deterministic means is,<br>
+of course, living in a state of sin.&quot;  - John von Neumann<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

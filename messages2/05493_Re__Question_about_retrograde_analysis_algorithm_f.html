@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Question about retrograde analysis algorithm for endgame databases</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Question about retrograde analysis algorithm for endgame databases</h1>
+    <p><strong>From:</strong> mathpoly@yahoo.com (mathpolymath)<br>
+    <strong>Date:</strong> 6 May 2002 06:53:04 -0700</p>
+    <hr>
+    <div>jferro@pegasus.ece.cmu.edu (Jonathan R. Ferro) wrote in message news:&lt;r13cx9ov31.fsf@pegasus.ece.cmu.edu&gt;...<br>
+&gt; mathpoly@yahoo.com (mathpolymath) writes:<br>
+&gt; &gt; jferro@nu.ece.cmu.edu (Jonathan R. Ferro) wrote in message news:&lt;r1znzqs1ku.fsf@nu.ece.cmu.edu&gt;...<br>
+&gt; &gt; &gt; mathpoly@yahoo.com (mathpolymath) writes:<br>
+&gt; &gt; &gt; &gt; jferro@nu.ece.cmu.edu (Jonathan R. Ferro) wrote:<br>
+&gt; &gt; &gt; &gt; &gt; So, the &quot;Y&quot; state is expanded into 19 different states internally (if I<br>
+&gt; &gt; &gt; &gt; &gt; have counted correctly), 10 of which are terminal, and 9 of which are<br>
+&gt; &gt; &gt; &gt; &gt; not yet &quot;long enough&quot; to end the game.  These states do not have any<br>
+&gt; &gt; &gt; &gt; &gt; loopiness, so they can be analyzed normally.<br>
+&gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; This seems like a very good way in theory, but in practice, the number<br>
+&gt; &gt; &gt; &gt; of states would expand tremendously.<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; Yep, you got that right.  Welcome to the world of artificial intelligence.<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; -- Jon<br>
+&gt; &gt; <br>
+&gt; &gt; Aha! I seem to have found a much simpler way, if my logic is correct. <br>
+&gt; &gt; Let me know if I have reasoned incorrectly.<br>
+&gt; &gt; <br>
+&gt; &gt; ...<br>
+&gt; &gt; <br>
+&gt; &gt; In this way, I have addressed this complex-valued draw-by-repetition<br>
+&gt; &gt; problem with negligible additional effort and at the cost of only some<br>
+&gt; &gt; additional memory (for an intermediary copy of the unsettled values).<br>
+&gt; &gt; <br>
+&gt; &gt; Are there any holes in my reasoning?  Can other cases of state<br>
+&gt; &gt; expansion in game trees be solved similarly?<br>
+&gt; <br>
+&gt; I would say that you have successfully convinced yourself that you can<br>
+&gt; deal with loopy positions algorithmically, but that you are fooling<br>
+&gt; yourself that it&#x27;s simpler.  As far as I can tell, the &quot;intermediary<br>
+&gt; copies&quot; that you are referring to are simply dynamically-generated<br>
+&gt; versions of the &quot;expanded states&quot; that I proposed above.<br>
+<br>
+Actually, the intermediary copies of the state is one static copy of<br>
+each state/position which is unsettled.  Since there are no more<br>
+unsettled positions than positions in the entire database, this is<br>
+obviously no more than doubling the size of the original database for<br>
+a temporary period of time.  Say for a 10GB endgame database, you will<br>
+never need more than 10GB of this so-called intermediary storage.<br>
+<br>
+This additional step I have proposed to the normal retrograde analysis<br>
+algorithm has negligible time since it is simply a comparison of each<br>
+of the n nodes/positions in the original database with each of its<br>
+children and then updating the intermediary copy, which is definitely<br>
+a O(n) operation.<br>
+<br>
+Now of course, my reasoning could be *completely* wrong and for some<br>
+reason this algorithm I have described will not work.  But that&#x27;s the<br>
+type of comment I am soliciting.<br>
+<br>
+Note again, that I am trying to only address one aspect of loopiness. <br>
+That where the position can statically determine a unique<br>
+game-theoretic value when a game ends due to repetition in that<br>
+position.  No move history is required to determine this value.<br>
+<br>
+If you want an example of a real-world game to use as an example, take<br>
+some variants of the game Awari.  This abstract game sees 48 identical<br>
+piece moved about in 12 containers (half assigned to each player) and<br>
+has in some rule variants the feature that a vicious cycle ends the<br>
+game (when either there are insufficient to total forces to effect<br>
+further captures or the pieces are in such a configuration that each<br>
+side can move in such a way during his turn so as to prevent the other<br>
+player from capturing any of his pieces) and that when such a vicious<br>
+cycle occurs, each player gets to keep the game pieces that happen to<br>
+be in his 6 containers.  Since number of game pieces possessed by each<br>
+player determines the score in the game (game-theoretic value), and<br>
+since the number of pieces in each of the 12 containers and in the<br>
+players&#x27; possession at any point in the game can be statically<br>
+evaluated without considering the history of the game, clearly this is<br>
+an example of my more general case of draw-by-repetition values<br>
+depending on position when the draw-by-repetition occurs.  Also, in<br>
+this example game, these positions where &quot;vicious cycles&quot; occur are<br>
+not necessarily end nodes in the game tree, but only loops where it is<br>
+preferable to remain in the loop than to exit (for example exiting by<br>
+moving so as to allow the opponent to make some more captures)...  I&#x27;m<br>
+not sure that giving my problem a concrete target helps to address the<br>
+correctness of my modification to the retrograde analysis algorithm,<br>
+however.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

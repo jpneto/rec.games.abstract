@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Drat -- Grid Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Drat -- Grid Game</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Tue, 12 May 2009 16:34:23 -0700 (PDT)</p>
+    <hr>
+    <div>Here is a game played on a n-by-n grid drawn on paper. The game is for<br>
+2 to 4 players. The size of the grid (n) should be relatively small as<br>
+far as my games go, n = 4 to 6 for a 2-player game.<br>
+<br>
+In the first phase of the game players take turns, each placing ANY<br>
+integer from 1 to n^2 into any empty square of the grid on a turn.<br>
+(The same integer may be used more than once in the grid.)<br>
+<br>
+In the second phase of the game, each player has a marker (each marker<br>
+is small enough to fit inside a single square of the grid). Each<br>
+player places his/her marker in a different corner square at the start<br>
+of the second phase.<br>
+<br>
+Players move in a predetermined order (such as clockwise by which<br>
+corners the players start the second phase in).<br>
+The first player to move moves to any orthogonally (above, below,<br>
+right of, or left of) adjacent square.<br>
+<br>
+Players thereafter take turns moving their markers from square to<br>
+orthogonally adjacent square.<br>
+<br>
+Say, the last player to move (whom we will call &quot;player A&quot;) moved from<br>
+a square numbered j to a square numbered k. Then on the next player&#x27;s<br>
+(Player B&#x27;s) move, Player B MUST move, IF it is possible, to a square<br>
+such that GCD(j,k) equals GCD(p,q), OR such that |j-k| = |p-q| --<br>
+where p = the number of the square Player B was on, and q = the number<br>
+of the square Player B is moving to.<br>
+<br>
+In other words, if it is possible, player B must move so that the<br>
+numbers of his/her consecutively-moved-on squares have either the same<br>
+greatest common divisor or same absolute difference as the last two<br>
+consecutively-moved-on squares of Player A -- where player A is the<br>
+player who moves just before player B (and where who exactly are<br>
+players A and B changes each move -- player B always being the player<br>
+currently moving).<br>
+<br>
+If there are no such adjacent squares that have the same GCD or<br>
+absolute difference, then player B may move to ANY orthogonally<br>
+adjacent square.<br>
+<br>
+If a player is forced to move onto a square already occupied by<br>
+another player&#x27;s marker, then the SECOND player to occupy the square<br>
+is removed from competition, and his/her marker is removed from the<br>
+grid. (A player landing on an already occupied square is a &#x27;drat&#x27;, as<br>
+in &quot;Drat!&quot;.)<br>
+<br>
+<br>
+Play continues until there is one remaining player, who is then the<br>
+winner.<br>
+<br>
+Note: In the small number of trials where I played myself, it seemed<br>
+that all games are either long or short, but never middle-lengthed.<br>
+Maybe some other math rules, besides GCD or absolute difference, would<br>
+perhaps make this a more fun game.<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

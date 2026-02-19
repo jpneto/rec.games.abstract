@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: My Linebreakers game vs Arimaa...</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: My Linebreakers game vs Arimaa...</h1>
+    <p><strong>From:</strong> &quot;Josh Adelson&quot; &lt;jadelson@columbus.rr.com&gt;<br>
+    <strong>Date:</strong> Tue, 03 Dec 2002 09:31:35 GMT</p>
+    <hr>
+    <div>&quot;Lionel Bonnetier&quot; &lt;leo@SKIPeasynet.fr&gt; wrote in message<br>
+news:3dec7262$0$13992$afc38c87@news.easynet.fr...<br>
+<br>
+&gt; I had a look at the ZoG zrf file, it just contains the rules and<br>
+&gt; help text, so I don&#x27;t see how a bias can sneak in, but I&#x27;m not a<br>
+&gt; ZoG user so I may have overlooked something.<br>
+<br>
+Well, here&#x27;s the problem as I see it (and I admit well in advance that I<br>
+haven&#x27;t got a clue, really):  Mr. Syed did not code the Zillions engine,<br>
+therefore he is not in a position to NECESSARILY best exploit the power of<br>
+the engine.  It&#x27;s a bad example, but if you read his comments (and bear in<br>
+mind at all times that I admire the man and the game and the challenge) you<br>
+will see that he was not able to implement the &quot;draw&quot; processing of his own<br>
+game in Zillions.  I deserve 10 bucks just for spending the last 2 or 3<br>
+hours trying to do it myself.  For all those who try, you can skip using the<br>
+(verify (piece? allset game-state)) test anywhere inside the draw-condition<br>
+syntax--you can, quite amusingly use (pieces-remaining 0 Rabbit) as a<br>
+draw-condition test, which presumably only tests against the player who last<br>
+moved, but the engine tests this immediately, prior to any rabbits having<br>
+been dropped, and decides that there are no valid moves (which seems<br>
+reasonable).  I can imagine Mr. Syed scratching his head a few times during<br>
+the coding of his ZRF file.<br>
+<br>
+But anyway, the point is that since the Zillions developers themselves have<br>
+developed the &quot;AI&quot; behind their engine, it should be up to them to format<br>
+the rules that engine follows in playing the game.  Mr. Syed really can&#x27;t be<br>
+expected to write the optimal ruleset, if not for reasons of personal bias,<br>
+then for reasons of expertise.  Was that clear?  It&#x27;s 4:30 a.m. here, and<br>
+I&#x27;ve been screwing around with Zillions for hours.....<br>
+<br>
+The Elephant<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

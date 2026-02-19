@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>hexagonal tiling of the projective plane</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>hexagonal tiling of the projective plane</h1>
+    <p><strong>From:</strong> Nick Wedd &lt;nick@maproom.co.uk&gt;<br>
+    <strong>Date:</strong> Wed, 17 Dec 2008 20:25:25 +0000</p>
+    <hr>
+    <div>If you want to use a hexagonal grid on a projective plane for a game, <br>
+you will find you can&#x27;t.  There is no way to cover a projective plane <br>
+entirely with hexagons.  Look up &quot;Euler characteristic&quot; if you want to <br>
+know why.<br>
+<br>
+However, you can come fairly close to a hexagonal grid, you just need to <br>
+include a few smaller polygons.  The most regular ways use two <br>
+triangles, or three squares, or six pentagons, and lots of hexagons.<br>
+<br>
+Here is a way to build an arbitrarily large almost-hexagonal grid, with <br>
+just five pentagons among the hexagons.  Start with a truncated <br>
+icosahedron:  it has 12 pentagonal faces, 20 hexagonal, and 60 vertices. <br>
+Replace each pentagon by a smaller pentagon, centred on the original and <br>
+rotated through 36 degrees relative to it; replace each hexagon by a <br>
+smaller hexagon, centred on the original and rotated through 30 degrees <br>
+relative to it;  and replace each vertex by a hexagon.  Repeat the <br>
+instructions of the previous sentence until you have enough hexagons. <br>
+Right, now for the difficult bit:  we need to identify all the antipodal <br>
+pairs of faces, antipodal pairs of pentagons, and antipodal pairs of <br>
+vertices, ending up with a grid that has half as many of each.  A way to <br>
+do this is to mark a set of edges that comes as close as possible to the <br>
+&quot;equator&quot; of our near-spherical polyhedron, cut along it, and discard <br>
+one half.  Now mark each pair of opposite hex-edges of the resulting <br>
+near-hemisphere, to indicate that the hexes they belong to in fact <br>
+border each other.  We have a projective plane, covered by a grid of <br>
+many hexagons and six pentagons.  If we intend using it for a game, it <br>
+will be sensible to project it onto a plane and print it on paper.<br>
+<br>
+If instead of six equally-spaced pentagons we would rather have three <br>
+evenly spaced squares, apply the same method, but start with a truncated <br>
+octahedron instead of a truncated icosahedron.  Or for two triangles, <br>
+start with a truncated tetrahedron.<br>
+<br>
+Nick<br>
+-- <br>
+Nick Wedd    nick@maproom.co.uk<br>
+<br>
+<br>
+</div>
+</body>
+</html>

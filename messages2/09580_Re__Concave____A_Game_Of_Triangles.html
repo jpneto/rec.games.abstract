@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Concave -- A Game Of Triangles</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Concave -- A Game Of Triangles</h1>
+    <p><strong>From:</strong> James Waldby &lt;no@no.no&gt;<br>
+    <strong>Date:</strong> Tue, 6 Jul 2010 15:48:29 +0000 (UTC)</p>
+    <hr>
+    <div>On Tue, 06 Jul 2010 05:25:54 -0700, Leroy Quet wrote:<br>
+&gt; Torben Ægidius Mogensen wrote:<br>
+&gt;&gt; Leroy Quet  writes:<br>
+...<br>
+&gt;&gt; &gt; In the first part of the game, players take turns placing n dots on<br>
+&gt;&gt; &gt; the paper. No 3 dots are to be co-linear. n is determined ahead of<br>
+&gt;&gt; &gt; time amongst the players and is a multiple of the number of players.<br>
+&gt;&gt; &gt;<br>
+&gt;&gt; &gt; The first player to move connects any (almost any) 3 dots with 3<br>
+&gt;&gt; &gt; straight line segments to make a triangle, such that no dots are on<br>
+&gt;&gt; &gt; the interior of the triangle.<br>
+&gt;&gt;<br>
+&gt;&gt; Why only &quot;almost any&quot;?<br>
+&gt; <br>
+&gt; Three dots cannot be connected such that there are any dots in the<br>
+&gt; interior of the triangle.<br>
+<br>
+That phrasing is confusing.  Some other problems: <br>
+<br>
+- Just say &quot;in general linear position&quot; vs no 3 dots co-linear,<br>
+  and refer to &lt;http://en.wikipedia.org/wiki/General_position&gt;. <br>
+- Re the Dots part of the game, you say &quot;In the first part of the<br>
+  game&quot;, leading to an expectation of a second or later part, but <br>
+  never explicitly denote a second-part description.<br>
+- In the Lines part of the game, the first player could connect three<br>
+  dots with three lines such that each dot is in the interior of a<br>
+  line, or such that two dots are in the interior of one line and<br>
+  the third dot in the interior of another line.  The rules as given <br>
+  don&#x27;t prohibit doing so.  But if the first player does so, play is <br>
+  over, with the first player getting a score of three or zero (see<br>
+  next item) and the other player zero.<br>
+- The &quot;reflex angle&quot; term that you use in your reply to Torben is<br>
+  decidedly less ambiguous than &quot;concave angle&quot; but it isn&#x27;t clear<br>
+  to me whether you are measuring angles (on the perimeter of the <br>
+  bounding polygon) from the exterior of the polygon or from the <br>
+  interior.  When the first player completes the first triangle, <br>
+  what score does she or he or it get?<br>
+<br>
+See below for a rephrasing of first few paragraphs.<br>
+<br>
+&gt;&gt; &gt; Thereafter, the players continue to take turns. On a turn, a player<br>
+&gt;&gt; &gt; makes a triangle either by connecting (with two straight line<br>
+&gt;&gt; &gt; segments) a single dot to two dots that are at the ends of the side<br>
+&gt;&gt; &gt; of a triangle already drawn, or by drawing a single line connecting<br>
+&gt;&gt; &gt; two dots that are two vertices of two adjacent triangles that come<br>
+&gt;&gt; &gt; together to form a concave angle (a concave angle along the perimeter<br>
+&gt;&gt; &gt; of the polygon containing all the triangles drawn so far).<br>
+&gt;&gt; &gt;<br>
+&gt;&gt; &gt; No line-segments shall coincide with line-segments already drawn.<br>
+&gt;&gt; &gt;<br>
+&gt;&gt; &gt; The triangles drawn in this game shall contain no dots in their<br>
+&gt;&gt; &gt; interiors.<br>
+&gt;&gt; &gt;<br>
+&gt;&gt; &gt; After a player moves, she gets a point for each concave angle along<br>
+&gt;&gt; &gt; the perimeter of the bounding polygon, the polygon containing all the<br>
+&gt;&gt; &gt; triangles drawn so far.<br>
+&gt;&gt;<br>
+&gt;&gt; My English may be a bit weak, but I&#x27;m not completely sure what you mean<br>
+&gt;&gt; by &quot;concave angle&quot;.  I know obtuse and acute angles and concave and<br>
+&gt;&gt; convex polygons, but I don&#x27;t recall seing the word &quot;concave&quot; being used<br>
+&gt;&gt; about angles.  Are they angles of more than 180 degrees?<br>
+&gt; <br>
+&gt; <br>
+&gt; Yes, I mean an angle greater than 180 degrees. The &quot;concave angles&quot;, or<br>
+&gt; what are actually called &#x27;reflex angles&#x27;, I am referring to are along<br>
+&gt; the perimeter of the bounding polygon. So, if there is at least one<br>
+&gt; concave/reflex angle, then the bounding polygon is a concave polygon.<br>
+&gt; <br>
+&gt; <br>
+&gt;&gt; &gt; The player gets an addition point every move he completes a triangle<br>
+&gt;&gt; &gt; with only one line-segment.<br>
+&gt;&gt;<br>
+&gt;&gt; Would this not be the same as saying that a player scores the number of<br>
+&gt;&gt; acute angles either before or after his move, whichever gives the most<br>
+&gt;&gt; points?  If a player closes a triangle with one line segment, the<br>
+&gt;&gt; number of acute angles (as I understand the term) is reduced by one, so<br>
+&gt;&gt; 1 plus the number of remaining acute angles is the same as the number<br>
+&gt;&gt; of acute angles before the move.<br>
+&gt; <br>
+&gt; I think by &quot;acute angles&quot; you mean what I refer to as &quot;concave angles&quot;,<br>
+&gt; or reflex angles.  Yes, drawing just one line to make a triangle<br>
+&gt; deprives the player of a point from a reflex angles at the same time it<br>
+&gt; gains him a point for drawing one line. [...]<br>
+<br>
+A rephrasing of first few paragraphs of game description:<br>
+<br>
+To start, draw three dots and three straight line segments between <br>
+those dots, to form an initial triangle IT on the paper.  Thereafter,<br>
+the game is played in two parts, Dots and Lines.  In each part of the <br>
+game, players take turns in sequence.  For Dots, choose some number <br>
+of turns per player, n.  (A total of 3+n*p dots will be drawn.)<br>
+<br>
+On each Dots turn, a player draws one dot, outside IT.  All dots,<br>
+those of IT included, shall be in general linear position.  After <br>
+n turns each, go on to Lines. <br>
+<br>
+In the Lines part of the game, on each turn, a player draws one or<br>
+two line segments, to form a triangle with no dots inside it. <br>
+Every line segment drawn must begin at the end of a previously-drawn<br>
+line segment and end at a dot.<br>
+<br>
+(Then describe scoring, which I don&#x27;t understand, as noted before)<br>
+<br>
+-- <br>
+jiw<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Why chess is easy to program, Go hard (long)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Why chess is easy to program, Go hard (long)</h1>
+    <p><strong>From:</strong> slq15@cc.usu.edu<br>
+    <strong>Date:</strong> 29 Sep 94 03:27:41 MDT</p>
+    <hr>
+    <div>In article &lt;Cwv0o0.88zA@austin.ibm.com&gt;, wtf@calrissian.bocaraton.ibm.com (Bill Fischofer) writes:<br>
+&gt; I believe that go is harder to program than chess for three reasons:<br>
+&gt; <br>
+&gt; 1. The mathematical state space of go is vastly larger than chess.  As has<br>
+&gt;    been noted, chess programs have taken brute force technique far beyond<br>
+&gt;    the wildest imaginings of the early chess programmers.  Because such<br>
+&gt;    techniques have been successful, there has been little incentive to<br>
+&gt;    try and develop chess programs that attempt to mimic the thought<br>
+&gt;    processes of human grandmasters (or even to probe what those thought<br>
+&gt;    processes might really be).  But the &quot;gap&quot; between chess and go is<br>
+&gt;    so large (at least 100 orders of magnitude) that no amount of cleverness<br>
+&gt;    or improvement in hardware speeds seems likely to yield similar <br>
+&gt;    successes in the realm of go.  If strong go programs arise, it will be<br>
+&gt;    because they manage to play go in ways recognizably more similar to<br>
+&gt;    the way human masters play than is the case for chess programs.<br>
+&gt;<br>
+<br>
+ I will have to disagree with this. The search space of go might be 100 orders<br>
+of magnitude larger than that of chess, but the chess search spcace is still<br>
+too larger to prevent any &quot;brute force&quot; search. The binary distinction between <br>
+&quot;brute force&quot; and &quot;intelligent&quot; evaluation functions is quite artificial. Highly<br>
+ranked chess programs use pretty sophisticated and non-local evaluation functions.<br>
+The program that made news recently by beating top players like Kasparov was running<br>
+on an ordinary pentium PC; no special pupose hardware was used.<br>
+<br>
+&gt; 2. Go is far more symmetric than chess.  The different pieces and their<br>
+&gt;    moves actually makes tactical analysis easier in chess than in go.<br>
+&gt;    In go the value of a stone is a function of its relationship to other<br>
+&gt;    stones rather than to anything intrinsic.  While sacrifice technique<br>
+&gt;    can violate the normal material relationship among pieces in chess,<br>
+&gt;    it is almost always the case that a queen is worth more than a knight.<br>
+&gt;    Moreover, in chess significant sacrifices are almost invariably coupled<br>
+&gt;    to a mating attack of some sort which will decide the game fairly<br>
+&gt;    quickly.  In go, the amorphous nature of stones means that sacrifices<br>
+&gt;    tend to have more abstract strategic purposes even when they seemingly<br>
+&gt;    involve large amounts of &quot;material&quot;.<br>
+&gt;<br>
+<br>
+ I would guess that this could be the main reason for the difficulty in making<br>
+smart evaluation functions for go.<br>
+<br>
+&gt; 3. Go evaluation functions must be global to be meaninful whereas chess<br>
+&gt;    does quite well with local evaluation functions.  This means that not<br>
+&gt;    only does a go program need to consider many more positions than a<br>
+&gt;    chess program, but it needs to spend much more time considering each<br>
+&gt;    position if it is to do anything meaningful with it.  This only compounds<br>
+&gt;    the problem of trying to duplicate the &quot;brute force&quot; success of<br>
+&gt;    chess programs in go.<br>
+&gt;<br>
+<br>
+Relative to go, chess might do away with &quot;local&quot; evaluation functions, but<br>
+the are not so local actually.<br>
+<br>
+&gt; On this subject, David Ehrbach&#x27;s article on computers and go in the Go<br>
+&gt; Player&#x27;s Almanac (Ishi) is recommended for many other insights into this<br>
+&gt; subject.  I feel confident in predicting that the Ing prize will remain<br>
+&gt; unclaimed during the lifetime of anyone reading this post.  Programming go<br>
+&gt; is a very hard problem.<br>
+&gt;<br>
+<br>
+One reason with minor contribution to lack of success in go could be the amount<br>
+of effort spent. Mainly due to popularity of chess, it was quite deep rooted in<br>
+our psych that &quot;proficiency in chess == intelligence&quot;. Once   chess is &quot;solved&quot;,<br>
+our definition of intelligence will change and more effort will be spent on games<br>
+like go. AI has rightly been defined as &quot;whatever that hasn&#x27;t been done&quot;. Who knows<br>
+after how many years will people say something like &quot;The method X has allowed us to<br>
+do which was beyond wildes imaginations of early go programmers&quot; ?     <br>
+<br>
+Rutvik<br>
+<br>
+--<br>
+Rutvik Desai<br>
+Utah State University<br>
+rutvik@sys3.cs.usu.edu<br>
+<br>
+&gt; --<br>
+&gt; Bill Fischofer                            Internet: wtf@bocaraton.ibm.com<br>
+&gt;                                                <br>
+<br>
+<br>
+</div>
+</body>
+</html>

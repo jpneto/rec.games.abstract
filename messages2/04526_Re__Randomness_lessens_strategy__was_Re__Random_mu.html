@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Randomness lessens strategy (was Re: Random multiplayer maps are  less popular)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Randomness lessens strategy (was Re: Random multiplayer maps are  less popular)</h1>
+    <p><strong>From:</strong> Douglas Zare &lt;zare@math.columbia.edu&gt;<br>
+    <strong>Date:</strong> 29 11 2000 00:00:00 GMT</p>
+    <hr>
+    <div>Robert Jasiek wrote:<br>
+<br>
+&gt; Geenius at Wrok wrote:<br>
+&gt; &gt; &gt; Randomness lessens strategy.  The more randomness, the less strategy.<br>
+&gt; &gt; Hogwash.  Randomness simply forces you to adopt strategies that take<br>
+&gt; &gt; randomness into account.<br>
+&gt;<br>
+&gt; Has there been some research on how random events influence<br>
+&gt; decision complexity of strategy?<br>
+<br>
+I&#x27;m not sure how that would be possible. What sort of results do you think<br>
+could be established?<br>
+<br>
+&gt; My intuitive guess would be that uniform random events that<br>
+&gt; replace decisions decrease the strategic complexity. E.g.<br>
+&gt; consider a binary decision tree with only one path to a<br>
+&gt; best leaf. In game S at every node the player makes the<br>
+&gt; decision strategically. In game R the uniform random event<br>
+&gt; generator (coin) makes the decision instead. Game S has a<br>
+&gt; complexity 2 to the power tree depth, game R has a constant<br>
+&gt; complexity for the player. What about game R2 where the<br>
+&gt; random generator only acts at odd tree levels? The complexity<br>
+&gt; should be roughly 2 to the power half the tree depth then.<br>
+&gt; Or am I misunderstanding probabilistic behaviour entirely?<br>
+<br>
+Is that a standard notion of complexity? It sounds like you are saying that<br>
+the complexity is probability of winning with optimal play divided by the<br>
+probability of winning with random play. Complexity would then decrease with<br>
+a greater number of trivial decisions, with more obviously bad choices. I&#x27;d<br>
+like to try to cast a bit more light on the problem.<br>
+<br>
+Suppose I play chess against a perfect opponent. Each position can be<br>
+labelled 0, 1/2, or 1, depending on whether with perfect play I will lose,<br>
+draw, or win. I will make at most two errors in the whole game, e.g., by<br>
+achieving a position with value 1/2 when I could have still had a winning<br>
+position.<br>
+<br>
+Suppose I play backgammon (without the doubling cube) against a perfect<br>
+opponent. Each position can be labelled by a number between 0 and 1, the<br>
+expected chance of winning if I play perfectly. Now I can make many<br>
+mistakes. In particular, after making several mistakes, I may still have a<br>
+chance to win which can be thrown away by making more mistakes.<br>
+<br>
+Amusingly, I played a game of chess against someone on a game server that<br>
+has both games. I won with black, and refused a rematch in order to play<br>
+backgammon. I invited my opponent, who said that chess is a harder game, and<br>
+a game of pure skill. If there is no luck in chess, why did he want a<br>
+rematch?<br>
+<br>
+Some moves in chess are considered stronger than others. Against a perfect<br>
+opponent, there can be at most three levels of moves: correct ones, ones<br>
+which lose 1/2 point, and ones that lose a full point. So to say that it is<br>
+bad to throw away one&#x27;s queen while in a lost position, or to rank several<br>
+moves by strength, suggests subjective randomness. These issues make up most<br>
+of the game of chess to me. How does that fit into your model?<br>
+<br>
+Another example: Tic-tac-toe is equivalent to a game in which two players in<br>
+turn select numbers from 1 to 9, trying to get 3 numbers which add up to 15.<br>
+Abstractly, these should have the same complexity, but people find the<br>
+latter harder. Are you sure chess is abstractly complex? Perhaps one should<br>
+try to bound the complexity of a formula which tells one a correct move, but<br>
+there is an abstractly equivalent game which has, as a winning formula,<br>
+&quot;Choose the leftmost node.&quot;<br>
+<br>
+Douglas Zare<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

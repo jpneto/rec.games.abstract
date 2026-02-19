@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Tic-Tac-Toe</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Tic-Tac-Toe</h1>
+    <p><strong>From:</strong> dak@messua.informatik.rwth-aachen.de (David Kastrup)<br>
+    <strong>Date:</strong> 13 Nov 92 01:36:49 GMT</p>
+    <hr>
+    <div>blom@husc15.harvard.edu writes:<br>
+<br>
+<br>
+&gt;For any game, let us call [p,d,s,l] the parameter vector.<br>
+&gt;Let us define some terms:<br>
+<br>
+&gt;     trivial:       Player 1 can always force a win.<br>
+&gt;     non-trivial:   Player 1 can not always force a win.<br>
+&gt;     solvable:      There exists an algorithm by which Player 1<br>
+&gt;                    will never lose.<br>
+&gt;     insoluble:     There does not exist a finite algorithm by<br>
+&gt;                    which Player 1 will never lose.<br>
+Bad terminology:<br>
+<br>
+trivial you would call a game with a unique win, that is, every move of<br>
+the second player is forced to avoid immediate loss, but first player wins.<br>
+<br>
+A mathematician would call a play trivial presumably if there is one<br>
+square, so that even the first move is a forced one and decides the game.<br>
+<br>
+solvable does mean that the maximum gain for both players is fixed, that<br>
+is, if the best player 1 can reach under all countermoves of his opponent,<br>
+the opponent can not do better than a draw in turn. If someone can win<br>
+for all reactions of his opponent, the opponent has a losing situation.<br>
+<br>
+A play is solvable, if you can determine beforehand if the initial<br>
+situation is a win, draw, or loss.<br>
+<br>
+All TicTacToe variants have a finite number of possible moves on a finite<br>
+board and are thus solvable. There exists a finite algorithm (backtracking<br>
+all possible moves, guaranteed less than N! possibilities) for any<br>
+variant. REASONABLE solvability is a different piece of cake though.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

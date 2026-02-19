@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Othello-like games (was Re: 6 x 6 Othello)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Othello-like games (was Re: 6 x 6 Othello)</h1>
+    <p><strong>From:</strong> bdp@cl.cam.ac.uk (Barney Pell)<br>
+    <strong>Date:</strong> Fri, 19 Feb 1993 18:22:55 GMT</p>
+    <hr>
+    <div>In article &lt;Feb19.164543.81886@yuma.ACNS.ColoState.EDU&gt;, boll@CS.ColoState.EDU (dave boll) writes:<br>
+|&gt; In article &lt;1lvmot$ek1@agate.berkeley.edu&gt; chrisyep@ocf.berkeley.edu (Christopher Yep) writes:<br>
+|&gt; &gt;Currently, the limit of (overnight by a PC) Othello perfect-play<br>
+|&gt; &gt;analysis is within the range of the last 26-28 moves of the game.<br>
+|&gt; &gt;The 6 x 6 game has only 32 moves (31 actually since the first move<br>
+|&gt; &gt;is determined WRT symmetry) and each player has fewer options to<br>
+|&gt; &gt;consider per move (as compared to an 8 x 8 game).  So SURELY the<br>
+|&gt; &gt;6 x 6 game has ALREADY been solved... <br>
+|&gt;   Some other interesting and solvable variations on Othello are:<br>
+|&gt;     1) 4x4 Othello<br>
+|&gt;     2) &#x27;Reverse&#x27; othello - player with the fewest disks at the end of<br>
+|&gt; 	the game wins. This could be a viable 4x4 or 6x6 game<br>
+|&gt;     3) A variation on othello where the &#x27;flipping&#x27; rule is changed.<br>
+|&gt;        Instead of just flipping pieces between the just-played piece<br>
+|&gt;        and similarly colored pieces, also flip any other pieces that<br>
+|&gt;        are between similarly colored pieces as a result of the first<br>
+|&gt;        series of flips.<br>
+|&gt;     4) This just popped into my head as I&#x27;m typing - but what about<br>
+|&gt;        a semi-Othello-like game where 1) Players can place pieces<br>
+|&gt;        anywhere, and 2) A newly placed piece flips all of the existing<br>
+|&gt;        pieces in the same row or column (regardless of color). Hmmmm,<br>
+|&gt;        I&#x27;ll have to get out my board and see if it&#x27;s viable.<br>
+|&gt; <br>
+<br>
+That&#x27;s interesting, it looks as though there is an entire class of<br>
+othello-like games, which generalizes othello in the same way that<br>
+my class symmetric chess-like games generalizes chess and checkers. <br>
+Does anyone want to try to define this class, and possibly produce a<br>
+generator for it?  One interesting consequence would be the need to<br>
+produce a more general evaluation function:  How might we generalize<br>
+features like STABILITY to apply to different sets of rules? <br>
+<br>
+|&gt;   Also, a general question for the group:<br>
+|&gt; <br>
+|&gt;   I have a semi-general minimax program that I use (sometimes) to analyze<br>
+|&gt;   games that I have an interest in. It occurs to me that other people have<br>
+|&gt;   this as well, and if they do, that their programs are probably better<br>
+|&gt;   written than mine. This could be useful information to exchange for those<br>
+|&gt;   who are unable to run Barney Pell&#x27;s (hope I got the name right!) Metagame<br>
+|&gt;   workbench.<br>
+|&gt; -- <br>
+<br>
+There is also the Smart Game Board by Anders Kierulf, now supported I<br>
+believe by Martin Muller (mueller@inf.ethz.ch), but sadly this only<br>
+runs on Macs.  However, Kierulf&#x27;s phd thesis may give you some ideas<br>
+on how to make a useful general minimax engine.   <br>
+<br>
+What interesting games have you analyzed?  <br>
+<br>
+|&gt;      ------------------------------------------------------------<br>
+|&gt;      Dave Boll  boll@handel.cs.colostate.edu<br>
+|&gt;                 &quot;The speed of time is 1 second per second&quot;<br>
+|&gt;      ------------------------------------------------------------<br>
+<br>
+-- <br>
+==================================================<br>
+<br>
+   Barney Pell<br>
+   Computer Laboratory<br>
+   University of Cambridge<br>
+   phone:  (0223) 334602<br>
+   e-mail:  bdp@cl.cam.ac.uk<br>
+<br>
+==================================================<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

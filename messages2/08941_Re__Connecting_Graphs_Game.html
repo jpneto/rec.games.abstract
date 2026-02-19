@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Connecting Graphs Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Connecting Graphs Game</h1>
+    <p><strong>From:</strong> Don Woods &lt;don-ns@iCynic.com&gt;<br>
+    <strong>Date:</strong> 02 Mar 2009 16:33:39 -0800</p>
+    <hr>
+    <div>qqquet@mindspring.com writes:<br>
+...<br>
+&gt; The game is over as soon as there is exactly one connected graph, no<br>
+&gt; more, of line-segments drawn on the grid. The initial single connected<br>
+&gt; graph, formed when the first move of the game is made, does not end<br>
+&gt; the game. (Otherwise, what a dumb game this would be!)<br>
+<br>
+The description was a bit confusing because you &quot;borrowed&quot; terms from<br>
+graph theory but didn&#x27;t quite use them as I expected.  In particular,<br>
+I gather your &quot;connected graph&quot; really means &quot;connected subgraph&quot;, in<br>
+that it does not (in most cases) include all the dots/vertices.  Or,<br>
+to put it another way, I *think* you are deliberately NOT counting all<br>
+the unused vertices, which in graph theory would be connected subgraphs<br>
+each consisting of a single vertex and zero edges.  And then, your<br>
+game-ending condition is that all of the vertices THAT HAVE BEEN USED<br>
+SO FAR are in a single connected subgraph.  That&#x27;s why you needed to<br>
+add your caveat about the first line segment, so that the single<br>
+subgraph with two vertices and one edge did not end the game.<br>
+<br>
+But assuming I&#x27;m correct in interpreting your rules, the game is still<br>
+pretty dumb, because the first player cannot win against best play.<br>
+Proof: Suppose it is possible for the first player to force a win.  In<br>
+that case, after the first move (which by the special rule does not end<br>
+the game), the second player should simply add an edge connecting to one<br>
+of the same vertices.  Now there is a single connected (sub)graph with<br>
+two edges, so the game ends in a 0-0 draw!<br>
+<br>
+How about a different special rule?  Instead of treating the first move<br>
+any differently, just say that the game cannot end if the score is 0-0.<br>
+If playing on a finite grid, you&#x27;d also need to say the game ends if ALL<br>
+(or all but one) of the vertices are included in the connected graph,<br>
+since that would mean you could no longer create a separate subgraph so<br>
+no further points can be scored.<br>
+<br>
+	-- Don.<br>
+<br>
+-------------------------------------------------------------------------------<br>
+-- Don Woods (don-ns@iCynic.com)     Note: If you reply by mail, I&#x27;ll get to<br>
+-- http://www.iCynic.com/~don	     it sooner if you remove the &quot;hyphen n s&quot;<br>
+<br>
+<br>
+</div>
+</body>
+</html>

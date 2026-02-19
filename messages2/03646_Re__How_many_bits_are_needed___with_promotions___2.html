@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: How many bits are needed; (with promotions): 244b/212b/195b</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: How many bits are needed; (with promotions): 244b/212b/195b</h1>
+    <p><strong>From:</strong> David Norman &lt;David@ellought.demon.co.uk&gt;<br>
+    <strong>Date:</strong> 01 07 1997 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+george.barwood@dial.pipex.com (George Barwood) writes:<br>
+&gt; The 7890 encodes castling information and player to move as well as<br>
+&gt; just king positions. Here is my independent analysis:<br>
+&gt; <br>
+&gt; case A(9):both sides can castle<br>
+&gt; <br>
+&gt; case B(162): black cannot castle,white can castle<br>
+&gt; case B1 (52) : white can castle both sides. Note: black king cannot be<br>
+&gt; <br>
+&gt; adjacent to an unmoved white rook.<br>
+&gt; case B2  (55) : white can castle king-side.  <br>
+&gt; case B3 (55) : white can castle queen-side.<br>
+&gt; <br>
+&gt; case C(162):white can castle, black cannot castle (same analysis as<br>
+&gt; case B)<br>
+&gt; <br>
+&gt; case D(3612):neither side can castle<br>
+&gt;   case D1(240): white king in a corner 4*60<br>
+&gt;   case D2(1392): white king on side 24*58<br>
+&gt;   case D3(1980): white king in centre 36*55<br>
+<br>
+Great so far.<br>
+<br>
+&gt; Adding A,B,C,D gives 3945; *2 = 7890<br>
+<br>
+Why are you multiplying by 2 ?<br>
+<br>
+David<br>
+-- <br>
+I know I can&#x27;t spell. Thats why I became a Computer Programmer. Compilers<br>
+don&#x27;t mind bad spelling, as long as you make the same mistakes every time.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

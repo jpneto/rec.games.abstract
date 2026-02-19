@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: How many bits are needed; (with promotions): 244b/212b/195b</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: How many bits are needed; (with promotions): 244b/212b/195b</h1>
+    <p><strong>From:</strong> David Norman &lt;David@ellought.demon.co.uk&gt;<br>
+    <strong>Date:</strong> 18 06 1997 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+daly@PPD.Kodak.COM (Matthew Daly) writes:<br>
+&gt; SteveB@look.in.sig, if that is your REAL name, said: <br>
+&gt; &gt;<br>
+&gt; &gt;Am I missing something? Do you want to encode history? or just current<br>
+&gt; &gt;board position? If only board position, and you use a variable length<br>
+&gt; &gt;encoding scheme, then try the following:<br>
+&gt; &gt;<br>
+&gt; &gt;  Is a square occupied or not                : 1 bit<br>
+&gt; &gt;  If occupied, is the piece white or black   : 1 bit<br>
+&gt; &gt;               ... and what type is it       : 3 bits (6 types).<br>
+&gt; &gt;<br>
+&gt; &gt;giving a total of 5 bits per occupied square, and 1 bit per unoccupied<br>
+&gt; &gt;or 5*16 + 48 = 128 bits.<br>
+&gt; <br>
+&gt; Um, that would be 5*32 + 32 = 192 bits, non?<br>
+<br>
+I agree.<br>
+<br>
+&gt; &gt;There&#x27;s even room to add a seventh type of piece - the &quot;uncastled&quot;<br>
+&gt; &gt;king.<br>
+&gt; <br>
+&gt; And the eighth type could be the unmoved rook vs. the moved one.<br>
+&gt; Nice observation.<br>
+<br>
+You could even use the 7th type of piece as &quot;special piece&quot;. If it is a <br>
+King start square or a rook start square, then it is an unmoved King or <br>
+Rook, so you still have an eighth type spare. And there is infact no need <br>
+to mark the king. Only mark a rook as suitable for castling if neither <br>
+king nor rook has moved.<br>
+<br>
+&gt; You can encode en passant in three bits.  If the last move played<br>
+&gt; was advancing a pawn two squares, then use those three bits<br>
+&gt; to represent the file that the pawn is on.  If the last move was<br>
+&gt; not moving a pawn two squares forward, then use those three bits<br>
+&gt; to represent a file where a pawn of the appropriate color is not<br>
+&gt; on the appropriate rank.<br>
+<br>
+Or you can save another three bits, by saying a special piece on the 4th <br>
+rank is a pawn which can be taken en-passant.<br>
+<br>
+Finally, you need to say who&#x27;s turn it is. You could use another bit, or <br>
+you could say that a special piece anywhere other than 4th rank or King or <br>
+Rook starting square, is no piece at all, but indicates that the player <br>
+who&#x27;s turn it is next - white square = white, black square = black. In the <br>
+unlikely event that all suitable squares have a piece on, then the lack of <br>
+any special non-piece indicates that whichever set of squares are totally <br>
+covered is who&#x27;s turn it is.<br>
+<br>
+So the whole position is now down to a max of 192 bits, including <br>
+castling, en-passent and who&#x27;s turn it is. Of course it could be less if <br>
+there are less than 32 pieces still on the board. You could also encode <br>
+the piece list, as only 7 of 8 combinations are used for each piece. I <br>
+reckon that will go into 90 bits if packed, rather than the 96 unpacked <br>
+(log(7^32) / log(2)). That gives 186 bits.<br>
+<br>
+David.<br>
+-- <br>
+I know I can&#x27;t spell. Thats why I became a Computer Programmer. Compilers<br>
+don&#x27;t mind bad spelling, as long as you make the same mistakes every time.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Subsequence Definition Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Subsequence Definition Game</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Mon, 9 Aug 2010 11:03:25 -0700 (PDT)</p>
+    <hr>
+    <div>This is a game for any plural number of players.<br>
+<br>
+In the first part of the game the players take turns, each player<br>
+picking any one nonnegative integer to be appended to the end of a<br>
+growing list of integers. The first part of the game is over when m<br>
+integers are picked, where m is a positive integer agreed upon before<br>
+the game by the players, and where m is a multiple of the number of<br>
+players.<br>
+<br>
+Let the finite sequence of integers be {a(k)}, 1 &lt;= k &lt;= m.<br>
+<br>
+The players, in the second part of the game, take turns each coming up<br>
+with a definition that describes some subsequence of {a(k)}. If the<br>
+last integer in the subsequence defined by the previous player is<br>
+a(j), then the currently moving player tries to find a definition that<br>
+defines<br>
+(a(j+1), a(j+2), a(j+3),..., a(j+n)),<br>
+for some positive integer n.<br>
+<br>
+The subsequence must be any n consecutive terms of a sequence of<br>
+infinite number of terms defined by &quot;the definition&quot;. The definition<br>
+must either be of the form &quot;b(k) =...&quot; (function of k) or &quot;{b(k)} are<br>
+those integers which are...&quot;, where {b(k)} contains an infinite number<br>
+of terms. Again, a(j+k) = b(h+k),<br>
+for some h and for all k where 1 &lt;= k &lt;= n.<br>
+<br>
+(Note: Definitions must be finite in length. The sequence {b(k)} must<br>
+be well-defined.)<br>
+<br>
+The currently moving player gets added to their score<br>
+<br>
+n - 2*(the number of specific numbers {ordinal or cardinal, real,<br>
+complex, whatever} that occur in their definition).<br>
+<br>
+<br>
+When all m integers have been described, then the game is over.<br>
+<br>
+Largest score wins.<br>
+<br>
+It is easy to play (cheat) with the use of a computer with access to<br>
+the internet.<br>
+Log on to The On-Line Encyclopedia Of Integer Sequences.<br>
+http://oeis.org/classic/<br>
+Plug all numbers from a(j+1) to a(m) into the search field. If nothing<br>
+comes up, remove one integer from the end of the list. Keep removing<br>
+an integer from the end of the list (ie. reduce n by 1) until a<br>
+sequence comes up. If the definition has lots of specific numbers in<br>
+it, then with the scoring system, it may be better to try for a match<br>
+with a shorter subsequence.<br>
+<br>
+Of course, if one plays this without resorting completely to the OEIS,<br>
+then maybe they will invent new sequence definitions not in the OEIS<br>
+that would be worthy candidates for submission to the database.<br>
+<br>
+Any problems you can see with the game? (Of course there are.)<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

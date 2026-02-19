@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Peg solitaire</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Peg solitaire</h1>
+    <p><strong>From:</strong> kingpin@freemail.it (lucas)<br>
+    <strong>Date:</strong> 23 Nov 2004 09:27:32 -0800</p>
+    <hr>
+    <div>&gt; If you do a google search for the phrase &quot;pagoda function&quot; one of the <br>
+&gt; early results is an article called &quot;Modelling and Solving English Peg <br>
+&gt; Solitaire&quot; which sounds related to your problem.<br>
+<br>
+The problem is that deciding if a configuration c is reducible to a<br>
+configuration c&#x27; is NP-complete. So, it&#x27;s difficult to have that final<br>
+single final configuration.<br>
+I could use the rule of three to decide if a game is not playable, but<br>
+the rule of three did not give me a method to enumarate all really<br>
+possible<br>
+final configuration (the rule of three is only a necessary condition).<br>
+<br>
+I want to write a program that can solve an arbitrary initial<br>
+configuration,<br>
+created by the user. So i don&#x27;t know the final configuration.<br>
+<br>
+So, which pagoda function should i use???<br>
+<br>
+ <br>
+&gt; &gt; I ask this because if i can compute the possible final configurations,<br>
+&gt; &gt; i<br>
+&gt; &gt; can than compute a pagoda function specialized to work with one of<br>
+&gt; &gt; that final<br>
+&gt; &gt; configurations (the manhattan pagoda function). Otherwise, i really<br>
+&gt; &gt; don&#x27;t know<br>
+&gt; &gt; how to use a pagoda function (wich? for wich final configuration?) if<br>
+&gt; &gt; i have<br>
+&gt; &gt; to solve an arbitrary initial configuration...<br>
+&gt; <br>
+&gt; I&#x27;m not sure I understand you; pagoda functions are independent of <br>
+&gt; configurations.  You probably will want a set of many pagoda functions, <br>
+&gt; but not all of these will change after each move.<br>
+<br>
+No, i&#x27;m really new to pagoda function. I have read so little about<br>
+this<br>
+functions and i don&#x27;t know if i can use this functions to make some<br>
+cut to<br>
+the search space (remember that i use a brute-search algorithm).<br>
+<br>
+<br>
+&gt; Here&#x27;s what I would try:<br>
+&gt;...<br>
+&gt; Use DFS.  After each jump you try, just add the difference vector for <br>
+&gt; that jump to the current score, and continue.<br>
+<br>
+Uhmm..., i&#x27;ll read more carefully what you have wrote..i don&#x27;t<br>
+understand<br>
+english very well so i have not understood very well what you have<br>
+written..<br>
+ <br>
+ <br>
+&gt; By the way, in your initial message you say you are keeping a &quot;cache&quot; of <br>
+&gt; all configurations that cannot be reduced to a single peg - I suspect <br>
+&gt; that this could be quite large (since 33 holes gives roughly 2^33, about <br>
+&gt; 8 billion, configurations) so I wonder if memory use is part of the <br>
+&gt; problem.  Also, how are you searching this cache?<br>
+<br>
+I map each configuration to a 64-bit value. The cache is a bb-tree.<br>
+When i search a particular configuration in the cache, i check also<br>
+the<br>
+symmetric configurations (for a given configuration  there are 7<br>
+equivalent other configurations).<br>
+<br>
+The cache really help to speed up the process, because the game is<br>
+highly symmetric. By the way, some configurations take more to<br>
+calculate.<br>
+<br>
+The cause is clear to me: the order in which the possible moves are<br>
+tried<br>
+make the difference.<br>
+<br>
+So, i use a function that try to say:&quot;this move is better than this<br>
+other&quot;.<br>
+But this procedure needs to look-ahead 3/4 moves to work decently.<br>
+<br>
+But the look-ahead take much time...so now i have a program that in<br>
+some<br>
+cases work faster without look-ahead than with lookahead.<br>
+<br>
+I&#x27;ve not found any other cut to use to speed-up the process :(<br>
+<br>
+<br>
+</div>
+</body>
+</html>

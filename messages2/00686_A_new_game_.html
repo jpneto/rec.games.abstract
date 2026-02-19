@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>A new game?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>A new game?</h1>
+    <p><strong>From:</strong> boll@CS.ColoState.EDU (dave boll)<br>
+    <strong>Date:</strong> Fri, 22 Jan 1993 16:55:45 GMT</p>
+    <hr>
+    <div><br>
+  There I was, there I was, there I was<br>
+  Scribbling around with pen and paper, when I sort of came up with a <br>
+  new (to me) game. It has some of the flavour of sprouts, and I haven&#x27;t<br>
+  analyzed it much yet, but here it is:<br>
+<br>
+    The board: A MxN rectangle of dots.         <br>
+    The play : Players alternate making moves, last one able to move wins<br>
+    A move: A move in this game consists of drawing a straight line <br>
+       connecting two (previously untouched) dots. The line may not cross<br>
+       any previously drawn line, nor can it pass thru one dot on the way<br>
+       to another. Each dot can have at most one line touching it.<br>
+<br>
+  The 3x3 game is trivial, and at 4x4 it starts to get a bit interesting. I<br>
+  think it would become playable 6x6 and up.  <br>
+<br>
+  My (limited) analysis: Like sprouts, you know the maximum length of the<br>
+    game will be INT(MN/2) moves. Also like sprouts, you know you&#x27;ve <br>
+    decreased the length of the game by one move if certain conditions<br>
+    hold. For this game, you&#x27;ve decreased the length of the game by 1 <br>
+    move every time you divide the board in two pieces, such that there<br>
+    are an odd number of untouched dots in each piece. (I guess you actually<br>
+    decrease it by 2 moves if M or N are even....)<br>
+<br>
+  Anyway, has anyone ever heard of a game like this? Thoughts?<br>
+-- <br>
+     ------------------------------------------------------------<br>
+     Dave Boll  boll@handel.cs.colostate.edu<br>
+                &quot;The speed of time is 1 second per second&quot;<br>
+     ------------------------------------------------------------<br>
+<br>
+<br>
+</div>
+</body>
+</html>

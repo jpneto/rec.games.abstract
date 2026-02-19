@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>game board design</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>game board design</h1>
+    <p><strong>From:</strong> jos@and.nl (Jos Horsmeier)<br>
+    <strong>Date:</strong> Thu, 7 Apr 1994 13:25:19 GMT</p>
+    <hr>
+    <div>Greetings and salutations,<br>
+<br>
+	About ten years ago, while enjoying one of my frequent attacks<br>
+of utmost idiocy and extreme silliness, I came up with a game. It&#x27;s a<br>
+board game like chess, checkers, go etc. etc. During the years I <br>
+sincerely became to _hate_ this game, because I just can&#x27;t build it. <br>
+<br>
+I&#x27;ve written a couple of simulations, running on a computer, but that&#x27;s<br>
+no fun at all, I want a real board; a real game. Allow me to explain<br>
+the rules of this game I detest so much.<br>
+<br>
+The board consists of eleven by eleven squares. Both players start off<br>
+with eleven pieces. Every piece has a value, a so called `strength&#x27;.<br>
+This is the initial board configuration:<br>
+<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+		|  |1b|  |1b|  |1b|  |1b|  |1b|  |<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+		|  |  |2b|  |  |2b|  |  |2b|  |  |<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+		|  |  |  |3b|  |  |  |3b|  |  |  |<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+		|  |  |  |  |  |  |  |  |  |  |  |<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+		|  |  |  |  |  |5b|  |  |  |  |  |<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+		|  |  |  |  |  |  |  |  |  |  |  |<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+		|  |  |  |  |  |5w|  |  |  |  |  |<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+		|  |  |  |  |  |  |  |  |  |  |  |<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+		|  |  |  |3w|  |  |  |3w|  |  |  |<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+		|  |  |2w|  |  |2w|  |  |2w|  |  |<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+		|  |1w|  |1w|  |1w|  |1w|  |1w|  |<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+<br>
+The aim of the game is reaching the other side of the board with one<br>
+piece. A move is simple -- one move consists of moving exactly one<br>
+piece one square to the left, right, forward or backwards. The opponent&#x27;s<br>
+pieces cannot be captured, unlike e.g. chess or checkers.<br>
+<br>
+There are two ways to `block&#x27; an opponent&#x27;s piece:<br>
+<br>
+- a physical block, i.e. if a square is occupied by a piece, one cannot<br>
+  move another piece to that particular square.<br>
+<br>
+- `strength blocking&#x27;; if the sum of the strengths of the opponent&#x27;s<br>
+  pieces on a destination row is at least equal to the sum of the<br>
+  strengths of your own pieces on the row of the current position of<br>
+  a piece, the piece is effectively blocked. An example:<br>
+<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+		|  |  |  |  |  |5b|  |  |  |  |  |<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+		|  |  |  |5w|  |  |  |  |  |  |  |<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+<br>
+  white cannot move her/his piece forward, &#x27;cause the strengths are equal.<br>
+<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+		|  |  |  |1b|  |5b|  |  |  |  |  |<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+		|  |  |  |5w|  |  |  |  |  |  |  |<br>
+		+--+--+--+--+--+--+--+--+--+--+--+<br>
+<br>
+  there are two reasons why white cannot move forwards: there&#x27;s a <br>
+  physical block (1b) and there&#x27;s not enough strength to move<br>
+  forwards (5w &lt; 1b+5b == 6b).<br>
+<br>
+The value (or strength) of a piece is not fixed. If a piece with<br>
+strength `n&#x27; moves backwards beyond row `n&#x27; (or 12-`n&#x27; in case<br>
+black moves backwards), its value will degrade, according to the<br>
+following sequence: 5-&gt;3-&gt;2-&gt;1. Note that a piece has at least a<br>
+strength of one. <br>
+<br>
+If a piece with strength `n&#x27; moves _forwards_ `n&#x27; rows (relative<br>
+to the starting position) its value will upgrade according to the<br>
+following sequence: 1-&gt;2-&gt;3-&gt;5-&gt;8. Note the fibonacci sequence BTW.<br>
+<br>
+There&#x27;s a third situation where the value of a piece may decline.<br>
+Every piece has a life span of eleven turns. If, a piece is _not_ <br>
+moved, its life span goes down one generation (or move). Note that<br>
+after a move all but one pieces have their life span reduced. If<br>
+a piece _is_ moved, its life span is restored to eleven turns again.<br>
+<br>
+The adjustment of the value and the life spans is done _after_ a<br>
+piece has moved. The opponent&#x27;s pieces are only updated after s/he<br>
+made her/his move. A piece with a strength of one receiving a life<br>
+span equal to zero, must be removed from the board.<br>
+<br>
+Well, this is basically what it&#x27;s all about -- and I really would<br>
+like to build a real, cheap, portable game board. But there&#x27;s one<br>
+small problem however: how do I build a thingy like this? Do I have<br>
+to stick some `intelligence&#x27; in all 22 pieces and build in something<br>
+like 22 connectors in that board; or is it a better idea to make<br>
+those pieces out of glass (or something else, transparent) and display<br>
+all the necessary information (value and life span) from underneath.<br>
+This alternative needs 121 display `units&#x27;, one per square of the<br>
+board. But how do I detect the presence or absence of a piece then?<br>
+<br>
+I&#x27;d appreciate any tips, pointers, whatsoever that&#x27;ll help me build<br>
+this terrible game I became to hate so much ;-) Although I&#x27;m posting<br>
+to these group (rec.games.[design|abstract]), I&#x27;m not so sure whether<br>
+or not my site receives them both; so, could you please send me an e-mail<br>
+copy of your reply/follow-up too? I&#x27;ll post a summary if there&#x27;s<br>
+enough interest or I&#x27;ll send you one through e-mail if you prefer.<br>
+Just drop me a mail. <br>
+<br>
+And for now -- thank&#x27;s y&#x27;all in advance and have a good one,<br>
+<br>
+Jos aka jos@and.nl<br>
+----------------------------------------------------------------------------<br>
+defenestration: (n) the act of throwing someone out of the window.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>A chess player looks at checkers</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>A chess player looks at checkers</h1>
+    <p><strong>From:</strong> shrier@protocol.zycad.com (George Shrier)<br>
+    <strong>Date:</strong> 7 Jun 1994 19:34:40 -0400</p>
+    <hr>
+    <div><br>
+	Chess and checkers share much in common, for instance, extensive<br>
+literature on both games is maintained at the famous John G. White Collection<br>
+in Cleveland, as I discovered over a year ago. Pursuing this lead for a time,<br>
+I&#x27;ve come away with impressions of the game that may be of some interest to<br>
+net readers. These have been broken down by topic below. Pointers to further<br>
+exploration for the curious are given in section F.<br>
+<br>
+A) Historical Affinities Between Chess and Checkers<br>
+<br>
+	The rules for chess as we know it are only about 500 years old; there<br>
+was an abrupt change around the year 1500. Prior to that time, the queen moved<br>
+exactly one square diagonally, and the bishop two squares diagonally (there were<br>
+lesser differences also). Pieces with these original movements survive to<br>
+the present day in Chinese Chess and the very similar Korean Chess. Notice<br>
+that these moves correspond to checker moves and checker jumps! Besides the use<br>
+of identical boards, the notion of promotion on the back rank is also common<br>
+to chess and checkers, suggesting some sort of coevolution. Here is the<br>
+interesting part: When the rules for chess changed, the rules for checkers<br>
+did also and in a similar way. &quot;International Checkers&quot; as played in most of<br>
+Europe has kings that move like flying (chess) bishops, whereas the game played<br>
+in English-speaking countries (&quot;draughts&quot;) retains the more limited movements.<br>
+(International Checkers later expanded the board size to 10x10.) My primary<br>
+concern here is with the English game.<br>
+<br>
+	Both chess and checkers began to spawn written theory in the late<br>
+1700s. A (semi)professional class and dedicated journals and columns arose<br>
+soon thereafter. Checker theory, even more than chess theory, stresses<br>
+openings. There is also a well developed field of Checker Problem Composition,<br>
+with the difference that it is identical to the &quot;Endgame Study&quot; which is, as in<br>
+chess, somewhat practical. Simultaneous exhibitions and blindfold<br>
+play have been a staple form of entertainment in both games, though for<br>
+unknown reasons, blindfold play seems to have gone out of style long ago.<br>
+<br>
+B) Nature of Game Strategy and Literature<br>
+<br>
+	Checker annotations look rather strange at first. Squares<br>
+are numbered 1 to 32, and moves specified as 9-14, for example. This is<br>
+actually very easy to get used to. The moves of the game are not numbered, nor<br>
+is the commentary interspersed with the moves. Instead, the moves are listed<br>
+contiguously in columns, with certain of them labelled by letters A, B, C, etc.<br>
+that refer to comments given after the game. Position evaluation in checkers<br>
+is much more definite than in chess, with the precise losing move frequently<br>
+identified. Different plausible moves in opening positions are often<br>
+rank-ordered with seeming high confidence. Occasionally,<br>
+one sees comments such as &quot;cramps White&#x27;s double corner&quot; and the like, but<br>
+there is not the same richness of vocabulary as in chess.<br>
+There are terms such as &quot;bridges&quot; and &quot;elbows&quot; and notions of easy draws vs<br>
+&quot;thin&quot; or &quot;narrow&quot; draws. It would be nice if the latter concept could be<br>
+formalized.<br>
+<br>
+	In endings, the notion of &quot;the move&quot; (what chess players call the<br>
+&quot;opposition&quot;) is fundamental. There are no sliding pieces, so it plays the<br>
+same prominent role as in pawn endings. Control of central squares is crucial<br>
+in openings and middlegames. Computers have demonstrated that chess is<br>
+mostly a tactical game of material. Bean counting, with a dozen or two vague<br>
+terms for positional factors, mildly selective search, plus lots of horsepower<br>
+is basically enough. This is even more true of checkers. Long term sacrifices<br>
+of a man for undefinable compensation are fairly uncommon. Sacrifices of<br>
+two checkers are invariably temporary and part of a combination.<br>
+<br>
+	As in chess, annotators make copious references to past games, but<br>
+these are often spiced by gratuitous reminiscences of anecdotes from a half<br>
+century ago.<br>
+<br>
+	Maximum solution depths of endings with different numbers of pieces<br>
+are comparable to chess. That is, 4-piece endings have instances of ~40 move<br>
+wins, while six-piece endings go well into triple figures. It is unfortunate<br>
+that the exhaustive databases being compiled by the Chinook team record only<br>
+win/loss information instead of the actual depth.<br>
+<br>
+	The total number of positions in checkers is about equal to the square<br>
+root of the corresponding number for chess, as is the the typical number of<br>
+legal moves in a position. Consequently, computer programs search about twice<br>
+as deeply. However, humans search more deeply also! Although Chinook searched<br>
+a minimum of 20 ply with more than that along selected lines, the team had the<br>
+feeling they were frequently being outsearched by Tinsley in their London<br>
+match.<br>
+<br>
+	Contrary to chess, talent is no substitute for knowledge. Absolute<br>
+precision is crucial, with few second chances available. All great<br>
+players are walking encyclopedias. The need to play for safety first in<br>
+unfamiliar positions led to great conservatism and a tendency for nearly<br>
+all games to end in a draw. To counteract this, the original Go As You Please<br>
+(&quot;GAYP&quot;) style of play was superseded at first by the two-move ballot, in<br>
+which the first move for each side was determined by lot. However, for the last<br>
+sixty years, &quot;real&quot; checkers has been three-move restriction. Since Red&#x27;s<br>
+first two moves are essentially random, but only White&#x27;s first move, in most<br>
+balloted openings, Red&#x27;s position is already critical right from the start. This<br>
+is offset by having each player play both sides of the opening. Because of<br>
+deep opening knowledge, the low effective branching factor, and the generally<br>
+shorter length of the game, games are played fairly quickly. Standard practice<br>
+is for each round to consist of four games, all played in one day. There is some<br>
+controversy down to the present day concerning which of the possible sequences<br>
+are viable, but the number of valid openings has always remained in a narrow<br>
+band (137-150). Some current experimentation with previously barred openings<br>
+is taking place in postal play. Another method for compelling opponents to<br>
+enter uncharted waters is the 11-man ballot, in which one man on each side<br>
+is removed at random. Although this is a recognized specialty, it has never<br>
+achieved popularity.<br>
+<br>
+C) Sociology<br>
+<br>
+	Checkers has an undeservedly low reputation as a trivial game of old<br>
+men and little kids. The game has thus been in a decline for about 40 years, in<br>
+sharp contrast to chess, which has seen a huge influx of talented youth<br>
+worldwide. There is some life in the Midwest. The game&#x27;s stronghold is in<br>
+the Deep South, with the coasts nearly dead. I&#x27;m not quite sure of the<br>
+situation in Britain, but suspect that matters have declined there as well.<br>
+There is a certain revival in progress in Ireland, and a positive boom in<br>
+Barbados, of all places. No doubt, this has much to do with Ron King taking<br>
+the GAYP title.<br>
+<br>
+	Because of the low level of prestige associated with checkers, it is<br>
+even harder to make a living off that game than in chess. Its present day<br>
+masters all lead other lives, though a handful of players may have eked out<br>
+an existence in previous generations. The largest prize I have ever heard of<br>
+is $10000 (split  60/40) between Marion Tinsley and Chinook. (It seems that<br>
+International Checkers, which is in a healthy state, had a $100000 purse once.)<br>
+<br>
+	Typical checker tournaments draw ~20 participants, with a few dozen<br>
+tournaments a year taking place somewhere in the country. The biennial<br>
+National Tournament draws many more, with this year&#x27;s event to be held in Texas<br>
+in the summer. The other big tournaments are the Southern States tourney and<br>
+the Northern States tourney. The latter is usually played as far north as<br>
+Kentucky.<br>
+<br>
+	The American Checker Federation maintains a rating system, seemingly<br>
+modeled on the Elo system. Marion Tinsley has a rating of 2812, with no other<br>
+human much closer than 200 points below. The distribution of ratings looked<br>
+much like the USCF distribution, but with the ratings bottoming out at a higher<br>
+level (i.e. there are relatively few ratings below 1700, instead of say, 1300).<br>
+It is hard to tell if it is because of the inherent nature of the game that<br>
+the the range is compressed, or simply because there are few novices joining<br>
+the pool.<br>
+<br>
+	Checkers is dying. The ACF has about 1000 members currently, but I<br>
+think the number was something like 3000 10 years ago. (The USCF has 70000<br>
+members and thinks it&#x27;s doing badly.) Every issue of the ACF Bulletin that I<br>
+flipped through had an obituary section. A number of checker periodicals have<br>
+ceased functioning over the years, owing to dwindling subscriptions. In the<br>
+past (i.e. 40 years ago), there were checker columns in the Cleveland Plain<br>
+Dealer, the Toronto Star Telegram, the Hartford Courant, and the Melbourne<br>
+Weekly Times. Perhaps readers in netland can tell me if any of these are still<br>
+functioning. A cursory look at stores specializing in games turned up almost<br>
+no book titles devoted to checkers. This is undoubtedly a substantial change<br>
+from earlier times. With most of the classics out of print, they have now<br>
+attained a certain value for collectors.<br>
+<br>
+	The longevity of famous players is remarkable, with 30 year careers<br>
+common. Perhaps the most amazing of all is Asa Long. He won the American<br>
+(National) Tourney in 1920, held the World Championship form 1934 to 1948,<br>
+won the Nationals again as late as 1980 and 1984, and was twice Tinsley&#x27;s<br>
+challenger for the title in the 80s. He competed in the Nationals in 1990,<br>
+emerging undefeated, and finishing third, behind Tinsley and Chinook. He also<br>
+drew a 20-game match with Chinook, 1-1. There is hardly any parallel to this<br>
+in any sport, just as Tinsley&#x27;s record of a loss or two per decade out of<br>
+thousands of games is unique in its way.<br>
+<br>
+	One of the more interesting personalities in the game who is not a<br>
+grandmaster is Charles Walker, founder of the International Checker Hall of<br>
+Fame in Petal, Mississippi. A successful career in the insurance industry<br>
+provided the means for constructing an extravagant edifice dedicated to<br>
+checkers. A great showman, he seems fond of getting into Elvis-type clothing and<br>
+giving 300-board simultaneous exhibitions to popularize the game and gain entry<br>
+into the Guiness Book of Records. He has also appeared as a guest on various<br>
+TV shows. In one hilarious episode on a game show, panelists had to determine<br>
+whether he was head of the Checker Hall of Fame, or a world record holder who<br>
+had succeeding in sucking the same Life Saver for six hours. Like Marion<br>
+Tinsley and others, he is also deeply involved in missionary work - for<br>
+Christianity.<br>
+<br>
+D) Computers<br>
+<br>
+	The first checker program was written in 1952 by Chris Strachey,<br>
+who was later known for his work on denotational semantics, among other things.<br>
+He didn&#x27;t know alpha-beta, but stumbled into and described what amounted<br>
+to the &quot;horizon effect&quot;, rediscovered, named, and discussed by Hans Berliner<br>
+twenty years later. The program ran at ~10 nodes per second.<br>
+<br>
+	Arthur Samuel picked up the ball afterwards and wrote two famous papers<br>
+on machine learning in 1959 and 1967. The program was a milestone in AI, but<br>
+as a checker player, was greatly overrated by everyone except those who knew<br>
+the game. The field languished until the late 70s when the Duke University<br>
+team that wrote the &quot;Duchess&quot; chess program tried their hand at checkers.<br>
+This program was quite a bit stronger, but failed to impress the checker<br>
+community much, who issued a challenge comparable to the &quot;Levy bet&quot; in chess.<br>
+It was never accepted.<br>
+<br>
+	Nothing happened after that until J. Schaeffer started up the work<br>
+on Chinook a few years ago. In 1990, a paper of his claimed that already in<br>
+the opening, deep searches under tournament time controls were hitting<br>
+positions in his 6-piece database. The claim was that the program was getting<br>
+close to solving the game. On the other hand, the same paper admitted that<br>
+even a 48 hour search failed to understand the key move in the &quot;White Doctor&quot;<br>
+opening. In any case, the 8-piece database is almost finished, but Chinook still<br>
+lost a recent match to Don Lafferty, perhaps the #2 human in the world.<br>
+<br>
+	Other programs include Checkers 3.0, SAGE, and Colossus, all running on<br>
+micros and commercially available. They are of grandmaster strength. Chinook<br>
+defeated Colossus 9-2 in a 50-game match, proving again that perfection has<br>
+not yet been achieved. The latter, in turn, defeated the World Mail Champion<br>
+1-0 in a 14-game match. The loser thought the result just, with the program<br>
+having introduced a number of opening innovations. However, another Mail player<br>
+trounced Colossus 2-0 with two draws, so the era of absolute machine<br>
+superiority may yet be postponed for a short time.<br>
+<br>
+E) Miscellaneous<br>
+<br>
+	Apropos of some recent discussions in rgc, the custom in the checkers<br>
+&quot;fraternity&quot; (as they like to call it) is to consider game scores as private<br>
+property, at least informally. It was considered a scandal early in the century<br>
+when the scores of a big international match were published by somebody other<br>
+than the organizers. Some of the clauses in world championship matches would<br>
+state that the winner gets say, $3000 and the right to publish the match book.<br>
+For major tournaments and matches, donations are solicited, with donors getting<br>
+early copies of the unannotated games. Eventually though, the games, with<br>
+commentary, find their way into the public domain.<br>
+<br>
+	The official color scheme is Red and White. The squares should be<br>
+green and buff, not the horrible red squared things sold in stores. Tournament<br>
+chess boards are probably fine.<br>
+<br>
+	There seems to be no three-time repetition rule. Instead, a player can<br>
+request a referee to intervene if nothing is happening on the board. The other<br>
+player then has 40 moves (his? both players together?) to strut his stuff or<br>
+concede the draw.<br>
+<br>
+	Tinsley is said to be able to play 20 simultaneous blindfold games.<br>
+A hundred years ago, Harry Nelson Pillsbury used to play 12 chess games and 6<br>
+of checkers simultaneously while blindfolded and taking part in a game of<br>
+duplicate whist, this according to a biography of him.<br>
+<br>
+	I don&#x27;t know if club players play blitz checkers, not having been to<br>
+a club. Does anyone out there know?<br>
+<br>
+F) How to Find Out More<br>
+<br>
+	The key institution is the American Checker Federation, at<br>
+<br>
+		Post Office Drawer 365		Tel.: (601)582-7090<br>
+		Petal, Mississippi<br>
+		39465<br>
+<br>
+Members receive six issues a year of the Bulletin, a 20-30 page or so nonglossy<br>
+magazine produced in looseleaf binder format. Annual membership is $20. Most<br>
+issues of the Bulletin contain classified ads for merchandise and books<br>
+posted by members.<br>
+<br>
+	Membership is necessary to compete in tournaments. This summer (July 27<br>
+to Aug. 6), Garland, Texas will host the 1994 &quot;Checkerthon&quot;, with the biennial<br>
+Nationals and the Southern States event being held at the same place a few days<br>
+apart. The action will take place at the Ramada Inn in Garland, near Dallas.<br>
+The prize fund will approach five figures. Since I&#x27;ve never visited a checker<br>
+tournament in progress, an eywitness acount would be interesting.<br>
+<br>
+	The International Checker Hall of Fame is currently located at the<br>
+same address and phone number, but is a distinct institution. I did manage to<br>
+pay for membership in both organizations with one check. Membership costs $25<br>
+annually, entitling one to the annual issue of &quot;Checkers&quot; magazine. Although<br>
+the quality of photo reproduction is low, the magazine is quite satisfactory in<br>
+all other respects, and weighs in at well over 200 pages. The ICHF also sells<br>
+various paraphernalia, and hosts/promotes Pool Checkers and the International<br>
+form, as well as Draughts. It looks like it might be an interesting tourist<br>
+stop for anyone zipping through Mississippi.<br>
+<br>
+	The premier checker library in the world is the John Caldwell - Irving<br>
+Windt Library of Checkers in Dubuque, Iowa. Their number is (319)556-1944,<br>
+for those who wish to visit or ask for research help. They also welcome gifts<br>
+of books, memorabilia, or cash, all tax-deductible.<br>
+<br>
+	An old (50&#x27;s vintage) Brittanica article stated that the world&#x27;s<br>
+largest checker library was at the George F. Wales Foundation in Buffalo, N.Y.<br>
+I haven&#x27;t seen a more recent reference to this library. Perhaps a kind<br>
+netreader in the area can look into the matter and find out<br>
+what became of it. I hadn&#x27;t seen any reference to the checker collection at<br>
+the John G. White either, but it is sizable, containing also numerous titles<br>
+on checker variants. Incidentally, the modern day Brittanica contains only<br>
+scanty information on checkers, whereas the 40 year old edition had a meaty<br>
+four page article.<br>
+<br>
+G) Wanted<br>
+<br>
+	Someone once posted on rec.games.abstract a long discussion of all the<br>
+checker variants and their rules. A repeat would be welcome, together with<br>
+a short discussion of the history and state of each version, analogous to this<br>
+post.<br>
+<br>
+	The chess FAQ says that Sam Sloan&#x27;s history of chess is not generally<br>
+accepted. Since his arguments are semi-convincing, it would be nice if the<br>
+FAQ writer could add a short rebuttal. In that connection, does anyone know<br>
+if Burmese chess exists? Sloan says all references to such a beast are misnamed<br>
+and identical to other known variants, but one software company was selling<br>
+a program for it and several other chess-related games.<br>
+<br>
+							George Shrier<br>
+<br>
+<br>
+</div>
+</body>
+</html>

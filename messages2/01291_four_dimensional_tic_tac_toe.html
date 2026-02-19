@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>four-dimensional tic-tac-toe</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>four-dimensional tic-tac-toe</h1>
+    <p><strong>From:</strong> woods@colossal.Eng.Sun.COM (Don Woods)<br>
+    <strong>Date:</strong> 21 Sep 1993 06:14:23 GMT</p>
+    <hr>
+    <div>Christopher Phillips writes:<br>
+| Does anyone know if a draw is possible in 4^4 noughts and crosses?<br>
+| I have not managed to fill the board in such a way as to have no 4-in-a-rows<br>
+| for either player.<br>
+<br>
+I assume you really do mean 4-dimensional, i.e. 4x4x4x4.  I spent a bit<br>
+of time and found a draw, as follows:<br>
+<br>
+Let L (left) and R (right) represent the following 4x4 planes:<br>
+<br>
+	    X O X O			    O X O X<br>
+	L:  X O X O			R:  O X O X<br>
+	    O X O X			    X O X O<br>
+	    O X O X			    X O X O<br>
+<br>
+Obviously there are no 4-in-a-rows on either L or R alone.  Now consider<br>
+a cube constructed from 3 Ls and 1 R (or 3 Rs and 1 L, by symmetry).<br>
+There are two distinct cases: LLLR and LLRL.<br>
+<br>
+		X O X O     X O X O     X O X O     O X O X<br>
+	LLLR:	X O X O     X O X O     X O X O     O X O X<br>
+		O X O X     O X O X     O X O X     X O X O<br>
+		O X O X     O X O X     O X O X     X O X O<br>
+<br>
+<br>
+		X O X O     X O X O     O X O X     X O X O<br>
+	LLRL:	X O X O     X O X O     O X O X     X O X O<br>
+		O X O X     O X O X     X O X O     O X O X<br>
+		O X O X     O X O X     X O X O     O X O X<br>
+<br>
+A bit of examination shows that neither of these cubes has a 4-in-a-row.<br>
+So now, construct a 4x4x4x4 hypercube as follows:<br>
+<br>
+	L L L R<br>
+	L L L R<br>
+	L R L L<br>
+	R L R R<br>
+<br>
+QED.<br>
+<br>
+I&#x27;m curious as to whether there&#x27;s a technique that generalises to finding<br>
+draws in any number of dimensions, or inversely, whether there&#x27;s a way to<br>
+prove that some suitably high dimension 4^n board cannot draw.<br>
+<br>
+Anybody have any insights on these higher-dimensional questions?<br>
+-- <br>
+--	-- Don Woods.				[*** Generic Disclaimer ***]<br>
+--				    ...!sun!woods.eng -or- Woods@Eng.Sun.com<br>
+<br>
+<br>
+</div>
+</body>
+</html>

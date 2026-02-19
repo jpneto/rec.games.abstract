@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: First Player loses?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: First Player loses?</h1>
+    <p><strong>From:</strong> Michael Abramowski &lt;michael.abramowsky@nokia.com&gt;<br>
+    <strong>Date:</strong> Fri, 12 Mar 2004 14:58:17 GMT</p>
+    <hr>
+    <div>&quot;Glenn C. Rhoads&quot; wrote:<br>
+&gt; <br>
+&gt; This is just the Misere form of Nim.<br>
+&gt; <br>
+&gt; In the normal form, the person who takes the last item *wins*.<br>
+&gt; To find a winning move, write down the number of items in<br>
+&gt; each row in binary. E.g. the starting position is<br>
+&gt; <br>
+&gt; 3 = 0 1 1<br>
+&gt; 4 = 1 0 0<br>
+&gt; 5 = 1 0 1<br>
+&gt; <br>
+&gt; You want to move to a position such that each column in the<br>
+&gt; binary representation contains an even number of 1s.  There is<br>
+&gt; only one move to accomplish this, namely take two items from<br>
+&gt; the row with three in it achieving.<br>
+&gt; <br>
+&gt; 3 = 0 0 1<br>
+&gt; 4 = 1 0 0<br>
+&gt; 5 = 1 0 1<br>
+&gt; <br>
+&gt; By following this strategy for every move, the first player<br>
+&gt; will win.  The strategy for the misere form is exactly the same<br>
+&gt; except for the move that reduces the last row with more than one<br>
+&gt; item in it to either zero or 1 item.  In this case, if the winning<br>
+&gt; nim move is to take the entire row, then take all but 1 and if<br>
+&gt; the winning nim move is to take all but one, then take the entire<br>
+&gt; row.<br>
+<br>
+Thanks for the comments and references to Nim. It&#x27;s an interesting<br>
+algorithm, and I will have a closer look at that. Probably a good start<br>
+into abstract games.<br>
+ Cheers,<br>
+	Michael<br>
+<br>
+<br>
+</div>
+</body>
+</html>

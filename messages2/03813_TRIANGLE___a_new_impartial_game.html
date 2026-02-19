@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TRIANGLE - a new impartial game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>TRIANGLE - a new impartial game</h1>
+    <p><strong>From:</strong> jonathan@jwelton.demon.co.uk ()<br>
+    <strong>Date:</strong> 27 01 1998 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+Here is an amusing (I find) little impartial game which I&#x27;ve given the<br>
+functional name &#x27;Triangle&#x27;.<br>
+<br>
+A position in Triangle consists of three sticks of integral length<br>
+which can be arranged to form a triangle. Rather than use real sticks,<br>
+most people will find it easier to use a pencil and write down the<br>
+lengths on paper, but don&#x27;t forget the triangle inequality - the sum<br>
+of two sides must be greater than the third side.<br>
+<br>
+For instance suitable triangles are 3,4,5 or 7,7,7. Invalid as<br>
+positions are, for example, 3,5,8 or 6,6,19.<br>
+<br>
+A move in Triangle consists of taking one of the sticks and discarding<br>
+it, breaking one of the remaining sticks into two integral parts, and<br>
+arranging these with the remaining stick to form a new triangle.<br>
+<br>
+So, from 3,4,5 a valid move would be to discard the 4, and break the 5<br>
+into 2+3 to leave 2,3,3.<br>
+Or from 7,9,11 you might discard the 9, break the 11 into 4+7 and<br>
+leave 4,7,7.<br>
+<br>
+The winner is the player to make the last move.<br>
+<br>
+What sort of winning positions are there? Well 1,1,1 for a start - you<br>
+can discard a 1, but it&#x27;s not possible to break up a 1 into two<br>
+integral parts, so 1,1,1 is a winning leave.<br>
+Perhaps less apparent is that any equilateral triangle is an immediate<br>
+win - it is never be possible to form a valid triangle after moving.<br>
+<br>
+Are there any other immediate winning positions? Yes! Along with<br>
+equilateral triangles, odd sided isosceles triangles having base 1 are<br>
+immediate wins. For example, 1,3,3 or 1,19,19. No move is possible.<br>
+<br>
+These are all the immediate wins, but let&#x27;s see if we can find some<br>
+other non-immediate winning positions. Note that isosceles triangles<br>
+are generally good positions to leave, because they restrict our<br>
+opponent to discarding one of the equal sides and breaking the larger<br>
+side, so we&#x27;ll start with a small isosceles triangle.<br>
+<br>
+What if we leave 2,2,3? Our opponent&#x27;s only valid move is to discard<br>
+one of the 2s, and break the 3 into 1+2 to leave 1,2,2. But then we<br>
+can discard a 2 and break a 2 to leave 1,1,1 and win. So 2,2,3 is also<br>
+a win for the previous player.<br>
+<br>
+But because 2,2,3 is a win, 3,4,n is losing for any n (because we can<br>
+discard n, break 4, and play to 2,2,3). We can call 3,4 a &#x27;losing<br>
+pair&#x27;.<br>
+Likewise, 2,5 is a losing pair (because 2,5,n allows us to discard n,<br>
+break 5 and leave 2,2,3). I would add that 1,6 is also a losing pair,<br>
+because from 1,6,n we can always play to the immediate win 1,3,3.<br>
+<br>
+So 1,6 and 2,5 and 3,4 are all losing pairs. But these pairs are all<br>
+the ways in which a 7 can be broken, so if we can arrange to leave a<br>
+position in which our opponent&#x27;s only move involves breaking a 7, we<br>
+must win. Such positions exist, and in fact are all the isosceles<br>
+triangles with largest side 7. So<br>
+1,7,7;  2,7,7;  3,7,7;  4,7,7;  5,7,7;  6,7,7;  4,4,7;  5,5,7;  6,6,7;<br>
+and 7,7,7 are all winning positions.<br>
+<br>
+And with that flurry of winning triangles, I&#x27;ll leave this brief foray<br>
+into the analysis of Triangles. Maybe somebody can analyse deeper and<br>
+answer these questions:<br>
+<br>
+1) What is the smallest non-isosceles winning triangle?<br>
+2) We could call 7 &#x27;unbreakable&#x27;. 3 is also unbreakable. Are there any<br>
+other unbreakable numbers?<br>
+3) And, of course, is there a formula for identifying winning<br>
+triangles?<br>
+<br>
+<br>
+Jonathan Welton<br>
+--------------------------------------------------------------------------<br>
+&#x27;Half of Britain&#x27;s farmers earn less than the national average wage&#x27;<br>
+   - newspaper&#x27;s shock headline.<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

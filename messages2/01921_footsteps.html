@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>footsteps</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>footsteps</h1>
+    <p><strong>From:</strong> karl@kelp.boston.ma.us (Karl Heuer)<br>
+    <strong>Date:</strong> Mon, 25 Jul 1994 03:51:40 GMT</p>
+    <hr>
+    <div>About four months ago, we were discussing the game &quot;footsteps&quot;, which I<br>
+think of as an idealized tug-of-war game.  (One-dimensional board with a<br>
+single token on it; each turn, each of the two players decides how much of<br>
+his personal energy supply to expend; the one who picks the larger value<br>
+pulls the token one space; whoever pulls the token off the board wins.)<br>
+<br>
+I was analyzing the simplest nontrivial board: only two spaces, so that<br>
+one player needs only one turn to win, and the other needs two.  I let the<br>
+computer grind through the lowest values of the discrete game (where the<br>
+players must select a positive integer), but I was more interested in the<br>
+continuous game, or equivalently, the limit of the discrete game as the<br>
+energy supply tends to infinity.  I conjectured that if the player 1 has<br>
+the positional advantage and has M units of energy, and player 2 has N,<br>
+then the game value is -1 \/ 3-(2N/M) /\ +1.  (\/ and /\ are infix max and<br>
+min operators.)<br>
+<br>
+I&#x27;ve encountered further evidence in favor of this conjecture, and if it&#x27;s<br>
+true, then I&#x27;ve found an optimal strategy for both players in the case<br>
+N/M &gt;= 3/2.  The case N/M &lt; 3/2 seems to be harder; I haven&#x27;t had time to<br>
+investigate it very thoroughly.<br>
+<br>
+A tentative conjecture for the 3-space board with the token in the middle<br>
+is that the game value is -1 \/ 3(M-N)/(M+N) /\ +1.  I don&#x27;t have a guess<br>
+for the general case yet.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

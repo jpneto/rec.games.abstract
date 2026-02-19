@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: New Game: Basic</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: New Game: Basic</h1>
+    <p><strong>From:</strong> torbenm@pc-003.diku.dk (Torben =?iso-8859-1?Q?=C6gidius?= Mogensen)<br>
+    <strong>Date:</strong> Mon, 24 Aug 2009 17:45:57 +0200</p>
+    <hr>
+    <div>Nick Bentley &lt;nickobento@gmail.com&gt; writes:<br>
+<br>
+&gt; Nice set of constraints to work with.  Though I&#x27;m not sure that the<br>
+&gt; game tree is actually very big in practice, because of the small<br>
+&gt; branch factor combined with the forward-only movement.  I&#x27;d wager that<br>
+&gt; the tree is small compared to many other games.<br>
+<br>
+I tend to agree, though not for the same reasons.  The size of the game<br>
+tree is determined by the number of reachable positions in the game.<br>
+The branch factor is not relevant for the size of the game tree (if you<br>
+measure only the number of nodes, which is typically the case), but the<br>
+forward-only moves are, since they restrict where each individual piece<br>
+can be.  For example, the top-left red piece can be in only 12 different<br>
+positions on the board plus one off the board, and no piece can be in<br>
+more than 24 different squares.  You do have ordering on pieces in the<br>
+same square, but on the other hand two red pieces are interchangeable,<br>
+so I expect this to even out, so I expect around 10^22 different<br>
+positions.  This is more than you can store on a computer, but not a lot<br>
+compared to many other games.<br>
+<br>
+For example, Othello/Reversi is considerd having a small game tree, and<br>
+it has around 10^28 positions (according to<br>
+http://en.wikipedia.org/wiki/Game_complexity).  Compare to Chess with<br>
+10^60 positions and Go with 10^171 positions.<br>
+<br>
+I once suggested a variant of Othello where each piece has a cross on it<br>
+which can be oriented either as and X or as a + (which influences in<br>
+which directions it can be the endpoint of a flip) and where the player<br>
+that places or flips a piece decides the oriention.  This will greatly<br>
+increase the size of the game tree, as each square now has five<br>
+different possible values instead of three.  It also greatly increases<br>
+the branching factor, which was the primary concern: Othello is great<br>
+for computers due to the low branching factor (which makes deep<br>
+brute-force search possible), so by increasing this, I hoped to bring<br>
+humans into the competition again.<br>
+<br>
+One of the things that limit Draughts and Basic is that only the black<br>
+squares are used.  If you allow also moves directly forward, you will<br>
+greatly increase the number of positions.  If you also increase the<br>
+number of pieces per side, this will further increase the tree size.  A<br>
+possible rule that could keep the game interesting is that you are<br>
+allowed to move a piece directly forward if you also move another piece<br>
+directly backwards.  This removes the extreme simplicity, though.<br>
+<br>
+	Torben<br>
+<br>
+<br>
+</div>
+</body>
+</html>

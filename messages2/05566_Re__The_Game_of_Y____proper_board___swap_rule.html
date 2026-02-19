@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: The Game of Y... proper board / swap rule</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: The Game of Y... proper board / swap rule</h1>
+    <p><strong>From:</strong> &quot;Edward D. Collins&quot; &lt;ed@edcollins.com&gt;<br>
+    <strong>Date:</strong> Thu, 23 May 2002 18:48:51 -0700</p>
+    <hr>
+    <div>&gt;&gt; In Hex and other connection games (Twixt) where<br>
+&gt;&gt; the swap rule is often used, normally after Black<br>
+&gt;&gt; makes an opening play, White then chooses<br>
+&gt;&gt; whether to take this move as his own (swapping)<br>
+&gt;&gt; or simply let it be and move elsewhere.  However,<br>
+&gt;&gt; in this Zillions implementation, Black moves, then<br>
+&gt;&gt; White moves, and THEN White decides to swap colors.<br>
+&gt;&gt; (If White does swap, in effect this gives Black<br>
+&gt;&gt; the poorest first move possible, but of course it&#x27;s<br>
+&gt;&gt; Black&#x27;s turn again.)<br>
+<br>
+<br>
+&gt; That really doesn&#x27;t sound right.  That would mean<br>
+&gt; that the same Player B (starting as White) would<br>
+&gt; make a White move, elect to swap, and then immediately<br>
+&gt; make a Black move, all while Player A does nothing.<br>
+<br>
+No, I must not have explained it clearly enough.  Player B is not making<br>
+two moves in a row.  Let me try again...<br>
+<br>
+Player A moves first.  Let&#x27;s pretend it&#x27;s in the center hexagon.  Player<br>
+B decides Player A&#x27;s move was very strong and he wants that move as his<br>
+own so he then moves next by placing a stone in what he believes to be<br>
+the worst possible hexagon.  Player B then exercises his option of<br>
+swapping colors.<br>
+<br>
+Thus, it&#x27;s now Player A&#x27;s turn again although colors have been reversed.<br>
+Player A has the one stone in the poor position, Player B has the one<br>
+stone in the center hex and it&#x27;s Player A&#x27;s turn.<br>
+<br>
+<br>
+This is how the swap option is used in the Zillions implementation of<br>
+&quot;Y&quot; I downloaded last night.  I&#x27;ve never seen the swap option used this<br>
+way before and it doesn&#x27;t really make sense to me.  Granted, Player A&#x27;s<br>
+poorly positioned stone can never hurt him, but it seems easier to just<br>
+allow Player B to swap stones after Player A has placed it.  This is how<br>
+this swap rule is used when playing Hex at the PLAYSITE website, and<br>
+it&#x27;s how I use it when playing Twixt with my friends.  Having Player B<br>
+place a second stone and THEN allow swapping seems unnecessary to me -<br>
+there&#x27;s no reason for it.  (Or is there?)<br>
+<br>
+I wasn&#x27;t sure if the Zillions author who implemented &quot;Y&quot; simply was not<br>
+aware of the correct way to implement this swap rule, of if indeed &quot;Y&quot;<br>
+was played this way.  (Again, I may be missing something entirely.)<br>
+<br>
+<br>
+Ed Collins<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

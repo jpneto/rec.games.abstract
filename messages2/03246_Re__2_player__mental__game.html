@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: 2 player &quot;mental&quot; game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: 2 player &quot;mental&quot; game</h1>
+    <p><strong>From:</strong> colley@qucis.queensu.ca (Paul Colley)<br>
+    <strong>Date:</strong> 07 04 1996 00:00:00 GMT</p>
+    <hr>
+    <div>I correct some of the posted rules to Croquar (Be warned:  Corrections<br>
+are based on my fallible memory), then have some comments about Croquar<br>
+and programming contests in general at the bottom.<br>
+<br>
+In article &lt;bertrandDpH05s.E2J@netcom.com&gt;,<br>
+Brian Dysart &lt;bertrand@netcom.com&gt; wrote:<br>
+<br>
+&gt;                                                    The link stopped <br>
+&gt;working some time ago (if you find a page about &quot;croquar&quot; please let me <br>
+&gt;know), but I believe I remember most of the game.  Feel free to correct <br>
+&gt;me if you&#x27;ve got better information.<br>
+<br>
+I won the croquar contest...  I have a brief write-up on how I<br>
+developed the winning entries, as well as the source code.  Also the<br>
+original contest rules and FAQ.<br>
+<br>
+Be warned:  I found out about the contest three days before the<br>
+deadline, and as a result of the rush, wrote some of the most hideous,<br>
+undocumented, unreadable code I&#x27;ve ever perpetrated.  You might<br>
+want to skip the code :-).<br>
+<br>
+I wasn&#x27;t aware that the link was dead; it worked the last time I<br>
+checked, so you might want to try<br>
+<br>
+	http://www.qucis.queensu.ca/home/colley/info.html<br>
+<br>
+There&#x27;s no information about croquar on my page (besides the link);<br>
+email me if you want the information I have.<br>
+<br>
+&gt;game: mathematical croquet<br>
+&gt;<br>
+&gt;# of players: 2<br>
+&gt;<br>
+&gt;object: to be the first to<br>
+                       &lt;validly&gt;<br>
+&gt;                           pass 100 by going throughb a series of &quot;hoops&quot;.<br>
+&gt;play: Both players&#x27; scores start at zero.  On your turn, add a number 1 <br>
+&gt;to 8 inclusive to your score.  The first player may choose without <br>
+&gt;limitation, but on every subsequent move two restrictions must be followed:<br>
+&gt;<br>
+&gt;1) You may not use the same number your opponent just used, or 9 minus <br>
+&gt;the that number.  For example, if your opponent chose 7, you could not <br>
+&gt;pick 7 or 2.<br>
+<br>
+	Nor -7 or -2.<br>
+<br>
+&gt;<br>
+&gt;2) Every multiple of 10 is a &quot;hoop&quot; which must be passed through ending <br>
+&gt;at the same distant from that hoop as the turn began.  For example, if <br>
+&gt;your score were 17 and you wanted to go through the 2 hoop, you would <br>
+&gt;have to choose 6 to end at 23 (23-20=20-17).  Yyou may go through the <br>
+&gt;hoop in two moves, but you must still obey the same-distance <br>
+&gt;restriction.  38, then 40, then 42, for example.  If you are forced to go <br>
+&gt;through a hoop without following this restriction, you will have to go <br>
+&gt;back through the hoop (get your score under that hoop value), then go <br>
+&gt;through it again.<br>
+	including the 100 hoop<br>
+<br>
+And, you can only do this once---the second time you pass a hoop<br>
+invalidly, you lose immediately.<br>
+<br>
+&gt;                   To go backwards pick a number following the first <br>
+&gt;restriction, but subtract it from your score.  You do not have to follow <br>
+&gt;the same-distance restriction when going backward.  You only go backwards <br>
+&gt;until you&#x27;ve gotten below the hoop you faulted on.<br>
+<br>
+	You must get below the hoop in one step.<br>
+<br>
+&gt;<br>
+&gt;The 100 hoop must be passed through, not simply landed on.  And that&#x27;s <br>
+&gt;all there is to it.  As there was a contest to write programs to play <br>
+&gt;this game I doubt it&#x27;s trivial, but I would be interested in seeing <br>
+&gt;analyses of strategies.  Also, if this game&#x27;s been published in a book <br>
+&gt;I&#x27;d very much like to know which one.<br>
+<br>
+If you were on a hoop, and couldn&#x27;t play the number you needed to get<br>
+off, you could pass.<br>
+<br>
+Also, if the second player and first player win on the same turn, the<br>
+game is a draw (i.e., second player is guaranteed as many turns as the<br>
+first).<br>
+<br>
+---------------<br>
+<br>
+Comments:<br>
+<br>
+Sorry to disappoint you, but the game *is* trivial---at least by<br>
+computer; the search space is too small.<br>
+<br>
+The contest was only interesting because of strict resource limitations<br>
+(very little prepared data allowed, little dynamic RAM, and little<br>
+CPU).  Nevertheless, several players had programs capable of playing<br>
+perfectly entered.<br>
+<br>
+Why did I win?  Mostly luck.  But also, the REAL challenging part of<br>
+the contest turns out to be ambiguous rules and, even harder, no access<br>
+to the target platform.  I had to write code for a computer I don&#x27;t<br>
+have, to be compiled by a compiler I&#x27;ve never seen, to interface to<br>
+code I don&#x27;t have.<br>
+<br>
+I and another player got it right (through luck more than skill, I<br>
+think); several other &quot;perfect&quot; programs got bit by computer or<br>
+compiler differences, or by failing to correctly guess the exact<br>
+definition of the rules or interface.<br>
+<br>
+I beat the other perfect program because an imperfect program managed<br>
+to play perfectly against my competitor but make an error against me.<br>
+<br>
+Actually, I submitted two entries; only one of them worked, the other<br>
+suffered from one of those annoying platform differences.<br>
+<br>
+The game is a draw with perfect play.<br>
+<br>
+And, yes, it can be played by humans without pencil or paper---I<br>
+sincerely doubt any human can play the game perfectly, and the state is<br>
+very small.  Unfortunately, it&#x27;s a very *dull* game, in my personal<br>
+opinion.  Playing &quot;Geography&quot; is more fun.  :-).<br>
+<br>
+----------------------<br>
+<br>
+Aside:  Programming contests are fun, but they should not be exercises<br>
+in parsing ambiguous documents and guessing at compiler quirks.<br>
+<br>
+My STRONG suggestion for anyone planing on running such a contest in<br>
+the future is that you should develop the referee code and test it on<br>
+several platforms, and make it public well before the contest (at least<br>
+a month).  The published referee program can then be the definitive<br>
+standard of what the rules of the game are, and the interface to be<br>
+used.<br>
+<br>
+Secondly, entrants should be allowed to submit entries in advance of<br>
+the contest date for testing on the target hardware.<br>
+<br>
+If such had been done in the Croquar contest, I probably would not have<br>
+won...  which is how it should have been; there were better designed<br>
+and written programs than my own.<br>
+<br>
+- Paul Colley<br>
+colley@qucis.queensu.ca           +1 613 545 3807<br>
+http://www.qucis.queensu.ca/home/colley/info.html<br>
+&quot;Even if you do learn to speak correct English, whom are you<br>
+going to speak it to?&quot;    --Clarence Darrow<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

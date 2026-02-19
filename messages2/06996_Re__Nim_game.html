@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Nim game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Nim game</h1>
+    <p><strong>From:</strong> jferro@fuchsia.ece.cmu.edu (Jonathan R. Ferro)<br>
+    <strong>Date:</strong> 07 Jul 2004 14:42:29 -0400</p>
+    <hr>
+    <div>torbenm@diku.dk (Torben gidius Mogensen) writes:<br>
+&gt; jferro@fuchsia.ece.cmu.edu (Jonathan R. Ferro) writes:<br>
+&gt; &gt; A fundamental theorem of combinatorial game theory states that all<br>
+&gt; &gt; impartial or non-partisan games (i.e., games where there are no moves<br>
+&gt; &gt; which are reserved to a particular player) are equivalent to nim.  So,<br>
+&gt; &gt; for game A it certainly is the case that a general strategy exists.<br>
+&gt; &gt; Finding the strategy (i.e., computing the nim-values of each of the<br>
+&gt; &gt; states) might be a chore, since there are so many legal moves from each<br>
+&gt; &gt; position and there&#x27;s no simple chart-like way to tabulate all of the<br>
+&gt; &gt; positions, but it certainly exists.<br>
+&gt; <br>
+&gt; Indeed, but if finding the winning strategy (or, equivalently,<br>
+&gt; deciding if a position is winning or losing) is very computationally<br>
+&gt; intensive, then the game can be considered interesting (as opposed to<br>
+&gt; Nim, where the simple strategy makes the game uninteresting).  This is<br>
+&gt; not unlike, e.g., Chess, Reversi or Go, which are deterministic but<br>
+&gt; computationally hard, so it isn&#x27;t possible to formulate a simple<br>
+&gt; winning strategy.<br>
+<br>
+I didn&#x27;t mean to imply that the game is not interesting (&quot;chore&quot; was a<br>
+bad word choice), I was only answering the factual question of whether a<br>
+strategy exists.  This is different from whether a *simple* strategy<br>
+exists, partly because &quot;simple&quot; is not a well-defined term.  This is<br>
+different yet again from the partisan games you name, because for both<br>
+chess and go we do not even know whether a strategy exists even though<br>
+the rules are deterministic.<br>
+<br>
+In fact, &quot;strategy&quot; is not a very useful word here, because what the<br>
+theorem means is that there is only one strategy for all non-partisan<br>
+games: make an appropriate nim-move for the nim-value of the current<br>
+position.  The thing that makes non-partisan games more or less simple<br>
+is the complication of determining/finding/computing the nim-value of<br>
+the position in the first place.  Obviously Nim is very easy, and it<br>
+seems like this game is interestingly difficult.<br>
+<br>
+&gt;    XX           XX<br>
+&gt;      X   and   X<br>
+&gt;    X           X<br>
+<br>
+Note that the first position is equivalent to<br>
+<br>
+   XX<br>
+   X<br>
+     X<br>
+<br>
+which is symmetrical, and yet is not a P-position because of the stones<br>
+on the diagonal.<br>
+<br>
+-- Jon<br>
+<br>
+<br>
+</div>
+</body>
+</html>

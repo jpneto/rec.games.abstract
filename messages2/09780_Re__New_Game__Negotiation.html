@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: New Game: Negotiation</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: New Game: Negotiation</h1>
+    <p><strong>From:</strong> Matteo Perlini &lt;epicurus83@gmail.com&gt;<br>
+    <strong>Date:</strong> Sat, 25 Sep 2010 03:30:43 -0700 (PDT)</p>
+    <hr>
+    <div>On 24 Set, 04:00, Mark Steere &lt;markste...@gmail.com&gt; wrote:<br>
+&gt; On Sep 23, 4:26 pm, Matteo Perlini &lt;epicuru...@gmail.com&gt; wrote:<br>
+&gt;<br>
+&gt; &gt; I have calculated the game-tree complexity of Ecalper.<br>
+&gt;<br>
+&gt; I haven&#x27;t put a huge amount of thought into this, but I don&#x27;t think<br>
+&gt; Ecalper would be as complex as Oust on the same size board.  In<br>
+&gt; Ecalper, you can move and flip wherever you want, unlike Oust with its<br>
+&gt; move restrictions.  However, you&#x27;re limited to 127 stone placements<br>
+&gt; and a third as many flips in Ecalper.  In Oust, because of stone<br>
+&gt; recycling, cooperating players could keep a game going for hundreds if<br>
+&gt; not thousands of moves on a 127 cell board, the game tree fucking<br>
+&gt; flaring the whole way along.  Just a theory....<br>
+<br>
+<br>
+I didn&#x27;t put that table for competing with other games. I did it just<br>
+for explaining Ecalper is a deep game, also with just 127 stones.<br>
+<br>
+The reason why it has a so big game-tree complexity is because Ecalper<br>
+is (more or less) a three-move game.<br>
+<br>
+I didn&#x27;t study the game-tree complexity of Oust, so it&#x27;s difficult to<br>
+say something relevant here, but, anyway, you should consider the<br>
+average number of moves for estimating the game-tree complexity.<br>
+<br>
+How many possible moves in Oust does the player have in the second<br>
+turn? I think it&#x27;s 120. In Ecalper, however, during the second turn<br>
+player has 930372 possible moves to choose from.<br>
+<br>
+This, to me, is a strong clue Ecalper has a bigger game-tree<br>
+complexity than Outs (with a fair and meaningful number of turns).<br>
+<br>
+But it would be really interesting whether someone can find out the<br>
+Outs&#x27; game-tree complexity.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

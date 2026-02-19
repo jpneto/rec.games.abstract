@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Why chess is easy to program, Go hard (long)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Why chess is easy to program, Go hard (long)</h1>
+    <p><strong>From:</strong> wtf@calrissian.bocaraton.ibm.com (Bill Fischofer)<br>
+    <strong>Date:</strong> Wed, 28 Sep 1994 21:50:23 GMT</p>
+    <hr>
+    <div>I believe that go is harder to program than chess for three reasons:<br>
+<br>
+1. The mathematical state space of go is vastly larger than chess.  As has<br>
+   been noted, chess programs have taken brute force technique far beyond<br>
+   the wildest imaginings of the early chess programmers.  Because such<br>
+   techniques have been successful, there has been little incentive to<br>
+   try and develop chess programs that attempt to mimic the thought<br>
+   processes of human grandmasters (or even to probe what those thought<br>
+   processes might really be).  But the &quot;gap&quot; between chess and go is<br>
+   so large (at least 100 orders of magnitude) that no amount of cleverness<br>
+   or improvement in hardware speeds seems likely to yield similar <br>
+   successes in the realm of go.  If strong go programs arise, it will be<br>
+   because they manage to play go in ways recognizably more similar to<br>
+   the way human masters play than is the case for chess programs.<br>
+<br>
+2. Go is far more symmetric than chess.  The different pieces and their<br>
+   moves actually makes tactical analysis easier in chess than in go.<br>
+   In go the value of a stone is a function of its relationship to other<br>
+   stones rather than to anything intrinsic.  While sacrifice technique<br>
+   can violate the normal material relationship among pieces in chess,<br>
+   it is almost always the case that a queen is worth more than a knight.<br>
+   Moreover, in chess significant sacrifices are almost invariably coupled<br>
+   to a mating attack of some sort which will decide the game fairly<br>
+   quickly.  In go, the amorphous nature of stones means that sacrifices<br>
+   tend to have more abstract strategic purposes even when they seemingly<br>
+   involve large amounts of &quot;material&quot;.<br>
+<br>
+3. Go evaluation functions must be global to be meaninful whereas chess<br>
+   does quite well with local evaluation functions.  This means that not<br>
+   only does a go program need to consider many more positions than a<br>
+   chess program, but it needs to spend much more time considering each<br>
+   position if it is to do anything meaningful with it.  This only compounds<br>
+   the problem of trying to duplicate the &quot;brute force&quot; success of<br>
+   chess programs in go.<br>
+<br>
+On this subject, David Ehrbach&#x27;s article on computers and go in the Go<br>
+Player&#x27;s Almanac (Ishi) is recommended for many other insights into this<br>
+subject.  I feel confident in predicting that the Ing prize will remain<br>
+unclaimed during the lifetime of anyone reading this post.  Programming go<br>
+is a very hard problem.<br>
+<br>
+--<br>
+Bill Fischofer                            Internet: wtf@bocaraton.ibm.com<br>
+                                               <br>
+<br>
+<br>
+</div>
+</body>
+</html>

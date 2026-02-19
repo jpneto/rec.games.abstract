@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Nim game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Nim game</h1>
+    <p><strong>From:</strong> joc_kay@hotmail.com (Joe)<br>
+    <strong>Date:</strong> 21 Jul 2004 10:20:56 -0700</p>
+    <hr>
+    <div>jferro@fuchsia.ece.cmu.edu (Jonathan R. Ferro) wrote in message news:&lt;r1d62q8mi8.fsf@fuchsia.ece.cmu.edu&gt;...<br>
+&gt; <br>
+&gt; I am unfamiliar with the term &quot;block-diagonal&quot;.  Is this a standard<br>
+&gt; term?  I take it to mean that the grid can be divided into quadrants<br>
+&gt;      |<br>
+&gt;   A  | B<br>
+&gt; -----+---<br>
+&gt;   C  | D<br>
+&gt; <br>
+&gt; such that there are no stones in quadrants B and C.  Then A and D are<br>
+&gt; independent games (which may be further segregated by this method).  Is<br>
+&gt; that correct, or are there other conditions?<br>
+<br>
+I took the liberty to borrow the term &#x27;block-diagonal&#x27; from matrix<br>
+theory. In above description it indeed means that there are no stones<br>
+in sections B and C (or, by symmetry, in sections A and D).<br>
+<br>
+By the way, what I have not figured out yet whether any irreducible<br>
+configuration can be represented uniquely by the row and column sums.<br>
+(Torben has shown that reducible configurations cannot uniquely be<br>
+representaed as such, but I have not seen a counter-example for<br>
+irreducible configurations yet.)<br>
+<br>
+So, for example:<br>
+<br>
+ 2 2 2 <br>
+<br>
+(X X X)  3<br>
+(X X .)  2<br>
+(. . X)  1<br>
+<br>
+is an irreducible configuration that (apart from irrelevant<br>
+symmetries) can be represented in a unique way by the row and column<br>
+sum:<br>
+<br>
+(3 2 1, 2 2 2)<br>
+<br>
+That means, given this &#x27;sum-representation&#x27; (3 2 1, 2 2 2) one can<br>
+re-construct the following posible originating configurations:<br>
+<br>
+(X X X)  (X X X)  (X X X)<br>
+(. X X)  (X . X)  (X X .)<br>
+(X . .)  (. X .)  (. . X)<br>
+<br>
+which are clearly all equivalent to the given configuration. In fact,<br>
+the sum-representation (when ordered appropriately) nicely removes<br>
+irrelevant symmetries induced by row/column swapping.<br>
+<br>
+But... can each irreducible configuration (with all its equivalent<br>
+configurations) be mapped onto one unique sum-representation?<br>
+<br>
+Joe<br>
+<br>
+<br>
+</div>
+</body>
+</html>

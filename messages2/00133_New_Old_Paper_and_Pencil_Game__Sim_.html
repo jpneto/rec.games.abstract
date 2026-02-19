@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>New Old Paper and Pencil Game (Sim)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>New Old Paper and Pencil Game (Sim)</h1>
+    <p><strong>From:</strong> mjd@saul.cis.upenn.edu (&quot;[*] The Power in the Streets&quot;)<br>
+    <strong>Date:</strong> 11 Nov 92 23:55:26 GMT</p>
+    <hr>
+    <div><br>
+You need two different colors of pencils for this.<br>
+<br>
+Draw six spots.  That&#x27;s the board.<br>
+<br>
+    Players take turns drawing a straight line of their own color<br>
+between two spots that don&#x27;t already have a line between them.  (There<br>
+are 15 pairs of spots, so the game is over in 15 moves.)<br>
+<br>
+    If you make a triangle whose edges are your color and whose vertices<br>
+are spots, you lose.<br>
+<br>
+    The game is a second-player win, (there&#x27;s a lovely proof that it<br>
+can&#x27;t be a tie. and the usual it-can&#x27;t-hurt-to-have-a-free-move argument<br>
+applies in reverse) but is quite playable.  The computer regularly beats<br>
+me even when I go second.  (Source code for X version follows.  I got it<br>
+from a gentleman at Carnegie Mellon.  To make a non-X version, cut out<br>
+the X parts.)<br>
+<br>
+/* xsim.c */<br>
+/* Paper and pencil game, coloring a six clique avoiding triangles */<br>
+/* Copyright Enderton 1990 */<br>
+/* Make with &quot;cc -O ramsey.c -lX11 -lm&quot; */<br>
+	<br>
+#include &lt;stdio.h&gt;<br>
+#include &quot;assert.h&quot;<br>
+#include &lt;X11/X.h&gt;<br>
+#include &lt;X11/Xlib.h&gt;<br>
+#include &lt;X11/Xatom.h&gt;<br>
+#include &lt;X11/Xutil.h&gt;<br>
+#include &lt;math.h&gt;<br>
+<br>
+extern Display * XOpenDisplay ();<br>
+Window win;<br>
+Display * dpy;<br>
+GC gc[2]; /* different line styles */<br>
+XSetWindowAttributes xswa;<br>
+XEvent xev;<br>
+<br>
+int vert [2][15] = { <br>
+  { 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4 },<br>
+  { 1, 2, 3, 4, 5, 2, 3, 4, 5, 3, 4, 5, 4, 5, 5 } };<br>
+<br>
+int edge [6][6] =   { <br>
+  { -1,  0,  1,  2,  3,  4 },<br>
+  {  0, -1,  5,  6,  7,  8 },<br>
+  {  1,  5, -1,  9, 10, 11 },<br>
+  {  2,  6,  9, -1, 12, 13 },<br>
+  {  3,  7, 10, 12, -1, 14 },<br>
+  {  4,  8, 11, 13, 14, -1 } };<br>
+<br>
+int board [15];<br>
+int onmove;<br>
+<br>
+#define EMPTY 0<br>
+#define SOLID 1<br>
+#define DASH 2<br>
+#define opposite(x) (3-x)<br>
+<br>
+int <br>
+  number () <br>
+{<br>
+  int i, n = 0;<br>
+  /* board [0] is always SOLID */<br>
+  for (i = 1; i &lt; 15; i++) {<br>
+    n = 3 * n + board [i]; <br>
+  }<br>
+<br>
+  /* 0 &lt;= n &lt; 4782969 */<br>
+  assert ( n &lt; 4782969);<br>
+  return n; <br>
+}<br>
+<br>
+char database [4782969];<br>
+<br>
+int <br>
+  losing (move) <br>
+int move; <br>
+{<br>
+  int u, v, w;<br>
+  u = vert [0][move];<br>
+  v = vert [1][move];<br>
+  for (w = 6; w--; ) {<br>
+    if (w == u || w == v) continue;<br>
+    if (board [edge [u][w]] == onmove &amp;&amp; <br>
+	board [edge [v][w]] == onmove) <br>
+      return 1;<br>
+  }<br>
+  return 0;<br>
+}<br>
+    <br>
+int<br>
+  solve () <br>
+{<br>
+  /* returns a winning move, or negative if there isn&#x27;t one */<br>
+  int i, v, n;<br>
+  v = -1;<br>
+  n = number ();<br>
+  if (database [n] != 0) return database [n];<br>
+  <br>
+  for (i = 1; i &lt; 15 &amp;&amp; v &lt; 0; i++) <br>
+    {<br>
+      if (board [i] != EMPTY || losing (i)) continue;<br>
+      board [i] = onmove;<br>
+      onmove = opposite (onmove);<br>
+      if (solve () &lt; 0) {<br>
+	v = i; <br>
+      }<br>
+      board [i] = EMPTY;<br>
+      onmove = opposite (onmove); <br>
+    }<br>
+  database [n] = v;<br>
+  return v; <br>
+}<br>
+<br>
+int <br>
+  xc (n) <br>
+int n; <br>
+{<br>
+  return (int) (200.5 + 150.0 * cos (n * 3.1415926 / 3.0)); <br>
+}<br>
+<br>
+int <br>
+  yc (n) <br>
+int n; <br>
+{<br>
+  return (int) (200.5 - 150.0 * sin (n * 3.1415926 / 3.0)); <br>
+}<br>
+<br>
+void <br>
+  xdraw () <br>
+{<br>
+  int i;<br>
+  XClearWindow (dpy, win);<br>
+  for (i = 0; i &lt; 6; i++) {<br>
+    XFillArc (dpy, win, gc[0], xc(i)-5, yc(i)-5, 10, 10, 0, 360*64); <br>
+  }<br>
+  for (i = 0; i &lt; 15; i++) {<br>
+    switch (board [i]) {<br>
+    case SOLID:<br>
+      XDrawLine (dpy, win, gc[0], <br>
+		 xc(vert[0][i]), yc(vert[0][i]), <br>
+		 xc (vert[1][i]), yc(vert[1][i]));<br>
+      break;<br>
+    case DASH:<br>
+      XDrawLine (dpy, win, gc[1], <br>
+		 xc(vert[0][i]), yc(vert[0][i]), <br>
+		 xc (vert[1][i]), yc(vert[1][i]));<br>
+    default:<br>
+      ; <br>
+    } <br>
+  }<br>
+  XFlush (dpy); <br>
+}<br>
+<br>
+void <br>
+  xboard_init () <br>
+{<br>
+  XGCValues gcv;<br>
+  dpy = XOpenDisplay (&quot;&quot;);<br>
+  if (!dpy) { <br>
+    printf (&quot;XOpenDisplay returned NULL\n&quot;); <br>
+    exit (1); <br>
+  }<br>
+  xswa.event_mask = ExposureMask|ButtonPressMask|KeyPressMask;<br>
+  xswa.background_pixel = BlackPixel (dpy, DefaultScreen (dpy));<br>
+  xswa.backing_store = Always;<br>
+  win = XCreateWindow (dpy, DefaultRootWindow (dpy), <br>
+		       0, 0, 400, 400, 2, 0, <br>
+		       InputOutput, CopyFromParent, <br>
+		       CWEventMask | CWBackPixel | CWBackingStore, <br>
+		       &amp; xswa);<br>
+  XStoreName (dpy, win, &quot;ramsey&quot;);<br>
+  gcv.function = GXcopy;<br>
+  gcv.plane_mask = AllPlanes;<br>
+  gcv.foreground = WhitePixel(dpy,DefaultScreen(dpy));<br>
+  gcv.background = BlackPixel(dpy,DefaultScreen(dpy));<br>
+  gcv.line_width = 2;<br>
+  gcv.fill_style = FillSolid;<br>
+  gcv.line_style = LineSolid;<br>
+  gc[0] = XCreateGC (dpy, win, <br>
+		     GCFunction | GCPlaneMask | GCForeground | GCBackground | <br>
+		     GCLineWidth | GCFillStyle | GCLineStyle, <br>
+		     &amp; gcv);<br>
+  gcv.line_style = LineOnOffDash;<br>
+  gc[1] = XCreateGC (dpy, win, <br>
+		     GCFunction | GCPlaneMask | GCForeground | GCBackground | <br>
+		     GCLineWidth | GCFillStyle | GCLineStyle, <br>
+		     &amp; gcv);<br>
+  XMapWindow (dpy, win);<br>
+  XNextEvent (dpy, &amp;xev); /* exposure */<br>
+  xdraw (); <br>
+}<br>
+<br>
+int <br>
+  sq (x) <br>
+int x; <br>
+{ <br>
+  return x * x; <br>
+}<br>
+<br>
+int <br>
+  xprocessevent (buf) <br>
+char * buf; <br>
+{<br>
+  int x, y, i, j, len = 0;<br>
+  char keys [256];<br>
+  XNextEvent (dpy, &amp; xev);<br>
+  if (xev.type == ButtonPress) {<br>
+    int least = 1000000, closest = 0, dist;<br>
+    for (i = 0; i &lt; 6; i++) {<br>
+      dist = sq (xev.xbutton.x - xc (i)) + sq (xev.xbutton.y - yc (i));<br>
+      if (dist &lt; least) {<br>
+	least = dist;<br>
+	closest = i; <br>
+      } <br>
+    }<br>
+    return closest; <br>
+  }<br>
+  else if (xev.type == KeyPress) {<br>
+    j = XLookupString (&amp; xev.xkey, keys, 16, NULL, NULL);<br>
+    for (i = 0; i &lt; j; i++) {<br>
+      buf [len++] = keys [i];<br>
+      buf [len] = 0; <br>
+    }<br>
+    return -1; <br>
+  }<br>
+  else if (xev.type == Expose) {<br>
+    xdraw ();<br>
+    return xprocessevent (buf); <br>
+  } <br>
+}<br>
+<br>
+int <br>
+  findmove () <br>
+{<br>
+  int i, j, win = 0, best = -9999, mostblunders = -1;<br>
+  win = solve ();<br>
+  if (win &gt;= 0) return win;<br>
+  /* in losing position, give opponent most chances to screw up */<br>
+  for (i = 0; i &lt; 15; i++) {<br>
+    if (board [i] == EMPTY &amp;&amp; !losing (i)) {<br>
+      int nblunders = 0;<br>
+      board [i] = onmove;<br>
+      onmove = opposite (onmove);<br>
+      for (j = 0; j &lt; 15; j++) {<br>
+	if (board [j] == EMPTY &amp;&amp; !losing (j)) {<br>
+	  board [j] = onmove;<br>
+	  onmove = opposite (onmove);<br>
+	  if (solve () &gt;= 0) nblunders++;<br>
+	  board [j] = EMPTY;<br>
+	  onmove = opposite (onmove);<br>
+	}<br>
+      }<br>
+      if (nblunders &gt; mostblunders) {<br>
+	mostblunders = nblunders;<br>
+	best = i; <br>
+      }<br>
+      board [i] = EMPTY;<br>
+      onmove = opposite (onmove); <br>
+    } <br>
+  }<br>
+  return best; <br>
+}<br>
+<br>
+int <br>
+  nlegal () <br>
+{<br>
+  int i, n = 0;<br>
+  for (i = 0; i &lt; 15; i++) {<br>
+    if (board [i] == EMPTY &amp;&amp; !losing (i)) n++; <br>
+  }<br>
+  return n; <br>
+}<br>
+<br>
+main () <br>
+{<br>
+  int i, j, move;<br>
+  int nmoves = 0, history [15];<br>
+  int computercolor = SOLID;<br>
+  char buf [256];<br>
+  for (i = 15; i--; ) board [i] = EMPTY;<br>
+  board [0] = SOLID;<br>
+  history [nmoves++] = 0;<br>
+  onmove = DASH;<br>
+  printf (&quot;This is a simple `pencil and paper&#x27; game inspired by Ramsey theory.\nOn your turn you select a pair of vertices (by clicking near each one).\nYou may not form a triangle of all one `color&#x27;; if forced to do so, you lose.\nOther commands available by hitting a key at the `Your move&#x27; prompt while the\nmouse is over the graph window:  `u&#x27; to undo, `v&#x27; to print theoretical value.\n&quot;);<br>
+  xboard_init ();<br>
+ beginning:<br>
+  printf (&quot;Do you want to play the dashed lines (computer takes solid)? &quot;);<br>
+  scanf (&quot;%s&quot;, buf);<br>
+  if (buf [0] != &#x27;y&#x27;) {<br>
+    computercolor = DASH; <br>
+  }<br>
+  while (1) {<br>
+    if (onmove == computercolor) {<br>
+      move = findmove ();<br>
+      if (move != -9999) {<br>
+	printf (&quot;Computer plays (%d,%d)\n&quot;, vert[0][move], vert[1][move]);<br>
+	board [move] = onmove;<br>
+	history [nmoves++] = move;<br>
+	onmove = opposite (onmove);<br>
+	xdraw (); <br>
+      } else {<br>
+	printf (&quot;I have no legal moves, you win.\n&quot;);<br>
+	break; <br>
+      } <br>
+    }<br>
+    if (nlegal () == 0) {<br>
+      printf (&quot;You have no legal moves, you lose.\n&quot;);<br>
+      break; <br>
+    }<br>
+    printf (&quot;Your move:  &quot;);<br>
+    fflush (stdout);<br>
+    i = xprocessevent (buf);<br>
+    if (i == -1 &amp;&amp; buf[0] == &#x27;u&#x27;) {<br>
+      printf (&quot;\n&quot;);<br>
+      if (nmoves &gt; 2) {<br>
+	board [history [--nmoves]] = EMPTY;<br>
+	board [history [--nmoves]] = EMPTY; <br>
+      } <br>
+    }<br>
+    else if (i == -1 &amp;&amp; buf [0] == &#x27;v&#x27;) {<br>
+      if (solve () &lt; 0) printf (&quot;\nYou cannot win.\n&quot;);<br>
+      else printf (&quot;\nYou can still win.\n&quot;); <br>
+    }<br>
+    else if (i &gt;= 0) {<br>
+      printf (&quot;(%d,&quot;, i);<br>
+      fflush (stdout);<br>
+      j = xprocessevent (buf);<br>
+      printf (&quot;%d)\n&quot;, j);<br>
+      if (i &lt; 0 || i &gt; 5 || j &lt; 0 || j &gt; 5 || i == j) continue;<br>
+      move = edge [i][j];			<br>
+      if (board [move] != EMPTY) {<br>
+	printf (&quot;That edge has already been taken.\n&quot;);<br>
+	continue; <br>
+      }<br>
+      if (losing (move)) {<br>
+	printf (&quot;Illegal, that would form a triangle of your color.\n&quot;);<br>
+	continue; <br>
+      }<br>
+      board [move] = onmove;<br>
+      onmove = opposite (onmove);				<br>
+      history [nmoves++] = move; <br>
+    }<br>
+    xdraw ();<br>
+    sleep (1); <br>
+  }<br>
+  printf (&quot;Do you want to play again? &quot;);<br>
+  scanf (&quot;%s&quot;, buf);<br>
+  if (buf [0] == &#x27;y&#x27;) {<br>
+    for (i = 1; i &lt; 15; i++) board [i] = EMPTY;<br>
+    nmoves = 1;<br>
+    onmove = DASH;<br>
+    xdraw ();<br>
+    goto beginning; <br>
+  }<br>
+}<br>
+<br>
+<br>
+--<br>
+<br>
+                And for to se, and eek for to be seye<br>
+Mark-Jason Dominus 	  			    mjd@central.cis.upenn.edu <br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

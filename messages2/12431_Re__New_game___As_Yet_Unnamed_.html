@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: New game: [As Yet Unnamed]</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: New game: [As Yet Unnamed]</h1>
+    <p><strong>From:</strong> luigi &lt;luis.9.8.87@gmail.com&gt;<br>
+    <strong>Date:</strong> Wed, 7 Dec 2011 21:41:29 -0800 (PST)</p>
+    <hr>
+    <div>On 7 dic, 17:53, luigi &lt;luis.9.8...@gmail.com&gt; wrote:<br>
+&gt; You&#x27;re right that, in order to ensure finitude, it&#x27;s only necessary<br>
+&gt; that the group remains joined _after_ the move, even if it&#x27;s split for<br>
+&gt; a moment during the move. However, that would imply that, in the rare<br>
+&gt; cases where this makes a difference, the available moves for a stone<br>
+&gt; depend not only on the &quot;move closer&quot; rule, but also on the &quot;don&#x27;t<br>
+&gt; split&quot; rule; i.e. move generation would actually proceed this way:<br>
+&gt;<br>
+&gt; - Can I move this stone? Yes, if taking it away doesn&#x27;t split the<br>
+&gt; group OR it splits the group BUT you move it in such a way that it&#x27;s<br>
+&gt; joined again AND you&#x27;re closer to the closest friendly unit as a<br>
+&gt; result.<br>
+&gt;<br>
+&gt; - Where can I move it? To any point adjacent to the same unit and<br>
+&gt; closer to the closest friendly unit AND which joins the moving unit<br>
+&gt; again in the rare case that it was split during the move.<br>
+&gt;<br>
+&gt; In both steps, the two aforesaid rules have to be inquired. Instead,<br>
+&gt; in the current rules as written, the process is simpler: first the<br>
+&gt; &quot;don&#x27;t split&quot; rule determines if a stone can be moved, without<br>
+&gt; reference to the second rule, and then the &quot;move closer&quot; rule<br>
+&gt; determines its available destination points, without further inquiring<br>
+&gt; the first rule; i.e.:<br>
+&gt;<br>
+&gt; - Can I move this stone? Yes, if and only if taking it away doesn&#x27;t<br>
+&gt; split the group.<br>
+&gt;<br>
+&gt; - Where can I move it? To any point adjacent to the same unit and<br>
+&gt; closer to the closest friendly unit. Period.<br>
+<br>
+Hmm, after giving it a second thought I realized something which<br>
+invalidates that line of reasoning. Allowing groups to be split<br>
+momentarily during a turn isn&#x27;t more complicated, either conceptually<br>
+or computationally, if you approach move generation in reverse order,<br>
+i.e.: first check which points are valid destination points for a<br>
+stone, then check which stones can move there:<br>
+<br>
+1. Is this a valid destination point for a stone? Yes, if it&#x27;s<br>
+adjacent to any friendly unit and, when occupied, the distance between<br>
+that unit and the closest friendly unit is reduced.<br>
+<br>
+2. Can this stone be moved there? Yes, if all stones which were joined<br>
+in a single group before the move would remain joined after the move.<br>
+<br>
+On 7 dic, 01:04, &quot;Steven W. Meyers&quot; &lt;raidingfal...@gmail.com&gt; wrote:<br>
+&gt; I&#x27;m curious about the restriction that you can&#x27;t split the<br>
+&gt; group any time during the move.  Is this really necessary?<br>
+<br>
+So no, it isn&#x27;t. Thanks for pointing this out, Steve. Consider it<br>
+fixed :-)<br>
+<br>
+Just to make things clear, the revised rule for moving groups is as<br>
+follows:<br>
+<br>
+&quot;To move a group, you must pick a stone in it and place it on another<br>
+point adjacent to the group. All stones which were joined in a single<br>
+group before the move must remain joined at the end of the move.&quot;<br>
+<br>
+<br>
+</div>
+</body>
+</html>

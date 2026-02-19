@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Under-doubling dice?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Under-doubling dice?</h1>
+    <p><strong>From:</strong> David Ullrich &lt;ullrich@math.okstate.edu&gt;<br>
+    <strong>Date:</strong> 26 12 1997 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+PS regarding what the constraint should be:<br>
+<br>
+	E(Pos) is supposed to represent the value of the game to<br>
+me. Say the value of the cube is Cube. Then in most situations<br>
+we require |E(Pos)| &lt;= 3*Cube.<br>
+<br>
+	If Pos is such that I&#x27;ve just doubled and the opponent<br>
+is deciding whether to take let&#x27;s say that the former value of<br>
+the cube is Cube. Then the position cannot be worth more than<br>
+Cube to me, since the opponent could drop. Otoh it could<br>
+happen that the opponent can take and win a backgammon, in fact<br>
+it could be certain. (Not that I&#x27;m likely to double in a<br>
+position where the opponent is certain to win a backgammon -<br>
+that&#x27;s not the point.) So in this position the constraint is<br>
+<br>
+(1)  -6*Cube &lt;= E(Pos) &lt;= Cube ,<br>
+<br>
+with a similar constraint in the dual position where I&#x27;m deciding<br>
+whether to take.<br>
+<br>
+	Note that the above is not an argument, just a heuristic<br>
+telling us what the definition of the interval I(Pos) &quot;should&quot;<br>
+be. In most cases I(Pos) = [-3*Cube, 3*Cube]. In the case considered<br>
+above we define I(Pos) as above: I(Pos) = [-6*Cube, Cube] .<br>
+<br>
+	Now we let X be the set of all mappings E from the set<br>
+of all positions to the reals, such that E(Pos) is an element <br>
+of I(Pos) for all Pos. We verify that the T defined previously<br>
+maps X to X (we need to define X before we can prove this,<br>
+hance the current PS), we verify that T is continuous, and<br>
+hence T has a fixed point.<br>
+<br>
+-- <br>
+David Ullrich<br>
+<br>
+sig.txt not found<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

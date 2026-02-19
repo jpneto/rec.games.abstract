@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Peg solitaire</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Peg solitaire</h1>
+    <p><strong>From:</strong> Ted Hwa &lt;hwatheod@xenon.Stanford.EDU&gt;<br>
+    <strong>Date:</strong> Sat, 20 Nov 2004 20:48:02 +0000 (UTC)</p>
+    <hr>
+    <div>In rec.games.abstract lucas &lt;kingpin@freemail.it&gt; wrote:<br>
+<br>
+: What do you mean for &quot;desired ending positions&quot;?<br>
+: I use a brute-force search, with a cache, look-ahead and an evalutation<br>
+: function that try to order the edges of the search tree to catch the best<br>
+: moves first.<br>
+: But if there are 25 or more pegs and there is an error at deep 1 or 2, than<br>
+: the program take too long to backtrack at that level...<br>
+<br>
+: In practice, how can i use the pagoda function to cut the search space?<br>
+<br>
+If f is any pagoda function, and<br>
+<br>
+f(current position) &lt; f(final position)<br>
+<br>
+then you cannot reach the final position from the current position and <br>
+you don&#x27;t have to search any further.<br>
+<br>
+It is helpful to have several pagoda functions to test.  Different<br>
+pagoda functions are useful in different situations.  <br>
+<br>
+A very simple pagoda function, for example, would be to simply count the<br>
+number of pegs that whose coordinates are (even, even).  Of course, you<br>
+can substitute any combination of odd or even, to get 4 different pagoda<br>
+functions.  At the very least these should be implemented.<br>
+<br>
+<br>
+<br>
+Ted<br>
+<br>
+<br>
+</div>
+</body>
+</html>

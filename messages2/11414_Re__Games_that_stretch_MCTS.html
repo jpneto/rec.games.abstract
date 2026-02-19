@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Games that stretch MCTS</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Games that stretch MCTS</h1>
+    <p><strong>From:</strong> Greg &lt;dreamwafer@yahoo.com&gt;<br>
+    <strong>Date:</strong> Sat, 26 Feb 2011 11:59:18 -0800 (PST)</p>
+    <hr>
+    <div>On Feb 26, 2:22 pm, markste...@gmail.com wrote:<br>
+&gt; On 26-Feb-2011, Greg &lt;dreamwa...@yahoo.com&gt; wrote:<br>
+&gt;<br>
+&gt; &gt; On Feb 26, 12:40 pm, markste...@gmail.com wrote:<br>
+&gt; &gt; &gt; On 26-Feb-2011, Greg &lt;dreamwa...@yahoo.com&gt; wrote:<br>
+&gt;<br>
+&gt; &gt; &gt; &gt; One difficulty I can see with programming MC Oust is<br>
+&gt; &gt; &gt; &gt; that move generation is expensive due to the group<br>
+&gt; &gt; &gt; &gt; detection required for legal placement and capture.<br>
+&gt;<br>
+&gt; &gt; &gt; Yep, that too. Oust is reportedly difficult to program<br>
+&gt; &gt; &gt; efficiently even*without* the AI.<br>
+&gt;<br>
+&gt; &gt; My 11x11 Oust program searches 4 ply deep and<br>
+&gt; &gt; examines over 100k moves at 5 secs/move running on a<br>
+&gt; &gt; &quot;vintage&quot; 2.8Ghz Pentium.<br>
+&gt;<br>
+&gt; Exactly.  Now run that 80 ply deep and hope the universe doesn&#x27;t turn cold<br>
+&gt; [shaking head, palms outstretched, etc.]<br>
+<br>
+The 4 ply search is for a full width alpha-beta search so it<br>
+propagates exponentially.  For an off the cuff back of the envelope<br>
+calculation, let&#x27;s say there&#x27;s on average 40 moves/player on the 11x11<br>
+board.  The 4 ply search above corresponds to roughly 40^4 = 2560k<br>
+moves generated.  Due to other factors (e.g. alpha-beta pruning, not<br>
+actually completing the 4th ply), let&#x27;s knock that down further to a<br>
+conservative 1000k moves generated.  Assume that a single UCT playout<br>
+is typically 80 moves deep from the opening.  1000k/80 would equate to<br>
+approx 13k UCT playouts.  Not huge, but not trivial either, and Axiom<br>
+doesn&#x27;t result in the fastest possible speed due to it being a general<br>
+game system.<br>
+<br>
+Now, if move generation was made &quot;smarter&quot; via incremental group<br>
+management, that number could rise dramatically.  Also, there might be<br>
+other insights which trade less accurate playouts with a rise in<br>
+playouts that are advantageous.<br>
+<br>
+IMO, no one (including me) has made a compelling argument for or<br>
+against the viability of a UCT player for Oust.  An existence proof<br>
+would help.<br>
+<br>
+-- Greg<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

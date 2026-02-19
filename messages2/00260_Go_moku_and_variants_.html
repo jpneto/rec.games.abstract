@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Go-moku and variants.</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Go-moku and variants.</h1>
+    <p><strong>From:</strong> wft@math.canterbury.ac.nz (Bill Taylor)<br>
+    <strong>Date:</strong> 16 Nov 92 00:08:46 GMT</p>
+    <hr>
+    <div>Go-moku, more popularly known in the West as &quot;5-in-a-row&quot;, will be familiar<br>
+to all readers here.  The Japanese version has many artificial restrictions<br>
+on the first player, intended to make the game more even. These have never<br>
+had much following in the West, whose players (being mostly mathematicians<br>
+&amp; programmers) prefer the &quot;cleaner&quot; version, (and deal with the advantage<br>
+of first move, (if at all), by playing pairs of games). In the usual western<br>
+version, lines of more than 5 win (i.e. exactly 5 is not required); there<br>
+are no restrictions on &quot;double-3&quot;s; and the board is infinite (in principle).<br>
+<br>
+There has been an ongoing controversy, in various newsgroups, as to whether<br>
+or not Japanese experts had proved that (the unrestricted version of)<br>
+5-in-a-row is a 1st player win, with perfect play. The general concensus<br>
+was that they had not done so; though no one doubted the fact itself was<br>
+true. Finally the issue was resolved once and for all at a recent computer-game<br>
+meeting, reported on the net (and in New Scientist); some games programmers<br>
+had produced a perfect programs, to win 5-in-a-row as 1st-player.<br>
+<br>
+Question 1: Does anyone have any info on the minimum # moves needed to win ?<br>
+~~~~~~~~~~<br>
+6-in-a-row, as far as I know, is completely open as to whether it is a<br>
+1st-player win, or a draw. <br>
+<br>
+Question 2: Does anyone have any insights or guesses they&#x27;d care to share as <br>
+~~~~~~~~~~  to which of these is the case, and why ?<br>
+<br>
+It has long been known that 9-in-a-row, (or longer), is an easy draw. <br>
+The standard proof is similar to the one given below for &quot;ortho-5-in-a-row&quot;.<br>
+A more complex proof, of the same basic type, shows that 8-in-a-row is a<br>
+draw, and hints (and &quot;half-proves&quot;) that 7-in-a-row is a draw as well. Refs<br>
+may be found in the appropriate section of &quot;Winning Ways&quot; (Conway et al).<br>
+<br>
+But this still leaves the case of 6-in-a-row wide open.<br>
+<br>
+Less interesting to game players, but of interest to game analysers, is the<br>
+game of &quot;ortho-n-in-a-row&quot;, in which only horizontal &amp; vertical rows count.<br>
+<br>
+Ortho-4-in-a-row is a fairly easy 1st-player-win. My analysis makes it that<br>
+player-1 can win on move 15 (i.e. his own 8th move); with perfect play.<br>
+<br>
+Question 3: Can anyone produce an improvement on this 15-move win ?<br>
+~~~~~~~~~~<br>
+Ortho-5-in-a-row is seen to be a draw by the following   A A B C A A...<br>
+simple strategy. 2nd-player mentally partitions the      D D B C D D...<br>
+plane into cell-pairs, as shown in the diagram. (The     E F G G E F...<br>
+pattern is to be considered repeated indefinitely over   E F H H...<br>
+the plane). Then whenever 1st-player takes one cell of   ...<br>
+a pair, 2nd-player takes the other. Thus 1st-player can never get more than <br>
+4 in a row. (A similar pattern, with diagonal pairs also, can easily be <br>
+constructed on an 8x8 board fragment, that shows normal 9-in-a-row is a draw. <br>
+Details left as excercise.)<br>
+<br>
+It is interesting that ortho-n-in-a-row can be easily resolved, for all n.<br>
+<br>
+It may be a *very* long time before normal 6- (&amp; maybe 7-)in-a-row are decided.<br>
+<br>
+-----------------<br>
+<br>
+TWO-MOVE VARIANT.<br>
+<br>
+Another variant of n-in-a-row, that attempts to equalize the advantage<br>
+between 1st &amp; 2nd moves, is the 1-2-2-2-... variant;  where the 1st plaver<br>
+has one move, then both have 2 successive moves thereafter. In this form,<br>
+I calculate that there is still a fairly easy win for 1st-mover in 5-in-a-row,<br>
+a fairly easy win for 2nd-mover in 6-in-a-row; and an easy drawing strategy of<br>
+the type above (now requiring 3-cell partitions), for 13-in-a-row, which<br>
+probably extends simply to 12-in-a-row.<br>
+<br>
+Question 4,5,6,7: Can anyone confirm these results independently ?<br>
+~~~~~~~~~~~~~~~~<br>
+Question 8: Can anyone make a start on filling in the gap between 6 and 12 ?<br>
+~~~~~~~~~~<br>
+------------------------------------------------------------------------------<br>
+            Bill Taylor              wft@math.canterbury.ac.nz<br>
+------------------------------------------------------------------------------<br>
+                The universe is its own fastest simulator.<br>
+------------------------------------------------------------------------------<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>No Subject</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>No Subject</h1>
+    <p><strong>From:</strong> Unknown Sender<br>
+    <strong>Date:</strong> 28 Feb 1995 00:40:45 GMT</p>
+    <hr>
+    <div>] <br>
+] While playing around the other day, I came up with a simple game that<br>
+] looks possibly interesting.  Has anyone seen this before, or is it<br>
+] new?  Assuming it&#x27;s not new, is the strategy non-trivial.  Playing<br>
+] around with it seems to indicate that it might not be.<br>
+] <br>
+] Rules:<br>
+] <br>
+] Lay out a NxN grid of points: N=5 seems to work well.  Place an X in<br>
+] one corner between four points, an O in the opposite corner.<br>
+] <br>
+] . . . . .<br>
+]  X<br>
+] . . . . .<br>
+] <br>
+] . . . . .<br>
+] <br>
+] . . . . .<br>
+]        O<br>
+] . . . . .<br>
+] <br>
+] The board can be thought of both as an NxN set of grid points, or a<br>
+] (N-1)x(N-1) set of squares.  The tokens sit in the squares, walls are<br>
+] built between grid points.<br>
+] <br>
+] Players alternate turns.  On a players turn, they may either move<br>
+] their token or build a wall<br>
+] <br>
+] A token (X or O) may move one square horizontally or vertically.  The<br>
+] token may not move onto the other token, and may not cross a wall.<br>
+] The board is periodic: motion off the board places the token on the<br>
+] opposite side. Moving off the board to the left places the<br>
+] token on the right in the same row, for example. <br>
+] <br>
+] A wall may be built between any two grid points: once built, it may<br>
+] not be destroyed.  Walls block movement by both tokens.<br>
+] <br>
+] The first player to have their token surrounded by four adjacent walls<br>
+] loses: the game is a draw if placing a wall captures both tokens at<br>
+] the same time.<br>
+] <br>
+] <br>
+] Commentary?  There seem to be some obvious strategies, (Block opponent<br>
+] motion towards free areas, place walls are far from your position as<br>
+] possible, don&#x27;t get caught in tubes, etc) but I haven&#x27;t found an<br>
+] obvious winning/drawing strategy yet.<br>
+] <br>
+] -- <br>
+] Eric R.      edremy@fermion.Stanford.EDU       Department of Chemistry<br>
+] &quot;Any desired property can be calculated from the Schrodinger equation of the<br>
+] system. The solution is left as an exercise for the reader.&quot; JIR, 3rd ed.<br>
+<br>
+<br>
+This game appears to have a pretty easy first player win. You just keep<br>
+attacking the other player&#x27;s piece. If the other player stops defending<br>
+to attack you you will surround his piece first. If he keeps trying to defend,<br>
+his piece can be trapped along an edge in short order.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

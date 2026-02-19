@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Numbers, games and chance</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Numbers, games and chance</h1>
+    <p><strong>From:</strong> kwhyte@hans.math.upenn.edu (Kevin Whyte)<br>
+    <strong>Date:</strong> 13 04 1996 00:00:00 GMT</p>
+    <hr>
+    <div>In article &lt;rm10006-1004961310260001@thoth.trin.cam.ac.uk&gt;,<br>
+Robin Michaels &lt;rm10006@phx.cam.ac.uk&gt; wrote:<br>
+&gt;<br>
+&gt;In particular can this formalism be extended to games of chance.<br>
+&gt;Let us have a &#x27;Game&#x27; which has some sort of things call Positions.<br>
+&gt;Suppose we define a Move or Option to be a measure on the rather dodgy<br>
+&gt;space of Positions of the game. In other words a probability distribution<br>
+&gt;of possible positions. When you make a move (by choosing an option), one<br>
+&gt;of these possibilities is then realised in a random (weighted) fashion.<br>
+&gt;Then a Position is a an ordered pair of sets, (L,R) where L is the set of<br>
+&gt;all available Left Options in the Position, and R for Right Options.<br>
+&gt;<br>
+&gt;If all Moves have measures which are 1 at precisely one Position, and 0<br>
+&gt;elsewhere, then this reduces to the standard defintions given in the above<br>
+&gt;texts.<br>
+&gt;<br>
+&gt;However, there looks to me to be some sort of set theoretic/analytic<br>
+&gt;problem with the well foundedness and/or convergence properties of this<br>
+&gt;sort of construction, by perhaps by giving positions some sort of &#x27;rating&#x27;<br>
+&gt;which always decreases we  can restrict to games that eventually<br>
+&gt;terminate. However ideally, I&#x27;d like to be able to look at games which<br>
+&gt;terminate with probability 1  in this structure.<br>
+&gt;<br>
+<br>
+<br>
+  Certainly one can do such a thing, with no real &quot;infinite&quot;<br>
+difficulties.  Just parallel the standard construction of games:<br>
+<br>
+  On day -1 there are no games.  <br>
+<br>
+  On day n, construct games as pairs (L | R) with L and R both<br>
+(finite) sets of probability distributions on the games from day n-1.<br>
+<br>
+  As you point out, games like Backgammon fit naturally in to this<br>
+set up.  Unfortunately, the theory is unlikely to be useful.  The <br>
+power of the theory for normal games comes from the fact that games<br>
+often split into sums of smaller pieces, and those pieces are often<br>
+simple enough to be completely understandable.  At the heart of the<br>
+matter is that many games are zero.  Unfortunately it&#x27;s not hard to<br>
+see that the only games which are zero here are those where the mover<br>
+loses with probability 1 i.e. there&#x27;s no randomness left.  This <br>
+&quot;failure&quot; is not really a random vs. deterministic thing, you get <br>
+the same problem for most variants (misere play, &quot;ko&quot;, etc).  In<br>
+some ways it&#x27;s not even really objective - many normal play games<br>
+fail to break down into pieces is any useful way (chess, go, phutball,<br>
+sprouts, hex, etc).  These games cannot be usefully attacked this way.<br>
+(Well, go does decompose late in the endgame, when all ko&#x27;s are gone<br>
+-exactly the situation that has been analysed by Berlekamp and Wolfe.)<br>
+It hust happens that some games people find interesting do decompose,<br>
+and do so into pieces whose values are relatively simple.  <br>
+<br>
+ Kevin<br>
+ kwhyte@math.uchicago.edu<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

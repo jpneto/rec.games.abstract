@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Dominatrix -- Simple grid game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Dominatrix -- Simple grid game</h1>
+    <p><strong>From:</strong> James Dow Allen &lt;jdallen2000@yahoo.com&gt;<br>
+    <strong>Date:</strong> Tue, 27 Jul 2010 17:36:55 -0700 (PDT)</p>
+    <hr>
+    <div>On Jul 27, 4:55 pm, James Dow Allen &lt;jdallen2...@yahoo.com&gt; wrote:<br>
+&gt; I may write a brute-force solver ...<br>
+<br>
+Seemed to work, but not certifiable.<br>
+<br>
+To win the 3x3 game, first player<br>
+plays anywhere but center and declares 2.<br>
+<br>
+In 4x4, the three winning first moves are<br>
+   . X . .    Declare 3<br>
+   . . . .<br>
+   . . . .<br>
+   . . . .<br>
+or<br>
+   X . . .    Declare 2 or 3<br>
+   . . . .<br>
+   . . . .<br>
+   . . . .<br>
+<br>
+In 5x5, there are 20 distinct first moves,<br>
+15 of which win.<br>
+<br>
+I wrote (almost) the simplest possible<br>
+brute-force solver.  (I was too slothful<br>
+even to include a transposition cache.)<br>
+It solved the 4x4 in about one-quarter of a<br>
+second, and all starting moves in the 5x5<br>
+in 89 minutes.<br>
+<br>
+More interesting of course would be to<br>
+analyze the game heuristically.  If no<br>
+unreachable holes develop, 1st player wins<br>
+with odd number of empty cells, and indeed<br>
+most 1st moves lose on 4x4, but win on 5x5.<br>
+<br>
+James Dow Allen<br>
+<br>
+<br>
+</div>
+</body>
+</html>

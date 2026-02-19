@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>No Subject</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>No Subject</h1>
+    <p><strong>From:</strong> Unknown Sender<br>
+    <strong>Date:</strong> 06 06 2000 00:00:00 GMT</p>
+    <hr>
+    <div>The situation is rare, but probably less rare in games between two<br>
+strong programs.  After 378 games in the current match between Mona<br>
+and YL, there have been 20 draws: 19 by repetition, and one by<br>
+simultaneous connection.  There was at least one other training game<br>
+that ended in a draw by simultaneous connection, and it would have<br>
+played a role in the outcome of searches many more times than that.<br>
+<br>
+Here is the most recent simul draw.  I&#x27;ve looked at it briefly, and<br>
+it does indeed look like both players are forced to take it.  Since<br>
+neither side had much of a positional advantage, awarding a win to<br>
+the player making the final capture seems a bit arbitrary (since the<br>
+final capture could have gone either way, in principle).<br>
+<br>
+      YL vs Mona  (3 minutes per move, 2-ply fixed openings, Game 190)<br>
+<br>
+   1. b1-d3 h5-f3   2. g1-e3 a6:d3   3. c1-f4 a2-c4   4. d1:f3 a7-c7<br>
+   5. e8-e5 h3-f5   6. f3-e4 h4-f6   7. e3-d4 f5-d7   8. f1-f5 h7-e7<br>
+   9. f8:h6 a3-c5  10. c8-b7 f6-d6  11. b7-d5 h2-h4  12. f5:d7 h4:h6<br>
+  13. e1-f2 h6-f6  14. f2:c5 d3-b5  15. e4:e7 a4:d7  16. b8-e8 a5-b4<br>
+  17. g8-g7 b4-b6  18. f4:f6==  Draw by simultaneous connection<br>
+<br>
+      +-----------------+<br>
+    8 | . . . B B . . . |<br>
+    7 | . . W W B . B . |<br>
+    6 | . W . W . B . . |<br>
+    5 | . W B B B . . . |<br>
+    4 | . . W B . . . . |<br>
+    3 | . . . . . . . . |<br>
+    2 | . . . . . . . . |<br>
+    1 | . . . . . . . . |<br>
+      +-----------------+<br>
+        a b c d e f g h<br>
+<br>
+ [After playing over the game with Mona, it now appears that White<br>
+ may have held the upper hand going into the final stage of the game,<br>
+ and that Black was lucky to escape.  In light of that, awarding the<br>
+ game to Black seems even less reasonable -drb].<br>
+<br>
+I think the game might be enriched with the simul draw rule, and it<br>
+doesn&#x27;t have much negative impact if 95% of draws are by repetition<br>
+anyway (either forced or semi-forced).<br>
+<br>
+  &gt; Rule 3<br>
+  &gt; If a player can&#x27;t move then<br>
+  &gt; a) he has to pass.<br>
+  &gt; b) he has lost the game.<br>
+<br>
+  &gt; I use a, because I think passing in LOA is disadvantageous. <br>
+  &gt; I&#x27;ve never seen such a situation, but I&#x27;m convinced it can occur<br>
+  &gt; in a real game.<br>
+<br>
+This is known.  The player must pass.<br>
+<br>
+  &gt; Rule 4<br>
+  &gt; What to do with repetitions?<br>
+  &gt; a) The player about to repeat a position for the third time must<br>
+  &gt; vary the move or lose.<br>
+  &gt; b) If a player repeats a position for the third time, it&#x27;s a draw.<br>
+  &gt; c) Something else.<br>
+<br>
+  &gt; I use b.<br>
+<br>
+A draw by repetition is both simple and logically sound.  In essence,<br>
+the players have agreed that neither side can make progress safely.<br>
+<br>
+With non-monotonic piece-movement games (like chess and LOA), the<br>
+underlying mathematical structure of the domain is a graph, not a<br>
+tree.  Repetitions (cycles) are completely natural.<br>
+<br>
+Incidentally, one could eliminate draws entirely, by using something<br>
+like the super-ko rule in Go (you are simply forbidden to repeat the<br>
+position).  However, this isn&#x27;t very elegant, and I don&#x27;t think there<br>
+is anything inherently bad about an occasional game being drawn.  LOA<br>
+is in no danger of suffering &quot;draw death&quot;, like checkers and chess.<br>
+<br>
+If you want no draws whatsoever, play Hex.  :)<br>
+<br>
+  &gt; Rule 5<br>
+  &gt; A draw can be agreed any time (Mind Sport Olympiad).<br>
+  &gt; a) Why not? I think it&#x27;s pretty cool<br>
+  &gt; b) No way. If you play a game of LOA, there has to be a winner.<br>
+<br>
+Yngvi and I talked about this yesterday.  He gave a very convincing<br>
+argument that the players should be able to agree to any valid result<br>
+the game allows.  If we exclude all draws, then the players cannot<br>
+agree to a draw.  If draws are possible, then two players who are in<br>
+agreement can easily arrange the desired outcome.<br>
+<br>
+Suppose an arbiter insists that two chess grandmasters play at least<br>
+20 moves.  Two agreeing players could demonstrate their contempt by<br>
+having one side capture all the opponent&#x27;s pieces, and then having<br>
+the bare King capture all of his pieces in return.  Satisfied, sir? :)<br>
+<br>
+  &gt; What is the average game-length (in ply)?<br>
+  &gt; I think it&#x27;s 40 ply (half moves).<br>
+<br>
+I could compute an exact average for Mona vs YL, but I won&#x27;t.  It&#x27;s<br>
+pretty close to 40 ply, and *rarely* more than 60, playing to mate.<br>
+<br>
+							    - Darse.<br>
+[I may compute the average once the match is finished. -drb]<br>
+--<br>
+<br>
+&quot;There&#x27;s no sense in searching for perfection <br>
+   when you&#x27;re making successful mistakes&quot;	-The Tragically Hip.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

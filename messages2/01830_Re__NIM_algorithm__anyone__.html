@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: NIM algorithm, anyone ?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: NIM algorithm, anyone ?</h1>
+    <p><strong>From:</strong> kleber@hanalei.berkeley.edu (Michael Kleber)<br>
+    <strong>Date:</strong> 26 May 1994 00:55:24 GMT</p>
+    <hr>
+    <div>Oops!  Niel Gall asked about Nim, and his message ended:<br>
+<br>
+&gt;&gt;  Two players take it in turns to remove any number of stones<br>
+&gt;&gt;  from a single row.  The player to remove the last stone loses.<br>
+<br>
+As someone pointed out to me, I blithely went ahead and described<br>
+normal Nim, where the player taking the last stone *wins*.<br>
+<br>
+The spiffy algorithm for Nim that I posted was &quot;leave the piles so<br>
+that when you xor their sizes (written in binary) together, you get<br>
+zero.&quot;  Fortunately, this version (&quot;Mise`re Nim&quot;) isn&#x27;t much harder to<br>
+play.<br>
+<br>
+The question is, when are Nim and M-Nim different?  Well, the first<br>
+obvious case is when there&#x27;s only one pile left, and it has one stone<br>
+in it.  Then you win if you&#x27;re playing Nim, and lose if you&#x27;re playing<br>
+M-Nim.  The same thing happens any time all the piles left have only<br>
+one stone: if the number of piles is odd, you win Nim but lose M-Nim;<br>
+if the number of piles is even, vice versa.<br>
+<br>
+The next step is convincing yourself that that is basically the *only*<br>
+case where to two games are different.  You see, if *any* pile has<br>
+more than one thing in it, at some point during the game someone will<br>
+have to make a move to reduce that pile to either 0 or 1 stone.  So<br>
+cut to the end of the game, where there&#x27;s only *one* pile left with<br>
+more than 1 stone in it.<br>
+<br>
+If you were playing the &quot;win at Nim&quot; strategy, then when you get there<br>
+is *has* to be your turn, because when you xor a bigger-than-1 number<br>
+together with a lot of 1&#x27;s, you get something non-zero.  (The key to<br>
+winning at nim is that the xor is 0 at the end of your turn, and never<br>
+0 at the beginning of your turn.)  So if you use the &quot;win at Nim&quot;<br>
+strategy, you eventually get to the case where the xor is nonzero, it&#x27;s<br>
+your move, and only one pile has more than one thing in it.  When that<br>
+happens, your Nim-move would have been to reduce that one big pile to<br>
+either 0 or 1 (since that&#x27;s the only way to get 0 as the xor).  So your<br>
+M-Nim move should be the *other* one, becase once all remaining piles<br>
+have 1 stone, we know Nim and M-Nim are exactly opposite.<br>
+<br>
+I guess it&#x27;s kind of interesting that this means you don&#x27;t need to know<br>
+which verison you&#x27;re playing until near the end-- once all the piles<br>
+have 1 stone in them, it&#x27;s really a pretty stupid game, and for<br>
+anything more complicated, the same strategy works in both cases.<br>
+<br>
+--Michael Kleber                 I don&#x27;t have an overactive imagination...<br>
+  kleber@math.berkeley.edu       I have an underactive reality...   --EG<br>
+<br>
+<br>
+</div>
+</body>
+</html>

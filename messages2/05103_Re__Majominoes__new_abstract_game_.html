@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Majominoes (new abstract game)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Majominoes (new abstract game)</h1>
+    <p><strong>From:</strong> torbenm@gna.diku.dk (Torben gidius Mogensen)<br>
+    <strong>Date:</strong> 28 Nov 2001 16:49:28 +0100</p>
+    <hr>
+    <div>Bob Harris &lt;nitlion@mindspring.com&gt; writes:<br>
+<br>
+<br>
+&gt; 1) Without O&#x27;s double move, under perfect play the game would be a win for X<br>
+&gt; (regardless of the regions used).  Can you prove this?<br>
+<br>
+Since draw is impossible and the game is deterministic, either X or O<br>
+can force a win. Note also that the order that the X&#x27;s and O&#x27;s are<br>
+placed make no difference for the final score. Assume O can force a<br>
+win. This means that any move X makes is followed by a move by O such<br>
+that the final result gives a higher score to O. Furthermore, the<br>
+placement of O&#x27;s pieces is determined only by the position of the<br>
+already placed pieces (by X and O). X can now do the following: Place<br>
+the first piece anywhere on the board, then wait for O to make her<br>
+move. Now, X ignores his first piece and plays as if O started. He<br>
+will always respond to O&#x27;s move by pretending O started and the first<br>
+X piece isn&#x27;t there, unless this is the place that perfect play<br>
+suggests. In this case, he just places randomly and ignores this new<br>
+piece in the same way he previously ignored the first. Since the<br>
+assumption was that the second player can win regardless of what the<br>
+first player does, it doesn&#x27;t matter that O has fewer choices than if<br>
+she played first, X can always find a perfect response. In the end,<br>
+X can make the board look like O started except that O can&#x27;t place her<br>
+final stone since it is occupied by X on his last move. Hence, the<br>
+board will be the reverse of the board where O started except for one<br>
+piece being swapped in X&#x27;s favour. Since that can&#x27;t possibly hurt X&#x27;s<br>
+score, he wins. Since we concluded that X wins from the assumption<br>
+that O wins, the assumption was incorrect and, hence, X is guaranteed<br>
+to win.<br>
+<br>
+&gt; 2) Does allowing O a double move allow O to force a win on some boards?<br>
+<br>
+Yes. Assume a 3x3 board where the regions coincide with the rows. No<br>
+matter where X places, O can place in the same column in the two other<br>
+rows. If X later places in one of the two rows that already has an O,<br>
+O does the same, winning this. Hence, O will definitely win two rows<br>
+and one column (taken in her first move). Since rows are also regions,<br>
+that gives her 5 regions. The total number of regions is 9, so she has<br>
+more than half.<br>
+<br>
+I suspect the double move will actually allow O to win on all boards<br>
+for N&gt;=3, essentially by using it in her first move and hence turning<br>
+it into a game similar to the one in question 1 with her as first<br>
+player (and, hence, a winner in a perfect game). I can&#x27;t quite factor<br>
+the two initial plays out of the proof, though, so I may be wrong.<br>
+<br>
+&gt; 3) Is there any advantage to O delaying the use of her double move?  In<br>
+&gt; other words, shouldn&#x27;t she just always use it on her first turn?<br>
+<br>
+If my assumption above is correct, she can always win by using it in<br>
+her first move, so there would be no advantage in waiting (if all we<br>
+care about is win/lose and not maximizing scores).<br>
+<br>
+&gt; 4) It is X&#x27;s turn to move.  O has already used her double move.  Who wins?<br>
+&gt; <br>
+&gt; +--+--+--+--+--+<br>
+&gt; |  | o  o  o  x|<br>
+&gt; +  +--+--+  +--+<br>
+&gt; |  | o  o| x|  |<br>
+&gt; +  +--+  +--+  +<br>
+&gt; | o   | x  x|  |<br>
+&gt; +--+  +--+  +  +<br>
+&gt; | o|  |  | o| x|<br>
+&gt; +  +--+  +--+  +<br>
+&gt; | x      | x   |<br>
+&gt; +--+--+--+--+--+<br>
+<br>
+Offhand, I&#x27;d say X, but I haven&#x27;t done an exhaustive search.<br>
+<br>
+	Torben Mogensen (torbenm@diku.dk)<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

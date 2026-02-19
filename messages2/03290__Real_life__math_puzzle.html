@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>&quot;Real life&quot; math puzzle</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>&quot;Real life&quot; math puzzle</h1>
+    <p><strong>From:</strong> STEIMLE@cmu.unige.ch (Thierry Nouspikel)<br>
+    <strong>Date:</strong> 24 05 1996 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+This is a true story, it&#x27;s a bit long to tell but I think it makes an <br>
+interresting math puzzle, for which I couldn&#x27;t figure out a solution (but I&#x27;m <br>
+not good at math). Here it goes:<br>
+<br>
+My brother created a modern art association with 6 friends of him. Every now <br>
+and then (say each month for instance) they buy an artwork from a young <br>
+artist (a painting, a statue, etc). This artwork belong to the association and <br>
+circles between members: everyone can keep it during one month, then passes it<br>
+to the next guy.<br>
+<br>
+Now they would like to include an 8th person in their association, but the <br>
+president being very conservative will not allow it unless he can be provided <br>
+with a fair way to swap artworks between 8 persons. He has 3 main criterion <br>
+for fairness:<br>
+<br>
+A) The artwork should go to everyone once, before somebody can have it for <br>
+the second time.<br>
+<br>
+B) There should not be too many discrepancies between the number of artworks <br>
+curently own by the members. It&#x27;s OK that somebody has 1 and somebody else has <br>
+none (it&#x27;s always the case if there are less than 8 artworks) but it is not <br>
+allowed that somebody has 2 and someone else none.<br>
+<br>
+C) The artworks should not travel always the same way. In other words, there <br>
+should not be a guy who always gets the newly acquired artwork, whereas <br>
+another guy must always wait 7 months before he can have it.<br>
+<br>
+Now my questions:<br>
+1) Is it possible to design a swapping strategy to meet the 3 criterions ?<br>
+2) If no, can you demonstrate that it&#x27;s impossible ?<br>
+3) If it&#x27;s impossible with 8 persons, would it be better with 7 or 9 ?<br>
+<br>
+Below are a few trials I made. Colums represent months, row are artworks and <br>
+numbers 1 through 8 are the members of the association. (NB Don&#x27;t use a <br>
+proportional font to display these, as numbers should align vertically).<br>
+<br>
+Trial 1:<br>
+12345678<br>
+.12345678<br>
+..12345678<br>
+...12345678<br>
+....12345678<br>
+.....12345678<br>
+......12345678<br>
+.......12345678<br>
+This satisfies A and B, but violates C (person 1 gets all artworks first, <br>
+person 8 gets them last).<br>
+<br>
+Trial 2:<br>
+12345678<br>
+.34567812<br>
+..56781234<br>
+...78123456<br>
+....12345678<br>
+.....34567812<br>
+......56781234<br>
+.......78123456<br>
+This is slighly more fair, but still violates C (persons 1,3,5 and 7 get new <br>
+artworks once in four, whereas 2,4,6 and 8 never do)<br>
+<br>
+Trial 3:<br>
+12345678<br>
+.45678123<br>
+..78123456<br>
+...23456781<br>
+....56781234<br>
+.....78123456<br>
+......34567812<br>
+.......67812345<br>
+This finally satisfies C, as well as A, but now B is violated (e.g. during the <br>
+8th month, person 8,6 and 4 get two artworks, whereas 3,5 and 7 have none)<br>
+<br>
+Trial 4:<br>
+12345678<br>
+.67812345<br>
+..56781234<br>
+...23456781<br>
+....45678123<br>
+.....78123456<br>
+......81234567<br>
+.......34567812<br>
+This agains violates B (during the 8th month person 1 gets 2 artworks, and <br>
+person 5 has none).<br>
+<br>
+I did many more trials, but could not come with a satisfactory solution.<br>
+Any help would be appreciated.<br>
+<br>
+                                         Thierry Nouspikel<br>
+-----------------------------------------------------------------------<br>
+Thierry Nouspikel, MD                  &quot;Un technocrate c&#x27;est un mec,<br>
+Genetics &amp; Microbiology Dpmt           tu lui poses une question,<br>
+University of Geneva, Switzerland      quand il a fini de rpondre<br>
+nouspike@cmu.unige.ch                  tu comprends plus ta question.&quot;<br>
+fax:41/22/329.34.04                    Michel Coluci, dit &quot;Coluche&quot;<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

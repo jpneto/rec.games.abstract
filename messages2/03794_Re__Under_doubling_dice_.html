@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Under-doubling dice?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Under-doubling dice?</h1>
+    <p><strong>From:</strong> mathwft@math.canterbury.ac.nz (Bill Taylor)<br>
+    <strong>Date:</strong> 31 12 1997 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+This has been a very interesting and worthwhile thread!  Long may it continue.<br>
+I haven&#x27;t read the latest lot of follow-ups yet, but I&#x27;ll post anyway.<br>
+<br>
+Although the existence of somewhat backgammon-like games with<br>
+doubling cubes and undefined (i.e. infinite-infinite) expectations was<br>
+vaguely known to me, I&#x27;d not realized that such things could actually<br>
+appear in a real backgammon game!  Indeed, I never even knew till just<br>
+now that it was possible for both players to simultaneously have checkers<br>
+on the bar; though the mechanism is obvious enough once mentioned.<br>
+BTW, have any players here ever had this situation arise in a real game?<br>
+<br>
+The mere existence of such a nasty does indeed put the unmodified<br>
+concept of game expectation (= game value = equity) beyond definition.<br>
+It isn&#x27;t enough to say &quot;ignoring such cases&quot;, or whatever, as even a<br>
+tiny probability of this happening makes all expectation calculations<br>
+worthless, as David Ulrich has been insisting.   (Though I think my<br>
+diffusion-style no-volatility game is still safe, as explained before.)<br>
+<br>
+<br>
+So then, if unmodified expected value is worthless, let us modify it.<br>
+<br>
+The usual thing, is EITHER to observe that there is an effective limit<br>
+to the doubling sequence somewhere, either by being embedded in a match,<br>
+or by having a cap on (one or both) player&#x27;s willingness to double beyond<br>
+a certain personal limit; OR, by invoking the non-linearity of the<br>
+utility of money, which is a mess, and for most people amounts to the<br>
+same thing anyway.  Some of these effects may well be asymmetric between<br>
+the two players, but that can be handled similarly to below.<br>
+<br>
+So let us formally assume there *is* a cap on the amount they can play for,<br>
+i.e.  a limit on the stake, beyond which no doubles may be made.<br>
+<br>
+Now let us suppose we&#x27;re in this weird but legal situation where both<br>
+players are trying to roll that elusive entry combo, and (possibly)<br>
+doubling every time they have the bones. Let us assume symmetry of rolls, <br>
+&amp; put<br>
+         p = P(player about to roll hits winning combo) ;     q = 1-p.<br>
+<br>
+(We adopt the simplification that the miracle roll makes a win certain.)<br>
+Usually  p = 11/36, but we can keep it general.<br>
+<br>
+A simple conditional-prob calculation shows that (if neither drops a cube)<br>
+<br>
+P(player on roll wins)  =  p/(p+qp) ,<br>
+P(player off roll wins) = qp/(p+qp) .<br>
+<br>
+Suppose the stake gets to where we *can* double, but it would be the<br>
+last double allowed.  Should we do so?   (Assume unit current stake.)<br>
+<br>
+E[ winnings | no double ] = (p - qp)/(p + qp) &gt; 0 ,  and<br>
+E[ winnings | double ] = 2.(above) , which is bigger:-   therefore double!<br>
+<br>
+Obvious enough.  Now suppose we are on roll, and we can double, but if<br>
+the opponent redoubles that would be the last one.  If we double and<br>
+don&#x27;t hit the magic roll, he should double for sure next time (by above),<br>
+so we get...<br>
+<br>
+E[ winnings | no double ] = (p - qp)/(p + qp) ,  and<br>
+E[ winnings | double ]    = 2p - 4q(p - qp)/(p + qp) .<br>
+<br>
+So it is better to double if  2p - 4q(p - qp)/(p + qp) &gt; (p - qp)/(p + qp)<br>
+<br>
+which reduces to   p &gt; 1/2 .<br>
+<br>
+In the case where  p &gt; 1/2  the expected values converge anyway, so we<br>
+can ignore that; and in the alternate case, it is better NOT TO DOUBLE.<br>
+<br>
+Again, a highly believable result.  So if two doubles remain, it is<br>
+better NOT TO double.  And by a simple backward induction, if ANY even<br>
+number of doubles remain, it is better not to.  Interesting, and not<br>
+quite trivial.<br>
+<br>
+And of course, this tames the backgammon situation so that expected<br>
+value is defined and all the usual equity calculations apply.<br>
+<br>
+<br>
+No doubt there is a lot more to be said about this; which I await keenly.<br>
+<br>
+-------------------------------------------------------------------------------<br>
+                Bill Taylor     W.Taylor@math.canterbury.ac.nz<br>
+-------------------------------------------------------------------------------<br>
+  microtome: an instrument that cuts thin slices for microscopic examination<br>
+       tome: a million of these<br>
+-------------------------------------------------------------------------------<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

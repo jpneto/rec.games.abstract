@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: game design challenge</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: game design challenge</h1>
+    <p><strong>From:</strong> torbenm@pc-003.diku.dk (Torben =?iso-8859-1?Q?=C6gidius?= Mogensen)<br>
+    <strong>Date:</strong> Mon, 08 Dec 2008 11:10:52 +0100</p>
+    <hr>
+    <div>nickobento@gmail.com writes:<br>
+<br>
+&gt; There&#x27;s an argument to be made in favor of the idea that an ideal game<br>
+&gt; is *not* drawless.  The idea is that two perfect players should play<br>
+&gt; to a draw in an ideal game, and that any other outcome is both an<br>
+&gt; unseemly asymmetry, and a violation of the principle of fairness, to<br>
+&gt; be expunged.  So, what would draws in an ideal game be like?  Perhaps<br>
+&gt; an ideal game would have exactly one drawn state.<br>
+<br>
+Having exactly one drawn state doesn&#x27;t really matter.  Consider this<br>
+game:<br>
+<br>
+The board is an odd number of spaces in a line.  A token is placed in<br>
+the middle. Each player starts with N coins.  Players alternate paying<br>
+a number of coins to move the token that many spaces in their<br>
+direction.  You can pass (only) when you have no coins.  The game ends<br>
+when both players have no coins.  The winner is the one who has the<br>
+token closest to himself.  If it is in the middle, it is a draw.<br>
+<br>
+The game obviously has only one drawn position: The token in the<br>
+middle and both players have 0 coins.  But this is the only possible<br>
+outcome of the game, so it is not interesting.<br>
+<br>
+A variant of this is fairly well known and nontrivial: Both players<br>
+secretly bid any number of coins and the winner gets to move the token<br>
+one space in their direction (on a tie the token doesn&#x27;t move).  Both<br>
+pay their bids.  If both bid 0, the game ends.  The winner is the one<br>
+who has the token closest to himself.  If it is in the middle, it is a<br>
+draw.<br>
+<br>
+Unlike the above, this is not a total-information game, so the notion<br>
+of perfect play doesn&#x27;t exist.  So we really need to restrict<br>
+ourselces to total-information games,<br>
+<br>
+The interesting properties for a total-information game with draw<br>
+would be:<br>
+<br>
+ 1. No game can go on forever (there is a maximum number of moves in a<br>
+    game).<br>
+<br>
+ 2. With perfect play, no player can obtain more than a draw.<br>
+<br>
+ 3. Perfect play is not obvious.<br>
+<br>
+The first is usually fairly easy to decide, the second is well-defined<br>
+but can be hard to prove.  For example, Chess is AFAIK still not known<br>
+to lead to a draw with perfect play.<br>
+<br>
+The third property is not well-defined, as &quot;obvious&quot; is a subjective<br>
+property.  A reasobable way of defining non-obviousness is<br>
+computational complexity: If the problem of finding an optimal move is<br>
+computationally hard, then it is non-obvious.<br>
+<br>
+Usually, for a game to be computationally hard, there has to be a<br>
+large number of legal (and not obviously bad) moves in each turn and<br>
+the number of turns in a game has to be high.  Go is a prime example:<br>
+You have an average of around 100 possible moves per turn (though many<br>
+are obviously bad) and there number of turns is around 100.<br>
+<br>
+Connection games (Hex or similar) can be modified to be like this in<br>
+the following way: There are not enough tokens to fill the board.<br>
+<br>
+While a completely filled board is a win by one side or the other in<br>
+Hex, Y, etc., partially filled boards can be tied (neither side has a<br>
+connection).  A plausible Hex variant could be: Use an NxN board,<br>
+where N is odd.  Give each player (N^2-1)/2 tokens.  This leaves<br>
+exactly one space empty, and both players get the same number of<br>
+moves.<br>
+<br>
+	Torben<br>
+<br>
+<br>
+</div>
+</body>
+</html>

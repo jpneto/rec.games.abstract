@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: What is the longest Go problem?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: What is the longest Go problem?</h1>
+    <p><strong>From:</strong> Robert Jasiek &lt;jasiek@snafu.de&gt;<br>
+    <strong>Date:</strong> Wed, 25 Apr 2001 20:03:08 +0200</p>
+    <hr>
+    <div><br>
+<br>
+Bruno Wolff III wrote:<br>
+&gt; &gt;Do you know any Go problems with more plies?<br>
+&gt; You might find &quot;Mathematical Go: Chilling gets the last point&quot; interesting.<br>
+&gt; It provides some very complicated endgame positions that can be solved<br>
+&gt; use combanatorial game theory. They are exactly like your ladder situations<br>
+&gt; and you may not be looking for that kind of problem.<br>
+<br>
+Go with a prohibition of repeated positions can have quite long<br>
+problems: (use a fixed width font)<br>
+<br>
+X X X X X X X X X X X X X X X X X X X   X to play and prepare<br>
+O X O X . X . X . X . X . X . X X X X   against O&#x27;s toughest<br>
+. O . O X O X O X O X O X O X O O O O   (i.e. longest) perfect<br>
+O O O O O O O O O O O O O O O O O O O   play resistance<br>
+X X X X X X X X X X X X X X X X X X X<br>
+O O O O O O O O O O O O O O O O X X . <br>
+. O . O X O X O X O X O X O X O X X X<br>
+O X O X . X . X . X . X . X . X O O .<br>
+X X X X X X X X X X X X X X X X O O O<br>
+O O O O O O O O O O O O O O O O O O O<br>
+X X X X X X X X X X X X X X X X O O O<br>
+O X O X . X . X . X . X . X . X O O .<br>
+. O . O X O X O X O X O X O X O X X X<br>
+O O O O O O O O O O O O O O O O X X .<br>
+X X X X X X X X X X X X X X X X X X X<br>
+O O O O O O O O O O O O O O O O O O O<br>
+. O . O X O X O X O X O X O X O O O O<br>
+O X O X . X . X . X . X . X . X X X X<br>
+X X X X X X X X X X X X X X X X X X X <br>
+<br>
+There are 4 8-tuple-kos on the board. According to the proof<br>
+for the theorem by Bill Spight, which relies on concepts<br>
+proposed by James Davies and John Rickard and is attached inline,<br>
+X can destroy exactly one 8-tuple-ko-coexistence after, if I have<br>
+understood the proof correctly after quickly skimming through it,<br>
+at most 2 * (8*7)^4 = 19.668.992 plays on the board because <br>
+within each 8-tuple-ko there are 8*7 defensive positions with<br>
+exactly two O ko stones, because the number of 8-tuple-kos is 4,<br>
+and because defensive and attacking positions alternate giving<br>
+the factor 2.<br>
+<br>
+X wants to win one of the two biggest 8-tuple-kos while O<br>
+wants to keep them. If all four would be equally big, then<br>
+O could pass at move 19.668.992. (If you can set up 4 equally<br>
+big 8-tuple-kos on a 19x19-board, then calculation is easier.)<br>
+However, O will pass earlier, namely the last time when X can<br>
+attack a small 8-tuple-ko. I am not sure, which such last time<br>
+moment is the earliest for X? Anyway, it will be fewer than <br>
+19.668.992 moves until one of the 4 8-tuple-kos is dissolved.<br>
+<br>
+Then I suppose there to be an endgame ko fight about 4 points<br>
+(or about even more?). O should be able to turn at least one<br>
+standard ko within the remaining 3 8-tuple-kos from an X to a<br>
+O ko stone. Does this take only a few moves or many moves?<br>
+<br>
+How long is this problem really in case of O&#x27;s toughest<br>
+resistance while still following perfect play? It looks like<br>
+many millions of moves or have I made severe mistakes while<br>
+applying the proof? What is the correct komi?<br>
+<br>
+--<br>
+robert jasiek<br>
+<br>
+<br>
+<br>
+Subject: Re: Two quad-kos and more<br>
+Date: Sat, 27 Sep 1997 03:49:47 -0400 (EDT)<br>
+From: BillSpight@aol.com<br>
+To: go-rules@lists.io.com<br>
+<br>
+All:<br>
+<br>
+     Before I said that James Davies&#x27; note on two quadruple kos<br>
+was excellent.  Let me amend that.  It is most excellent!!!!!<br>
+<br>
+    I did not understand Davies&#x27; method at first.  But when I<br>
+did, I realized that it shows that enough basic n-tuple kos allow<br>
+the attacker to break the final standoff under superko rules, and<br>
+tells the attacker how to play.<br>
+<br>
+     Definitions:<br>
+     Basic multiple ko.  A superko comprised of simple ko mouths<br>
+in which, if either player has a stone in all of the ko mouths,<br>
+he captures all of the opponent&#x27;s stones, and neither player can<br>
+capture any stones except single ko stones otherwise.<br>
+     Attack position.  1. A position in a basic multiple ko in<br>
+which one player (the attacker) has stones in all but one of the<br>
+ko mouths.<br>
+     2. A position in a superko comprised of basic multiple kos<br>
+in which one of the multiple kos is in an attack position.<br>
+     Standoff position.  1. A position in a basic multiple ko in<br>
+which one player (the attacker) has stones in all but two of the<br>
+ko mouths.  This is said to be a standoff favoring the attacker.<br>
+     2. A position in a superko comprised of basic multiple kos<br>
+in which all of the multiple kos are in standoff positions<br>
+favoring the attacker.<br>
+     Break the standoff.  Reach an attack position from which the<br>
+defender is barred from returning to a standoff position by the<br>
+superko rule.<br>
+<br>
+     Proposition:<br>
+     Given int(n/2) n-tuple kos (n &gt; 2) (the superko) in standoff<br>
+position favoring the attacker (and given that the last play was<br>
+not a play by the defender in the superko), the attacker to move<br>
+can break the standoff.<br>
+<br>
+     Davies&#x27; method:<br>
+     For each standoff position determine an attack position<br>
+which the attacker can reach by one move.  Then from each<br>
+standoff position the attacker may move to the corresponding<br>
+attack position without repeating a prior superko position (if<br>
+the attacker was the first to play from the initial superko<br>
+position).  Since the defender can move to at most all but one of<br>
+the standoff positions from the attack positions without<br>
+repeating a superko position, and the attacker has a<br>
+non-repeating move from each of these, the defender must run out<br>
+of legal plays in the multiple n-tuple ko before the attacker<br>
+does.<br>
+<br>
+     How to determine the corresponding attack positions:<br>
+<br>
+     Definition:<br>
+     Order of a standoff position:<br>
+     Represent a ko mouth occupied by the attacker by X and one<br>
+occupied by the defender by O.  For the standoff position arrange<br>
+the ko mouths in a circle.  Given this arrangement, the order of<br>
+the standoff position is the minimum number of Xs between the Os.<br>
+     Examples:<br>
+     In a 7-tuple ko the order of the following position is 2.<br>
+<br>
+     X X O X X O X.<br>
+<br>
+     In an 11-tuple ko the order of the following position is 4.<br>
+<br>
+     X X O X X X X X O X X  (the last X is adjacent to the first<br>
+in the circle).<br>
+<br>
+<br>
+     For a given circular arrangement, each standoff position in<br>
+an n-tuple ko has possible orders from 0 to int(n/2) - 1.<br>
+<br>
+     Phase 1:  For each n-tuple ko standoff position determine an<br>
+attack position.<br>
+     For the circle representing the standoff position identify a<br>
+direction and a &quot;leftmost point&quot;.  We may write the circle as a<br>
+line in which the direction is left to right except from the<br>
+rightmost point, where the direction is to the leftmost point.<br>
+For a position of order r replace the O which has r Xs to its<br>
+left between it and the other O.  Order n/2 - 1 is ambiguous.<br>
+For it replace the rightmost O in the line.<br>
+<br>
+     Phase 2:  Given the standoff positions and attack positions<br>
+of each of the n-tuple kos, determine an attack position for each<br>
+standoff position in the superko.<br>
+     Number the individual n-tuple kos from 0 to int(n/2) - 1.<br>
+     Add the orders of the standoff positions modulo int(n/2).<br>
+The attack position in the n-tuple ko with the same number as the<br>
+sum, along with the standoff positions is the superko attack<br>
+position.<br>
+<br>
+     That is it!<br>
+<br>
+     I realize that that may not look too much like what Davies<br>
+did, but it comes to the same thing.<br>
+<br>
+     To demonstrate that, here is how the method as I describe it<br>
+applies to 2 quadruple kos.<br>
+<br>
+     Order 0 standoff positions and corresponding attack<br>
+positions:<br>
+<br>
+     OOXX   OXXX<br>
+     XOOX   XOXX<br>
+     XXOO   XXOX<br>
+     OXXO   XXXO<br>
+<br>
+     Order 1 standoff positions and corresponding attack<br>
+positions:<br>
+<br>
+     OXOX   OXXX<br>
+     XOXO   XOXX<br>
+<br>
+     Next the method I describe differs slightly from what Davies<br>
+did, but the difference is minor.  He divided the positions<br>
+equally, instead of by orders.<br>
+<br>
+     Let the right quadruple ko have number 0 and the left have<br>
+number 1.  Then if both individual standoff positions have order<br>
+0, the sum is 0, so the attacker should play in the right<br>
+quadruple ko.  If one individual standoff position has order 0<br>
+and the other has order 1, the sum is 1, and the attacker should<br>
+play in the left quadruple ko.  If both standoff positions have<br>
+order 1, the sum is 1 + 1 = 0 (mod 2), so the attacker should<br>
+play in the right quadruple ko.<br>
+<br>
+   Now let&#x27;s look at 4 9-tuple kos:<br>
+<br>
+     Order 0<br>
+<br>
+     OOXXXXXXX   OXXXXXXXX<br>
+     XOOXXXXXX   XOXXXXXXX<br>
+       . . .       . . .<br>
+     OXXXXXXXO   XXXXXXXXO<br>
+<br>
+     Order 1<br>
+<br>
+     OXOXXXXXX   OXXXXXXXX<br>
+     XOXOXXXXX   XOXXXXXXX<br>
+       . . .       . . .<br>
+     XOXXXXXXO   XXXXXXXXO<br>
+<br>
+     Order 2<br>
+<br>
+     OXXOXXXXX   OXXXXXXXX<br>
+     XOXXOXXXX   XOXXXXXXX<br>
+       . . .       . . .<br>
+     XXOXXXXXO   XXXXXXXXO<br>
+<br>
+     Order 3<br>
+<br>
+     OXXXOXXXX   OXXXXXXXX<br>
+     XOXXXOXXX   XOXXXXXXX<br>
+       . . .       . . .<br>
+     XXXOXXXXO   XXXXXXXXO<br>
+<br>
+  Orders of 9-tuple kos   Number of 9-tuple ko in which to play<br>
+<br>
+        0 + 0 + 0 + 0   =     0 (mod 4)<br>
+        0 + 0 + 0 + 1   =     1 (mod 4)<br>
+          .   .   .          ...<br>
+        0 + 0 + 1 + 1   =     2 (mod 4)<br>
+          .   .   .          ...<br>
+        1 + 2 + 3 + 0   =     2 (mod 4)<br>
+          .   .   .          ...<br>
+        3 + 1 + 1 + 2   =     3 (mod 4)<br>
+          .   .   .     =    ...<br>
+        3 + 3 + 3 + 3   =     0 (mod 4)<br>
+<br>
+     You can see that each attack position is different.  Given<br>
+the orders of three of the 9-tuple kos, the order of the fourth<br>
+uniquely determines which of the kos to play in.<br>
+<br>
+     Many thanks, James!<br>
+<br>
+Bill Spight<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

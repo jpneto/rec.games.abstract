@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: 2D Nim</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: 2D Nim</h1>
+    <p><strong>From:</strong> joc_kay@hotmail.com (Joe)<br>
+    <strong>Date:</strong> 22 Jul 2004 12:28:05 -0700</p>
+    <hr>
+    <div>joc_kay@hotmail.com (Joe) wrote in message news:&lt;adcaa2b9.0407220447.59cbf638@posting.google.com&gt;...<br>
+&gt; Two players (A and B) compete. Player B puts down a number of square<br>
+&gt; pieces in a configuration such that all pieces touch one other along<br>
+&gt; at least one edge. Player A either accepts or rejects the start. &lt;..&gt;<br>
+<br>
+Actually, the game can be made more elegant (and more interseting?) by<br>
+changing the rules slightly: instead of accepting or rejecting the<br>
+start, the other player can accept the start or add squares to create<br>
+an updated starting position.<br>
+<br>
+So the rules can be written:<br>
+<br>
+PolyoNimo: Starting from an empty configuration, both players in turn<br>
+add sqares to build a polyomino, until one of the players - instead of<br>
+further building - decides to remove a straight polyomino (a Nx1<br>
+rectangle of squares). Both players subsequently have to take away a<br>
+straight polyomino from the configuration. The player who made the<br>
+last move wins.<br>
+<br>
+An example to illustrate the game:<br>
+<br>
+Bob puts down the first 6 squares:<br>
+<br>
+XXX<br>
+ X <br>
+XX<br>
+<br>
+Alice decides to add two squares to this polyomino:<br>
+<br>
+XXX<br>
+XXX<br>
+XX<br>
+<br>
+Bob subsequently adds two more squares:<br>
+<br>
+XXXX<br>
+ XXX<br>
+ XX<br>
+ X<br>
+<br>
+Alice now decides to start the &#x27;destruction phase&quot; and eliminates a<br>
+complete column:<br>
+<br>
+X XX<br>
+  XX<br>
+  X<br>
+<br>
+Bob removes two more squares:<br>
+<br>
+X<br>
+  XX<br>
+  X<br>
+<br>
+and Alice reduces this to two isolated squares:<br>
+<br>
+X<br>
+   X<br>
+<br>
+Bob gives up.<br>
+<br>
+<br>
+Joe<br>
+<br>
+<br>
+</div>
+</body>
+</html>

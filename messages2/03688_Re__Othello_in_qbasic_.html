@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Othello in qbasic?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Othello in qbasic?</h1>
+    <p><strong>From:</strong> wmchal1@umbc.edu (Bill McHale)<br>
+    <strong>Date:</strong> 19 08 1997 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+Matthew Daly (mwdaly@kodak.com) wrote:<br>
+: sfeikema@mach3ww.com (John Bicketts), if that is your REAL name, said: <br>
+<br>
+: &gt;<br>
+: &gt;Why does everyone make Othello programs? Is it something about them<br>
+: &gt;that&#x27;s easy to program? BTW, I&#x27;ve yet to see one that can actually<br>
+: &gt;consistently beat me, despite the glut, which is odd..<br>
+<br>
+: I don&#x27;t think it&#x27;s that it&#x27;s easy to program -- it&#x27;s certainly not as easy<br>
+: to program as Connect-4 or checkers.<br>
+<br>
+I don&#x27;t know about Connect-4, but I am not sure I would say that Checkers<br>
+is easier than Othello.  Othello has a set number of moves (can&#x27;t be more<br>
+than 30 for each player, 32 if you use the earlier rules for playing the<br>
+first four pieces, which I think is what seperates reversi from Othello).<br>
+<br>
+There are several rather effective evaluation functions that can be<br>
+defined with several dozen lines of code.  Hell you can get an ok program<br>
+using positional play which simply requires you to define values for<br>
+different parts of the board.<br>
+<br>
+I developed a version in under a thousand lines of code, and mind you it<br>
+had several different approaches implemented as different players.  Most<br>
+of the effort was spent defining the board and the referee (which handeled<br>
+scoring and flipping pieces).<br>
+<br>
+Checkers on the other hand is theoretically an open-ended game, and<br>
+despite its smaller board (32 as opposed to 64 squares) has nuances that I<br>
+believe make it a little harder to program a good checkers playing<br>
+program.<br>
+<br>
+: Perhaps it&#x27;s because there are a lot of easy-to-define metrics for<br>
+: different strategies (e.g. maximize the number of your tokens, maximize the<br>
+: number of your possible moves, minimize the number of your possible moves,<br>
+: maximize the number of your &quot;locked&quot; tokens, etc.) so that you can easily<br>
+: write different strategies to play against each other.  I agree that these<br>
+: strategies are fairly-easily beaten by a talented player (or at least they<br>
+: were when I was writing these programs, when a 6-ply search took too long<br>
+: -- perhaps the current machines could handle a 10 or 12-ply search) but as<br>
+: a learning tool for programming they&#x27;re useful.<br>
+<br>
+Actually from what I understand the strongest programs use mobility<br>
+(maximize your moves as you get closer to the end while minimizing your<br>
+opponents) as the basis of their algorithms.  Further I would say that<br>
+using an Alpha-beta search with good optimized C or C++ code could easily<br>
+handle 10 to 12 ply.  My version used 6 ply and was written in Java 1.0<br>
+and ran at acceptable speed on a 33mhz Workstation even before using more<br>
+advanced Java features such as Just in time compile.<br>
+<br>
+: My question is: why does everyone who writes an Othello game independently<br>
+: decide to call it &quot;Iago&quot; and decide that that&#x27;s the most amusing joke ever<br>
+: conceived by a human? :-)<br>
+<br>
+Actually I called mine Noble Moor :-)  But then I already knew about the<br>
+Iago, not a second rate Iago.<br>
+<br>
+--<br>
+Bill<br>
+<br>
+***************************************************************************<br>
+If at first you don&#x27;t succeed, don&#x27;t try sky diving!<br>
+Bill McHale                            <br>
+---------------------------------------------------------------------------<br>
+Home page - http://www.gl.umbc.edu/~wmchal1<br>
+***************************************************************************<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

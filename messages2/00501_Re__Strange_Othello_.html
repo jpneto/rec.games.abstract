@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Strange Othello.</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Strange Othello.</h1>
+    <p><strong>From:</strong> torbenm@diku.dk (Torben AEgidius Mogensen)<br>
+    <strong>Date:</strong> 7 Dec 92 12:14:43 GMT</p>
+    <hr>
+    <div>davidal@comm.mot.com (UK702 DavidAlexander) writes:<br>
+<br>
+&gt;Has anybody developed any bizarre versions of reversi/Othello?<br>
+&gt;e.g. big boards, odd shaped boards, start positions with the pieces<br>
+&gt;round the edge with blanks in the middle.<br>
+<br>
+&gt;In chess there are puzzles from games positions and puzzles from impossible<br>
+&gt;positions (half a dozen kings and the like). Has anybody developed any <br>
+&gt;impossible/bizarre reversi problems?<br>
+<br>
+I have played &quot;Reverse Reversi&quot; several times: the rules are the same,<br>
+but the object is to get the least number of pieces with your colour.<br>
+This is a quite interesting game, with a complexity similar to normal<br>
+Reversi/Othello. I have also played with a wrap-around (torus) board,<br>
+but this is more weird than interesting.<br>
+<br>
+My latest idea was to use a hexagonal grid instead of a square grid.<br>
+The initial position was a &quot;ring&quot; of 3 white and 3 black pieces. An<br>
+interesting bit was that not all hexes were reachable from this<br>
+initial position, which limited the connectivity too much. This can be<br>
+solved by letting the placement of a piece in the central (empty) hex<br>
+be a legal move at any time. Still, this variant does not seem<br>
+sufficiently different in play from the original Othello to get much<br>
+widespread attention.<br>
+<br>
+Another idea that I have considered (but not tried yet) is to have<br>
+several kinds of pieces: some flip only along diagonal lines, some<br>
+only along cartesian lines and some along both. You have a limited<br>
+supply of either kind. One could even make a special piece that would<br>
+remove pieces (that would normally only be flipped) if they are<br>
+between two of these special pieces (and flip lines that have this<br>
+piece in one of the ends and a normal piece in the other). If you have<br>
+a limited amount of these pieces, the game will still be finite. One<br>
+could even add the posibility of using the captured pieces as one&#x27;s<br>
+own (at the cost of finite play, unless one introduces a Ko-like<br>
+rule).<br>
+<br>
+Using a larger board (with the usual rules) has some merit, as it<br>
+would make it harder for computers to compete due to a larger search<br>
+space and a later end-play. Going up to Go-sized boards would be too<br>
+much, but 10x10 or 12x12 would be O.K.<br>
+<br>
+	Torben Mogensen (torbenm@diku.dk)<br>
+<br>
+<br>
+</div>
+</body>
+</html>

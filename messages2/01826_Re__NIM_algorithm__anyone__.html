@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: NIM algorithm, anyone ?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: NIM algorithm, anyone ?</h1>
+    <p><strong>From:</strong> jos@and.nl (Jos Horsmeier)<br>
+    <strong>Date:</strong> Wed, 25 May 1994 14:22:27 GMT</p>
+    <hr>
+    <div>In article &lt;CqBCCA.FxF@hpqmoea.sqf.hp.com&gt; neilg@hpqtdya.sqf.hp.com (Neil Gall) writes:<br>
+<br>
+|Does anyone have an algorithm for the game Nim ?  I think it<br>
+|goes by other names sometimes, so I&#x27;ll describe it.<br>
+<br>
+[ ... ]<br>
+<br>
+Heh, that reminds me of this little monster I once brewed ...<br>
+This thingy plays a move of nim and the player taking the<br>
+last pebble wins ...<br>
+<br>
+int n;main(i,m)char**m;{while(--i)n^=atoi(m[i]);<br>
+while(*++m)if((n^atoi(*m))&lt;atoi(*m)||atoi(*m)*!n<br>
+){printf(&quot;%d\n&quot;,(n^atoi(*m))-!n);while(*++m)puts<br>
+(*m);m--;}else puts(*m);} /* play: nim &lt;nums&gt; */<br>
+<br>
+Enjoy ;-)<br>
+<br>
+Jos aka jos@and.nl<br>
+----------------------------------------------------------------------------<br>
+All humans have brains; I am human; therefore I am very silly.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

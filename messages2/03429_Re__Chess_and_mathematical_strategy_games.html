@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Chess and mathematical strategy games</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Chess and mathematical strategy games</h1>
+    <p><strong>From:</strong> jbartlo@ouchem.chem.oakland.edu (Joseph Bartlo)<br>
+    <strong>Date:</strong> 19 10 1996 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+Graham Wills (gwills@research.att.com) wrote:<br>
+<br>
+: Naah. Since there only 7776 different ORDERED dice combinations, we<br>
+: don&#x27;t need more than 8 places of precision. Use a long double and you&#x27;ve<br>
+: got more than you need by a huge factor. If you need a reference to the<br>
+: branch of mathematics dealing with precison necessary for algorithmic<br>
+: results, I can point you to some. It&#x27;s importnant, as you point out, to<br>
+: know when you need to be more accurate. Yahtzee simply doesn&#x27;t need it<br>
+: with the obvious algorithms.<br>
+<br>
+You have no idea what I suggest requires because you have no<br>
+idea regarding what I speak of.  I seek the best decisions<br>
+for a solitaire Yahtzee game to maximize score.  That means,<br>
+for example, if I roll 1 1 2 3 5 for my first roll of a game,<br>
+I must not only compute possible scores for all categories<br>
+that turn, but *for every subsequent turn for each of the<br>
+categories*.  That requires many, many more calculations<br>
+than what would produce denominators of 7776 or even 7776^2.<br>
+For example, a decision whether to try for 3-of-a-kind or<br>
+4-of-a-kind, or Small Straight on the 6th game turn with 3 3<br>
+4 5 5 *if such (even) occurred* affects the decision whether<br>
+to keep only 5 on the 2nd roll of the game or 1 2 3 5 and<br>
+try for a 4 for Large Straight (which might best, placing 1<br>
+or 2 in 1&#x27;s if such fails).  Some of such decisions depend<br>
+on many other potential game rolls, and I am quite certain<br>
+that if anyone could accurately calculate them, a few<br>
+decisions would be decided by an average of about 10^-10<br>
+points or less.  Because so many calculations are required,<br>
+an initial approximation accurate to 10^-8 might only be<br>
+accurate to 10^-2 when all are finished.<br>
+<br>
+: Here&#x27;s a simple argument:<br>
+: 	To judge whether strategy A is better than B for a given<br>
+: throw of the dice, you need to compare the end result. <br>
+<br>
+Which is easy for 1 or 2 rolls, but essentially impossible<br>
+for potentially 39 in any combination.<br>
+<br>
+: Hopefully, you found this useful.<br>
+<br>
+Not particularly.  Seems to me you are looking for<br>
+justification to use floating point numbers rather<br>
+than rationals, but if many successive floating point<br>
+calculations produce<br>
+<br>
+ 1138256983652893267226524 &gt; 1138256983652893267226571<br>
+<br>
+which could easily happen; your calculation is ruined.<br>
+<br>
+<br>
+Joseph<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

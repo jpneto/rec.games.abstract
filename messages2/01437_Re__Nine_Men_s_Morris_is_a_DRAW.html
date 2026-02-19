@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Nine Men&#x27;s Morris is a DRAW</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Nine Men&#x27;s Morris is a DRAW</h1>
+    <p><strong>From:</strong> johnson@ferret.mot.com (Brad Johnson)<br>
+    <strong>Date:</strong> 23 Nov 1993 15:23:32 GMT</p>
+    <hr>
+    <div>In article &lt;1993Nov23.124210.5406@neptune.inf.ethz.ch&gt; gasser@inf.ethz.ch (Ralph Gasser) writes:<br>
+<br>
+&gt;<br>
+&gt;The game of Nine Men&#x27;s Morris (NMM) has been solved. The game is a draw.<br>
+&gt;<br>
+&gt;As there are different variations of NMM being played, I will first specify<br>
+&gt;the rules I used, then give a short summary of how the solution was computed.<br>
+&gt;<br>
+&gt;<br>
+&gt;RULES<br>
+&gt;-----<br>
+&gt;<br>
+<br>
+[Rules deleted]<br>
+<br>
+&gt;        -  The first player who has less than three stones loses.<br>
+&gt;        -  The first player who cannot make a legal move loses.<br>
+<br>
+Could you tell me how a draw is defined in this game?<br>
+Unless I&#x27;m missing something, it sounds like these losing<br>
+conditions preclude a draw.  That is, if I am the first<br>
+player who can&#x27;t make a move on his turn, then it looks like<br>
+I lose regardless of whether or not the other player now<br>
+has moves remaining.  And if I am correct in inferring that<br>
+there are never times when two players remove stones at the<br>
+same time, then only one player can go from 4 to 3 stones at one<br>
+time, thus losing regardless of the status of the other player.<br>
+<br>
+My only thought was that the game becomes a draw when both<br>
+players can continue making cyclical moves that will never<br>
+cause either of the losing conditions.  Is that right?<br>
+<br>
+&gt;<br>
+&gt;<br>
+&gt;HOW IT WAS SOLVED<br>
+&gt;-----------------<br>
+&gt;<br>
+&gt;Retrograde Analysis (well known from Chess) was used to compute<br>
+&gt;databases for all mid- and endgame positions (about 10 billion<br>
+&gt;different positions). These positions were split into 28<br>
+&gt;separate databases characterized by the number of stones on the<br>
+&gt;board i.e. all the 3 White stone against 3 Black stone<br>
+&gt;positions, the 4-3, 4-4 ... up to 9-9 positions.<br>
+&gt; <br>
+&gt;An 18 ply alpha-beta search for the opening phase then found<br>
+&gt;the value of the initial position (the empty board). Only the<br>
+&gt;9-9, 9-8 and 8-8 databases were needed to establish that the<br>
+&gt;game is a draw.<br>
+<br>
+Was the &quot;optimal strategy&quot; discovered that would guarantee<br>
+playing to the draw that was discovered?  I imagine it would<br>
+be some sort of symmetic play on the part of the 2nd player,<br>
+or something like that...?<br>
+<br>
+&gt;<br>
+&gt;Ralph Gasser (gasser@inf.ethz.ch)<br>
+&gt;Informatik, ETH<br>
+&gt;CH-8092 Zurich<br>
+&gt;Switzerland<br>
+<br>
+<br>
+Brad Johnson (johnson@cig.mot.com)<br>
+<br>
+<br>
+</div>
+</body>
+</html>

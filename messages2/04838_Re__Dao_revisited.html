@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Dao revisited</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Dao revisited</h1>
+    <p><strong>From:</strong> David desJardins &lt;desj@math.berkeley.edu&gt;<br>
+    <strong>Date:</strong> 24 Apr 2001 15:27:27 -0700</p>
+    <hr>
+    <div>&quot;Geoff Summerhayes&quot; (invalid address) writes:<br>
+&gt;&gt; As i see it, there are about (16 choose 4) * (12 choose 4) positions,<br>
+&gt;&gt; since it is relevant who is to move as well, which looks a lot more<br>
+&gt;&gt; than 400 (it&#x27;s around 900000)<br>
+&gt;<br>
+&gt; .... Couple that with eliminating illegal positions, and we can ignore<br>
+&gt; move order when the position is symmetric, I&#x27;ll stand by my guess<br>
+&gt; until I get enough energy to slog through and count them.<br>
+<br>
+I don&#x27;t understand what you mean by &quot;illegal positions&quot;.  Dao has 900900<br>
+ways to arrange the pieces on the board.  Of those, 16636 appear to be a<br>
+win for the first player, 16636 are a win for the second player, and 158<br>
+are wins for both players (hence impossible).  That leaves 867470<br>
+positions.  Each position has at most 8 equivalents under rotation and<br>
+reflection, so that means there are over 100000 distinct positions.  How<br>
+can you get anything remotely close to 400?<br>
+<br>
+The rules of Dao appear to be:<br>
+<br>
+1. Start in this position:<br>
+<br>
+   O . . X<br>
+   . O X .<br>
+   . X O .<br>
+   X . . O<br>
+<br>
+2. X moves first, and then players alternate.<br>
+<br>
+3. A move consists of moving one piece horizontally, vertically, or<br>
+   diagonally.  The piece must move at least one space, and must keep<br>
+   moving in that direction until it reaches the edge of the board, or<br>
+   the next space is already occupied.  (The start position has 16 legal<br>
+   moves for X.)<br>
+<br>
+4. A player wins by achieving any of the following.  All four of the<br>
+   player&#x27;s pieces in a horizontal or vertical row.  All four of the<br>
+   player&#x27;s pieces in a 2x2 square.  All four of the player&#x27;s pieces in<br>
+   the four corners.  One of the player&#x27;s pieces in a corner and the<br>
+   three adjacent spaces all occupied by the other player.<br>
+<br>
+This certainly seems pretty trivial to solve.  I&#x27;m guessing it&#x27;s a draw.<br>
+<br>
+                                        David desJardins<br>
+<br>
+<br>
+</div>
+</body>
+</html>

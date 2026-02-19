@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: The Game of Y</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: The Game of Y</h1>
+    <p><strong>From:</strong> hoey@AIC.NRL.Navy.Mil (Dan Hoey)<br>
+    <strong>Date:</strong> Thu, 23 Jun 1994 23:32:18 GMT</p>
+    <hr>
+    <div>In reply to my consideration of<br>
+&gt; ... whether there might be a way to create a<br>
+&gt; family of winning configurations for the projective icosahedron,<br>
+<br>
+wft@math.canterbury.ac.nz (Bill Taylor) writes:<br>
+&gt; However, it seems to me there&#x27;s an obvious candidate rule sticking<br>
+&gt; out like a sore thumb.  Namely, a winning position is one which<br>
+&gt; includes a closed loop which is non-contractable-to-a-point<br>
+&gt; (topologically).<br>
+<br>
+Yes!  It is the obvious choice, but it takes someone like Bill, who<br>
+knows what to look for in projective planes, to see it.  For people<br>
+who aren&#x27;t comfortable with contractability, recall that we are<br>
+playing on a Y board, with the proviso that any move on the boundary<br>
+will claim two opposite spaces, halfway around the boundary from each<br>
+other.  The winner is the player who can form a closed loop of spaces<br>
+in which<br>
+<br>
+ 1. each pair of consecutive spaces in the loop is either a pair of<br>
+    adjacent spaces or a pair of opposite boundary spaces, and<br>
+<br>
+ 2. there are an odd number of the latter pairs in the loop.<br>
+<br>
+In the following diagram, for instance, the loop 1,2,...,14 is a win<br>
+(three opposite pairs 3-4, 6-7, 11-12) but neither A,B,C,D (two<br>
+opposite pairs A-B, C-D) nor Q,R,S,T,U,V (none) is.<br>
+   ____      <br>
+  /    \____   <br>
+ / 12__/    \__  <br>
+ \__/  \__ 3   \__  <br>
+ /  \     \____/  \__ <br>
+/   /   __/ 2  \  7  \__<br>
+\ 13\__/  \__   \____/  \__<br>
+/   /  \     \__/    \  B  \ <br>
+\__/ 14/  1  /  \__  8\__   \__<br>
+/  \   \____/ R /  \__/  \__/  \  <br>
+\   \__/ Q  \__/      \ 9   \ C \   <br>
+/ D /  \____/  \  S __/   __/   /  <br>
+\__/   /    \   \__/  \__/  \__/ <br>
+/  \   \  V  \__/  T  /     / <br>
+\   \__/   __/  \____/ 10__/<br>
+/ A /  \__/  U  /    \__/ <br>
+\   \ 5   \____/ 11__/ <br>
+ \__/   __/    \__/  <br>
+ /  \__/   4 __/   <br>
+ \ 6   \____/   <br>
+  \____/      <br>
+<br>
+I think this might make a really good game.<br>
+<br>
+&gt; &gt;Another possibility is the chiral icosahedron,<br>
+&gt; OK, you&#x27;ve got me at last!  What on earth is this?<br>
+<br>
+``Chiral&#x27;&#x27; is Lord Kelvin&#x27;s word for ``having handedness&#x27;&#x27; or ``being<br>
+distinguishable from its reflection&#x27;&#x27;.  You can use ``enantiomorphic&#x27;&#x27;<br>
+if you prefer.  What I meant is that you play on the full icosahedron<br>
+(two Y boards joined at the boundary), but the mirror image of a<br>
+winning position is not always a winning position--the symmetry group<br>
+is the group of _proper_ rotations of the icosahedron, not involving<br>
+mirror-reflection.  This would prevent the copycat strategy by having<br>
+the copycat end up with a mirror image of the desired position.  I<br>
+don&#x27;t know of a satisfying set of winning positions, though--it&#x27;s just<br>
+a possibility.  I&#x27;m so happy with your solution for the projective<br>
+icosahedron, though, that I&#x27;m not particularly concerned about it.<br>
+<br>
+By the way, I&#x27;ve updated my obfuscoid to deal with n=1, and fixed its<br>
+error message.  Enjoy.<br>
+<br>
+#include &lt;stdio.h&gt;    /****** Dan &lt;Hoey@AIC.NRL.Navy.Mil&gt; */<br>
+int m,r,s,t,x,y;main /* ____ ***/ (n,v)char**v;{if(n==2&amp;&amp;(n=<br>
+atoi(v[1]))&gt;0)for(y /* /    \__ ***/ =5*n;y&gt;=-5*n;--y){for(x<br>
+=y-1-6*n;abs(7*y+2 /* /   __/  \__ ***/ )&lt;30*n+10-3*x+3*y;++<br>
+x){r=x&gt;&gt;1;s=y;m=0; /* \__/  \     \__ */  do{for(t=0;t&lt;6;t++<br>
+&amp;1?r+=s=-s:(s+=r=- /* /  \   \____/  \ */ r))r&lt;s||s&lt;0||(m|=(<br>
+r+s&lt;2*n?604&gt;&gt;(r+(( /* \   \__/    \   \ */ r==2*n-2&amp;&amp;s&lt;2&amp;&amp;n&gt;<br>
+1)^s)+4*n)%6+(r&amp;1) /* /   /  \____/   / */ *6:3*r+2*s&gt;15*n+5<br>
+?0:3*r-s&gt;6*n-2?409 /* \__/   /    \__/ */  &gt;&gt;(s-(r&gt;s)+6*(r-(<br>
+r-s&lt;5*n)+n))%9:228 /* /  \__/   __/   */  &gt;&gt;(s+(r-s&lt;2*n-2||n<br>
+&lt;2)+5*r+6*n)%8)&amp;1) /* \     \__/   ***/ ;s=r-s+y+y-(x&gt;&gt;1);r=<br>
+1+s-r+(x&amp;-2)-y;m*=2 /* \____/   ***/ ;}while(r&gt;x&gt;&gt;1);putchar<br>
+(&quot;       \\  / __??&quot; /*      ***/  [m|x&amp;1]);} putchar(&#x27;\n&#x27;);<br>
+}else fprintf(stderr, /******/ &quot;Usage: %s n\n&quot;,*v);exit(0);}<br>
+<br>
+Dan Hoey<br>
+Hoey@AIC.NRL.Navy.Mil<br>
+<br>
+<br>
+</div>
+</body>
+</html>

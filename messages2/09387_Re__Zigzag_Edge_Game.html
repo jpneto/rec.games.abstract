@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Zigzag Edge Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Zigzag Edge Game</h1>
+    <p><strong>From:</strong> Andrew Poelstra &lt;apoelstra@localhost.localdomain&gt;<br>
+    <strong>Date:</strong> Wed, 17 Mar 2010 23:01:40 GMT</p>
+    <hr>
+    <div>On 2010-03-17, Leroy Quet &lt;qqquet@mindspring.com&gt; wrote:<br>
+&gt; A game for two players:<br>
+&gt;<br>
+&gt; Start with a grid of (n-1)-by-(n-1) squares, or n-by-n lines. I<br>
+&gt; suggest that n be at least 12.<br>
+&gt;<br>
+&gt; The players take turns placing dots on the grid, one dot each move at<br>
+&gt; any intersection of the grid that does not yet have a dot on either of<br>
+&gt; the two intersecting (horizontal and vertical) grid-lines.<br>
+&gt;<br>
+&gt; After n dots are placed -- and the dots represent a permutation of<br>
+&gt; (1,2,3,...n) -- the strategy portion of the game is over.<br>
+&gt;<br>
+&gt; Either of the players then draws (n-1) straight line-segments (called<br>
+&gt; &quot;permutation lines&quot;), starting at the leftmost dot, a line-segment<br>
+&gt; drawn between each dot and the dot on the vertical grid-line<br>
+&gt; immediately to the right. (So, you get a zigzag, in lots of cases.)<br>
+&gt;<br>
+&gt; Then, either player draws (n-1) straight line-segments (also called<br>
+&gt; permutation lines), starting at the topmost dot, a line-segment drawn<br>
+&gt; between each dot and the dot on the horizontal grid-line immediately<br>
+&gt; below.<br>
+&gt;<br>
+&gt; Now, the two intersecting zigzags are inclosed within a polygon (not<br>
+&gt; talking about the convex hull), the perimeter of which is made up of<br>
+&gt; permutation lines and/or parts of permutation lines.<br>
+&gt; Call each straight line-segment along this perimeter an &quot;edge line&quot;.<br>
+&gt; Two permutation lines that meet at one vertex AND have the same slope<br>
+&gt; are considered to both be part of one edge-line. Two edge lines may<br>
+&gt; come together somewhere other than at a dot (in which case an edge<br>
+&gt; line takes up only part of a permutation line).<br>
+&gt;<br>
+&gt; Player 1 gets as a score the number of edge lines from the leftmost<br>
+&gt; dot to the rightmost dot along the TOP of the bounding polygon&#x27;s<br>
+&gt; perimeter.<br>
+&gt;<br>
+&gt; Player 2 gets as a score the number of edge lines from the leftmost<br>
+&gt; dot to the rightmost dot along the BOTTOM of the bounding polygon&#x27;s<br>
+&gt; perimeter.<br>
+&gt;<br>
+&gt; Largest score wins.<br>
+&gt;<br>
+&gt; Note: The bounding polygon may narrow to a single point. Four edge-<br>
+&gt; lines are considered to meet at such a point, even though only two<br>
+&gt; permutation lines cross there.<br>
+&gt;<br>
+&gt;<br>
+&gt; Example game:<br>
+&gt; Let us say we have a grid of 9-by-9 lines.<br>
+&gt; Label the grid&#x27;s vertical lines 1 to 9, starting at the bottom. And<br>
+&gt; label the grid&#x27;s horizontal lines 1 through 9, starting on the left.<br>
+&gt; During play, the dots are drawn at these grid-line intersections:<br>
+&gt; (1,6), (2,7), (3,8), (4,4), (5,5), (6,9), (7,1), (8,3), (9,2).<br>
+&gt;<br>
+&gt; Player 1 gets 5 points. Player 2 gets 5 points. A tie.<br>
+&gt;<br>
+&gt; Note that the permutation-line segments connecting (1,6) to (2,7) to<br>
+&gt; (3,8) count as one edge line. Also note that the permutation line<br>
+&gt; (6,9) to (7,1) and the permutation line (4,4) to (8,3) intersect<br>
+&gt; within a grid-square, and that we have 4 edge-lines (2 edge lines to<br>
+&gt; player 1&#x27;s score, 2 edge lines to player 2&#x27;s score) meeting at this<br>
+&gt; intersection.<br>
+&gt;<br>
+&gt;<br>
+&gt; What is a strategy for this game if you are player 1, or if you are<br>
+&gt; player 2?<br>
+&gt;<br>
+&gt;<br>
+<br>
+My thoughts:<br>
+<br>
+As player 1 you would want to maximize the number of slope changes,<br>
+while keeping the lines as high as possible. This would mean starting<br>
+low, and (moving left to right) try to do:<br>
+<br>
+1, 2, 4, 5, 7, 8, 6, 9, 3<br>
+<br>
+Wherein I started as low as possible and climbed by 1,2 alternately,<br>
+dropping as little as possible when I needed to drop.<br>
+<br>
+As player 2, you would want to do the same, except rotated 90 degrees.<br>
+<br>
+-- <br>
+Andrew Poelstra<br>
+http://www.wpsoftware.net/andrew<br>
+<br>
+<br>
+</div>
+</body>
+</html>

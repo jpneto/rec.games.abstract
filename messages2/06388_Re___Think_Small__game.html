@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: &quot;Think Small&quot; game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: &quot;Think Small&quot; game</h1>
+    <p><strong>From:</strong> israel@math.ubc.ca (Robert Israel)<br>
+    <strong>Date:</strong> 3 Aug 2003 08:35:23 GMT</p>
+    <hr>
+    <div>In article &lt;x_TWa.724$t7.8533@vixen.cso.uiuc.edu&gt;,<br>
+Charles Blair &lt;c-blair@uiuc.edu&gt; wrote:<br>
+&gt;   I have convinced myself that, with three players, an equillibrium<br>
+&gt;has each player use 1 or 2 with probability .5.  <br>
+<br>
+No.  If you are in a three-player game and both opponents are using this<br>
+mixed strategy, they will choose the same number with probability 1/2,<br>
+and so if you choose 3 you will win with probability 1/2.  <br>
+<br>
+For the three-player case, I believe an equilibrium strategy must <br>
+choose j with probability p_j satisfying the equations<br>
+p_j^2 + (1-p_1-...-p_{j+1})^2 = (1-p_1-...-p_j)^2 , j = 1,2,3...<br>
+together with, of course, sum_j p_j = 1 and all p_j &gt; 0.<br>
+<br>
+This is because if two players are using this mixed strategy, the<br>
+third will have no reason to switch iff his probability of winning<br>
+is the same for all pure strategies, and his probability of winning<br>
+by choosing j is sum_{i=1}^{j-1} p_i^2 + (1-p_1-...-p_j)^2<br>
+(i.e. he wins if both opponents choose the same number &lt; j or <br>
+both choose any numbers &gt; j).  This system of equations looks<br>
+rather formidable to solve; for n &gt; 3 players, it will be even<br>
+more complicated.<br>
+<br>
+In any case, there can&#x27;t be an equilibrium strategy that involves <br>
+sometimes using m and never using m+1, because then each player would <br>
+have an incentive to use m+1 instead of m (if the opponents never use <br>
+m+1, then m+1 would win in every case where m would win, and would also <br>
+win in some cases where m would not).<br>
+<br>
+Robert Israel                                israel@math.ubc.ca<br>
+Department of Mathematics        http://www.math.ubc.ca/~israel <br>
+University of British Columbia            <br>
+Vancouver, BC, Canada V6T 1Z2<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Pie vs Symple Mechanism in Hex</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Pie vs Symple Mechanism in Hex</h1>
+    <p><strong>From:</strong> =?ISO-8859-1?Q?Luis_Bola=F1os_Mures?= &lt;luis.9.8.87@gmail.com&gt;<br>
+    <strong>Date:</strong> Tue, 20 Nov 2012 07:21:42 -0800 (PST)</p>
+    <hr>
+    <div>On Monday, November 19, 2012 11:03:02 PM UTC+1, Mark Steere wrote:<br>
+&gt; Symple&#x27;s balance is still a concern though.  Why did Christian gradually change the parameter from at least 2 to at least 4 to at least 6?  It has to be a balance issue.  As skill levels slowly increase, so must the minimum value of the parameter.  What else could be the reason for increasing it?  Is it too tactical at the smaller parameter values?  Too opaque?  Those aren&#x27;t reasons to strictly rule out the smaller parameters.  It has to be an ongoing balance issue.<br>
+<br>
+As far as I know, the suggested penalty parameter hasn&#x27;t changed because of a lack of balance, but simply because higher penalty values provide for increased drama and more interesting strategic dilemmas. Maths seem to confirm that 6 is the ideal penalty for all boards between 15x15 and 19x19:<br>
+<br>
+Let&#x27;s assume that:<br>
+<br>
+p is the penalty,<br>
+n is the total number of intersections on the board (for a 15x15 board, n = 225), and<br>
+g is the number of groups for each player that ensures the fastest filling of the whole board.<br>
+<br>
+Christian has explained on MindSports (http://www.mindsports.nl/index.php/arena/symple/586-about-symple) that:<br>
+<br>
+g = sqrt(n/2)<br>
+<br>
+So, on a 15x15 board:<br>
+<br>
+g = sqrt(225/2) = 10.6<br>
+<br>
+In practice, g = 11.<br>
+<br>
+Let&#x27;s now see how this relates to strategic planning at two opposite stages of the game:<br>
+<br>
+a) Right after g groups have been placed on the board, each group has a potential growth of g. Connecting two groups costs the player g - p points (it substracts him g potential points and gives him p points). If p = g, we can consider that connecting two groups has no raw effect on the score. This would mean the decision to connect or not to connect is hardest at this stage of the game, since it has to be entirely made under different considerations than its raw effect on the score.<br>
+<br>
+b) Close to the end of the game, each group has a potential growth close to 0. If p = 0, we can consider that connecting two groups has no raw effect on the score. As before, this would mean the decision to connect or not to connect is hardest at this stage of the game.<br>
+<br>
+It seems convenient to try and place the hardest decision point midway between the start and the end of the game so that there&#x27;s a progressive increase in tension up to that point, along with the increasing complexitiy of the board position, and a progressive decrease from that point onwards as the game tree approaches its end. This is achieved by setting p midway between g and 0, i.e.:<br>
+<br>
+p = g/2 = sqrt(n/2)/2.<br>
+<br>
+On a 15x15 board, since g = 10.6, p should be 10.6 / 2 = 5.3 = 6 (rounding up to the closest even number). Actually, for all boards between 15x15 and 19x19, the rounding up always gives 6 as the ideal penalty, which is nice.<br>
+<br>
+This is all speculation on my part, but I think it makes some sense. :)<br>
+<br>
+<br>
+</div>
+</body>
+</html>

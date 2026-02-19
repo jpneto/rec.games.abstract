@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Question about retrograde analysis algorithm for endgame databases</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Question about retrograde analysis algorithm for endgame databases</h1>
+    <p><strong>From:</strong> jferro@pegasus.ece.cmu.edu (Jonathan R. Ferro)<br>
+    <strong>Date:</strong> 03 May 2002 16:05:54 -0400</p>
+    <hr>
+    <div>mathpoly@yahoo.com (mathpolymath) writes:<br>
+&gt; jferro@nu.ece.cmu.edu (Jonathan R. Ferro) wrote in message news:&lt;r1znzqs1ku.fsf@nu.ece.cmu.edu&gt;...<br>
+&gt; &gt; mathpoly@yahoo.com (mathpolymath) writes:<br>
+&gt; &gt; &gt; jferro@nu.ece.cmu.edu (Jonathan R. Ferro) wrote:<br>
+&gt; &gt; &gt; &gt; So, the &quot;Y&quot; state is expanded into 19 different states internally (if I<br>
+&gt; &gt; &gt; &gt; have counted correctly), 10 of which are terminal, and 9 of which are<br>
+&gt; &gt; &gt; &gt; not yet &quot;long enough&quot; to end the game.  These states do not have any<br>
+&gt; &gt; &gt; &gt; loopiness, so they can be analyzed normally.<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; This seems like a very good way in theory, but in practice, the number<br>
+&gt; &gt; &gt; of states would expand tremendously.<br>
+&gt; &gt; <br>
+&gt; &gt; Yep, you got that right.  Welcome to the world of artificial intelligence.<br>
+&gt; &gt; <br>
+&gt; &gt; -- Jon<br>
+&gt; <br>
+&gt; Aha! I seem to have found a much simpler way, if my logic is correct. <br>
+&gt; Let me know if I have reasoned incorrectly.<br>
+&gt; <br>
+&gt; ...<br>
+&gt; <br>
+&gt; In this way, I have addressed this complex-valued draw-by-repetition<br>
+&gt; problem with negligible additional effort and at the cost of only some<br>
+&gt; additional memory (for an intermediary copy of the unsettled values).<br>
+&gt; <br>
+&gt; Are there any holes in my reasoning?  Can other cases of state<br>
+&gt; expansion in game trees be solved similarly?<br>
+<br>
+I would say that you have successfully convinced yourself that you can<br>
+deal with loopy positions algorithmically, but that you are fooling<br>
+yourself that it&#x27;s simpler.  As far as I can tell, the &quot;intermediary<br>
+copies&quot; that you are referring to are simply dynamically-generated<br>
+versions of the &quot;expanded states&quot; that I proposed above.<br>
+<br>
+I think it is time to pick a simple game with a loopy endgame and try to<br>
+write out the analysis, either by hand or with computer assistance.<br>
+<br>
+Winning Ways has several simple examples, and introduces the concept of<br>
+&quot;sidling&quot; as a generalization of &quot;repeated positions cause the game to<br>
+end&quot;.<br>
+<br>
+Here is a paper by another person who is working on other<br>
+loopy-to-non-loopy-conversion issues:<br>
+http://www.msri.org/publications/books/Book29/files/moloopy.pdf<br>
+which is included as a chapter in _Games of No Chance_<br>
+http://www.amazon.com/exec/obidos/ASIN/0521574110<br>
+<br>
+A lot of the problems and trade-offs of different state-search<br>
+strategies and state-representation issues are discussed in Russel and<br>
+Norvig, chapter 3, and are then applied in chapter 5 specifically to<br>
+the searching of 2-player game trees.<br>
+http://www.amazon.com/exec/obidos/ASIN/0131038052<br>
+<br>
+It sounds like you are having fun with this.  I wish I had time to get<br>
+into it all again.<br>
+<br>
+-- Jon<br>
+<br>
+<br>
+</div>
+</body>
+</html>

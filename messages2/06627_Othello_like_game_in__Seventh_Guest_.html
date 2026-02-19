@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Othello-like game in &quot;Seventh Guest&quot;</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Othello-like game in &quot;Seventh Guest&quot;</h1>
+    <p><strong>From:</strong> rusin@vesuvius.math.niu.edu (Dave Rusin)<br>
+    <strong>Date:</strong> 18 Dec 2003 21:05:47 GMT</p>
+    <hr>
+    <div>A student here recently lent me a computer game (from a few years back)<br>
+entitled &quot;Seventh Guest&quot;. The player moves from room to room in a <br>
+creepy house solving various puzzles. One of the puzzles is a game<br>
+which you play against an unseen opponent. I wonder if anyone has<br>
+done an analysis of this game?<br>
+<br>
+It&#x27;s Othello-like: Two players, each initially having tokens at a pair<br>
+of opposite corners of a 7x7 checkerboard. Players take turns placing<br>
+their tokens on the board&#x27;s squares until all the playing places are<br>
+filled; the winner is the player controlling the greatest number of<br>
+squares when the game is over.<br>
+<br>
+A player&#x27;s move consists of moving a token from position (x,y) to<br>
+position (x&#x27;,y&#x27;), where <br>
+   That player has a token at position (x,y)<br>
+   Position (x&#x27;, y&#x27;) is vacant<br>
+   | x - x&#x27; | &lt; 3,  and likewise | y - y&#x27;| &lt; 3<br>
+(If a player has no valid moves, s/he forfeits that turn and play<br>
+passes to the opponent.)<br>
+<br>
+When the player moves the token, several changes take place:<br>
+   The player now has a token at position (x&#x27;, y&#x27;)<br>
+   Position (x,y) is now vacant IF  |x-x&#x27;| = 2  OR |y-y&#x27;| = 2<br>
+   Any opponent&#x27;s token at (x&#x27;&#x27;, y&#x27;&#x27;) is replaced by this player&#x27;s token<br>
+     there, if  | x&#x27; - x&#x27;&#x27; | &lt; 2  and | y&#x27; - y&#x27;&#x27; | &lt; 2.<br>
+<br>
+In other words, you can either &quot;stretch&quot; your token into two, or &quot;jump&quot;<br>
+a distance of 2; and then you &quot;convert&quot; your new &quot;neighbors&quot;.<br>
+<br>
+<br>
+Note that the game can consist of well over 49 turns. <br>
+Indeed, it is possible to go into an infinite loop, so there ought<br>
+to be a rule against repeating a board configuration, or something,<br>
+but no such rule is provided in the game.<br>
+<br>
+I played a few rounds by hand against the machine, and cobbled together<br>
+a lame simulation which looks ahead a couple of moves to choose the<br>
+best move (by a very stupid evaluation strategy). I don&#x27;t see an obvious<br>
+winning strategy for either player, though the player to go first <br>
+seems to have a bit of an advantage.<br>
+<br>
+<br>
+Compared to regular Othello/Reversi, there are some differences in play:<br>
+<br>
+1. Most of the action and analysis takes place near the boundary between<br>
+filled and empty regions: deeply-buried pieces (for either player)<br>
+cannot change the outcome. This is not completely true though: because<br>
+of the &quot;jump&quot; moves, pieces away from the boundary can come back into<br>
+play several moves later as their neighbors percolate away through the<br>
+boundary.<br>
+<br>
+2. There are no simple &quot;permanently-safe&quot; positions; for example, a<br>
+row of three tokens, including one in a corner, can be converted to the<br>
+opponent&#x27;s side if the opponent plays the location adjacent to the<br>
+center of the three. On the other hand, as noticed in #1, pieces which<br>
+are deep inside the filled region are difficult to convert.<br>
+<br>
+<br>
+If there is a quick winning strategy for the player who goes first,<br>
+that will put an end to this puzzle and I can go on playing the <br>
+larger compter game...<br>
+<br>
+dave<br>
+<br>
+<br>
+</div>
+</body>
+</html>

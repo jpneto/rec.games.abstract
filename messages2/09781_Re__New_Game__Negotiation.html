@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: New Game: Negotiation</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: New Game: Negotiation</h1>
+    <p><strong>From:</strong> Mark Steere &lt;marksteere@gmail.com&gt;<br>
+    <strong>Date:</strong> Sat, 25 Sep 2010 05:51:01 -0700 (PDT)</p>
+    <hr>
+    <div>On Sep 25, 3:30 am, Matteo Perlini &lt;epicuru...@gmail.com&gt; wrote:<br>
+&gt; On 24 Set, 04:00, Mark Steere &lt;markste...@gmail.com&gt; wrote:<br>
+<br>
+&gt; &gt; I haven&#x27;t put a huge amount of thought into this, but I don&#x27;t think<br>
+&gt; &gt; Ecalper would be as complex as Oust on the same size board.<br>
+<br>
+Oust: http://www.marksteeregames.com/Oust_rules.pdf<br>
+<br>
+&gt; I didn&#x27;t put that table for competing with other games.<br>
+<br>
+I think that&#x27;s exactly what you did.  Your claim that Ecalper has a<br>
+particularly large game tree for a given board size is a very<br>
+provocative invitation for comparison with other games played on the<br>
+same size board having possibly an even larger game tree.<br>
+<br>
+&gt; I did it just<br>
+&gt; for explaining Ecalper is a deep game, also with just 127 stones.<br>
+<br>
+...compounding your chicanery.  A big game tree doesn&#x27;t guarantee a<br>
+deep game.<br>
+<br>
+&gt; The reason why it has a so big game-tree complexity is because Ecalper<br>
+&gt; is (more or less) a three-move game.<br>
+<br>
+Wrong and completely irrelevant.  One move per turn, three moves per<br>
+turn, 63 moves per turn...  Moves per turn translates to jack squat.<br>
+<br>
+&gt; How many possible moves in Oust does the player have in the second<br>
+&gt; turn? I think it&#x27;s 120. In Ecalper, however, during the second turn<br>
+&gt; player has 930372 possible moves to choose from.<br>
+<br>
+Mathematically absurd.  By partitioning the total number of turns into<br>
+n-move stone placements you reduce the total number of turns by a<br>
+factor of n.  It&#x27;s like we both have 127 Gummi bears and you, after<br>
+partitioning yours into 42 bags of 3, claim to have an astronomical<br>
+number of Gummi bears.<br>
+<br>
+&gt; This, to me, is a strong clue Ecalper has a bigger game-tree<br>
+&gt; complexity than Outs (with a fair and meaningful number of turns).<br>
+<br>
+&quot;Fair and meaningful&quot; has nothing to do with the overall game tree<br>
+size.  It&#x27;s just a subjective way to prune the tree.<br>
+<br>
+There&#x27;s a huge amount of tree-shrinking redundancy in Ecalper.  If<br>
+you&#x27;re putting three black stones on cells x, y, and z, does it matter<br>
+if you instead place them in the order y, z, x?  No, it doesn&#x27;t.  All<br>
+that tree-expanding freedom of movement has a tree-shrinking<br>
+redundancy counterpart.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

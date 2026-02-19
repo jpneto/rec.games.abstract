@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: 3D Pentominoes</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: 3D Pentominoes</h1>
+    <p><strong>From:</strong> dseal@armltd.co.uk (David Seal)<br>
+    <strong>Date:</strong> 25 May 94 15:07:13 GMT</p>
+    <hr>
+    <div>In article &lt;Cq9zHu.37H@SSD.intel.com&gt; wms@ssd.intel.com (William Shubert)<br>
+writes:<br>
+<br>
+&gt;   Now notice that all 3-d pentominos can be set down to be just 2<br>
+&gt;blocks high.  So the representation scheme is:<br>
+&gt;<br>
+&gt;SIDE VIEW   MY REPRESENTATION<br>
+&gt;<br>
+&gt;    ##        xx#^<br>
+&gt;  ###<br>
+&gt;<br>
+&gt;Get it?  This is really 2-d pentomino #6 but it illustrates how<br>
+&gt;I&#x27;m drawing things.  Now to do the 3-d pentominos:<br>
+&gt;<br>
+&gt;Non-flippable: (4 total)<br>
+&gt;13. x#x  14. #x  15. xxx  16. #xx  17. x#<br>
+&gt;    x       xx        #       x        # <br>
+&gt;<br>
+&gt;Flippable: (9 total)<br>
+&gt;18. x#x  19. #xx  20. x#   21. x#  22. #x   23. xx#<br>
+&gt;    x         x        ^^      x^       xx      x  <br>
+&gt;<br>
+&gt;24. #x   25. x#   26. xx#<br>
+&gt;     xx       xx        ^<br>
+&gt;<br>
+&gt;   Looks like 26 pentominos, or 35 if you can&#x27;t use 4 dimensions.<br>
+&gt;   This got pretty hairy, so I may have messed up...corrections/additions,<br>
+&gt;anybody?<br>
+<br>
+Well, 13 and 18 look identical to me, as do 18 flipped and 19, and I don&#x27;t<br>
+see the following:<br>
+<br>
+  #x<br>
+  xx<br>
+<br>
+There are probably duplicates and/or omissions.<br>
+<br>
+Here&#x27;s how I would go about classifying the 3d pentacubes (i.e. the ones<br>
+which adon&#x27;t live completely in one plane): first, consider the &quot;bounding<br>
+box&quot; of an n-cube, which is the smallest axis-aligned box which contains it<br>
+completely. For instance, the bounding boxes of 13-16, 18-20 and 22-26 above<br>
+are 2x2x3 in size; the bounding boxes of 17 and 21 are 2x2x2 in size.<br>
+<br>
+Now consider building up an n-cube one cube at a time, keeping it connected<br>
+all the time - i.e. as a sequence of a 1-cube, a 2-cube, etc. The 1-cube has<br>
+bounding box 1x1x1, and each added cube can increase at most one of the<br>
+three dimensions by at most one. So if the bounding box of an n-cube has<br>
+size axbxc, we know that a+b+c is at most n+2.<br>
+<br>
+The bounding box of a non-planar n-cube must be at leat 2 in each dimension.<br>
+Putting these facts together, we see that the bounding box of a non-planar<br>
+pentacube must be either 2x2x2 or 2x2x3 in size.<br>
+<br>
+Case 1: Non-planar pentacubes with 2x2x2 bounding box.<br>
+<br>
+  In each dimension, the five individual cubes must be split either 2:3 or<br>
+  1:4 between the two 1x2x2 planes the 2x2x2 cube can be divided into.<br>
+<br>
+  Case 1A: They split 1:4 in some dimension. So the pentacube is a square<br>
+    with a single cube on top:<br>
+<br>
+      13. #x     (Symmetrical)<br>
+          xx<br>
+<br>
+  Case 1B: They split 2:3 in every dimension. Take one of these three<br>
+    dimensions and assume that the bottom plane contains three cubes in a<br>
+    &quot;triangle&quot;:<br>
+<br>
+      ab<br>
+      c<br>
+<br>
+    If the top plane contains a cube above &quot;a&quot;, the remaining cube must<br>
+    either be above b or above c, and in either case, we find a 1:4 split in<br>
+    one of the other two dimensions. So the two cubes must be in two of the<br>
+    remaining three positions, leading to the following possibilities:<br>
+<br>
+      x#   x#    xx<br>
+      #    x^    #^<br>
+<br>
+    A little thought will show that these are all the same - we&#x27;re just<br>
+    looking at them from different sides (e.g. the third one is the same as<br>
+    the first looked at from the right):<br>
+<br>
+      14. x#     (Symmetrical)<br>
+          #<br>
+<br>
+Case 2: Non-planar pentacubes with 3x2x2 bounding box.<br>
+<br>
+  Split the bounding box up into three 1x2x2 squares along its longest<br>
+  dimension, and consider how the five cubes are split between them. After<br>
+  choosing which end to put on the left, the possibilities are 3:1:1, 1:3:1,<br>
+  2:1:2 and 2:2:1.<br>
+<br>
+  Case 2A: Cubes split 3:1:1. The three cubes in the leftmost group must<br>
+    form a triangle, and in order to be connected, the two others must then<br>
+    form a straight line to its right. I.e. we must have one of the<br>
+    following:<br>
+<br>
+      15. #xx    (Symmetrical)<br>
+          x<br>
+<br>
+      16. #      16 flipped: #^^<br>
+          xxx                x<br>
+<br>
+  Case 2B: Cubes split 1:3:1. The three cubes in the centre must form a<br>
+    triangle, and the other two must be attached to its left and right. They<br>
+    may both be attached to &quot;right angle&quot; of the traingle, giving us:<br>
+<br>
+      17. x#x    (Symmetrical)<br>
+           x<br>
+<br>
+    or only one of them may be attached to the &quot;right angle&quot;, giving us:<br>
+<br>
+      18. x#     18 flipped: x#^<br>
+           xx                 x<br>
+<br>
+    or neither of them may be attached to the &quot;right angle&quot;, giving us:<br>
+<br>
+      19.  #     (Symmetrical)<br>
+          xxx<br>
+<br>
+      20.  #^    20 flipped: ^#<br>
+          xx                  xx<br>
+<br>
+  Case 2C: Cubes split 2:1:2. The cube in the middle layer must connect<br>
+    together a pair of cubes in each of the outside layers, and these pairs<br>
+    must &quot;point&quot; in different directions - otherwise, the result will be the<br>
+    planar:<br>
+<br>
+      xxx<br>
+      x x<br>
+<br>
+    This only leaves us:<br>
+<br>
+      21. xx#    21 flipped: #xx<br>
+          x                    x<br>
+<br>
+  Case 2D: Cubes split 2:2:1. The two cubes in the left layer must be<br>
+    connected together - i.e. not in the positions:<br>
+<br>
+      x<br>
+      ^<br>
+<br>
+    (If they were in this position, they would force the two cubes in the<br>
+    middle layer to be in the same positions, and the cube in te right layer<br>
+    would not be able to join the two groups up.) A similar argument shows<br>
+    that the two cubes in the middle layer must be connected together.<br>
+<br>
+    These two connected pairs must be joined together, which leaves the<br>
+    possibilities:<br>
+<br>
+      xx    x#    #x    ##<br>
+      xx    x      x<br>
+<br>
+    Of these, the first and last are planar &quot;squares&quot; and will still be<br>
+    planar wherever we add the cube in the right layer. So only the middle<br>
+    two survive: each has two places to attach the cube in the right layer,<br>
+    and this gives us:<br>
+<br>
+      22. x#x    22 flipped: #xx<br>
+          x                   x<br>
+<br>
+      23. x#^    23 flipped: #x<br>
+          x                   xx<br>
+<br>
+So what we&#x27;ve ended up with are: 12 planar pentacubes, 5 symmetrical<br>
+non-planar pentacubes, and 6 non-symmetrical non-planar pentacubes. This<br>
+gives a total count of 12+5+6 = 23 pentacubes if we don&#x27;t count mirror<br>
+images as different, or 12+5+2*6 = 29 if we do.<br>
+<br>
+David Seal<br>
+dseal@armltd.co.uk<br>
+<br>
+All opinions are mine only...<br>
+<br>
+<br>
+</div>
+</body>
+</html>

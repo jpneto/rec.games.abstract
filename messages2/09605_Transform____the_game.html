@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Transform -- the game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Transform -- the game</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Fri, 16 Jul 2010 10:37:03 -0700 (PDT)</p>
+    <hr>
+    <div>This is a game for any plural number of players.<br>
+(No grids this time, sorry.)<br>
+<br>
+There are a number of rounds in this game. The number of rounds is a<br>
+multiple of the number of players. The players take turns being &quot;the<br>
+permutator&quot;, where each player is the permutator the same number of<br>
+rounds.<br>
+<br>
+Before starting any of the rounds, the players agree on a positive<br>
+integer n. (n is the same value for all rounds in the game.)<br>
+<br>
+On a round, all of the players (including the permutator) start the<br>
+round by each coming up with an ordered list of n integers (positive,<br>
+negative, or 0). Each player&#x27;s numbers must be distinct, in that no<br>
+integer occurs more than once in a particular player&#x27;s list. The<br>
+players each keep their lists secret from the other players for now.<br>
+<br>
+Let player p&#x27;s list for any particular round be {b(p,k)}, k =<br>
+1,2,3,...n.<br>
+<br>
+Next, all players who are not the permutator take turns choosing terms<br>
+a list of n distinct integers(positive, negative, or zero; no integer<br>
+more than once). (So, if the number of players is m, I guess to be<br>
+fair, n should be a multiple of (m-1).)<br>
+<br>
+Let this list be {a&#x27;(k)}, k = 1,2,3,..n.<br>
+<br>
+Then, after the list is complete, the permutator forms any permutation<br>
+{a(k)} of {a&#x27;(k)}.<br>
+<br>
+Then everyone reveals their b-lists.<br>
+<br>
+Each player p forms a sequence of n integers in this manner:<br>
+<br>
+c(p,k) = sum{j=1 to n} a(n+1-j) b(p,j). k = 1,2,3...,n.<br>
+<br>
+Player p&#x27;s score for this round is the number of primes in {c(p,k)}.<br>
+<br>
+After all the rounds are played, the players add up their scores for<br>
+all the rounds. The player with the largest grand score wins.<br>
+<br>
+In a variation, instead of the number of primes being the criterion<br>
+for scoring, the players decide amongst themselves before each round<br>
+what will be the criterion for a number in the c-list to score.<br>
+Fibonacci numbers? Squares? Where each c(p,k) is coprime to c(p,k-1)?<br>
+Or maybe the choice of criterion should be totally up to the<br>
+permutator (with veto power from the other players), and expressed at<br>
+the beginning of each round before the b-lists are constructed.<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

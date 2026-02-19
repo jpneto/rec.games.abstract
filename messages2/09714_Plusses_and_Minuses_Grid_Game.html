@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Plusses and Minuses Grid Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Plusses and Minuses Grid Game</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Tue, 7 Sep 2010 04:36:19 -0700 (PDT)</p>
+    <hr>
+    <div>This game is for two players.<br>
+<br>
+Start with an n-by-n grid drawn on paper. I suggest that n be &gt;= 8.<br>
+<br>
+The first part of the game doesn&#x27;t involve the grid. In this part of<br>
+the game, the players take turns each contributing to their own<br>
+&quot;prediction list&quot; of +&#x27;s and -&#x27;a. On each move, a player appends to<br>
+the end of their list either a + or a -. Each player is aware of the<br>
+other player&#x27;s list as it is being made. After both players&#x27; lists are<br>
+n-1 symbols long, this part of the game is over. (See below for the<br>
+significance of the lists.)<br>
+<br>
+I suggest at this point that a dot be put at the lower left corner of<br>
+the grid so as to keep this corner straight from the others.<br>
+<br>
+In the next part of the game, the players take turns, each move<br>
+filling in an empty square of the grid. The filled in square must not<br>
+be in the same row or column as any other filled in square.<br>
+<br>
+After n squares total have been filled in, this part of the game is<br>
+over.<br>
+(There will be exactly one filled in square in each row and in each<br>
+column.)<br>
+<br>
+Now, we determine the scores.<br>
+Take the grid, with the dot in the lower left corner.<br>
+Going from the left to the right, the filled in squares represent a<br>
+permutation P = (p(1),p(2),...p(n)) of (1,2,3,...,n). Player 1 forms a<br>
+&quot;truth list&quot; of +&#x27;s and -&#x27;s, where the kth symbol is the sign of p(k<br>
++1)-p(k).<br>
+<br>
+Going from bottom to the top, the filled in squares represent a<br>
+permutation Q = (q(1),q(2),...q(n)) of (1,2,3,...,n), where Q is the<br>
+inverse permutation of P. Player 2 forms a truth list of +&#x27;s and -&#x27;s,<br>
+where the kth symbol is the sign of q(k+1)-q(k).<br>
+<br>
+Write each players truth list below their prediction list so that<br>
+respective signs are lined up. Each player gets a point for each<br>
+corresponding pair of signs that match.<br>
+<br>
+Largest score wins.<br>
+<br>
+Here is a sample game:<br>
+<br>
+n = 8.<br>
+<br>
+Grid:<br>
+. * . . . . . .<br>
+. . . . . . . *<br>
+. . . . . . * .<br>
+. . . . . * . .<br>
+. . * . . . . .<br>
+. . . . * . . .<br>
+. . . * . . . .<br>
+* . . . . . . .<br>
+<br>
+Player 1&#x27;s prediction list: + - + - + - +<br>
+Player 1&#x27;s truth list:      + - - + + + +<br>
+The first pair, second pair, 5th pair, and 7th pair match. So, player<br>
+1 gets 4 points.<br>
+<br>
+Player 2&#x27;s prediction list: + + - + + - +<br>
+Player 2&#x27;s truth list:      + + - + + + -<br>
+The first pair, second pair, 3rd pair, 4th pair, and 5th pair match.<br>
+So, player 2 gets 5 points.<br>
+<br>
+Player 2 wins.<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

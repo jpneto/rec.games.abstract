@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Silverman&#x27;s South American Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Silverman&#x27;s South American Game</h1>
+    <p><strong>From:</strong> hoey@aic.nrl.navy.mil (Dan Hoey)<br>
+    <strong>Date:</strong> 19 07 1995 00:00:00 GMT</p>
+    <hr>
+    <div>I&#x27;ve set followups to rec.games.abstract, where such games are<br>
+discussed.<br>
+<br>
+&gt; In his book _Your move_ (McGraw Hill 1971), David Silverman introduced a <br>
+&gt; 2-person coloring game played on the map of South America: the two players<br>
+&gt; take turns coloring (with just one color) the 13 countries under the<br>
+&gt; restriction that each player may color only a country that has no common<br>
+&gt; frontiers with a previously colored country; the last player who can color a<br>
+&gt; country is the winner.<br>
+<br>
+In the 1991 Dover edition, the game is called &quot;Monochrome&quot;, certainly<br>
+a more descriptive name.<br>
+<br>
+For people who don&#x27;t have the book, or a map of South America, here&#x27;s<br>
+the adjacency graph (DG and RG are Dutch Guiana and British Guiana,<br>
+which don&#x27;t appear in my copy of ISO3166).<br>
+<br>
+                     __________BR__________<br>
+                    /  /  /  / /\ \    \ \ \<br>
+                   /  /  /  / /  \ \    PY\ \<br>
+                  /  /  /  / /    \ \  /  \\ \<br>
+                GF-DG-RG-VE-CO----PE-BO----AR-UY<br>
+                              \  /  \ \    /<br>
+                               EC    \_CL_/<br>
+<br>
+&gt; The game can be won, of course, by the first player who should, on<br>
+&gt; his first move, color Brazil (thereby leaving only Chile and Ecuador<br>
+&gt; which don&#x27;t have a common border).<br>
+<br>
+&gt; Besides giving this trivial strategy, Silverman asks whether there<br>
+&gt; exist other [winning moves].  Silverman argues that there do exists<br>
+&gt; such countries but opines that to determine all of them would<br>
+&gt; require the aid of a computer.<br>
+<br>
+&gt; However, in my paper _The South American Game_ (Mathematics<br>
+&gt; Magazine, Vol 50, #1, January 1977, pp. 17-21), I showed that all<br>
+&gt; these countries can be found by using graph-theoretical concepts,<br>
+&gt; i.e., by analysis of kernels (you _don&#x27;t_ need a computer for this<br>
+&gt; task); besides Brazil, there are indeed two other countries which<br>
+&gt; have the required properties (my paper also showed that the misere<br>
+&gt; form of the game has a unique winning opening move).<br>
+<br>
+I was able to discover those countries by hand using the techniques I<br>
+learned from Conway&#x27;s _On Numbers and Games_ and Berlekamp, Conway,<br>
+and Guy&#x27;s _Winning Ways_.  But I don&#x27;t see that you&#x27;re not going to<br>
+eventually need a computer.  Even to play this game with strings<br>
+(simply- connected graphs of maximum degree 2) you will have to learn<br>
+to play Dawson&#x27;s Chess, which is periodic with degree 34 even in<br>
+normal play.  And the (misere) options of the above game include<br>
+*3+*2={*2+*2,*3,*2} and {*2+*2,*3,*2,*1,*0}, which would overwhelm<br>
+hand analysis if the game gets a little larger.<br>
+<br>
+The only general simplifying rule I noticed (outside of the usual<br>
+Sprague-Grundy theory) is<br>
+<br>
+    o<br>
+    |\ xx         xx<br>
+    o-xxxx  =  o-xxxx<br>
+       xx         xx<br>
+<br>
+where the xxx is any position such to which the o&#x27;s are connected<br>
+identically.<br>
+<br>
+&gt; In my paper I raised a few questions of a more theoretical nature<br>
+&gt; concerning such games in general, but also suggested to play a<br>
+&gt; similiar game on the map of Africa or Europe. Since I have not done<br>
+&gt; such an analysis myself, I would like to know whether someone has<br>
+&gt; carried out this task...<br>
+<br>
+I haven&#x27;t tried Africa. and I suspect Europe may currently be<br>
+undecidable (for non-technical reasons).<br>
+<br>
+&gt; PS: Just in case someone has seen my article: in Fig.1, the graph<br>
+&gt; corresponding to the map of South America was screwed up by the<br>
+&gt; publisher but it can be corrected quite easily.<br>
+<br>
+Was this the &quot;Chile problem&quot; that Silverman apologized for?<br>
+<br>
+Dan<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

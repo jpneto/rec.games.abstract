@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Somewhat Quet-like quickie?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Somewhat Quet-like quickie?</h1>
+    <p><strong>From:</strong> Phil Carmody &lt;thefatphil_demunged@yahoo.co.uk&gt;<br>
+    <strong>Date:</strong> Sun, 24 Jan 2010 01:19:22 +0200</p>
+    <hr>
+    <div>This came to me while I was asleep, where I was intently playing it<br>
+against an unknown opponent. I have fairly lucid dreams and I think<br>
+I managed to transport a fair number of details back with me to my <br>
+wakened state, but have had to busk a bit too.<br>
+<br>
+The board is a rectilinear grid, the important parts are the gridpoints.<br>
+In its basic form, a game is parametrised by board size, I was playing <br>
+on what seemed to be a 13*13 square in my dreams.<br>
+<br>
+The game had 2 phases -  a preparation phase, then a capturing phase.<br>
+I have no recollection of actually performing the preparation phase, <br>
+but it was clear that there had to have been one.<br>
+<br>
+Preparation phase:<br>
+Players take turns to select and mark a gridpoint which is not colinear<br>
+with any pair of previously selected gridpoints.<br>
+<br>
+Capture phase:<br>
+Players take turns to connect a pair of gridpoints with a straight <br>
+line that does not cross any previously drawn lines. If said line<br>
+completes one or more triangles that contain no marked gridpoints, <br>
+then those triangles are scored according to the scoring rules in <br>
+force.<br>
+<br>
+Scoring:<br>
+Well, there appear to be a fair number of possibilities.<br>
+The value could be twice the area of the triangle (the areas are<br>
+always half an integer), or the number of non-marked grid-points <br>
+in the triangle&#x27;s interior (easier for pen-and-paper play).<br>
+The recipient of the score seems most sensibly the person who<br>
+completes the triangle, but as the points were placed by the <br>
+players, it would also be possible to give the score to the person<br>
+who has the majority of the 3 points.<br>
+<br>
+Advanced variations:<br>
+Lest the above doesn&#x27;t have enough complexity, rather than chosing simply <br>
+a size, the two players select and mark outermost points which must remain <br>
+the convex hull of the rest of the points in play.<br>
+<br>
+Only-half-the-game version:<br>
+After explaining the game to my g/f in my just-woken state, wondered<br>
+if perhaps just the preparation phase might be an abstract strategy <br>
+game in its own right with a nim-like last-move-{wins/loses} rule.<br>
+Whilst certainly there&#x27;s a parity bias, it does appear that there&#x27;s <br>
+enough variation possible to make this standalone half game strategic<br>
+when the board size is large enough.<br>
+<br>
+Here are some mins/maxes from a few thousand simulations of random <br>
+play on a square grid:<br>
+size 1  2  3  4  5  6  7  8  9 10 11 12 13 14<br>
+min  1  4  4  4  6  7  8  9 10 11 13 14 16 17<br>
+max  1  4  6  8 10 12 14 16 17 19 21 23 24 26<br>
+Greedy algorithms might be able to improve those bounds. (Please do, <br>
+the OEIS calls!)<br>
+<br>
+Don&#x27;t even mention play-testing - my g/f refuses to play, so I&#x27;ve <br>
+simply not had a chance to play it. As I have the random play code<br>
+written, I could monte-carlo an opponent up for the half-game, <br>
+certainly, but that&#x27;s a task for another day.<br>
+<br>
+Phil<br>
+-- <br>
+Any true emperor never needs to wear clothes. -- Devany on r.a.s.f1<br>
+<br>
+<br>
+</div>
+</body>
+</html>

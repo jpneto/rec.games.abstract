@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Othello: static board evaluation</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Othello: static board evaluation</h1>
+    <p><strong>From:</strong> eadengle@watcgl.uwaterloo.ca (Ed &quot;Cynwrig&quot; Dengler)<br>
+    <strong>Date:</strong> Wed, 18 Nov 1992 16:15:38 GMT</p>
+    <hr>
+    <div>In article &lt;1992Nov17.131442.14679@odin.diku.dk&gt; torbenm@diku.dk (Torben AEgidius Mogensen) writes:<br>
+&gt;<br>
+&gt;&gt;This seems reasonable to me, but in reality doesn&#x27;t play very good.<br>
+&gt;<br>
+&gt;This is the method used by most &quot;beginners&quot; trying to make an<br>
+&gt;evaluation function, and as you said it isn&#x27;t very good. In my program<br>
+&gt;I use these factors:<br>
+&gt;<br>
+&gt;  1) How many legal moves does the opponent have. A small number is<br>
+&gt;     good.<br>
+&gt;<br>
+Be careful of this one! Remember, a good way of minimizing your opponent&#x27;s<br>
+moves is to let him wipe you out (ie. he has 0 moves left). You should<br>
+try to also maximize your moves. This measure can be a difference<br>
+(ie. my moves - his moves) or a ratio (such as if I have more moves, the<br>
+score is (my moves + 1) / (his moves + 1), else if he has more moves, then<br>
+the score is -(his moves + 1) / (my moves + 1), else it is 0).<br>
+<br>
+The second ratio method has the advantage that you having 2 moves and him<br>
+having 1 move is better than you having 4 moves and him having 3.<br>
+<br>
+Ed<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

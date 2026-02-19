@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: &quot;Justice&quot; and &quot;Injustice&quot; -- new games, created by wlod (wh)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: &quot;Justice&quot; and &quot;Injustice&quot; -- new games, created by wlod (wh)</h1>
+    <p><strong>From:</strong> quasi &lt;quasi@null.set&gt;<br>
+    <strong>Date:</strong> Thu, 14 Jun 2007 03:59:10 -0500</p>
+    <hr>
+    <div>On Thu, 14 Jun 2007 02:44:05 -0000, Wlodzimierz Holsztynski<br>
+&lt;sennajawa@gmail.com&gt; wrote:<br>
+<br>
+&gt;BTW, a minor, trivial point about the positions<br>
+&gt;which have equal number of stones in the<br>
+&gt;initial 0-th position: I say &quot;don&#x27;t worry, just<br>
+&gt;play the game&quot;. Seriously, we look at question<br>
+&gt;of equality of the plates only AFTER a move.<br>
+&gt;Initially, there was no move and no issue.<br>
+<br>
+Ok -- it&#x27;s your game, so you make the rules, but I think the recursive<br>
+analysis is cleaner if the game is over whenever there&#x27;s a balance,<br>
+even if right away.<br>
+<br>
+&gt;The 2-plate injustice is more complicated.<br>
+&gt;In the position:<br>
+&gt;<br>
+&gt;(P0)  a  0<br>
+&gt;<br>
+&gt;the first player is lost for a=1<br>
+&gt;and wins if a &gt; 1 (for a=0 there is<br>
+&gt;no game--there should be at least 1 stone<br>
+&gt;on one of the plates).<br>
+&gt;<br>
+&gt;In the position<br>
+&gt;<br>
+&gt;(P0)    a  1<br>
+&gt;<br>
+&gt;the first player is lost for a=0<br>
+&gt;and wins if a &gt; 0.<br>
+&gt;<br>
+&gt;***<br>
+&gt;<br>
+&gt;Continue with the 2-plate injustice.<br>
+&gt;<br>
+&gt;(P0)  a  b<br>
+&gt;<br>
+&gt;where, say,  a &gt;/ b &gt; 1. Neither player<br>
+&gt;wants to leave a configuration  A  B,<br>
+&gt;where min(A B) &lt; 2, except for the winning<br>
+&gt;configurations  1  0  and  0  1, or else<br>
+&gt;the opponent on the next move will be able<br>
+&gt;to reach  1  0  or  0  1, and win.<br>
+&gt;<br>
+&gt;We see that position:<br>
+&gt;<br>
+&gt;(P0)  2  2<br>
+&gt;<br>
+&gt;is lost for the first player.<br>
+<br>
+If you change the rules to allow initial positions to be terminal if<br>
+they balance, then (2,2) would be a win for player 1.<br>
+<br>
+&gt;It follows that position<br>
+&gt;<br>
+&gt;(P0)  a  2<br>
+&gt;<br>
+&gt;is won for the first player, for any a &gt; 2.<br>
+<br>
+That&#x27;s not so clear. In fact, I think (3,2) is a loss for player 1.<br>
+<br>
+But that&#x27;s only because of your initialization special case rule --<br>
+another reason to undo that.<br>
+<br>
+&gt;Etc., i.e., by induction, we get the<br>
+&gt;following modest theorem:<br>
+&gt;<br>
+&gt;THEOREM  The 2-plate injustice game, with the<br>
+&gt;=======  initial position:<br>
+&gt;<br>
+&gt;(P0)  a  b<br>
+&gt;<br>
+&gt;is won for the first player in each of the<br>
+&gt;following cases:<br>
+&gt;<br>
+&gt;(i) a =/= b, and min(a b) &gt; 1 -- then<br>
+&gt;passing to position  (P1) min(a b) min(a b)<br>
+&gt;is the winning move);<br>
+<br>
+For injustice, that would be a losing move. In fact, it would be<br>
+instant suicide.<br>
+<br>
+quasi<br>
+<br>
+<br>
+</div>
+</body>
+</html>

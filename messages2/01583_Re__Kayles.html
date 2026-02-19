@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Kayles</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Kayles</h1>
+    <p><strong>From:</strong> desj@ccr-p.ida.org (David desJardins)<br>
+    <strong>Date:</strong> 15 Feb 1994 00:18:58 -0500</p>
+    <hr>
+    <div>David Bush &lt;dbush@csugrad.cs.vt.edu&gt; writes:<br>
+&gt; It sounds like the first player could always win by dividing the line into<br>
+&gt; 2 identical regions on the first move. If n is odd, remove the middle token.<br>
+&gt; If n is even, remove the 2 middle tokens. Now any move the 2nd player makes<br>
+&gt; is answered by the corresponding move in the other region. The 1st player<br>
+&gt; must always win with this procedure, n&#x27;est-ce pas?<br>
+<br>
+This is certainly true, that it is always a win for the first player.<br>
+In some sense all &quot;interesting&quot; impartial games are first-player wins,<br>
+because impartial games which are second-player wins are equal to zero.<br>
+<br>
+Nevertheless if you want to know everything there is to know about such<br>
+games (i.e., which moves, if any, will win from any given position), you<br>
+need to know more than that.  You need to know not just that the game is<br>
+a first-player win but what it&#x27;s value is in the mathematical theory of<br>
+such games.  In the notation of Winning Ways, we can compute the values<br>
+of some positions.  If we let X represent a token, then:<br>
+<br>
+        X = *<br>
+        XX = *2<br>
+        XXX = *3<br>
+        XXXX = *<br>
+        XXXXX = *4<br>
+<br>
+and so on.  Using this we can compute the value of various possible<br>
+intermediate positions.  If we let . represent a gap between tokens,<br>
+then:<br>
+<br>
+        X.X = 0<br>
+        X.XX = *3<br>
+        X.XXX = *2<br>
+        XX.XX = 0<br>
+        X.XXXX = 0<br>
+        X.X.XX = *2<br>
+        XX.XXX = *<br>
+<br>
+and so on.  Once the theory is in hand, the values can be computed as<br>
+fast as you can write down the positions.  The positions with value 0<br>
+are wins for the second player, and the positions with value *n are wins<br>
+for the first player.<br>
+<br>
+All this and much, much more can be found in _Winning Ways_.<br>
+<br>
+                                        David desJardins<br>
+<br>
+P.S. I believe the mathematical game of Kayles is based on an actual<br>
+bowling game in which a ball is bowled at a line of pins, and is large<br>
+enough to knock down one or two pins but no more.  The first player to<br>
+fail to hit a pin (possibly because none are left) loses.  Of course, in<br>
+that game bowling skill as well as mathematical theory would play a<br>
+role.<br>
+-- <br>
+Copyright 1994 David desJardins.  Unlimited permission is granted to quote<br>
+from this posting for non-commercial use as long as attribution is given.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: The Game of Y... proper board / swap rule</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: The Game of Y... proper board / swap rule</h1>
+    <p><strong>From:</strong> jferro@nu.ece.cmu.edu (Jonathan R. Ferro)<br>
+    <strong>Date:</strong> 23 May 2002 14:28:01 -0400</p>
+    <hr>
+    <div>ed@edcollins.com (Edward D. Collins) writes:<br>
+&gt; 2) When playing &quot;Y&quot; against the Zillions engine, the swap rule, as I<br>
+&gt; understand it, is not being implemented correctly.<br>
+&gt; <br>
+&gt; In Hex and other connection games (Twixt) where the swap rule is often<br>
+&gt; used, normally after Black makes an opening play, White then chooses<br>
+&gt; whether to take this move as his own (swapping) or simply let it be<br>
+&gt; and move elsewhere.  However, in this Zillions implementation, Black<br>
+&gt; moves, then White moves, and THEN White decides to swap colors.  (If<br>
+&gt; White does swap, in effect this gives Black the poorest first move<br>
+&gt; possible, but of course it&#x27;s Black&#x27;s turn again.)<br>
+<br>
+That really doesn&#x27;t sound right.  That would mean that the same Player B<br>
+(starting as White) would make a White move, elect to swap, and then<br>
+immediately make a Black move, all while Player A does nothing.<br>
+<br>
+I think this is a bug in implementing a &quot;3-move swap&quot;, which should go:<br>
+A: black move; B: white move; A: black move; B: swap; A: white move.  Or<br>
+it could be a &quot;2-move swap&quot; (less likely, in my opinion), which should<br>
+go: A: black move; B: white move; A: swap; B: black move.  In either<br>
+case, the player who chooses to swap is *not* the player who gets the<br>
+&quot;extra&quot; move immediately afterward.<br>
+<br>
+For comparison, Richard&#x27;s PBEM Server implements the game with a<br>
+straight hexagonal grid (as you suggest, this is much easier for a<br>
+general-purpose game engine to work with), and uses a 1-move swap rule.<br>
+See http://www.gamerz.net/pbmserv/y.html<br>
+<br>
+-- Jon<br>
+<br>
+<br>
+</div>
+</body>
+</html>

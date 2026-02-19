@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>A simple &quot;stone-pushing&quot; 5x5 game with a blockading goal.</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>A simple &quot;stone-pushing&quot; 5x5 game with a blockading goal.</h1>
+    <p><strong>From:</strong> pristy@excite.com (Jason)<br>
+    <strong>Date:</strong> 10 Sep 2002 15:06:12 -0700</p>
+    <hr>
+    <div>I&#x27;ve read about the trivial games Pong Hau K&#x27;i and Mu Torere and I<br>
+decided to come up with a slightly more complicated (and therefore<br>
+more challenging) variant of these games and I&#x27;d like to know what you<br>
+guys think about it.<br>
+<br>
+This game is played on a 5x5 square board with 12 black and 12 white<br>
+stones initially arranged like this:<br>
+<br>
+_ B W B W<br>
+B W B W B<br>
+W B W B W<br>
+B W B W B<br>
+W B W B W<br>
+where here, _ means the square is empty. At any stage during the game,<br>
+only one stone can occupy any given square and there are no captures<br>
+or introduction of new stones. During each turn by black, he has to<br>
+move one of his black stones to a empty square adjacent to it (only<br>
+orthogonally, not diagonally) and similarly for white. If one of the<br>
+players run out of legal moves, that means he has lost. Otherwise,<br>
+once it becomes obvious the game would simply continue forever (in<br>
+practice, we could impose the rather artificial rule that if the game<br>
+doesn&#x27;t end after let&#x27;s say 200 moves, it&#x27;s a draw), it&#x27;s declared a<br>
+draw. From the initial setup, black moves first.<br>
+<br>
+At first glance, this game looks rather trivial, and it looks as if<br>
+there ought to be a simple strategy to draw no matter what the<br>
+opponent does or for one side to force a win, but after playing a few<br>
+games with it and analyzing it a bit, it definitely seems more<br>
+complicated than that. Of course, maybe I&#x27;m just being stupid and one<br>
+of you can come up with a simple strategy or simple analysis of this<br>
+game which would leave me wondering why I didn&#x27;t think of it earlier<br>
+in hindsight.<br>
+<br>
+Anyway, I&#x27;d like to know your thoughts and analyses of this game. The<br>
+branching factor of this game is always between 1 to 3, so maybe it&#x27;s<br>
+easy to write a program to solve this game. If it turns out this game<br>
+is actually too trivial after all, how about a different arrangement<br>
+of stones as the initial setup (something I&#x27;m also currently<br>
+experimenting with) or a larger board size?<br>
+<br>
+<br>
+</div>
+</body>
+</html>

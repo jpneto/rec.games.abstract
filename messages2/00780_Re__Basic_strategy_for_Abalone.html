@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Basic strategy for Abalone</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Basic strategy for Abalone</h1>
+    <p><strong>From:</strong> mikula@ugcs.caltech.edu (Alf Mikula)<br>
+    <strong>Date:</strong> 18 Feb 1993 08:28:43 GMT</p>
+    <hr>
+    <div>omalley@porte-de-st-ouen.ics.uci.edu (Owen O&#x27;Malley) writes:<br>
+<br>
+&gt;One serious problem is that Abalone assumess the players want to win<br>
+&gt;and doesn&#x27;t have a ko rule. This makes a strong defense very hard to<br>
+&gt;beat. You would need to judge how aggressive to make the computer<br>
+&gt;player.<br>
+Wow.  Teaching a computer ko etiquette...Take the easy solution:  Be<br>
+aggressive.<br>
+<br>
+Seriously, though, if you&#x27;re going for playing pleasure, you might want<br>
+to randomize the computer&#x27;s persistence.  If you&#x27;re going for computer<br>
+vs. computer (you said this was a contest?), i&#x27;d test the computer against<br>
+itself and see what it looks like for different measures of persistence.<br>
+(How do you measure persistence, though?  Flag certain behaviors after<br>
+a certain amount of time, or measure position values differently?)<br>
+<br>
+How about the representation problem?  The best i&#x27;ve been able to come up<br>
+with (after speculation about the way arrays work best on computers, and<br>
+speculation that the representation should be as efficient as possible to<br>
+find moves quickly) is the following:  *&#x27;s are the board, and .&#x27;s are<br>
+dead space:<br>
+<br>
+    ....*****<br>
+    ...******<br>
+    ..*******<br>
+    .********<br>
+    *********<br>
+    ********.<br>
+    *******..<br>
+    ******...<br>
+    *****....<br>
+<br>
+Moves along the vertical, horizontal, and right-left diagonal are legal.<br>
+I&#x27;m not sure if this minimizes special-casing, though, because you still<br>
+have to check for the dead space.  I guess i haven&#x27;t given it *that* much<br>
+thought.  It just seems like that should be the best board representation.<br>
+Heh.  Maybe just because i came up with it...<br>
+<br>
+Or is this a common way to represent hex maps as arrays?<br>
+<br>
+&gt;  Owen<br>
+<br>
+--<br>
+----------------------------------------------------------------------<br>
+ Alf Mikula			| ``When the whole world doubts you,<br>
+ mikula@ugcs.caltech.edu	| it&#x27;s time to believe in yourself.&#x27;&#x27;<br>
+----------------------------------------------------------------------<br>
+<br>
+<br>
+</div>
+</body>
+</html>

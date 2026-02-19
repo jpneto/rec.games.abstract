@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: The game similar to NIM</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: The game similar to NIM</h1>
+    <p><strong>From:</strong> Dan Hoey &lt;haoyuep@aol.com&gt;<br>
+    <strong>Date:</strong> Sat, 15 Nov 2008 01:02:22 -0500</p>
+    <hr>
+    <div>alberto.hi8@gmail.com wrote:<br>
+&gt; I have to consider the following game:<br>
+&gt; all rules are the same like in classic &#x27;nim&#x27; game except one rule -<br>
+&gt; the<br>
+&gt; number of stones in heaps are nondecreasing (e.g. (1,2,2,6,7), not<br>
+&gt; (5,1,7)). After every move this rule must be keep. So player can<br>
+&gt; remove stones from heap X only and only if in heap to the left are<br>
+&gt; less piles and he can&#x27;t remove more stones, than difference between<br>
+&gt; heap X and heap to the left.<br>
+[...]<br>
+<br>
+I&#x27;m pretty sure this is called &quot;the silver dollar game&quot; (or maybe &quot;the<br>
+silver dollar game without the silver dollar&quot; in _On Numbers and Games_.<br>
+I&#x27;m pretty sure that a sequence of order-heaps h_1, h_2, ..., h_n acts<br>
+like a Nim game with heaps related to differences of adjacent h_i ,<br>
+that is<br>
+   h_n - h_(n-1),<br>
+   h_(n-2) - h_(n-3), ...,<br>
+   h_(4-(n mod 2)) - h_(3-(n mod 2)),<br>
+   h_(2-(n mod 2)) - h_(1-(n mod 2))<br>
+where h_0=0.  Basically, moving in order-heaps congruent to n (mod 2) is<br>
+like taking stones from a Nim heap, and moving in order-heaps NOT<br>
+congruent to n is like ADDING stones to a Nim heap, which can always be<br>
+answered by reversion (taking the stones back out by moving in the next<br>
+higher order-heap).<br>
+<br>
+Reversion is a little iffy when we deal in the Lost World of misre<br>
+games, since reverting the ending moves loses.  So there may be a<br>
+difference in the misre Nim endgame.<br>
+<br>
+Dan Hoey<br>
+haoyuep@aol.com<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Hex Win Proof?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Hex Win Proof?</h1>
+    <p><strong>From:</strong> gcrhoads@yahoo.com (Glenn C. Rhoads)<br>
+    <strong>Date:</strong> 20 Mar 2004 12:32:09 -0800</p>
+    <hr>
+    <div>gcrhoads@yahoo.com (Glenn C. Rhoads) wrote in message news:&lt;3396efc6.0403200010.aab22a4@posting.google.com&gt;...<br>
+&gt; w.taylor@math.canterbury.ac.nz (Bill Taylor) wrote in message news:&lt;716e06f5.0403181938.72a82f90@posting.google.com&gt;...<br>
+&gt; &gt;<br>
+&gt; &gt; It is an old theorem that in Hex, once the board has been completely<br>
+&gt; &gt; filled in with two colours, there *must* be a winning path for one<br>
+&gt; &gt; or other of them.<br>
+&gt; &gt; <br>
+&gt; &gt; Now, I can prove this easily enough mathematically, but I&#x27;m wondering if<br>
+&gt; &gt; there is a simple proof, or proof outline, that would be understandable<br>
+&gt; &gt; and reasonably convincing to the intelligent layman.<br>
+&gt; &gt; <br>
+&gt; &gt; Can anyone help out please?<br>
+&gt; <br>
+&gt; Here&#x27;s a pretty proof involving a closely related game called Y.<br>
+&gt; (Don&#x27;t hesitate about the length of this post; it consists mostly<br>
+&gt; of descriptions of Y, the relation to Hex, and the definition<br>
+&gt; of &quot;Y-reduction&quot;.  The final proof is very short.)<br>
+&gt; <br>
+&gt; A Y board consists of a triangular configuration of hexagons. Play is<br>
+&gt; the same as Hex except that the goal is to build a chain that connects<br>
+&gt; all three sides (as in Hex, corner hexes belong to both sides).<br>
+&gt; <br>
+&gt; Y is a generalization of Hex as illustrated in the following ascii diagram.<br>
+&gt; (view in a fixed font)<br>
+&gt; <br>
+&gt;               _<br>
+&gt;             _/*\<br>
+&gt;           _/*\_/<br>
+&gt;         _/*\_/*\<br>
+&gt;       _/ \_/*\_/<br>
+&gt;     _/ \_/ \_/*\<br>
+&gt;   _/ \_/ \_/ \_/<br>
+&gt;  / \_/ \_/ \_/ \<br>
+&gt;  \_/ \_/ \_/ \_/<br>
+&gt;    \_/ \_/ \_/+\<br>
+&gt;      \_/ \_/+\_/<br>
+&gt;        \_/+\_/+\<br>
+&gt;          \_/+\_/<br>
+&gt;            \_/+\<br>
+&gt;              \_/<br>
+&gt; <br>
+&gt; <br>
+&gt; * are pieces of one player and + are pieces of the other player.<br>
+&gt; <br>
+&gt; Playing Y from the above legal position is equivalent to playing<br>
+&gt; Hex in the unoccupied hexes of this position because a chains wins<br>
+&gt; for Y if and only if the chain restricted to originally unoccupied<br>
+&gt; hexes wins for Hex (in the Hex version, player * is connecting the<br>
+&gt; southwest border up to the northeast).  Thus, to prove a completely<br>
+&gt; filled-in Hex board has a winning chain for one of the two players,<br>
+&gt; it suffices to prove that a filled-in Y board has a winning chain<br>
+&gt; for one of the two players.<br>
+&gt; <br>
+&gt; The proof makes use of &quot;Y-reduction.&quot;<br>
+&gt; <br>
+&gt; Y-reduction: From a completely filled-in order n Y-board,construct<br>
+&gt; a completely filled-in order n-1 Y-board as follows.  For each<br>
+&gt; triangle of three mutually adjacent hexes oriented the same way as<br>
+&gt; the board, replace it with a single hexagon whose piece color is<br>
+&gt; that of the majority of the colors in the triangle.<br>
+&gt; Ex.<br>
+&gt;          _<br>
+&gt;        _/4\           <br>
+&gt;      _/3\1/                  _/3\<br>
+&gt;    _/2\1/3\                _/2\1/<br>
+&gt;   /1\1/2\2/               /1\1/2\<br>
+&gt;   \1/1\2/2\               \1/1\2/<br>
+&gt;     \2/1\3/                 \2/1\<br>
+&gt;       \3/1\                   \3/<br>
+&gt;         \4/<br>
+&gt;          <br>
+&gt; <br>
+&gt; The triangle of hexes with coordinates<br>
+&gt; x  x+1   x<br>
+&gt; y   y   y+1       <br>
+&gt;  <br>
+&gt; on the order-n board corresponds to the hexagon<br>
+&gt;  x<br>
+&gt;  y  on the order n-1 board<br>
+&gt; <br>
+&gt; <br>
+&gt; Lemma: If a player has a winning chain on the reduced board, then<br>
+&gt; that player also has a winning chain on the original board.<br>
+&gt; <br>
+&gt; It&#x27;s easy to verify (but ugly to write up rigorously) that if a player<br>
+&gt; has a winning chain on the reduced board, then he also has a winning<br>
+&gt; chain through the corresponding triangles on the original board.<br>
+<br>
+Consider two adjacent hexes along the winning chain on the reduced<br>
+board.  Each of corresponding adjacent/overlapping triangles must<br>
+have at least two pieces of the winning color.<br>
+<br>
+Case 1: The unique hex in the overlap is of the winning color.<br>
+Then both of the other disjoint &quot;truncated triangles&quot; has some<br>
+piece of the winning color.  Both pieces are adjacent to the<br>
+piece in the overlap and hence must form a chain connecting the<br>
+corresponding edges.<br>
+<br>
+Case 2: The unique hex in the overlap is not of the winning color.<br>
+Then all four of the remaining hexes are occupied by the winning<br>
+color.  Again these hexes form a chain connecting the corresponding<br>
+edges. (it helps to draw a diagram).<br>
+<br>
+A triangle corresponding to a reduced hex, contains at least two<br>
+pieces of the same color and thus, each edge of the triangle must<br>
+contain at least one piece (since each edge contains all but one<br>
+of the hexes in the triangle).  This observation completes the proof.<br>
+<br>
+(you need this fact to establish that for any piece connected to the<br>
+edge of the reduced board, that color must also be connected to the<br>
+corresponding edge in the original board.  This fact also acts as a<br>
+base case for induction.)<br>
+<br>
+<br>
+&gt; [note: the converse of the lemma is also true but we don&#x27;t need it.]<br>
+<br>
+&gt; Thm. One of the player&#x27;s has a winning chain on a completely filled-in<br>
+&gt; Y board.<br>
+&gt; <br>
+&gt; Proof:<br>
+&gt; From any completely filled-in Y board, perform a sequence of<br>
+&gt; Y-reductions to reduce the board to a filled-in order 1 board.<br>
+&gt; The filled-in order 1 board obviously has a winning chain and<br>
+&gt; hence by the lemma, each Y board in the sequence has a winning<br>
+&gt; chain.<br>
+&gt; <br>
+&gt; <br>
+&gt; I wish I could take credit for this proof but it is due to<br>
+&gt; Ea Ea (his former name was Craige Schensted).<br>
+<br>
+Steve Meyers posted a link to a web page containing essentially<br>
+this same argument.  However, this page claims *only* the converse<br>
+of the above lemma which is not sufficient for the proof; the<br>
+other direction is what is needed.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

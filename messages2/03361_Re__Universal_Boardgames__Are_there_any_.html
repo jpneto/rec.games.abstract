@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Universal Boardgames: Are there any?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Universal Boardgames: Are there any?</h1>
+    <p><strong>From:</strong> torbenm@diku.dk (Torben AEgidius Mogensen)<br>
+    <strong>Date:</strong> 09 08 1996 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+mschnei1@isd.net writes:<br>
+<br>
+&gt;   I&#x27;ve been toying with a universal wargame map, which is composed of<br>
+&gt;several very large hexes (overlain with a grid of smaller hexes) with land<br>
+&gt;and water terrein boundaries at the midpoint of every other edge. Each hex<br>
+&gt;is different, and since they can be randomly fitted together in virtually<br>
+&gt;thousands of different configurations, the map one plays on is different<br>
+&gt;in every game. Each hex will have colored territories representing nations<br>
+&gt;(with smaller subdivisions) and various natural and manmade features<br>
+&gt;represented.<br>
+<br>
+&gt;   The following games I am attempting to &quot;port&quot; over to my &quot;variable<br>
+&gt;geometry&quot; mapboard:<br>
+<br>
+&gt;Civilization<br>
+&gt;Shogun/Samuri Swords<br>
+&gt;Axis &amp; Allies (2-winner cutthroat variant)<br>
+&gt;Barbarian, Kingdom and Empire<br>
+&gt;History of the World<br>
+&gt;..other games of the ilk.<br>
+<br>
+<br>
+&gt;If someone has already done this or something like it, I&#x27;d very much like<br>
+&gt;to see what they&#x27;ve accomplished.<br>
+<br>
+I have also done some design work towards a game that uses a mapboard<br>
+composed out of smaller pieces. This is in itself not a new idea,<br>
+several games have done this to some extent:<br>
+<br>
+ - Magic Realm uses Hexagonal pieces with roads/paths to create a map<br>
+   with weird connectivity.<br>
+<br>
+ - Kings &amp; Things and Die Siedler uses hexagonal pieces to make a more<br>
+   traditional board.<br>
+<br>
+ - Wizards (Avalon Hill) uses fairly large hexagonal pieces each with<br>
+   smaller hexagons to build a map.<br>
+<br>
+ - Magic Wood and Sorcerers Cave use rectangular cards to produce a<br>
+   map of paths.<br>
+<br>
+My idea sounds similar to yours, with terrain borders at the edges of<br>
+the pieces, but it uses rectangular tiles to produce a hexgrid map.<br>
+<br>
+Each tile contains a central hexagon and 6 semi-hexagons. The tile<br>
+are laid out in a staggered pattern with matching connections like<br>
+this:<br>
+<br>
+<br>
+    +-----+-----+           +-----+-----+<br>
+    |     |     |           |     |     |<br>
+    | M   ^   M |           | F   ^   M |<br>
+    |    / \    |           |  * / \    |<br>
+    |   /   \   |           |   /   \   |<br>
+    |\ /  *  \ /|           |\ /     \ /|<br>
+    | v       v |           | v   *   v |<br>
+    | |       | |           | |       | |<br>
+    |F|   P   |P|-----+-----+F|   F   |M|-----+-----+<br>
+    | |       | |     |     | |       | |     |     |<br>
+    | ^       ^ | P   ^   F | ^       ^ | M   ^   M |<br>
+    |/ \     / \|    / \ *  |/ \     / \|    / \ *  |<br>
+    |   \   /   |   /   \   |   \   /   |   /   \   |<br>
+    |  * \ /    |\ /     \ /|    \ /    |\ /     \ /|<br>
+    | F   v   S | v       v | S   v   F | v  * *  v |<br>
+    |     |     |           |     |     | |       | |<br>
+    +-----+-----+     S     |-----+-----+F|   P   |P|<br>
+    |     |     |           |     |     | |       | |<br>
+    | F   ^   S | ^       ^ | S   ^   F | ^       ^ |<br>
+    |  * / \    |/ \     / \|    / \    |/       / \|<br>
+    |   /   \   |   \   /   |   /   \   |       /   |<br>
+    |\ /     \ /|    \ /    |\ /     \ /|  *   /    |<br>
+    | v       v | S   v   P | v   *   v |     v   S |<br>
+    | |       | |     |     | |       | |     |     |<br>
+    |M|   P   |S|-----+-----+P|   P   |P|-----+-----+<br>
+    | |       | |     |     | |       | |     |     |<br>
+    | ^       ^ | S   ^   P | ^       ^ |     ^   S |<br>
+    |/ \     / \|    / \    |/ \     / \|  *   \    |<br>
+    |   \   /   |   /   \   |   \   /   |       \   |<br>
+    |    \ / *  |\ /     \ /|    \ / *  |\       \ /|<br>
+    | M   v   P | v   *   v | F   v   F | v   *   v |<br>
+    |     |     | |         |     |     | |       | |<br>
+    +-----+-----+P|   F     |-----+-----+F|   P   |F|<br>
+    |     |     | |         |     |     | |       | |<br>
+    | M   ^   P | ^       ^ | F   ^   F | ^       ^ |<br>
+    |    / \ *  |/ \     / \|  * / \    |/ \     / \|<br>
+    |   /   \   |   \   /   |   /   \   |   \   /   |<br>
+    |\ /     \ /|    \ / *  |\ /     \ /|    \ /    |<br>
+    | v   *   v | P   v   F | v  * *  v | S   v   P |<br>
+    | |       | |     |     | |       | |     |     |<br>
+    |M|   M   |P|-----+-----+F|   F   |S|-----+-----+<br>
+    | |       | |     |     | |       | |     |     |<br>
+    | ^       ^ | P   ^   F | ^       ^ | S   ^   P |<br>
+    |/ \     / \|    / \    |/ \     / \|    / \    |<br>
+    |   \   /   |   /   \   |   \   /   |   /   \   |<br>
+    |  * \ / *  |\ /     \ /|    \ /    |\ /     \ /|<br>
+    | M   v   F | v       v | F   v   S | v   *   v |<br>
+    |     |     | |       | |     |     | |       | |<br>
+    +-----+-----+F|   S   |F|-----+-----+S|   P   |M|<br>
+                | |       | |           | |       | |<br>
+                | ^       ^ |           | ^       ^ |<br>
+                |/       / \|           |/ \     / \|<br>
+                |       /   |           |   \   /   |<br>
+                |      / *  |           |    \ / *  |<br>
+                |     v   P |           | P   v   M |<br>
+                |     |     |           |     |     |<br>
+                +-----+-----+           +-----+-----+<br>
+<br>
+The letters represent terrain: S = sea, P = plains, F = forest and M =<br>
+mountain. These are better represented by colour, but the ASCII format<br>
+doesn&#x27;t allow this. I have omitted some hex-borders to allow areas<br>
+that are more than one hexagon in size (missing borders are most<br>
+likely in sea, then plains, then forest and finally mountain). For<br>
+more universal use, these could be made dotted and count as borders in<br>
+some games. The asterisks in some hexes represent resources, and can<br>
+have different uses depending on the game played. If the height/width<br>
+ratio of the tiles is 2/sqrt(3) the hexagons are regular, but the<br>
+standard trading card size will not be too bad.<br>
+<br>
+An area is counted as part of the board if it either contains the<br>
+middle of a tile or extends across two or more tiles.<br>
+<br>
+You can add more terrain types (e.g. swamp) if you like, but that will<br>
+increase the number of tiles you need to have to avoid having to<br>
+backtrack too much when building a map (otherwise, it can get to be<br>
+like those puzzles where you have to match heads with tails). You can<br>
+also add rivers (which cross tiles at restricted places) but that<br>
+gives the same problem.<br>
+<br>
+It has been suggested in the &quot;death of wargames&quot; thread that a problem<br>
+with wargames and similar board games is that once you have bought it,<br>
+the publisher doesn&#x27;t get more from you for that game. In contrast to<br>
+this is role-playing games where you buy adventures and sourcebooks,<br>
+trading card games where you buy ever more cards and GW games where<br>
+you buy miniatures.<br>
+<br>
+A game based on such tiles as the above can generate add-on sales by<br>
+publishing additional tiles (the number of different tiles is<br>
+staggering enough to make this never-ending) or additional games using<br>
+the same tiles. This will decrease production cost too, requiring only<br>
+game tokens and rulebooks for the additional games. Additional terrain<br>
+types could be introduced by expansion sets with tiles using that<br>
+terrain and rules describing how to use the terrain with the various<br>
+published games.<br>
+<br>
+I now place this idea in the public domain, allowing anyone interested<br>
+to use it commercially or privately. If someone does use it<br>
+commercially, I wouldn&#x27;t mind free copies of the games, though. ;-)<br>
+<br>
+As for using these tiles for existing games, here are a few<br>
+suggestions:<br>
+<br>
+Civilization: The number of resource asterisks determines the<br>
+population an area can support: 1+#asterisks. Forest count as<br>
+floodable areas (for the flood disaster). Volcano tokens are<br>
+distributed randomly among the mountain areas. Starting ares for each<br>
+nation are chosen randomly at the start (before players choose<br>
+nations) by selecting a tile. Any area (even partly) on that tile is a<br>
+legal starting area for this nation. Use the same AST track for all<br>
+nations but use the standard (reverse) AST order to determine order of<br>
+play.<br>
+<br>
+Britannia: Mountains count as hilands, forest and plains are<br>
+identical. Assume that the tiles are surrounded by sea with each sea<br>
+area neighbouring two tiles. The sea area will include any sea area<br>
+bordering the edges of the tile (this may make a sea area on a tile<br>
+part of two sea areas. Choose one). Nations starting on the board each<br>
+get an army in a random land location. Then additional armies are<br>
+distributed in the following way: Starting with the area directly<br>
+north of the starting area of each nation, add an army if the ares is<br>
+an empty land area (and there are available armies). Then (again for<br>
+each nation) go clockwise round the starting area, adding armies if<br>
+the area is empty. When all the ares surrounding the starting area<br>
+have been checked, go round the circle at distance 2 from the starting<br>
+area etc. Note that the armies may be disconnected and that not all<br>
+nations get the same number of armies.  For each nation not on the<br>
+board at the start of the game, choose randomly a sea area at the edge<br>
+of the board and let that nation start there. Since the potential<br>
+income of a nation is now very much different than in the standard<br>
+game, auction off the nations to the players after the initial set<br>
+up. The points used to purchase nations are subtracted from the<br>
+victory points afterwards. Nations enter the game at the standard rate<br>
+and count VP as usual for killing other pieces, but whenever VP for<br>
+areas are mentioned all areas count the same victory points for all<br>
+players: 1 plus one half times the number of asterisks. This includes<br>
+limes points for the Romans. The special Welsch VP for holding York<br>
+are dropped.<br>
+<br>
+In both Civilization and Britannia the omitted (dotted) borders do<br>
+not count, so areas may be more than one hex.<br>
+<br>
+I haven&#x27;t played any of the other games mentioned at the top, so I<br>
+don&#x27;t have any suggestions for these.<br>
+<br>
+	Torben Mogensen (torbenm@diku.dk)<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

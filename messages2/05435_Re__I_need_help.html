@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: I need help</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: I need help</h1>
+    <p><strong>From:</strong> Bruno Wolff III &lt;bruno@cerberus.csd.uwm.edu&gt;<br>
+    <strong>Date:</strong> 15 Apr 2002 16:08:59 GMT</p>
+    <hr>
+    <div>In article &lt;3CBADC20.15BD552D@web.page&gt;, Jan Kristian Haugland wrote:<br>
+&gt; <br>
+&gt; What solution do you have? It seems that we get the P-positions<br>
+&gt; by starting with P_0 = {0, 0} and adding recursively for k &gt;= 1<br>
+&gt; <br>
+&gt;    P_k = {smallest positive integer not used, same + k}<br>
+&gt; <br>
+&gt; This gives: {1, 2}, {3, 5}, {4, 7}, {6, 10}, {8, 13}, {9, 15},<br>
+&gt; {11, 18}, {12, 20}, {14, 23}, {16, 26}, {17, 28}, ...<br>
+&gt; <br>
+&gt; I guess it&#x27;s tricky to find a closed form expression for these.<br>
+<br>
+That is what I got assuming the normal ending condition (you lose if<br>
+you can&#x27;t move). I think the misre game will have a similar rule, but<br>
+the starting point will be {0, 1} instead of {1,2}. So that if you subtract<br>
+1 from both coordinates in a P position for the normal game, you get a P<br>
+position in the misre game.<br>
+<br>
+It looks like the number P positions with both coordinates &lt;= n is O(n).<br>
+(I think it is at least [n/4].) So if the original poster wants all of<br>
+the P positions for the &#x27;solution&#x27;, then it will take O(n) time to return<br>
+them.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>The Second International RoShamBo Programming Competition</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>The Second International RoShamBo Programming Competition</h1>
+    <p><strong>From:</strong> darse@cs.UAlberta.CA (Darse Billings)<br>
+    <strong>Date:</strong> 02 06 2000 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+      The Second International RoShamBo Programming Competition<br>
+      ---------------------------------------------------------<br>
+<br>
+  Summary:  Write a program to play Rock-Paper-Scissors, and enter it<br>
+            to play in an open competition against other programs.<br>
+<br>
+  Purpose:  To have fun, and maybe learn something.<br>
+<br>
+  URL:      http://www.cs.ualberta.ca/~darse/rsbpc.html<br>
+<br>
+  Deadline for entries:  Monday, July 10, 2000.<br>
+<br>
+<br>
+RoShamBo (also known as Rock-Paper-Scissors) is a simple game, but the<br>
+best strategy can be quite complicated when playing against fallible<br>
+opponents.<br>
+<br>
+The game is played between two players.  On each turn, the players<br>
+simultaneously choose one of &quot;rock&quot;, &quot;paper&quot;, or &quot;scissors&quot;.  If they<br>
+choose the same item, the result is a tie; otherwise rock crushes<br>
+scissors, paper covers rock, or scissors cuts paper.  A match consists<br>
+of a series of turns between the two players.<br>
+<br>
+The game is trivial from a game-theoretic point of view.  The optimal<br>
+mixed strategy is to choose an action uniformly at random (one-third<br>
+probability of each).  This will ensure a break-even result in the long<br>
+run, regardless of how strong (or how weak!) the opponent is.<br>
+<br>
+However, against predictable opponents, a player can attempt to detect<br>
+patterns in the opponent&#x27;s play, and exploit those tendencies with an<br>
+appropriate counter-strategy.<br>
+<br>
+The RoShamBo Programming Competition is a tournament between computer<br>
+programs that play Rock-Paper-Scissors.  Some of the programs in the<br>
+tournament will use sub-optimal strategies, and will be vulnerable to<br>
+a perceptive and adaptive opponent.  Of course, there is always a risk<br>
+associated with such a prediction, as the opponent may be attempting<br>
+to trap you, by anticipating your reaction to previous plays.<br>
+<br>
+The most successful programs will recognize a variety of patterns and<br>
+relationships, and use that information to gain an advantage over each<br>
+opponent, without being susceptible to similar attacks.<br>
+<br>
+To enter the competition, participants will write a C procedure to play<br>
+Rock-Paper-Scissors, given only the complete history of the match<br>
+against the current opponent.  The _test suite_ is an example program<br>
+for conducting RoShamBo tournaments (this may not be the exact version<br>
+used in the official competition, but the protocol for computer players<br>
+will be the same).  The test suite contains many examples of RoShamBo<br>
+players, including almost all of the top contenders from the first<br>
+programming competition.  A smaller _sample program_ is also available<br>
+(this includes only the dummy bots).<br>
+<br>
+Please note that the computer players used in the sample programs will<br>
+not be playing in the official competition (except Random (Optimal)).<br>
+The exploitable characteristics of the intentionally weak programs in<br>
+the actual tournament will be quite subtle, and may change over time.<br>
+<br>
+<br>
+  Rules of the Second International RoShamBo Programming Competition<br>
+  ------------------------------------------------------------------<br>
+<br>
+1.  All programs must be written in standard C, using common libraries.<br>
+All code must compile cleanly using:<br>
+<br>
+    &quot;gcc -Wall -O5 progname.c -lm&quot;<br>
+<br>
+There must be no reported errors and no warnings of any kind.  Note<br>
+that -O5 optimization does not ensure the initialization of certain<br>
+variables, so you must program carefully.  No attempt will be made to<br>
+fix programming errors.  Any program that does not function properly<br>
+on the organizer&#x27;s machine, for any reason, will be rejected.<br>
+<br>
+2.  Each player will be a C function with no parameters, returning<br>
+a single integer value:  0 = rock,  1 = paper, or 2 = scissors.<br>
+<br>
+3.  Computer players must be fast!  Each player must be able to finish<br>
+a 1000 turn match in one second on the tournament machine.  This should<br>
+allow several passes through a full history array, but may preclude<br>
+certain compute-intensive algorithms.  Slower programs will be rejected.<br>
+(Hint: using static variables may avoid some unnecessary re-computation).<br>
+Please use distinct names in the code, such as prefacing all variables<br>
+and procedures with your initials.<br>
+<br>
+Limitations on memory usage may be added later, if necessary (but using<br>
+less than 50K should not pose a problem).<br>
+<br>
+There is no limit on program length, but there will be a special side<br>
+competition for smaller programs (roughly 40 C statements or less).<br>
+Qualification for this category is at the discretion of the organizer,<br>
+and will be based on number of lines, keywords, size of the object file,<br>
+and other measures.<br>
+<br>
+4.  The length of each match will be 1000 turns.  The numerical result<br>
+of each match will be used in the overall standings.  For example, 200<br>
+wins, 300 losses, and 500 ties over 1000 turns would net -100 points for<br>
+that match.  The match result (win, lose, or draw) is also important.<br>
+A draw is defined to be a range of outcomes statistically close to the<br>
+break-even result (0 points).<br>
+<br>
+5.  Players may access full history arrays for the match, as global<br>
+variables.  These arrays will be called my_history[] and opp_history[].<br>
+Players may also use any provided routines, such as flip_biased_coin(),<br>
+and biased_roshambo().  Players must not access any memory or procedures<br>
+not intended for their use, and must not use srandom() to set the random<br>
+number seed.  Any attempt to thwart the tournament system in any way, or<br>
+any behavior that is not in the spirit of the competition, will result<br>
+in disqualification.<br>
+<br>
+6.  There is no rule 6.<br>
+<br>
+7.  All submissions become public domain.  However, appropriate credit<br>
+will be given to the original author(s) for any ideas or source code<br>
+that are used or published in the future.<br>
+<br>
+8.  The decisions of the organizer are final, and supercede all other<br>
+rules.  No further discussion will be entertained.<br>
+<br>
+<br>
+  To Enter<br>
+  --------<br>
+<br>
+1.  Give your program a name to appear on the tournament crosstable<br>
+(maximum of 18 characters).  The names of all programs in the first<br>
+competition are reserved for their original author.<br>
+<br>
+2.  Acknowledge any other programs you may have used as a model.  Any<br>
+entry deemed to be too similar to an existing program will be rejected<br>
+without further consideration.<br>
+<br>
+3.  Submit your program by e-mail to darse@cs.ualberta.ca .  Please put<br>
+&quot;RoShamBo&quot; in the subject.  The e-mail must include the source code in<br>
+the body of the message, in PLAIN TEXT only: no HTML, no attachments.<br>
+If you believe you also qualify for the mini-program competition, please<br>
+indicate that in your message.<br>
+<br>
+  Deadline: Monday, July 10, 2000.<br>
+<br>
+Good luck!<br>
+<br>
+<br>
+  FAQ (frequently asked questions)<br>
+  --------------------------------<br>
+<br>
+  Q: What kind of hardware and operating system will be used?<br>
+<br>
+A: The competition will be run on a fast PC running Linux.  If the code<br>
+compiles cleanly with a recent version of gcc, the development platform<br>
+shouldn&#x27;t matter too much.<br>
+<br>
+  Q: Can I enter Random (Optimal)?<br>
+<br>
+A: No.  You shouldn&#x27;t want to anyway, because it is guaranteed to finish<br>
+in the middle of the pack.  It definitely will not finish in first place,<br>
+because it cannot exploit the weaker programs.<br>
+<br>
+  Q: Are we allowed to have other functions, or must everything be done<br>
+     in a single function?<br>
+<br>
+A: You may have auxiliary functions, provided they can all be placed<br>
+together in the tournament program.  There must, of course, be only one<br>
+player that is called for each move.<br>
+<br>
+  Q: Can I enter more than one program?<br>
+<br>
+A: You may, provided they are completely independent (ie. one does not<br>
+lose to the other by a large margin, in order to stack the results).<br>
+If I have any doubts, I will take only the last entry, or I will assign<br>
+a zero result to that match-up.<br>
+<br>
+  Q: Do you want C source that compiles to an object file, or do you<br>
+     want code you can cut and paste?<br>
+<br>
+A: Cut and paste.  You should be able to just plug it into the sample<br>
+tournament program.<br>
+<br>
+  Q: Can I produce my own random numbers, or must I use random(),<br>
+     and the provided flip_biased_coin() and biased_roshambo()?<br>
+<br>
+A: You may use your own random number generator, but it must use a fixed<br>
+seed, so that the tournament results are reproducible, given a fixed<br>
+seed to srandom().  However, there is little to be gained from using<br>
+your own RNG.<br>
+<br>
+  Q: Do you plan to use the same scoring system for the competition<br>
+     that your example program has?<br>
+<br>
+A: Yes and no.  There will effectively be two divisions, and all<br>
+programs will participate in both.  In the first format, the magnitude<br>
+of each match counts.  The winner of this competition will be the<br>
+program that is most efficient at detecting and exploiting weaker<br>
+programs.  The second format will be &quot;evolutionary&quot;, based on match<br>
+results.  This may be the &quot;Best of the Best&quot; format used in the 1999<br>
+competition, or may be an entirely new system.  Regardless, the winner<br>
+of this event will be the program that defeats all other opponents,<br>
+even if only by a small margin.<br>
+<br>
+  Q: Can I use the &quot;trials&quot; constant to know how many trials will be<br>
+     played (for defining array sizes, for example)?<br>
+<br>
+A: Yup, that&#x27;s what constants are for. :)  The tournament matches will<br>
+be 1000 turns, but other sizes may be tried in certain experiments.<br>
+<br>
+  Q: RoShamBo?  I thought that was the game where you and Cartman<br>
+     take turns kicking each other in the nuts as hard as you can.<br>
+<br>
+A: No, that&#x27;s Roshambeau.  Notice that alternating turns (rather than<br>
+playing simultaneously) affects the strategy.  Going first tends to be<br>
+somewhat advantageous in Roshambeau.<br>
+<br>
+  Q: Where can I play RoShamBo on the World Wide Web?<br>
+<br>
+A: You can play Perry Friedman&#x27;s original RoShamBot at:<br>
+   http://chappie.stanford.edu/cgi-bin/roshambot<br>
+<br>
+   Or play the new RoShamBot at Pick&#x27;em Sports:<br>
+   http://contest1.pickem.com/cgi-bin/roshambo/roshambot.cgi<br>
+<br>
+--<br>
+<br>
+&quot;There&#x27;s no sense in searching for perfection <br>
+   when you&#x27;re making successful mistakes&quot;	-The Tragically Hip.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Permudrome -- Grid Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Permudrome -- Grid Game</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Thu, 23 Dec 2010 11:00:12 -0800 (PST)</p>
+    <hr>
+    <div><br>
+<br>
+Leroy Quet wrote:<br>
+&gt; Leroy Quet wrote:<br>
+&gt; &gt; Here is a game for 2 players.<br>
+&gt; &gt; The game&#x27;s name is a combination of the words &quot;permutation&quot; and<br>
+&gt; &gt; &quot;palindrome&quot;.<br>
+&gt; &gt;<br>
+&gt; &gt; Start with an n-by-n grid,<br>
+&gt; &gt; where n is a multiple of 4.<br>
+&gt; &gt; I suggest that n is &gt;= 8.<br>
+&gt; &gt;<br>
+&gt; &gt; The players take turns. On a turn a player draws two x&#x27;s into the<br>
+&gt; &gt; grid, each x into an empty square such that no column or row has more<br>
+&gt; &gt; than one x.<br>
+&gt; &gt;<br>
+&gt; &gt; After there is exactly one x in each row and in each column -- n x&#x27;s<br>
+&gt; &gt; total, n/4 moves for each player -- play is over.<br>
+&gt; &gt;<br>
+&gt; &gt; Write down the (n-1) absolute values in order, of the changes in the<br>
+&gt; &gt; vertical positions of adjacent x&#x27;s from column to column, along the<br>
+&gt; &gt; bottom of the grid.<br>
+&gt; &gt; Write down the (n-1) absolute values in order, of the changes in the<br>
+&gt; &gt; horizontal positions of adjacent x&#x27;s from row to row, along the left<br>
+&gt; &gt; side of the grid.<br>
+&gt; &gt;<br>
+&gt; &gt; Player 1 gets as a score the length of the largest palindromic<br>
+&gt; &gt; subsequence within the sequence of vertical changes written along the<br>
+&gt; &gt; bottom of the grid.<br>
+&gt; &gt;<br>
+&gt; &gt; Player 2 gets as a score the length of the largest palindromic<br>
+&gt; &gt; subsequence within the sequence of horizontal changes written along<br>
+&gt; &gt; the left side of the grid.<br>
+&gt; &gt;<br>
+&gt; &gt; Largest score wins. (Ties are possible.)<br>
+&gt; &gt;<br>
+&gt; &gt; Example: n=12:<br>
+&gt; &gt;<br>
+&gt; &gt; . . x . . . . . . . . .<br>
+&gt; &gt; . . . . x . . . . . . .<br>
+&gt; &gt; . . . . . . x . . . . .<br>
+&gt; &gt; x . . . . . . . . . . .<br>
+&gt; &gt; . . . . . x . . . . . .<br>
+&gt; &gt; . . . . . . . x . . . .<br>
+&gt; &gt; . x . . . . . . . . . .<br>
+&gt; &gt; . . . x . . . . . . . .<br>
+&gt; &gt; . . . . . . . . x . . .<br>
+&gt; &gt; . . . . . . . . . . . x<br>
+&gt; &gt; . . . . . . . . . . x .<br>
+&gt; &gt; . . . . . . . . . x . .<br>
+&gt; &gt;<br>
+&gt; &gt; Changes in vertical positions column to column:<br>
+&gt; &gt; 3,6,7,6,3,2,3,3,3,1,1<br>
+&gt; &gt; The largest palindromic subsequence is (3,6,7,6,3). Player 1 gets 5<br>
+&gt; &gt; points.<br>
+&gt; &gt;<br>
+&gt; &gt; Changes in horizontal positions row to row:<br>
+&gt; &gt; 2,2,6,5,2,6,2,5,3,1,1,<br>
+&gt; &gt; The largest palindromic subsequence is (5,2,6,2,5). Player 2 gets 5<br>
+&gt; &gt; points.<br>
+&gt; &gt;<br>
+&gt; &gt; It is a tie.<br>
+&gt; &gt;<br>
+&gt; &gt; What about strategies for this game?<br>
+&gt;<br>
+&gt;<br>
+&gt; Should I tell you why I have players draw 2 x&#x27;s at a time, instead of<br>
+&gt; just one x? Or should I leave the question why as a simple puzzle?<br>
+<br>
+<br>
+I might as well answer this. If you must place just one x each move,<br>
+and n is even, then player 2 can match every move by player 1. If<br>
+player 1 places an x at (a,b), then player 2 could just place an x at<br>
+(b,a) every time or at (n+1-a,n+1-b) every time or at (n+1-b,n+1-a)<br>
+every time, at least until the last couple moves. If player 2 always<br>
+matches player b, this guarantees a tie. Otherwise the game just comes<br>
+down to the last few moves only. -- not much strategy is required. If<br>
+n is odd, then player 1 can place an x in the middle square, then<br>
+match player 2&#x27;s moves thereafter. However, if players play two x&#x27;s at<br>
+a time, and player 1, say, is detecting player 2 matching his moves,<br>
+then player 2 can place an x at (a,b) and (n+1-a,c), c not equal to n<br>
++1-b, say, if, say, player 2 was placing an x at (n+1-a,n+1-b) at<br>
+every x placed at (a,b) by player 1.<br>
+<br>
+By the way, here is my blog of my games. There are like 130 games<br>
+there now.<br>
+http://gamesconceived.blogspot.com/<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

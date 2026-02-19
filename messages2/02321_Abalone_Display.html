@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Abalone Display</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Abalone Display</h1>
+    <p><strong>From:</strong> rrognlie@netcom.com (Richard Rognlie)<br>
+    <strong>Date:</strong> Tue, 20 Sep 1994 13:30:26 GMT</p>
+    <hr>
+    <div>Hi, all!<br>
+<br>
+I&#x27;m working on a PBeM version of Abalone, and I&#x27;d like your opinion on which<br>
+board display you like better:<br>
+<br>
+<br>
+         1 2 3 4 5<br>
+        / / / / / 6<br>
+    A- . . . . . / 7<br>
+   B- . . . . . . / 8<br>
+  C- . . . . . . . / 9<br>
+ D- . . . . . . . . /<br>
+E- . . . . . . . . .<br>
+ F- . . . . . . . .<br>
+  G- . . . . . . .<br>
+   H- . . . . . .<br>
+    I- . . . . .<br>
+<br>
+<br>
+             1   2   3   4   5<br>
+            /   /   /   /   /<br>
+        A- .   .   .   .   .   6<br>
+                              /<br>
+      B- .   .   .   .   .   .   7<br>
+                                /<br>
+    C- .   .   .   .   .   .   .   8<br>
+                                  /<br>
+  D- .   .   .   .   .   .   .   .   9<br>
+                                    /<br>
+E- .   .   .   .   .   .   .   .   .<br>
+<br>
+  F- .   .   .   .   .   .   .   .<br>
+<br>
+    G- .   .   .   .   .   .   .<br>
+<br>
+      H- .   .   .   .   .   .<br>
+<br>
+        I- .   .   .   .   .<br>
+<br>
+<br>
+The notation will be:<br>
+	&lt;pos&gt;[-&lt;pos&gt;],&lt;pos&gt;<br>
+<br>
+Where &lt;pos&gt; is:  &lt;Row&gt;&lt;Col&gt;<br>
+<br>
+The 1st position specified is pushed to the position after the comma.<br>
+<br>
+For example,<br>
+<br>
+         1 2 3 4 5<br>
+        / / / / / 6<br>
+    A- . . . . . / 7<br>
+   B- . . . . . . / 8<br>
+  C- . . . . . . . / 9<br>
+ D- . . . . . . . . /<br>
+E- . . . . . . . . .<br>
+ F- . 1 1 1 2 2 . .<br>
+  G- . . . . . . .<br>
+   H- . . . . . .<br>
+    I- . . . . .<br>
+<br>
+         1 2 3 4 5<br>
+        / / / / / 6<br>
+    A- . . . . . / 7<br>
+   B- . . . . . . / 8<br>
+  C- . . . . . . . / 9<br>
+ D- . . . . . . . . /<br>
+E- . . . . . . . . .<br>
+ F- . . 1 1 1 2 2 .<br>
+  G- . . . . . . .<br>
+   H- . . . . . .<br>
+    I- . . . . .<br>
+<br>
+would be f3-f5,f4<br>
+<br>
+Another example:<br>
+<br>
+         1 2 3 4 5<br>
+        / / / / / 6<br>
+    A- . . . . . / 7<br>
+   B- . . . . . . / 8<br>
+  C- . . 1 1 1 . . / 9<br>
+ D- . . . . . . . . /<br>
+E- . . . . . . . . .<br>
+ F- . . . . . . . .<br>
+  G- . . . . . . .<br>
+   H- . . . . . .<br>
+    I- . . . . .<br>
+<br>
+         1 2 3 4 5<br>
+        / / / / / 6<br>
+    A- . . . . . / 7<br>
+   B- . . . . . . / 8<br>
+  C- . . . . . . . / 9<br>
+ D- . . . 1 1 1 . . /<br>
+E- . . . . . . . . .<br>
+ F- . . . . . . . .<br>
+  G- . . . . . . .<br>
+   H- . . . . . .<br>
+    I- . . . . .<br>
+<br>
+would be c3-c5,d4<br>
+<br>
+What do you folk think?<br>
+<br>
+Richard<br>
+-- <br>
+   __       /----------------------------------------------------------------\<br>
+  /\_|      | Richard Rognlie / Sr. Computer Analyst / PRC Inc. / McLean, VA |<br>
+ / /.--.    | E-Mail: rrognlie@netcom.com *or* rognlie_richard@prc.com       |<br>
+ \/_*---*-, | Phone:  (Home) (703) 361-4764    (Office) (703) 556-2458       |<br>
+ (( _----_/ |                                  (Fax)    (703) 556-1174       |<br>
+ |&#x27;(  o o|  | #include &lt;standard.disclaimer&gt;                                 |<br>
+  \ \___/\  | #include &lt;witty.saying&gt;                                        |<br>
+   \/   \/  \----------------------------------------------------------------/<br>
+<br>
+-- <br>
+  /\/\/\  | Richard Rognlie / Sr. Computer Analyst / PRC Inc. / McLean, VA<br>
+ /  \ \ \ | E-Mail: rrognlie@netcom.com *or* rognlie_richard@prc.com<br>
+ \  / / / | Phone:  (Home) (703) 361-4764   (Office) (703) 556-2458<br>
+  \/\/\/  |                                 (Fax)    (703) 556-1174<br>
+<br>
+<br>
+</div>
+</body>
+</html>

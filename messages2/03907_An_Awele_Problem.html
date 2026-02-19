@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>An Awele Problem</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>An Awele Problem</h1>
+    <p><strong>From:</strong> Yann DAVID &lt;100552.1400@CompuServe.COM&gt;<br>
+    <strong>Date:</strong> 15 06 1998 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+Hello.<br>
+<br>
+Here is another problem inspired by the african game called &quot;Awele&quot;.<br>
+<br>
+Consider a finite array (vector) A of n buckets, and a finite set of<br>
+m identical tokens distributed in the buckets (a box may contain any<br>
+number of tokens). A move consists in taking the tokens from one of<br>
+the buckets and redistributing them, one token at a time, into the buckets<br>
+following the emptied bucket (starting with the leftmost of those buckets,<br>
+and proceeding towards the rightmost). If there are any tokens left after<br>
+the last bucket is fed, those tokens are taken out of the board; their<br>
+number is called the value of the move (if no tokens are taken out of the<br>
+board, the value of the move is zero).<br>
+<br>
+Now let there be a series of values V1, ..., Vk of which sum is m.<br>
+- Is there a series of moves that yields that series of values?<br>
+- What if zero-values are not taken into account?<br>
+<br>
+What is the status of the above problem - is it difficult? NP-complete?<br>
+<br>
+[NB:<br>
+<br>
+Let B1, ..., Bn be the numbers of tokens in the buckets, and the following<br>
+potential function:<br>
+       <br>
+f(A) = Sum        Sum (n-i-j+2)<br>
+       i in 1..n  j in 1..min(Bn, n-i+1)<br>
+<br>
+It is easily proven that:<br>
+1) f(A) = 0 iff A is empty;<br>
+2) any move (involving a non empty bucket) causes f to decrease by at<br>
+  least 1;<br>
+3) playing the rightmost non empty bucket causes f to decrease by 1 exactly;<br>
+4) f can be polynomially bounded by the &quot;length&quot; of the problem<br>
+  (by a polynom in m and n).<br>
+<br>
+1) &amp; 2) =&gt; any series of non trivial moves (moves on non empty buckets)<br>
+eventually empties the array.<br>
+<br>
+4) =&gt; a series of moves which empties the array has a length polynomially<br>
+bounded by the length of the problem, so that problem belongs to NP.<br>
+<br>
+1), 2), 3) =&gt; f(A) is actually the length of the longest series<br>
+of non trivial moves that can be played on A. Always playing the rightmost<br>
+bucket enables one to empty the array &quot;as slowly as possible&quot;.]<br>
+<br>
+Any hints, suggestions, references... are most welcome!<br>
+<br>
+Best regards,<br>
+<br>
+	Yann David<br>
+	100552.1400@compuserve.com<br>
+	France<br>
+<br>
+	<br>
+NB: Since I am not a regular reader of this newsgroup, please e-mail<br>
+your answers.<br>
+<br>
+&quot;Vous mariez pas, les filles!&quot; - Boris Vian<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

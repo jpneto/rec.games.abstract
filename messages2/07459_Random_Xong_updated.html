@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Random Xong updated</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Random Xong updated</h1>
+    <p><strong>From:</strong> Nate Smith &lt;greystone@net1plus.com&gt;<br>
+    <strong>Date:</strong> Tue, 09 May 2006 16:38:59 -0400</p>
+    <hr>
+    <div>  I found some time to go back and work on the java2 applet.<br>
+  The upshot is no more blinkety blinking.  the downside is<br>
+  no other real progress.  looks like the apache/tomcat<br>
+  interface is the way to go.  But for now, it is ready for<br>
+  more test driving.  it might be slow in places...and you<br>
+  do have to be accurate with your mouse.<br>
+<br>
+  quick review: Xong is an abstract game for 2 players that<br>
+  appears to have solved the First Move Advantage Problem by<br>
+  breaking up each move into 2 parts.  Like baseball, a Xong<br>
+  turn begins with the ball in the hands of the defense.  The<br>
+  first part of the turn is done by having the opponent design<br>
+  and give you the piece you have to play.  then you can play<br>
+  it anywhere it fits.  then you design your opponent&#x27;s piece<br>
+  and give it to him.  since each piece has to be unique, they<br>
+  begin small and gradually get bigger until no more can fit.<br>
+  when that happens, 1 point is given instead of a piece.<br>
+<br>
+  the applet will take a moment to load.  you should see a<br>
+  random board generated with no moves made yet.  Blue makes<br>
+  the first xoid (underwhelmingly the one-legged piece) and<br>
+  gives it to Red who then makes the first play.  this is done<br>
+  by Blue clicking the center of a leg and then the center of<br>
+  the GIVE hex.  Red can drag and click around the leg until<br>
+  he has it where he wants it.  then he hits the COMMIT hex<br>
+  to finsh the play.  now he designs the next xoid, usually<br>
+  the two-legger boomerang.  when building a larger piece<br>
+  you can click a leg a second time to throw it away.  the<br>
+  final built xoid must be all connected and made of vacant<br>
+  legs remaining on the board - the applet wont let you pick<br>
+  an occupied leg, but if you forget to connect them it will<br>
+  attempt to use only the upperrightmost part of it - which<br>
+  may then be a xoid already used, so you&#x27;ll get a message in<br>
+  the browser status line.<br>
+<br>
+<br>
+  go ahead - give it a spin:<br>
+<br>
+<br>
+  http://users.net1plus.com/greystone/xong/xonghome.html<br>
+<br>
+<br>
+- nate smith, inventor of Xong[tm]<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: gtkboard *and* pentominoes</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: gtkboard *and* pentominoes</h1>
+    <p><strong>From:</strong> &quot;Arthur J. O&#x27;Dwyer&quot; &lt;ajo@andrew.cmu.edu&gt;<br>
+    <strong>Date:</strong> Wed, 13 Aug 2003 15:56:22 -0400 (EDT)</p>
+    <hr>
+    <div><br>
+On Wed, 13 Aug 2003, Nate Smith wrote:<br>
+&gt;<br>
+&gt; Arthur J. O&#x27;Dwyer wrote:<br>
+&gt;<br>
+&gt; &gt; gtkboard only intuitively supports rectangular boards.  You&#x27;d have<br>
+&gt; &gt; to do something like splitting the square cells into triangles and<br>
+&gt; &gt; conceptualizing the game that way.  OTOH, if you *did* do that, I<br>
+&gt; &gt; bet you&#x27;d get a lot of props from the gtkboard devteam! :-)<br>
+&gt;<br>
+&gt;   i&#x27;m not sure i follow this - we&#x27;re talking about pentominoes?<br>
+<br>
+_You_ were talking about Xong. ;-)<br>
+Back to pentominoes, now...<br>
+<br>
+&gt; &gt; I have downloaded the current build, and I&#x27;m currently working on<br>
+&gt; &gt; the gtkboard interface for Capture Pentominoes.  At the moment,<br>
+&gt; &gt; my idea is to store the state of the board internally as an<br>
+&gt; &gt; array of characters in the format I posted in the first message:<br>
+&gt; &gt;<br>
+&gt; &gt;    .......<br>
+&gt; &gt;    ....N..<br>
+&gt; &gt;    ..wNN..<br>
+&gt; &gt;    .wwNL..<br>
+&gt; &gt;    ww.NL..<br>
+&gt; &gt;    ....L..<br>
+&gt; &gt;    ....LL.<br>
+&gt;  &gt;<br>
+&gt;  &gt; where the lowercase letters represent the most recent move.  Then<br>
+&gt;  &gt; checking for captures merely entails making a list of all the<br>
+&gt;  &gt; 84 edges on the board, and looking at the cells on either side of<br>
+&gt;  &gt; each edge.<br>
+&gt;<br>
+&gt; good! [...]<br>
+<br>
+Thanks.<br>
+<br>
+<br>
+&gt; &gt; The hardest thing about gtkboard, I think, is that as far as I<br>
+&gt; &gt; can tell its interface is limited to &quot;capture a click somewhere on<br>
+&gt; &gt; the board&quot;, which means it&#x27;ll be a pain to select and place<br>
+&gt; &gt; irregular figures like pentominoes.  Maybe it needs a full<br>
+&gt; &gt; user interface, something like the following very bad ascii-art:<br>
+&gt; &gt;<br>
+&gt; &gt;             --------------<br>
+&gt; &gt;   FILNPT   |              |<br>
+&gt; &gt;   UVWXYZ   |              |<br>
+&gt; &gt;   ------   |  the game    |<br>
+&gt; &gt; -|   =  |- |   board      |<br>
+&gt; &gt; &lt;| I=I  |&gt;||              |  ----<br>
+&gt; &gt; -| =    |- |              | | rm |<br>
+&gt; &gt;   ------   |              |  ----<br>
+&gt; &gt;             --------------<br>
+&gt; &gt;<br>
+&gt; &gt;    To remove a piece:<br>
+&gt; &gt;      Click the piece to select it.<br>
+&gt; &gt;      Click &quot;remove&quot;.<br>
+&gt; &gt;    To place a new piece:<br>
+&gt; &gt;      Click the letter corresponding to the piece.<br>
+&gt; &gt;      The piece will appear in the left-hand window.<br>
+&gt; &gt;      Click the left and right arrows to rotate the piece.<br>
+&gt; &gt;      Click one of the squares on the piece.<br>
+&gt; &gt;      Click an empty square on the board.<br>
+&gt; &gt;      The piece will be placed with the two squares coinciding.<br>
+&gt; &gt;<br>
+&gt; &gt; That&#x27;s a rather involved interface, and even *more* involved<br>
+&gt; &gt; for the programmer!  I&#x27;m not sure how to get around this.<br>
+&gt; &gt; Ideas welcome.<br>
+&gt;<br>
+&gt;   you probably would have enough room to have the 12 guys drawn<br>
+&gt;   off to the side.  then you {mouse over} &amp; click to select it.<br>
+&gt;   at this point it is stuck to your mouse pointer<br>
+<br>
+Nope, I don&#x27;t think gtkboard can do that.  I think it was the Chess<br>
+game that had a comment like &quot;drag &amp; drop isn&#x27;t working yet,&quot; but<br>
+even so I think they didn&#x27;t mean that you could *see* what you were<br>
+dragging, just that you should be able to make a move in one mouse<br>
+motion instead of two.<br>
+<br>
+&gt;   &amp; drags along<br>
+&gt;   with it.  a click rotates it to the right, a SHIFT-click to<br>
+&gt;   the left (because MAC mice only have 1 button), and then<br>
+&gt;   CONTROL-click flips it over if it is asymmetrical &amp; you need<br>
+&gt;   the other side of the pentomino.<br>
+<br>
+Dang!  I completely forgot about flipping-over when I wrote up<br>
+that ascii-art interface.  Add *another* button to flip the selected<br>
+piece over a vertical axis.<br>
+<br>
+And AFAIK each &quot;clickable&quot; thing in gtkboard has to be a &quot;cell&quot; on<br>
+the &quot;board,&quot; so even though the board is conceptually only 7x7, I&#x27;ll<br>
+end up with a board that&#x27;s like 15x12 by the time the interface is<br>
+done.<br>
+<br>
+&gt;   in my java Xong app i have the release of dragging the piece<br>
+&gt;   drop the piece, nestling it into a legal position, so you dont<br>
+&gt;   have to have single-pixel precision in your fingertips.<br>
+&gt;<br>
+&gt;   then you may wish to have a COMMIT MOVE button somewhere to<br>
+&gt;   make the move, as opposed to just dragging it around &amp; trying<br>
+&gt;   it out in several places whiler you drink another cup of coffee.<br>
+&gt;<br>
+&gt;   but gtk may not go for this.  ;-)<br>
+<br>
+Yeh.  Nice, though. :-)<br>
+<br>
+I don&#x27;t yet have access to a Linux graphical testbed, but I will<br>
+in less than two weeks now.  (School. :))  Then I expect to be able<br>
+to run what I have so far, and see how it really looks.<br>
+<br>
+-Arthur<br>
+<br>
+<br>
+</div>
+</body>
+</html>

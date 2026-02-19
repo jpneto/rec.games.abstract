@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Question about retrograde analysis algorithm for endgame databases</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Question about retrograde analysis algorithm for endgame databases</h1>
+    <p><strong>From:</strong> mathpoly@yahoo.com (mathpolymath)<br>
+    <strong>Date:</strong> 24 Apr 2002 12:34:58 -0700</p>
+    <hr>
+    <div>mathpoly@yahoo.com (mathpolymath) wrote in message<br>
+&gt; But what about a game whose score would<br>
+&gt; depend on the exact position of the first (or for that matter N&#x27;th)<br>
+&gt; repeat?  Imagine a game where the rules say the game ends whenever a<br>
+&gt; position is repeated twice (as in chess), but with the additional<br>
+&gt; caveat that the score might vary depending on the actual position when<br>
+&gt; this 2nd repeat occurs (in chess, the score of the 2nd repeat is<br>
+&gt; 0=draw)?<br>
+<br>
+Re-reading my message, I realize that I may not have made myself<br>
+clear.<br>
+<br>
+Imagine an abstract zero-sum game where among all of the millions of<br>
+possible endgame positions happen to exist 3 positions, X, Y, and Z<br>
+where X-&gt;Y, Z-&gt;Y and both Y-&gt;X or Y-&gt;Z<br>
+<br>
+If X has a score of 1, Y a score of 2, and Z a score of 3 if the game<br>
+draws by repetition on the respective position, then among possible<br>
+scenarios might be these two:<br>
+<br>
+... X Y X Y Z Y (2nd repeat.  score = 2)<br>
+... X Y X Y X (2nd repeat.  score = 1)<br>
+<br>
+In this type of game, how should the retrograde analysis algorithm be<br>
+set up to compute the endgame database for this type of game?<br>
+<br>
+<br>
+</div>
+</body>
+</html>

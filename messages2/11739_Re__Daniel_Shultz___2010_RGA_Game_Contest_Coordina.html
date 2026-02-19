@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Daniel Shultz - 2010 RGA Game Contest Coordinator</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Daniel Shultz - 2010 RGA Game Contest Coordinator</h1>
+    <p><strong>From:</strong> Greg &lt;dreamwafer@yahoo.com&gt;<br>
+    <strong>Date:</strong> Wed, 8 Jun 2011 04:51:23 -0700 (PDT)</p>
+    <hr>
+    <div>Thanks Daniel!<br>
+<br>
+<br>
+On Jun 7, 3:12 pm, &quot;Daniel S.&quot; &lt;antiw...@me.com&gt; wrote:<br>
+&gt; ...I wonder how many draw situations are possible using this system.<br>
+&gt; Or rather what the ratio is between draw and non-draw outcomes.<br>
+&gt; hmmm...<br>
+<br>
+The answer is 4.6% of all possible votes result in a draw.<br>
+<br>
+Below is my combinatorial analysis which answers the above question.<br>
+I have verified my analysis with a very simple<br>
+computer program which I can provide on request.  If anyone would care<br>
+to see/run the program, I&#x27;ll post it to the r.g.a. resource<br>
+page.<br>
+<br>
+1)<br>
+<br>
+Since there are 3! (6) ways to vote and 5 players, there are 6^5<br>
+(7776) possible ways to vote.<br>
+<br>
+2)<br>
+<br>
+For any ranking using this method, the total of all points is going to<br>
+be 5*5 + 3*5 + 5 = 45 points.<br>
+So the only way a 3 way tie can occur is when the points for each game<br>
+totals 45/3 = 15 points.<br>
+<br>
+3)<br>
+For a jury of 5 players there are two ways in which a sum of 15 can be<br>
+formed:<br>
+<br>
+5+5+3+1+1<br>
+5+3+3+3+1<br>
+<br>
+But for there to be a 3 way tie, there must be 5 5&#x27;s, 5 3&#x27;s and 5 1&#x27;s<br>
+as per the results:<br>
+<br>
+X: 5+5+3+1+1  = 15<br>
+Y: 5+3+3+3+1  = 15<br>
+Z: 5+5+3+1+1  = 15<br>
+<br>
+Where (X,Y,Z can be any assignment of K,M,S)<br>
+<br>
+In other words, there is no other possible way for there to be 5 each<br>
+of 5&#x27;s, 3&#x27;s and 1&#x27;s<br>
+and have each row sum to 15 other than the configuration shown above.<br>
+Note, I have replaced<br>
+the specific game with X, y and Z.  Which can be replaced with any<br>
+actual game (e.g. M, K, S).<br>
+<br>
+This can be summarized as follows:<br>
+<br>
+Two of the games must be the first pick for exactly 2 voters, the 2nd<br>
+pick for exactly one voter, and<br>
+a third pick for exactly 2 voters.<br>
+<br>
+The other game must be a first pick for exactly one voter, a 2nd pick<br>
+for 3 voters, and a 3rd pick<br>
+for one voter.<br>
+<br>
+4) Back to:<br>
+<br>
+A: MKS<br>
+B: SKM<br>
+C: MKS<br>
+D: SMK<br>
+E: KSM<br>
+<br>
+Making this more generic so that (K,M,S can be assigned arbitrarily to<br>
+X,Y,Z) we have:<br>
+<br>
+A: XYZ<br>
+B: ZKX<br>
+C: XYZ<br>
+D: ZXY<br>
+E: YZX<br>
+<br>
+There are 5! (120) ways to permute the above, but since XYZ appears<br>
+twice we must divide out 2! yielding<br>
+60 combinations.<br>
+<br>
+3 games (K,M,S) can be assigned to 3 variables in 3! (6) ways (e.g. X<br>
+= K, Y = M, Z = S, X = M, Y = S, Z = K, etc...)<br>
+so 60*6 (360) possibilities<br>
+<br>
+5)<br>
+Therefore:<br>
+<br>
+360/7776 or 4.6% of all possible votes are ties.<br>
+<br>
+QED.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

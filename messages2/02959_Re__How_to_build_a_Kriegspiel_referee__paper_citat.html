@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: How to build a Kriegspiel referee--paper citations</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: How to build a Kriegspiel referee--paper citations</h1>
+    <p><strong>From:</strong> Jim Gillogly &lt;jim@acm.org&gt;<br>
+    <strong>Date:</strong> 13 04 1995 00:00:00 GMT</p>
+    <hr>
+    <div>In article &lt;1995Apr12.213318.27109@adobe.com&gt;,<br>
+Charles Wetherell &lt;cwethere@mv.us.adobe.com&gt; wrote:<br>
+&gt; Title: A program to referee Kriegspiel and chess<br>
+&gt;  Publication Date: May 1975    Country of Publication: UK<br>
+&gt; Title: A director for Kriegspiel, a variant of chess<br>
+&gt;  Publication Date: Feb. 1972    Country of Publication: UK<br>
+<br>
+I wrote a Kriegspiel referee a few years earlier than that in JOSS, the<br>
+remarkably cool on-line system at RAND... it would have been about 1968,<br>
+just after we moved the system from our vacuum-tube Johnniac machine to<br>
+the incredibly fast and wondrous PDP-6.  I don&#x27;t have the reference to my<br>
+paper handy, but can dig it up on request.<br>
+<br>
+At RAND we always used two boards and a single screen between them, and<br>
+the referee would integrate them mentally.  Our rules were that the referee<br>
+announces:<br>
+<br>
+- white/black to move<br>
+- pawn gone at &lt;square&gt;<br>
+- piece gone at &lt;square&gt;<br>
+- try at &lt;square&gt; [&lt;square&gt; ...]<br>
+- double try at &lt;square&gt; [&lt;square&gt; ...]<br>
+- check by a knight<br>
+- check vertical<br>
+- check horizontal<br>
+- check on the long/short diagonal<br>
+- no<br>
+- hell no<br>
+<br>
+The &quot;try&quot; means the player can capture something with a pawn on a particular<br>
+square, so that if the player is in check and taking something there would<br>
+not relieve check, the illegal pawn capture would not be announced as a &quot;try&quot;.<br>
+&quot;Double try&quot; means two pawns can capture there.  The square announced is the<br>
+one to which the pawn would go, so I suppose a single pawn move of P-K4 (yes,<br>
+we used English notation) could result in &quot;Double tries at K5 and K6.&quot;<br>
+All tries are announced on each move as long as they&#x27;re available.<br>
+<br>
+&quot;No&quot; means you can&#x27;t move where you tried to move, and &quot;hell no&quot; means the<br>
+move you tried is obviously illegal, where the latter is somewhat subjective.<br>
+For example, if you try moving your a1 rook to a4 and get a &quot;no&quot;, many<br>
+refs would say &quot;hell no&quot; if you then tried moving it to a5.  All refs would<br>
+say &quot;hell no&quot; if you tried moving it to b2 to pad your &quot;no&quot; count to try to<br>
+convince your opponent you&#x27;ve found something interesting.<br>
+<br>
+Other variations of Kriegspiel include not announcing potential pawn tries<br>
+(so that you have to check every one you&#x27;re willing to capture every time);<br>
+not announcing what direction your check is coming from; and not announcing<br>
+whether something captured is a piece or pawn.  Naturally these are all<br>
+inferior to our rules.<br>
+<br>
+Implementing a netted ref a la ICS or IGS is problematical, since one of<br>
+the most interesting aspects of Kriegspiel is kibitzing; but since many<br>
+people are quite willing to cheat in both ICS and IGS, nothing could stop<br>
+them from coming in on a second channel as an observer.  Eliminating<br>
+kibitzers altogether loses much of the fun, though.  In my JOSS referee I<br>
+didn&#x27;t have a kibitz option.<br>
+-- <br>
+	Jim Gillogly<br>
+	Sterday, 22 Astron S.R. 1995, 12:55<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

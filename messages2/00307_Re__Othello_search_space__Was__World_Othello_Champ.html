@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Othello search space (Was: World Othello Championships)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Othello search space (Was: World Othello Championships)</h1>
+    <p><strong>From:</strong> guckes@math.fu-berlin.de (Sven Guckes)<br>
+    <strong>Date:</strong> Tue, 17 Nov 1992 18:37:29 GMT</p>
+    <hr>
+    <div>cet1@cus.cam.ac.uk (C.E. Thompson) writes:<br>
+<br>
+&gt;I would have thought that 10 was a substantial overestimate for the average<br>
+&gt;number of legal moves in a typical position during a game. But in any case,<br>
+&gt;this is estimating the number of legal games, while &quot;nodes&quot; suggests to me<br>
+&gt;the number of legal *positions*. This is trivially bounded by 3^64 (each<br>
+&gt;square is empty, white, or black) &lt; 3.5*10^30.<br>
+<br>
+I *love* simple estimates! :)<br>
+<br>
+Hey, how about finding the number of games for the first 5 or 10 moves<br>
+with a stupid and simple computer program ?<br>
+(Anyone near a CRAY with access ? ;)<br>
+Then we might proceed with &quot;average mobility&quot; estimates, anyway.<br>
+(Sorry, I missed the whole thread.)<br>
+<br>
+Again I ask: What&#x27;s the maximum number of possible moves for Othello ?<br>
+Of course it would be nice to see a proof that a sample situation is<br>
+actually part of a legal game.<br>
+<br>
+NOP         := &quot;Number Of Plays&quot; function<br>
+                Number of plays of a game according to it&#x27;s rules<br>
+NOP(Othello) =  number of moves of the game &quot;Othello&quot;<br>
+<br>
+NOP(Othello) &lt; 3^64 = 3433683820292512484657849089281 &lt; 3.5 * 10^30<br>
+<br>
+You ask where I got that number ? Well, see below.<br>
+<br>
+$ math<br>
+Mathematica 2.0 for SPARC<br>
+Copyright 1988-91 Wolfram Research, Inc.<br>
+ -- Terminal graphics initialized --<br>
+<br>
+In[1]:= 3^64<br>
+<br>
+Out[1]= 3433683820292512484657849089281<br>
+<br>
+If it&#x27;s wrong - please tell Wolfram Research. ;)<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Solubility Of Generalized TicTacToe (also Go-Moku)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Solubility Of Generalized TicTacToe (also Go-Moku)</h1>
+    <p><strong>From:</strong> asdfghjk@maths.tcd.ie (Nicholas Gray)<br>
+    <strong>Date:</strong> 25 Nov 1993 19:13:48 -0000</p>
+    <hr>
+    <div> In a recent post about the solution of Go-Moku, the writer<br>
+wrote that since the game was solved for a 15x15 board, it<br>
+was thus solved for the 19x19. At first this seemed<br>
+intuitively obvious: if you can form a row of 5 on a board<br>
+of some fixed size, you can do the same on any bigger board.<br>
+However, after thinking for a while I became less convinced.<br>
+Although the larger board gives you more freedom, it also<br>
+gives your opponent the same freedom. Is it not possible that<br>
+at some stage in the strategy, a move will create a position<br>
+which allows the 2nd player to take the initiative and at <br>
+least force a draw. <br>
+ The general game, forming a row of k on a board of size n,<br>
+is obviously either a first player win, or a draw, but<br>
+how can you be sure a winning strategy extends to a larger<br>
+board?<br>
+<br>
+ As a simple example, suppose k=3, n=4, the first player<br>
+should easily win. Suppose the board is labelled as<br>
+columns 1234, rows ABCD as: 1 2 3 4<br>
+                          A<br>
+                          B<br>
+                          C<br>
+                          D <br>
+<br>
+ Then, if player 1 (call him/her X) plays D1 <br>
+          player 2 (Y) plays B3 <br>
+          X&#x27;s strategy to this reply is C1<br>
+          Y plays B1 (forced)<br>
+          X plays B2 (forced)<br>
+          Y plays A3 (forced)<br>
+          X plays C3 (forced)<br>
+<br>
+          and X now obviously wins.<br>
+<br>
+ However on a 5x5 board, the game goes (X using the same <br>
+strategy) as follows:<br>
+<br>
+          N.B. Board is as 1 2 3 4 5<br>
+                          A<br>
+                          B<br>
+                          C<br>
+                          D <br>
+                          E<br>
+<br>
+         X: E1<br>
+         Y: C3<br>
+         X: D1 <br>
+         Y: C1 (forced) <br>
+         X: C2 (forced) <br>
+         Y: B3 (forced)<br>
+<br>
+         And now Y will win.<br>
+<br>
+<br>
+ This is a very simple example, no doubt X can win using<br>
+some strategy that works on both the 4x4 and 5x5, BUT <br>
+THIS STRATEGY DOESN&#x27;T WORK.<br>
+<br>
+ So how do we KNOW that strategies will work for larger<br>
+boards?<br>
+<br>
+Nick<br>
+asdfghjk@maths.tcd.ie<br>
+<br>
+<br>
+</div>
+</body>
+</html>

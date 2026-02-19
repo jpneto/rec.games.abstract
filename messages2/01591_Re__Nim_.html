@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Nim!</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Nim!</h1>
+    <p><strong>From:</strong> wms@ssd.intel.com (William Shubert)<br>
+    <strong>Date:</strong> Thu, 17 Feb 1994 17:17:43 GMT</p>
+    <hr>
+    <div>kgowen@cie.uoregon.edu (Kevin Gowen):<br>
+&gt;I keep hearing this game mentioned, but that&#x27;s all I know about it.  Would<br>
+&gt;somebody please tell me about it or post the rules?  If you don&#x27;t want to<br>
+&gt;clutter up the newsgroup with redundancies, e-mail is fine.  Thanks.<br>
+<br>
+   In nim, there are piles of matches.  Players take turns removing as many<br>
+matches as they want, but only from one pile per turn.  The player whe removes<br>
+the last match wins.<br>
+<br>
+******** HOW TO WIN **********<br>
+<br>
+   So long as, after the end of your turn, all pile counts XOR to zero,<br>
+you will win.  e.g.,<br>
+<br>
+Pile 1: 11 matiches ||||| ||||| |<br>
+Pile 2:  6 matiches ||||| |<br>
+Pile 3:  3 matiches |||<br>
+<br>
+11 ^ 6 ^ 3 = 0b1011 ^ 0b110 ^ 0b11 = 0b1110<br>
+<br>
+So we need to toggle the two, 4, and 8 bits of any pile.  Try pile 1.<br>
+0b1011 ^ 0b1110 = 0b101 = 5 so we want 5 matches in pile 1.  So we remove<br>
+6 matches from pile 1 for our turn and have 5/6/3.  5^6^3 = 0.<br>
+<br>
+   Now notice that NO MATTER WHAT YOUR OPPONENT DOES, the piles will not<br>
+XOR to 0 because they&#x27;re going to toggle some bits, somewhere, and since<br>
+the bits XOR to 0 now these toggled bits will no longer be 0.  So then you<br>
+can readjust to bring the XOR to 0 again, then they move, etc.  Since all<br>
+piles of size 0 (the winning position) also XORs to 0, you HAVE to win<br>
+eventually if you play this way.<br>
+				-Bill (wms@ssd.intel.com)<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: game board design</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: game board design</h1>
+    <p><strong>From:</strong> gary@lf.hp.com (Gary Jackoway)<br>
+    <strong>Date:</strong> 8 Apr 1994 13:33:32 GMT</p>
+    <hr>
+    <div>Damien P. Neil (damien@b63519.student.cwru.edu) wrote:<br>
+: In article &lt;Cnw5A8.91q@and.nl&gt;, Jos Horsmeier &lt;jos@and.nl&gt; wrote:<br>
+<br>
+: [Fascinating game deleted]<br>
+<br>
+: Well, it seems that what you need is a method of easily representing two<br>
+: different values on each piece, one ranging from 1 to 11, and the other<br>
+: being in the set {1,2,3,5,8}.<br>
+<br>
+: First, each piece must be identified as having a side. Checkers pieces are<br>
+: a good size, and come already color-coded for two sides, so I&#x27;ll use one<br>
+: of those as a starter.<br>
+<br>
+Yes, but checkers have another feature: they stack...<br>
+<br>
+: Next, each piece has a rank. Write a rank on the top of the checkers<br>
+: piece. When a piece changes rank, change the piece to one with an<br>
+: appropriate number on the top. I forget how many pieces existed in the<br>
+: game, but this means that you will need 5 * (number of pieces) different<br>
+: pieces to cover all possible situations.<br>
+<br>
+How about this: instead of writing the number on the top, why not just<br>
+stack up n checkers to represent the strength.  That would give a much<br>
+more visual representation, and be easy to manipulate.<br>
+<br>
+: Finally, you need to indicate decay. Drill a hole in each piece, big enough<br>
+: to fit a toothpick. Make a number of little flags out of toothpicks. Write<br>
+: a letter from A to K on each flag. For starters, each piece has an A flag<br>
+: put in it.<br>
+<br>
+: Make a row of boxes along one side of the board, lettered from A to K.<br>
+: Put a marker in the A box to start with. At the end of every round, move<br>
+: the marker one letter forwards. When it passes K, it wraps around to A.<br>
+: If, after moving the marker, a piece has the same letter on it&#x27;s flag as<br>
+: the letter the marker now indicates, it has expired.<br>
+<br>
+: Whenever you move a piece, update it&#x27;s flag to the letter the marker is<br>
+: currently indicating.<br>
+<br>
+Alternatively, how about little stickies like post-its that have the numbers<br>
+1-99.  Each time you move a piece, you stick the move number on top.  The<br>
+current move is the lowest sticky you still have.  The only thing I don&#x27;t<br>
+like is that it is hard to tell when a piece is going critical.  Maybe you<br>
+could use the color wheel for this.  Make the stickies from 1-11 go from<br>
+red to violet and back to red for #12.  Then you could tell by color which<br>
+ones were decaying.  (You&#x27;d still need the numbers of course but the color<br>
+would be a reminder of which pieces are going bad.)<br>
+<br>
+My 2 cents.<br>
+<br>
+Gary Jackoway<br>
+<br>
+<br>
+</div>
+</body>
+</html>

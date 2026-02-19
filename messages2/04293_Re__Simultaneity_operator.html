@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Simultaneity operator</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Simultaneity operator</h1>
+    <p><strong>From:</strong> torbenm@diku.dk (Torben AEgidius Mogensen)<br>
+    <strong>Date:</strong> 21 03 2000 00:00:00 GMT</p>
+    <hr>
+    <div>Fool &lt;fool@kvackit.org&gt; writes:<br>
+<br>
+&gt;Here is an operator inspired by the game of Diplomacy.<br>
+<br>
+&gt;The &quot;simultaneity&quot; operator maps &quot;G&quot;, a 2-player, perfect knowledge game<br>
+&gt;to &quot;Sim(G)&quot;, a 2-player, imperfect knowledge game.<br>
+<br>
+&gt;Both players write down legal moves for the current state in G.<br>
+&gt;Both players reveal their moves to each other. <br>
+&gt;If both moves &quot;commute&quot; (the state in G is the same no matter which<br>
+&gt;way the moves are executed), then the moves proceed. If one ordering<br>
+&gt;of moves is illegal, then the moves proceed in the legal order. If<br>
+&gt;both move orderings are illegal, or if the moves do not commute,<br>
+&gt;there is a standoff, the state in G is unchanged (but not the state in<br>
+&gt;Sim(G)) and both players have to write down _different_ moves for the<br>
+&gt;current state in G.<br>
+<br>
+&gt;Generalization to N players:<br>
+<br>
+&gt;A direct generalization is possible such that if all the legal orderings<br>
+&gt;of moves result in the same state, the moves proceed, otherwise there<br>
+&gt;is a standoff. However it is desirable to have it such that if only<br>
+&gt;a subset of players&#x27; moves interfere, then only those moves should<br>
+&gt;fail, and the non-interfering (commutative) moves should succeed, and<br>
+&gt;in this case there is no need to forbid the players from repeating the<br>
+&gt;same move (as the state in G has changed).<br>
+&gt;(E.g. in 3-player Chinese checkers, if two players try to move to the<br>
+&gt;same space but the third makes a move on another part of the board,<br>
+&gt;then the third player&#x27;s move proceeds but the first two fail).<br>
+<br>
+This generalization has the problem that there may be several ways to<br>
+remove moves such that there is no stand-off. In the Chinese checkers<br>
+example, removing any one of the two conflicting moves will make the<br>
+rest commute, but there is no fair way to choose which should be<br>
+removed.<br>
+<br>
+This problem can be solved at the cost of a little complexity: We can<br>
+(partially) order sets of moves by subset. We can then look at the set<br>
+C of all commuting subsets of the original set of moves. Some of these<br>
+will be maximal, i.e., no other set in C is larger than this. There<br>
+may be several different maximal subsets (as in the example).<br>
+<br>
+If there is a unique maximal commuting subset, this is the obvious<br>
+choice for the move in Sim(G). Otherwise, we choose the intersection<br>
+of all maximal subsets. In the example, this implies removing both the<br>
+moves that conflict. If we ignore support and convoys in Diplomacy,<br>
+this will yield the same results as the usual interpretation.<br>
+<br>
+Since the intersection of a single set is the set itself, we can sum<br>
+this up as: We choose the intersection of all maximal commuting<br>
+subsets of the original move.<br>
+<br>
+Note that there is a chance that the intersection is empty and hence<br>
+no move is made. Your suggestion is to forbid repeated moves in such<br>
+situations, but this may be a problem if all players have only one<br>
+legal non-empty move each, as this will force all to make empty moves<br>
+which will again result in a repeated position and hence a stuck<br>
+game. A possible solution is to put no restrictions on the next move<br>
+but say that if the situation doesn&#x27;t change in two consecutive moves,<br>
+any player can declare the game a draw. If a player is clearly<br>
+leading, he will try an alternative (suboptimal) move in order to<br>
+avoid a draw. To avoid cycling between two different states (by moving<br>
+an unessential piece), the rule may have to be generalized to say that<br>
+if the same state occurs a total of three times or more, any player<br>
+can declare a draw.<br>
+<br>
+	Torben Mogensen (torbenm@diku.dk)<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

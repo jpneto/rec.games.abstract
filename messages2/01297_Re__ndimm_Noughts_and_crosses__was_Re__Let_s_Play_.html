@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: ndimm Noughts and crosses (was Re: Let&#x27;s Play a different game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: ndimm Noughts and crosses (was Re: Let&#x27;s Play a different game</h1>
+    <p><strong>From:</strong> dbush@csugrad.cs.vt.edu (David Bush)<br>
+    <strong>Date:</strong> 21 Sep 1993 12:41:04 -0400</p>
+    <hr>
+    <div>phillips@swanee.ee.uwa.edu.au (Christopher Phillips) writes:<br>
+<br>
+&gt;So in more general terms, for what N and D can a draw be found,<br>
+&gt;and is it the same set as all values of (N,D) for which the<br>
+&gt;first player of an N^D noughts and crosses game cannot force a win?<br>
+<br>
+&gt;I beleive the answer to the second question is yes, and my knowlege<br>
+&gt;of the first is as following:<br>
+<br>
+&gt;(d indicates a draw possible,<br>
+&gt; 1 indicates the first player can always win and no draw is known possible<br>
+&gt; D indicates a draw is possibel and a drawing strategy for the second<br>
+&gt; player is known.)<br>
+<br>
+<br>
+&gt;\ D 0 1 2 3 4 5 6 7 8<br>
+&gt;N\_____________________________<br>
+&gt;1 | 1 1 1 1 1 1 1 1 1  ...<br>
+&gt;2 | 1 D 1 1 1 1 1 1 1  ...<br>
+&gt;3 | 1 D D 1 1 1 1 1 1  ...<br>
+&gt;4 | 1 D D d d<br>
+&gt;5 | 1 D D<br>
+&gt;8 | 1 D D<br>
+&gt;9 | 1 D D<br>
+<br>
+&gt;    . . .<br>
+&gt;    . . .<br>
+&gt;    . . .<br>
+<br>
+For D=3, N=4 the first player can force a win. Regrettably I cannot<br>
+describe what a precise winning plan is here, but here&#x27;s the general<br>
+idea:<br>
+<br>
+* Start in one of the corner cells. (You could also implement this plan<br>
+  in the central cells; they are isomorphic to the corner cells.)<br>
+* Continue to play in the corner cells for the first four moves, generally<br>
+  avoiding your opponent&#x27;s blocks. Try to establish one of these patterns:<br>
+<br>
+   X...    ....    ....    X...           X...    ....    ....    X..X<br>
+   ....    ....    ....    ....    OR     ....    ....    ....    ....<br>
+   ....    ....    ....    ....           ....    ....    ....    ....<br>
+   X..X    ....    ....    ....           ....    ....    ....    X...<br>
+<br>
+* Be aware that if on your move there is some 4x4 planar cross-section of<br>
+  the board which contains 3 of your tokens but is otherwise blank, you<br>
+  can usually force a win in that plane. You may have to deviate from the<br>
+  above plan in order to block such a threat from your opponent. Generally<br>
+  the best blocking move is one which deprives one of the rows which goes<br>
+  &quot;in 3 dimensions&quot; from one corner to its opposite from your opponent.<br>
+* After making 4 or 5 such moves, you should have a forced win, meaning a<br>
+  sequence of immediate threats culminating in an unavoidable double threat.<br>
+<br>
+For D=4, N=4 again the first player can win by essentially sticking to the<br>
+above plan for 3 dimensions. Actually, I strongly suspect the first player<br>
+always wins whenever N=D. John Conway&#x27;s book &quot;Winning Ways For Your<br>
+Mathematical Plays&quot; probably covers this territory; if your local library<br>
+has it you might want to check it out. (Perhaps I should take my own advice!)<br>
+<br>
+Whenever N is odd the game is not very interesting, because the first player<br>
+gets a huge advantage by playing in the center cell, unless D is so low<br>
+that it&#x27;s easy for the 2nd player to draw. One variant that seems intriguing<br>
+is D=3, N=6, object is to get 5 in a row instead of 6. Overlines, or getting<br>
+6 in a row, also win. This would be a blow-off for the first player without<br>
+the following ritual (taken from a suggestion in Games magazine): One player<br>
+places two Xs and one O on an otherwise empty board, producing a position<br>
+with O to move. As an alternative, perhaps only one X could be placed.<br>
+The other player then decides which side to play. Play proceeds from this<br>
+position. Someday I hope to write a program to play this game.<br>
+<br>
+David Bush    Blacksburg, Virginia      dbush@csugrad.cs.vt.edu<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>optimal Mastermind</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>optimal Mastermind</h1>
+    <p><strong>From:</strong> don@zen.genmagic.com (Don Woods)<br>
+    <strong>Date:</strong> 18 04 1996 00:00:00 GMT</p>
+    <hr>
+    <div>Does anyone know of any results on &quot;optimal&quot; or &quot;adversarial&quot; Mastermind?<br>
+Mastermind (also known by older pre-commercial names such as &quot;cows and<br>
+bulls&quot;) is the game where one person picks a sequence (of colors or digits<br>
+or whatever) of a fixed length, and the other person then tries to guess<br>
+it by guessing sequences.  The guesser is told how many of the elements<br>
+in his guess are correct (match the corresponding elements in the target<br>
+sequence) and how many are in the target sequence but are not in the right<br>
+positions.  The level of difficulty can be varied by varying the number of<br>
+different values that being chosen among for each position (e.g., 6 colors<br>
+or 7), the length of the sequence (usually 4), and whether duplicates are<br>
+allowed within the target sequence.<br>
+<br>
+Anyway, I&#x27;ve occasionally pondered how one would play this against an<br>
+&quot;adversary&quot;, in the game theoretic sense.  The adversarial chooser doesn&#x27;t<br>
+need to have a particular target sequence in mind.  In response to each<br>
+guess, he gets to give any answer he wants as long as at least one target<br>
+sequence matches that and all previous answers.  The game ends when the<br>
+adversary is forced to respond: &quot;all correct and in the right positions&quot;.<br>
+The score is the number of guesses used; the adversary wants to maximise<br>
+this score, while the guesser wants to minimise it.<br>
+<br>
+A sample game, using sequences of 4 choices, with duplicates permitted,<br>
+from a set of 7 colors (using ROYGBIV as the colors):<br>
+	ROYG?  0 &amp; 2 (i.e., 2 correct, none if the correct positions)<br>
+		-&gt; 582 of the original 2401 possible sequences still remain<br>
+	YGBI?  0 &amp; 2 -&gt; 124 remain<br>
+	VVRY?  0 &amp; 1 -&gt; 28 remain<br>
+	GIOR?  1 &amp; 1 (1 correct in right position, 1 other in wrong position)<br>
+		-&gt; 5 remain<br>
+	BRGR?<br>
+The adversary can now answer any of 0 &amp; 0, 3 &amp; 0, 0 &amp; 2, or 2 &amp; 1, but in<br>
+each case the guesser can now deduce the single remaining eligible pattern.<br>
+<br>
+So, as I say, are there any results known on this game?  E.g., one obvious<br>
+strategy for the adversary is to pick the response that leaves as many<br>
+potential sequences as he can.  The guesser might then try guesses such<br>
+that the remaining search space is reduced as much as possible.  But it<br>
+might turn out that the guesser can do better by making a guess that allows<br>
+the adversary to leave the search space larger this turn, because it leads<br>
+to a better partition on the next guess.<br>
+<br>
+Another question I&#x27;m curious about is whether the guesser&#x27;s optimal strategy<br>
+always involves guessing a pattern that matches all the answers so far, or<br>
+whether it sometimes pays to guess something that can&#x27;t itself be completely<br>
+correct.  There&#x27;s no obvious reason why such guesses should be bad, but<br>
+neither is it obvious that they help.<br>
+<br>
+	-- Don.<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>RE: How many bits are needed?  No more than 189.</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>RE: How many bits are needed?  No more than 189.</h1>
+    <p><strong>From:</strong> edwardsg@cc5.crl.aecl.ca<br>
+    <strong>Date:</strong> 23 06 1997 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+Here is a scheme for chess encoding which uses 184 bits for a full, 32 piece<br>
+position.<br>
+<br>
+Encode the board position as 64 bits, with 0=unoccupied, 1=occupied.  Ignore<br>
+Kings.<br>
+<br>
+Encode pieces next.  0=WR,1=WN,2=WB,3=WQ,4=WP,5=BR,6=BN,7=BB,8=BQ,9=BP.  This<br>
+will produce a 30 digit number.  This will require 100 binary bits, since<br>
+30 digits &lt; 10^30 &lt; 2^100.<br>
+<br>
+Identify WK square (6 bits), the BK square (6 bits).<br>
+<br>
+Next encode White&#x27;s castling options: 00=no castling, 01=castling QS permitted,<br>
+10=castling KS permitted, 11=castling both sides permitted.<br>
+<br>
+Next encode Black&#x27;s castling options: 00=no castling, 01=castling QS permitted,<br>
+10=castling KS permitted, 11=castling both sides permitted.<br>
+<br>
+Next encode the move.  0=White&#x27;s move, 1= Black&#x27;s move.<br>
+<br>
+Next encode the square on which an e.p. capture can be made.  This square<br>
+will be directly behind a pawn on the fourth rank of the player not to move.<br>
+Thus there at most 8 possible squares and this takes three bits.  If e.p.<br>
+is not possible, select a theoretically impossible square (there must be<br>
+some of these).<br>
+<br>
+Total = 64+100+6+6+2+2+1+3 = 184 bits.<br>
+<br>
+Geoff<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

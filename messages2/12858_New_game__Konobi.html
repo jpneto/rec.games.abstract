@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>New game: Konobi</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>New game: Konobi</h1>
+    <p><strong>From:</strong> =?ISO-8859-1?Q?Luis_Bola=F1os_Mures?= &lt;luis.9.8.87@gmail.com&gt;<br>
+    <strong>Date:</strong> Sun, 25 Mar 2012 04:07:31 -0700 (PDT)</p>
+    <hr>
+    <div>KONOBI<br>
+======<br>
+<br>
+INTRODUCTION<br>
+<br>
+Konobi is a connection game for two players: Black and White. It&#x27;s played on the intersections (points) of a square board, which is initially empty. The north and south edges of the board are colored black; the west and east edges are colored white.<br>
+<br>
+DEFINITIONS<br>
+<br>
+Two like-colored stones are strongly connected if they are orthogonally adjacent to each other, and weakly connected if they are diagonally adjacent to each other without sharing any strongly connected neighbor. Note that two stones of different colors are never considered to be connected.<br>
+<br>
+A chain is a set of connected stones.<br>
+<br>
+PLAY<br>
+<br>
+Starting with Black, the players take turns placing stones of their own color on empty points of the board, one stone per turn.<br>
+<br>
+It&#x27;s illegal to make a weak connection to a certain stone unless it&#x27;s impossible to make a placement which is both strongly connected to that stone and not weakly connected to another. It&#x27;s also illegal to form a 2x2 pattern of stones consisting of two weakly connected Black stones and two weakly connected White stones.<br>
+<br>
+If a player can&#x27;t make a move on his turn, he must pass. Passing is otherwise not allowed. There will always be a move available to at least one of the players.<br>
+<br>
+The game is won by the player who completes a chain of his color touching the two opposite board edges of his color. Draws are not possible.<br>
+<br>
+_____________<br>
+<br>
+My design goal with Konobi was to create a connection game for a square grid without stone movement and with thicker tactics than Crossway. The placement restriction regarding weak connections introduces some noticeably cold dynamics and makes the game already non-trivial on boards as small as 6x6 (the only one on which Zillions plays better than random, it seems).<br>
+<br>
+Corey has written elsewhere that his attempts to create a cold Hex variant failed because optimal play always consisted of playing waiting moves as close to the edges as possible. The reason was that you were only allowed to extend a group of yours if there were enemy stones around, which meant that occupying a particularly strong point would usually enable your opponent to do the same. In Konobi, your available moves are mostly dependent on the configuration of your own stones, so I think this game doesn&#x27;t have the same problem.<br>
+<br>
+Anyway, I&#x27;ve played Konobi quite a few times, both against the Zillions machine and on the igGC sandbox, and at least one thing&#x27;s for sure: it feels nothing like the typical connection game. Whether this is good news or not, I&#x27;m not sure yet. My impressions so far are positive, though.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

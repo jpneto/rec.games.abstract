@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>questions about general game playing programs</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>questions about general game playing programs</h1>
+    <p><strong>From:</strong> dboll@vcd.hp.com (david boll)<br>
+    <strong>Date:</strong> Wed, 8 Sep 1993 20:42:33 GMT</p>
+    <hr>
+    <div>  Hey:<br>
+<br>
+  About a year ago (and a couple computer accounts ago) I posted an<br>
+  article in which I asked if people had written their own general game <br>
+  playing programs, and if so, did they want to share. The only response I<br>
+  got was from (if memory serves) Barney Pell, who had put together<br>
+  *exactly* the thing I wanted, except... it wouldn&#x27;t run on my<br>
+  machine (I think it was some version of Prolog that I don&#x27;t have access<br>
+  to).<br>
+<br>
+  I have a c program that does this, &#x27;cept it&#x27;s so poorly written I wouldn&#x27;t<br>
+  show it to my mom, much less anyone else. But I&#x27;m currently in the process<br>
+  of re-writing it. My goal is to make it general enough that anyone wanting<br>
+  to write a program to check out a new game would only have to write the<br>
+  following routines:<br>
+    <br>
+     - a move generator; given a board position, generate a legal move list.<br>
+     - a move processor; given a board position and a move, perform the move<br>
+	 on the board<br>
+     - a scoring function<br>
+     - a &#x27;did I win&#x27; (or &#x27;did I lose&#x27;) function that tells you if the current<br>
+	 position is a win/loss (i.e. is the game over yet)<br>
+     - a board initializer<br>
+<br>
+  Given these 5 routines, my code will do the &#x27;ol alpha-beta thing, handle<br>
+  the user interface, handle play in several different modes (computer vs<br>
+  human, computer vs computer using different scoring functions, etc), and<br>
+  be fairly flexible in terms of search depth, move sorting, etc.<br>
+<br>
+  Basically, almost any game that involved 2 players using discrete pieces <br>
+  on a rectangular lattice could be played with this code. The goal is to <br>
+  allow you to spend more time playing with the scoring function (the<br>
+  interesting part of all this) and less time with the mechanics of writing<br>
+  a game player. Using my current (poorly written) one, I&#x27;ve been able to<br>
+  make a decent program for a new game in under 2 hours - pretty cool.<br>
+<br>
+  So, a couple questions:<br>
+<br>
+    1) Has this been done already (my guess: certainly) - should I stop<br>
+       working on mine and FTP from somewhere?<br>
+    2) If there is no easily available code for general game playing, would<br>
+       people be interested in mine, once I&#x27;m finished rewriting it?<br>
+<br>
+  Thanks.<br>
+-- <br>
+---------------<br>
+  Dave Boll    dboll@hp-vcd.vcd.hp.com<br>
+  &quot;The speed of time is 1 second per second&quot;<br>
+<br>
+<br>
+</div>
+</body>
+</html>

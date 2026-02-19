@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Forms revised</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Forms revised</h1>
+    <p><strong>From:</strong> Steven Meyers &lt;swmeyers@fuse.net&gt;<br>
+    <strong>Date:</strong> Tue, 4 Oct 2011 12:57:34 -0700 (PDT)</p>
+    <hr>
+    <div>Hello all,<br>
+<br>
+Forms has been revised; the tactics are more focused and the strategy<br>
+is deeper.  Here are the rules:<br>
+<br>
+<br>
+The game can be played on an m by n board where n is even.  The set up<br>
+is a full interspersed board, as in the game Clobber.<br>
+<br>
+e.g. a 4 by 4 board:<br>
+<br>
+BWBW<br>
+WBWB<br>
+BWBW<br>
+WBWB<br>
+<br>
+The game is misere rather than regular.  As you know, this means that<br>
+the last person to move *loses*.  This turns out to be crucial to<br>
+making Forms work..  You win by forcing your opponent to capture all<br>
+of your pieces.<br>
+<br>
+On your turn you can and must do exactly one of the following two<br>
+things:<br>
+<br>
+1) capture an adjacent opponent&#x27;s piece by replacement (You&#x27;ll note<br>
+that this is again the same as Clobber.)<br>
+<br>
+2) execute a &quot;topologically invariant orthogonal slide&quot; to an empty<br>
+space.  This mouthful is actually an easy concept to grasp<br>
+intuitively.  It basically means that you slide (via orthogonally<br>
+adjacent empty spaces) as far as you want, combining any number of<br>
+changes of direction that you want, such that you land on an empty<br>
+space.  Here&#x27;s an illustration (E stands for empty space):<br>
+<br>
+WBEE<br>
+EBEE<br>
+EWEE<br>
+BWWE<br>
+<br>
+Among the possible moves, the uppermost black piece may slide to the<br>
+lowermost rightmost empty space, resulting in this position:<br>
+<br>
+EEEE<br>
+EBEE<br>
+EWEE<br>
+BWWB<br>
+<br>
+Why the uppermost leftmost white piece is now missing will be<br>
+explained shortly.<br>
+<br>
+When executing a type 1 move or a type 2 move, any pieces *of either<br>
+or both sides* that are no longer connected to the orthogonally<br>
+connected group (as reckoned by pieces of either or both sides) that<br>
+the stone involved now belongs to, are removed from the board and are<br>
+out of play, being effectively captured.  A type 1 move --- an<br>
+adjacent replacement capture of an opponent&#x27;s piece --- can but does<br>
+not have to remove an additional piece or pieces of either side. A<br>
+type 2 move --- a slide to an empty space --- *must* remove one or<br>
+more pieces of either or both sides.  In the diagram above where the<br>
+black piece has slid to the lowermost rightmost empty space, the<br>
+uppermost leftmost white piece is now no longer part of the<br>
+orthogonally connected group to which the slid black piece now<br>
+belongs.  Note that in such a removal (whether by a type 1 move or a<br>
+type 2 move) the question of disconnection is reckoned *after* the<br>
+move is completed. Temporary disconnection during the move does not<br>
+result is removal.  For example:<br>
+<br>
+EEEE<br>
+EEEE<br>
+WWEE<br>
+BEEE<br>
+<br>
+Suppose the leftmost white stone slides to the empty space just to the<br>
+right of the other white stone.  (This results in immediate loss, but<br>
+never mind that.)  Only the black stone is removed. The other white<br>
+stone stays because it was only temporarily disconnected from the<br>
+sliding stone during the move.  After the move it is still connected<br>
+and therefore remains.<br>
+<br>
+I&#x27;d be interested to know what people think of it if they get the<br>
+chance to try it.<br>
+<br>
+Thanks,<br>
+<br>
+Steve<br>
+<br>
+<br>
+</div>
+</body>
+</html>

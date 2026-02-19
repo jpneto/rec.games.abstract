@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mastermind</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Mastermind</h1>
+    <p><strong>From:</strong> marzuola@owlnet.rice.edu (Steven Joseph Marzuola)<br>
+    <strong>Date:</strong> 4 Jun 1994 19:49:15 GMT</p>
+    <hr>
+    <div>At least eight people responded to my query about Mastermind.  By<br>
+request, here is a summary of what I found out.<br>
+<br>
+Yes, Knuth has a paper on it, as does somebody else, apparently in the<br>
+mid 1970&#x27;s.  Two different &quot;optimal&quot; strategies are known: It&#x27;s<br>
+possible to always guess in at most 5 guesses, using one strategy.<br>
+Another &quot;optimal&quot; strategy may take up to (rarely) six guesses, but<br>
+has a lower average number of guesses, (near 4.5) unless the Hider is<br>
+cheating.<br>
+<br>
+I was given references to:  Math Reviews, the Journal of Recreational<br>
+Mathematics, and to Scientific American, in the columns, &quot;Mathematical<br>
+Gamer&quot; and Dewdney&#x27;s &quot;Computer Recreations&quot;.<br>
+<br>
+Also, I&#x27;ve been told that 1 black and 1 white peg indeed allows for<br>
+the greatest number of possible valid combinations.<br>
+<br>
+My computer implementation was written for an AI class, and wasn&#x27;t<br>
+intended as an exhaustive study of the game.  It used an alpha-beta<br>
+pruning algorithm with ply-limited minimax search.  It works, but I<br>
+have almost never tested it using 6 positions and 4 colors (too slow,<br>
+given the language (Scheme) and, probably, some gross inefficiencies<br>
+in my code.  Mostly I have worked with 4 positions and 3 colors.)  I&#x27;m<br>
+also not satisfied with my heuristic, which is supposed to give a<br>
+value of how &quot;good&quot; the board is for the Guesser at any point.<br>
+<br>
+Thanks to all who responded.<br>
+<br>
+Steve<br>
+<br>
+-- <br>
+Steve Marzuola (marzuola@owlnet.rice.edu)<br>
+&quot;Think of us as the Information Superhighway ... without any information!&quot;<br>
+                                                       -- David Letterman<br>
+Any resemblance to the views of Rice University is strictly coincidental.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

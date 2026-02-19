@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>No Subject</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>No Subject</h1>
+    <p><strong>From:</strong> Unknown Sender<br>
+    <strong>Date:</strong> Sun, 28 Nov 1993 20:04:39 -0500</p>
+    <hr>
+    <div>entire chunk to be put into a new position.  This reduces your overly<br>
+humongous move tree down to only the interesting branch nodes.  The<br>
+three types of moves remaining are: (a) movement of a chunk onto the<br>
+next higher consecutive chunk on the tableau (provided at least<br>
+chunksize-1 spots are open in the hold area), (b) movement of a chunk<br>
+headed by a King onto an empty stack (provided at least chunksize-1<br>
+spots are open in the hold area), and (c) movement of an entire chunk<br>
+into the hold spots (provided there are at least chunksize open spots<br>
+AND that it is not possible to move this chunk directly to the next<br>
+higher chunk).<br>
+<br>
+Before and/or after each of these moves, the program should also<br>
+simplify the position as much as possible by moving cards to aces (of<br>
+course), and by moving cards down from the hold spots into the tableau.<br>
+These simplifications should *not* be considered moves in the move<br>
+tree--they are simply natural results of having made the previous &quot;move&quot;<br>
+of a chunk.  That cleaning out the hold area can never hurt is shown<br>
+simply by noting that leaving them in the hold area only obstructs the<br>
+movement of other chunks, and what assistance it does lend to the<br>
+movement of the chunk it belongs to is already considered by the simple<br>
+&quot;chunksize-1 free&quot; check in part (a) above.<br>
+<br>
+Using all of these simplifications greatly reduces the size of the<br>
+&quot;move&quot; tree and the time necessary to construct it.  The shortest<br>
+possible solution (in terms of number of chunks moved, not number of<br>
+cards moved, although I have not seen a situation where they differ) can<br>
+be generated on a Unix workstation, with a C program of about 5 pages,<br>
+in less than a second.<br>
+<br>
+-- Jon Ferro               Einsprachigkeit ist heilbar<br>
+<br>
+<br>
+</div>
+</body>
+</html>

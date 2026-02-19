@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Hex</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Hex</h1>
+    <p><strong>From:</strong> dbush@csugrad.cs.vt.edu (David Bush)<br>
+    <strong>Date:</strong> 30 Jun 1993 18:59:55 -0400</p>
+    <hr>
+    <div>torbenm@diku.dk (Torben AEgidius Mogensen) writes:<br>
+<br>
+&gt;This will probably not be of much help for the general case, but with<br>
+&gt;the modification that the board is of size Nx(N-1) and the second<br>
+&gt;player has to connect the shortest distance, the game is a sure win<br>
+&gt;for player two.<br>
+<br>
+&gt;The strategy works as follows: divide the board into two equal-sized<br>
+&gt;parts along the short diagonal. Every time player one places a stone<br>
+&gt;in one half of the board, player two places a stone in the other half<br>
+&gt;at the position 180 degrees opposite (imagine rotating one board half<br>
+&gt;on top of the other). It is relatively easy to show that this will<br>
+&gt;eventually end in a win for player two.<br>
+<br>
+I&#x27;m not sure if I understand you, but consider this sample game where<br>
+player two follows your strategy. N=5, long dimension lettered A-E,<br>
+short dimension numbered 1-4. Each cell is designated by a letter-number<br>
+pair. The corner cells are A1, E1, A4, E4. Let us say that E1 and A4 are<br>
+the obtuse corners, A1 and E4 the acute corners. Player 1&#x27;s task is to<br>
+connect column A with column E. Player 2 must connect row 1 with row 4:<br>
+<br>
+1.C2 C3 2.D2 B3 3.B2 D3 4.E2 A3 5.A2 and player 1 wins.<br>
+<br>
+David Bush    Blacksburg, Virginia       dbush@csugrad.cs.vt.edu<br>
+<br>
+<br>
+</div>
+</body>
+</html>

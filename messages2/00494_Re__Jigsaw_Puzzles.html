@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Jigsaw Puzzles</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Jigsaw Puzzles</h1>
+    <p><strong>From:</strong> toms@fcs260c2.ncifcrf.gov (Tom Schneider)<br>
+    <strong>Date:</strong> Sun, 6 Dec 1992 02:44:01 GMT</p>
+    <hr>
+    <div>In article &lt;1992Dec4.220321.18150@husc15.harvard.edu&gt; blom@husc15.harvard.edu writes:<br>
+<br>
+&gt;Does the complexity of solving a jigsaw puzzle increase on the order of the<br>
+&gt;square of the number of pieces in the puzzle?<br>
+<br>
+It seems that this is related to the guessing game you asked about.<br>
+trunc(log2(100)) = 6, so 7 yes-no questions suffice for a person to guess on<br>
+number in 100.  That is, to find one thing in 100 requires log2(100)=6.64<br>
+bits.<br>
+<br>
+Suppose we have a square jigsaw puzzle of side n.  The orientation of each<br>
+piece is a choice of 1 in 4, or 2 bits.  Suppose we start with a corner and<br>
+want to place pieces successively, and that the pieces are unique so that we<br>
+know when we have one.  This requires 2n^2 bits.  Now to chose the next piece<br>
+is a choice of 1 in n^2, so there is an additional log(n^2) = 2log(n) bits.<br>
+Interestingly, the NEXT piece must be chosen using log(n^2-1) bits, the third<br>
+is log(n^2-3) etc.  Clearly the answer is the sum of these.  If you want the<br>
+average per piece, and if the puzzle is linear, a very beautiful result drops<br>
+out, which I will leave you to find.  The 2 dimensional case is a hair<br>
+trickier, but gives similar results...<br>
+<br>
+  Tom Schneider<br>
+  National Cancer Institute<br>
+  Laboratory of Mathematical Biology<br>
+  Frederick, Maryland  21702-1201<br>
+  toms@ncifcrf.gov<br>
+<br>
+<br>
+</div>
+</body>
+</html>

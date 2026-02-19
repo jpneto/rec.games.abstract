@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>&quot;Squirm&quot; -- new game I invented, sort of like Hex, sort of like Go</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>&quot;Squirm&quot; -- new game I invented, sort of like Hex, sort of like Go</h1>
+    <p><strong>From:</strong> wilcoxb@ucsu.Colorado.EDU (Bryce)<br>
+    <strong>Date:</strong> 20 04 1997 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+Hi.  I invented a game last night.  It is simple yet challenging, <br>
+so I&#x27;m pleased.<br>
+<br>
+<br>
+Please feel free to let me know if:  1.  The name &quot;Squirm&quot; is <br>
+already used for another game.  2.  This game has already been <br>
+invented.  3.  You liked it.  4.  You hated it.  5.  You thought of<br>
+a modification or addition that improved it.<br>
+<br>
+<br>
+Thanks!<br>
+<br>
+<br>
+<br>
+--Zooko, inventor of &quot;Squirm&quot;<br>
+<br>
+<br>
+<br>
+<br>
+NAME:  &quot;Squirm&quot;<br>
+<br>
+<br>
+BRIEF DESCRIPTION:  Squirm is a multiplayer abstract strategy game<br>
+with simple rules but complex strategies.<br>
+<br>
+<br>
+VERSION:  1.0 beta<br>
+<br>
+<br>
+INVENTOR:  Zooko, with help from John Tromp and Francine<br>
+<br>
+<br>
+THE BOARD:  A field of hexes forming a hexagonal board.  Three of<br>
+the sides of the board are 3 hexes long, and the other three sides<br>
+are 5 hexes long.<br>
+<br>
+Bigger boards can be used for longer, more complicated games or for<br>
+more players.<br>
+<br>
+<br>
+NUMBER OF PLAYERS: At least two.<br>
+<br>
+<br>
+RULES:<br>
+<br>
+1.  Take turns.<br>
+2.  On each turn, you may place one stone of your color into an<br>
+unoccupied hex, or else you may pass.<br>
+3.  The game ends when all players pass.<br>
+<br>
+<br>
+SNAKES:<br>
+<br>
+A &quot;snake&quot; is a string of stones of the same color, forming a curvy<br>
+shape.  Snakes have to have the following properties:<br>
+<br>
+1.  Each stone in the snake is adjacent to either one or two other<br>
+stones of the same color.  No stone in the snake can be adjacent to<br>
+three or more stones of the same color.  That is:  a snake has no<br>
+branches in its body.<br>
+<br>
+2.  No stone in the snake is adjacent to a stone of the same color,<br>
+unless the other stone is also part of the snake.  That is:  a<br>
+snake cannot touch other stones of the same color unless they are<br>
+part of the snake.<br>
+<br>
+3.  There are no &quot;straight lines&quot; (that is: sequences of three<br>
+adjacent stones all in a line) in a snake.<br>
+<br>
+<br>
+SCORING:<br>
+<br>
+At the end of the game, the person with the longest snake wins.<br>
+<br>
+<br>
+EXAMPLES:<br>
+<br>
+The board:<br>
+<br>
+        3<br>
+      2 _ 4<br>
+    1 _/ \_ 5<br>
+    _/ \_/ \_ 6<br>
+   / \_/ \_/ \_ 7<br>
+  a\_/ \_/ \_/ \_<br>
+   / \_/ \_/ \_/ \<br>
+  b\_/ \_/ \_/ \_/<br>
+   / \_/ \_/ \_/ \<br>
+  c\_/ \_/ \_/ \_/<br>
+   / \_/ \_/ \_/ \<br>
+  d\_/ \_/ \_/ \_/<br>
+   / \_/ \_/ \_/<br>
+  e\_/ \_/ \_/<br>
+    f\_/ \_/<br>
+      g\_/<br>
+<br>
+<br>
+<br>
+A 5-stone snake, made of &#x27;@&#x27; stones:<br>
+<br>
+        3<br>
+      2 _ 4<br>
+    1 _/ \_ 5<br>
+    _/ \_/ \_ 6<br>
+   / \_/ \_/ \_ 7<br>
+  a\_/@\_/@\_/ \_<br>
+   / \_/@\_/@\_/ \<br>
+  b\_/ \_/ \_/ \_/<br>
+   / \_/ \_/@\_/ \<br>
+  c\_/ \_/ \_/ \_/<br>
+   / \_/ \_/ \_/ \<br>
+  d\_/ \_/ \_/ \_/<br>
+   / \_/ \_/ \_/<br>
+  e\_/ \_/ \_/<br>
+    f\_/ \_/<br>
+      g\_/<br>
+<br>
+<br>
+<br>
+Plus a broken-backed snake (it has 3 stones in a straight line so<br>
+it doesn&#x27;t count as a healthy snake), made of 5 &#x27;O&#x27; stones:<br>
+<br>
+        3<br>
+      2 _ 4<br>
+    1 _/ \_ 5<br>
+    _/ \_/ \_ 6<br>
+   / \_/ \_/ \_ 7<br>
+  a\_/@\_/@\_/O\_<br>
+   / \_/@\_/@\_/ \<br>
+  b\_/ \_/ \_/O\_/<br>
+   / \_/ \_/@\_/ \<br>
+  c\_/ \_/O\_/O\_/<br>
+   / \_/ \_/O\_/ \<br>
+  d\_/ \_/ \_/ \_/<br>
+   / \_/ \_/ \_/<br>
+  e\_/ \_/ \_/<br>
+    f\_/ \_/<br>
+      g\_/<br>
+<br>
+<br>
+<br>
+Plus a mutant snake (it has a stone which is adjacent to 3 other<br>
+stones of the same color, so it doesn&#x27;t count as a healthhy snake),<br>
+make of 6 &#x27;.&#x27; stones.  Note that you can&#x27;t &quot;ignore&quot; the stones that<br>
+you don&#x27;t want and count it as a healthy 3- or 4-stone snake.<br>
+<br>
+        3<br>
+      2 _ 4<br>
+    1 _/ \_ 5<br>
+    _/ \_/ \_ 6<br>
+   / \_/ \_/ \_ 7<br>
+  a\_/@\_/@\_/O\_<br>
+   / \_/@\_/@\_/ \<br>
+  b\_/ \_/ \_/O\_/<br>
+   / \_/ \_/@\_/ \<br>
+  c\_/ \_/O\_/O\_/<br>
+   / \_/.\_/O\_/ \<br>
+  d\_/.\_/.\_/ \_/<br>
+   / \_/ \_/.\_/<br>
+  e\_/ \_/.\_/<br>
+    f\_/.\_/<br>
+      g\_/<br>
+<br>
+<br>
+<br>
+Two interesting snakes.  They are both legal snakes, although you<br>
+might not think so at first!  The first is a 3-stone snake made of<br>
+&#x27;@&#x27; stones which are each adjacent to two others.  I call this<br>
+formation a &quot;snake egg&quot;.  The second is a 6-stone snake made of<br>
+&#x27;O&#x27; stones which are each adjacent to two others.  I call this<br>
+formation a &quot;loop&quot;.<br>
+<br>
+        3<br>
+      2 _ 4<br>
+    1 _/@\_ 5<br>
+    _/ \_/@\_ 6<br>
+   / \_/@\_/ \_ 7<br>
+  a\_/ \_/ \_/ \_<br>
+   / \_/ \_/ \_/ \<br>
+  b\_/ \_/ \_/ \_/<br>
+   / \_/O\_/ \_/ \<br>
+  c\_/O\_/O\_/ \_/<br>
+   / \_/ \_/ \_/ \<br>
+  d\_/O\_/O\_/ \_/<br>
+   / \_/O\_/ \_/<br>
+  e\_/ \_/ \_/<br>
+    f\_/ \_/<br>
+      g\_/<br>
+<br>
+<br>
+<br>
+<br>
+ALTERNATE RULES:<br>
+<br>
+* The John Tromp alternate scoring rule:  each snake is worth 2^x,<br>
+where x is its length.<br>
+<br>
+* The &quot;no weenies&quot; alternate scoring rule:  each snake is worth<br>
+x-n, where x is its length and n is a constant.<br>
+<br>
+* The &quot;long straight snakes&quot; alternate snake definition:  ignore<br>
+item 3 in the traditional definition of a snake.  This would<br>
+completely change game play.  As far as I know nobody has tried it<br>
+yet.  If you do, let me know how it plays!<br>
+<br>
+* The &quot;loops bonus&quot; rule:  if you place a stone which forms a snake<br>
+in which all stones are adjacent to exactly two other snake-stones<br>
+(i.e. a loop), you get to make another move.  You might choose to<br>
+allow snake eggs as loops for this rule!<br>
+<br>
+* New game:  a descendant of Squirm which allows you to move<br>
+stones...<br>
+<br>
+<br>
+<br>
+RUMINATIONS:<br>
+<br>
+Getting the first turn isn&#x27;t necessarily an advantage, because when<br>
+you play you are committing to positions that your opponent can use<br>
+against you.  Your own stones become poisonous to you in certain<br>
+situations, so it might well be that playing second is more<br>
+advantageous.  This will be determined by experience, I guess.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

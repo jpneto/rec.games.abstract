@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Games that stretch MCTS</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Games that stretch MCTS</h1>
+    <p><strong>From:</strong> Cameron Browne &lt;cambolbro@googlemail.com&gt;<br>
+    <strong>Date:</strong> Wed, 23 Feb 2011 11:37:56 -0800 (PST)</p>
+    <hr>
+    <div>Hi,<br>
+<br>
+I&#x27;m doing a bit of work on Monte Carlo Tree Search (MCTS) which is a<br>
+new AI approach for move planning in games. The algorithm behaves<br>
+differently for games with different characteristics - some games are<br>
+well suited to it while some resist it - and I&#x27;m interested in finding<br>
+the outliers.<br>
+<br>
+Can anyone suggest games of reasonable complexity that exhibit the<br>
+following properties:<br>
+<br>
+1. Unusually slow to calculte legal moves for a given position.<br>
+2. Unusually slow to apply a move to a given board state.<br>
+3. Fast to find Nth legal move (e.g. Gomoku).<br>
+4. Slow to find Nth legal move (e.g. Triskelion?).<br>
+5. Fast to perform short lookahead (e.g. 2 ply) on a given position<br>
+(e.g. Gomoku again).<br>
+6. Slow to perform short lookahead on a given position.<br>
+7. Unusually low branching factor.<br>
+8. Unusually high branching factor.<br>
+9. Long move sequences for either player (e.g. Chinese Checkers).<br>
+10. Delayed reward, i.e. positional strength not clear until the end<br>
+of the game (e.g. Omega, maybe Othello?).<br>
+11. Immediate reward, i.e. immediate positional evaluation is a good<br>
+indication of who will win.<br>
+12. Random playouts give good estimate of who will win.<br>
+13. Random playouts give poor estimate of who will win.<br>
+14. Games in which a win or loss is never far away, i.e. high ratio of<br>
+leaf nodes in the search tree (Palago?).<br>
+15. Games in which a win or loss is very remote at the beginning but<br>
+gets closer as the game progresses (Hex?).<br>
+<br>
+Basically any game that will affect the performance of MCTS/UCT by its<br>
+very nature.<br>
+<br>
+Thanks,<br>
+Cameron<br>
+<br>
+<br>
+</div>
+</body>
+</html>

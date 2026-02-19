@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Stepping By Divisors -- Grid Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Stepping By Divisors -- Grid Game</h1>
+    <p><strong>From:</strong> qqquet@mindspring.com<br>
+    <strong>Date:</strong> Mon, 16 Mar 2009 14:20:04 -0700 (PDT)</p>
+    <hr>
+    <div>Here is a game for any plural number of players. Start with an m-by-m<br>
+grid drawn on paper. (I suggest that m be about 8 to 10 for<br>
+beginners.) Draw the grid large enough so that two integers can be<br>
+written in each square.<br>
+<br>
+In the first phase of the game, players take turns writing the<br>
+positive integers 1 to m^2 in order into the squares of the grid. One<br>
+number is placed in any empty square of the grid on each move. (So, if<br>
+there are 2 players, one player writes in the odd numbers, and the<br>
+other player writes in the even numbers.)<br>
+<br>
+Let the variable d (d for &#x27;divisor&#x27;) start the second phase of the<br>
+game with a value of 1.<br>
+<br>
+At the start of the second phase of the game, player 1 then writes the<br>
+value of d, which is 1, alongside any number in the grid (in the same<br>
+square as the number).<br>
+<br>
+The players thereafter continue to take turns. On a move, a player<br>
+chooses any square of the grid that has not yet had a second number<br>
+written in it, but is adjacent to (in the direction of above, below,<br>
+right of, or left of) any square that has had a second number written<br>
+in it.<br>
+He/she then writes down in the square (with one number) any* positive<br>
+divisor of the number in that square.<br>
+The variable d then becomes that divisor.<br>
+* The value of d, however, must change each move. The same divisor<br>
+number cannot be written in two squares on two consecutive moves.<br>
+<br>
+The absolute value of the difference between the older recent value of<br>
+d (the divisor written by the previous player to move) and the new<br>
+value of d (the divisor written by the current player moving) is then<br>
+added to the currently moving player&#x27;s score.<br>
+Note: The goal of the game is to get the LOWEST score. So, it is<br>
+advantageous to change the value of d by as little as possible on a<br>
+move. (Changing the value of d by 1 is the best a player can hope for<br>
+on a move.)<br>
+<br>
+The game continues until each square has exactly two numbers in it.<br>
+(So, there are a total of m^2 moves in the first phase of the game,<br>
+and m^2 moves in the second phase of the game.)<br>
+<br>
+As I said before, the player with the lowest score wins.<br>
+<br>
+I would suggest that the divisor numbers (the values of d) be written<br>
+smaller than the numbers written during phase 1 of the game, or be<br>
+written in another color than the first numbers placed in the squares.<br>
+<br>
+PS: The only problem I can see with this game is if the last square to<br>
+get a second number has a 1 in it, and the previous (next to last)<br>
+player to move placed a 1 as the second (divisor) number in some<br>
+square. (This is a problem because d must change each move.)<br>
+Then, in that case, the second phase of the game ends after m^2 - 1<br>
+moves.<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

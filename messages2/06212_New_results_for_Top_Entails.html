@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>New results for Top Entails</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>New results for Top Entails</h1>
+    <p><strong>From:</strong> cet1@cus.cam.ac.uk (Chris Thompson)<br>
+    <strong>Date:</strong> 17 Apr 2003 13:57:42 GMT</p>
+    <hr>
+    <div>&quot;Top Entails&quot; was introduced in [1], pp 376-379, as an example of<br>
+a nim-like impartial game with entailing moves. It is played with<br>
+stacks of coins and the allowed moves are (1) to split one stack<br>
+into two non-empty stacks, or (2) to remove just one coin from one<br>
+stack, in which case the opponent is _entailed_ to reply with a move<br>
+(of either type) in the resulting stack. The game terminates when<br>
+a player creates a stack of size 0 (necessarily by a move of type 2)<br>
+and the next player loses because there is no legal move in such a<br>
+stack.<br>
+<br>
+In such a game the Sprague-Grundy theory has to be extended so that<br>
+a stack of size N has a _set_ of G-values, all of which are relevant<br>
+if it is reached by an entailing move, but only the smallest if it<br>
+is reached by a non-entailing move. See [1] chapter 12 for details.<br>
+In particular the set can be empty, in which case the stack size<br>
+is said to be _loony_, as the position in which it occurs is<br>
+automatically a loss for the previous player regardless of which<br>
+sort of move it was reached by, and regardless of the sizes of any<br>
+other stacks.<br>
+<br>
+In [1] the authors point out that 1 and 3 are loony stack sizes,<br>
+and ask whether there are any others. In [2a], Julian West describes<br>
+computations for stack sizes up to 600000, and the discovery of<br>
+three new loony values.<br>
+<br>
+(On a personal note, I did similar computations, up to around 140000,<br>
+and found the same three loony values, at what must have been about<br>
+the same time. But I never got round to publishing them, so<br>
+I certainly don&#x27;t deserve any credit for that.)<br>
+<br>
+[2b] and [3a] (#11 in the list) describe no progress to date beyond<br>
+Julian West&#x27;s results.<br>
+<br>
+As a result of discussions between us in late 2002, David Seal did<br>
+some computations over the Christmas / New Year break, for stack<br>
+sizes up to 4000000. The values computed agree with those in [2a]<br>
+(and my own computations referred to above), but the new values<br>
+remain unconfirmed by independent calculation so far. The results<br>
+include four more loony values:<br>
+<br>
+              Loony values     First N    with unentailed G(N) =<br>
+                       1,3           4    2^0<br>
+                                     6    2^1<br>
+                                    12    2^2<br>
+                                    32    2^3<br>
+                                    94    2^4<br>
+                                   534    2^5<br>
+                 2403,2505        2556    2^6<br>
+                                  8062    2^7<br>
+                     33243       35138    2^8<br>
+                                119094    2^9<br>
+                                293692    2^10<br>
+----------------------------------------------- new results below<br>
+      640193,696157,696401      696532    2^11<br>
+                               1592106    2^12<br>
+                   3701153     3788448    2^13<br>
+<br>
+Other details of the computations will be publicised in due course.<br>
+<br>
+We would like to know of any other computations of values for<br>
+Top Entails, or if none have yet been performed we would like<br>
+to encourage others to confirm the above results.<br>
+<br>
+David Seal prefers not to publish his e-mail address at this time.<br>
+I will pass on to him any messages I receive on this topic, but be<br>
+warned that I have my own e-mail filter that may cause your first<br>
+attempt to be bounced with instructions on how to make a second.<br>
+Such, sadly, is the effect of spam on communications in the modern<br>
+world.<br>
+<br>
+[1] &quot;Winning Ways (for your mathematical plays)&quot;,<br>
+    by Elwyn R. Berlekamp, John H. Conway &amp; Richard K. Guy,<br>
+    published by Academic Press (1982)<br>
+<br>
+[2] &quot;Games of No Chance&quot;,<br>
+    edited by Richard J. Nowakowski, MSRI publications #29,<br>
+    published by Cambridge University Press (1996)<br>
+<br>
+[2a] &quot;New Values for Top Entails&quot;,<br>
+    by Julian West, in [2] pp. 345-350<br>
+<br>
+[2b] &quot;Unsolved Problems in Combinatorial Games&quot;,<br>
+    by Richard K. Guy, in [2] pp. 475-491<br>
+<br>
+[3] &quot;More Games of No Chance&quot;,<br>
+    edited by Richard J. Nowakowski, MSRI publications #42,<br>
+    published by Cambridge University Press (2002)<br>
+<br>
+[3a] &quot;Unsolved Problems in Combinatorial Games&quot;,<br>
+    by Richard K. Guy &amp; Richard J. Nowakowski, in [3] pp. 457-473<br>
+<br>
+Chris Thompson                 University of Cambridge Computing Service,<br>
+Email: cet1 [at] ucs.cam.ac.uk New Museums Site, Cambridge CB2 3QH,<br>
+Phone: +44 1223 334715         United Kingdom.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

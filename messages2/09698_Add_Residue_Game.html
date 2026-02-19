@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add/Residue Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Add/Residue Game</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Tue, 24 Aug 2010 12:02:49 -0700 (PDT)</p>
+    <hr>
+    <div>A game for any plural number of players:<br>
+<br>
+Every player &quot;gets&quot; the numbers, twice each, of 1 to n -- where n is<br>
+some pre-determined positive integer -- to play with; the integers 1<br>
+to n placed in each player&#x27;s &quot;mod pile&quot;, and the numbers 1 to n placed<br>
+in each player&#x27;s &quot;add pile&quot;.<br>
+<br>
+(A pile may simply be a list of integers that the player crosses off<br>
+as each integer is played. Or if n = 13, for instance, and there are<br>
+two players, then there can be 4-total actual piles where the numbers<br>
+are represented by playing cards of certain suits.)<br>
+<br>
+When the game begins, we have the initial value of the variable m,<br>
+m(0), equal to 0.<br>
+<br>
+The players take turns moving.<br>
+On a move, the player moving can choose a number from either their mod<br>
+pile or their add pile. Let this number be c(k). Each number can only<br>
+be picked once from a given pile. If playing with playing cards, place<br>
+the card representing c(k) in the &quot;used pile&quot;. Only pick from cards in<br>
+your mod or add piles, not in the used pile.<br>
+<br>
+On the kth move of the game, the player, depending on whether they<br>
+chose their number from the add pile or the mod pile, sets m(k) to<br>
+equal:<br>
+<br>
+m(k) = m(k-1) + c(k), if c is chosen from the add pile.<br>
+<br>
+m(k) = m(k-1) (mod c(k)), if c is chose from the mod pile.<br>
+0 &lt;= m(k) &lt;= c(k)-1.<br>
+<br>
+If, and only if, c(k) was chosen from the mod pile, then m(k) is added<br>
+to the moving player&#x27;s score.<br>
+<br>
+<br>
+Play until the numbers from both piles of all the players are picked.<br>
+(There will be 2*n*(number of players) moves.)<br>
+<br>
+Largest score wins.<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

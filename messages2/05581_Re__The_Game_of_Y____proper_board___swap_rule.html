@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: The Game of Y... proper board / swap rule</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: The Game of Y... proper board / swap rule</h1>
+    <p><strong>From:</strong> David J Bush &lt;twixt@nospamtodaycstone.net&gt;<br>
+    <strong>Date:</strong> Mon, 27 May 2002 23:29:43 -0400</p>
+    <hr>
+    <div>|&gt; 1) The Zillions board is slightly different than that of the board<br>
+|&gt; shown in these two diagrams:<br>
+|&gt; <br>
+|&gt;    http://www.gamepuzzles.com/gameofy.htm<br>
+|&gt; and<br>
+|&gt;    http://home.flash.net/~markthom/html/the_game_of_y.html<br>
+|&gt; <br>
+|&gt; Can I assume the boards shown in the above two links are the official<br>
+|&gt; &quot;Y&quot; board, and the hexagon board used when playing with the Zillions<br>
+|&gt; engine is simply one of many alternate boards to play on?<br>
+|<br>
+|I think the simple hexagon board was the original format,<br>
+|and that the inventors later found that the slightly<br>
+|altered board gave a better game. Surely the hexagons are<br>
+|easier to implement on Zillions. HTH.<br>
+<br>
+I haven&#x27;t downloaded the Zillions Y package, but I assume you mean<br>
+a &#x27;plain&#x27; triangular grid. This would indeed be easier to implement,<br>
+not just for the sake of the &#x27;grid&#x27; command, but because the game object<br>
+would be much easier to define. Ea described the process to me:<br>
+<br>
+Suppose the grid were filled with tokens, and suppose the tokens<br>
+were spherical, held in place on the &#x27;bottom&#x27; layer. A triangular<br>
+pyramid of spheres could be built up, one layer at a time, each<br>
+layer is a triangular grid with side length one unit less than<br>
+the layer it sits on. The color of each token is determined by the<br>
+colors of the three tokens it rests on. Majority rule wins; e.g.<br>
+if two of the base tokens are white then the next layer token is<br>
+white. The color of the top token determines the winner of the game!<br>
+I don&#x27;t know if the Zillions script uses this property of the<br>
+&#x27;plain&#x27; Y board, but if it does, it might make decent moves in<br>
+the endgame at least.<br>
+<br>
+But this algorithm does not seem to carry over to &quot;official&quot; Y<br>
+or to Hex... :-(<br>
+<br>
+<br>
+David Bush http://www.geocities.com/twixtplayer/<br>
+Remove nospamtoday from my email<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

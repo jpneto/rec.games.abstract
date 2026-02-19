@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: 2D Nim</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: 2D Nim</h1>
+    <p><strong>From:</strong> joc_kay@hotmail.com (Joe)<br>
+    <strong>Date:</strong> 25 Jul 2004 12:48:51 -0700</p>
+    <hr>
+    <div>w.taylor@math.canterbury.ac.nz (Bill Taylor) wrote in message news:&lt;716e06f5.0407232125.5ff737d1@posting.google.com&gt;...<br>
+<br>
+&gt; All correct except the P-pentomino is worth 5, not 1. <br>
+&gt; (It&#x27;s obviously NOT 1 as it can be reduced to the S-tetromino!)<br>
+<br>
+You are right Bill! (B.t.w. i like your pentomino nomenclature :).<br>
+<br>
+<br>
+Now that all polyominos up to the pentominos have been assigned a<br>
+Grundy value, the next step is the hexominos. However, there are 35<br>
+hexominos, and at the next level we have 108 heptominos. Not only do<br>
+the number of configurations grow exponentially, also the number of<br>
+possible moves increases rapidly with the size of the polynominos.<br>
+<br>
+Therefore, rather than calculating the Grundy values for the more<br>
+complicated polynominos, one might focus on the polynominos that have<br>
+a Grundy value of 0 (i.e. the &#x27;cold&#x27; polynominos). Only even<br>
+polynominos can have zero Grundy value. However, the domino is not<br>
+&#x27;cold&#x27; and amongst the tetrominos we have only seen one &#x27;cold&#x27;<br>
+configuration, the O-tetromino:<br>
+<br>
+XX<br>
+XX<br>
+<br>
+Yet, upon investigating the hexominos I found 8 &#x27;cold&#x27; configurations:<br>
+<br>
+X   X    X    X   XX   XXX  XXX  XXX  <br>
+XX  XX  XXX   XX  XXX  XX   XX    X   <br>
+XX  XX  X    XX    X   X     X   XX   <br>
+X    X  X    X    <br>
+<br>
+Assuming this very rapid growth of the number of &#x27;cold&#x27; configurations<br>
+to continue, numerous octominos can be expected to have zero Grundy<br>
+value.<br>
+<br>
+All of this is of course very relevant for the end-game. <br>
+<br>
+Based on the observation that only even polynominos can be &#x27;cold&#x27;, and<br>
+that starting from the O-tetromino the number of &#x27;cold&#x27; polynominos<br>
+increases rapidly with size, one might modify the rules a bit:<br>
+<br>
+--- PolyoNimo --- <br>
+<br>
+Starting from a configuration of 2x2 squares with coinciding edges<br>
+(the &#x27;O-tetromino&#x27;) both players in turn add exactly two squares to<br>
+the configuration thereby creating a growing polyomino. There is no<br>
+restrictions on where to add the new squares apart from the fact that<br>
+the edges of the newly added squares should be coinciding with edges<br>
+of squares already present.<br>
+<br>
+At any stage, one of the players - instead of further building - can<br>
+decide to remove squares from the polynomino. From that moment on both<br>
+players have to remove squares. However: there is a restriction on<br>
+which removals are allowed: only straight polyominos (a Nx1 rectangle<br>
+of squares, N = 1, 2, 3, ..) can be removed.<br>
+<br>
+The player who makes the last move wins.<br>
+<br>
+-----------------<br>
+<br>
+<br>
+Joe<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Hex: Some questions</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Hex: Some questions</h1>
+    <p><strong>From:</strong> twixtplayer@yahoo.com (David Bush)<br>
+    <strong>Date:</strong> 01 07 1999 00:00:00 GMT</p>
+    <hr>
+    <div>On 1 Jul 1999 15:31:57 GMT, bruno@cerberus.csd.uwm.edu (Bruno Wolff<br>
+III) wrote:<br>
+<br>
+&gt;From article &lt;ifxd7ycigon.fsf@flood.cs.hut.fi&gt;, by Antti Huima &lt;ahuima@flood.cs.hut.fi&gt;:<br>
+&gt;&gt; ...<br>
+&gt;&gt; Relatedly, does anyone know if `Hex&#x27; on a square lattice (for which<br>
+&gt;&gt; the `Hex theorem&#x27; does no longer hold!) is PSPACE-complete?<br>
+&gt;<br>
+&gt;I think what you are describing is the game bridgit. I seem to remember<br>
+&gt;that that game had a simple winning strategy.<br>
+<br>
+Bridgit, a.k.a. Connexxions or Gale, is actually played on two square<br>
+lattices superimposed, like the stars on the US flag. Each player<br>
+plays horizontal or verical connections on his/her specific square<br>
+lattice, which also block the opponent&#x27;s possible connections on the<br>
+other lattice. Moves are not made on the points of either lattice, but<br>
+between two points of your lattice. This is actually isomorphic to a<br>
+single square lattice, where each move IS on a lattice point, but the<br>
+rules regarding whether two diagonally adjacent tokens of your color<br>
+connect or not, depend on where you are in the lattice. Also, the grid<br>
+itself has the shape of a diamond, with diagonal sides relative to the<br>
+direction of &quot;horizontal&quot; and &quot;vertical&quot; within the lattice itself.<br>
+<br>
+BTW, Mr. Wolff is correct that Bridgit has been solved. I can send a<br>
+solution file to anyone who asks.<br>
+<br>
+&gt;&gt; <br>
+&gt;&gt; To me, it seems rather easy to prove that `Hex&#x27; on square lattice is a<br>
+&gt;&gt; draw (contrary to hexagonal Hex) when started on an empty board. Of<br>
+&gt;&gt; course, this does not tell anything about the worst-case complexity of<br>
+&gt;&gt; the problem starting from an arbitrary position.<br>
+&gt;<br>
+&gt;Most likely the game is still a first player win. Blocking games of this<br>
+&gt;type can&#x27;t have draws (unless you can block in ways that don&#x27;t connect<br>
+&gt;as in Twixt).<br>
+<br>
+&quot;Hex on a square lattice&quot; is ambiguous. I assume each move consists of<br>
+placing one token on a vacant lattice point. But are diagonally<br>
+adjacent tokens of the same color connected or not? If they are in all<br>
+cases, black &amp; white paths can cross each other, and the game is more<br>
+a race game than a connection game. The first player certainly has a<br>
+win here. If diagonal connections are always true in one diagonal<br>
+direction but never in the other, this is the same as Hex, of course.<br>
+Bridgit corresponds to a more complicated situation regarding diagonal<br>
+connections, but we wind up with a simpler game, as frequently happens<br>
+when you mess with the rules of an abstract game.<br>
+<br>
+If diagonal connections are never allowed, each player can adopt a<br>
+simple strategy that assures the other player cannot win: suppose the<br>
+game is played on an NxN square grid. (This might be an unwarranted<br>
+assumption- maybe the overall shape of the grid is a diamond, as in<br>
+Bridgit?) Consider two adjacent rows that run from one of your borders<br>
+to the other. Now partition this region into N &quot;dominoes,&quot; each<br>
+pointing towards your opponent&#x27;s borders. In order for your opponent<br>
+to win, he/she must occupy both parts of one of those dominoes. But if<br>
+you always respond to a move in one half of a domino by playing in the<br>
+other half, your opponent will be blocked. The game should be a draw.<br>
+So, to answer your question, Hex on a square lattice, if this is what<br>
+you&#x27;re talking about, is not complex enough to be p-space complete.<br>
+<br>
+Regarding connection games on arbitrary graphs, you might enjoy &quot;The<br>
+Game of Y&quot; which you can find at http://gamepuzzles.com/abstract.htm<br>
+<br>
+David Bush<br>
+ <br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

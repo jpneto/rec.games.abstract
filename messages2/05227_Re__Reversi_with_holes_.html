@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Reversi with holes?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Reversi with holes?</h1>
+    <p><strong>From:</strong> torbenm@sjofn.diku.dk (Torben gidius Mogensen)<br>
+    <strong>Date:</strong> 21 Jan 2002 10:16:14 +0100</p>
+    <hr>
+    <div>mlhowe@aol.com1234321 (MLHowe) writes:<br>
+<br>
+&gt; I noticed that on the &quot;ItsYourTurn&quot; website there&#x27;s a game called<br>
+&gt; Black Hole Reversi where one square is blocked off as nonexistent<br>
+&gt; before the game begins.  I wonder if it might not be more<br>
+&gt; interesting to give each player a fixed number of &quot;holes&quot;, perhaps<br>
+&gt; one, two, or three each, to be played anywhere on the board as a<br>
+&gt; turn.  Notice that holes would be immune to the &quot;must flip&quot; rule and<br>
+&gt; could be placed freely.  Has anyone tried this, and if so, does it<br>
+&gt; make a good game?  It might go a long way toward opening Reversi<br>
+&gt; theory back up -- from what I understand, the 8x8 game is becoming<br>
+&gt; too narrow at the highest levels.  Does anyone want to try an<br>
+&gt; experimental game or two of &quot;Hole Reversi&quot; with me?<br>
+<br>
+I have tried something similar -- I once proposed an Othello variant<br>
+which was played on a 10x10 board, but where 16 blocks were placed<br>
+before game began with the limitation that no area of the board could<br>
+be blocked off and no blocks could be played in the middle 4x4<br>
+squares. I only played a couple of games with this variant, but it<br>
+seemed O.K.<br>
+<br>
+I agree that classic Othello is too much in the hands of the computer<br>
+these days. As I see it, there are several reasons for this:<br>
+<br>
+ 1) The fairly small number of legal moves per turn allows computer<br>
+    programs to make a deep search without using too much intelligence<br>
+    to limit the search space. This is especially true in the endgame,<br>
+    where some programs search the 12+ last moves perfectly.<br>
+<br>
+ 2) The opening is quite limited, which allows a computer to use an<br>
+    opening library for the first many moves.<br>
+<br>
+ 3) Since so much changes in a single move, it is hard for a human to<br>
+    think more than 4-6 moves ahead without losing track of some<br>
+    disks. A computer can easily keep perfect track of the baord for<br>
+    any number of turns ahead.<br>
+<br>
+The last point is an integral part of the game - it is about turning<br>
+over a large number of disks.<br>
+<br>
+The first two points are two sides of the same problem - a small<br>
+selection of legal moves. I listed them separately because they can be<br>
+solved differently. Your suggestion, for example, may make opening<br>
+libraries less useful as more opening are possible if you can place<br>
+blocks (and the value of some openings will change depening on where<br>
+blocks are placed). But placing blocks won&#x27;t address the general<br>
+problem of a small search space. Hence, I believe the game must be<br>
+changed to increase the number of different legal moves.<br>
+<br>
+A simple way of achieving this is to increase the board size. It won&#x27;t<br>
+change the number of moves in the opening, but there will be more<br>
+moves in the mid game. However, I don&#x27;t think this will be nearly<br>
+enough without going to very large boards (16x16 or bigger) and that<br>
+will make games take far too long.<br>
+<br>
+I have earlier proposed another variant: Each disk has a cross printed<br>
+on both sides. When a disk is placed, it can be oriented so the cross<br>
+is like an x or like a +. To turn over a line of the opponents disks,<br>
+the disk of your own colour at the other end must be oriented in the<br>
+same way as the newly placed disk. The disks that are turned over can<br>
+be oriented in any way that the player who does the turning wants.<br>
+<br>
+So, while this new rule may limit the number of spaces where you can<br>
+play (due to the same-orientation restriction), it will increase the<br>
+number of ways you resolve the move (due to the choice of orientation<br>
+on placed and flipped pieces). The impact will be greatest on the end<br>
+game, where you would typically flip a large number of disks each<br>
+move. This will make perfect end-game search virtually impossible for<br>
+more than half a dozen moves (though you might recognize that some<br>
+orientations don&#x27;t matter and thus decrease the number of searched<br>
+positions).<br>
+<br>
+I haven&#x27;t actually played this variant, but I analysed the number of<br>
+legal moves in the start game and found that after a few moves you had<br>
+many more possible positions that in the standard game.<br>
+<br>
+	Torben Mogensen (torbenm@diku.dk)<br>
+<br>
+<br>
+</div>
+</body>
+</html>

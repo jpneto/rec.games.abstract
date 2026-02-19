@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: LIFE</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: LIFE</h1>
+    <p><strong>From:</strong> torbenm@diku.dk (Torben AEgidius Mogensen)<br>
+    <strong>Date:</strong> 27 Jan 93 12:18:23 GMT</p>
+    <hr>
+    <div>fkschmid@cip.informatik.uni-erlangen.de (Frank Schmidt) writes:<br>
+<br>
+&gt;I just wrote a coloured LIFE-program. It works the following:<br>
+&gt;Two (or more) groups of cells are put randomly in a 100x100 board,<br>
+&gt;where left and right side and upper and lower side are connected.<br>
+&gt;Each group has (in the beginning) its own colour.<br>
+<br>
+&gt;Then LIFE is running normally, regardless of the colours, but<br>
+&gt;every &quot;newborn&quot; cell gets a colour depending on the three<br>
+&gt;neighboring cells (its &quot;parents&quot;):<br>
+<br>
+&gt; - if all parent cells have the same colour, the child gets it, too<br>
+<br>
+&gt; - if e.g. one parent cell is blue and another is red, the child is white<br>
+<br>
+&gt; - if one or two cells are e.g. red and the other(s) is/are white,<br>
+&gt;   the child will be red<br>
+<br>
+I once wrote a two-colour life using just plain majority rules for the<br>
+colouring of new cells: the dominant colour from the 3 neighbours<br>
+becomes the new colour. Since there are two colurs and three<br>
+neighbours there will always be a unique dominant colour. If you start<br>
+with a random initial configuration (with random colours for every<br>
+life cell) you fairly quickly get separated areas of different<br>
+colours. It is, however, possible to make e.g. gliders that remain of<br>
+composite colour throughout. An alternative rule that will not cause<br>
+separated areas is to make the new colour the opposite of what the<br>
+above rules say. So three identical neighbours spawns a new cell of<br>
+the opposite colour, and a mixed neighbourhood spawns a new cell in<br>
+the minority colour. I haven&#x27;t done much testing of this idea, so I<br>
+can&#x27;t tell you what the global behaviour is.<br>
+<br>
+With three colours there may be three different neighbours, so there<br>
+is no &quot;fair&quot; choice for the new colour. If there are four different<br>
+colours one can say that when there are three different neighbours,<br>
+then the new cell gets the fourth colour (that is, the colour not<br>
+present among the neighbours). I expect these rules to cause<br>
+clustering like the first rules I described, as (I think) will any<br>
+rules where majority causes a new cell of the dominant colour. I have<br>
+no results about gliders etc. remaining composite with all four<br>
+colours, but since any configuration having only two colours will<br>
+behave like the two-colour rules above, gliders retaining at least two<br>
+different colours exist.<br>
+<br>
+With more than four colours we again have the question about what to<br>
+do when the three neighbours are different. I have no elegant solution<br>
+to this problem.<br>
+<br>
+	Torben Mogensen (torben@diku.dk)<br>
+<br>
+<br>
+</div>
+</body>
+</html>

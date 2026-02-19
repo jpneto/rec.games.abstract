@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Declarative Game Idea (long)</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Declarative Game Idea (long)</h1>
+    <p><strong>From:</strong> ulim@coli.uni-sb.de (Ulrich Mayring)<br>
+    <strong>Date:</strong> 15 Apr 1993 12:19:26 +0200</p>
+    <hr>
+    <div>Hi folks,<br>
+<br>
+At least one of you said he wanted to read this, so here goes:<br>
+<br>
+This text is about an example for what I call a declarative game. The game is<br>
+called PARTY-ANIMAL and does not exist in any form other than in my mind and in<br>
+yours when you&#x27;re done reading this.<br>
+The game does not fulfill every single condition I would want to be taken up<br>
+by a truly declarative game, but it is only supposed to be a good-enough first<br>
+try. Also, please take into account that this specification is far from being<br>
+a formal description easily implementable. However, I don&#x27;t think that it would<br>
+be difficult to implement P-A in, say, Prolog, although it sure would be a lot<br>
+of tedious work.<br>
+<br>
+                             PARTY-ANIMAL<br>
+<br>
+Party-Animal (henceforth referred to as P-A) is a game suitable for... let&#x27;s<br>
+say 17 players. (For all I care it COULD be run with 174 players, too)<br>
+The players can be users connected with each other and with the<br>
+MasterControlProgram (MCP) over a computer-net (e.g. like UseNet) or they<br>
+can be participants in a PBM-game with the MCP being a commercial or<br>
+non-commercial PBM-company. Finally there is a version of P-A imaginable,<br>
+where 16 of the players and the MCP are run by a computer and only the 17th<br>
+player would be human, thus the game could be sold as a regular computer game.<br>
+The MCP, btw, is needed to resolute player actions and generally conduct play,<br>
+but it doesn&#x27;t necessarily have to be a machine. In fact if someone is willing<br>
+to put in a tremendous kind of effort, he may hand-moderate P-A.<br>
+<br>
+The idea:<br>
+Each player is a fervent party-goer and the goal of the game is to become a<br>
+P-A, i.e. someone who - amongst other things - is:<br>
+1.) invited to all the cool parties and not invited to the uncool ones, because<br>
+uncool parties are thrown by uncool people and they wouldn&#x27;t dare ask a P-A<br>
+to come.<br>
+2.) never at a loss for the right thing to say when small-talking.<br>
+3.) always the focal point of a party, never standing around by himself.<br>
+4.) sucked up to by all uncool people.<br>
+5.) generally one of the major VIPs in town.<br>
+6.) the winner of the game, reaping whatever benefits there are to be reaped<br>
+from winning a game.<br>
+Apart from the 17 players there are also lots of other guests at the party,<br>
+whose behavior is not necessarily known to the players. Each party a different<br>
+set of &#x27;other&#x27; guests is generated more or less randomly, along with some<br>
+regulars like the mayor.<br>
+<br>
+The start-up situation:<br>
+Every player belongs to a social group, like yuppies, punks, hunks, athletes,<br>
+cheerleaders, joe_averages, nerds, brainies, rockers, freaks, high-society and<br>
+so on. His social group determines what kinds of abilities he has, e.g.:<br>
+A brainy can always talk to sophisticated people, whereas a cheerleader cannot.<br>
+A cheerleader on the other hand is well-liked by everyone on looks alone,<br>
+whereas nobody will remember a brainy the day after the party.<br>
+<br>
+Social group also determines the strategic party movement of a player:<br>
+A yuppie will not go closer than 15 feet to a punk even if that means not<br>
+getting to talk to the mayor. A nerd will always have one eye at the buffet<br>
+to be the first one, when it opens, so he will not go further than 20 feet<br>
+from it. A cheerleader will always be on the look-out for any of her friends<br>
+to go to the bathroom in order to follow her to catch all the newest gossip.<br>
+A rocker will hang around the band, the high-society people will only<br>
+associate with themselves and so on. Think of all the prejudices you have and<br>
+bingo! Strategic party movement actually is a very important part of the game,<br>
+because you can:<br>
+1.) block out other people, who won&#x27;t go near you, from an interesting<br>
+conversation.<br>
+2.) bribe others with the last bowl of caviar you were able to secure, because<br>
+you hung around the buffet all the time.<br>
+3.) determine the kind of music played by the band, when you stick around there<br>
+and bribe them with alcoholic beverages.<br>
+4.) generally get to interesting points of the party, if you are able to move<br>
+about pretty well.<br>
+<br>
+Every player also knows several other party-goers, you can always break into a<br>
+conversation, if you know one of the small-talkers (other hinderances like<br>
+yuppie &lt;-&gt; punk notwithstanding). Talking to someone you don&#x27;t know is only<br>
+possible if someone else introduced you before. However, once you have broken<br>
+into a certain social group, it becomes much easier the next time. By getting<br>
+&#x27;into&#x27; a social group you will also catch some of their abilites, but also some<br>
+of their strategic party movement and other drawbacks.<br>
+<br>
+The currency of P-A is gossip, when you are part of a conversation you will<br>
+catch some of the gossip there, but are in turn also expected to produce<br>
+other gossip not already known by the majority of the conversationists. If you<br>
+are unable to come up with something, you are ejected from this conversation<br>
+and have to look elsewhere. When you have acquired interesting gossip you<br>
+can always get some more gossip with it and will eventually get that piece<br>
+of gossip you need to become a party-success. This will score you points and<br>
+when you have enough points you will become a P-A. Other ways to score points<br>
+is to make the band play the kind of music everybody likes, to stand in line<br>
+at the buffet for the mayor and to impress unto the hosts of the party that you<br>
+are a starving artist or an excentric philosopher.<br>
+<br>
+The game itself:<br>
+Every player can perform certain actions during a game turn and the actions<br>
+are resoluted by the MCP either in random order or according to which players<br>
+press really hard to move first. Of course there should be some kind of penalty<br>
+for pressing hard.<br>
+Possible actions include:<br>
+1.) altering one&#x27;s strategic party movement by defining additional constraints<br>
+    like:<br>
+       -I won&#x27;t talk to Ed McMahon.<br>
+       -I will only associate with people, who wear a tie.<br>
+       -I will always try to get as close as possible to a politician.<br>
+       -I will try to grab every drink coming my way within 3 feet.<br>
+Of course it should not be possible to alter the strategic party movement<br>
+imposed upon the player by the social group, but adding some more definitions<br>
+should be unconditionally permitted. So it probably is a useful idea if the<br>
+constraints determined by the social group were only one or two in number,<br>
+so that the player has some room to define additional ones.<br>
+2.) implicitly altering other people&#x27;s party movement by:<br>
+       -wearing a tie.<br>
+       -telling tasteless jokes.<br>
+       -ranting about the incompetent government.<br>
+       -trying to make a pass at some beautiful man/woman/whatever.<br>
+       -etc.<br>
+3.) actually performing some strategic party movement. A player says for<br>
+example that he wants to go to the bar or to the conversation, where he sees<br>
+the mayor. Resolution of this movement is done by the MCP, which takes into<br>
+account other people&#x27;s movement plans and everyone&#x27;s strategic party movement<br>
+constraints.<br>
+4.) taking part in a conversation. The player can catch the newest gossip and<br>
+must deliver some himself.<br>
+5.) pushing (or popping) some drugs in the bathroom. (Only in the Hardcore P-A<br>
+variant :-)<br>
+6.) trying to make the party die by doing something really embarrassing<br>
+<br>
+Finally some more juice will be injected into the party, when the MCP randomly<br>
+determines that some surprise guests or even party-crashers come by or the<br>
+Mayor&#x27;s secret lover makes a scene.<br>
+<br>
+After every game turn the player gets an evaluation, which tells him which of<br>
+his actions took place in what order and why they maybe didn&#x27;t happen as he<br>
+planned. For example:<br>
+<br>
+&quot;You planned to go to the bar, if a barman was there, but there wasn&#x27;t, so<br>
+you walked into the next conversation. They talked about &#x27;gossip#429&#x27;, which<br>
+you learned and can use from now on. Then they looked at you and according<br>
+to your specification for yuppie-conversation you produced &#x27;gossip#12&#x27;, which<br>
+everybody already knew, so you were ejected. Then some punk came near you<br>
+and you moved on. You briefly caught a glimpse of the mayor, but when you<br>
+arrived at the conversation the maximum number of people already took part<br>
+in it. At that time the buffet was opened and according to your specification<br>
+&#x27;buffet#3&#x27; you proceeded to stand in line. You secured a bowl of caviar and<br>
+according to your specification &#x27;suck_up#5&#x27; offered it to the mayor, who<br>
+declined. Since none of your further plans were applicable (wrong music,<br>
+wrong people) you switched to &#x27;default_routine#2&#x27; and stared thoughtfully at<br>
+the modern art sculptures. However, apparently no-one with the specification<br>
+&#x27;look_for_artsy_type#3&#x27; came along and the game turn ended. You are now<br>
+standing close to a rocker and the band and can interact with them next turn.&quot;<br>
+<br>
+OK, that is hopefully enough to give you some kind of an idea of what a <br>
+declarative game could be like in contrast to a procedural game.<br>
+<br>
+Features of declarative games included in P-A are:<br>
+1.) Variable (maybe influencable) order of play and resolution is highly<br>
+dependent on who gets to move when.<br>
+2.) Resolution of actions driven by the current state of the party and the<br>
+actions of other players, not by a static set of rules.<br>
+3.) Players can influence resolution by changing the state of the party. When<br>
+they do so, they not only change the data, which the resolution algorithm<br>
+takes to compute something or other. Instead they change the data, but the data<br>
+is in fact the resolution algorithm itself, so they change the algorithm and<br>
+the order of when to compute what as well.<br>
+<br>
+Features of declarative games not included in P-A are:<br>
+1.) Players cannot enlarge the party world by creating new guests with new<br>
+abilities and drawbacks, by defining new rules for the band or by making up<br>
+some new gossip.<br>
+2.) Players cannot throw a party themselves and determine who to invite.<br>
+3.) Players cannot define recursive plans. This is simply to make the<br>
+implementation easier and keep more control over what the players do.<br>
+<br>
+The reason why these features are not included is playability, there is in fact<br>
+no implementation-related reason, why they couldn&#x27;t be included. OK, that&#x27;s it<br>
+so far and please feel free to comment on P-A and volunteer to implement it.<br>
+<br>
+Ulrich Mayring<br>
+EMail: ulim@coli.uni-sb.de<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mastermind</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Mastermind</h1>
+    <p><strong>From:</strong> marzuola@owlnet.rice.edu (Steven Joseph Marzuola)<br>
+    <strong>Date:</strong> 30 May 1994 23:33:05 GMT</p>
+    <hr>
+    <div>I&#x27;ve been curious for many years about the game Mastermind.<br>
+<br>
+For those unaware, it is played by two players, a Hider and a Guesser.<br>
+First, the Hider chooses a secret arrangement of colored pegs.  Then,<br>
+play alternates: the Guesser places a permutation of colored pegs on<br>
+the board, and the Hider compares the latest guess to the hidden code.<br>
+If they match exactly (in color and position) then the game is over;<br>
+otherwise, the Hider gives a Black clue peg for each peg in the guess<br>
+which is the same color and occupies the same position as a<br>
+corresponding peg in the hidden code, and a White clue peg for each<br>
+peg in the guess which appears in the hidden code, but in a different<br>
+position.  The object is for the Guesser to get the right code in the<br>
+least number of guesses.  (There really isn&#x27;t much for the Hider to do<br>
+after the game starts).<br>
+<br>
+Recently I wrote a computer implementation of the game, which played<br>
+both sides of the game, with one addition.  Basically, the Hider can<br>
+cheat, by changing the hidden code at any time, as long as every clue<br>
+given in response to every previous guess is still valid.  The program<br>
+works, but I am not sure that it is playing the &quot;best&quot; it can play<br>
+(partly because I don&#x27;t know for sure what that strategy is!)<br>
+<br>
+I have a couple of questions: Has anybody else studied this game, and<br>
+can somebody refer me to any published studies?  In particular, for<br>
+the standard game (6 possible colors, 4 positions) I believe (from<br>
+experience) that even with bad luck it should take no more than 5<br>
+turns for a Guesser to pin down the hidden code.  Also, if allowed to<br>
+&quot;cheat&quot;, I believe that the best possible response to a guess by the<br>
+Guesser is for the Hider to place either 1 Black and 1 White clue peg,<br>
+or 2 White pegs.  These statements should be provable, (or<br>
+disprovable) but I&#x27;m not sure how to do it.<br>
+<br>
+Thanks for any response.  Email please, and if there are more than<br>
+just a few responses I&#x27;ll post a summary.<br>
+<br>
+<br>
+<br>
+-- <br>
+Steve Marzuola (marzuola@owlnet.rice.edu)<br>
+&quot;Think of us as the Information Superhighway ... without any information!&quot;<br>
+                                                       -- David Letterman<br>
+Any resemblance to the views of Rice University is strictly coincidental.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

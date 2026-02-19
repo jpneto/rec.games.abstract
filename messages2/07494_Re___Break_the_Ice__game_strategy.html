@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: &quot;Break the Ice&quot; game strategy</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: &quot;Break the Ice&quot; game strategy</h1>
+    <p><strong>From:</strong> &quot;James Dow Allen&quot; &lt;jdallen2000@yahoo.com&gt;<br>
+    <strong>Date:</strong> 3 Aug 2006 01:39:32 -0700</p>
+    <hr>
+    <div><br>
+Arthur J. O&#x27;Dwyer wrote:<br>
+&gt; ... But the computer<br>
+&gt; would have to examine (on the order of) 9-factorial game trees to<br>
+&gt; come to the same conclusion via alpha-beta!<br>
+<br>
+It sounds like you&#x27;re missing the &quot;transposition cache&quot;<br>
+(memory, e.g. hash table, of previously solved positions).<br>
+That will give you a huge performance boost, I think, though<br>
+perhaps not as huge as you&#x27;ll need and could obtain with<br>
+further heuristics.<br>
+<br>
+Depth-first is far simpler to code than breadth-first but,<br>
+if you pursue the project very far, you&#x27;re likely eventually<br>
+to want breadth, so set up your data with that in mind!<br>
+<br>
+James Dow Allen<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

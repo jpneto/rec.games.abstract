@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Randomization in chess</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Randomization in chess</h1>
+    <p><strong>From:</strong> Douglas Zare &lt;zare@math.columbia.edu&gt;<br>
+    <strong>Date:</strong> Tue, 10 Sep 2002 03:59:31 GMT</p>
+    <hr>
+    <div><br>
+<br>
+Scott Pardee wrote:<br>
+<br>
+&gt; &gt;<br>
+&gt; &gt; What I mean is a random way to produce positions that seem to be nearby to humans, possibly increasing the strength of one side or the<br>
+&gt; &gt; other. For example, one could declare that in 5 moves, a pawn would be added to one side or the other, somewhere on the second, third,<br>
+&gt; &gt; or fourth ranks. Then playing out one position might reveal that it seems to win an average of 0.3 points, whereas another move might<br>
+&gt; &gt; win 0.2 points. Of course, this does not guarrantee that the first position was stronger than the second, but it would provide<br>
+&gt; &gt; feedback that I believe would be valuable to people playing ordinary chess.<br>
+&gt; &gt;<br>
+&gt; &gt; It might be that the randomization method should depend on the position, e.g., if the tactics are tight in one part of the board, one<br>
+&gt; &gt; could randomly shift undeveloped pieces in another part of the board.<br>
+&gt; &gt;<br>
+&gt; &gt; Douglas Zare<br>
+&gt;<br>
+&gt; Hi Douglas,<br>
+&gt;<br>
+&gt; I&#x27;m not sure I quite understand the your examples here. I think<br>
+&gt; there are probably many ways, including these ideas, that could<br>
+&gt; be interesting to play around with. I&#x27;m not quite sure what you<br>
+&gt; mean by random in your description.<br>
+<br>
+Instead of looking at the specific position in ordinary chess, one might look at many related positions, imagining that there is a<br>
+probability distribution over that set of positions, and that your goal is to maximize your expected performance.<br>
+<br>
+In fact, the distribution could extend to the parameters, e.g., the thinking time allowed, or the noise added to each side&#x27;s computer<br>
+evaluation in the rollout.<br>
+<br>
+It might not tell me anything about the actual positions, and in fact, I hope it doesn&#x27;t. What I want to do is to know what ought to feel<br>
+like a strong move, not to be told that the moves are equally strong since the computer can see that the position is still a win after each.<br>
+If you want, you can imagine that my imperfect understanding of the game means that there is a subjective probability distribution anyway.<br>
+<br>
+&gt; For starters, how would these<br>
+&gt; positions and pieces be selected for these moves or changes in a<br>
+&gt; game&#x27;s set up or given piece positioning?<br>
+<br>
+It might depend on the actual position, and the results might be hard to compare between decisions, even if they seem conclusive for a<br>
+particular pair of moves. The variations should not have immediate direct tactical effects on the differences between the plays, e.g., such<br>
+that in the first position, 60% of the variations would immediately drop a piece, whereas from the other position only 30% would. Such<br>
+tactical variations might have their place if you were practicing to play speed chess against a computer, I supposed, but I&#x27;m looking for<br>
+more than that.<br>
+<br>
+Douglas Zare<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

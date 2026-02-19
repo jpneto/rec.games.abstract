@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Sprouts Email Tournament</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Sprouts Email Tournament</h1>
+    <p><strong>From:</strong> Nick Wedd &lt;nick@maproom.co.uk&gt;<br>
+    <strong>Date:</strong> Tue, 10 Dec 2002 16:14:06 +0000</p>
+    <hr>
+    <div>In message &lt;9a2dfd4d.0212091409.429d543c@posting.google.com&gt;, Danny <br>
+Purvis &lt;danny_purvis@hotmail.com&gt; writes<br>
+&gt;.Nick Wedd &lt;nick@maproom.co.uk&gt; wrote in message <br>
+&gt;news:&lt;igAvGNFqZH99EACd@maproom.demon.co.uk&gt;...<br>
+&gt;<br>
+&gt;&gt; In all the abstract games which I enjoy, you can play so as to try to<br>
+&gt;&gt; improve your position.<br>
+&gt;&gt;<br>
+&gt;&gt; In sprouts, either you are able to analyse the position fully (when<br>
+&gt;&gt; either you know that you have a won position, or you know that your<br>
+&gt;&gt; opponent has a won position but you can hope that he goes wrong), or you<br>
+&gt;&gt; can&#x27;t and the move that you make might as well be random.<br>
+&gt;&gt;<br>
+&gt;&gt; Can you persuade me otherwise?<br>
+&gt;<br>
+&gt;That&#x27;s a great summary of the old view of sprouts.  I remember many<br>
+&gt;years ago at a chess tournament the math professor David Sumner<br>
+&gt;expressed exactly the same idea.  Lately, though, the concept of<br>
+&gt;&quot;survivors&quot; has given the game a strong strategical element.  A<br>
+&gt;survivor is a live spot in an exhausted position.<br>
+<br>
+I don&#x27;t see how this provides any strategical element at all.  I stand <br>
+by my statement - either I can calculate the full value of the position <br>
+(and it is then trivial knowing what move to make), or I can&#x27;t, and I <br>
+have no reason to prefer any move over any other.  I would say this of <br>
+any impartial game.<br>
+<br>
+&gt;A live spot is either a &quot;cannibal&quot; or a &quot;ghost&quot;.  A cannibal is a live<br>
+&gt;spot with 0 or two lines attached.  A ghost is a live spot with one<br>
+&gt;line attached.<br>
+&gt;Any sprouts move must change a position with an even number of<br>
+&gt;cannibals to a position with an odd number of cannibals, and vice<br>
+&gt;versa.  Since a survivor is a cannibal, the player to move in any<br>
+&gt;position can count the number of cannibals and instantly know whether<br>
+&gt;he needs an even or an odd number of survivors in the final position.<br>
+<br>
+Using nim notation, a cannibal is equal to 0, a ghost is equal to *. The <br>
+number of cannibals in a position is irrelevant, as each cannibal <br>
+provides either no move, or a move for each player.  If you are going to <br>
+move to a position with nothing but cannibals and ghosts, and you can <br>
+arrange for the number of ghosts to be even, you win by doing so;  and <br>
+if you make it odd, you lose by doing so.<br>
+<br>
+&gt;Play revolves around trying to get an even or an odd number of<br>
+&gt;survivors.  As the position gets more and more divided up, players try<br>
+&gt;to extract desirable numbers of survivors from different sections of<br>
+&gt;the position.<br>
+<br>
+But they don&#x27;t know which of odd and even is desirable, unless they can <br>
+evaluate the whole game.<br>
+<br>
+&gt; Often there will be a position or subposition in which<br>
+&gt;one player will try to maximize the number of survivors and the other<br>
+&gt;player will try to minimize the number of survivors.<br>
+<br>
+The number of survivors is irrelevant.  It is the number of ghosts (*s) <br>
+that matters, and it is only the parity of this number that is of <br>
+interest, not its size.<br>
+<br>
+&gt; Sometimes there<br>
+&gt;will be cases in which a player succeeds too well, minimizes or<br>
+&gt;maximizes too much.  There is a lot of room for experience and<br>
+&gt;intuition in estimating and trying to influence how many survivors a<br>
+&gt;position or subposition will yield.<br>
+&gt;<br>
+&gt;A surprisingly useful notion is the concept of a &quot;universal trap&quot; or<br>
+&gt;UT.  A UT is a subposition consisting of two communicating spots, each<br>
+&gt;with 0 lines attached, and such that either (1) neither spot<br>
+&gt;communicates with any other spot or (2) both spots communicate with<br>
+&gt;one other spot, a spot with two lines attached and which itself<br>
+&gt;communicates with at least one more spot.  We generally try not to<br>
+&gt;move to a UT because the second person to move to a UT can determine<br>
+&gt;whether the UT will yield an even or an odd number of survivors.<br>
+<br>
+Do you mean &quot;we generally try not to move _in_ a UT&quot;?  This would make <br>
+sense, as the only move in a UT is to *2.<br>
+<br>
+UT (1) has the value {*2|*2}, which is equal to 0.  This means that, <br>
+with competent play, it might as well not exist.  But if you can&#x27;t <br>
+evaluate the position and you think that your opponent may be able to, <br>
+it is a good idea to avoid moving in a UT (1), as it increases your <br>
+opponent&#x27;s options.  (It also increases your own options, but this is no <br>
+use to you while you can&#x27;t evaluate the position.)<br>
+<br>
+&gt;These ideas and some related ideas explained on the website<br>
+&gt;www.geocities.com/chessdp help make the game a lot of fun to play from<br>
+&gt;the first move on.  Various rules of thumb give the player a good<br>
+&gt;strategical orientation immediately, and he is able to make<br>
+&gt;meaningful, goal-oriented moves.<br>
+<br>
+Would you say the same about nim?<br>
+<br>
+&gt;In the kind of position which you describe in which a player knows he<br>
+&gt;is lost, it&#x27;s the same as in chess.  If the player knows his opponent<br>
+&gt;has the technique and knowledge to certainly win, he resigns.<br>
+&gt;Otherwise he tries to make problems for his opponent, using strategy<br>
+&gt;and tactics.  But most of sprouts play occurs in difficult, unclear<br>
+&gt;positions.  One player or the other invariably resigns long before the<br>
+&gt;position is exhausted.  Beginners are often amazed how early<br>
+&gt;resignation comes.  In fact, resignation usually comes long before<br>
+&gt;meaningful, nonrandom play would have even begun in the old days<br>
+&gt;before the survivor concept.<br>
+&gt;<br>
+&gt;I hope this diatribe has been a reasonable answer to your question!<br>
+&gt;<br>
+&gt;Danny Purvis<br>
+<br>
+Nick<br>
+-- <br>
+Nick Wedd    nick@maproom.co.uk<br>
+<br>
+<br>
+</div>
+</body>
+</html>

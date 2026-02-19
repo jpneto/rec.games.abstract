@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: LOA for Zillions</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: LOA for Zillions</h1>
+    <p><strong>From:</strong> dtroyka@justice.com (Dan Troyka)<br>
+    <strong>Date:</strong> 21 Dec 2002 10:49:18 -0800</p>
+    <hr>
+    <div>Revision to last post, correcting an error:<br>
+<br>
+<br>
+You can make the script detect loss by capture as follows:<br>
+<br>
+1.  change the players statement to read (players Black Neutral White<br>
+Neutral)<br>
+<br>
+2.  add this macro:<br>
+<br>
+(define check-enemy-group<br>
+  (go to)<br>
+  (if (and enemy? (not-flag? won))<br>
+  (set-position-flag not-enemy true)<br>
+  a1<br>
+  (while (or not-enemy? (position-flag? not-enemy))<br>
+    next<br>
+  )<br>
+  (set-position-flag enemy-group true)<br>
+  a1<br>
+  (set-flag done false)<br>
+  (while (not-flag? done)<br>
+    (set-flag done true)<br>
+    a1<br>
+    (while (not-position? end)<br>
+      (if (and (and enemy? (not-position-flag? not-enemy))<br>
+               (not-position-flag? enemy-group)<br>
+               (adjacent-to? enemy-group))<br>
+        (set-position-flag enemy-group true)<br>
+        (set-flag done false)<br>
+      )<br>
+      next<br>
+    )<br>
+  )<br>
+  a1<br>
+  (set-flag won true)<br>
+  (while (not-position? end)<br>
+    (if (and (and enemy? (not-position-flag? not-enemy))<br>
+             (not-position-flag? enemy-group))<br>
+      (set-flag won false)<br>
+    )<br>
+    next<br>
+  )<br>
+  (if (flag? won) (change-owner indicator) (flip indicator) (flip<br>
+indicator)))<br>
+)<br>
+<br>
+3.  insert (check-enemy-group) after (check-group) in the<br>
+line-of-action macro.<br>
+<br>
+<br>
+No warranties on this code.  I didn&#x27;t test it much but it worked in<br>
+the situations I tried.   It treats simultaneous connections as a win<br>
+for the moving player.<br>
+<br>
+Patrick Duff has a deluxe version of LoA that has been in the works<br>
+for a couple of years, which he described recently at the ZoG<br>
+discussion board.  It ought to be the definitive version when it comes<br>
+out.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

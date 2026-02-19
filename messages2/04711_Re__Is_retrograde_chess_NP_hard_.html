@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Is retrograde chess NP-hard?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Is retrograde chess NP-hard?</h1>
+    <p><strong>From:</strong> hansb@cs.uu.nl (Hans Bodlaender)<br>
+    <strong>Date:</strong> 16 Mar 2001 14:46:34 GMT</p>
+    <hr>
+    <div>In &lt;98qs11$55k@severi.mit.edu&gt; tchow@lsa.umich.edu writes:<br>
+<br>
+&gt;Apparently no theorems are known about the computational complexity of<br>
+&gt;retrograde analysis in chess (or other well-known abstract games.  I have<br>
+&gt;raised this question before but have a couple of new thoughts that maybe<br>
+&gt;someone can build on.<br>
+&gt;<br>
+&gt;There are many ways to formalize the problem of retrograde analysis.  I am<br>
+&gt;taking the following as a working definition.<br>
+&gt;<br>
+&gt;INSTANCE: Two generalized chess positions, a &quot;start position&quot; and an &quot;end<br>
+&gt;position.&quot;<br>
+&gt;<br>
+&gt;QUESTION: Does there exist a legal sequence of moves taking us from the<br>
+&gt;start position to the end position?<br>
+&gt;<br>
+&gt;As a variation, we could also specify a bound on the number of moves.<br>
+&gt;It is not even immediately clear that this problem is in NP, because the<br>
+&gt;obvious &quot;certificate&quot; (i.e., the list of moves) could be exponential in<br>
+&gt;length.<br>
+&gt;<br>
+<br>
+Both versions are NP-hard.<br>
+<br>
+Proofsketch: reduction from Hamiltonian circuit for grid graphs.<br>
+<br>
+A graph is a grid graph, if we can give every vertex a pair of coordinates (i,j),<br>
+such that two vertices are adjacent if they are adjacent in the grid:<br>
+(i,j) is adjacent to (i&#x27;,j&#x27;) iff i=i&#x27; and |j-j&#x27;|=1, or j=j&#x27; and |i-i&#x27;|=1.<br>
+<br>
+Now, for an instance of this problem, we transform it as follows to the starting<br>
+configuration.<br>
+<br>
+For every vertex (i,j), put a black pawn on a square with coordinates (4i,4j).<br>
+Also, put a white pawn directly before it, such that it cannot be moved, i.e., on<br>
+(4i,4j-1).<br>
+<br>
+Put a white knight on a square where it can capture one of these black pawns.<br>
+<br>
+Put a black pawn on an otherwise empty column.<br>
+<br>
+Then, the ending position has all these black pawns except the last one removed.<br>
+<br>
+(Tiny mistake in the proof: we should specify the location of the white pawn. Not<br>
+really a problem, however; we can transform instead from Hamiltonian path between<br>
+specified endpoints.)<br>
+<br>
+The last pawn moved on the column exactly the number of steps the knight must<br>
+move when it takes all the pawns with a Hamiltonian circuit (basically, twice the<br>
+number of pawns).<br>
+<br>
+That should work, and probably with not a really hard proof, I think.<br>
+<br>
+More interesting would, imho, be a position that does more `unravelling&#x27;.<br>
+<br>
+  Hans<br>
+<br>
+--<br>
+Hans Bodlaender - Department of Computer Science - Utrecht University <br>
+P.O. Box 80.089 - 3508 TB Utrecht - the Netherlands<br>
+hansb@cs.uu.nl                      http://www.cs.uu.nl/~hansb/index.html<br>
+<br>
+<br>
+</div>
+</body>
+</html>

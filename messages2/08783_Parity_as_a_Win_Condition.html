@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Parity as a Win Condition</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Parity as a Win Condition</h1>
+    <p><strong>From:</strong> nickobento@gmail.com<br>
+    <strong>Date:</strong> Thu, 6 Nov 2008 06:58:04 -0800 (PST)</p>
+    <hr>
+    <div>In designing patterns for my game Mind Ninja (www.mindninja.com), I&#x27;ve<br>
+come across a type of win condition that I particularly love: parity<br>
+conditions, where one player wins when there is an odd number of<br>
+something on the board, and the other wins when there is an even<br>
+number.  I bring it up here because I don&#x27;t see the concept used very<br>
+much, but it can be applied in many ways and generally leads to games<br>
+with absolutely fascinating tactics and strategy. Note that in Mind<br>
+Ninja, each player can play *any* color stone he wants on his turn,<br>
+and that may part of the reason that these parity conditions turn out<br>
+to be so cool in Mind Ninja.  In any case, below I&#x27;ve provided four<br>
+example Mind Ninja patterns that involve parity; I want to see what<br>
+you brilliant game designers can come up with, if you&#x27;re inclined.<br>
+<br>
+(In all the pattern descriptions below, the word &quot;group&quot; refers to a<br>
+connected group of like-colored stones on the board.  The first one<br>
+below is probably my favorite of all Mind Ninja patterns.)<br>
+<br>
+OddGroup<br>
+The board must be completely full of stones, and there must be an odd<br>
+number of groups consisting of at least X stones.  (the pattern<br>
+chooser specifies X when proposing the pattern.  Somewhere around 7-9<br>
+seems ideal on a standard Mind Ninja HexHex board).  When counting<br>
+groups, sum over groups of *both* colors.<br>
+<br>
+OddEdge I<br>
+The board must be completely full of stones, and the group of stones<br>
+that touches the highest number of board-edges must touch an odd<br>
+number of board edges.  If there is more than one group that touches<br>
+that number of board edges, that number must still be odd.  The color<br>
+of the group doesn&#x27;t matter. Even a single stone counts as group.<br>
+Stones in corner spaces touch 2 edges.<br>
+<br>
+OddEdge II<br>
+The board must be completely full of stones, and an odd number of<br>
+groups must touch the edges. When counting groups, sum up over groups<br>
+of both colors. Even a single isolated stone counts as a group.<br>
+<br>
+OddGlom<br>
+The board must be completely full of stones, and an odd number of red<br>
+groups must touch the largest blue group. If there&#x27;s more than one<br>
+largest blue group, add up the total number of red groups in contact<br>
+with at least one of them. Even a single stone counts as a group.<br>
+<br>
+<br>
+</div>
+</body>
+</html>

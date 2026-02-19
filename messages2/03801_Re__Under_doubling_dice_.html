@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Under-doubling dice?</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Under-doubling dice?</h1>
+    <p><strong>From:</strong> Gary Wong &lt;gary@cs.auckland.ac.nz&gt;<br>
+    <strong>Date:</strong> 08 01 1998 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+David Ullrich &lt;ullrich@math.okstate.edu&gt; writes:<br>
+&gt; &gt; All this is just to attempt to see<br>
+&gt; &gt; if we can interpret anything useful about a median of S_n&#x27;s distribution<br>
+&gt; &gt; existing, even though E(S_n) does not -- E(S_n) &gt; 0 is essentially<br>
+&gt; &gt; Ullrich-optimality, and the median &gt; 0 is Wong-optimality.  For the sum<br>
+&gt; &gt; of independent variables with defined means, we have the median tending to<br>
+&gt; &gt; the mean by Lindeberg-Feller and so Ullrich-optimality is equivalent to<br>
+&gt; &gt; Wong-optimality.  <br>
+&gt; <br>
+&gt; 	In my first response to the definition of Wong-optimality I said<br>
+&gt; a few things that later I decided were not as clear as I thought. I came<br>
+&gt; close to deciding the two were equivalent - I didn&#x27;t say so for two reasons:<br>
+&gt; (i) if the two _are_ equivalent then at least one thing you&#x27;ve said about<br>
+&gt; Wong-optimality is wrong, because it contradicts something I can prove<br>
+&gt; in half a line, it&#x27;s just the law of large numbers) about Ullrich-optimality,<br>
+&gt; (ii) before I could really settle that I&#x27;d need to know _exactly_ what<br>
+&gt; the definition of Wong-optiomality is. Seems like the definition you gave<br>
+&gt; can&#x27;t be exactly what you meant. But I hesitate to complain about not<br>
+&gt; following your definition lest I sound pedantic&lt;ggg&gt;.<br>
+&gt; <br>
+&gt; 	In your definition of &quot;one strategy domainates another&quot; you say<br>
+&gt; something about a certain limit. The limit in question need not exist for<br>
+&gt; any pair of strategies.<br>
+<br>
+Hmmm.  I had hoped that it did (I take it the limit in question is on<br>
+P( X &gt;= 0 )), because the distribution of X_i for any two strategies is known<br>
+and well-defined (even if its mean and variance aren&#x27;t).  Offhand I can&#x27;t<br>
+prove or disprove it.  Do you have a counterexample?<br>
+<br>
+&gt; 	Also you say something about the limit of the total winnings<br>
+&gt; being positive. Makes more sense to me if you said instead the limit<br>
+&gt; (or rather lim inf) of the _average_ winnings (X_1 + ... + X_n)/n<br>
+&gt; being positive.<br>
+<br>
+That&#x27;s not exactly what I want to measure -- it&#x27;s not the limit on the<br>
+winnings or average winnings I&#x27;m interested in, it&#x27;s a limit on a<br>
+_probability of the distribution_.  I suspect there are many sequences<br>
+with no limit on the average, but with a limit on P( X &gt;= 0 ) -- an example<br>
+is a sequence of random i.i.d. X_i&#x27;s where each follows the distribution:<br>
+<br>
+P( X=1 ) = 0.8<br>
+P( X=-1 ) = 0.1<br>
+P( X=2^x, x &gt; 1 ) = 1/( 20 * 2^x )<br>
+P( X=-2^x, x &gt; 1 ) = 1/( 20 * 2^x )<br>
+<br>
+The mean and variance of X_i are undefined, but P( X &gt;= 0 ) is certainly<br>
+defined (0.85).  What I want is the limit on P( sigma X &gt;= 0 ) as n tends to<br>
+infinity.  P( sigma X &gt;= 0, n = 1 ) is 0.85 as above; P( sigma X &gt;= 0, n = 2 )<br>
+is a bit harder but by enumerating each possibility I get P=0.895.  I suspect<br>
+but cannot prove that the limit is 1, and so the strategy that wins this<br>
+distribution dominates the other.  (If I could show that it dominated every<br>
+other possible strategy, it would be Wong-optimal.)  In any case, the sequence<br>
+is monotonically increasing, because P( sigma to n+1 &gt; 0 | sigma to n &gt; 0 ) &gt;=<br>
+P( X_i &gt; 0 ) -- if you started off ahead before we played this game, you are<br>
+more likely to be ahead after this game than if we started off even.  I<br>
+guess it&#x27;s vaguely like a martingale except it relates to the probability,<br>
+not the sum.  Since the sequence is monotonically increasing, the initial<br>
+term is 0.85, I can claim that any value is bounded by 0.85 &lt;= sigma to n &lt;= 1<br>
+for arbitrarily large n -- which satisfies the Wong-domination requirement of<br>
+P &gt;= 0.5 for sufficiently large n.<br>
+<br>
+The reason all this is relevant of course is that probability distribution<br>
+above is one that applies to simple strategies in backgammon-like troublesome<br>
+games: if we both play a backgammon-like game, and our strategies are &quot;never<br>
+double except in a troublesome position; in a troublesome position then<br>
+always double and always take; otherwise, select chequer play such that<br>
+Ullrich wins non-troublesome games with probability 8/9&quot; and troublesome<br>
+positions arise with probability 1/10, then X (the amount won by Ullrich in<br>
+a single game) is exactly as described above: P( X=1 ) = 0.8 is Ullrich winning<br>
+8/9ths of the 90% of games that never reach troublesome positions; P( X =-1 )<br>
+is Wong winning the remainder of the non-troublesome games, and the St.<br>
+Petersburg-ish other two probabilities are our (even) chances of winning<br>
+various amounts in troublesome games.<br>
+<br>
+&gt; 	So maybe you agree that this is what you meant, (or agree <br>
+&gt; that you don&#x27;t see the difference): To say that strategy O dominates<br>
+&gt; strategy S means that the lim inf of (X_1 + ... + X_n) / n is<br>
+&gt; almost surely positive, if X_n is the amount I win in the n-th game<br>
+&gt; using strategy O against an opponent using strategy S. And then<br>
+&gt; S is Wong-optimal if there does not exist a strategy that dominates<br>
+&gt; S.<br>
+<br>
+That&#x27;s not directly what I mean; perhaps that result follows from what I do<br>
+mean, but it&#x27;s not immediately clear to me.<br>
+<br>
+&gt; 	If we revise the defintion as above then it seems to me that<br>
+&gt; Wong optimality may indeed be equivalent to Ullrich optimality.<br>
+<br>
+With a bit of hand-waving (add laws of large numbers and limit theorems; mix<br>
+well and heat) I believe the two optimalities are true for independent<br>
+variables and finite means and variances, because for large n then the<br>
+mean is almost surely non-negative.  This is sufficient for Ullrich-optimality;<br>
+it also implies Wong-optimality because the sum tends to a distribution<br>
+(ie. normal) such that P( X &gt;= mu ) &gt;= 0.5; and since mu &gt;= 0 we have<br>
+P( X &gt;= 0 ) &gt;= 0.5 and hence Wong-optimality.  Without independence or<br>
+finite means and variances, then the result does not necessarily hold.<br>
+<br>
+&gt; &gt; &gt; &gt; I know you can show it with the expectation, but is there<br>
+&gt; &gt; &gt; &gt; anything more fundamental there that would relax the requirement for<br>
+&gt; &gt; &gt; &gt; expectation?<br>
+&gt; &gt; &gt;<br>
+&gt; &gt; &gt;       The fact that the houses expected value is positive, _together_<br>
+&gt; &gt; &gt; with the limit on the size of the bet, allows you to prove that if you<br>
+&gt; &gt; &gt; bet $1 repeatedly and S_n is the amount you&#x27;ve won after n plays then<br>
+&gt; &gt; &gt;<br>
+&gt; &gt; &gt; S_n/n -&gt; - infinity<br>
+&gt; &gt; &gt;<br>
+&gt; &gt; &gt; almost surely. This is the law of large numbers.<br>
+&gt; &gt; <br>
+&gt; &gt; Which is true for arbitrarily large bets <br>
+&gt; <br>
+&gt; 	I&#x27;m not certain _exactly_ what you&#x27;re referring to. It&#x27;s _not_<br>
+&gt; true that S_n/n -&gt; - infinity almost surely if arbitrarily large bets<br>
+&gt; are allowed. See above for a way to ensure that S_n is positive infinitly<br>
+&gt; often.<br>
+<br>
+All I mean is that if you replaced &quot;$1&quot; in your sentence with &quot;$1000&quot;, or<br>
+&quot;$1000000&quot;, it would still hold.  The house needs no limit, _if the size of<br>
+the bet is independent of the result of previous games_.  I do agree that a<br>
+player can avoid S_n/n -&gt; -infinity by betting strategic amounts (ie.<br>
+dependent on previous games) and quitting while he&#x27;s ahead, but that&#x27;s only<br>
+because we can&#x27;t apply the law of large numbers for want of independence.<br>
+<br>
+&gt; &gt; -- the point is that by repeatedly<br>
+&gt; &gt; betting $1, you&#x27;re making each term of the series independent, so that the<br>
+&gt; &gt; law of large numbers applies.  Once you have it, you don&#x27;t need a limit on<br>
+&gt; &gt; the bets.<br>
+&gt; <br>
+&gt; 	But where _do_ you get that lln from if not from a limit on the<br>
+&gt; sixe of the bet?<br>
+<br>
+Independence, and the fact that a limit on sigma X_i/n still exists.  Say X<br>
+is your winnings after n independent bets of r dollars each are made at<br>
+roulette.  I want to prove that the house always expects to win.  For<br>
+arbitrarily large r and s, I can find a finite n such that E(X) after n<br>
+games is &lt; -s.<br>
+<br>
+&gt; &gt; Well, I&#x27;m willing to believe anything I can prove or have seen proof I can<br>
+&gt; &gt; follow :-)  Unfortunately our theory (the theory I understand, at least) is<br>
+&gt; &gt; relatively weak in the areas that seem important -- we have virtually<br>
+&gt; &gt; nothing without a strong law of large numbers, and an S.L.L.N. as I know it<br>
+&gt; &gt; applies to a large number of _independent_ variables, and we don&#x27;t even<br>
+&gt; &gt; necessarily have that.  <br>
+&gt; <br>
+&gt; 	Hmm. A while ago I sort of decided that a &quot;strategy&quot; was the same<br>
+&gt; as a mapping from all positions where we have a decision to make to the<br>
+&gt; class of all positions, the point being that randomization was not needed<br>
+&gt; because of the perfect information. But in fact I suppose a &quot;strategy&quot; could <br>
+&gt; also include consideration of previous games, in which case you&#x27;re right,<br>
+&gt; the X_n are not independent.<br>
+&gt; 	I don&#x27;t think an optimal strategy will take the previous games<br>
+&gt; into account, but I guess this raises a few questions...<br>
+<br>
+I don&#x27;t think it would either, but the fact remains that strategies that _do_<br>
+vary based on previous games can lead to sequences with interesting (annoying?)<br>
+properties.<br>
+<br>
+It&#x27;s a shame, really.  Cubeless backgammon is so lovely and well-behaved (a<br>
+Markov process over finite states).  Once you add a cube, the number of states<br>
+becomes countably infinite, which is a bit grotty, but people have coped in<br>
+the past.  Once you add history of past games, I don&#x27;t even have a clue how<br>
+to model a strategy any more, let alone derive a bean from it :-(<br>
+<br>
+&gt; &gt; Not to mention that if I remember correctly,<br>
+&gt; &gt; Lindeberg-Feller applies to sums of X_kn that are uniformly asymptotically<br>
+&gt; &gt; negligible (which we haven&#x27;t shown), <br>
+&gt; <br>
+&gt; 	I don&#x27;t remember what this means - guessing what it means from <br>
+&gt; what the words look like I _suspect_ that it&#x27;s exactly the bit that worries <br>
+&gt; me, or pretty close.<br>
+<br>
+I&#x27;m very hazy on all this stuff so don&#x27;t trust me on the face of it, but<br>
+informally I take it to mean that even the biggest things you&#x27;re adding<br>
+together have to be tiny compared to the sum.  Formally I wouldn&#x27;t trust<br>
+myself to have a clue, so here&#x27;s a definition stolen from the Encycopedia<br>
+of Mathematics:<br>
+<br>
+  X_nk are uniformly asymptotically negligible if for every epsilon &gt; 0,<br>
+max_{ 1 &lt;= k &lt;= n }  P( | X_nk | &gt; epsilon ) -&gt; 0 as n -&gt; inf, ie. X_nk<br>
+converges in probability to zero, uniformly in k.<br>
+<br>
+It goes on to say &quot;when the condition of asymptotic negligibility of the<br>
+variables in the triangular array considered above does not hold, the<br>
+situation becomes complicated&quot;.  I wonder if they intend &quot;complicated&quot; to<br>
+mean the same thing I usually do, ie. &quot;I think it&#x27;s intractable&quot; :-}<br>
+<br>
+&gt; &gt; and classifying S_n as a martingale or<br>
+&gt; &gt; sub/supermartingale requires not only independence, but E(S_n) to exist,<br>
+&gt; &gt; which we don&#x27;t have either.  Without this most basic background I&#x27;d have a<br>
+&gt; &gt; great deal of difficulty proving today is Wednesday :-)  I remember seeing<br>
+&gt; &gt; hints about generalisations of limit theorems to dependent random variables<br>
+&gt; &gt; existing, but I don&#x27;t know enough of the details to apply that myself.<br>
+&gt; &gt; <br>
+&gt; &gt; From another point of view, I&#x27;m claiming that there exist backgammon<br>
+&gt; &gt; strategies that lie outside the domain of the Ullrich-optimality function<br>
+&gt; &gt; U.  I intuitively suspect the domain of the Wong-optimality function W is a<br>
+&gt; &gt; superset of dom(U), and that all possible backgammon strategies are members,<br>
+&gt; <br>
+&gt; 	Not sure what this means. (It appears to mean that you suspect that<br>
+&gt; every strategy is Wong-optimal, but surely you don&#x27;t suspect that. So I<br>
+&gt; must be misunderstanding something.)<br>
+<br>
+Sorry, I wasn&#x27;t precise about what I meant.  I meant I suspect every backgammon<br>
+strategy is a member of dom(W) (ie. every possible pair of strategies makes a<br>
+member of the domain of the domination function), not that every backgammon<br>
+position was optimal.  On the other hand, I think there are some strategies<br>
+that are not members of dom(U) (eg. any strategy that doubles and takes in a<br>
+troublesome position, because when you attempt to compare that strategy to<br>
+another one that behaves the same way, the limit is undefined).<br>
+<br>
+Cheers,<br>
+Gary.<br>
+-- <br>
+  Gary Wong, Computer Science Department, University of Auckland, New Zealand<br>
+       gary@cs.auckland.ac.nz        http://www.cs.auckland.ac.nz/~gary/<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

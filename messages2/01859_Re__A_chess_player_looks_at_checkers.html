@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: A chess player looks at checkers</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: A chess player looks at checkers</h1>
+    <p><strong>From:</strong> loeb@labri.u-bordeaux.fr (Daniel Elliott Loeb)<br>
+    <strong>Date:</strong> 8 Jun 1994 10:10:03 GMT</p>
+    <hr>
+    <div><br>
+	Someone once posted on rec.games.abstract a long discussion of all the<br>
+	checker variants and their rules. A repeat would be welcome, together with<br>
+	a short discussion of the history and state of each version, analogous to<br>
+	this post.<br>
+<br>
+I invented one variant which I found enjoyable, since it leads to quick games,<br>
+and often a huge sacrifice can lead to victory.<br>
+<br>
+Players start with men in the 2nd and 3rd ranks only. Victory can be obtained<br>
+either as normal OR by obtaining a king of your own color on your 1st rank.<br>
+<br>
+Here are the rules in MetaGame format.<br>
+<br>
+<br>
+% (AMERICAN) CHECKERS as a symmetric chess-like game.<br>
+%<br>
+% This game implements the full rules of american checkers.<br>
+% Each player must make a capture move if one is available,<br>
+% and a piece continues capturing until it has no more captures.<br>
+% <br>
+% This is a modified version, invented by Danny Loeb, in which<br>
+% no pieces start on the first row, and the goal is for a player to<br>
+% get his own man back to the first row.  First to do so, wins. <br>
+<br>
+game checkers<br>
+goals 	stalemate opponent<br>
+	eradicate [ { opponent } any_piece ]<br>
+	arrive [{player} any_piece] AT {(1,1) (3,1) (5,1) (7,1)}<br>
+board_size 8 by 8<br>
+board_type planar<br>
+promote_rank 8<br>
+setup 	man AT {(2,2) (4,2) (6,2) (8,2)<br>
+	        (1,3) (3,3) (5,3) (7,3)}<br>
+<br>
+constraints must_capture<br>
+<br>
+define 	man<br>
+   moving <br>
+	movement<br>
+	leap &lt;1,1&gt;<br>
+	symmetry {side} <br>
+        end movement<br>
+   end moving		<br>
+<br>
+   capturing<br>
+	capture by {hop}<br>
+	type [{opponent} any_piece]<br>
+	effect remove<br>
+	movement<br>
+		hop before [X=0]<br>
+		    over   [X=1]<br>
+		    after  [X=0]<br>
+		hop_over   [{opponent} any_piece]<br>
+	&lt;1,1&gt; symmetry {side}<br>
+	end movement<br>
+	end capture<br>
+   end capturing<br>
+<br>
+   promoting<br>
+	promote_to king<br>
+   end promoting<br>
+<br>
+   constraints <br>
+	continue_captures	<br>
+end define<br>
+<br>
+define 	king<br>
+   moving <br>
+	movement<br>
+	leap &lt;1,1&gt;<br>
+	symmetry {forward side} <br>
+        end movement<br>
+   end moving		<br>
+<br>
+   capturing<br>
+	capture by {hop}<br>
+	type [{opponent} any_piece]<br>
+	effect remove<br>
+	movement<br>
+		hop before [X=0]<br>
+		    over   [X=1]<br>
+		    after  [X=0]<br>
+		hop_over   [{opponent} any_piece]<br>
+	&lt;1,1&gt; symmetry {forward side}<br>
+	end movement<br>
+	end capture<br>
+   end capturing<br>
+<br>
+   promoting<br>
+	promote_to king<br>
+   end promoting<br>
+<br>
+   constraints <br>
+	continue_captures	<br>
+end define<br>
+<br>
+end game .<br>
+<br>
+<br>
+-- <br>
+<br>
+Yours, Daniel Loeb, &quot;Proud repapa,&quot; loeb@labri.u-bordeaux.fr<br>
+HOME 	150, cours Victor-Hugo; Appt A6; 33000 Bordeaux France<br>
+WORK	LABRI; Universite de Bordeaux I; 33405 Talence Cedex France<br>
+PHONE(H)+(33) 56 31 48 26, (W)+(33) 56 84 69 05, (FAX) +(33) 56 84 66 69<br>
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Seahaven Towers</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Seahaven Towers</h1>
+    <p><strong>From:</strong> woods@colossal.Eng.Sun.COM (Don Woods)<br>
+    <strong>Date:</strong> 1 Dec 1993 03:03:05 GMT</p>
+    <hr>
+    <div>jf41+@andrew.cmu.edu writes:<br>
+| ftww@cs.su.oz.au (Fred the Wonder Worm) writes:<br>
+| &gt; Are you sure it checks the position?  A friend of mine wrote an (admittedly<br>
+| &gt; simple) program to check a position for solubility using a backtracking<br>
+| &gt; algorithm.  Possibly it wasn&#x27;t very good, but I&#x27;ve had it try to evaluate<br>
+| &gt; over 58 million possible positions<br>
+| <br>
+| Yep, you definitely missed some very important simplifying assumptions.<br>
+| <br>
+| Obviously, by the count of how many positions you considered, you were<br>
+| counting each movement of a single card as generating a new position.  A<br>
+| vastly superior way to look at the game is to consider only the movement<br>
+| of &quot;chunks&quot; of consecutively-numbered cards.  When the tableau is<br>
+| initially dealt out there may be up to five chunks per stack (or seven<br>
+| chunks per stack if you are playing the 8-stack variation) and two more<br>
+| pseudo-chunks in the hold spots.  However, since there is no provision<br>
+| for adding an arbitrary card to a stack, the number of chunks in a stack<br>
+| will never increase over the course of the game.  This is effectively<br>
+| the same reasoning by which it is shown that it never hurts to put cards<br>
+| on their aces whenever possible.<br>
+| <br>
+| From now on, the program should only consider &quot;moves&quot; which cause an<br>
+| entire chunk to be put into a new position.  This reduces your overly<br>
+| humongous move tree down to only the interesting branch nodes.  The<br>
+| three types of moves remaining are: (a) movement of a chunk onto the<br>
+| next higher consecutive chunk on the tableau (provided at least<br>
+| chunksize-1 spots are open in the hold area), (b) movement of a chunk<br>
+| headed by a King onto an empty stack (provided at least chunksize-1<br>
+| spots are open in the hold area), and (c) movement of an entire chunk<br>
+| into the hold spots (provided there are at least chunksize open spots<br>
+| AND that it is not possible to move this chunk directly to the next<br>
+| higher chunk).<br>
+| <br>
+| Before and/or after each of these moves, the program should also<br>
+| simplify the position as much as possible by moving cards to aces (of<br>
+| course), and by moving cards down from the hold spots into the tableau.<br>
+| These simplifications should *not* be considered moves in the move<br>
+| tree--they are simply natural results of having made the previous &quot;move&quot;<br>
+| of a chunk.<br>
+<br>
+Interesting that this discussion should arise now; I saw the above posts<br>
+late last night after having spent the day &quot;lifting the hood&quot; on the<br>
+solution algorithm in the version of the game I&#x27;ve got.<br>
+<br>
+Jon&#x27;s comments are right on the money: moving only chunks will save a lot<br>
+of searching.  But even if you&#x27;re moving single cards -- which is what the<br>
+program I was looking at does -- the search tree should be a lot smaller<br>
+than several million.  I conjecture that perhaps Fred&#x27;s friend&#x27;s program<br>
+did not keep a record of positions already examined, and thus potentially<br>
+re-examined positions reached by multiple routes, or reached multiple times<br>
+due to cyclic moves.<br>
+<br>
+One other modification that can save a lot of searching -- and which made<br>
+the program I was looking at come down to a fairly small search space even<br>
+using single moves -- is to recognise when a position has become impossible<br>
+due to &quot;buried&quot; cards.  When the sequence at the bottom of a stack is about<br>
+to exceed 5 cards, check whether there are any lower numbered cards of the<br>
+same suit deeper in the stack.  If so, that&#x27;s a lost position.<br>
+<br>
+Regarding Jon&#x27;s algorithm (which I intend to code up when I have some time),<br>
+I note that there&#x27;s a small flaw that needs to be patched:  Moving cards<br>
+down from the hold area is automatic ONLY for non-Kings.  Moving a King down<br>
+might get in the way of moving a King from the tableau into the empty<br>
+column, or moving a different King out of the hold area.  This means there<br>
+is a 4th type of move: moving a King from the hold area to an empty space.<br>
+(When such a move is made, it may of course result in other cards moving<br>
+down from the hold area onto the King; these are automatic as usual.)<br>
+<br>
+Although the search is probably fast enough without this, another speedup<br>
+you can try is to recognise some more &quot;automatic&quot; moves.  E.g., once a<br>
+column consists of a single sequence headed by a King, moving more cards<br>
+onto that column can&#x27;t hurt.  Likewise, if a column ends with a sequence of<br>
+6 or more cards, adding more to that sequence can&#x27;t hurt.<br>
+<br>
+Speaking of automatic moves, it should be noted that the 8-column variant<br>
+builds with alternating color in the tableau, which means it is NOT automatic<br>
+to move cards to the foundation piles.  I.e., if you put the 5 of spades onto<br>
+the 4, you may be screwing up your ability to move a red 4.<br>
+<br>
+Oh, one other thing that helps reduce the search, assuming you&#x27;re keeping<br>
+track of positions already reached, is to enforce a canonical form on the<br>
+positions.  In particular, sort the cards in the hold area, and sort any<br>
+tableau columns that are single king-headed sequences or empty.  I.e.,<br>
+swapping two king-headed sequences or moving a king from one tableau column<br>
+to another, doesn&#x27;t produce a different position.<br>
+<br>
+If I get my program written, I&#x27;ll post it to comp.sources.games and report<br>
+it here.<br>
+<br>
+-- <br>
+--	-- Don Woods.				[*** Generic Disclaimer ***]<br>
+--				    ...!sun!woods.eng -or- Woods@Eng.Sun.com<br>
+<br>
+<br>
+</div>
+</body>
+</html>

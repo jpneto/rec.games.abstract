@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Jigsaw Puzzles</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Jigsaw Puzzles</h1>
+    <p><strong>From:</strong> gordon.cheung@analog.com<br>
+    <strong>Date:</strong> Wed, 9 Dec 1992 23:55:04 GMT</p>
+    <hr>
+    <div>In article &lt;1992Dec4.220321.18150@husc15.harvard.edu&gt; blom@husc15.harvard.edu writes:<br>
+&gt;Does the complexity of solving a jigsaw puzzle increase on the order of the<br>
+&gt;square of the number of pieces in the puzzle?  Obviously if we compared each<br>
+&gt;piece with all the other pieces, this would be so. <br>
+&gt;[...]  But the time series of the model might<br>
+&gt;still go up as O(n^2).  Is there any way to do say an FFT on something like<br>
+&gt;this?  Or is there some sort of parallel method of solution which would be<br>
+&gt;faster?<br>
+&gt;<br>
+    If you split the puzzle pieces up into groups, then you would only <br>
+have to fit the pieces within each group. Some nice grouping would be<br>
+edges, colors, patterns, shape... As you get more creative in grouping<br>
+pieces of the puzzle, the time it takes also go down. In fact, you can have <br>
+levels of groupings, say first level by shape, and in each sub group by<br>
+color and so on. If you can divide down into sub groups of a few pieces,<br>
+your puzzle is only O(n*logm), where m is probalbly fractional unless you<br>
+subdivide by same number of catagorys every time. <br>
+<br>
+-- <br>
+------------------------------------------------------------------------------<br>
+|      Gordon Cheung         gordon.cheung@analog.com                7E      |<br>
+---------------------------------------------------------------------7X-------<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

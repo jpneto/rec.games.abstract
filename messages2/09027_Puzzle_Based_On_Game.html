@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzle Based On Game</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Puzzle Based On Game</h1>
+    <p><strong>From:</strong> Leroy Quet &lt;qqquet@mindspring.com&gt;<br>
+    <strong>Date:</strong> Wed, 29 Jul 2009 07:05:30 -0700 (PDT)</p>
+    <hr>
+    <div>This is a puzzle based on my recently-posted game copy/pasted below.<br>
+<br>
+Take a 5-by-5 grid, and fill in the squares with the numbers I give<br>
+below, filling the squares with the numbers in the order given and<br>
+according to the rules copy/pasted below .<br>
+<br>
+It is possible to get a perfect score of 25 in at least one way. How<br>
+many solutions there are, and how hard this puzzle is, I do not know.<br>
+But I suspect there are many solutions and that this puzzle is<br>
+relatively easy.<br>
+<br>
+The number sequence to use:<br>
+<br>
+2, 7, 8, 9, 6, 9, 12, 10, 11, 10, 13, 6, 6, 2, 3, 7, 4, 4, 1, 5, 5,<br>
+16, 14, 15, 13<br>
+<br>
+There is a clue at the bottom of this post to help you maybe get the<br>
+same solution I intended.<br>
+<br>
+-----<br>
+<br>
+Here is the game, &quot;Sequence Ascension Solitaire Grid Game&quot;, as I<br>
+recently posted it to sci.math, rec.puzzles, and rec.games.abstract:<br>
+<br>
+-<br>
+<br>
+This is a game/challenge for one player. Start by drawing an n-by-n<br>
+grid on paper. (n could be about 5 to 10, maybe.)<br>
+<br>
+Next, either use a pre-existing integer sequence (such as {a(k)},<br>
+where a(n) = the number of divisors of n), or randomly pick the<br>
+integers in the sequence.<br>
+If randomly picking the sequence, first write down n^2 numbers in a<br>
+list before continuing to the next part of the game.<br>
+It might help to first write down the numbers even if you are using a<br>
+preexisting sequence. Write down n^2 numbers, just in case they are<br>
+needed.<br>
+<br>
+Next, place the integers into the grid, starting at any square, and<br>
+then placing each number -- in order by the order of the indexes (a<br>
+(1), then a(2), then a(3)...etc), each number in any empty square<br>
+horizontally, vertically, or diagonally adjacent to the last square<br>
+filled with a number.<br>
+(a(k) is always next to a(k-1).)<br>
+Continue doing this until you cannot place any more integers (because<br>
+there are no empty squares next to where you last put a number).<br>
+<br>
+Next, starting at any square with a number in it, draw a path of<br>
+connected line segments from square to adjacent square -- adjacent and<br>
+in the direction of either vertical, horizontal, or diagonal -- such<br>
+that each number drawn to is greater than or equal to the number in<br>
+the previous square of the path.<br>
+(The numbers of the path never descend.)<br>
+The path must not visit any square more than once. But two diagonal<br>
+segments of the path may cross.<br>
+<br>
+Move until you can&#x27;t move anymore. (The last square visited by the<br>
+path will not be bordered by any unvisited square with a number &gt;= the<br>
+value in the last square.)<br>
+<br>
+Your score is the number of squares your path visits.<br>
+<br>
+Note: I realize that you could use the all-1&#x27;s sequence, say, and<br>
+score a perfect n^2 points each time, but that wouldn&#x27;t be much fun.<br>
+<br>
+As an easy challenge to myself I used the first 16 terms of the number-<br>
+of-divisors sequence (1,2,2,3,2,4,2,4,3,4,2,6,2,4,4,5)<br>
+and a 4-by-4 grid. I got a top score of 13 (in several ways).<br>
+Can you do better?<br>
+<br>
+---<br>
+<br>
+Hint: The 1 goes in a corner square in my solution. (It doesn&#x27;t matter<br>
+which corner.)<br>
+<br>
+Thanks,<br>
+Leroy Quet<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

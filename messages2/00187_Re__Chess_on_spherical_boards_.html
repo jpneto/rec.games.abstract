@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Chess on spherical boards.</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Chess on spherical boards.</h1>
+    <p><strong>From:</strong> hoey@AIC.NRL.Navy.Mil (Dan Hoey)<br>
+    <strong>Date:</strong> 12 Nov 92 22:25:51 GMT</p>
+    <hr>
+    <div>mjd@saul.cis.upenn.edu (&quot;[*] The Power in the Streets&quot;) describes<br>
+turning the chessboard into a sphere by first making the A and H files<br>
+adjacent to form a cylinder, then<br>
+<br>
+&gt;     Now pinch the ends together: x,8 (for some letter x) is<br>
+&gt; orthogonally adjacent to (x+4 mod 8),8 and diagonally to (x+3 mod<br>
+&gt; 8),8 and (x+5 mod 8),8.<br>
+<br>
+and follows up:<br>
+<br>
+&gt;     Of course this isn&#x27;t a sphere either, because the circumference<br>
+&gt; is 8 squares in the east-west direction and 16 squares in the<br>
+&gt; north-south direction.<br>
+<br>
+More to the point, this isn&#x27;t even topologically a sphere. For<br>
+instance, it can be covered with disjoint north-south circumferences,<br>
+but a true sphere cannot be covered with disjoint circles (or<br>
+homeomorphs thereof).  I think topologists would call this a<br>
+sphere with two cross-caps.<br>
+<br>
+The idea of making file x extend into file -x (mod 8) (that is, files<br>
+a, b, c, and d extend to files h, g, f, and e, respectively) would<br>
+make the board a sphere.  And I like the suggestion of<br>
+tuc@calico.cs.wisc.edu (Brian A.  Cole) that we also make rank x<br>
+extend into rank 1-x (mod 8) (ranks 1, 2, 3, and 4 extend into ranks<br>
+8, 7, 6, and 5, respectively) because it emphasizes the symmetry<br>
+between ranks and files.  However, I think Brian&#x27;s claim that<br>
+<br>
+&gt;  1. each square shares one edge each with four other squares.<br>
+<br>
+is incorrect, because H4 shares two edges with H5; similarly the other<br>
+edge centers have only three neighbors.  And when he says<br>
+<br>
+&gt;  2. moving one square &quot;left&quot; then one square &quot;down&quot; takes you the<br>
+&gt;     same place as moving one square &quot;down&quot; then one square &quot;left&quot;<br>
+&gt;     (and so on for other paths-that-should-go-the-same-place).<br>
+<br>
+it should probably be mentioned that whey you go through the &quot;top&quot; or<br>
+&quot;bottom&quot; the &quot;right&quot; and &quot;left&quot; directions are interchanged, and when<br>
+you go through a side the &quot;up&quot; and &quot;down&quot; directions are interchanged.<br>
+(Does this mean that when White pawn at b8 captures f8, it is now<br>
+moving toward rank 1?  How about g8xa8/Q?<br>
+<br>
+This has the unusual feature that some bishop paths bounce back when<br>
+they get to an edge:<br>
+<br>
+    ...G3,H4,H4,G3,...<br>
+<br>
+while others continue on:<br>
+<br>
+    ...F1,G2,H3,H5,G4,F3,E2,D1,F1,G2,H3,....<br>
+<br>
+Also, a knight on G3 has seven neighbors: F1, H1, H7, H5 (two ways),<br>
+F5, E4, and E2, and a knight on H4 has seven neighbors: G2, H7, G6<br>
+(two ways), G4, F5, and F3.<br>
+<br>
+Dan Hoey<br>
+Hoey@AIC.NRL.Navy.Mil<br>
+<br>
+<br>
+</div>
+</body>
+</html>

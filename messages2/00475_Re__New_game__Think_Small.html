@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: New game: Think Small</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: New game: Think Small</h1>
+    <p><strong>From:</strong> barnett@mummy.agsm.unsw.OZ.AU (Glen Barnett)<br>
+    <strong>Date:</strong> Thu, 3 Dec 1992 04:45:33 GMT</p>
+    <hr>
+    <div>In article &lt;By21D1.C74.1@cs.cmu.edu&gt; Marc.Ringuette@GS80.SP.CS.CMU.EDU writes:<br>
+ [stuff deleted]<br>
+&gt;<br>
+&gt;I took a different approach in computing the optimal strategy:<br>
+&gt;assuming all N players use a probabilistic strategy s(x) which<br>
+&gt;specifies a fixed probability of choosing each x, I compute the<br>
+&gt;probability that an N+1th player can win by choosing a number y.<br>
+&gt;Rather than reformat the equation, here&#x27;s the code: (input is y and the<br>
+&gt;function s(x):<br>
+&gt;<br>
+&gt;	sum=0.0;<br>
+&gt;	for (x=1; x&lt;y; ++x) {<br>
+&gt;		sum+= (s[x]/norm)*N*pow(1.0-(s[x]/norm),N-1.0) * (1-sum);<br>
+&gt;	}<br>
+&gt;	return (1-sum)*pow(1-(s[y]/norm),N*1.0);<br>
+&gt;<br>
+&gt;I implemented a simple iterative search for the best function s(x) by<br>
+&gt;taking an initial s, finding the number w with maximum probability of<br>
+&gt;winning, and increasing s(w) for the next iteration.<br>
+&gt;<br>
+&gt;Just for your interest, here&#x27;s a histogram of s(x) for N=40:<br>
+&gt;<br>
+&gt;s(x) =    0.00                       0.05                             0.10<br>
+&gt;          ---------------------------------------------------------------<br>
+&gt;  x =  1: ************************************************************<br>
+&gt;       2: ***********************************************************<br>
+&gt;       3: *********************************************************<br>
+&gt;       4: ********************************************************<br>
+&gt;       5: *****************************************************<br>
+&gt;       6: ****************************************************<br>
+&gt;       7: **************************************************<br>
+&gt;       8: ***********************************************<br>
+&gt;       9: ********************************************<br>
+&gt;      10: *****************************************<br>
+&gt;      11: **************************************<br>
+&gt;      12: **********************************<br>
+&gt;      13: *****************************<br>
+&gt;      14: ***********************<br>
+&gt;      15: ****************<br>
+&gt;      16: ********<br>
+&gt;      17: **<br>
+&gt;      18: *<br>
+&gt;      19: <br>
+&gt;      20: <br>
+&gt;<br>
+&gt;<br>
+&gt;It sure looks like a binomial distribution, but I still haven&#x27;t worked<br>
+&gt;out the closed form.<br>
+<br>
+No way is that binomial - even approximately!<br>
+<br>
+Glen<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

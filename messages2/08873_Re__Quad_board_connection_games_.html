@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Quad-board connection games.</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Quad-board connection games.</h1>
+    <p><strong>From:</strong> anony@nowhere.org<br>
+    <strong>Date:</strong> Tue, 16 Dec 2008 21:55:54 GMT</p>
+    <hr>
+    <div><br>
+On 16-Dec-2008, torbenm@pc-003.diku.dk (Torben =?iso-8859-1?Q?=C6gidius?=<br>
+Mogensen) wrote:<br>
+<br>
+&gt; &gt; 1) The game &quot;TRELLIS&quot; is played on a checkered board. BLACK connects<br>
+&gt; &gt; diagonally across only DARK squares, WHITE only across LIGHT squares.<br>
+&gt;<br>
+&gt; This allows black and white paths to cross, so it would violate the<br>
+&gt; principle of a filled board having only one winner.<br>
+<br>
+<br>
+Sorry about that -- I described this incorrectly. &quot;Trellis&quot; is played on the<br>
+VERTICIES. Each stone connect in 4 directions along the orthogonal lines and<br>
+in two more directions across squares of the same color. Paths can&#x27;t cross<br>
+and a randomly filled board will have exactly one winner. See:<br>
+http://home.fuse.net/swmeyers/trru.htm<br>
+<br>
+<br>
+<br>
+&gt; &gt; 2) BLACK connects on one diagonal direction, WHITE connects on the<br>
+&gt; &gt; other.<br>
+&gt;<br>
+&gt; Ditto.<br>
+<br>
+<br>
+Ooops. Yeah, this one definitely doesn&#x27;t work.<br>
+<br>
+<br>
+<br>
+&gt; &gt; 3c) As (3a) with captures. No play whatsoever on vertices. ALL<br>
+&gt; &gt; connections<br>
+&gt; &gt; are orthogonal.<br>
+&gt;<br>
+&gt; This looks like it could create infinite play.<br>
+<br>
+It can, but I think both players would have to conspire for this to occur.<br>
+All it takes is one player to play rationally -- not expertly, just<br>
+reasonably -- to make irreversible connections. With the double piece<br>
+capture, KO may be impossible.<br>
+<br>
+<br>
+<br>
+&gt; However, I don&#x27;t generally like having to explicitly play<br>
+&gt; vertices/corners.  This makes the board not really a square grid, but<br>
+&gt; a square/octagon grid.  I have a few suggestions for how to avoid<br>
+&gt; this:<br>
+&gt;<br>
+&gt;  1. Use a checker board.  Only black-to-black corners connect<br>
+&gt;     (regardless of who plays them).  This makes black squares more<br>
+&gt;     valuable than white squares, but this is symmetrical for both<br>
+&gt;     players.  This topologically equivalent to a square/octagon grid,<br>
+&gt;     but avoids plays on corners.<br>
+<br>
+<br>
+Works, though white squares are *very* weak. If a modified FCFC were<br>
+implemented (Taking two black squares separated by one white square wins the<br>
+white square instantly.) games would likely have the same result with<br>
+essentially the same paths.<br>
+<br>
+<br>
+<br>
+<br>
+&gt;  2. Allow only three out of four squares in a 2x2 to be filled.<br>
+&gt;     Diagonals automatically connect.  A board is &quot;filled&quot; when no more<br>
+&gt;     pieces can be played without completing a 2x2.<br>
+<br>
+<br>
+<br>
+Draws are possible. Below, neither player can take the cell marked &quot;?&quot;.<br>
+<br>
++---+---+---+---+<br>
+|   | x |   |   |<br>
++---+---+---+---+<br>
+|   | x | o | o |<br>
++---+---+---+---+<br>
+| o | ? | o |   |<br>
++---+---+---+---+<br>
+|   | x | x |   |<br>
++---+---+---+---+<br>
+<br>
+Mark&#x27;s &quot;Crossway&quot; is similar, prohibiting the a 2x2 checkered pattern to be<br>
+completed. I don&#x27;t like the rule because it is supposedly just a way to mark<br>
+the connections, but it is possible to be in a position in which an extra<br>
+piece hurts you rather than helps you:<br>
+<br>
+&quot;O&quot; to play, &quot;O&quot; wins by playing at &quot;*&quot;<br>
++---+---+---+---+<br>
+| o |   |   |   |<br>
++---+---+---+---+<br>
+| o | x |   |   |<br>
++---+---+---+---+<br>
+|   | * | x | x |<br>
++---+---+---+---+<br>
+| x |   | o | o |<br>
++---+---+---+---+<br>
+<br>
+&quot;O&quot; has an extra stone at (o) and loses!<br>
++---+---+---+---+<br>
+| o |   |   |   |<br>
++---+---+---+---+<br>
+| o | x |(o)|   |<br>
++---+---+---+---+<br>
+|   |   | x | x |<br>
++---+---+---+---+<br>
+| x |   | o | o |<br>
++---+---+---+---+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

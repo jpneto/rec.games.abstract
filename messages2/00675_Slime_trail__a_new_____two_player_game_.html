@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Slime trail, a new (?) two player game.</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Slime trail, a new (?) two player game.</h1>
+    <p><strong>From:</strong> boll@CS.ColoState.EDU (dave boll)<br>
+    <strong>Date:</strong> Mon, 18 Jan 1993 16:59:32 GMT</p>
+    <hr>
+    <div>  The traffic on this group has died recently - is no one doing interesting<br>
+  stuff with games?<br>
+<br>
+  I thought I&#x27;d post some results for a game called Slime Trail - invented<br>
+  (as far as we know) by Bill Taylor. He and I corresponded for a while<br>
+  re: game trees and strategy for this game, and this is what we came up<br>
+  with:<br>
+<br>
+  Slimetrail:<br>
+    played on an NxM rectangle of squares. Each player takes turns moving<br>
+    a piece around the board. The piece can take one step orthogonally,<br>
+    and may not re-visit a visited square. Each player tries to move<br>
+    the piece into his/her goal square. The two goal squares are located<br>
+    at diagonally opposite corners of the rectangle. The piece starts on<br>
+    any mutually agreed upon square.<br>
+<br>
+    Note: It doesn&#x27;t matter which player actually ends up moving the <br>
+	  piece into a goal square; just the fact that it is there means<br>
+	  that someone won.<br>
+<br>
+  Normal slime trail:<br>
+    A first player win exists, starting from any square, provided at least<br>
+    one of the board dimensions is even. On an odd by odd board, winning<br>
+    and losing start squares alternate in a checkerboard pattern. A draw is<br>
+    only possible via cooperation; if one player moves to avoid draws, the<br>
+    other can never force them. We&#x27;re still wondering if the winning/losing<br>
+    start square pattern means there is an easy strategy for this game that<br>
+    neither of us has seen yet.<br>
+<br>
+  Variations:<br>
+    Chess king slime trail: The piece moved around the board has the movement<br>
+    capabilities of a chess king. Results for small boards (1st player <br>
+    goes to upper left, 2nd to lower right)<br>
+<br>
+      W = Winning start square for 1st player, assuming perfect play.<br>
+      L = Losing start square for 1st player<br>
+      T = Tied game with perfect play. (A game is tied if neither player<br>
+	  has a move)<br>
+<br>
+       3x3       4x3       4x4         4x5           3x5<br>
+      * W L    * W W L    * W L W    * W W W    * W W W L<br>
+      W W W    W W W W    W W W L    W W W W    W W W W W<br>
+      L W *    L W W *    L W W W    W W W W    L W W W *<br>
+			  W L W *    W W W W<br>
+			             W W W *<br>
+<br>
+    (the additional movement capabilities makes deep search difficult)<br>
+    Seems to be biased toward the 1st player, with losses only cccuring<br>
+    (sometimes) in the vincinity of the non-goal corners. It should be noted<br>
+    that some of the start squares marked W have only one winning move out<br>
+    of the eight available, and the direction of that winning move is not<br>
+    obvious at all - so they still make for fairly good games.<br>
+<br>
+<br>
+    Hex slime trail, targets in obtuse corner: Probably the best version<br>
+    of this game. Here&#x27;s some small board results:<br>
+<br>
+      4x4         5x5          5x4         4x6<br>
+        * W T L    * W T W T    * W T W T    * W T L<br>
+       W W L T    W W W W W    W W W W W    W W L T<br>
+      T L W W    T W W W T    W W W W W    T L W W<br>
+     L T W *    W W W W W    W T T W *    W W L T<br>
+	       T W T W *                 T L W W<br>
+        				L T W *<br>
+    I think this variation is &#x27;best&#x27; because of relative balance of<br>
+    start squares that lead to W, L, or T. We really haven&#x27;t playtested this<br>
+    one enough to vouch for superior play-ability.<br>
+<br>
+<br>
+    Hex slime trail, targets in acute corner:<br>
+<br>
+      4x4, 4x5: all squares win for 1st player<br>
+<br>
+      5x5<br>
+      * W T T T<br>
+       W L T T T<br>
+        T T L T T<br>
+         T T T L W<br>
+          T T T W *<br>
+<br>
+      Draws are too easy to come by in this version.<br>
+-- <br>
+     ------------------------------------------------------------<br>
+     Dave Boll  boll@handel.cs.colostate.edu<br>
+                &quot;The speed of time is 1 second per second&quot;<br>
+     ------------------------------------------------------------<br>
+<br>
+<br>
+</div>
+</body>
+</html>

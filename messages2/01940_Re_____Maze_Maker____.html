@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: ***Maze Maker?***</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: ***Maze Maker?***</h1>
+    <p><strong>From:</strong> mdm@sugar.NeoSoft.COM (Michael Mondy)<br>
+    <strong>Date:</strong> 2 Aug 1994 17:32:20 -0500</p>
+    <hr>
+    <div>In article &lt;319p7e$hl1@news.duke.edu&gt;, Ted Benson &lt;reb@mc.duke.edu&gt; wrote:<br>
+&gt;Hi! I&#x27;m looking for a Mac program (freeware/shareware, preferably) that <br>
+&gt;will generate mazes. It should allow for printed output, and various <br>
+&gt;levels of difficulty (it&#x27;s meant to be a present for a child who loves <br>
+&gt;mazes). Anyone out there have any ideas? Please send email to me at the <br>
+&gt;address below.<br>
+&gt;<br>
+<br>
+Well, here&#x27;s an inscrutable maze generator in eight lines of C code.<br>
+<br>
+#!/bin/sh<br>
+# This is a shell archive.<br>
+# remove everything above the &quot;#!/bin/sh&quot; line<br>
+# and feed to /bin/sh<br>
+# Use -c option to overwrite existing files<br>
+#<br>
+# Contents: <br>
+#	maze.c<br>
+#<br>
+# packed by: &lt;mdm@mondy.uucp&gt; on Tue Aug  2 17:14:34 CDT 1994<br>
+#<br>
+PATH=/bin:/usr/bin:/usr/ucb ; export PATH<br>
+if test -f maze.c -a &quot;${1}&quot; != &quot;-c&quot; ; then<br>
+  echo shar: Will not over-write existing file \&quot;maze.c\&quot;<br>
+else<br>
+  echo shar: Extracting \&quot;maze.c\&quot; \(1183 characters\)<br>
+  sed &#x27;s/^X//&#x27; &gt;maze.c &lt;&lt; &#x27;!EOF&#x27;<br>
+X/*<br>
+X        Believe it or not the following C code can generate unique<br>
+X        mazes of arbitrary size. Extract the code and compile it.  When<br>
+X        you run it just give a number, after you run it, not on the<br>
+X        command line.<br>
+X<br>
+X        I do not know where it came from but I have had it for at least<br>
+X        a year.<br>
+X<br>
+X        Scott Bolte           scott@craycos.com               +1 719 540 4186<br>
+X        Cray Computer Corporation, 1110 Bayfield Drive, Colorado<br>
+XSprings,CO80906<br>
+X*/<br>
+X<br>
+X#if 0 <br>
+X	The expression 6&lt;&lt;27&lt;&lt;rand() on the bottom line is true 3/8 of the<br>
+X	time if rand() returns numbers up to 2**31-1.  If rand() only<br>
+X	returns numbers up to 2**15-1 then the 27 must be replaced by an 11.<br>
+X		-- Michael Mondy<br>
+X#endif<br>
+X<br>
+X#include &lt;stdio.h&gt;<br>
+Xchar*M,A,Z,E=40,J[40],T[40];main(C){for(*J=A=scanf(M=&quot;%d&quot;,&amp;C);<br>
+X--            E;             J[              E]             =T<br>
+X[E   ]=  E)   printf(&quot;._&quot;);  for(;(A-=Z=!Z)  ||  (printf(&quot;\n|&quot;<br>
+X)    ,   A    =              39              ,C             --<br>
+X)    ;   Z    ||    printf   (M   ))M[Z]=Z[A-(E   =A[J-Z])&amp;&amp;!C<br>
+X&amp;    A   ==             T[                                  A]<br>
+X|6&lt;&lt;27&lt;rand()||!C&amp;!Z?J[T[E]=T[A]]=E,J[T[A]=A-Z]=A,&quot;_.&quot;:&quot; |&quot;];}<br>
+X<br>
+X<br>
+X<br>
+!EOF<br>
+  if test 1183 -ne `wc -c &lt; maze.c`; then<br>
+    echo shar: \&quot;maze.c\&quot; unpacked with wrong size!<br>
+  fi<br>
+fi<br>
+exit 0<br>
+<br>
+<br>
+</div>
+</body>
+</html>

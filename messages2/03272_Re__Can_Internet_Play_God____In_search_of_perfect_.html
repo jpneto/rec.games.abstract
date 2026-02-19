@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: Can Internet Play God? - In search of perfect board game.</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: Can Internet Play God? - In search of perfect board game.</h1>
+    <p><strong>From:</strong> torbenm@diku.dk (Torben AEgidius Mogensen)<br>
+    <strong>Date:</strong> 06 05 1996 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+vulpine@zikzak.net (Trevor Powell) writes:<br>
+<br>
+&gt;In article &lt;318b89fc.0@news.gmtnet.co.uk&gt;, Dr Bronia Grycz<br>
+&gt;&lt;destiny@gmtnet.co.uk&gt; wrote:<br>
+<br>
+&gt;&gt; My questions are:<br>
+&gt;&gt; <br>
+&gt;&gt; 1.  Does anybody there know about a board game that could lay claim <br>
+&gt;&gt;     to be perfect?<br>
+&gt;&gt; 2.  What the essential attributes of such game would be?<br>
+&gt;&gt; 3.  Could the brain resources of the Internet be mobilised to create such <br>
+&gt;&gt;     game and if so how to go about it?<br>
+&gt;&gt; 4.  Could all this be possibly done in time for the year 2000 as our<br>
+&gt;&gt;     contribution to the new millenium?<br>
+<br>
+&gt;1.  Depends on how you define perfection.  See #2.<br>
+&gt;2.  Perfect is such an abstract word that it&#x27;s impossible (or at very<br>
+&gt;least, extremely difficult) to attach a definite set of attributes to it.<br>
+&gt;3.  I would doubt it.  Even if you and I could each attach attributes to<br>
+&gt;the word &#x27;perfect&#x27;, we would probably come up with different attributes. <br>
+&gt;In other words, my &#x27;perfect game&#x27; would be different from your &#x27;perfect<br>
+&gt;game&#x27;.<br>
+<br>
+&gt;For some people, few board/wargames will ever surpass chess for the<br>
+&gt;elegant strategy.  Others want money to change hands and play Monopoly,<br>
+&gt;others play Cosmic Encounter and think that nothing can surpass it, and so<br>
+&gt;forth...  How can something be truly perfect, if it isn&#x27;t perfect to<br>
+&gt;everyone?<br>
+<br>
+I think you can reasonably argue that chess is not perfect: the rules<br>
+have many special cases and a complex set of rules are required for<br>
+termination of the game. Furthermore, draws are fairly common.<br>
+<br>
+I think Go is much closer to &quot;perfection&quot;: The rules are simple, few<br>
+special cases needs to be considered (the ko rule basically says that<br>
+no situation can be repeated), termination is (in the chinese)<br>
+determined by a simple rule (three consecutive passes). The japanese<br>
+variant has some complexity about detecting the end because passing<br>
+doesn&#x27;t cost a stone. Hence, playing out the endgame can change the<br>
+score, which it doesn&#x27;t in the chinese variant. (There may be some<br>
+slight errors in this description it has been ages since I last played<br>
+Go).<br>
+<br>
+If we consider only two-player non-random games, I think the following<br>
+criteria must be met before we can even consider perfection:<br>
+<br>
+ 1) The rules must be simple, with few (if any) special cases.<br>
+<br>
+ 2) Termination of the game must be ensured by simple rules, or better<br>
+    yet, through no extra rules.<br>
+<br>
+ 3) The chance of winning must be equal for both players, with no<br>
+    simple strategy ensuring victory/draw for any particular player.<br>
+<br>
+ 4) Exhaustive search by computer must be intractable.<br>
+<br>
+ 5) The game must be playable in reasonable time.<br>
+<br>
+Point 3 is _very_ hard to judge, as in a deterministic game perfect<br>
+game play must exist. Just about the only way I can see of judging<br>
+winning chances is by letting experienced players play each other in a<br>
+large number of games and count the number of victories/draws/losses<br>
+for the first player.<br>
+<br>
+Point 5 may seem like an extension to point 2, but in point 5 I<br>
+consider the average playing time where point 2 considers the<br>
+worst-case playing time. In chess, there is a large difference between<br>
+these. Withoutout some means of limiting the time for a move, every<br>
+game can theoretically last forever, so I just want it to be<br>
+_possible_ to finish an average game quickly.<br>
+<br>
+Of the classical games, chess fails on point 1 and 2. Go may favour<br>
+the first player slightly (AFAIR), but is by far the most intractable<br>
+of the classical games. It may be sligtly on the long side. Othello<br>
+has problems with point 4, as a large part of the endgame is tractable<br>
+to do perfectly on a computer. Some statictics has been made on<br>
+tournament play giving 47% win for black (1st player), 3% draws and<br>
+50% wins for white. This would suggest a modification in the winning<br>
+criteria saying that a draw should be counted as a win for black.<br>
+<br>
+For many of these points there exist classical &quot;fixes&quot;: For<br>
+termination, a rule disallowing repeated states usually works, but may<br>
+require memory of a large number of previous states. Someone suggested<br>
+replacing the termination rule in Abalone with this.<br>
+<br>
+An &quot;equalizer&quot; rule for point 3 has been suggested: the first player<br>
+makes a move. Then the second player decides if he wants to play<br>
+against this move or take over, letting the original first player play<br>
+the second move. The rest of the game is alternating as usual. This<br>
+assumes that there exist at least one opening move that leads to equal<br>
+chances, so is in essence no different than starting the game in<br>
+another position.<br>
+<br>
+The playing-time problem can be &quot;solved&quot; by putting a time limit on<br>
+the moves, using chess-clocks or other means. But if the number of<br>
+moves required to finish a game is large, this doesn&#x27;t help.<br>
+<br>
+The tractability problem can not be solved by adding to the rules, nor<br>
+(obviously) does this work for the game complexity.<br>
+<br>
+&gt;If someone can define the &#x27;perfect game&#x27; in such a way as to be a perfect<br>
+&gt;game to everyone, I&#x27;ll be thrilled, but somehow I doubt it&#x27;s possible.<br>
+<br>
+I agree. I&#x27;m sure a lot of people will disagree with some of the above<br>
+points. In a sense, some of the points are even contradictionary: a<br>
+small number of moves to finish a game tends to make it tractable by<br>
+computer search. Unless, that is, the number of possible moves at each<br>
+stage is very large.<br>
+<br>
+Also, fulfilling all of the above points doesn&#x27;t necessarily make a<br>
+game interesting. Consider the following game:<br>
+<br>
+An NxN square grid is initially empty, and the players alternate<br>
+putting stones on the grid points. The last player to make a move has<br>
+lost. Now, this would be completely trivial without the last rule: You<br>
+can not play adjacent to the last played stone, and if you can&#x27;t play<br>
+anywhere with this restriction, you pass and the next player moves.<br>
+<br>
+I believe this game fulfills the criteria above: it has simple rules,<br>
+it terminates, no draws are possible, winning/losing is non-trival, it<br>
+is intractable (assuming a reasonably sized grid) and it can be played<br>
+fast. However, I doubt many people would find the game interesting,<br>
+except perhaps from an academic viewpoint. You may, of course, prove<br>
+me wrong by gathering a large fan crowd for this game. ;-)<br>
+<br>
+	Torben Mogensen (torbenm@diku.dk)<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

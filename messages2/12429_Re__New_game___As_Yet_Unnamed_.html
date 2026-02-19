@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: New game: [As Yet Unnamed]</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: New game: [As Yet Unnamed]</h1>
+    <p><strong>From:</strong> luigi &lt;luis.9.8.87@gmail.com&gt;<br>
+    <strong>Date:</strong> Wed, 7 Dec 2011 08:53:23 -0800 (PST)</p>
+    <hr>
+    <div>On 7 dic, 01:04, &quot;Steven W. Meyers&quot; &lt;raidingfal...@gmail.com&gt; wrote:<br>
+&gt; On Dec 5, 2:11 am, luigi &lt;luis.9.8...@gmail.com&gt; wrote:<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt;<br>
+&gt; &gt; On 4 dic, 06:19, &quot;Steven W. Meyers&quot; &lt;raidingfal...@gmail.com&gt; wrote:<br>
+&gt;<br>
+&gt; &gt; &gt; Could you please present a sample game on a small board?  The game<br>
+&gt; &gt; &gt; does look intriguing but I don&#x27;t fully understand the rules.<br>
+&gt;<br>
+&gt; &gt; Oh, sure! Here is one:<br>
+&gt;<br>
+&gt; &gt;http://gc1.iggamecenter.com/gm.php?sid=230207&amp;lang=en<br>
+&gt;<br>
+&gt; &gt; (The link will expire in one week, I think.)<br>
+&gt;<br>
+&gt; &gt; ______________<br>
+&gt;<br>
+&gt; &gt; P.S.:<br>
+&gt;<br>
+&gt; &gt; A is teaching B how to play Ayu. This is the dialogue that followed:<br>
+&gt;<br>
+&gt; &gt; B: So what did you say the name of this game was?<br>
+&gt; &gt; A: It&#x27;s AYU (As Yet Unnamed).<br>
+&gt; &gt; B: Oh, and what must I do to win?<br>
+&gt; &gt; A: AYU (Attach Your Units).<br>
+&gt; &gt; B: I got it, man, but how many of them?<br>
+&gt; &gt; A (sighs): AYU (All Your Units).<br>
+&gt; &gt; (A while later:)<br>
+&gt; &gt; B (making a winning move, at his pieces): AYU? (Are You United?)<br>
+&gt; &gt; A (angry, at B): AYU? (Are You Unbalanced?)<br>
+&gt;<br>
+&gt; &gt; I&#x27;m definitely settling on Ayu as a name for the game :-)<br>
+&gt;<br>
+&gt; The sample game was interesting to follow.  The basic tactics seem to<br>
+&gt; revolve around joining groups more efficiently than the opponent does,<br>
+&gt; capitalizing on the rule that lets you move to any adjacent point in a<br>
+&gt; group.  But I&#x27;m curious about the restriction that you can&#x27;t split the<br>
+&gt; group any time during the move.  Is this really necessary?  The need<br>
+&gt; for it, if there is one, is not at all obvious to me.<br>
+&gt;<br>
+&gt; Steve<br>
+<br>
+It&#x27;s a bit hard to explain.<br>
+<br>
+You&#x27;re right that, in order to ensure finitude, it&#x27;s only necessary<br>
+that the group remains joined _after_ the move, even if it&#x27;s split for<br>
+a moment during the move. However, that would imply that, in the rare<br>
+cases where this makes a difference, the available moves for a stone<br>
+depend not only on the &quot;move closer&quot; rule, but also on the &quot;don&#x27;t<br>
+split&quot; rule; i.e. move generation would actually proceed this way:<br>
+<br>
+- Can I move this stone? Yes, if taking it away doesn&#x27;t split the<br>
+group OR it splits the group BUT you move it in such a way that it&#x27;s<br>
+joined again AND you&#x27;re closer to the closest friendly unit as a<br>
+result.<br>
+<br>
+- Where can I move it? To any point adjacent to the same unit and<br>
+closer to the closest friendly unit AND which joins the moving unit<br>
+again in the rare case that it was split during the move.<br>
+<br>
+In both steps, the two aforesaid rules have to be inquired. Instead,<br>
+in the current rules as written, the process is simpler: first the<br>
+&quot;don&#x27;t split&quot; rule determines if a stone can be moved, without<br>
+reference to the second rule, and then the &quot;move closer&quot; rule<br>
+determines its available destination points, without further inquiring<br>
+the first rule; i.e.:<br>
+<br>
+- Can I move this stone? Yes, if and only if taking it away doesn&#x27;t<br>
+split the group.<br>
+<br>
+- Where can I move it? To any point adjacent to the same unit and<br>
+closer to the closest friendly unit. Period.<br>
+<br>
+Also, for this very reason, the game is easier to program on a<br>
+computer in this form. Otherwise, you&#x27;d have to write some extra code<br>
+which would only be of any use in very rare occasions.<br>
+<br>
+I don&#x27;t know if this all will make sense to anyone apart from myself,<br>
+but I do find the game simpler and more natural the way it is now.<br>
+Maybe I think too much like a computer ;-)<br>
+<br>
+<br>
+</div>
+</body>
+</html>

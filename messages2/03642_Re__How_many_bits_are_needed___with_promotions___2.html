@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Re: How many bits are needed; (with promotions): 244b/212b/195b</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <h1>Re: How many bits are needed; (with promotions): 244b/212b/195b</h1>
+    <p><strong>From:</strong> David Norman &lt;David@ellought.demon.co.uk&gt;<br>
+    <strong>Date:</strong> 27 06 1997 00:00:00 GMT</p>
+    <hr>
+    <div><br>
+george.barwood@dial.pipex.com (George Barwood) writes:<br>
+&gt; OK, I claim a solution with just 133 bits, by considering seperately<br>
+&gt; the number of white and black pawns, and the number of white and black<br>
+&gt; pieces. Here my C++ program that did the calculation (vlong is a class<br>
+&gt; which implements multiple precision integers).<br>
+<br>
+Unfortunately, there is a major bug in your program.<br>
+<br>
+&gt; vlong C( vlong n, vlong m )<br>
+&gt; {<br>
+&gt;   vlong result = 1;<br>
+&gt;   while ( m &gt; 0 )<br>
+&gt;   {<br>
+&gt;     result = result * m;<br>
+&gt;     m -= 1;<br>
+&gt;   }<br>
+&gt;   return result;<br>
+&gt; }<br>
+<br>
+I guess this is meant to return the number of ways you can arrange m coins <br>
+on n squares. However, it is actually returning factorial(m), and ignoring <br>
+n completely !<br>
+<br>
+Try replacing it with :<br>
+<br>
+vlong Fact( vlong m )<br>
+{<br>
+  vlong result = 1;<br>
+  while ( m &gt; 0 )<br>
+  {<br>
+    result = result * m;<br>
+    m -= 1;<br>
+  }<br>
+  return result;<br>
+}<br>
+<br>
+vlong C( vlong n, vlong m )<br>
+{<br>
+  return Fact(n) / Fact(m) / Fact(n-m);<br>
+}<br>
+<br>
+Also, the formula :<br>
+<br>
+&gt; C(62-n-wpiece,bpiece) * pow2(2*bpiece);<br>
+<br>
+is returning numbers that are too big, as it does not allow for the fact <br>
+that if you have two rooks, you can swap them with each other without <br>
+changing the position. Same for all the other pieces too.<br>
+<br>
+David.<br>
+-- <br>
+I know I can&#x27;t spell. Thats why I became a Computer Programmer. Compilers<br>
+don&#x27;t mind bad spelling, as long as you make the same mistakes every time.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>
